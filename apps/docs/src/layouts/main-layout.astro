@@ -1,0 +1,39 @@
+---
+import { SiteFooter, SiteHeader } from "@/components"
+import { siteConfig } from "@/config"
+import { SEO } from "astro-seo"
+
+type Props = {
+	title?: string
+}
+
+const { title } = Astro.props
+---
+
+<html lang="en">
+	<head>
+		<SEO
+			titleTemplate={`%s - ${siteConfig.title}`}
+			titleDefault={siteConfig.title}
+			title={title}
+			description={siteConfig.description}
+			charset="utf-8"
+			extend={{
+				link: [{ rel: "icon", href: "/favicon.svg" }],
+				meta: [
+					{
+						name: "vietport",
+						content: "width=device-width, initial-scale=1",
+					},
+				],
+			}}
+		/>
+	</head>
+	<body class="font-sans antialiased bg-background min-h-screen">
+		<SiteHeader />
+		<div class="min-h-[calc(100vh-57px-97px)]">
+			<slot />
+		</div>
+		<SiteFooter />
+	</body>
+</html>

@@ -1,0 +1,31 @@
+---
+import { docsConfig, siteConfig } from "@/config"
+import { cn } from "@/helpers"
+import { Logo } from "../icons"
+
+const { pathname } = Astro.url
+---
+
+<div class="mr-4 hidden md:flex">
+	<a href="/" class="mr-6 flex items-center space-x-2">
+		<Logo class="h-6 w-6" />
+		<span class="hidden font-bold sm:inline-block">{siteConfig.title}</span>
+	</a>
+	<nav class="flex items-center space-x-6 text-sm font-medium">
+		{
+			docsConfig.mainNav.map((item) => (
+				<a
+					href={item.href!}
+					class={cn(
+						"transition-colors hover:text-foreground/80",
+						pathname === item.href
+							? "text-foreground"
+							: "text-foreground/60"
+					)}
+				>
+					{item.title}
+				</a>
+			))
+		}
+	</nav>
+</div>

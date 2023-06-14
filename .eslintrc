@@ -4,7 +4,6 @@
 	"extends": [
 		"eslint:recommended",
 		"plugin:solid/typescript",
-		"@unocss",
 		"prettier",
 		"plugin:astro/recommended"
 	],
@@ -27,6 +26,11 @@
 				"extraFileExtensions": [
 					".astro"
 				]
+			},
+			"rules": {
+				"solid/prefer-for": "off",
+				"no-undef": "off",
+				"solid/self-closing-comp": "off"
 			}
 		}
 	]

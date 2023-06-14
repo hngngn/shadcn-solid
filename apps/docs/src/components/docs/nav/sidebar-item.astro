@@ -1,0 +1,50 @@
+---
+import { cn } from "@/helpers"
+import type { TSidebarNavItem } from "@/types"
+type Props = {
+	items: TSidebarNavItem[]
+}
+
+const { items } = Astro.props
+const { pathname } = Astro.url
+---
+
+<div class="grid grid-flow-row auto-rows-max text-sm">
+	{
+		items.map((item) => (
+			<Fragment>
+				{item.href ? (
+					<a
+						href={item.href!}
+						class={cn(
+							"flex w-full items-center rounded-md border border-transparent p-2 hover:underline",
+							item.disabled && "cursor-not-allowed opacity-60",
+							pathname === item.href
+								? "font-medium text-foreground"
+								: "text-muted-foreground"
+						)}
+						target={item.external ? "_blank" : ""}
+						rel={item.external ? "noreferrer" : ""}
+					>
+						{item.title}
+						{item.label ? (
+							<span
+								class={cn(
+									"ml-2 rounded-md bg-#adfa1d px-1.5 py-0.5 text-xs leading-none text-#000000 no-underline group-hover:no-underline",
+									item.label === "Soon" &&
+										"bg-muted text-muted-foreground"
+								)}
+							>
+								{item.label}
+							</span>
+						) : null}
+					</a>
+				) : (
+					<span class="flex w-full cursor-not-allowed items-center rounded-md p-2 text-muted-foreground hover:underline">
+						{item.title}
+					</span>
+				)}
+			</Fragment>
+		))
+	}
+</div>

@@ -1,0 +1,17 @@
+---
+import { docsConfig } from "@/config"
+import SidebarItem from "./sidebar-item.astro"
+---
+
+<div class="w-full">
+	{
+		docsConfig.sidebarNav.map((item) => (
+			<div class="pb-4">
+				<h4 class="mb-1 rounded-md px-2 py-1 text-sm font-semibold">
+					{item.title}
+				</h4>
+				<SidebarItem items={item.items} />
+			</div>
+		))
+	}
+</div>
