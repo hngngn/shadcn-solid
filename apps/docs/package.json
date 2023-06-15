@@ -12,16 +12,20 @@
 		"format": "prettier -w \"**/*.{ts,tsx}\""
 	},
 	"dependencies": {
+		"@astrojs/mdx": "^0.19.7",
 		"@astrojs/solid-js": "^2.2.0",
 		"@astrojs/vercel": "^3.5.0",
+		"@iconify-json/lucide": "^1.1.101",
 		"@kobalte/core": "^0.9.6",
-		"astro": "^2.6.3",
+		"astro": "^2.6.4",
 		"astro-seo": "^0.7.4",
-		"clsx": "^1.2.1",
-		"solid-js": "^1.4.3"
+		"class-variance-authority": "^0.6.0",
+		"solid-js": "^1.4.3",
+		"solid-wrap-balancer": "^0.0.5"
 	},
 	"devDependencies": {
 		"@unocss/reset": "^0.53.1",
+		"sass": "^1.63.4",
 		"unocss": "^0.53.1"
 	}
 }

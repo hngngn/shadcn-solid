@@ -1,5 +1,4 @@
 ---
-import { cn } from "@/helpers"
 import type { TSidebarNavItem } from "@/types"
 type Props = {
 	items: TSidebarNavItem[]
@@ -16,24 +15,27 @@ const { pathname } = Astro.url
 				{item.href ? (
 					<a
 						href={item.href!}
-						class={cn(
-							"flex w-full items-center rounded-md border border-transparent p-2 hover:underline",
-							item.disabled && "cursor-not-allowed opacity-60",
-							pathname === item.href
-								? "font-medium text-foreground"
-								: "text-muted-foreground"
-						)}
+						class:list={[
+							"flex w-full items-center rounded-md border border-transparent p-2 hover:underline text-foreground",
+							{
+								"cursor-not-allowed opacity-60": item.disabled,
+								"font-medium": pathname === item.href,
+								"text-muted-foreground": pathname !== item.href,
+							},
+						]}
 						target={item.external ? "_blank" : ""}
 						rel={item.external ? "noreferrer" : ""}
 					>
 						{item.title}
 						{item.label ? (
 							<span
-								class={cn(
+								class:list={[
 									"ml-2 rounded-md bg-#adfa1d px-1.5 py-0.5 text-xs leading-none text-#000000 no-underline group-hover:no-underline",
-									item.label === "Soon" &&
-										"bg-muted text-muted-foreground"
-								)}
+									{
+										"bg-muted text-muted-foreground":
+											item.label === "Soon",
+									},
+								]}
 							>
 								{item.label}
 							</span>

@@ -1,7 +1,11 @@
 ---
-import { DocsLayout } from "@/layouts";
+import { DocsLayout } from "@/layouts"
+import { getEntry } from "astro:content"
+
+const doc = await getEntry("docs", "index")
+const { Content, headings } = await doc.render()
 ---
 
-<DocsLayout>
-	<div>Work on progress</div>
+<DocsLayout doc={doc.data} headings={headings}>
+	<Content />
 </DocsLayout>

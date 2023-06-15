@@ -1,6 +1,5 @@
 ---
 import { docsConfig, siteConfig } from "@/config"
-import { cn } from "@/helpers"
 import { Logo } from "../icons"
 
 const { pathname } = Astro.url
@@ -16,12 +15,12 @@ const { pathname } = Astro.url
 			docsConfig.mainNav.map((item) => (
 				<a
 					href={item.href!}
-					class={cn(
-						"transition-colors hover:text-foreground/80",
-						pathname === item.href
-							? "text-foreground"
-							: "text-foreground/60"
-					)}
+					class:list={[
+						"transition-colors hover:text-foreground/80 text-foreground",
+						{
+							"opacity-60": pathname !== item.href,
+						},
+					]}
 				>
 					{item.title}
 				</a>

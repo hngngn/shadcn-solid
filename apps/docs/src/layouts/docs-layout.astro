@@ -1,14 +1,20 @@
 ---
-import { SideBar } from "@/components"
+import { Pager, Separator, SideBar, TableOfContents } from "@/components"
+import type { MarkdownHeading } from "astro"
+import type { CollectionEntry } from "astro:content"
+import { Balancer } from "solid-wrap-balancer"
 import MainLayout from "./main-layout.astro"
+
 type Props = {
-	title?: string
+	doc: CollectionEntry<"docs">["data"]
+	headings: MarkdownHeading[]
 }
 
-const { title } = Astro.props
+const { doc, headings } = Astro.props
+const { pathname } = Astro.url
 ---
 
-<MainLayout title={title}>
+<MainLayout title={doc.title}>
 	<div
 		class="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"
 	>
@@ -19,6 +25,53 @@ const { title } = Astro.props
 				<SideBar />
 			</div>
 		</aside>
-		<slot />
+		<main
+			class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]"
+		>
+			<div class="mx-auto w-full min-w-0">
+				<div
+					class="mb-4 flex items-center space-x-1 text-sm text-muted-foreground"
+				>
+					<div
+						class="overflow-hidden text-ellipsis whitespace-nowrap"
+					>
+						Docs
+					</div>
+					<i class="i-lucide:chevron-right"></i>
+					<div class="font-medium text-foreground">
+						{doc.title}
+					</div>
+				</div>
+				<div class="space-y-2 mdx">
+					<h1 class="font-bold">
+						{doc.title}
+					</h1>
+					{
+						doc.description ? (
+							<p class="text-lg text-muted-foreground">
+								<Balancer>{doc.description}</Balancer>
+							</p>
+						) : null
+					}
+				</div>
+				<Separator class="my-4 md:my-6" />
+				<div class="mdx max-w-full">
+					<slot />
+				</div>
+				<Separator class="my-4 md:my-6" />
+				<Pager />
+			</div>
+			<div class="hidden text-sm xl:block">
+				<div
+					class="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] overflow-hidden pt-6"
+				>
+					{
+						pathname ? (
+							<TableOfContents headings={headings} client:idle />
+						) : null
+					}
+				</div>
+			</div>
+		</main>
 	</div>
 </MainLayout>

@@ -9,3 +9,7 @@ export type TNavItem = {
 export type TSidebarNavItem = TNavItem & {
 	items: TSidebarNavItem[]
 }
+
+export type TNavItemWithChildren = TNavItem & {
+	items: TNavItemWithChildren[]
+}

@@ -1,4 +1,7 @@
+export * from "./faq"
 export * from "./icons"
 export * from "./nav"
+export { default as Pager } from "./pager.astro"
 export { default as SiteFooter } from "./site-footer.astro"
 export { default as SiteHeader } from "./site-header.astro"
+export * from "./toc"

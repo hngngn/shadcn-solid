@@ -7,21 +7,22 @@
 		"format": "turbo run format"
 	},
 	"devDependencies": {
-		"@turbo/gen": "^1.9.7",
-		"@typescript-eslint/eslint-plugin": "^5.59.9",
-		"@typescript-eslint/parser": "^5.59.9",
+		"@turbo/gen": "^1.10.3",
+		"@typescript-eslint/eslint-plugin": "^5.59.11",
+		"@typescript-eslint/parser": "^5.59.11",
 		"@unocss/reset": "^0.53.1",
 		"browserslist": "^4.21.8",
-		"eslint": "^7.32.0",
+		"eslint": "^8.42.0",
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-config-turbo": "^1.10.3",
 		"eslint-plugin-astro": "^0.27.1",
 		"eslint-plugin-solid": "^0.12.1",
 		"lightningcss": "^1.21.0",
-		"prettier": "^2.5.1",
+		"prettier": "^2.8.8",
 		"turbo": "latest",
 		"unocss": "^0.53.1",
-		"unocss-preset-autoprefixer": "^0.0.5"
+		"unocss-preset-autoprefixer": "^0.0.5",
+		"unocss-preset-primitives": "0.0.1-beta.8"
 	},
 	"packageManager": "pnpm@7.15.0",
 	"name": "shadcn-solid"
