@@ -19,11 +19,11 @@
 		"unocss-preset-autoprefixer": "^0.0.5",
 		"unocss-preset-primitives": "0.0.1-beta.8",
 		"vite": "^3.2.5",
-		"@iconify-json/lucide": "^1.1.101"
+		"@iconify-json/lucide": "^1.1.101",
+		"solid-mdx": "^0.0.6",
+		"solid-start-mdx": "workspace:*"
 	},
 	"dependencies": {
-		"solid-mdx": "^0.0.6",
-		"solid-start-mdx": "workspace:*",
 		"@kobalte/core": "^0.9.6",
 		"@solidjs/meta": "^0.28.5",
 		"@solidjs/router": "^0.8.2",

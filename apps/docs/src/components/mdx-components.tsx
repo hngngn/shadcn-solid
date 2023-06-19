@@ -57,7 +57,7 @@ export const MDXComponent = {
 		return <a class="font-medium underline underline-offset-4" {...props} />
 	},
 	p: (props: ComponentProps<"p">) => {
-		return <p class="leading-7 [&:not(:first-child)]:mt-6" {...props} />
+		return <p class="leading-7 mdx-p-tag" {...props} />
 	},
 	ul: (props: ComponentProps<"ul">) => {
 		return <ul class="my-6 ml-6 list-disc" {...props} />
@@ -117,12 +117,7 @@ export const MDXComponent = {
 		)
 	},
 	Steps: (props: ComponentProps<"div">) => {
-		return (
-			<div
-				class="[counter-reset:step] [&>h3]:[counter-increment:step] [&>h3]:before:(content-[counter(step)] absolute w-8 h-8 bg-muted rounded-full font-medium text-center text-base inline-flex items-center justify-center -indent-px -ml-48px) mb-12 ml-4 border-l pl-8"
-				{...props}
-			/>
-		)
+		return <div class="mb-12 ml-4 border-l pl-8 mdx-pre-tag" {...props} />
 	},
 	Alert,
 	AlertTitle,

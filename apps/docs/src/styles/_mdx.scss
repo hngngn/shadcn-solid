@@ -73,3 +73,18 @@
 [data-metadata] > button {
 	@apply top-16;
 }
+
+p.mdx-p-tag:not(:first-child) {
+	@apply mt-6;
+}
+
+div.mdx-pre-tag {
+	counter-reset: step;
+	> h3 {
+		counter-increment: step;
+
+		::before {
+			@apply content-[counter(step)] absolute w-8 h-8 bg-muted rounded-full font-medium text-center text-base inline-flex items-center justify-center -indent-px -ml-48px;
+		}
+	}
+}

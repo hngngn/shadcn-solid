@@ -1,5 +1,6 @@
 // @refresh reload
 import { Suspense } from "solid-js"
+import { MDXProvider } from "solid-mdx"
 import {
 	Body,
 	ErrorBoundary,
@@ -14,7 +15,6 @@ import {
 import { MDXComponent, SiteFooter, SiteHeader } from "~/components"
 
 import "@unocss/reset/tailwind.css"
-import { MDXProvider } from "solid-mdx"
 import "virtual:uno.css"
 import "~/styles/index.scss"
 
