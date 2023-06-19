@@ -1,8 +1,9 @@
 import { Separator as SeparatorPrimitive } from "@kobalte/core"
 import type { SeparatorRootProps } from "@kobalte/core/dist/types/separator/separator-root"
+import type { Component } from "solid-js"
 import { splitProps } from "solid-js"
 
-export const Separator = (props: SeparatorRootProps) => {
+export const Separator: Component<SeparatorRootProps> = (props) => {
 	const [, rest] = splitProps(props, ["class"])
 	return (
 		<SeparatorPrimitive.Root
