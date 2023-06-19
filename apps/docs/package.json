@@ -1,31 +1,39 @@
 {
 	"name": "docs",
-	"type": "module",
-	"version": "0.0.1",
 	"scripts": {
-		"dev": "astro dev",
-		"start": "astro dev",
-		"build": "astro build",
-		"preview": "astro preview",
-		"astro": "astro",
+		"dev": "solid-start dev",
+		"build": "solid-start build",
+		"start": "solid-start start",
 		"lint": "eslint \"src/**/*.{ts,tsx,astro}\"",
 		"format": "prettier -w \"**/*.{ts,tsx}\""
 	},
-	"dependencies": {
-		"@astrojs/mdx": "^0.19.7",
-		"@astrojs/solid-js": "^2.2.0",
-		"@astrojs/vercel": "^3.5.0",
-		"@iconify-json/lucide": "^1.1.101",
-		"@kobalte/core": "^0.9.6",
-		"astro": "^2.6.4",
-		"astro-seo": "^0.7.4",
-		"class-variance-authority": "^0.6.0",
-		"solid-js": "^1.4.3",
-		"solid-wrap-balancer": "^0.0.5"
-	},
+	"type": "module",
 	"devDependencies": {
 		"@unocss/reset": "^0.53.1",
+		"browserslist": "^4.21.8",
+		"lightningcss": "^1.21.0",
 		"sass": "^1.63.4",
-		"unocss": "^0.53.1"
+		"solid-start-vercel": "^0.2.26",
+		"typescript": "^4.9.5",
+		"unocss": "^0.53.1",
+		"unocss-preset-autoprefixer": "^0.0.5",
+		"unocss-preset-primitives": "0.0.1-beta.8",
+		"vite": "^3.2.5",
+		"@iconify-json/lucide": "^1.1.101"
+	},
+	"dependencies": {
+		"solid-mdx": "^0.0.6",
+		"solid-start-mdx": "workspace:*",
+		"@kobalte/core": "^0.9.6",
+		"@solidjs/meta": "^0.28.5",
+		"@solidjs/router": "^0.8.2",
+		"class-variance-authority": "^0.6.0",
+		"solid-js": "^1.7.6",
+		"solid-start": "^0.2.26",
+		"solid-wrap-balancer": "^0.0.5",
+		"undici": "^5.22.1"
+	},
+	"engines": {
+		"node": ">=16"
 	}
 }

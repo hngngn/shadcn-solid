@@ -9,7 +9,7 @@ export const docsConfig: TDocsConfig = {
 	mainNav: [
 		{
 			title: "Documentation",
-			href: "/docs",
+			href: "/docs/introduction",
 		},
 		{
 			title: "Components",
@@ -30,7 +30,7 @@ export const docsConfig: TDocsConfig = {
 			items: [
 				{
 					title: "Introduction",
-					href: "/docs",
+					href: "/docs/introduction",
 					items: [],
 				},
 				{
