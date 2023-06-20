@@ -25,13 +25,13 @@ export const Alert: Component<
 		variant?: "default" | "destructive" | null
 	}
 > = (props) => {
-	const [, rest] = splitProps(props, ["class", "variant"])
+	const [local, rest] = splitProps(props, ["class", "variant"])
 
 	return (
 		<AlertPrimitive.Root
 			class={alertVariants({ variant: props.variant })}
 			classList={{
-				[props.class!]: props.class !== undefined,
+				[local.class!]: local.class !== undefined,
 			}}
 			{...rest}
 		/>
@@ -39,13 +39,13 @@ export const Alert: Component<
 }
 
 export const AlertTitle: Component<ComponentProps<"div">> = (props) => {
-	const [, rest] = splitProps(props, ["class"])
+	const [local, rest] = splitProps(props, ["class"])
 
 	return (
 		<div
 			class="font-medium leading-5.5 tracking-tight"
 			classList={{
-				[props.class!]: props.class !== undefined,
+				[local.class!]: local.class !== undefined,
 			}}
 			{...rest}
 		/>
@@ -53,13 +53,13 @@ export const AlertTitle: Component<ComponentProps<"div">> = (props) => {
 }
 
 export const AlertDescription: Component<ComponentProps<"div">> = (props) => {
-	const [, rest] = splitProps(props, ["class"])
+	const [local, rest] = splitProps(props, ["class"])
 
 	return (
 		<div
 			class="text-sm [&_p]:leading-relaxed"
 			classList={{
-				[props.class!]: props.class !== undefined,
+				[local.class!]: local.class !== undefined,
 			}}
 			{...rest}
 		/>

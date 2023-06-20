@@ -55,7 +55,7 @@ export default () => {
 							</Show>
 						</div>
 						<Separator class="my-4 md:my-6" />
-						<div class="mdx max-w-full">
+						<div class="max-w-full">
 							<Outlet />
 						</div>
 						<Separator class="my-4 md:my-6" />

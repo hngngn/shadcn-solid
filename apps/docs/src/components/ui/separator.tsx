@@ -4,12 +4,12 @@ import type { Component } from "solid-js"
 import { splitProps } from "solid-js"
 
 export const Separator: Component<SeparatorRootProps> = (props) => {
-	const [, rest] = splitProps(props, ["class"])
+	const [local, rest] = splitProps(props, ["class"])
 	return (
 		<SeparatorPrimitive.Root
 			class="shrink-0 bg-border data-[orientation='horizontal']:(h-1px w-full) data-[orientation='vertical']:(h-full w-1px)"
 			classList={{
-				[props.class!]: props.class !== undefined,
+				[local.class!]: local.class !== undefined,
 			}}
 			{...rest}
 		/>

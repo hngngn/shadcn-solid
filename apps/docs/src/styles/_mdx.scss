@@ -88,3 +88,9 @@ div.mdx-pre-tag {
 		}
 	}
 }
+
+.mdx-example {
+	pre {
+		@apply mt-0 max-h-350px overflow-auto;
+	}
+}

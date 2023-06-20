@@ -1,3 +1,6 @@
+export * from "./component-example"
+export * from "./copy-button"
+export * from "./examples"
 export * from "./logo"
 export * from "./main-nav"
 export * from "./mdx-components"

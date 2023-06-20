@@ -10,6 +10,7 @@ import rehypeSlug from "rehype-slug"
 import remarkCodeImport from "remark-code-import"
 import remarkFrontmatter from "remark-frontmatter"
 import remarkGFM from "remark-gfm"
+import { u } from "unist-builder"
 import { visit } from "unist-util-visit"
 import { parse as parseYaml } from "yaml"
 
@@ -188,6 +189,132 @@ export default async () => {
 		}
 	}
 
+	const getNodeAttributeByName = (node, name) => {
+		return node.attributes?.find((attribute) => attribute.name === name)
+	}
+
+	const getComponentSourceFileContent = (node) => {
+		const src = getNodeAttributeByName(node, "src")?.value
+
+		if (!src) {
+			return null
+		}
+
+		// Read the source file.
+		const filePath = path.join(process.cwd(), src)
+		const source = fs.readFileSync(filePath, "utf8")
+
+		return source
+	}
+
+	const rehypeComponent = () => {
+		return async (tree) => {
+			visit(tree, (node) => {
+				const { value: src } = getNodeAttributeByName(node, "src") || {}
+
+				if (node.name === "ComponentExample") {
+					const source = getComponentSourceFileContent(node)
+					if (!source) {
+						return
+					}
+
+					node.children?.push(
+						u("element", {
+							tagName: "pre",
+							properties: {
+								__src__: src,
+							},
+							children: [
+								u("element", {
+									tagName: "code",
+									properties: {
+										className: ["language-tsx"],
+									},
+									children: [
+										{
+											type: "text",
+											value: source,
+										},
+									],
+								}),
+							],
+						})
+					)
+
+					const extractClass = getNodeAttributeByName(
+						node,
+						"extractClass"
+					)
+					if (
+						extractClass &&
+						typeof extractClass.value !== "undefined" &&
+						extractClass.value !== "false"
+					) {
+						const values = source.match(/class="(.*)"/)
+						const className = values ? values[1] : ""
+
+						node.attributes?.push({
+							name: "extractedClasses",
+							type: "mdxJsxAttribute",
+							value: className,
+						})
+
+						node.children?.push(
+							u("element", {
+								tagName: "pre",
+								properties: {},
+								children: [
+									u("element", {
+										tagName: "code",
+										properties: {
+											className: ["language-tsx"],
+										},
+										children: [
+											{
+												type: "text",
+												value: className,
+											},
+										],
+									}),
+								],
+							})
+						)
+					}
+				}
+
+				if (node.name === "ComponentSource") {
+					const source = getComponentSourceFileContent(node)
+					if (!source) {
+						return
+					}
+
+					node.children?.push(
+						u("element", {
+							tagName: "pre",
+							properties: {
+								__src__: src,
+							},
+							children: [
+								u("element", {
+									tagName: "code",
+									properties: {
+										className: ["language-tsx"],
+									},
+									children: [
+										{
+											type: "text",
+											value: source,
+										},
+									],
+								}),
+							],
+						})
+					)
+				}
+			})
+		}
+	}
+
 	let plugin = {
 		...(await import("@mdx-js/rollup")).default({
 			jsx: true,
@@ -201,6 +328,7 @@ export default async () => {
 			],
 			rehypePlugins: [
 				rehypeSlug,
+				rehypeComponent,
 				[
 					rehypePrettyCode,
 					{

@@ -1,0 +1,33 @@
+import {
+	TypographyBlockquote,
+	TypographyDemo,
+	TypographyH1,
+	TypographyH2,
+	TypographyH3,
+	TypographyH4,
+	TypographyInlineCode,
+	TypographyLarge,
+	TypographyLead,
+	TypographyList,
+	TypographyMuted,
+	TypographyP,
+	TypographySmall,
+	TypographyTable,
+} from "./typography"
+
+export const example = {
+	TypographyDemo,
+	TypographyBlockquote,
+	TypographyH1,
+	TypographyH2,
+	TypographyH3,
+	TypographyH4,
+	TypographyInlineCode,
+	TypographyLarge,
+	TypographyLead,
+	TypographyList,
+	TypographyMuted,
+	TypographyP,
+	TypographySmall,
+	TypographyTable,
+}

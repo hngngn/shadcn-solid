@@ -165,6 +165,9 @@ importers:
       solid-mdx:
         specifier: ^0.0.6
         version: 0.0.6(solid-js@1.7.6)(vite@3.2.5)
+      unist-builder:
+        specifier: ^3.0.1
+        version: 3.0.1
       unist-util-visit:
         specifier: ^4.1.2
         version: 4.1.2
@@ -6981,6 +6984,12 @@ packages:
       is-plain-obj: 4.1.0
       trough: 2.1.0
       vfile: 5.3.7
+    dev: true
+
+  /unist-builder@3.0.1:
+    resolution: {integrity: sha512-gnpOw7DIpCA0vpr6NqdPvTWnlPTApCTRzr+38E6hCWx3rz/cjo83SsKIlS1Z+L5ttScQ2AwutNnb8+tAvpb6qQ==}
+    dependencies:
+      '@types/unist': 2.0.6
     dev: true
 
   /unist-util-generated@2.0.1:

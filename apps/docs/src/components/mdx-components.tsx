@@ -1,4 +1,4 @@
-import { Show, createSignal, type ComponentProps } from "solid-js"
+import { type ComponentProps } from "solid-js"
 import {
 	Accordion,
 	AccordionContent,
@@ -7,7 +7,10 @@ import {
 	Alert,
 	AlertDescription,
 	AlertTitle,
-} from "./ui"
+	ComponentExample,
+	CopyButton,
+	example,
+} from "~/components"
 
 export const MDXComponent = {
 	h1: (props: ComponentProps<"h1">) => {
@@ -85,15 +88,6 @@ export const MDXComponent = {
 	pre: (props: ComponentProps<"pre">) => {
 		let preRef!: HTMLPreElement
 
-		const [isCopied, setIsCopied] = createSignal(false)
-
-		const copyToClipboard = () => {
-			const innerText = preRef?.querySelector("code")?.innerText ?? ""
-			setIsCopied(true)
-			void navigator.clipboard.writeText(innerText)
-			setTimeout(() => setIsCopied(false), 2000)
-		}
-
 		return (
 			<>
 				<pre
@@ -101,18 +95,7 @@ export const MDXComponent = {
 					class="mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-lg border py-4 data-[theme=dark]:bg-background data-[theme=light]:bg-white"
 					{...props}
 				/>
-				<button
-					class="z-20 inline-flex h-6 w-6 items-center justify-center rounded-md border bg-background text-sm font-medium transition-all hover:bg-muted focus:outline-none absolute right-4 top-4"
-					onClick={copyToClipboard}
-				>
-					<span class="sr-only">Copy</span>
-					<Show
-						when={isCopied()}
-						fallback={<i class="i-lucide-copy h-3 w-3" />}
-					>
-						<i class="i-lucide-check h-3 w-3" />
-					</Show>
-				</button>
+				<CopyButton preRef={preRef} />
 			</>
 		)
 	},
@@ -126,4 +109,6 @@ export const MDXComponent = {
 	AccordionItem,
 	AccordionTrigger,
 	AccordionContent,
+	ComponentExample,
+	...example,
 }
