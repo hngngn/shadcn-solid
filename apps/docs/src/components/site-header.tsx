@@ -13,8 +13,14 @@ export const SiteHeader = () => {
 				<div class="flex flex-1 items-center justify-between space-x-2 sm:space-x-4 md:justify-end">
 					<nav class="flex items-center space-x-1">
 						<Button asChild variant="ghost" size="sm">
-							<As component={A} href={siteConfig.links.github}>
+							<As
+								component={A}
+								href={siteConfig.links.github}
+								target="_blank"
+								rel="noreferrer"
+							>
 								<i class="i-lucide:github w-18px h-18px" />
+								<span class="sr-only">Github</span>
 							</As>
 						</Button>
 						<ModeToggle />

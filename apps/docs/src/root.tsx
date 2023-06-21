@@ -25,31 +25,6 @@ import { isServer } from "solid-js/web"
 import "virtual:uno.css"
 import "~/styles/index.scss"
 
-export const mods = /*#__PURE__*/ import.meta.glob<
-	true,
-	any,
-	{
-		getHeadings: () => {
-			depth: number
-			text: string
-			slug: string
-		}[]
-		getFrontMatter: () => {
-			title: string
-			description: string
-			component?: boolean
-			source?: string
-			kobalte?: string
-			external?: string
-		}
-	}
->("./routes/docs/**/*.mdx", {
-	eager: true,
-	query: {
-		meta: "",
-	},
-})
-
 const Root = () => {
 	const event = useContext(ServerContext)
 
@@ -68,22 +43,22 @@ const Root = () => {
 				/>
 			</Head>
 			<Body class="font-sans antialiased bg-background text-foreground min-h-screen">
-				<ErrorBoundary>
-					<ColorModeScript storageType={storageManager.type} />
-					<Suspense>
-						<ColorModeProvider storageManager={storageManager}>
-							<SiteHeader />
-							<div class="min-h-[calc(100vh-57px-97px)]">
-								<MDXProvider components={MDXComponent}>
+				<ColorModeScript storageType={storageManager.type} />
+				<ColorModeProvider storageManager={storageManager}>
+					<SiteHeader />
+					<ErrorBoundary>
+						<Suspense>
+							<MDXProvider components={MDXComponent}>
+								<div class="min-h-[calc(100vh-57px-97px)]">
 									<Routes>
 										<FileRoutes />
 									</Routes>
-								</MDXProvider>
-							</div>
-							<SiteFooter />
-						</ColorModeProvider>
-					</Suspense>
-				</ErrorBoundary>
+								</div>
+							</MDXProvider>
+						</Suspense>
+					</ErrorBoundary>
+					<SiteFooter />
+				</ColorModeProvider>
 				<Scripts />
 			</Body>
 		</Html>

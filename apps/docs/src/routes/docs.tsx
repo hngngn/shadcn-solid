@@ -3,14 +3,38 @@ import { Outlet, Title, useLocation } from "solid-start"
 import { createServerData$ } from "solid-start/server"
 import { Balancer } from "solid-wrap-balancer"
 import { DocsPager, Separator, Sidebar, TableOfContents } from "~/components"
-import { mods } from "~/root"
+
+const mods = /*#__PURE__*/ import.meta.glob<
+	true,
+	any,
+	{
+		getHeadings: () => {
+			depth: number
+			text: string
+			slug: string
+		}[]
+		getFrontMatter: () => {
+			title: string
+			description: string
+			component?: boolean
+			source?: string
+			kobalte?: string
+			external?: string
+		}
+	}
+>("./docs/**/*.mdx", {
+	eager: true,
+	query: {
+		meta: "",
+	},
+})
 
 export default () => {
 	const location = useLocation()
 
 	const data = createServerData$(
 		async (pathname) => {
-			const mod = mods[`./routes${pathname}.mdx`]
+			const mod = mods[`.${pathname}.mdx`]
 
 			return {
 				frontmatter: !mod ? null : mod.getFrontMatter(),
