@@ -4,8 +4,7 @@
 	"extends": [
 		"eslint:recommended",
 		"plugin:solid/typescript",
-		"prettier",
-		"plugin:astro/recommended"
+		"prettier"
 	],
 	"plugins": [
 		"solid",
@@ -15,23 +14,4 @@
 		"@typescript-eslint/consistent-type-imports": "error"
 	},
 	"parser": "@typescript-eslint/parser",
-	"overrides": [
-		{
-			"files": [
-				"*.astro"
-			],
-			"parser": "astro-eslint-parser",
-			"parserOptions": {
-				"parser": "@typescript-eslint/parser",
-				"extraFileExtensions": [
-					".astro"
-				]
-			},
-			"rules": {
-				"solid/prefer-for": "off",
-				"no-undef": "off",
-				"solid/self-closing-comp": "off"
-			}
-		}
-	]
 }

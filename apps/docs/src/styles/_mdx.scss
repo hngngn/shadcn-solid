@@ -6,12 +6,14 @@
 	display: none;
 }
 
-.dark {
-	[data-theme="light"] {
+[data-kb-theme="dark"] {
+	pre[data-theme="light"],
+	div[data-theme="light"] {
 		display: none;
 	}
 
-	[data-theme="dark"] {
+	pre[data-theme="dark"],
+	div[data-theme="dark"] {
 		display: block;
 	}
 }
@@ -72,10 +74,6 @@
 
 [data-metadata] > button {
 	@apply top-16;
-}
-
-p.mdx-p-tag:not(:first-child) {
-	@apply mt-6;
 }
 
 div.mdx-pre-tag {

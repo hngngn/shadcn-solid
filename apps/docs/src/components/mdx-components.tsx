@@ -60,7 +60,7 @@ export const MDXComponent = {
 		return <a class="font-medium underline underline-offset-4" {...props} />
 	},
 	p: (props: ComponentProps<"p">) => {
-		return <p class="leading-7 mdx-p-tag" {...props} />
+		return <p class="leading-7 not-first:mt-6" {...props} />
 	},
 	ul: (props: ComponentProps<"ul">) => {
 		return <ul class="my-6 ml-6 list-disc" {...props} />

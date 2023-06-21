@@ -1,17 +1,20 @@
-import solidMDX from "solid-start-mdx"
 import vercel from "solid-start-vercel"
 import solid from "solid-start/vite"
 import unocss from "unocss/vite"
+import type { Plugin } from "vite"
 import { defineConfig } from "vite"
+import { solidMDX } from "./src/lib"
 
 export default defineConfig({
 	plugins: [
-		await solidMDX(),
+		(await solidMDX()) as Plugin[],
 		solid({
 			extensions: [".mdx", ".md"],
 			adapter: vercel({}),
 		}),
-		unocss(),
+		unocss({
+			configFile: "../../uno.config",
+		}),
 	],
 	ssr: {
 		noExternal: ["@kobalte/core"],

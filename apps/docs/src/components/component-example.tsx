@@ -29,7 +29,7 @@ export const ComponentExample: ParentComponent<ComponentExampleProps> = (
 
 	return (
 		<div
-			class="relative my-4 flex flex-col space-y-2"
+			class="relative my-4 flex flex-col space-y-2 data-theme:mt-5"
 			classList={{
 				[props.class!]: props.class !== undefined,
 			}}
@@ -40,17 +40,17 @@ export const ComponentExample: ParentComponent<ComponentExampleProps> = (
 					<TabsList class="w-full rounded-none bg-transparent p-0!">
 						<TabsTrigger
 							value="preview"
-							class="rounded-none bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none!"
+							class="rounded-none! bg-transparent! px-4! pb-3.5! pt-2! font-semibold! shadow-none!"
 						>
 							Preview
 						</TabsTrigger>
 						<TabsTrigger
 							value="code"
-							class="rounded-none bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none!"
+							class="rounded-none! bg-transparent! px-4! pb-3.5! pt-2! font-semibold! shadow-none!"
 						>
 							Code
 						</TabsTrigger>
-						<TabsIndicator class="bg-black" />
+						<TabsIndicator class="bg-primary" />
 					</TabsList>
 				</div>
 				<TabsContent value="preview" class="rounded-md border">

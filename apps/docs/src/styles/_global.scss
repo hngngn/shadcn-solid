@@ -31,7 +31,7 @@
 	--radius: 0.5rem;
 }
 
-.dark {
+[data-kb-theme="dark"] {
 	--background: 224, 71%, 4%;
 	--foreground: 213, 31%, 91%;
 
@@ -62,6 +62,10 @@
 	--ring: 216, 34%, 17%;
 
 	--radius: 0.5rem;
+}
+
+* {
+	@apply border-border;
 }
 
 body {

@@ -1,4 +1,4 @@
-import type { Component } from "solid-js"
+import type { Component, ParentComponent } from "solid-js"
 import { splitProps } from "solid-js"
 
 import { Accordion as AccordionPrimitive } from "@kobalte/core"
@@ -20,14 +20,14 @@ export const AccordionItem: Component<AccordionPrimitive.AccordionItemProps> = (
 	)
 }
 
-export const AccordionTrigger: Component<
+export const AccordionTrigger: ParentComponent<
 	AccordionPrimitive.AccordionTriggerProps
 > = (props) => {
 	const [local, rest] = splitProps(props, ["class", "children"])
 	return (
 		<AccordionPrimitive.Header class="flex" as="div">
 			<AccordionPrimitive.Trigger
-				class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-expanded]>i]:rotate-180 bg-white"
+				class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-expanded]>i]:rotate-180"
 				classList={{
 					[local.class!]: local.class !== undefined,
 				}}
@@ -40,7 +40,7 @@ export const AccordionTrigger: Component<
 	)
 }
 
-export const AccordionContent: Component<
+export const AccordionContent: ParentComponent<
 	AccordionPrimitive.AccordionContentProps
 > = (props) => {
 	const [local, rest] = splitProps(props, ["class", "children"])

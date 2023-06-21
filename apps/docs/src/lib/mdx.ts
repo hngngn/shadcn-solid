@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { parse as parseAcorn } from "acorn"
 import { name as isValidIdentifierName } from "estree-util-is-identifier-name"
 import { valueToEstree } from "estree-util-value-to-estree"
@@ -5,6 +7,7 @@ import fs from "fs"
 import Slugger from "github-slugger"
 import path from "path"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
+import type { VisitableElement } from "rehype-pretty-code"
 import rehypePrettyCode from "rehype-pretty-code"
 import rehypeSlug from "rehype-slug"
 import remarkCodeImport from "remark-code-import"
@@ -14,7 +17,7 @@ import { u } from "unist-builder"
 import { visit } from "unist-util-visit"
 import { parse as parseYaml } from "yaml"
 
-export default async () => {
+export const solidMDX = async () => {
 	const cache = new Map()
 	const headingsCache = new Map()
 	const frontMatterCache = new Map()
@@ -183,7 +186,8 @@ export default async () => {
 				jsToTreeNode(
 					`export const getHeadings = () => {
 						return ${JSON.stringify(headings)}
-					}`
+					}`,
+					null
 				)
 			)
 		}
@@ -346,15 +350,15 @@ export default async () => {
 								)
 							),
 						},
-						onVisitLine(node) {
+						onVisitLine(node: VisitableElement) {
 							if (node.children.length === 0) {
 								node.children = [{ type: "text", value: " " }]
 							}
 						},
-						onVisitHighlightedLine(node) {
+						onVisitHighlightedLine(node: VisitableElement) {
 							node.properties.className?.push("line--highlighted")
 						},
-						onVisitHighlightedWord(node) {
+						onVisitHighlightedWord(node: VisitableElement) {
 							node.properties.className = ["word--highlighted"]
 						},
 					},

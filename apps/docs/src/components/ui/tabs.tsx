@@ -6,9 +6,10 @@ import type {
 	TabsRootProps,
 	TabsTriggerProps,
 } from "@kobalte/core/dist/types/tabs"
-import { splitProps, type Component } from "solid-js"
+import type { ParentComponent } from "solid-js"
+import { splitProps } from "solid-js"
 
-export const Tabs: Component<TabsRootProps> = (props) => {
+export const Tabs: ParentComponent<TabsRootProps> = (props) => {
 	const [local, rest] = splitProps(props, ["class"])
 	return (
 		<TabsPrimitive.Root
@@ -21,7 +22,7 @@ export const Tabs: Component<TabsRootProps> = (props) => {
 	)
 }
 
-export const TabsList: Component<TabsListProps> = (props) => {
+export const TabsList: ParentComponent<TabsListProps> = (props) => {
 	const [local, rest] = splitProps(props, ["class"])
 	return (
 		<TabsPrimitive.List
@@ -34,7 +35,7 @@ export const TabsList: Component<TabsListProps> = (props) => {
 	)
 }
 
-export const TabsContent: Component<TabsContentProps> = (props) => {
+export const TabsContent: ParentComponent<TabsContentProps> = (props) => {
 	const [local, rest] = splitProps(props, ["class"])
 	return (
 		<TabsPrimitive.Content
@@ -47,7 +48,7 @@ export const TabsContent: Component<TabsContentProps> = (props) => {
 	)
 }
 
-export const TabsTrigger: Component<TabsTriggerProps> = (props) => {
+export const TabsTrigger: ParentComponent<TabsTriggerProps> = (props) => {
 	const [local, rest] = splitProps(props, ["class"])
 	return (
 		<TabsPrimitive.Trigger
@@ -60,7 +61,7 @@ export const TabsTrigger: Component<TabsTriggerProps> = (props) => {
 	)
 }
 
-export const TabsIndicator: Component<TabsIndicatorProps> = (props) => {
+export const TabsIndicator: ParentComponent<TabsIndicatorProps> = (props) => {
 	const [local, rest] = splitProps(props, ["class"])
 	return (
 		<TabsPrimitive.Indicator

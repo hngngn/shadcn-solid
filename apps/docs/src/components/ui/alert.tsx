@@ -1,7 +1,7 @@
 import { Alert as AlertPrimitive } from "@kobalte/core"
 import type { AlertRootProps } from "@kobalte/core/dist/types/alert"
 import { cva } from "class-variance-authority"
-import type { Component, ComponentProps } from "solid-js"
+import type { ComponentProps, ParentComponent } from "solid-js"
 import { splitProps } from "solid-js"
 
 const alertVariants = cva(
@@ -11,7 +11,7 @@ const alertVariants = cva(
 			variant: {
 				default: "bg-background text-foreground",
 				destructive:
-					"text-destructive border-destructive/50 dark:border-destructive [&>i]:text-destructive! text-destructive",
+					"text-destructive border-destructive/50 @dark:border-destructive [&>i]:text-destructive!  text-destructive",
 			},
 		},
 		defaultVariants: {
@@ -20,7 +20,7 @@ const alertVariants = cva(
 	}
 )
 
-export const Alert: Component<
+export const Alert: ParentComponent<
 	AlertRootProps & {
 		variant?: "default" | "destructive" | null
 	}
@@ -38,7 +38,7 @@ export const Alert: Component<
 	)
 }
 
-export const AlertTitle: Component<ComponentProps<"div">> = (props) => {
+export const AlertTitle: ParentComponent<ComponentProps<"div">> = (props) => {
 	const [local, rest] = splitProps(props, ["class"])
 
 	return (
@@ -52,7 +52,9 @@ export const AlertTitle: Component<ComponentProps<"div">> = (props) => {
 	)
 }
 
-export const AlertDescription: Component<ComponentProps<"div">> = (props) => {
+export const AlertDescription: ParentComponent<ComponentProps<"div">> = (
+	props
+) => {
 	const [local, rest] = splitProps(props, ["class"])
 
 	return (
