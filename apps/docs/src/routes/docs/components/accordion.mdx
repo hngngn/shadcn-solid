@@ -1,0 +1,72 @@
+---
+title: Accordion
+description: A vertically stacked set of interactive headings that each reveal a section of content.
+component: true
+---
+
+<ComponentExample src="/src/components/examples/accordion/demo.tsx">
+	<div className="max-w-[70%] w-full">
+		<AccordionDemo />
+	</div>
+</ComponentExample>
+
+## Installation
+
+1. Install the `@kobalte/core` component from kobalte:
+
+```bash
+pnpm add @kobalte/core
+```
+
+2. Copy and paste the following code into your project.
+
+<ComponentSource src="/src/components/ui/accordion.tsx" />
+
+## uno.config.ts
+
+Add the following animations to your `uno.config.ts` file:
+
+```tsx title="uno.config.ts" {3-18}
+export default defineConfig({
+	theme: {
+		animation: {
+			keyframes: {
+				"accordion-down":
+					"{ from { height: 0 } to { height: var(--kb-accordion-content-height) }}",
+				"accordion-up":
+					"{ from { height: var(--kb-accordion-content-height) } to { height: 0 }}",
+			},
+			durations: {
+				"accordion-down": "200ms",
+				"accordion-up": "200ms",
+			},
+			timingFns: {
+				"accordion-down": "ease-out",
+				"accordion-up": "ease-out",
+			},
+		},
+	},
+})
+```
+
+## Usage
+
+```tsx
+import {
+	Accordion,
+	AccordionContent,
+	AccordionItem,
+	AccordionTrigger,
+} from "~/components"
+```
+
+```tsx
+<Accordion collapsible>
+	<AccordionItem value="item-1">
+		<AccordionTrigger>Is it accessible?</AccordionTrigger>
+		<AccordionContent>
+			Yes. It adheres to the WAI-ARIA design pattern.
+		</AccordionContent>
+	</AccordionItem>
+</Accordion>
+```

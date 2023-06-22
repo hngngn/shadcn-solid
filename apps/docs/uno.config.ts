@@ -7,7 +7,6 @@ import {
 	transformerVariantGroup,
 } from "unocss"
 import presetAutoPrefixer from "unocss-preset-autoprefixer"
-import { presetKobalte } from "unocss-preset-primitives"
 import type { Theme } from "unocss/preset-uno"
 import { presetDarkMode } from "./src/lib"
 
@@ -28,19 +27,10 @@ export default defineConfig<Theme>({
 		}),
 		presetIcons({
 			extraProperties: {
-				display: "inline-block",
-				"vertical-align": "middle",
-			},
-			customizations: {
-				iconCustomizer(collection, icon, props) {
-					if (collection === "lucide") {
-						props.width = "1rem"
-						props.height = "1rem"
-					}
-				},
+				width: "1rem",
+				height: "1rem",
 			},
 		}),
-		presetKobalte(),
 	],
 	transformers: [transformerDirectives(), transformerVariantGroup()],
 	theme: {
@@ -97,14 +87,30 @@ export default defineConfig<Theme>({
 					"{ from { height: 0 } to { height: var(--kb-accordion-content-height) }}",
 				"accordion-up":
 					"{ from { height: var(--kb-accordion-content-height) } to { height: 0 }}",
+				"collapsible-down":
+					"{ from { height: 0 } to { height: var(--kb-collapsible-content-height) }}",
+				"collapsible-up":
+					"{ from { height: var(--kb-collapsible-content-height) } to { height: 0 }}",
+				"dropdown-show":
+					"{ from { opacity: 0; transform: scale(0.96) } to { opacity: 1; transform: scale(1) }}",
+				"dropdown-hide":
+					"{ from { opacity: 1; transform: scale(1) } to { opacity: 0; transform: scale(0.96) }}",
 			},
 			durations: {
 				"accordion-down": "200ms",
 				"accordion-up": "200ms",
+				"collapsible-down": "200ms",
+				"collapsible-up": "200ms",
+				"dropdown-show": "200ms",
+				"dropdown-hide": "200ms",
 			},
 			timingFns: {
 				"accordion-down": "ease-out",
 				"accordion-up": "ease-out",
+				"collapsible-down": "ease-out",
+				"collapsible-up": "ease-out",
+				"dropdown-show": "ease-out",
+				"dropdown-hide": "ease-out",
 			},
 		},
 	},

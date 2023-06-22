@@ -1,4 +1,5 @@
 export * from "./component-example"
+export * from "./component-source"
 export * from "./copy-button"
 export * from "./examples"
 export * from "./logo"

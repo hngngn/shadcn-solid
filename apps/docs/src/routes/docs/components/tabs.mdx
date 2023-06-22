@@ -1,0 +1,40 @@
+---
+title: Tabs
+description: A set of layered sections of content—known as tab panels—that are displayed one at a time.
+component: true
+---
+
+<ComponentExample src="/src/components/examples/tabs/demo.tsx">
+	<TabsDemo />
+</ComponentExample>
+
+## Installation
+
+1. Install the `@kobalte/core` component from kobalte:
+
+```bash
+pnpm add @kobalte/core
+```
+
+2. Copy and paste the following code into your project.
+
+<ComponentSource src="/src/components/ui/tabs.tsx" />
+
+## Usage
+
+```tsx
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components"
+```
+
+```tsx
+<Tabs defaultValue="account" className="w-400px">
+	<TabsList>
+		<TabsTrigger value="account">Account</TabsTrigger>
+		<TabsTrigger value="password">Password</TabsTrigger>
+	</TabsList>
+	<TabsContent value="account">
+		Make changes to your account here.
+	</TabsContent>
+	<TabsContent value="password">Change your password here.</TabsContent>
+</Tabs>
+```

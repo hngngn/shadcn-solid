@@ -17,9 +17,10 @@ const mods = /*#__PURE__*/ import.meta.glob<
 			title: string
 			description: string
 			component?: boolean
-			source?: string
-			kobalte?: string
-			external?: string
+			kobalte?: {
+				link: string
+				api: string
+			}
 		}
 	}
 >("./docs/**/*.mdx", {

@@ -8,6 +8,7 @@ import {
 	AlertDescription,
 	AlertTitle,
 	ComponentExample,
+	ComponentSource,
 	CopyButton,
 	example,
 } from "~/components"
@@ -110,5 +111,6 @@ export const MDXComponent = {
 	AccordionTrigger,
 	AccordionContent,
 	ComponentExample,
+	ComponentSource,
 	...example,
 }

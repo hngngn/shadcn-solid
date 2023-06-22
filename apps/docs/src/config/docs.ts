@@ -84,17 +84,15 @@ export const docsConfig: TDocsConfig = {
 			items: [
 				{
 					title: "Accordion",
-					href: "#",
+					href: "/docs/components/accordion",
 					items: [],
-					label: "Soon",
-					disabled: true,
+					label: "New",
 				},
 				{
 					title: "Alert",
-					href: "#",
+					href: "/docs/components/alert",
 					items: [],
-					label: "Soon",
-					disabled: true,
+					label: "New",
 				},
 				{
 					title: "Alert Dialog",
@@ -105,10 +103,9 @@ export const docsConfig: TDocsConfig = {
 				},
 				{
 					title: "Button",
-					href: "#",
+					href: "/docs/components/button",
 					items: [],
-					label: "Soon",
-					disabled: true,
+					label: "New",
 				},
 				{
 					title: "Checkbox",
@@ -119,10 +116,9 @@ export const docsConfig: TDocsConfig = {
 				},
 				{
 					title: "Collapsible",
-					href: "#",
+					href: "/docs/components/collapsible",
 					items: [],
-					label: "Soon",
-					disabled: true,
+					label: "New",
 				},
 				{
 					title: "Combobox",
@@ -154,10 +150,15 @@ export const docsConfig: TDocsConfig = {
 				},
 				{
 					title: "Dropdown Menu",
-					href: "#",
+					href: "/docs/components/dropdown-menu",
 					items: [],
-					label: "Soon",
-					disabled: true,
+					label: "New",
+				},
+				{
+					title: "Card",
+					href: "/docs/components/card",
+					items: [],
+					label: "New",
 				},
 				{
 					title: "Hover Card",
@@ -168,10 +169,9 @@ export const docsConfig: TDocsConfig = {
 				},
 				{
 					title: "Text Field",
-					href: "#",
+					href: "/docs/components/textfield",
 					items: [],
-					label: "Soon",
-					disabled: true,
+					label: "New",
 				},
 				{
 					title: "Image",
@@ -210,10 +210,9 @@ export const docsConfig: TDocsConfig = {
 				},
 				{
 					title: "Separator",
-					href: "#",
+					href: "/docs/components/separator",
 					items: [],
-					label: "Soon",
-					disabled: true,
+					label: "New",
 				},
 				{
 					title: "Skeleton",
@@ -224,17 +223,15 @@ export const docsConfig: TDocsConfig = {
 				},
 				{
 					title: "Switch",
-					href: "#",
+					href: "/docs/components/switch",
 					items: [],
-					label: "Soon",
-					disabled: true,
+					label: "New",
 				},
 				{
 					title: "Tabs",
-					href: "#",
+					href: "/docs/components/tabs",
 					items: [],
-					label: "Soon",
-					disabled: true,
+					label: "New",
 				},
 				{
 					title: "Textarea",

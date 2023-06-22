@@ -46,7 +46,7 @@ export const AccordionContent: ParentComponent<
 	const [local, rest] = splitProps(props, ["class", "children"])
 	return (
 		<AccordionPrimitive.Content
-			class="overflow-hidden text-sm transition-all animate-accordion-up ui-expanded:animate-accordion-down"
+			class="overflow-hidden text-sm transition-all animate-accordion-up data-[expanded]:animate-accordion-down"
 			classList={{
 				[local.class!]: local.class !== undefined,
 			}}

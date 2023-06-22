@@ -26,7 +26,7 @@ export const TabsList: ParentComponent<TabsListProps> = (props) => {
 	const [local, rest] = splitProps(props, ["class"])
 	return (
 		<TabsPrimitive.List
-			class="relative flex data-[orientation=horizontal]:(items-center border-b) data-[orientation=vertical]: (flex-col items-stretch border-r) h-10 rounded-md bg-muted p-1 text-muted-foreground"
+			class="relative flex data-[orientation=horizontal]:(items-center border-b) data-[orientation=vertical]:(flex-col items-stretch border-r) h-10 rounded-md bg-muted p-1 text-muted-foreground"
 			classList={{
 				[local.class!]: local.class !== undefined,
 			}}
@@ -52,7 +52,7 @@ export const TabsTrigger: ParentComponent<TabsTriggerProps> = (props) => {
 	const [local, rest] = splitProps(props, ["class"])
 	return (
 		<TabsPrimitive.Trigger
-			class="flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium   ring-offset-background transition-all focus-visible:(outline-none ring-2 ring-ring ring-offset-2) disabled: (pointer-events-none opacity-50) ui-disabled:bg-background ui-selected:(text-foreground shadow-sm)"
+			class="inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:(outline-none ring-2 ring-ring ring-offset-2) disabled:(pointer-events-none opacity-50) data-[selected]:(bg-background text-foreground shadow-sm)"
 			classList={{
 				[local.class!]: local.class !== undefined,
 			}}

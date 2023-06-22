@@ -1,0 +1,35 @@
+---
+title: Switch
+description: A control that allows the user to toggle between checked and not checked.
+component: true
+---
+
+<ComponentExample src="/src/components/examples/switch/demo.tsx">
+	<SwitchDemo />
+</ComponentExample>
+
+## Installation
+
+1. Install the `@kobalte/core` component from kobalte:
+
+```bash
+pnpm add @kobalte/core
+```
+
+2. Copy and paste the following code into your project.
+
+<ComponentSource src="/src/components/ui/switch.tsx" />
+
+## Usage
+
+```tsx
+import { Switch, SwitchControl, SwitchThumb } from "~/components"
+```
+
+```tsx
+<Switch>
+	<SwitchControl>
+		<SwitchThumb />
+	</SwitchControl>
+</Switch>
+```

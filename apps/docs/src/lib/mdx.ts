@@ -322,7 +322,7 @@ export const solidMDX = async () => {
 	let plugin = {
 		...(await import("@mdx-js/rollup")).default({
 			jsx: true,
-			jsxImportSource: "solid-js/h",
+			jsxImportSource: "solid-js",
 			providerImportSource: "solid-mdx",
 			remarkPlugins: [
 				remarkCodeImport,

@@ -1,0 +1,91 @@
+---
+title: TextField
+description: A text input that allow users to input custom text entries with a keyboard.
+component: true
+---
+
+<ComponentExample
+	src="/src/components/examples/textfield/demo.tsx"
+	className="[&_input]:max-w-sm"
+>
+	<TextFieldDemo />
+</ComponentExample>
+
+## Installation
+
+1. Install the `@kobalte/core` component from kobalte:
+
+```bash
+pnpm add @kobalte/core
+```
+
+2. Copy and paste the following code into your project.
+
+<ComponentSource src="/src/components/ui/textfield.tsx" />
+
+## Usage
+
+```tsx
+import { TextFieldRoot, TextFieldInput } from "~/components"
+```
+
+```tsx
+<TextFieldRoot>
+	<TextFieldInput type="email" placeholder="Email" />
+</TextFieldRoot>
+```
+
+## Examples
+
+### Default
+
+<ComponentExample
+	src="/src/components/examples/textfield/demo.tsx"
+	className="[&_input]:max-w-sm"
+>
+	<TextFieldDemo />
+</ComponentExample>
+
+---
+
+### Disabled
+
+<ComponentExample
+  src="/src/components/examples/textfield/disabled.tsx"
+  className="[&_input]:max-w-sm"
+>
+
+  <TextFieldDisabled />
+</ComponentExample>
+
+---
+
+### With Label
+
+<ComponentExample src="/src/components/examples/textfield/with-label.tsx">
+	<TextFieldWithLabel />
+</ComponentExample>
+
+---
+
+### With Text
+
+<ComponentExample src="/src/components/examples/textfield/with-text.tsx">
+	<TextFieldWithText />
+</ComponentExample>
+
+---
+
+### With Button
+
+<ComponentExample src="/src/components/examples/textfield/with-button.tsx">
+	<TextFieldWithButton />
+</ComponentExample>
+
+---
+
+### File
+
+<ComponentExample src="/src/components/examples/textfield/file.tsx">
+	<TextFieldFile />
+</ComponentExample>

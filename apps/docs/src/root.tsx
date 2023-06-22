@@ -5,6 +5,7 @@ import {
 	cookieStorageManagerSSR,
 } from "@kobalte/core"
 import { Suspense, useContext } from "solid-js"
+import { isServer } from "solid-js/web"
 import { MDXProvider } from "solid-mdx"
 import {
 	Body,
@@ -21,7 +22,6 @@ import {
 import { MDXComponent, SiteFooter, SiteHeader } from "~/components"
 
 import "@unocss/reset/tailwind.css"
-import { isServer } from "solid-js/web"
 import "virtual:uno.css"
 import "~/styles/index.scss"
 
@@ -43,22 +43,22 @@ const Root = () => {
 				/>
 			</Head>
 			<Body class="font-sans antialiased bg-background text-foreground min-h-screen">
-				<ColorModeScript storageType={storageManager.type} />
-				<ColorModeProvider storageManager={storageManager}>
-					<SiteHeader />
-					<ErrorBoundary>
-						<Suspense>
-							<MDXProvider components={MDXComponent}>
+				<ErrorBoundary>
+					<ColorModeScript storageType={storageManager.type} />
+					<Suspense>
+						<ColorModeProvider storageManager={storageManager}>
+							<SiteHeader />
+							<MDXProvider components={{ ...MDXComponent }}>
 								<div class="min-h-[calc(100vh-57px-97px)]">
 									<Routes>
 										<FileRoutes />
 									</Routes>
 								</div>
+								<SiteFooter />
 							</MDXProvider>
-						</Suspense>
-					</ErrorBoundary>
-					<SiteFooter />
-				</ColorModeProvider>
+						</ColorModeProvider>
+					</Suspense>
+				</ErrorBoundary>
 				<Scripts />
 			</Body>
 		</Html>

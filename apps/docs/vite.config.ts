@@ -9,12 +9,10 @@ export default defineConfig({
 	plugins: [
 		(await solidMDX()) as Plugin[],
 		solid({
-			extensions: [".mdx", ".md"],
+			extensions: [".mdx"],
 			adapter: vercel({}),
 		}),
-		unocss({
-			configFile: "../../uno.config",
-		}),
+		unocss(),
 	],
 	ssr: {
 		noExternal: ["@kobalte/core"],
