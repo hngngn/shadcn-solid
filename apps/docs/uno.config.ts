@@ -110,7 +110,10 @@ export default defineConfig<Theme>({
 				"collapsible-down": "ease-out",
 				"collapsible-up": "ease-out",
 				"dropdown-show": "ease-out",
-				"dropdown-hide": "ease-out",
+				"dropdown-hide": "ease-in",
+			},
+			counts: {
+				"dropdown-hide": "forwards",
 			},
 		},
 	},

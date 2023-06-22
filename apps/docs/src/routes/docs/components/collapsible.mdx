@@ -20,6 +20,33 @@ pnpm add @kobalte/core
 
 <ComponentSource src="/src/components/ui/collapsible.tsx" />
 
+## uno.config.ts
+
+Add the following animations to your `uno.config.ts` file:
+
+```tsx title="uno.config.ts" {3-18}
+export default defineConfig({
+	theme: {
+		animation: {
+			keyframes: {
+				"collapsible-down":
+					"{ from { height: 0 } to { height: var(--kb-collapsible-content-height) }}",
+				"collapsible-up":
+					"{ from { height: var(--kb-collapsible-content-height) } to { height: 0 }}",
+			},
+			durations: {
+				"collapsible-down": "200ms",
+				"collapsible-up": "200ms",
+			},
+			timingFns: {
+				"collapsible-down": "ease-out",
+				"collapsible-up": "ease-out",
+			},
+		},
+	},
+})
+```
+
 ## Usage
 
 ```tsx
