@@ -1,5 +1,4 @@
 import { Alert as AlertPrimitive } from "@kobalte/core"
-import type { AlertRootProps } from "@kobalte/core/dist/types/alert"
 import { cva } from "class-variance-authority"
 import type { ComponentProps, ParentComponent } from "solid-js"
 import { splitProps } from "solid-js"
@@ -21,7 +20,7 @@ const alertVariants = cva(
 )
 
 export const Alert: ParentComponent<
-	AlertRootProps & {
+	AlertPrimitive.AlertRootProps & {
 		variant?: "default" | "destructive" | null
 	}
 > = (props) => {
