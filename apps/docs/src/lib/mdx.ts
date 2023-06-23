@@ -13,6 +13,7 @@ import rehypeSlug from "rehype-slug"
 import remarkCodeImport from "remark-code-import"
 import remarkFrontmatter from "remark-frontmatter"
 import remarkGFM from "remark-gfm"
+import { getHighlighter, loadTheme } from "shiki"
 import { u } from "unist-builder"
 import { visit } from "unist-util-visit"
 import { parse as parseYaml } from "yaml"
@@ -336,19 +337,14 @@ export const solidMDX = async () => {
 				[
 					rehypePrettyCode,
 					{
-						theme: {
-							dark: JSON.parse(
-								fs.readFileSync(
-									path.resolve("./src/lib/themes/dark.json"),
-									"utf-8"
+						getHighlighter: async () => {
+							const theme = await loadTheme(
+								path.join(
+									process.cwd(),
+									"./src/lib/themes/dark.json"
 								)
-							),
-							light: JSON.parse(
-								fs.readFileSync(
-									path.resolve("./src/lib/themes/light.json"),
-									"utf-8"
-								)
-							),
+							)
+							return await getHighlighter({ theme })
 						},
 						onVisitLine(node: VisitableElement) {
 							if (node.children.length === 0) {

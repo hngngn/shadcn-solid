@@ -16,6 +16,10 @@
 	div[data-theme="dark"] {
 		display: block;
 	}
+
+	& [data-rehype-pretty-code-fragment] .word--highlighted {
+		@apply bg-zinc-900;
+	}
 }
 
 [data-rehype-pretty-code-fragment] {
@@ -46,30 +50,23 @@
 	}
 
 	.line--highlighted {
-		@apply bg-muted;
-	}
-
-	.line-highlighted span {
-		@apply relative;
+		@apply bg-zinc-700/50;
+		& span {
+			@apply relative;
+		}
 	}
 
 	.word--highlighted {
-		@apply rounded-md bg-muted border-muted border p-1;
-	}
-
-	.dark & {
-		.word--highlighted {
-			@apply bg-zinc-900;
-		}
+		@apply rounded-md bg-zinc-700/50 border-zinc-700/70 p-1;
 	}
 }
 
 [data-rehype-pretty-code-title] {
 	@apply mt-2 pt-6 px-4 text-sm font-medium;
-}
 
-[data-rehype-pretty-code-title] + pre {
-	@apply mt-2;
+	+ pre {
+		@apply mt-2;
+	}
 }
 
 [data-metadata] > button {

@@ -11,7 +11,8 @@
 		"@typescript-eslint"
 	],
 	"rules": {
-		"@typescript-eslint/consistent-type-imports": "error"
+		"@typescript-eslint/consistent-type-imports": "error",
+		"no-undef": "off"
 	},
-	"parser": "@typescript-eslint/parser",
+	"parser": "@typescript-eslint/parser"
 }
