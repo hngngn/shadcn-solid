@@ -49,10 +49,12 @@ const Root = () => {
 						<ColorModeProvider storageManager={storageManager}>
 							<SiteHeader />
 							<MDXProvider components={{ ...MDXComponent }}>
-								<div class="min-h-[calc(100vh-57px-97px)]">
-									<Routes>
-										<FileRoutes />
-									</Routes>
+								<div class="flex-1">
+									<div class="border-b">
+										<Routes>
+											<FileRoutes />
+										</Routes>
+									</div>
 								</div>
 								<SiteFooter />
 							</MDXProvider>

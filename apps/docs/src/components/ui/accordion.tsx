@@ -27,7 +27,7 @@ export const AccordionTrigger: ParentComponent<
 	return (
 		<AccordionPrimitive.Header class="flex" as="div">
 			<AccordionPrimitive.Trigger
-				class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-expanded]>i]:rotate-180"
+				class="flex flex-1 items-center justify-between py-5 font-medium transition-all hover:underline [&[data-expanded]>i]:rotate-180 text-sm"
 				classList={{
 					[local.class!]: local.class !== undefined,
 				}}

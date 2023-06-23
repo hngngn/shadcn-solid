@@ -51,8 +51,8 @@ export default () => {
 		<>
 			<Title>{`${data()?.frontmatter?.title} - shadcn-solid`}</Title>
 			<div class="container flex-1 items-start md:(grid grid-cols-[220px_minmax(0,1fr)] gap-6) lg:(grid-cols-[240px_minmax(0,1fr)] gap-10)">
-				<aside class="fixed top-14 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 overflow-y-auto border-r md:(sticky block)">
-					<div class="py-6 pr-6 lg:py-8">
+				<aside class="fixed top-14 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 hover:overflow-y-auto overflow-hidden [scrollbar-gutter:stable] scrollbar-w-2 md:(sticky block)">
+					<div class="h-full py-6 px-6 lg:py-8">
 						<Sidebar />
 					</div>
 				</aside>
@@ -79,8 +79,7 @@ export default () => {
 								</p>
 							</Show>
 						</div>
-						<Separator class="my-4 md:my-6" />
-						<div class="max-w-full">
+						<div class="max-w-full pb-12 pt-8">
 							<Outlet />
 						</div>
 						<Separator class="my-4 md:my-6" />

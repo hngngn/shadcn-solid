@@ -82,7 +82,7 @@ div.mdx-pre-tag {
 		counter-increment: step;
 
 		::before {
-			@apply content-[counter(step)] absolute w-8 h-8 bg-muted rounded-full font-medium text-center text-base inline-flex items-center justify-center -indent-px -ml-48px;
+			@apply content-[counter(step)] absolute w-9 h-9 bg-muted rounded-full font-mono font-medium text-center text-base inline-flex items-center justify-center -indent-px border-4 border-background -ml-50px -mt-4px;
 		}
 	}
 }

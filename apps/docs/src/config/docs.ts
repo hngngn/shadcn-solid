@@ -19,10 +19,6 @@ export const docsConfig: TDocsConfig = {
 			title: "Examples",
 			href: "/examples/dashboard",
 		},
-		{
-			title: "Figma",
-			href: "/docs/figma",
-		},
 	],
 	sidebarNav: [
 		{

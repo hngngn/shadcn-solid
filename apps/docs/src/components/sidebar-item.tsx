@@ -22,7 +22,7 @@ export const SidebarItem: Component<Props> = (props) => {
 						<Match when={item.href}>
 							<A
 								href={item.href!}
-								class="flex w-full items-center rounded-md border border-transparent p-2 hover:underline"
+								class="flex w-full items-center rounded-md border border-transparent px-2 py-1.2 hover:underline"
 								classList={{
 									"cursor-not-allowed opacity-60":
 										item.disabled,
