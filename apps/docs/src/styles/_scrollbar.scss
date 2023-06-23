@@ -1,7 +1,15 @@
 ::-webkit-scrollbar {
 	@apply w-4.8;
 
+	&-corner {
+		@apply bg-transparent;
+	}
+
 	&-thumb {
 		@apply bg-border rounded-full border-6 border-solid border-transparent bg-clip-content;
+
+		&:horizontal {
+			@apply border-5;
+		}
 	}
 }
