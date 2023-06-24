@@ -47,17 +47,19 @@ const Root = () => {
 					<ColorModeScript storageType={storageManager.type} />
 					<Suspense>
 						<ColorModeProvider storageManager={storageManager}>
-							<SiteHeader />
-							<MDXProvider components={{ ...MDXComponent }}>
-								<div class="flex-1">
-									<div class="border-b">
-										<Routes>
-											<FileRoutes />
-										</Routes>
+							<div class="relative flex min-h-screen flex-col">
+								<SiteHeader />
+								<MDXProvider components={{ ...MDXComponent }}>
+									<div class="flex-1">
+										<div class="border-b">
+											<Routes>
+												<FileRoutes />
+											</Routes>
+										</div>
 									</div>
-								</div>
+								</MDXProvider>
 								<SiteFooter />
-							</MDXProvider>
+							</div>
 						</ColorModeProvider>
 					</Suspense>
 				</ErrorBoundary>

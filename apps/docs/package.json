@@ -1,7 +1,7 @@
 {
 	"name": "docs",
 	"scripts": {
-		"dev": "solid-start dev",
+		"dev": "solid-start dev --host",
 		"build": "solid-start build",
 		"start": "solid-start start",
 		"lint": "eslint \"src/**/*.{ts,tsx}\"",
