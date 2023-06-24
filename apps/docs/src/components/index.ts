@@ -1,4 +1,5 @@
 export * from "./close"
+export * from "./code-block-wrapper"
 export * from "./component-example"
 export * from "./component-source"
 export * from "./copy-button"
