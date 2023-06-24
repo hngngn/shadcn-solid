@@ -5,6 +5,7 @@ import * as card from "./card"
 import * as collapsible from "./collapsible"
 import * as dropdownMenu from "./dropdown-menu"
 import * as separator from "./separator"
+import * as sheet from "./sheet"
 import * as switchComponent from "./switch"
 import * as tabs from "./tabs"
 import * as textfield from "./textfield"
@@ -22,4 +23,5 @@ export const example = {
 	...textfield,
 	...card,
 	...switchComponent,
+	...sheet,
 }

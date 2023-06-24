@@ -82,13 +82,11 @@ export const docsConfig: TDocsConfig = {
 					title: "Accordion",
 					href: "/docs/components/accordion",
 					items: [],
-					label: "New",
 				},
 				{
 					title: "Alert",
 					href: "/docs/components/alert",
 					items: [],
-					label: "New",
 				},
 				{
 					title: "Alert Dialog",
@@ -101,7 +99,6 @@ export const docsConfig: TDocsConfig = {
 					title: "Button",
 					href: "/docs/components/button",
 					items: [],
-					label: "New",
 				},
 				{
 					title: "Checkbox",
@@ -114,7 +111,6 @@ export const docsConfig: TDocsConfig = {
 					title: "Collapsible",
 					href: "/docs/components/collapsible",
 					items: [],
-					label: "New",
 				},
 				{
 					title: "Combobox",
@@ -145,16 +141,20 @@ export const docsConfig: TDocsConfig = {
 					disabled: true,
 				},
 				{
+					title: "Sheet",
+					href: "/docs/components/sheet",
+					items: [],
+					label: "New",
+				},
+				{
 					title: "Dropdown Menu",
 					href: "/docs/components/dropdown-menu",
 					items: [],
-					label: "New",
 				},
 				{
 					title: "Card",
 					href: "/docs/components/card",
 					items: [],
-					label: "New",
 				},
 				{
 					title: "Hover Card",
@@ -167,7 +167,6 @@ export const docsConfig: TDocsConfig = {
 					title: "Text Field",
 					href: "/docs/components/textfield",
 					items: [],
-					label: "New",
 				},
 				{
 					title: "Image",
@@ -208,7 +207,6 @@ export const docsConfig: TDocsConfig = {
 					title: "Separator",
 					href: "/docs/components/separator",
 					items: [],
-					label: "New",
 				},
 				{
 					title: "Skeleton",
@@ -221,13 +219,11 @@ export const docsConfig: TDocsConfig = {
 					title: "Switch",
 					href: "/docs/components/switch",
 					items: [],
-					label: "New",
 				},
 				{
 					title: "Tabs",
 					href: "/docs/components/tabs",
 					items: [],
-					label: "New",
 				},
 				{
 					title: "Textarea",
