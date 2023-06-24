@@ -20,7 +20,7 @@ export const CopyButton: Component<Props> = (props) => {
 		<Button
 			size="icon"
 			variant="ghost"
-			class="z-20 inline-flex h-6 w-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50 absolute right-4 top-4"
+			class="z-10 h-6! w-6! text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50 absolute right-4 top-4"
 			onClick={copyToClipboard}
 		>
 			<span class="sr-only">Copy</span>

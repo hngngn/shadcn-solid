@@ -45,7 +45,7 @@ export const TextFieldInput: ParentComponent<
 	const [local, rest] = splitProps(props, ["class"])
 	return (
 		<TextFieldPrimitive.Input
-			class="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+			class="flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm transition-colors file:(border-0 bg-transparent text-sm font-medium) placeholder:text-muted-foreground disabled:(cursor-not-allowed opacity-50) outline-none focus-visible:(ring ring-ring)"
 			classList={{
 				[local.class!]: local.class !== undefined,
 			}}
@@ -60,7 +60,7 @@ export const TextFieldTextArea: ParentComponent<
 	const [local, rest] = splitProps(props, ["class"])
 	return (
 		<TextFieldPrimitive.TextArea
-			class="flex min-h-80px w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+			class="flex min-h-60px w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground outline-none focus-visible(ring ring-ring) disabled:(cursor-not-allowed opacity-50)"
 			classList={{
 				[local.class!]: local.class !== undefined,
 			}}

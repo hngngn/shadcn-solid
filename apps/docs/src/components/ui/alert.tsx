@@ -4,13 +4,13 @@ import type { ComponentProps, ParentComponent } from "solid-js"
 import { splitProps } from "solid-js"
 
 const alertVariants = cva(
-	"relative w-full rounded-lg border grid p-4 [&>i]:(absolute text-foreground left-4 top-4) [&>i+div]:translate-y--3px [&:has(i)]:pl-11",
+	"relative w-full rounded-lg border px-4 py-3 text-sm [&>i]:(absolute text-foreground left-4 top-3) [&>i+div]:-translate-y-3px [&:has(i)]:pl-11",
 	{
 		variants: {
 			variant: {
 				default: "bg-background text-foreground",
 				destructive:
-					"text-destructive border-destructive/50 dark:border-destructive [&>i]:text-destructive!  text-destructive",
+					"text-destructive border-destructive/50 dark:border-destructive [&>i]:text-destructive!",
 			},
 		},
 		defaultVariants: {
@@ -42,7 +42,7 @@ export const AlertTitle: ParentComponent<ComponentProps<"div">> = (props) => {
 
 	return (
 		<div
-			class="font-medium leading-5.5 tracking-tight"
+			class="font-medium leading-5 tracking-tight"
 			classList={{
 				[local.class!]: local.class !== undefined,
 			}}

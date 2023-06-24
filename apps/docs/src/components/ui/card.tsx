@@ -4,7 +4,7 @@ export const Card: ParentComponent<ComponentProps<"div">> = (props) => {
 	const [local, rest] = splitProps(props, ["class"])
 	return (
 		<div
-			class="rounded-lg border bg-card text-card-foreground shadow-sm"
+			class="rounded-xl border bg-card text-card-foreground shadow"
 			classList={{
 				[local.class!]: local.class !== undefined,
 			}}
@@ -30,7 +30,7 @@ export const CardTitle: ParentComponent<ComponentProps<"h3">> = (props) => {
 	const [local, rest] = splitProps(props, ["class"])
 	return (
 		<h3
-			class="text-lg font-semibold leading-none tracking-tight"
+			class="font-semibold leading-none tracking-tight"
 			classList={{
 				[local.class!]: local.class !== undefined,
 			}}
