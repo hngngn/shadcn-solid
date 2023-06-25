@@ -14,23 +14,13 @@ export const CodeBlockWrapper: ParentComponent<
 	}
 > = (props) => {
 	const merge = mergeProps({ expandButtonTitle: "View Code" }, props)
-	const [local, rest] = splitProps(merge, [
-		"class",
-		"expandButtonTitle",
-		"children",
-	])
+	const [local, rest] = splitProps(merge, ["expandButtonTitle", "children"])
 
 	const [isOpened, setIsOpened] = createSignal(false)
 
 	return (
 		<Collapsible open={isOpened()} onOpenChange={setIsOpened} forceMount>
-			<div
-				class="relative overflow-hidden"
-				classList={{
-					[local.class!]: local.class !== undefined,
-				}}
-				{...rest}
-			>
+			<div class="relative overflow-hidden my-6 rounded-md" {...rest}>
 				<CollapsibleContent class="overflow-hidden max-h-32 [&_pre]:(my-0 max-h-650px pb-15 overflow-hidden data-[expanded]:overflow-auto) data-[expanded]:max-h-full">
 					{local.children}
 				</CollapsibleContent>

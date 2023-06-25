@@ -9,16 +9,10 @@ interface ComponentSourceProps extends ComponentProps<"div"> {
 export const ComponentSource: ParentComponent<ComponentSourceProps> = (
 	props
 ) => {
-	const [local] = splitProps(props, ["children", "class"])
+	const [local] = splitProps(props, ["children"])
 
 	return (
-		<CodeBlockWrapper
-			expandButtonTitle="Expand"
-			class="my-6 overflow-hidden rounded-md"
-			classList={{
-				[local.class!]: local.class !== undefined,
-			}}
-		>
+		<CodeBlockWrapper expandButtonTitle="Expand">
 			{local.children}
 		</CodeBlockWrapper>
 	)

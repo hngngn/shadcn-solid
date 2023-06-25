@@ -100,6 +100,14 @@ export const MDXComponent = {
 			</>
 		)
 	},
+	Step: (props: ComponentProps<"h3">) => {
+		return (
+			<h3
+				class="mt-8 scroll-m-20 text-base font-normal tracking-tight"
+				{...props}
+			/>
+		)
+	},
 	Steps: (props: ComponentProps<"div">) => {
 		return <div class="mb-12 ml-4 border-l pl-8 mdx-pre-tag" {...props} />
 	},
