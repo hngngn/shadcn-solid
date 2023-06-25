@@ -24,19 +24,22 @@ export const SheetOverlay: ParentComponent<
 	)
 }
 
-const sheetVariants = cva("fixed z-50 gap-4 bg-background p-6 shadow-lg", {
-	variants: {
-		side: {
-			top: "inset-x-0 top-0 border-b animate-slide-out-up data-[expanded]:animate-slide-in-down",
-			bottom: "inset-x-0 bottom-0 border-t animate-slide-out-down data-[expanded]:animate-slide-in-up",
-			left: "inset-y-0 left-0 h-full w-3/4 border-r animate-slide-out-left data-[expanded]:animate-slide-in-left sm:max-w-sm",
-			right: "inset-y-0 right-0 h-full w-3/4  border-l animate-slide-out-right data-[expanded]:animate-slide-in-right sm:max-w-sm",
+export const sheetVariants = cva(
+	"fixed z-50 gap-4 bg-background p-6 shadow-lg",
+	{
+		variants: {
+			side: {
+				top: "inset-x-0 top-0 border-b animate-slide-out-up data-[expanded]:animate-slide-in-down",
+				bottom: "inset-x-0 bottom-0 border-t animate-slide-out-down data-[expanded]:animate-slide-in-up",
+				left: "inset-y-0 left-0 h-full w-3/4 border-r animate-slide-out-left data-[expanded]:animate-slide-in-left sm:max-w-sm",
+				right: "inset-y-0 right-0 h-full w-3/4  border-l animate-slide-out-right data-[expanded]:animate-slide-in-right sm:max-w-sm",
+			},
 		},
-	},
-	defaultVariants: {
-		side: "right",
-	},
-})
+		defaultVariants: {
+			side: "right",
+		},
+	}
+)
 
 export const SheetContent: ParentComponent<
 	DialogPrimitive.DialogContentProps & VariantProps<typeof sheetVariants>

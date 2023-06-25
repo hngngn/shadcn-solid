@@ -1,8 +1,15 @@
 import { Show } from "solid-js"
-import { Outlet, Title, useLocation } from "solid-start"
+import { A, Outlet, Title, useLocation } from "solid-start"
 import { createServerData$ } from "solid-start/server"
 import { Balancer } from "solid-wrap-balancer"
-import { DocsPager, Separator, Sidebar, TableOfContents } from "~/components"
+import {
+	DocsPager,
+	KobalteLogo,
+	Separator,
+	Sidebar,
+	TableOfContents,
+	badgeVariants,
+} from "~/components"
 
 const mods = /*#__PURE__*/ import.meta.glob<
 	true,
@@ -77,6 +84,33 @@ export default () => {
 										{data()?.frontmatter?.description}
 									</Balancer>
 								</p>
+							</Show>
+						</div>
+						<div class="flex items-center space-x-2 pt-4">
+							<Show when={data()?.frontmatter?.kobalte?.link}>
+								<A
+									href={data()?.frontmatter?.kobalte?.link!}
+									target="_blank"
+									rel="noreferrer"
+									class={badgeVariants({
+										variant: "secondary",
+									})}
+								>
+									<KobalteLogo class="mr-1 h-2.5 w-2.5" />
+									Kobalte
+								</A>
+							</Show>
+							<Show when={data()?.frontmatter?.kobalte?.api}>
+								<A
+									href={data()?.frontmatter?.kobalte?.api!}
+									target="_blank"
+									rel="noreferrer"
+									class={badgeVariants({
+										variant: "secondary",
+									})}
+								>
+									API Reference
+								</A>
 							</Show>
 						</div>
 						<div class="max-w-full pb-12 pt-8">

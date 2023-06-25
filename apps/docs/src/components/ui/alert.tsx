@@ -3,7 +3,7 @@ import { cva } from "class-variance-authority"
 import type { ComponentProps, ParentComponent } from "solid-js"
 import { splitProps } from "solid-js"
 
-const alertVariants = cva(
+export const alertVariants = cva(
 	"relative w-full rounded-lg border px-4 py-3 text-sm [&>i]:(absolute text-foreground left-4 top-3) [&>i+div]:-translate-y-3px [&:has(i)]:pl-11",
 	{
 		variants: {
