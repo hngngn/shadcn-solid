@@ -43,9 +43,9 @@ const Root = () => {
 				/>
 			</Head>
 			<Body class="font-sans antialiased bg-background text-foreground min-h-screen">
-				<ErrorBoundary>
-					<ColorModeScript storageType={storageManager.type} />
-					<Suspense>
+				<Suspense>
+					<ErrorBoundary>
+						<ColorModeScript storageType={storageManager.type} />
 						<ColorModeProvider storageManager={storageManager}>
 							<div class="relative flex min-h-screen flex-col">
 								<SiteHeader />
@@ -61,8 +61,8 @@ const Root = () => {
 								<SiteFooter />
 							</div>
 						</ColorModeProvider>
-					</Suspense>
-				</ErrorBoundary>
+					</ErrorBoundary>
+				</Suspense>
 				<Scripts />
 			</Body>
 		</Html>

@@ -4,7 +4,6 @@ import { createServerData$ } from "solid-start/server"
 import { Balancer } from "solid-wrap-balancer"
 import {
 	DocsPager,
-	KobalteLogo,
 	Separator,
 	Sidebar,
 	TableOfContents,
@@ -41,16 +40,16 @@ export default () => {
 	const location = useLocation()
 
 	const data = createServerData$(
-		async (pathname) => {
+		async ([pathname]) => {
 			const mod = mods[`.${pathname}.mdx`]
 
 			return {
-				frontmatter: !mod ? null : mod.getFrontMatter(),
-				headings: !mod ? [] : mod.getHeadings(),
+				frontmatter: mod.getFrontMatter(),
+				headings: mod.getHeadings(),
 			}
 		},
 		{
-			key: () => location.pathname,
+			key: () => [location.pathname],
 		}
 	)
 
@@ -99,7 +98,6 @@ export default () => {
 											variant: "secondary",
 										})}
 									>
-										<KobalteLogo class="mr-1 h-2.5 w-2.5" />
 										Kobalte
 									</A>
 								</Show>
