@@ -40,6 +40,11 @@ export const docsConfig: TDocsConfig = {
 					items: [],
 				},
 				{
+					title: "Dark mode",
+					href: "/docs/dark-mode",
+					items: [],
+				},
+				{
 					title: "CLI",
 					href: "#",
 					items: [],

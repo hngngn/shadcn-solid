@@ -1,0 +1,77 @@
+---
+title: Dark Mode
+description: Adding dark mode to your site.
+---
+
+<Steps>
+
+### Wrap your root layout
+
+Add the `ThemeProvider` and `ColorModeScript` to your root.
+
+```tsx {1-18,21-25,39,41-45} title="src/root.tsx"
+import {
+	ColorModeProvider,
+	ColorModeScript,
+	cookieStorageManagerSSR,
+} from "@kobalte/core"
+import { isServer } from "solid-js/web"
+import {
+	Body,
+	ErrorBoundary,
+	FileRoutes,
+	Head,
+	Html,
+	Meta,
+	Routes,
+	Scripts,
+	ServerContext,
+	Title,
+} from "solid-start"
+
+const Root = () => {
+	const event = useContext(ServerContext)
+
+	const storageManager = cookieStorageManagerSSR(
+		isServer ? event?.request.headers.get("cookie") ?? "" : document.cookie
+	)
+
+	return (
+		<Html lang="en">
+			<Head>
+				<Title>shadcn-solid</Title>
+				<Meta charset="utf-8" />
+				<Meta
+					name="viewport"
+					content="width=device-width, initial-scale=1"
+				/>
+			</Head>
+			<Body>
+				<ErrorBoundary>
+					<ColorModeScript storageType={storageManager.type} />
+					<Suspense>
+						<ColorModeProvider storageManager={storageManager}>
+							<Routes>
+								<FileRoutes />
+							</Routes>
+						</ColorModeProvider>
+					</Suspense>
+				</ErrorBoundary>
+				<Scripts />
+			</Body>
+		</Html>
+	)
+}
+
+export default Root
+```
+
+### Add a mode toggle
+
+Place a mode toggle on your site to toggle between light and dark mode.
+
+<ComponentExample src="/src/components/mode-toggle.tsx">
+	<ModeToggle />
+</ComponentExample>
+
+</Steps>

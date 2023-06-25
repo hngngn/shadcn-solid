@@ -12,6 +12,7 @@ import {
 	CopyButton,
 	example,
 } from "~/components"
+import { ModeToggle } from "./mode-toggle"
 
 export const MDXComponent = {
 	h1: (props: ComponentProps<"h1">) => {
@@ -120,5 +121,6 @@ export const MDXComponent = {
 	AccordionContent,
 	ComponentExample,
 	ComponentSource,
+	ModeToggle,
 	...example,
 }

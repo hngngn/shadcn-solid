@@ -1,4 +1,5 @@
 import { As, useColorMode } from "@kobalte/core"
+import { Show } from "solid-js"
 import {
 	Button,
 	DropdownMenu,
@@ -6,17 +7,21 @@ import {
 	DropdownMenuItem,
 	DropdownMenuPortal,
 	DropdownMenuTrigger,
-} from "./ui"
+} from "~/components"
 
 export const ModeToggle = () => {
-	const { setColorMode } = useColorMode()
+	const { setColorMode, colorMode } = useColorMode()
 
 	return (
-		<DropdownMenu>
+		<DropdownMenu gutter={4} placement="bottom-end">
 			<DropdownMenuTrigger asChild>
-				<As component={Button} variant="ghost" class="w-9 px-0">
-					<i class="i-lucide-sun absolute rotate-0 scale-100 transition-all h-18px w-18px dark:(-rotate-90 scale-0)" />
-					<i class="i-lucide-moon absolute rotate-90 scale-0 transition-all h-18px w-18px dark:(rotate-0 scale-100)" />
+				<As component={Button} variant="ghost" size="icon">
+					<Show
+						when={colorMode() === "dark"}
+						fallback={<i class="i-lucide-sun" />}
+					>
+						<i class="i-lucide-moon" />
+					</Show>
 					<span class="sr-only">Toggle theme</span>
 				</As>
 			</DropdownMenuTrigger>
