@@ -86,33 +86,39 @@ export default () => {
 								</p>
 							</Show>
 						</div>
-						<div class="flex items-center space-x-2 pt-4">
-							<Show when={data()?.frontmatter?.kobalte?.link}>
-								<A
-									href={data()?.frontmatter?.kobalte?.link!}
-									target="_blank"
-									rel="noreferrer"
-									class={badgeVariants({
-										variant: "secondary",
-									})}
-								>
-									<KobalteLogo class="mr-1 h-2.5 w-2.5" />
-									Kobalte
-								</A>
-							</Show>
-							<Show when={data()?.frontmatter?.kobalte?.api}>
-								<A
-									href={data()?.frontmatter?.kobalte?.api!}
-									target="_blank"
-									rel="noreferrer"
-									class={badgeVariants({
-										variant: "secondary",
-									})}
-								>
-									API Reference
-								</A>
-							</Show>
-						</div>
+						<Show when={data()?.frontmatter?.kobalte}>
+							<div class="flex items-center space-x-2 pt-4">
+								<Show when={data()?.frontmatter?.kobalte?.link}>
+									<A
+										href={
+											data()?.frontmatter?.kobalte?.link!
+										}
+										target="_blank"
+										rel="noreferrer"
+										class={badgeVariants({
+											variant: "secondary",
+										})}
+									>
+										<KobalteLogo class="mr-1 h-2.5 w-2.5" />
+										Kobalte
+									</A>
+								</Show>
+								<Show when={data()?.frontmatter?.kobalte?.api}>
+									<A
+										href={
+											data()?.frontmatter?.kobalte?.api!
+										}
+										target="_blank"
+										rel="noreferrer"
+										class={badgeVariants({
+											variant: "secondary",
+										})}
+									>
+										API Reference
+									</A>
+								</Show>
+							</div>
+						</Show>
 						<div class="max-w-full pb-12 pt-8">
 							<Outlet />
 						</div>
