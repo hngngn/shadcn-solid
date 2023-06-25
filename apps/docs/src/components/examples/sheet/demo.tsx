@@ -8,9 +8,9 @@ import {
 	SheetHeader,
 	SheetTitle,
 	SheetTrigger,
+	TextField,
 	TextFieldInput,
 	TextFieldLabel,
-	TextFieldRoot,
 } from "~/components"
 
 export const SheetDemo = () => {
@@ -30,16 +30,16 @@ export const SheetDemo = () => {
 					</SheetDescription>
 				</SheetHeader>
 				<div class="grid gap-4 py-4">
-					<TextFieldRoot class="grid! grid-cols-4! items-center! gap-4!">
+					<TextField class="grid grid-cols-3 md:grid-cols-4 items-center gap-4">
 						<TextFieldLabel class="text-right">Name</TextFieldLabel>
-						<TextFieldInput class="col-span-3" />
-					</TextFieldRoot>
-					<TextFieldRoot class="grid! grid-cols-4! items-center! gap-4!">
+						<TextFieldInput class="col-span-2 md:col-span-3" />
+					</TextField>
+					<TextField class="grid grid-cols-3 md:grid-cols-4 items-center gap-4">
 						<TextFieldLabel class="text-right">
-							UserName
+							Username
 						</TextFieldLabel>
-						<TextFieldInput class="col-span-3" />
-					</TextFieldRoot>
+						<TextFieldInput class="col-span-2 md:col-span-3" />
+					</TextField>
 				</div>
 				<SheetFooter>
 					<Button type="submit">Save changes</Button>

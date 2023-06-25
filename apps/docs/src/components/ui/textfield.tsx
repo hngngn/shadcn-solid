@@ -4,21 +4,7 @@ import { splitProps, type ParentComponent } from "solid-js"
 
 export const TextFieldErrorMessage = TextFieldPrimitive.ErrorMessage
 export const TextFieldDescription = TextFieldPrimitive.Description
-
-export const TextFieldRoot: ParentComponent<
-	TextFieldPrimitive.TextFieldRootProps
-> = (props) => {
-	const [local, rest] = splitProps(props, ["class"])
-	return (
-		<TextFieldPrimitive.Root
-			class="flex flex-col gap-4px"
-			classList={{
-				[local.class!]: local.class !== undefined,
-			}}
-			{...rest}
-		/>
-	)
-}
+export const TextField = TextFieldPrimitive.Root
 
 const labelVariants = cva(
 	"text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"

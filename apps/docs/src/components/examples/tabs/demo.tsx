@@ -10,9 +10,9 @@ import {
 	TabsContent,
 	TabsList,
 	TabsTrigger,
+	TextField,
 	TextFieldInput,
 	TextFieldLabel,
-	TextFieldRoot,
 } from "~/components"
 
 export const TabsDemo = () => {
@@ -35,15 +35,15 @@ export const TabsDemo = () => {
 							you're done.
 						</CardDescription>
 					</CardHeader>
-					<CardContent class="space-y-4">
-						<TextFieldRoot class="space-y-1">
+					<CardContent class="space-y-2">
+						<TextField class="space-y-1">
 							<TextFieldLabel>Name</TextFieldLabel>
 							<TextFieldInput />
-						</TextFieldRoot>
-						<TextFieldRoot class="space-y-1">
+						</TextField>
+						<TextField class="space-y-1">
 							<TextFieldLabel>Username</TextFieldLabel>
 							<TextFieldInput />
-						</TextFieldRoot>
+						</TextField>
 					</CardContent>
 					<CardFooter>
 						<Button>Save changes</Button>
@@ -59,15 +59,15 @@ export const TabsDemo = () => {
 							logged out.
 						</CardDescription>
 					</CardHeader>
-					<CardContent class="space-y-4">
-						<TextFieldRoot class="space-y-1">
+					<CardContent class="space-y-2">
+						<TextField class="space-y-1">
 							<TextFieldLabel>Current password</TextFieldLabel>
 							<TextFieldInput />
-						</TextFieldRoot>
-						<TextFieldRoot class="space-y-1">
+						</TextField>
+						<TextField class="space-y-1">
 							<TextFieldLabel>New password</TextFieldLabel>
 							<TextFieldInput />
-						</TextFieldRoot>
+						</TextField>
 					</CardContent>
 					<CardFooter>
 						<Button>Save password</Button>

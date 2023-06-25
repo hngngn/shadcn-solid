@@ -1,9 +1,9 @@
-import { TextFieldInput, TextFieldRoot } from "~/components"
+import { TextField, TextFieldInput } from "~/components"
 
 export const TextFieldDisabled = () => {
 	return (
-		<TextFieldRoot>
+		<TextField>
 			<TextFieldInput disabled type="email" placeholder="Email" />
-		</TextFieldRoot>
+		</TextField>
 	)
 }
