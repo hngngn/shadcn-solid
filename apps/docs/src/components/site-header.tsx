@@ -14,7 +14,7 @@ export const SiteHeader = () => {
 				<MobileNav />
 				<div class="flex flex-1 items-center justify-end space-x-2">
 					<nav class="flex items-center space-x-1">
-						<Button asChild variant="ghost">
+						<Button asChild variant="ghost" size="icon">
 							<As
 								component={A}
 								href={siteConfig.links.github}

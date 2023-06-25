@@ -19,6 +19,7 @@ export const MobileNav = () => {
 				<As
 					component={Button}
 					variant="ghost"
+					size="icon"
 					class="mr-1 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
 				>
 					<i class="i-lucide:sidebar-open w-18px h-18px" />
