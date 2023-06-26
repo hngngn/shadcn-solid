@@ -1,7 +1,9 @@
 import * as accordion from "./accordion"
 import * as alertComponents from "./alert"
+import * as alertDialog from "./alert-dialog"
 import * as button from "./button"
 import * as card from "./card"
+import * as checkbox from "./checkbox"
 import * as collapsible from "./collapsible"
 import * as dropdownMenu from "./dropdown-menu"
 import * as separator from "./separator"
@@ -24,4 +26,6 @@ export const example = {
 	...card,
 	...switchComponent,
 	...sheet,
+	...alertDialog,
+	...checkbox,
 }

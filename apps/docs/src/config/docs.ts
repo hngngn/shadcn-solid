@@ -95,10 +95,9 @@ export const docsConfig: TDocsConfig = {
 				},
 				{
 					title: "Alert Dialog",
-					href: "#",
+					href: "/docs/components/alert-dialog",
 					items: [],
-					label: "Soon",
-					disabled: true,
+					label: "New",
 				},
 				{
 					title: "Button",
@@ -107,10 +106,9 @@ export const docsConfig: TDocsConfig = {
 				},
 				{
 					title: "Checkbox",
-					href: "#",
+					href: "/docs/components/checkbox",
 					items: [],
-					label: "Soon",
-					disabled: true,
+					label: "New",
 				},
 				{
 					title: "Collapsible",
@@ -149,7 +147,6 @@ export const docsConfig: TDocsConfig = {
 					title: "Sheet",
 					href: "/docs/components/sheet",
 					items: [],
-					label: "New",
 				},
 				{
 					title: "Dropdown Menu",

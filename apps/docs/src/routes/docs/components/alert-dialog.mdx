@@ -1,0 +1,89 @@
+---
+title: Alert Dialog
+description: A modal dialog that interrupts the user with important content and expects a response.
+component: true
+kobalte:
+    link: https://kobalte.dev/docs/core/components/alert-dialog
+    api: https://kobalte.dev/docs/core/components/alert-dialog#api-reference
+---
+
+<ComponentExample src="/src/components/examples/alert-dialog/demo.tsx">
+	<AlertDialogDemo />
+</ComponentExample>
+
+## Installation
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource src="/src/components/ui/alert-dialog.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+<Step>Update `uno.config.ts`</Step>
+
+Add the following animations to your `uno.config.ts` file:
+
+```tsx title="uno.config.ts" {3-21}
+export default defineConfig({
+	theme: {
+		animation: {
+			keyframes: {
+				"dropdown-show":
+					"{ from { opacity: 0; transform: scale(0.96) } to { opacity: 1; transform: scale(1) }}",
+				"dropdown-hide":
+					"{ from { opacity: 1; transform: scale(1) } to { opacity: 0; transform: scale(0.96) }}",
+			},
+			durations: {
+				"dropdown-show": "200ms",
+				"dropdown-hide": "200ms",
+			},
+			timingFns: {
+				"dropdown-show": "ease-out",
+				"dropdown-hide": "ease-in",
+			},
+			counts: {
+				"dropdown-hide": "forwards",
+			},
+		},
+	},
+})
+```
+
+</Steps>
+
+## Usage
+
+```tsx
+import {
+	AlertDialog,
+	AlertDialogClose,
+	AlertDialogContent,
+	AlertDialogDescription,
+	AlertDialogFooter,
+	AlertDialogHeader,
+	AlertDialogTitle,
+	AlertDialogTrigger,
+	AlertDialogAction,
+} from "~/components"
+```
+
+```tsx
+<AlertDialog>
+	<AlertDialogTrigger>Open</AlertDialogTrigger>
+	<AlertDialogContent>
+		<AlertDialogHeader>
+			<AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+			<AlertDialogDescription>
+				This action cannot be undone. This will permanently delete your
+				account and remove your data from our servers.
+			</AlertDialogDescription>
+		</AlertDialogHeader>
+		<AlertDialogFooter>
+			<AlertDialogCancel>Cancel</AlertDialogCancel>
+			<AlertDialogAction>Continue</AlertDialogAction>
+		</AlertDialogFooter>
+	</AlertDialogContent>
+</AlertDialog>
+```
