@@ -7,7 +7,6 @@ import { CloseIcon } from "../close"
 
 export const Sheet = DialogPrimitive.Root
 export const SheetTrigger = DialogPrimitive.Trigger
-export const SheetPortal = DialogPrimitive.Portal
 
 export const SheetOverlay: ParentComponent<
 	DialogPrimitive.DialogOverlayProps
@@ -51,7 +50,7 @@ export const SheetContent: ParentComponent<
 	const [local, rest] = splitProps(merge, ["class", "children", "side"])
 
 	return (
-		<SheetPortal>
+		<DialogPrimitive.Portal>
 			<SheetOverlay />
 			<DialogPrimitive.Content
 				class={sheetVariants({ side: local.side })}
@@ -66,7 +65,7 @@ export const SheetContent: ParentComponent<
 					<span class="sr-only">Close</span>
 				</DialogPrimitive.CloseButton>
 			</DialogPrimitive.Content>
-		</SheetPortal>
+		</DialogPrimitive.Portal>
 	)
 }
 

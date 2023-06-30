@@ -91,9 +91,9 @@ export default defineConfig<Theme>({
 					"{ from { height: 0 } to { height: var(--kb-collapsible-content-height) }}",
 				"collapsible-up":
 					"{ from { height: var(--kb-collapsible-content-height) } to { height: 0 }}",
-				"dropdown-show":
+				"content-show":
 					"{ from { opacity: 0; transform: scale(0.96) } to { opacity: 1; transform: scale(1) }}",
-				"dropdown-hide":
+				"content-hide":
 					"{ from { opacity: 1; transform: scale(1) } to { opacity: 0; transform: scale(0.96) }}",
 			},
 			durations: {
@@ -101,8 +101,8 @@ export default defineConfig<Theme>({
 				"accordion-up": "200ms",
 				"collapsible-down": "200ms",
 				"collapsible-up": "200ms",
-				"dropdown-show": "200ms",
-				"dropdown-hide": "200ms",
+				"content-show": "200ms",
+				"content-hide": "200ms",
 				"slide-out-left": "200ms",
 				"slide-in-left": "300ms",
 				"slide-out-right": "200ms",
@@ -119,8 +119,8 @@ export default defineConfig<Theme>({
 				"accordion-up": "ease-out",
 				"collapsible-down": "ease-out",
 				"collapsible-up": "ease-out",
-				"dropdown-show": "ease-out",
-				"dropdown-hide": "ease-in",
+				"content-show": "ease-out",
+				"content-hide": "ease-in",
 				"slide-out-left": "ease-out",
 				"slide-in-left": "ease-in",
 				"slide-out-right": "ease-out",
@@ -133,7 +133,7 @@ export default defineConfig<Theme>({
 				"fade-out": "ease-out",
 			},
 			counts: {
-				"dropdown-hide": "forwards",
+				"content-hide": "forwards",
 			},
 		},
 	},

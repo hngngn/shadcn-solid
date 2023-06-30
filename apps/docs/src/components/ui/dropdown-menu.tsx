@@ -1,27 +1,37 @@
 import { DropdownMenu as DropdownMenuPrimitive } from "@kobalte/core"
-import type { ComponentProps } from "solid-js"
-import { splitProps, type ParentComponent } from "solid-js"
+import type { ComponentProps, VoidComponent } from "solid-js"
+import { mergeProps, splitProps, type ParentComponent } from "solid-js"
 
-export const DropdownMenu = DropdownMenuPrimitive.Root
 export const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger
 export const DropdownMenuGroup = DropdownMenuPrimitive.Group
 export const DropdownMenuSub = DropdownMenuPrimitive.Sub
 export const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup
-export const DropdownMenuPortal = DropdownMenuPrimitive.Portal
+
+export const DropdownMenu: ParentComponent<
+	DropdownMenuPrimitive.DropdownMenuRootProps
+> = (props) => {
+	const merge = mergeProps(
+		{ gutter: 4 } as DropdownMenuPrimitive.DropdownMenuRootProps,
+		props
+	)
+	return <DropdownMenuPrimitive.Root {...merge} />
+}
 
 export const DropdownMenuContent: ParentComponent<
 	DropdownMenuPrimitive.DropdownMenuContentProps
 > = (props) => {
 	const [local, rest] = splitProps(props, ["class"])
 	return (
-		<DropdownMenuPrimitive.Content
-			class="z-50 min-w-8rem overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md
-			origin-[var(--kb-menu-content-transform-origin)] animate-dropdown-hide data-[expanded]:animate-dropdown-show"
-			classList={{
-				[local.class!]: local.class !== undefined,
-			}}
-			{...rest}
-		/>
+		<DropdownMenuPrimitive.Portal>
+			<DropdownMenuPrimitive.Content
+				class="z-50 min-w-8rem overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md
+			origin-[var(--kb-menu-content-transform-origin)] animate-content-hide data-[expanded]:animate-content-show"
+				classList={{
+					[local.class!]: local.class !== undefined,
+				}}
+				{...rest}
+			/>
+		</DropdownMenuPrimitive.Portal>
 	)
 }
 
@@ -46,6 +56,7 @@ export const DropdownMenuGroupLabel: ParentComponent<
 	const [local, rest] = splitProps(props, ["class"])
 	return (
 		<DropdownMenuPrimitive.GroupLabel
+			as="div"
 			class="px-2 py-1.5 text-sm font-semibold"
 			classList={{
 				[local.class!]: local.class !== undefined,
@@ -61,6 +72,7 @@ export const DropdownMenuItemLabel: ParentComponent<
 	const [local, rest] = splitProps(props, ["class"])
 	return (
 		<DropdownMenuPrimitive.ItemLabel
+			as="div"
 			class="px-2 py-1.5 text-sm font-semibold"
 			classList={{
 				[local.class!]: local.class !== undefined,
@@ -70,7 +82,7 @@ export const DropdownMenuItemLabel: ParentComponent<
 	)
 }
 
-export const DropdownMenuSeparator: ParentComponent<
+export const DropdownMenuSeparator: VoidComponent<
 	DropdownMenuPrimitive.DropdownMenuSeparatorProps
 > = (props) => {
 	const [local, rest] = splitProps(props, ["class"])
@@ -123,13 +135,15 @@ export const DropdownMenuSubContent: ParentComponent<
 > = (props) => {
 	const [local, rest] = splitProps(props, ["class"])
 	return (
-		<DropdownMenuPrimitive.SubContent
-			class="z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-dropdown-hide data-[expanded]:animate-dropdown-show origin-[var(--kb-menu-content-transform-origin)]"
-			classList={{
-				[local.class!]: local.class !== undefined,
-			}}
-			{...rest}
-		/>
+		<DropdownMenuPrimitive.Portal>
+			<DropdownMenuPrimitive.SubContent
+				class="z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-content-hide data-[expanded]:animate-content-show origin-[var(--kb-menu-content-transform-origin)]"
+				classList={{
+					[local.class!]: local.class !== undefined,
+				}}
+				{...rest}
+			/>
+		</DropdownMenuPrimitive.Portal>
 	)
 }
 
@@ -175,7 +189,7 @@ export const DropdownMenuRadioItem: ParentComponent<
 					stroke-width="2"
 					stroke-linecap="round"
 					stroke-linejoin="round"
-					class="h-2 w-2 fill-current"
+					class="h-1.5 w-1.5 fill-current"
 				>
 					<circle cx="12" cy="12" r="10" />
 				</svg>

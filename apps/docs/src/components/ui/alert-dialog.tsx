@@ -5,7 +5,6 @@ import { buttonVariants } from "./button"
 
 export const AlertDialog = AlertDialogPrimitive.Root
 export const AlertDialogTrigger = AlertDialogPrimitive.Trigger
-export const AlertDialogPortal = AlertDialogPrimitive.Portal
 
 export const AlertDialogOverlay: ParentComponent<
 	AlertDialogPrimitive.AlertDialogOverlayProps
@@ -28,18 +27,18 @@ export const AlertDialogContent: ParentComponent<
 	const [local, rest] = splitProps(props, ["class"])
 
 	return (
-		<AlertDialogPortal>
+		<AlertDialogPrimitive.Portal>
 			<AlertDialogOverlay />
 			<div class="fixed flex justify-center items-center inset-0 z-50">
 				<AlertDialogPrimitive.Content
-					class="z-50 grid w-full max-w-lg gap-4 border bg-background p-6 shadow-lg sm:rounded-lg md:w-full animate-dropdown-hide data-[expanded]:animate-dropdown-show"
+					class="z-50 grid w-full max-w-lg gap-4 border bg-background p-6 shadow-lg sm:rounded-lg md:w-full animate-content-hide data-[expanded]:animate-content-show"
 					classList={{
 						[local.class!]: local.class !== undefined,
 					}}
 					{...rest}
 				/>
 			</div>
-		</AlertDialogPortal>
+		</AlertDialogPrimitive.Portal>
 	)
 }
 

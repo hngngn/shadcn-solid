@@ -6,7 +6,6 @@ import {
 	DropdownMenu,
 	DropdownMenuCheckboxItem,
 	DropdownMenuContent,
-	DropdownMenuPortal,
 	DropdownMenuTrigger,
 } from "~/components"
 
@@ -18,35 +17,33 @@ export const DropdownMenuCheckboxes = () => {
 	const [showPanel, setShowPanel] = createSignal<Checked>(false)
 
 	return (
-		<DropdownMenu placement="bottom" gutter={4}>
+		<DropdownMenu placement="bottom">
 			<DropdownMenuTrigger asChild>
 				<As component={Button} variant="outline">
 					Open
 				</As>
 			</DropdownMenuTrigger>
-			<DropdownMenuPortal>
-				<DropdownMenuContent class="w-56">
-					<DropdownMenuCheckboxItem
-						checked={showStatusBar()}
-						onChange={setShowStatusBar}
-					>
-						Status Bar
-					</DropdownMenuCheckboxItem>
-					<DropdownMenuCheckboxItem
-						checked={showActivityBar()}
-						onChange={setShowActivityBar}
-						disabled
-					>
-						Activity Bar
-					</DropdownMenuCheckboxItem>
-					<DropdownMenuCheckboxItem
-						checked={showPanel()}
-						onChange={setShowPanel}
-					>
-						Panel
-					</DropdownMenuCheckboxItem>
-				</DropdownMenuContent>
-			</DropdownMenuPortal>
+			<DropdownMenuContent class="w-56">
+				<DropdownMenuCheckboxItem
+					checked={showStatusBar()}
+					onChange={setShowStatusBar}
+				>
+					Status Bar
+				</DropdownMenuCheckboxItem>
+				<DropdownMenuCheckboxItem
+					checked={showActivityBar()}
+					onChange={setShowActivityBar}
+					disabled
+				>
+					Activity Bar
+				</DropdownMenuCheckboxItem>
+				<DropdownMenuCheckboxItem
+					checked={showPanel()}
+					onChange={setShowPanel}
+				>
+					Panel
+				</DropdownMenuCheckboxItem>
+			</DropdownMenuContent>
 		</DropdownMenu>
 	)
 }

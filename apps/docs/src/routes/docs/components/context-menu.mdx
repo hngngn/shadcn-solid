@@ -1,0 +1,77 @@
+---
+title: Context Menu
+description: Displays a menu to the user — such as a set of actions or functions — triggered by a button.
+component: true
+kobalte:
+    link: https://kobalte.dev/docs/core/components/context-menu
+    api: https://kobalte.dev/docs/core/components/context-menu#api-reference
+---
+
+<ComponentExample src="/src/components/examples/context-menu/demo.tsx">
+	<ContextMenuDemo />
+</ComponentExample>
+
+## Installation
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource src="/src/components/ui/context-menu.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+<Step>Update `uno.config.ts`</Step>
+
+Add the following animations to your `uno.config.ts` file:
+
+```tsx title="uno.config.ts" {3-21}
+export default defineConfig({
+	theme: {
+		animation: {
+			keyframes: {
+				"content-show":
+					"{ from { opacity: 0; transform: scale(0.96) } to { opacity: 1; transform: scale(1) }}",
+				"content-hide":
+					"{ from { opacity: 1; transform: scale(1) } to { opacity: 0; transform: scale(0.96) }}",
+			},
+			durations: {
+				"content-show": "200ms",
+				"content-hide": "200ms",
+			},
+			timingFns: {
+				"content-show": "ease-out",
+				"content-hide": "ease-in",
+			},
+			counts: {
+				"content-hide": "forwards",
+			},
+		},
+	},
+})
+```
+
+</Steps>
+
+## Usage
+
+```tsx
+import {
+	ContextMenu,
+	ContextMenuContent,
+	ContextMenuItem,
+	ContextMenuTrigger,
+} from "~/components"
+```
+
+```tsx
+<ContextMenu>
+	<ContextMenuTrigger>Right click</ContextMenuTrigger>
+	<ContextMenuContent>
+		<ContextMenuItem>Profile</ContextMenuItem>
+		<ContextMenuItem>Billing</ContextMenuItem>
+		<ContextMenuItem>Team</ContextMenuItem>
+		<ContextMenuItem>Subscription</ContextMenuItem>
+	</ContextMenuContent>
+</ContextMenu>
+```

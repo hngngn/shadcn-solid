@@ -9,8 +9,6 @@ import path from "path"
 import rehypeAutolinkHeadings from "rehype-autolink-headings"
 import type { VisitableElement } from "rehype-pretty-code"
 import rehypePrettyCode from "rehype-pretty-code"
-import rehypeSlug from "rehype-slug"
-import remarkCodeImport from "remark-code-import"
 import remarkFrontmatter from "remark-frontmatter"
 import remarkGFM from "remark-gfm"
 import { getHighlighter, loadTheme } from "shiki"
@@ -325,14 +323,8 @@ export const solidMDX = async () => {
 			jsx: true,
 			jsxImportSource: "solid-js",
 			providerImportSource: "solid-mdx",
-			remarkPlugins: [
-				remarkCodeImport,
-				remarkGFM,
-				remarkFrontmatter,
-				remarkMDXFrontmatter,
-			],
+			remarkPlugins: [remarkGFM, remarkFrontmatter, remarkMDXFrontmatter],
 			rehypePlugins: [
-				rehypeSlug,
 				rehypeComponent,
 				[
 					rehypePrettyCode,
@@ -385,15 +377,7 @@ export const solidMDX = async () => {
 						}
 					})
 				},
-				[
-					rehypeAutolinkHeadings,
-					{
-						properties: {
-							class: ["subheading-anchor"],
-							ariaLabel: "Link to section",
-						},
-					},
-				],
+				rehypeAutolinkHeadings,
 				rehypeCollectHeadings,
 			],
 		}),
@@ -404,7 +388,7 @@ export const solidMDX = async () => {
 		{
 			...plugin,
 			async transform(code, id) {
-				if (id.endsWith(".mdx") || id.endsWith(".md")) {
+				if (id.endsWith(".mdx")) {
 					if (cache.has(code)) {
 						return cache.get(code)
 					}
@@ -421,7 +405,7 @@ export const solidMDX = async () => {
 			...plugin,
 			name: "mdx-meta",
 			async transform(code, id) {
-				if (id.endsWith(".mdx?meta") || id.endsWith(".md?meta")) {
+				if (id.endsWith(".mdx?meta")) {
 					id = id.replace(/\?meta$/, "")
 
 					const getCode = () => {
@@ -453,12 +437,7 @@ export const solidMDX = async () => {
 		{
 			name: "twoslash-fix-lsp-linebreaks",
 			transform: (code, id) => {
-				if (
-					id.endsWith(".md") ||
-					id.endsWith(".mdx") ||
-					id.endsWith(".mdx?meta") ||
-					id.endsWith(".md?meta")
-				) {
+				if (id.endsWith(".mdx") || id.endsWith(".mdx?meta")) {
 					return {
 						code: code
 							.replace(/lsp="([^"]*)"/g, (match, p1) => {

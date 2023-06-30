@@ -97,7 +97,6 @@ export const docsConfig: TDocsConfig = {
 					title: "Alert Dialog",
 					href: "/docs/components/alert-dialog",
 					items: [],
-					label: "New",
 				},
 				{
 					title: "Button",
@@ -108,7 +107,6 @@ export const docsConfig: TDocsConfig = {
 					title: "Checkbox",
 					href: "/docs/components/checkbox",
 					items: [],
-					label: "New",
 				},
 				{
 					title: "Collapsible",
@@ -124,10 +122,9 @@ export const docsConfig: TDocsConfig = {
 				},
 				{
 					title: "Context Menu",
-					href: "#",
+					href: "/docs/components/context-menu",
 					items: [],
-					label: "Soon",
-					disabled: true,
+					label: "New",
 				},
 				{
 					title: "Data Table",
@@ -138,10 +135,9 @@ export const docsConfig: TDocsConfig = {
 				},
 				{
 					title: "Dialog",
-					href: "#",
+					href: "/docs/components/dialog",
 					items: [],
-					label: "Soon",
-					disabled: true,
+					label: "New",
 				},
 				{
 					title: "Sheet",
@@ -160,10 +156,9 @@ export const docsConfig: TDocsConfig = {
 				},
 				{
 					title: "Hover Card",
-					href: "#",
+					href: "/docs/components/hover-card",
 					items: [],
-					label: "Soon",
-					disabled: true,
+					label: "New",
 				},
 				{
 					title: "Text Field",
@@ -172,24 +167,21 @@ export const docsConfig: TDocsConfig = {
 				},
 				{
 					title: "Image",
-					href: "#",
+					href: "/docs/components/image",
 					items: [],
-					label: "Soon",
-					disabled: true,
+					label: "New",
 				},
 				{
 					title: "Popover",
-					href: "#",
+					href: "/docs/components/popover",
 					items: [],
-					label: "Soon",
-					disabled: true,
+					label: "New",
 				},
 				{
 					title: "Progress",
-					href: "#",
+					href: "/docs/components/progress",
 					items: [],
-					label: "Soon",
-					disabled: true,
+					label: "New",
 				},
 				{
 					title: "Radio Group",
