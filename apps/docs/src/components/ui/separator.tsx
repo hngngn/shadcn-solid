@@ -3,16 +3,17 @@ import type { VoidComponent } from "solid-js"
 import { splitProps } from "solid-js"
 
 export const Separator: VoidComponent<SeparatorPrimitive.SeparatorRootProps> = (
-	props
+    props
 ) => {
-	const [local, rest] = splitProps(props, ["class"])
-	return (
-		<SeparatorPrimitive.Root
-			class="shrink-0 bg-border data-[orientation='horizontal']:(h-1px w-full) data-[orientation='vertical']:(h-full w-1px)"
-			classList={{
-				[local.class!]: local.class !== undefined,
-			}}
-			{...rest}
-		/>
-	)
+    const [local, rest] = splitProps(props, ["class", "classList"])
+    return (
+        <SeparatorPrimitive.Root
+            class="shrink-0 bg-border data-[orientation='horizontal']:(h-1px w-full) data-[orientation='vertical']:(h-full w-1px)"
+            classList={{
+                [local.class!]: Boolean(local.class),
+                ...local.classList,
+            }}
+            {...rest}
+        />
+    )
 }

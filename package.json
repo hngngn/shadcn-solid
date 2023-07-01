@@ -15,7 +15,7 @@
 		"eslint-config-turbo": "^1.10.6",
 		"eslint-plugin-solid": "^0.12.1",
 		"prettier": "^2.8.8",
-		"turbo": "^1.10.6"
+		"turbo": "^1.10.7"
 	},
 	"packageManager": "pnpm@7.15.0",
 	"name": "shadcn-solid"

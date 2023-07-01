@@ -1,0 +1,76 @@
+---
+title: Textarea
+description: A textarea that allow users to input custom text entries with a keyboard.
+component: true
+kobalte:
+    link: https://kobalte.dev/docs/core/components/text-field
+    api: https://kobalte.dev/docs/core/components/text-field#api-reference
+---
+
+<ComponentExample src="/src/components/examples/textarea/demo.tsx">
+    <TextareaDemo />
+</ComponentExample>
+
+## Installation
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource src="/src/components/ui/textfield.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+## Usage
+
+```tsx
+import { TextFieldRoot, TextFieldTextArea } from "~/components"
+```
+
+```tsx
+<TextFieldRoot>
+    <TextFieldTextArea />
+</TextFieldRoot>
+```
+
+## Examples
+
+### Default
+
+<ComponentExample src="/src/components/examples/textarea/demo.tsx">
+    <TextareaDemo />
+</ComponentExample>
+
+---
+
+### Disabled
+
+<ComponentExample src="/src/components/examples/textarea/disabled.tsx">
+    <TextareaDisabled />
+</ComponentExample>
+
+---
+
+### With Label
+
+<ComponentExample src="/src/components/examples/textarea/with-label.tsx">
+    <TextareaWithLabel />
+</ComponentExample>
+
+---
+
+### With Text
+
+<ComponentExample src="/src/components/examples/textarea/with-text.tsx">
+    <TextareaWithText />
+</ComponentExample>
+
+---
+
+### With Button
+
+<ComponentExample src="/src/components/examples/textarea/with-button.tsx">
+    <TextareaWithButton />
+</ComponentExample>

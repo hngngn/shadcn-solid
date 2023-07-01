@@ -14,30 +14,40 @@ import * as popover from "./popover"
 import * as progress from "./progress"
 import * as separator from "./separator"
 import * as sheet from "./sheet"
+import * as skeleton from "./skeleton"
 import * as switchComponent from "./switch"
 import * as tabs from "./tabs"
+import * as textarea from "./textarea"
 import * as textfield from "./textfield"
+import * as toast from "./toast"
+import * as toggle from "./toggle"
+import * as tooltip from "./tooltip"
 import * as typography from "./typography"
 
 export const example = {
-	...typography,
-	...alertComponents,
-	...button,
-	...accordion,
-	...collapsible,
-	...dropdownMenu,
-	...tabs,
-	...separator,
-	...textfield,
-	...card,
-	...switchComponent,
-	...sheet,
-	...alertDialog,
-	...checkbox,
-	...contextMenu,
-	...dialog,
-	...hoverCard,
-	...image,
-	...popover,
-	...progress,
+    ...typography,
+    ...alertComponents,
+    ...button,
+    ...accordion,
+    ...collapsible,
+    ...dropdownMenu,
+    ...tabs,
+    ...separator,
+    ...textfield,
+    ...card,
+    ...switchComponent,
+    ...sheet,
+    ...alertDialog,
+    ...checkbox,
+    ...contextMenu,
+    ...dialog,
+    ...hoverCard,
+    ...image,
+    ...popover,
+    ...progress,
+    ...skeleton,
+    ...textarea,
+    ...toggle,
+    ...tooltip,
+    ...toast,
 }
