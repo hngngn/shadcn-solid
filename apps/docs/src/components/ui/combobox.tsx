@@ -74,7 +74,7 @@ export const ComboboxItem: ParentComponent<
     const [local, rest] = splitProps(props, ["class", "classList", "children"])
     return (
         <ComboboxPrimitive.Item
-            class="relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none focus:(bg-accent text-accent-foreground) data-[disabled]:(pointer-events-none opacity-50)"
+            class="relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none data-[highlighted]:(bg-accent text-accent-foreground) data-[disabled]:(pointer-events-none opacity-50)"
             classList={{
                 [local.class!]: Boolean(local.class),
                 ...local.classList,
