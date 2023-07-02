@@ -5,6 +5,7 @@ import * as button from "./button"
 import * as card from "./card"
 import * as checkbox from "./checkbox"
 import * as collapsible from "./collapsible"
+import * as combobox from "./combobox"
 import * as contextMenu from "./context-menu"
 import * as dialog from "./dialog"
 import * as dropdownMenu from "./dropdown-menu"
@@ -12,6 +13,8 @@ import * as hoverCard from "./hover-card"
 import * as image from "./image"
 import * as popover from "./popover"
 import * as progress from "./progress"
+import * as radioGroup from "./radio-group"
+import * as select from "./select"
 import * as separator from "./separator"
 import * as sheet from "./sheet"
 import * as skeleton from "./skeleton"
@@ -50,4 +53,7 @@ export const example = {
     ...toggle,
     ...tooltip,
     ...toast,
+    ...select,
+    ...radioGroup,
+    ...combobox,
 }

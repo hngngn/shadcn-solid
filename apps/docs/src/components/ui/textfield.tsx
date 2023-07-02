@@ -6,7 +6,7 @@ export const TextFieldErrorMessage = TextFieldPrimitive.ErrorMessage
 export const TextFieldDescription = TextFieldPrimitive.Description
 export const TextField = TextFieldPrimitive.Root
 
-const labelVariants = cva(
+export const labelVariants = cva(
     "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
 )
 

@@ -104,6 +104,11 @@ export const docsConfig: TDocsConfig = {
                     items: [],
                 },
                 {
+                    title: "Card",
+                    href: "/docs/components/card",
+                    items: [],
+                },
+                {
                     title: "Checkbox",
                     href: "/docs/components/checkbox",
                     items: [],
@@ -115,10 +120,9 @@ export const docsConfig: TDocsConfig = {
                 },
                 {
                     title: "Combobox",
-                    href: "#",
+                    href: "/docs/components/combobox",
                     items: [],
-                    label: "Soon",
-                    disabled: true,
+                    label: "New",
                 },
                 {
                     title: "Context Menu",
@@ -138,28 +142,13 @@ export const docsConfig: TDocsConfig = {
                     items: [],
                 },
                 {
-                    title: "Sheet",
-                    href: "/docs/components/sheet",
-                    items: [],
-                },
-                {
                     title: "Dropdown Menu",
                     href: "/docs/components/dropdown-menu",
                     items: [],
                 },
                 {
-                    title: "Card",
-                    href: "/docs/components/card",
-                    items: [],
-                },
-                {
                     title: "Hover Card",
                     href: "/docs/components/hover-card",
-                    items: [],
-                },
-                {
-                    title: "Text Field",
-                    href: "/docs/components/textfield",
                     items: [],
                 },
                 {
@@ -179,17 +168,15 @@ export const docsConfig: TDocsConfig = {
                 },
                 {
                     title: "Radio Group",
-                    href: "#",
+                    href: "/docs/components/radio-group",
                     items: [],
-                    label: "Soon",
-                    disabled: true,
+                    label: "New",
                 },
                 {
                     title: "Select",
-                    href: "#",
+                    href: "/docs/components/select",
                     items: [],
-                    label: "Soon",
-                    disabled: true,
+                    label: "New",
                 },
                 {
                     title: "Separator",
@@ -197,10 +184,14 @@ export const docsConfig: TDocsConfig = {
                     items: [],
                 },
                 {
+                    title: "Sheet",
+                    href: "/docs/components/sheet",
+                    items: [],
+                },
+                {
                     title: "Skeleton",
                     href: "/docs/components/skeleton",
                     items: [],
-                    label: "New",
                 },
                 {
                     title: "Switch",
@@ -213,28 +204,29 @@ export const docsConfig: TDocsConfig = {
                     items: [],
                 },
                 {
+                    title: "Text Field",
+                    href: "/docs/components/textfield",
+                    items: [],
+                },
+                {
                     title: "Textarea",
                     href: "/docs/components/textarea",
                     items: [],
-                    label: "New",
                 },
                 {
                     title: "Toast",
                     href: "/docs/components/toast",
                     items: [],
-                    label: "New",
                 },
                 {
                     title: "Toggle",
                     href: "/docs/components/toggle",
                     items: [],
-                    label: "New",
                 },
                 {
                     title: "Tooltip",
                     href: "/docs/components/tooltip",
                     items: [],
-                    label: "New",
                 },
             ],
         },

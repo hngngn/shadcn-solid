@@ -1,0 +1,80 @@
+---
+title: Select
+description: Displays a list of options for the user to pick from—triggered by a button.
+component: true
+kobalte:
+    link: https://kobalte.dev/docs/core/components/select
+    api: https://kobalte.dev/docs/core/components/select#api-reference
+---
+
+<ComponentExample src="/src/components/examples/select/demo.tsx">
+    <SelectDemo />
+</ComponentExample>
+
+## Installation
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource src="/src/components/ui/select.tsx" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+<Step>Update `uno.config.ts`</Step>
+
+Add the following animations to your `uno.config.ts` file:
+
+```tsx title="uno.config.ts" {3-21}
+export default defineConfig({
+    theme: {
+        animation: {
+            keyframes: {
+                "content-show":
+                    "{ from { opacity: 0; transform: scale(0.96) } to { opacity: 1; transform: scale(1) }}",
+                "content-hide":
+                    "{ from { opacity: 1; transform: scale(1) } to { opacity: 0; transform: scale(0.96) }}",
+            },
+            durations: {
+                "content-show": "200ms",
+                "content-hide": "200ms",
+            },
+            timingFns: {
+                "content-show": "ease-out",
+                "content-hide": "ease-in",
+            },
+            counts: {
+                "content-hide": "forwards",
+            },
+        },
+    },
+})
+```
+
+</Steps>
+
+## Usage
+
+```tsx
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "~/components"
+```
+
+```tsx
+<Select
+    options={["Apple", "Banana", "Blueberry", "Grapes", "Pineapple"]}
+    itemComponent={(props) => (
+        <SelectItem item={props.item}>{props.item.rawValue}</SelectItem>
+    )}
+>
+    <SelectTrigger>
+        <SelectValue<string>>{(state) => state.selectedOption()}</SelectValue>
+    </SelectTrigger>
+    <SelectContent />
+</Select>
+```
