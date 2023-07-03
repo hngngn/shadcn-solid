@@ -1,6 +1,6 @@
 export const siteConfig = {
     title: "shadcn-solid",
-    url: `https://${import.meta.env.VERCEL_URL}`,
+    url: "https://shadcn-solid.vercel.app",
     description:
         "Beautifully designed components built with Kobalte and UnoCSS.",
     links: {
