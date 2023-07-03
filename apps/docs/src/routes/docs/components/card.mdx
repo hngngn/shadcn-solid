@@ -4,8 +4,10 @@ description: Displays a card with header, content, and footer.
 component: true
 ---
 
+import { ComponentExample, ComponentSource } from "~/components"
+
 <ComponentExample src="/src/components/examples/card/demo.tsx">
-	<CardDemo />
+    <CardDemo />
 </ComponentExample>
 
 ## Installation
@@ -24,26 +26,26 @@ component: true
 
 ```tsx
 import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardFooter,
-	CardHeader,
-	CardTitle,
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
 } from "~/components"
 ```
 
 ```tsx
 <Card>
-	<CardHeader>
-		<CardTitle>Card Title</CardTitle>
-		<CardDescription>Card Description</CardDescription>
-	</CardHeader>
-	<CardContent>
-		<p>Card Content</p>
-	</CardContent>
-	<CardFooter>
-		<p>Card Footer</p>
-	</CardFooter>
+    <CardHeader>
+        <CardTitle>Card Title</CardTitle>
+        <CardDescription>Card Description</CardDescription>
+    </CardHeader>
+    <CardContent>
+        <p>Card Content</p>
+    </CardContent>
+    <CardFooter>
+        <p>Card Footer</p>
+    </CardFooter>
 </Card>
 ```

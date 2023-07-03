@@ -7,8 +7,10 @@ kobalte:
     api: https://kobalte.dev/docs/core/components/alert-dialog#api-reference
 ---
 
+import { ComponentExample, ComponentSource } from "~/components"
+
 <ComponentExample src="/src/components/examples/alert-dialog/demo.tsx">
-	<AlertDialogDemo />
+    <AlertDialogDemo />
 </ComponentExample>
 
 ## Installation
@@ -27,27 +29,27 @@ Add the following animations to your `uno.config.ts` file:
 
 ```tsx title="uno.config.ts" {3-21}
 export default defineConfig({
-	theme: {
-		animation: {
-			keyframes: {
-				"content-show":
-					"{ from { opacity: 0; transform: scale(0.96) } to { opacity: 1; transform: scale(1) }}",
-				"content-hide":
-					"{ from { opacity: 1; transform: scale(1) } to { opacity: 0; transform: scale(0.96) }}",
-			},
-			durations: {
-				"content-show": "200ms",
-				"content-hide": "200ms",
-			},
-			timingFns: {
-				"content-show": "ease-out",
-				"content-hide": "ease-in",
-			},
-			counts: {
-				"content-hide": "forwards",
-			},
-		},
-	},
+    theme: {
+        animation: {
+            keyframes: {
+                "content-show":
+                    "{ from { opacity: 0; transform: scale(0.96) } to { opacity: 1; transform: scale(1) }}",
+                "content-hide":
+                    "{ from { opacity: 1; transform: scale(1) } to { opacity: 0; transform: scale(0.96) }}",
+            },
+            durations: {
+                "content-show": "200ms",
+                "content-hide": "200ms",
+            },
+            timingFns: {
+                "content-show": "ease-out",
+                "content-hide": "ease-in",
+            },
+            counts: {
+                "content-hide": "forwards",
+            },
+        },
+    },
 })
 ```
 
@@ -57,33 +59,33 @@ export default defineConfig({
 
 ```tsx
 import {
-	AlertDialog,
-	AlertDialogClose,
-	AlertDialogContent,
-	AlertDialogDescription,
-	AlertDialogFooter,
-	AlertDialogHeader,
-	AlertDialogTitle,
-	AlertDialogTrigger,
-	AlertDialogAction,
+    AlertDialog,
+    AlertDialogClose,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+    AlertDialogTrigger,
+    AlertDialogAction,
 } from "~/components"
 ```
 
 ```tsx
 <AlertDialog>
-	<AlertDialogTrigger>Open</AlertDialogTrigger>
-	<AlertDialogContent>
-		<AlertDialogHeader>
-			<AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-			<AlertDialogDescription>
-				This action cannot be undone. This will permanently delete your
-				account and remove your data from our servers.
-			</AlertDialogDescription>
-		</AlertDialogHeader>
-		<AlertDialogFooter>
-			<AlertDialogCancel>Cancel</AlertDialogCancel>
-			<AlertDialogAction>Continue</AlertDialogAction>
-		</AlertDialogFooter>
-	</AlertDialogContent>
+    <AlertDialogTrigger>Open</AlertDialogTrigger>
+    <AlertDialogContent>
+        <AlertDialogHeader>
+            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+            <AlertDialogDescription>
+                This action cannot be undone. This will permanently delete your
+                account and remove your data from our servers.
+            </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogAction>Continue</AlertDialogAction>
+        </AlertDialogFooter>
+    </AlertDialogContent>
 </AlertDialog>
 ```

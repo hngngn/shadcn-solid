@@ -1,5 +1,5 @@
 import type { ComponentProps, ParentComponent } from "solid-js"
-import { Show, children, mergeProps, splitProps } from "solid-js"
+import { children, mergeProps, splitProps } from "solid-js"
 import { Tabs, TabsContent, TabsIndicator, TabsList, TabsTrigger } from "./ui"
 
 interface ComponentExampleProps extends ComponentProps<"div"> {
@@ -24,9 +24,10 @@ export const ComponentExample: ParentComponent<ComponentExampleProps> = (
         "classList",
     ])
 
-    const [Example, Code, ...Children] = children(
-        () => local.children
-    ).toArray()
+    const Codes = children(() => local.children).toArray()
+
+    const Code = Codes[2]
+    const Preview = Codes[0]
 
     return (
         <div
@@ -64,17 +65,12 @@ export const ComponentExample: ParentComponent<ComponentExampleProps> = (
                             "items-end": local.align === "end",
                         }}
                     >
-                        {Example}
+                        {Preview}
                     </div>
                 </TabsContent>
                 <TabsContent value="code">
                     <div class="flex flex-col space-y-4">
                         <div class="w-full rounded-md mdx-example">{Code}</div>
-                        <Show when={Children.length}>
-                            <div class="rounded-md [&_button]:hidden [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
-                                {Children}
-                            </div>
-                        </Show>
                     </div>
                 </TabsContent>
             </Tabs>

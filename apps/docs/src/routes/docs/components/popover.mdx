@@ -7,8 +7,10 @@ kobalte:
     api: https://kobalte.dev/docs/core/components/popover#api-reference
 ---
 
+import { ComponentExample, ComponentSource } from "~/components"
+
 <ComponentExample src="/src/components/examples/popover/demo.tsx">
-	<PopoverDemo />
+    <PopoverDemo />
 </ComponentExample>
 
 ## Installation
@@ -27,27 +29,27 @@ Add the following animations to your `uno.config.ts` file:
 
 ```tsx title="uno.config.ts" {3-28}
 export default defineConfig({
-	theme: {
-		animation: {
-			keyframes: {
-				"content-show":
-					"{ from { opacity: 0; transform: scale(0.96) } to { opacity: 1; transform: scale(1) }}",
-				"content-hide":
-					"{ from { opacity: 1; transform: scale(1) } to { opacity: 0; transform: scale(0.96) }}",
-			},
-			durations: {
-				"content-show": "200ms",
-				"content-hide": "200ms",
-			},
-			timingFns: {
-				"content-show": "ease-out",
-				"content-hide": "ease-in",
-			},
-			counts: {
-				"content-hide": "forwards",
-			},
-		},
-	},
+    theme: {
+        animation: {
+            keyframes: {
+                "content-show":
+                    "{ from { opacity: 0; transform: scale(0.96) } to { opacity: 1; transform: scale(1) }}",
+                "content-hide":
+                    "{ from { opacity: 1; transform: scale(1) } to { opacity: 0; transform: scale(0.96) }}",
+            },
+            durations: {
+                "content-show": "200ms",
+                "content-hide": "200ms",
+            },
+            timingFns: {
+                "content-show": "ease-out",
+                "content-hide": "ease-in",
+            },
+            counts: {
+                "content-hide": "forwards",
+            },
+        },
+    },
 })
 ```
 
@@ -61,7 +63,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "~/components"
 
 ```tsx
 <Popover>
-	<PopoverTrigger>Open</PopoverTrigger>
-	<PopoverContent>Place content for the popover here.</PopoverContent>
+    <PopoverTrigger>Open</PopoverTrigger>
+    <PopoverContent>Place content for the popover here.</PopoverContent>
 </Popover>
 ```

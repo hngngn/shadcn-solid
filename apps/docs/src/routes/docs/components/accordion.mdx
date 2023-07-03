@@ -7,10 +7,12 @@ kobalte:
     api: https://kobalte.dev/docs/core/components/accordion#api-reference
 ---
 
+import { ComponentExample, ComponentSource } from "~/components"
+
 <ComponentExample src="/src/components/examples/accordion/demo.tsx">
-	<div className="max-w-[70%] w-full">
-		<AccordionDemo />
-	</div>
+    <div className="max-w-[70%] w-full">
+        <AccordionDemo />
+    </div>
 </ComponentExample>
 
 ## Installation
@@ -29,24 +31,24 @@ Add the following animations to your `uno.config.ts` file:
 
 ```tsx title="uno.config.ts" {3-18}
 export default defineConfig({
-	theme: {
-		animation: {
-			keyframes: {
-				"accordion-down":
-					"{ from { height: 0 } to { height: var(--kb-accordion-content-height) }}",
-				"accordion-up":
-					"{ from { height: var(--kb-accordion-content-height) } to { height: 0 }}",
-			},
-			durations: {
-				"accordion-down": "200ms",
-				"accordion-up": "200ms",
-			},
-			timingFns: {
-				"accordion-down": "ease-out",
-				"accordion-up": "ease-out",
-			},
-		},
-	},
+    theme: {
+        animation: {
+            keyframes: {
+                "accordion-down":
+                    "{ from { height: 0 } to { height: var(--kb-accordion-content-height) }}",
+                "accordion-up":
+                    "{ from { height: var(--kb-accordion-content-height) } to { height: 0 }}",
+            },
+            durations: {
+                "accordion-down": "200ms",
+                "accordion-up": "200ms",
+            },
+            timingFns: {
+                "accordion-down": "ease-out",
+                "accordion-up": "ease-out",
+            },
+        },
+    },
 })
 ```
 
@@ -56,20 +58,20 @@ export default defineConfig({
 
 ```tsx
 import {
-	Accordion,
-	AccordionContent,
-	AccordionItem,
-	AccordionTrigger,
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
 } from "~/components"
 ```
 
 ```tsx
 <Accordion collapsible>
-	<AccordionItem value="item-1">
-		<AccordionTrigger>Is it accessible?</AccordionTrigger>
-		<AccordionContent>
-			Yes. It adheres to the WAI-ARIA design pattern.
-		</AccordionContent>
-	</AccordionItem>
+    <AccordionItem value="item-1">
+        <AccordionTrigger>Is it accessible?</AccordionTrigger>
+        <AccordionContent>
+            Yes. It adheres to the WAI-ARIA design pattern.
+        </AccordionContent>
+    </AccordionItem>
 </Accordion>
 ```

@@ -7,8 +7,10 @@ kobalte:
     api: https://kobalte.dev/docs/core/components/image#api-reference
 ---
 
+import { ComponentExample, ComponentSource } from "~/components"
+
 <ComponentExample src="/src/components/examples/image/demo.tsx">
-	<ImageDemo />
+    <ImageDemo />
 </ComponentExample>
 
 ## Installation
@@ -31,7 +33,7 @@ import { ImageRoot, ImageFallback, ImageImage } from "~/components"
 
 ```tsx
 <ImageRoot>
-	<ImageImage src="https://github.com/hngngn.png" />
-	<ImageFallback>HN</ImageFallback>
+    <ImageImage src="https://github.com/hngngn.png" />
+    <ImageFallback>HN</ImageFallback>
 </ImageRoot>
 ```

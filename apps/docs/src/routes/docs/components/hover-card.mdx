@@ -7,8 +7,10 @@ kobalte:
     api: https://kobalte.dev/docs/core/components/hover-card#api-reference
 ---
 
+import { ComponentExample, ComponentSource } from "~/components"
+
 <ComponentExample src="/src/components/examples/hover-card/demo.tsx">
-	<HoverCardDemo />
+    <HoverCardDemo />
 </ComponentExample>
 
 ## Installation
@@ -27,27 +29,27 @@ Add the following animations to your `uno.config.ts` file:
 
 ```tsx title="uno.config.ts" {3-28}
 export default defineConfig({
-	theme: {
-		animation: {
-			keyframes: {
-				"content-show":
-					"{ from { opacity: 0; transform: scale(0.96) } to { opacity: 1; transform: scale(1) }}",
-				"content-hide":
-					"{ from { opacity: 1; transform: scale(1) } to { opacity: 0; transform: scale(0.96) }}",
-			},
-			durations: {
-				"content-show": "200ms",
-				"content-hide": "200ms",
-			},
-			timingFns: {
-				"content-show": "ease-out",
-				"content-hide": "ease-in",
-			},
-			counts: {
-				"content-hide": "forwards",
-			},
-		},
-	},
+    theme: {
+        animation: {
+            keyframes: {
+                "content-show":
+                    "{ from { opacity: 0; transform: scale(0.96) } to { opacity: 1; transform: scale(1) }}",
+                "content-hide":
+                    "{ from { opacity: 1; transform: scale(1) } to { opacity: 0; transform: scale(0.96) }}",
+            },
+            durations: {
+                "content-show": "200ms",
+                "content-hide": "200ms",
+            },
+            timingFns: {
+                "content-show": "ease-out",
+                "content-hide": "ease-in",
+            },
+            counts: {
+                "content-hide": "forwards",
+            },
+        },
+    },
 })
 ```
 
@@ -61,9 +63,9 @@ import { HoverCard, HoverCardContent, HoverCardTrigger } from "~/components"
 
 ```tsx
 <HoverCard>
-	<HoverCardTrigger>Hover</HoverCardTrigger>
-	<HoverCardContent>
-		SolidJS - Simple and performant reactivity for building user interfaces.
-	</HoverCardContent>
+    <HoverCardTrigger>Hover</HoverCardTrigger>
+    <HoverCardContent>
+        SolidJS - Simple and performant reactivity for building user interfaces.
+    </HoverCardContent>
 </HoverCard>
 ```

@@ -7,8 +7,10 @@ kobalte:
     api: https://kobalte.dev/docs/core/components/dialog#api-reference
 ---
 
+import { ComponentExample, ComponentSource } from "~/components"
+
 <ComponentExample src="/src/components/examples/dialog/demo.tsx">
-	<DialogDemo />
+    <DialogDemo />
 </ComponentExample>
 
 ## Installation
@@ -27,27 +29,27 @@ Add the following animations to your `uno.config.ts` file:
 
 ```tsx title="uno.config.ts" {3-28}
 export default defineConfig({
-	theme: {
-		animation: {
-			keyframes: {
-				"content-show":
-					"{ from { opacity: 0; transform: scale(0.96) } to { opacity: 1; transform: scale(1) }}",
-				"content-hide":
-					"{ from { opacity: 1; transform: scale(1) } to { opacity: 0; transform: scale(0.96) }}",
-			},
-			durations: {
-				"content-show": "200ms",
-				"content-hide": "200ms",
-			},
-			timingFns: {
-				"content-show": "ease-out",
-				"content-hide": "ease-in",
-			},
-			counts: {
-				"content-hide": "forwards",
-			},
-		},
-	},
+    theme: {
+        animation: {
+            keyframes: {
+                "content-show":
+                    "{ from { opacity: 0; transform: scale(0.96) } to { opacity: 1; transform: scale(1) }}",
+                "content-hide":
+                    "{ from { opacity: 1; transform: scale(1) } to { opacity: 0; transform: scale(0.96) }}",
+            },
+            durations: {
+                "content-show": "200ms",
+                "content-hide": "200ms",
+            },
+            timingFns: {
+                "content-show": "ease-out",
+                "content-hide": "ease-in",
+            },
+            counts: {
+                "content-hide": "forwards",
+            },
+        },
+    },
 })
 ```
 
@@ -57,26 +59,26 @@ export default defineConfig({
 
 ```tsx
 import {
-	Dialog,
-	DialogContent,
-	DialogDescription,
-	DialogHeader,
-	DialogTitle,
-	DialogTrigger,
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
 } from "~/components"
 ```
 
 ```tsx
 <Dialog>
-	<DialogTrigger>Open</DialogTrigger>
-	<DialogContent>
-		<DialogHeader>
-			<DialogTitle>Are you sure absolutely sure?</DialogTitle>
-			<DialogDescription>
-				This action cannot be undone. This will permanently delete your
-				account and remove your data from our servers.
-			</DialogDescription>
-		</DialogHeader>
-	</DialogContent>
+    <DialogTrigger>Open</DialogTrigger>
+    <DialogContent>
+        <DialogHeader>
+            <DialogTitle>Are you sure absolutely sure?</DialogTitle>
+            <DialogDescription>
+                This action cannot be undone. This will permanently delete your
+                account and remove your data from our servers.
+            </DialogDescription>
+        </DialogHeader>
+    </DialogContent>
 </Dialog>
 ```

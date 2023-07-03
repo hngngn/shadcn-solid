@@ -7,8 +7,10 @@ kobalte:
     api: https://kobalte.dev/docs/core/components/tabs#api-reference
 ---
 
+import { ComponentExample, ComponentSource } from "~/components"
+
 <ComponentExample src="/src/components/examples/tabs/demo.tsx">
-	<TabsDemo />
+    <TabsDemo />
 </ComponentExample>
 
 ## Installation
@@ -31,13 +33,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components"
 
 ```tsx
 <Tabs defaultValue="account" className="w-400px">
-	<TabsList>
-		<TabsTrigger value="account">Account</TabsTrigger>
-		<TabsTrigger value="password">Password</TabsTrigger>
-	</TabsList>
-	<TabsContent value="account">
-		Make changes to your account here.
-	</TabsContent>
-	<TabsContent value="password">Change your password here.</TabsContent>
+    <TabsList>
+        <TabsTrigger value="account">Account</TabsTrigger>
+        <TabsTrigger value="password">Password</TabsTrigger>
+    </TabsList>
+    <TabsContent value="account">
+        Make changes to your account here.
+    </TabsContent>
+    <TabsContent value="password">Change your password here.</TabsContent>
 </Tabs>
 ```

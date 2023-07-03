@@ -7,8 +7,10 @@ kobalte:
     api: https://kobalte.dev/docs/core/components/dropdown-menu#api-reference
 ---
 
+import { ComponentExample, ComponentSource } from "~/components"
+
 <ComponentExample src="/src/components/examples/dropdown-menu/demo.tsx">
-	<DropdownMenuDemo />
+    <DropdownMenuDemo />
 </ComponentExample>
 
 ## Installation
@@ -27,27 +29,27 @@ Add the following animations to your `uno.config.ts` file:
 
 ```tsx title="uno.config.ts" {3-21}
 export default defineConfig({
-	theme: {
-		animation: {
-			keyframes: {
-				"content-show":
-					"{ from { opacity: 0; transform: scale(0.96) } to { opacity: 1; transform: scale(1) }}",
-				"content-hide":
-					"{ from { opacity: 1; transform: scale(1) } to { opacity: 0; transform: scale(0.96) }}",
-			},
-			durations: {
-				"content-show": "200ms",
-				"content-hide": "200ms",
-			},
-			timingFns: {
-				"content-show": "ease-out",
-				"content-hide": "ease-in",
-			},
-			counts: {
-				"content-hide": "forwards",
-			},
-		},
-	},
+    theme: {
+        animation: {
+            keyframes: {
+                "content-show":
+                    "{ from { opacity: 0; transform: scale(0.96) } to { opacity: 1; transform: scale(1) }}",
+                "content-hide":
+                    "{ from { opacity: 1; transform: scale(1) } to { opacity: 0; transform: scale(0.96) }}",
+            },
+            durations: {
+                "content-show": "200ms",
+                "content-hide": "200ms",
+            },
+            timingFns: {
+                "content-show": "ease-out",
+                "content-hide": "ease-in",
+            },
+            counts: {
+                "content-hide": "forwards",
+            },
+        },
+    },
 })
 ```
 
@@ -57,26 +59,26 @@ export default defineConfig({
 
 ```tsx
 import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuLabel,
-	DropdownMenuSeparator,
-	DropdownMenuTrigger,
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 ```
 
 ```tsx
 <DropdownMenu>
-	<DropdownMenuTrigger>Open</DropdownMenuTrigger>
-	<DropdownMenuContent>
-		<DropdownMenuLabel>My Account</DropdownMenuLabel>
-		<DropdownMenuSeparator />
-		<DropdownMenuItem>Profile</DropdownMenuItem>
-		<DropdownMenuItem>Billing</DropdownMenuItem>
-		<DropdownMenuItem>Team</DropdownMenuItem>
-		<DropdownMenuItem>Subscription</DropdownMenuItem>
-	</DropdownMenuContent>
+    <DropdownMenuTrigger>Open</DropdownMenuTrigger>
+    <DropdownMenuContent>
+        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem>Profile</DropdownMenuItem>
+        <DropdownMenuItem>Billing</DropdownMenuItem>
+        <DropdownMenuItem>Team</DropdownMenuItem>
+        <DropdownMenuItem>Subscription</DropdownMenuItem>
+    </DropdownMenuContent>
 </DropdownMenu>
 ```
 
@@ -85,11 +87,11 @@ import {
 ### Checkboxes
 
 <ComponentExample src="/src/components/examples/dropdown-menu/checkboxes.tsx">
-	<DropdownMenuCheckboxes />
+    <DropdownMenuCheckboxes />
 </ComponentExample>
 
 ### Radio Group
 
 <ComponentExample src="/src/components/examples/dropdown-menu/radio-group.tsx">
-	<DropdownMenuRadioGroupDemo />
+    <DropdownMenuRadioGroupDemo />
 </ComponentExample>
