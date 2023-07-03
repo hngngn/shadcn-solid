@@ -1,10 +1,11 @@
-import { defineConfig } from "tsup-preset-solid"
+import { defineConfig } from "tsup"
 
-export default defineConfig(
-    {
-        entry: "src/index.tsx",
-    },
-    {
-        dropConsole: true,
-    }
-)
+export default defineConfig({
+    clean: true,
+    dts: true,
+    entry: ["src/index.ts"],
+    format: ["esm"],
+    sourcemap: true,
+    target: "esnext",
+    outDir: "dist",
+})

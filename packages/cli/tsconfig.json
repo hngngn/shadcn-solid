@@ -1,22 +1,23 @@
 {
     "compilerOptions": {
-        "strict": true,
-        "target": "ESNext",
-        "module": "ESNext",
-        "lib": ["DOM", "DOM.Iterable", "ESNext"],
-        "moduleResolution": "node",
-        "resolveJsonModule": true,
+        "composite": false,
+        "declaration": true,
+        "declarationMap": true,
         "esModuleInterop": true,
-        "noEmit": true,
-        "isolatedModules": true,
-        "skipLibCheck": true,
-        "allowSyntheticDefaultImports": true,
         "forceConsistentCasingInFileNames": true,
-        "noUncheckedIndexedAccess": true,
-        "jsx": "preserve",
-        "jsxImportSource": "solid-js",
-        "types": [],
-        "baseUrl": "."
+        "inlineSources": false,
+        "moduleResolution": "node",
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "preserveWatchOutput": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "isolatedModules": false,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./*"]
+        }
     },
-    "exclude": ["node_modules", "dist", "./dev"]
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules"]
 }

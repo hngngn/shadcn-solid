@@ -1,22 +1,23 @@
 {
-	"private": true,
-	"scripts": {
-		"build": "turbo run build",
-		"dev": "turbo run dev",
-		"lint": "turbo run lint",
-		"format": "turbo run format"
-	},
-	"devDependencies": {
-		"@turbo/gen": "^1.10.6",
-		"@typescript-eslint/eslint-plugin": "^5.60.1",
-		"@typescript-eslint/parser": "^5.60.1",
-		"eslint": "^8.43.0",
-		"eslint-config-prettier": "^8.8.0",
-		"eslint-config-turbo": "^1.10.6",
-		"eslint-plugin-solid": "^0.12.1",
-		"prettier": "^2.8.8",
-		"turbo": "^1.10.7"
-	},
-	"packageManager": "pnpm@7.15.0",
-	"name": "shadcn-solid"
+    "private": true,
+    "scripts": {
+        "build": "turbo run build",
+        "dev": "turbo run dev",
+        "lint": "turbo run lint",
+        "format": "turbo run format",
+        "release": "cd packages/cli && pnpm release"
+    },
+    "devDependencies": {
+        "@turbo/gen": "^1.10.6",
+        "@typescript-eslint/eslint-plugin": "^5.60.1",
+        "@typescript-eslint/parser": "^5.60.1",
+        "eslint": "^8.43.0",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-config-turbo": "^1.10.6",
+        "eslint-plugin-solid": "^0.12.1",
+        "prettier": "^2.8.8",
+        "turbo": "^1.10.7"
+    },
+    "packageManager": "pnpm@7.15.0",
+    "name": "shadcn-solid"
 }
