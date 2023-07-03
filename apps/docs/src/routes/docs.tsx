@@ -1,5 +1,5 @@
 import { Show } from "solid-js"
-import { A, Outlet, Title, useLocation } from "solid-start"
+import { A, Meta, Outlet, Title, useLocation } from "solid-start"
 import { createServerData$ } from "solid-start/server"
 import { Balancer } from "solid-wrap-balancer"
 import {
@@ -9,6 +9,7 @@ import {
     TableOfContents,
     badgeVariants,
 } from "~/components"
+import { siteConfig } from "~/config"
 
 const mods = /*#__PURE__*/ import.meta.glob<
     true,
@@ -56,6 +57,16 @@ export default () => {
     return (
         <>
             <Title>{`${data()?.frontmatter?.title} - shadcn-solid`}</Title>
+            <Meta property="og:title" content={data()?.frontmatter?.title} />
+            <Meta
+                property="og:description"
+                content={data()?.frontmatter?.description}
+            />
+            <Meta
+                property="og:url"
+                content={`${siteConfig.url}${location.pathname}`}
+            />
+            <Meta property="og:type" content="article" />
             <div class="container flex-1 items-start md:(grid grid-cols-[220px_minmax(0,1fr)] gap-6) lg:(grid-cols-[240px_minmax(0,1fr)] gap-10)">
                 <aside class="fixed top-14 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 hover:overflow-y-auto overflow-hidden [scrollbar-gutter:stable] scrollbar-w-2 md:(sticky block)">
                     <div class="h-full py-6 pl-8 pr-6 lg:py-8">
