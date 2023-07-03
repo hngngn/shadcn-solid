@@ -22,7 +22,7 @@ export const ContextMenuSubTrigger: ParentComponent<
 
     return (
         <ContextMenuPrimitive.SubTrigger
-            class="flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground"
+            class="flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:(bg-accent text-accent-foreground) data-[expanded]:(bg-accent text-accent-foreground)"
             classList={{
                 "pl-8": local.inset,
                 [local.class!]: Boolean(local.class),
@@ -83,7 +83,7 @@ export const ContextMenuItem: ParentComponent<
 
     return (
         <ContextMenuPrimitive.Item
-            class="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:(pointer-events-none opacity-50)"
+            class="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:(bg-accent text-accent-foreground) data-[disabled]:(pointer-events-none opacity-50)"
             classList={{
                 "pl-8": local.inset,
                 [local.class!]: Boolean(local.class),
@@ -101,7 +101,7 @@ export const ContextMenuCheckboxItem: ParentComponent<
 
     return (
         <ContextMenuPrimitive.CheckboxItem
-            class="relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50"
+            class="relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:(bg-accent text-accent-foreground) data-[disabled]:(pointer-events-none opacity-50)"
             classList={{
                 [local.class!]: Boolean(local.class),
                 ...local.classList,
@@ -123,7 +123,7 @@ export const ContextMenuRadioItem: ParentComponent<
 
     return (
         <ContextMenuPrimitive.RadioItem
-            class="relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50"
+            class="relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:(bg-accent text-accent-foreground) data-[disabled]:(pointer-events-none opacity-50)"
             classList={{
                 [local.class!]: Boolean(local.class),
                 ...local.classList,

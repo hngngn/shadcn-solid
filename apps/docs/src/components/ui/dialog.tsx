@@ -40,7 +40,7 @@ export const DialogContent: ParentComponent<
                     {...rest}
                 >
                     {local.children}
-                    <DialogPrimitive.CloseButton class="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none">
+                    <DialogPrimitive.CloseButton class="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:(outline-none ring-2 ring-ring ring-offset-2) disabled:pointer-events-none">
                         <CloseIcon />
                         <span class="sr-only">Close</span>
                     </DialogPrimitive.CloseButton>
@@ -100,7 +100,7 @@ export const DialogFooter: ParentComponent<ComponentProps<"div">> = (props) => {
     const [local, rest] = splitProps(props, ["class", "classList"])
     return (
         <div
-            class="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2"
+            class="flex flex-col-reverse sm:(flex-row justify-end space-x-2)"
             classList={{
                 [local.class!]: Boolean(local.class),
                 ...local.classList,

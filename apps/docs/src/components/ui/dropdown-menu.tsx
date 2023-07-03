@@ -42,7 +42,7 @@ export const DropdownMenuItem: ParentComponent<
     const [local, rest] = splitProps(props, ["class", "classList"])
     return (
         <DropdownMenuPrimitive.Item
-            class="relative flex cursor-default select-none items-center rounded-sm p-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:(pointer-events-none opacity-50)"
+            class="relative flex cursor-default select-none items-center rounded-sm p-1.5 text-sm outline-none transition-colors focus:(bg-accent text-accent-foreground) data-[disabled]:(pointer-events-none opacity-50)"
             classList={{
                 [local.class!]: Boolean(local.class),
                 ...local.classList,
@@ -166,7 +166,7 @@ export const DropdownMenuCheckboxItem: ParentComponent<
     ])
     return (
         <DropdownMenuPrimitive.CheckboxItem
-            class="relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50"
+            class="relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:(bg-accent text-accent-foreground) data-[disabled]:(pointer-events-none opacity-50)"
             classList={{
                 [local.class!]: Boolean(local.class),
                 ...local.classList,
@@ -188,7 +188,7 @@ export const DropdownMenuRadioItem: ParentComponent<
     const [local, rest] = splitProps(props, ["class", "classList", "children"])
     return (
         <DropdownMenuPrimitive.RadioItem
-            class="relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50"
+            class="relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:(bg-accent text-accent-foreground) data-[disabled]:(pointer-events-none opacity-50)"
             classList={{
                 [local.class!]: Boolean(local.class),
                 ...local.classList,

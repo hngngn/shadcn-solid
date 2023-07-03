@@ -38,7 +38,7 @@ export const TabsContent: ParentComponent<TabsPrimitive.TabsContentProps> = (
     const [local, rest] = splitProps(props, ["class", "classList"])
     return (
         <TabsPrimitive.Content
-            class="mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            class="mt-2 ring-offset-background focus-visible:(outline-none ring-2 ring-ring ring-offset-2)"
             classList={{
                 [local.class!]: Boolean(local.class),
                 ...local.classList,
@@ -54,7 +54,7 @@ export const TabsTrigger: ParentComponent<TabsPrimitive.TabsTriggerProps> = (
     const [local, rest] = splitProps(props, ["class", "classList"])
     return (
         <TabsPrimitive.Trigger
-            class="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[selected]:(bg-background text-foreground shadow)"
+            class="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:(outline-none ring-2 ring-ring ring-offset-2) disabled:(pointer-events-none opacity-50) data-[selected]:(bg-background text-foreground shadow)"
             classList={{
                 [local.class!]: Boolean(local.class),
                 ...local.classList,

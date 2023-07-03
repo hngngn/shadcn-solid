@@ -66,7 +66,7 @@ export const AlertDialogFooter: ParentComponent<ComponentProps<"div">> = (
     const [local, rest] = splitProps(props, ["class", "classList"])
     return (
         <div
-            class="flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2"
+            class="flex flex-col-reverse sm:(flex-row justify-end space-x-2)"
             classList={{
                 [local.class!]: Boolean(local.class),
                 ...local.classList,
@@ -114,7 +114,10 @@ export const AlertDialogClose: ParentComponent<
     const [local, rest] = splitProps(props, ["class", "classList"])
     return (
         <AlertDialogPrimitive.CloseButton
-            class={`${buttonVariants({ variant: "outline" })} mt-2 sm:mt-0`}
+            class={`${buttonVariants({
+                variant: "outline",
+                class: " mt-2 sm:mt-0",
+            })}`}
             classList={{
                 [local.class!]: Boolean(local.class),
                 ...local.classList,

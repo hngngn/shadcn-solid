@@ -7,7 +7,7 @@ export const TextFieldDescription = TextFieldPrimitive.Description
 export const TextField = TextFieldPrimitive.Root
 
 export const labelVariants = cva(
-    "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+    "text-sm font-medium leading-none peer-disabled:(cursor-not-allowed opacity-70)"
 )
 
 export const TextFieldLabel: ParentComponent<
