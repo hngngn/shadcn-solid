@@ -1,0 +1,31 @@
+{
+    "name": "www",
+    "scripts": {
+        "dev": "solid-start dev --host",
+        "start": "solid-start start",
+        "build": "solid-start build",
+        "lint": "eslint --fix \"**/*.{ts,tsx}\"",
+        "format": "prettier -w \"**/*.{ts,tsx}\""
+    },
+    "type": "module",
+    "devDependencies": {
+        "typescript": "^4.9.5",
+        "vite": "^4.1.2",
+        "@types/node": "^18.14.0",
+        "solid-start-vercel": "^0.2.26",
+        "tailwindcss": "^3.2.7",
+        "postcss": "^8.4.21",
+        "autoprefixer": "^10.4.13"
+    },
+    "dependencies": {
+        "@solidjs/meta": "^0.28.2",
+        "@solidjs/router": "^0.8.2",
+        "solid-js": "^1.7.3",
+        "solid-start": "^0.2.26",
+        "undici": "5.20.0",
+        "zod": "^3.20.6"
+    },
+    "engines": {
+        "node": ">=16"
+    }
+}
