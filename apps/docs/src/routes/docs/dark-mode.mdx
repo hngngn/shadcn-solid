@@ -5,62 +5,146 @@ description: Adding dark mode to your site.
 
 <Steps>
 
+### Dark mode preset
+
+UnoCSS only support `class` and `media` in dark mode, use this if you need support for data attribute.
+
+```tsx
+import type { Preset, VariantHandlerContext } from "unocss"
+import { escapeRegExp, type Variant, type VariantObject } from "unocss"
+
+const variantMatcher = (
+    name: string,
+    handler: (input: VariantHandlerContext) => Record<string, any>
+): VariantObject => {
+    let re: RegExp
+    return {
+        name,
+        match(input, ctx) {
+            if (!re)
+                re = new RegExp(
+                    `^${escapeRegExp(
+                        name
+                    )}(?:${ctx.generator.config.separators.join("|")})`
+                )
+
+            const match = input.match(re)
+            if (match) {
+                return {
+                    matcher: input.slice(match[0].length),
+                    handle: (input, next) =>
+                        next({
+                            ...input,
+                            ...handler(input),
+                        }),
+                }
+            }
+        },
+        autocomplete: `${name}:`,
+    }
+}
+
+export type TPresetDarkModeOption = {
+    /**
+     * Data attribute name
+     *
+     * @default 'data-kb-theme'
+     */
+    value?: string
+}
+
+const variants = (option?: TPresetDarkModeOption): Variant[] => {
+    const defaultValue = option?.value ?? "data-kb-theme"
+
+    return [
+        variantMatcher("dark", (input) => ({
+            prefix: `:is([${defaultValue}="dark"]) $$ ${input.prefix}`,
+        })),
+        variantMatcher("light", (input) => ({
+            prefix: `:is([${defaultValue}="light"]) $$ ${input.prefix}`,
+        })),
+    ]
+}
+
+export const presetDarkMode = (option?: TPresetDarkModeOption): Preset => {
+    return {
+        name: "preset-dark-mode",
+        variants: variants(option),
+    }
+}
+```
+
+Import to your `uno.config.ts` and remember to always place it before the default preset.
+
+```tsx {6} title="uno.config.ts"
+import { presetUno } from "unocss"
+import { presetDarkMode } from "./src/lib"
+
+export default defineConfig({
+    presets: [
+        presetDarkMode(),
+        presetUno(),
+        // ...
+    ],
+})
+```
+
 ### Wrap your root layout
 
 Add the `ThemeProvider` and `ColorModeScript` to your root.
 
 ```tsx {1-18,21-25,39,41-45} title="src/root.tsx"
 import {
-	ColorModeProvider,
-	ColorModeScript,
-	cookieStorageManagerSSR,
+    ColorModeProvider,
+    ColorModeScript,
+    cookieStorageManagerSSR,
 } from "@kobalte/core"
 import { isServer } from "solid-js/web"
 import {
-	Body,
-	ErrorBoundary,
-	FileRoutes,
-	Head,
-	Html,
-	Meta,
-	Routes,
-	Scripts,
-	ServerContext,
-	Title,
+    Body,
+    ErrorBoundary,
+    FileRoutes,
+    Head,
+    Html,
+    Meta,
+    Routes,
+    Scripts,
+    ServerContext,
+    Title,
 } from "solid-start"
 
 const Root = () => {
-	const event = useContext(ServerContext)
+    const event = useContext(ServerContext)
 
-	const storageManager = cookieStorageManagerSSR(
-		isServer ? event?.request.headers.get("cookie") ?? "" : document.cookie
-	)
+    const storageManager = cookieStorageManagerSSR(
+        isServer ? event?.request.headers.get("cookie") ?? "" : document.cookie
+    )
 
-	return (
-		<Html lang="en">
-			<Head>
-				<Title>shadcn-solid</Title>
-				<Meta charset="utf-8" />
-				<Meta
-					name="viewport"
-					content="width=device-width, initial-scale=1"
-				/>
-			</Head>
-			<Body>
-				<ErrorBoundary>
-					<ColorModeScript storageType={storageManager.type} />
-					<Suspense>
-						<ColorModeProvider storageManager={storageManager}>
-							<Routes>
-								<FileRoutes />
-							</Routes>
-						</ColorModeProvider>
-					</Suspense>
-				</ErrorBoundary>
-				<Scripts />
-			</Body>
-		</Html>
-	)
+    return (
+        <Html lang="en">
+            <Head>
+                <Title>shadcn-solid</Title>
+                <Meta charset="utf-8" />
+                <Meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1"
+                />
+            </Head>
+            <Body>
+                <ErrorBoundary>
+                    <ColorModeScript storageType={storageManager.type} />
+                    <Suspense>
+                        <ColorModeProvider storageManager={storageManager}>
+                            <Routes>
+                                <FileRoutes />
+                            </Routes>
+                        </ColorModeProvider>
+                    </Suspense>
+                </ErrorBoundary>
+                <Scripts />
+            </Body>
+        </Html>
+    )
 }
 
 export default Root
@@ -71,7 +155,7 @@ export default Root
 Place a mode toggle on your site to toggle between light and dark mode.
 
 <ComponentExample src="/src/components/mode-toggle.tsx">
-	<ModeToggle />
+    <ModeToggle />
 </ComponentExample>
 
 </Steps>

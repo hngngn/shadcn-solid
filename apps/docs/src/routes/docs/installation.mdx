@@ -7,27 +7,36 @@ description: How to install dependencies and structure your app.
 
 <Steps>
 
+### Add UnoCSS
+
+Components are styled using UnoCSS. You need to install it in your project.
+
+[Follow the UnoCSS installation instructions to get started.](https://unocss.dev/integrations/)
+
 ### Add dependencies
 
 Add the following dependencies to your project:
 
 ```bash
-pnpm add -D unocss @unocss/reset lightningcss browserslist unocss-preset-autoprefixer unocss-preset-primitives @iconify-json/lucide
 pnpm add class-variance-authority
 ```
 
+### Add icon library
+
+This project uses [UnoCSS preset icon](https://unocss.dev/presets/icons) and [Iconify lucide](https://icon-sets.iconify.design/lucide/), but you can use any icon library.
+
 ### Path Aliases
 
-I use the `~` alias to make it easier to import your components. This is how you can configure it in `tsconfig.json`:
+I'm use the `~` alias to make it easier to import your components. This is how you can configure it in `tsconfig.json`:
 
 ```json title="tsconfig.json"
 {
-	"compilerOptions": {
-		"baseUrl": "./",
-		"paths": {
-			"~/*": ["./src/*"]
-		}
-	}
+    "compilerOptions": {
+        "baseUrl": "./",
+        "paths": {
+            "~/*": ["./src/*"]
+        }
+    }
 }
 ```
 
@@ -35,200 +44,154 @@ If you prefer to use a different alias than `~`, you'll need to update the `impo
 
 ### Configure uno.config.ts
 
-UnoCSS only support `class` and `media` in dark mode, use this if you need support for data attribute.
-
-```tsx
-import type { Preset, VariantHandlerContext } from "unocss"
-import { escapeRegExp, type Variant, type VariantObject } from "unocss"
-
-const variantMatcher = (
-	name: string,
-	// eslint-disable-next-line no-unused-vars
-	handler: (input: VariantHandlerContext) => Record<string, any>
-): VariantObject => {
-	let re: RegExp
-	return {
-		name,
-		match(input, ctx) {
-			if (!re)
-				re = new RegExp(
-					`^${escapeRegExp(
-						name
-					)}(?:${ctx.generator.config.separators.join("|")})`
-				)
-
-			const match = input.match(re)
-			if (match) {
-				return {
-					matcher: input.slice(match[0].length),
-					handle: (input, next) =>
-						next({
-							...input,
-							...handler(input),
-						}),
-				}
-			}
-		},
-		autocomplete: `${name}:`,
-	}
-}
-
-export type TPresetDarkModeOption = {
-	/**
-	 * Data attribute name
-	 *
-	 * @default 'data-kb-theme'
-	 */
-	value?: string
-}
-
-const variants = (option?: TPresetDarkModeOption): Variant[] => {
-	const defaultValue = option?.value ?? "data-kb-theme"
-
-	return [
-		variantMatcher("dark", (input) => ({
-			prefix: `:is([${defaultValue}="dark"]) $$ ${input.prefix}`,
-		})),
-		variantMatcher("light", (input) => ({
-			prefix: `:is([${defaultValue}="light"]) $$ ${input.prefix}`,
-		})),
-	]
-}
-
-export const presetDarkMode = (option?: TPresetDarkModeOption): Preset => {
-	return {
-		name: "preset-dark-mode",
-		variants: variants(option),
-	}
-}
-```
-
 This is what this project's `uno.config.ts` file looks like:
 
 ```ts title="uno.config.ts"
 import {
-	defineConfig,
-	presetIcons,
-	presetUno,
-	presetWebFonts,
-	transformerDirectives,
-	transformerVariantGroup,
+    defineConfig,
+    presetIcons,
+    presetUno,
+    presetWebFonts,
+    transformerDirectives,
+    transformerVariantGroup,
 } from "unocss"
-import presetAutoPrefixer from "unocss-preset-autoprefixer"
 import type { Theme } from "unocss/preset-uno"
-import { presetDarkMode } from "./src/lib"
 
 export default defineConfig<Theme>({
-	presets: [
-		presetDarkMode(),
-		presetUno(),
-		presetAutoPrefixer(),
-		presetWebFonts({
-			fonts: {
-				sans: {
-					name: "Inter",
-					italic: false,
-					provider: "google",
-					weights: [400, 500, 600, 700],
-				},
-			},
-		}),
-		presetIcons({
-			extraProperties: {
-				width: "1rem",
-				height: "1rem",
-			},
-		}),
-	],
-	transformers: [transformerDirectives(), transformerVariantGroup()],
-	theme: {
-		container: {
-			center: true,
-			padding: "2rem",
-			maxWidth: {
-				"2xl": "1400px",
-			},
-		},
-		colors: {
-			border: "hsl(var(--border))",
-			input: "hsl(var(--input))",
-			ring: "hsl(var(--ring))",
-			background: "hsl(var(--background))",
-			foreground: "hsl(var(--foreground))",
-			primary: {
-				DEFAULT: "hsl(var(--primary))",
-				foreground: "hsl(var(--primary-foreground))",
-			},
-			secondary: {
-				DEFAULT: "hsl(var(--secondary))",
-				foreground: "hsl(var(--secondary-foreground))",
-			},
-			destructive: {
-				DEFAULT: "hsl(var(--destructive))",
-				foreground: "hsl(var(--destructive-foreground))",
-			},
-			muted: {
-				DEFAULT: "hsl(var(--muted))",
-				foreground: "hsl(var(--muted-foreground))",
-			},
-			accent: {
-				DEFAULT: "hsl(var(--accent))",
-				foreground: "hsl(var(--accent-foreground))",
-			},
-			popover: {
-				DEFAULT: "hsl(var(--popover))",
-				foreground: "hsl(var(--popover-foreground))",
-			},
-			card: {
-				DEFAULT: "hsl(var(--card))",
-				foreground: "hsl(var(--card-foreground))",
-			},
-		},
-		borderRadius: {
-			lg: `var(--radius)`,
-			md: `calc(var(--radius) - 2px)`,
-			sm: "calc(var(--radius) - 4px)",
-		},
-		animation: {
-			keyframes: {
-				"accordion-down":
-					"{ from { height: 0 } to { height: var(--kb-accordion-content-height) }}",
-				"accordion-up":
-					"{ from { height: var(--kb-accordion-content-height) } to { height: 0 }}",
-				"collapsible-down":
-					"{ from { height: 0 } to { height: var(--kb-collapsible-content-height) }}",
-				"collapsible-up":
-					"{ from { height: var(--kb-collapsible-content-height) } to { height: 0 }}",
-				"content-show":
-					"{ from { opacity: 0; transform: scale(0.96) } to { opacity: 1; transform: scale(1) }}",
-				"content-hide":
-					"{ from { opacity: 1; transform: scale(1) } to { opacity: 0; transform: scale(0.96) }}",
-			},
-			durations: {
-				"accordion-down": "200ms",
-				"accordion-up": "200ms",
-				"collapsible-down": "200ms",
-				"collapsible-up": "200ms",
-				"content-show": "200ms",
-				"content-hide": "200ms",
-			},
-			timingFns: {
-				"accordion-down": "ease-out",
-				"accordion-up": "ease-out",
-				"collapsible-down": "ease-out",
-				"collapsible-up": "ease-out",
-				"content-show": "ease-out",
-				"content-hide": "ease-in",
-			},
-			counts: {
-				"content-hide": "forwards",
-			},
-		},
-	},
+    presets: [
+        presetUno(),
+        presetWebFonts({
+            fonts: {
+                sans: {
+                    name: "Inter",
+                    italic: false,
+                    provider: "google",
+                    weights: [400, 500, 600, 700],
+                },
+            },
+        }),
+        presetIcons({
+            extraProperties: {
+                width: "1rem",
+                height: "1rem",
+            },
+        }),
+    ],
+    transformers: [transformerDirectives(), transformerVariantGroup()],
+    theme: {
+        container: {
+            center: true,
+            padding: "2rem",
+            maxWidth: {
+                "2xl": "1400px",
+            },
+        },
+        colors: {
+            border: "hsl(var(--border))",
+            input: "hsl(var(--input))",
+            ring: "hsl(var(--ring))",
+            background: "hsl(var(--background))",
+            foreground: "hsl(var(--foreground))",
+            primary: {
+                DEFAULT: "hsl(var(--primary))",
+                foreground: "hsl(var(--primary-foreground))",
+            },
+            secondary: {
+                DEFAULT: "hsl(var(--secondary))",
+                foreground: "hsl(var(--secondary-foreground))",
+            },
+            destructive: {
+                DEFAULT: "hsl(var(--destructive))",
+                foreground: "hsl(var(--destructive-foreground))",
+            },
+            muted: {
+                DEFAULT: "hsl(var(--muted))",
+                foreground: "hsl(var(--muted-foreground))",
+            },
+            accent: {
+                DEFAULT: "hsl(var(--accent))",
+                foreground: "hsl(var(--accent-foreground))",
+            },
+            popover: {
+                DEFAULT: "hsl(var(--popover))",
+                foreground: "hsl(var(--popover-foreground))",
+            },
+            card: {
+                DEFAULT: "hsl(var(--card))",
+                foreground: "hsl(var(--card-foreground))",
+            },
+        },
+        borderRadius: {
+            lg: `var(--radius)`,
+            md: `calc(var(--radius) - 2px)`,
+            sm: "calc(var(--radius) - 4px)",
+        },
+        animation: {
+            keyframes: {
+                "accordion-down":
+                    "{ from { height: 0 } to { height: var(--kb-accordion-content-height) }}",
+                "accordion-up":
+                    "{ from { height: var(--kb-accordion-content-height) } to { height: 0 }}",
+                "collapsible-down":
+                    "{ from { height: 0 } to { height: var(--kb-collapsible-content-height) }}",
+                "collapsible-up":
+                    "{ from { height: var(--kb-collapsible-content-height) } to { height: 0 }}",
+                "content-show":
+                    "{ from { opacity: 0; transform: scale(0.96) } to { opacity: 1; transform: scale(1) }}",
+                "content-hide":
+                    "{ from { opacity: 1; transform: scale(1) } to { opacity: 0; transform: scale(0.96) }}",
+                "slide-in":
+                    "{ from { transform: translateY(calc(100% + var(--viewport-padding))) } to { transform: translateY(0) }}",
+                "slide-out":
+                    "{ from { transform: translateY(var(--kb-toast-swipe-end-y)) } to { transform: translateY(calc(100% + var(--viewport-padding))) }}",
+            },
+            durations: {
+                "accordion-down": "200ms",
+                "accordion-up": "200ms",
+                "collapsible-down": "200ms",
+                "collapsible-up": "200ms",
+                "content-show": "200ms",
+                "content-hide": "200ms",
+                "slide-out-left": "200ms",
+                "slide-in-left": "300ms",
+                "slide-out-right": "200ms",
+                "slide-in-right": "300ms",
+                "slide-out-down": "200ms",
+                "slide-in-down": "300ms",
+                "slide-out-up": "200ms",
+                "slide-in-up": "300ms",
+                "fade-in": "100ms",
+                "fade-out": "100ms",
+                "slide-in": "150ms",
+                "slide-out": "100ms",
+            },
+            timingFns: {
+                "accordion-down": "ease-out",
+                "accordion-up": "ease-out",
+                "collapsible-down": "ease-out",
+                "collapsible-up": "ease-out",
+                "content-show": "ease-out",
+                "content-hide": "ease-in",
+                "slide-out-left": "ease-out",
+                "slide-in-left": "ease-in",
+                "slide-out-right": "ease-out",
+                "slide-in-right": "ease-in",
+                "slide-out-down": "ease-out",
+                "slide-in-down": "ease-in",
+                "slide-out-up": "ease-out",
+                "slide-in-up": "ease-in",
+                "fade-in": "ease-in",
+                "fade-out": "ease-out",
+                "slide-in": "cubic-bezier(0.16, 1, 0.3, 1)",
+                "slide-out": "ease-out",
+            },
+            counts: {
+                "content-hide": "forwards",
+            },
+        },
+    },
 })
 ```
-
-Feel free to add or modify as needed to suit your project.
 
 ### Configure styles
 
@@ -236,73 +199,75 @@ Add the following to your `src/styles/global.css` file. You can learn more about
 
 ```css title="src/styles/global.css"
 :root {
-	--background: 0, 0%, 100%;
-	--foreground: 240, 10%, 3.9%;
+    --background: 0, 0%, 100%;
+    --foreground: 240, 10%, 3.9%;
 
-	--muted: 240, 4.8%, 95.9%;
-	--muted-foreground: 240, 3.8%, 46.1%;
+    --muted: 240, 4.8%, 95.9%;
+    --muted-foreground: 240, 3.8%, 46.1%;
 
-	--popover: 0, 0%, 100%;
-	--popover-foreground: 240, 10%, 3.9%;
+    --popover: 0, 0%, 100%;
+    --popover-foreground: 240, 10%, 3.9%;
 
-	--card: 0, 0%, 100%;
-	--card-foreground: 240, 10%, 3.9%;
+    --card: 0, 0%, 100%;
+    --card-foreground: 240, 10%, 3.9%;
 
-	--border: 240, 5.9%, 90%;
-	--input: 240, 5.9%, 90%;
+    --border: 240, 5.9%, 90%;
+    --input: 240, 5.9%, 90%;
 
-	--primary: 240, 5.9%, 10%;
-	--primary-foreground: 0, 0%, 98%;
+    --primary: 240, 5.9%, 10%;
+    --primary-foreground: 0, 0%, 98%;
 
-	--secondary: 240, 4.8%, 95.9%;
-	--secondary-foreground: 240, 5.9%, 10%;
+    --secondary: 240, 4.8%, 95.9%;
+    --secondary-foreground: 240, 5.9%, 10%;
 
-	--accent: 240, 4.8%, 95.9%;
+    --accent: 240, 4.8%, 95.9%;
 
-	--destructive: 0, 84.2%, 60.2%;
-	--destructive-foreground: 0, 0%, 98%;
+    --destructive: 0, 84.2%, 60.2%;
+    --destructive-foreground: 0, 0%, 98%;
 
-	--ring: 240, 5%, 64.9%;
+    --ring: 240, 5%, 64.9%;
 
-	--radius: 0.5rem;
+    --radius: 0.5rem;
+
+    --viewport-padding: 16px;
 }
 
 [data-kb-theme="dark"] {
-	--background: 240, 10%, 3.9%;
-	--foreground: 0, 0%, 98%;
+    --background: 240, 10%, 3.9%;
+    --foreground: 0, 0%, 98%;
 
-	--muted: 240, 3.7%, 15.9%;
-	--muted-foreground: 240, 5%, 64.9%;
+    --muted: 240, 3.7%, 15.9%;
+    --muted-foreground: 240, 5%, 64.9%;
 
-	--popover: 240, 10%, 3.9%;
-	--popover-foreground: 0, 0%, 98%;
+    --popover: 240, 10%, 3.9%;
+    --popover-foreground: 0, 0%, 98%;
 
-	--card: 240, 10%, 3.9%;
-	--card-foreground: 0, 0%, 98%;
+    --card: 240, 10%, 3.9%;
+    --card-foreground: 0, 0%, 98%;
 
-	--border: 240, 3.7%, 15.9%;
-	--input: 240, 3.7%, 15.9%;
+    --border: 240, 3.7%, 15.9%;
+    --input: 240, 3.7%, 15.9%;
 
-	--primary: 0, 0%, 98%;
-	--primary-foreground: 240, 5.9%, 10%;
+    --primary: 0, 0%, 98%;
+    --primary-foreground: 240, 5.9%, 10%;
 
-	--secondary: 240, 3.7%, 15.9%;
-	--secondary-foreground: 0, 0%, 98%;
+    --secondary: 240, 3.7%, 15.9%;
+    --secondary-foreground: 0, 0%, 98%;
 
-	--accent: 240, 3.7%, 15.9%;
+    --accent: 240, 3.7%, 15.9%;
 
-	--destructive: 0, 62.8%, 30.6%;
-	--destructive-foreground: 0, 85.7%, 97.3%;
+    --destructive: 0, 62.8%, 30.6%;
+    --destructive-foreground: 0, 85.7%, 97.3%;
 
-	--ring: 240, 3.7%, 15.9%;
+    --ring: 240, 3.7%, 15.9%;
 }
 
 * {
-	@apply border-border;
+    @apply border-border;
 }
 
 body {
-	font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings: "rlig" 1, "calt" 1;
 }
 ```
 
@@ -342,6 +307,8 @@ preflights: [
 			--ring: 240, 5%, 64.9%;
 
 			--radius: 0.5rem;
+
+			--viewport-padding: 16px;
 		}
 
 		[data-kb-theme="dark"] {
@@ -392,43 +359,19 @@ Import the styles to your root:
 
 ```tsx title="src/root.tsx"
 import "@unocss/reset/tailwind.css"
-import "virtual:uno.css"
+import "uno.css"
 ```
 
 If you not using UnoCSS preflights:
 
 ```tsx title="src/root.tsx"
 import "@unocss/reset/tailwind.css"
-import "virtual:uno.css"
+import "uno.css"
 import "~/styles/global.css"
 ```
 
+### That's it
+
+You can now start adding components to your project.
+
 </Steps>
-
-## Icons
-
-This project uses icon preset from [UnoCSS](https://unocss.dev/presets/icons), but feel free to use any icon library.
-
-## App structure
-
-Here's how I structure my app. I use SolidStart, but this is not required.
-
-```txt {3-6,8-9}
-├──	src
-│	├── components
-│	│   ├── ui
-│	│   │   ├── accordion.tsx
-│	│   │   ├── button.tsx
-│	│   │   └── ...
-│	│   └── ...
-│	├── styles
-│	│   ├── global.css
-│	└── ...
-└── uno.config.ts
-```
-
--   Place the UI components in the `src/components/ui` folder.
--   The rest of the components such as `<SiteHeader />` and `<MainBar />` are placed in the `src/components` folder.
--   The `src/styles` file contains the global CSS.
-
-That's it. You can now start adding components to your project.

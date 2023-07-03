@@ -56,26 +56,9 @@ export const docsConfig: TDocsConfig = {
                     href: "/docs/typography",
                     items: [],
                 },
-            ],
-        },
-        {
-            title: "Community",
-            items: [
                 {
                     title: "Figma",
                     href: "/docs/figma",
-                    items: [],
-                },
-            ],
-        },
-        {
-            title: "Forms",
-            items: [
-                {
-                    title: "Modular Forms",
-                    href: "#",
-                    label: "Soon",
-                    disabled: true,
                     items: [],
                 },
             ],
@@ -122,7 +105,6 @@ export const docsConfig: TDocsConfig = {
                     title: "Combobox",
                     href: "/docs/components/combobox",
                     items: [],
-                    label: "New",
                 },
                 {
                     title: "Context Menu",
@@ -170,13 +152,11 @@ export const docsConfig: TDocsConfig = {
                     title: "Radio Group",
                     href: "/docs/components/radio-group",
                     items: [],
-                    label: "New",
                 },
                 {
                     title: "Select",
                     href: "/docs/components/select",
                     items: [],
-                    label: "New",
                 },
                 {
                     title: "Separator",
