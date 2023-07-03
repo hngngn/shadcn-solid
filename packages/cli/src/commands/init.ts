@@ -17,7 +17,6 @@ const PROJECT_DEPENDENCIES = [
 
 const initOptionsSchema = z.object({
     cwd: z.string(),
-    yes: z.boolean(),
 })
 
 export const init = new Command()
@@ -62,6 +61,12 @@ export async function runInit(cwd: string) {
         templates.UNO_CONFIG_WITH_VARIABLES,
         "utf8"
     )
+
+    try {
+        await fs.access(`${cwd}/src/styles`)
+    } catch (error) {
+        await fs.mkdir(`${cwd}/src/styles`, { recursive: true })
+    }
 
     // Write css file.
     await fs.writeFile("src/styles/global.css", templates.CSS, "utf8")
