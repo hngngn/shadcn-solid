@@ -1,50 +1,35 @@
 {
-    "name": "www",
-    "scripts": {
-        "dev": "solid-start dev --host",
-        "build": "solid-start build",
-        "start": "solid-start start",
-        "lint": "eslint \"src/**/*.{ts,tsx}\"",
-        "format": "prettier -w \"**/*.{ts,tsx}\""
-    },
-    "type": "module",
-    "devDependencies": {
-        "@iconify-json/lucide": "^1.1.106",
-        "@mdx-js/rollup": "^2.3.0",
-        "@unocss/reset": "^0.53.4",
-        "browserslist": "^4.21.8",
-        "lightningcss": "^1.21.1",
-        "sass": "^1.63.4",
-        "solid-start-vercel": "^0.2.26",
-        "typescript": "^4.9.5",
-        "unocss": "^0.53.4",
-        "unocss-preset-autoprefixer": "^0.0.5",
-        "vite": "^4.3.9"
-    },
-    "dependencies": {
-        "@kobalte/core": "^0.9.7",
-        "@solidjs/meta": "^0.28.5",
-        "@solidjs/router": "^0.8.2",
-        "acorn": "^8.9.0",
-        "class-variance-authority": "^0.6.1",
-        "estree-util-is-identifier-name": "^2.1.0",
-        "estree-util-value-to-estree": "^3.0.1",
-        "github-slugger": "^2.0.0",
-        "rehype-autolink-headings": "^6.1.1",
-        "rehype-pretty-code": "^0.9.11",
-        "remark-frontmatter": "^4.0.1",
-        "remark-gfm": "^3.0.1",
-        "shiki": "^0.14.3",
-        "solid-js": "^1.7.7",
-        "solid-mdx": "^0.0.6",
-        "solid-start": "^0.2.26",
-        "solid-wrap-balancer": "^0.0.5",
-        "undici": "^5.22.1",
-        "unist-builder": "^3.0.1",
-        "unist-util-visit": "^4.1.2",
-        "yaml": "^2.3.1"
-    },
-    "engines": {
-        "node": ">=16"
-    }
+  "name": "www",
+  "scripts": {
+    "dev": "solid-start dev --port 3000",
+    "start": "solid-start start --port 3000",
+    "build": "solid-start build",
+    "lint": "eslint --fix \"**/*.{ts,tsx,js,jsx}\""
+  },
+  "type": "module",
+  "devDependencies": {
+    "solid-start-node": "^0.2.26",
+    "typescript": "^4.9.5",
+    "vite": "^4.1.2",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "eslint": "^8.34.0",
+    "eslint-plugin-solid": "^0.9.4",
+    "@types/node": "^18.14.0",
+    "solid-start-vercel": "^0.2.26",
+    "tailwindcss": "^3.2.7",
+    "postcss": "^8.4.21",
+    "autoprefixer": "^10.4.13"
+  },
+  "dependencies": {
+    "@solidjs/meta": "^0.28.2",
+    "@solidjs/router": "^0.8.2",
+    "solid-js": "^1.7.3",
+    "solid-start": "^0.2.26",
+    "undici": "5.20.0",
+    "zod": "^3.20.6"
+  },
+  "engines": {
+    "node": ">=16"
+  }
 }
