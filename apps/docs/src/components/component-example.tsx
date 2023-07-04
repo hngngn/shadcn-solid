@@ -24,10 +24,7 @@ export const ComponentExample: ParentComponent<ComponentExampleProps> = (
         "classList",
     ])
 
-    const Codes = children(() => local.children).toArray()
-
-    const Code = Codes[2]
-    const Preview = Codes[0]
+    const [Preview, Code] = children(() => local.children).toArray()
 
     return (
         <div
