@@ -15,10 +15,10 @@ export const docsConfig: TDocsConfig = {
             title: "Components",
             href: "/docs/components/accordion",
         },
-        {
-            title: "Examples",
-            href: "/examples/dashboard",
-        },
+        // {
+        //     title: "Examples",
+        //     href: "/examples/dashboard",
+        // },
     ],
     sidebarNav: [
         {

@@ -1,5 +1,9 @@
 {
-	"unocss.root": [
-		"apps/docs"
-	]
+	"unocss.root": ["apps/docs"],
+	"files.associations": {
+		"*.css": "tailwindcss"
+	},
+	"editor.quickSuggestions": {
+		"strings": true
+	}
 }

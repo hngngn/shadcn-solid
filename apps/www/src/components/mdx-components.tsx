@@ -1,14 +1,26 @@
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "@/registry/default/ui/accordion"
+import { Alert, AlertDescription } from "@/registry/default/ui/alert"
 import { type ComponentProps } from "solid-js"
-import { CopyButton, example } from "~/components"
+import { CopyButton } from "./copy-button"
 
 export const MDXComponent = {
     h1: (props: ComponentProps<"h1">) => {
-        return <h1 class="mt-2 scroll-m-20 text-4xl font-bold" {...props} />
+        return (
+            <h1
+                class="font-heading mt-2 scroll-m-20 text-4xl font-bold"
+                {...props}
+            />
+        )
     },
     h2: (props: ComponentProps<"h2">) => {
         return (
             <h2
-                class="mt-12 scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0"
+                class="font-heading mt-12 scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0"
                 {...props}
             />
         )
@@ -16,7 +28,7 @@ export const MDXComponent = {
     h3: (props: ComponentProps<"h3">) => {
         return (
             <h3
-                class="mt-8 scroll-m-20 text-xl font-semibold tracking-tight"
+                class="font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight"
                 {...props}
             />
         )
@@ -24,7 +36,7 @@ export const MDXComponent = {
     h4: (props: ComponentProps<"h4">) => {
         return (
             <h4
-                class="mt-8 scroll-m-20 text-lg font-semibold tracking-tight"
+                class="font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight"
                 {...props}
             />
         )
@@ -32,7 +44,7 @@ export const MDXComponent = {
     h5: (props: ComponentProps<"h5">) => {
         return (
             <h5
-                class="mt-8 scroll-m-20 text-lg font-semibold tracking-tight"
+                class="font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight"
                 {...props}
             />
         )
@@ -40,7 +52,7 @@ export const MDXComponent = {
     h6: (props: ComponentProps<"h6">) => {
         return (
             <h6
-                class="mt-8 scroll-m-20 text-lg font-semibold tracking-tight"
+                class="font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight"
                 {...props}
             />
         )
@@ -49,7 +61,12 @@ export const MDXComponent = {
         return <a class="font-medium underline underline-offset-4" {...props} />
     },
     p: (props: ComponentProps<"p">) => {
-        return <p class="leading-7 not-first:mt-6 break-words" {...props} />
+        return (
+            <p
+                class="leading-7 [&:not(:first-child)]:mt-6 break-words"
+                {...props}
+            />
+        )
     },
     ul: (props: ComponentProps<"ul">) => {
         return <ul class="my-6 ml-6 list-disc" {...props} />
@@ -81,7 +98,7 @@ export const MDXComponent = {
             <>
                 <pre
                     ref={preRef}
-                    class="mb-4 mt-6 max-h-650px overflow-x-auto rounded-lg border bg-zinc-950 py-4 dark:bg-zinc-900"
+                    class="mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-lg border bg-zinc-950 py-4 dark:bg-zinc-900"
                     {...props}
                 />
                 <CopyButton preRef={preRef} />
@@ -99,5 +116,10 @@ export const MDXComponent = {
     Steps: (props: ComponentProps<"div">) => {
         return <div class="mb-12 ml-4 border-l pl-8 mdx-pre-tag" {...props} />
     },
-    ...example,
+    Alert,
+    AlertDescription,
+    Accordion,
+    AccordionItem,
+    AccordionTrigger,
+    AccordionContent,
 }
