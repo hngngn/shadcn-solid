@@ -1,35 +1,50 @@
 {
-  "name": "www",
-  "scripts": {
-    "dev": "solid-start dev --port 3000",
-    "start": "solid-start start --port 3000",
-    "build": "solid-start build",
-    "lint": "eslint --fix \"**/*.{ts,tsx,js,jsx}\""
-  },
-  "type": "module",
-  "devDependencies": {
-    "solid-start-node": "^0.2.26",
-    "typescript": "^4.9.5",
-    "vite": "^4.1.2",
-    "@typescript-eslint/eslint-plugin": "^5.52.0",
-    "@typescript-eslint/parser": "^5.52.0",
-    "eslint": "^8.34.0",
-    "eslint-plugin-solid": "^0.9.4",
-    "@types/node": "^18.14.0",
-    "solid-start-vercel": "^0.2.26",
-    "tailwindcss": "^3.2.7",
-    "postcss": "^8.4.21",
-    "autoprefixer": "^10.4.13"
-  },
-  "dependencies": {
-    "@solidjs/meta": "^0.28.2",
-    "@solidjs/router": "^0.8.2",
-    "solid-js": "^1.7.3",
-    "solid-start": "^0.2.26",
-    "undici": "5.20.0",
-    "zod": "^3.20.6"
-  },
-  "engines": {
-    "node": ">=16"
-  }
+    "name": "www",
+    "scripts": {
+        "dev": "solid-start dev --host",
+        "start": "solid-start start",
+        "build": "solid-start build",
+        "lint": "eslint \"src/**/*.{ts,tsx}\"",
+        "format": "prettier -w \"**/*.{ts,tsx}\""
+    },
+    "type": "module",
+    "devDependencies": {
+        "@mdx-js/rollup": "^2.3.0",
+        "@types/node": "^18.14.0",
+        "autoprefixer": "^10.4.13",
+        "estree-util-value-to-estree": "^3.0.1",
+        "postcss": "^8.4.21",
+        "rehype-pretty-code": "^0.9.11",
+        "rehype-slug": "^5.1.0",
+        "remark-frontmatter": "^4.0.1",
+        "remark-gfm": "^3.0.1",
+        "shiki": "^0.14.3",
+        "solid-start-node": "^0.2.26",
+        "solid-start-vercel": "^0.2.26",
+        "tailwindcss": "^3.2.7",
+        "typescript": "^4.9.5",
+        "unist-util-visit": "^4.1.2",
+        "vite": "^4.1.2",
+        "yaml": "^2.3.1"
+    },
+    "dependencies": {
+        "@fontsource-variable/inter": "^5.0.4",
+        "@kobalte/core": "^0.9.7",
+        "@solidjs/meta": "^0.28.2",
+        "@solidjs/router": "^0.8.2",
+        "@tabler/icons-solidjs": "^2.23.0",
+        "class-variance-authority": "^0.6.1",
+        "clsx": "^1.2.1",
+        "solid-js": "^1.7.3",
+        "solid-mdx": "^0.0.6",
+        "solid-start": "^0.2.26",
+        "solid-wrap-balancer": "^0.0.5",
+        "tailwind-merge": "^1.13.2",
+        "tailwindcss-animate": "^1.0.6",
+        "undici": "5.20.0",
+        "zod": "^3.20.6"
+    },
+    "engines": {
+        "node": ">=16"
+    }
 }
