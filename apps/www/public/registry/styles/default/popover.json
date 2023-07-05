@@ -1,0 +1,13 @@
+{
+  "name": "popover",
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "files": [
+    {
+      "name": "popover.tsx",
+      "content": "import { cn } from \"@/lib/cn\"\nimport { Popover as PopoverPrimitive } from \"@kobalte/core\"\nimport { IconX } from \"@tabler/icons-solidjs\"\nimport { mergeProps, splitProps, type ParentComponent } from \"solid-js\"\n\nexport const PopoverTrigger = PopoverPrimitive.Trigger\nexport const PopoverTitle = PopoverPrimitive.Title\nexport const PopoverDescription = PopoverPrimitive.Description\n\nexport const Popover: ParentComponent<PopoverPrimitive.PopoverRootProps> = (\n    props\n) => {\n    const merge = mergeProps(\n        { gutter: 4 } as PopoverPrimitive.PopoverRootProps,\n        props\n    )\n    return <PopoverPrimitive.Root {...merge} />\n}\n\nexport const PopoverContent: ParentComponent<\n    PopoverPrimitive.PopoverContentProps\n> = (props) => {\n    const [local, rest] = splitProps(props, [\"class\", \"children\"])\n    return (\n        <PopoverPrimitive.Portal>\n            <PopoverPrimitive.Content\n                class={cn(\n                    \"z-50 w-72 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0 data-[closed]:zoom-out-95 data-[expanded]:zoom-in-95\",\n                    local.class\n                )}\n                {...rest}\n            >\n                {local.children}\n                <PopoverPrimitive.CloseButton class=\"absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none\">\n                    <IconX class=\"h-4 w-4\" />\n                    <span class=\"sr-only\">Close</span>\n                </PopoverPrimitive.CloseButton>\n            </PopoverPrimitive.Content>\n        </PopoverPrimitive.Portal>\n    )\n}\n"
+    }
+  ],
+  "type": "components:ui"
+}

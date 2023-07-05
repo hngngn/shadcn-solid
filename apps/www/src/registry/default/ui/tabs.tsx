@@ -1,16 +1,13 @@
+import { cn } from "@/lib/cn"
 import { Tabs as TabsPrimitive } from "@kobalte/core"
 import type { ParentComponent } from "solid-js"
 import { splitProps } from "solid-js"
 
 export const Tabs: ParentComponent<TabsPrimitive.TabsRootProps> = (props) => {
-    const [local, rest] = splitProps(props, ["class", "classList"])
+    const [local, rest] = splitProps(props, ["class"])
     return (
         <TabsPrimitive.Root
-            class="w-full data-[orientation=vertical]:flex"
-            classList={{
-                [local.class!]: Boolean(local.class),
-                ...local.classList,
-            }}
+            class={cn("w-full data-[orientation=vertical]:flex", local.class)}
             {...rest}
         />
     )
@@ -19,14 +16,13 @@ export const Tabs: ParentComponent<TabsPrimitive.TabsRootProps> = (props) => {
 export const TabsList: ParentComponent<TabsPrimitive.TabsListProps> = (
     props
 ) => {
-    const [local, rest] = splitProps(props, ["class", "classList"])
+    const [local, rest] = splitProps(props, ["class"])
     return (
         <TabsPrimitive.List
-            class="relative flex data-[orientation=horizontal]:(items-center border-b) data-[orientation=vertical]:(flex-col items-stretch border-r) h-9 rounded-lg bg-muted p-1 text-muted-foreground"
-            classList={{
-                [local.class!]: Boolean(local.class),
-                ...local.classList,
-            }}
+            class={cn(
+                "relative flex data-[orientation=horizontal]:items-center data-[orientation=horizontal]:border-b data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-stretch data-[orientation=vertical]:border-r h-9 rounded-lg bg-muted p-1 text-muted-foreground",
+                local.class
+            )}
             {...rest}
         />
     )
@@ -35,14 +31,13 @@ export const TabsList: ParentComponent<TabsPrimitive.TabsListProps> = (
 export const TabsContent: ParentComponent<TabsPrimitive.TabsContentProps> = (
     props
 ) => {
-    const [local, rest] = splitProps(props, ["class", "classList"])
+    const [local, rest] = splitProps(props, ["class"])
     return (
         <TabsPrimitive.Content
-            class="mt-2 ring-offset-background focus-visible:(outline-none ring-2 ring-ring ring-offset-2)"
-            classList={{
-                [local.class!]: Boolean(local.class),
-                ...local.classList,
-            }}
+            class={cn(
+                "mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+                local.class
+            )}
             {...rest}
         />
     )
@@ -51,14 +46,13 @@ export const TabsContent: ParentComponent<TabsPrimitive.TabsContentProps> = (
 export const TabsTrigger: ParentComponent<TabsPrimitive.TabsTriggerProps> = (
     props
 ) => {
-    const [local, rest] = splitProps(props, ["class", "classList"])
+    const [local, rest] = splitProps(props, ["class"])
     return (
         <TabsPrimitive.Trigger
-            class="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:(outline-none ring-2 ring-ring ring-offset-2) disabled:(pointer-events-none opacity-50) data-[selected]:(bg-background text-foreground shadow)"
-            classList={{
-                [local.class!]: Boolean(local.class),
-                ...local.classList,
-            }}
+            class={cn(
+                "inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none ocus-visible:ring-2 ocus-visible:ring-ring ocus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[selected]:bg-background data-[selected]:text-foreground shadow",
+                local.class
+            )}
             {...rest}
         />
     )
@@ -67,14 +61,13 @@ export const TabsTrigger: ParentComponent<TabsPrimitive.TabsTriggerProps> = (
 export const TabsIndicator: ParentComponent<
     TabsPrimitive.TabsIndicatorProps
 > = (props) => {
-    const [local, rest] = splitProps(props, ["class", "classList"])
+    const [local, rest] = splitProps(props, ["class"])
     return (
         <TabsPrimitive.Indicator
-            class="absolute transition-all duration-250ms data-[orientation=horizontal]:(-bottom-1px h-2px) data-[orientation=vertical]:(-right-1px w-2px)"
-            classList={{
-                [local.class!]: Boolean(local.class),
-                ...local.classList,
-            }}
+            class={cn(
+                "absolute transition-all duration-250ms data-[orientation=horizontal]:-bottom-[1px] data-[orientation=horizontal]:h-[2px] data-[orientation=vertical]:-right-[1px] data-[orientation=vertical]:w-[2px]",
+                local.class
+            )}
             {...rest}
         />
     )

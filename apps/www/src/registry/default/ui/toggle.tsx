@@ -1,10 +1,11 @@
+import { cn } from "@/lib/cn"
 import { ToggleButton as ToggleButtonPrimitive } from "@kobalte/core"
 import type { VariantProps } from "class-variance-authority"
 import { cva } from "class-variance-authority"
 import { splitProps, type ParentComponent } from "solid-js"
 
 export const toggleVariants = cva(
-    "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:(outline-none ring ring-ring) disabled:(pointer-events-none opacity-50) data-[pressed]:(bg-accent text-accent-foreground)",
+    "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-accent data-[pressed]:text-accent-foreground",
     {
         variants: {
             variant: {
@@ -29,20 +30,14 @@ export const ToggleButton: ParentComponent<
     ToggleButtonPrimitive.ToggleButtonRootProps &
         VariantProps<typeof toggleVariants>
 > = (props) => {
-    const [local, rest] = splitProps(props, [
-        "class",
-        "classList",
-        "variant",
-        "size",
-    ])
+    const [local, rest] = splitProps(props, ["class", "variant", "size"])
 
     return (
         <ToggleButtonPrimitive.Root
-            class={toggleVariants({ variant: local.variant, size: local.size })}
-            classList={{
-                [local.class!]: Boolean(local.class),
-                ...local.classList,
-            }}
+            class={cn(
+                toggleVariants({ variant: local.variant, size: local.size }),
+                local.class
+            )}
             {...rest}
         />
     )

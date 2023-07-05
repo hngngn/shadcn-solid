@@ -28,10 +28,12 @@ export const Alert: ParentComponent<
 
     return (
         <AlertPrimitive.Root
-            class={alertVariants({
-                variant: props.variant,
-                class: local.class,
-            })}
+            class={cn(
+                alertVariants({
+                    variant: props.variant,
+                }),
+                local.class
+            )}
             {...rest}
         />
     )

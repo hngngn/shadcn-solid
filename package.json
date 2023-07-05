@@ -2,6 +2,7 @@
     "private": true,
     "scripts": {
         "build": "turbo run build",
+        "build:registry": "pnpm --filter=www build:registry",
         "dev": "turbo run dev",
         "lint": "turbo run lint",
         "format": "turbo run format",
@@ -16,7 +17,11 @@
         "eslint-config-turbo": "^1.10.6",
         "eslint-plugin-solid": "^0.12.1",
         "prettier": "^2.8.8",
-        "turbo": "^1.10.7"
+        "ts-node": "^10.9.1",
+        "turbo": "^1.10.7",
+        "@types/lodash.template": "^4.5.1",
+        "lodash.template": "^4.5.0",
+        "rimraf": "^5.0.1"
     },
     "packageManager": "pnpm@7.15.0",
     "name": "shadcn-solid"

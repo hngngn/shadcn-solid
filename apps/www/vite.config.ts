@@ -1,10 +1,15 @@
 import path from "path"
+import type { VisitableElement } from "rehype-pretty-code"
+import rehypePrettyCode from "rehype-pretty-code"
 import rehypeSlug from "rehype-slug"
 import remarkFrontmatter from "remark-frontmatter"
 import remarkGfm from "remark-gfm"
+import { getHighlighter, loadTheme } from "shiki"
 import vercel from "solid-start-vercel"
 import solid from "solid-start/vite"
+import { visit } from "unist-util-visit"
 import { defineConfig } from "vite"
+import { rehypeComponent } from "./src/lib/mdx/component"
 import { solidRemarkFrontmatter } from "./src/lib/mdx/frontmatter"
 import { solidRehypeHeadings } from "./src/lib/mdx/headings"
 
@@ -21,7 +26,94 @@ export default defineConfig(async () => {
                         remarkFrontmatter,
                         solidRemarkFrontmatter,
                     ],
-                    rehypePlugins: [rehypeSlug, solidRehypeHeadings],
+                    rehypePlugins: [
+                        rehypeSlug,
+                        solidRehypeHeadings,
+                        rehypeComponent,
+                        () => (tree) => {
+                            visit(tree, (node) => {
+                                if (
+                                    node?.type === "element" &&
+                                    node?.tagName === "pre"
+                                ) {
+                                    const [codeEl] = node.children
+                                    if (codeEl.tagName !== "code") {
+                                        return
+                                    }
+
+                                    node.__rawString__ =
+                                        codeEl.children?.[0].value
+                                }
+                            })
+                        },
+                        [
+                            rehypePrettyCode,
+                            {
+                                getHighlighter: async () => {
+                                    const theme = await loadTheme(
+                                        path.join(
+                                            process.cwd(),
+                                            "/src/lib/themes/dark.json"
+                                        )
+                                    )
+                                    return await getHighlighter({ theme })
+                                },
+                                onVisitLine(node: VisitableElement) {
+                                    // Prevent lines from collapsing in `display: grid` mode, and allow empty
+                                    // lines to be copy/pasted
+                                    if (node.children.length === 0) {
+                                        node.children = [
+                                            { type: "text", value: " " },
+                                        ]
+                                    }
+                                },
+                                onVisitHighlightedLine(node: VisitableElement) {
+                                    node.properties.className.push(
+                                        "line--highlighted"
+                                    )
+                                },
+                                onVisitHighlightedWord(node: VisitableElement) {
+                                    node.properties.className = [
+                                        "word--highlighted",
+                                    ]
+                                },
+                            },
+                        ],
+                        () => (tree) => {
+                            visit(tree, (node) => {
+                                if (
+                                    node?.type === "element" &&
+                                    node?.tagName === "div"
+                                ) {
+                                    if (
+                                        !(
+                                            "data-rehype-pretty-code-fragment" in
+                                            node.properties
+                                        )
+                                    ) {
+                                        return
+                                    }
+
+                                    const preElement = node.children.at(-1)
+                                    if (preElement.tagName !== "pre") {
+                                        return
+                                    }
+
+                                    preElement.properties["data-meta"] =
+                                        node.children.at(0).tagName === "div"
+
+                                    preElement.properties["data-package"] =
+                                        node.__rawString__?.startsWith(
+                                            "npm install"
+                                        ) ||
+                                        node.__rawString__?.startsWith(
+                                            "npx create-"
+                                        ) ||
+                                        node.__rawString__?.startsWith("npx")
+                                }
+                            })
+                        },
+                    ],
                 }),
                 enforce: "pre",
             },

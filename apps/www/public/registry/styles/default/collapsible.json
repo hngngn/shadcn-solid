@@ -1,0 +1,13 @@
+{
+  "name": "collapsible",
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "files": [
+    {
+      "name": "collapsible.tsx",
+      "content": "import { cn } from \"@/lib/cn\"\nimport { Collapsible as CollapsiblePrimitive } from \"@kobalte/core\"\nimport type { ParentComponent } from \"solid-js\"\nimport { splitProps } from \"solid-js\"\n\nexport const Collapsible = CollapsiblePrimitive.Root\n\nexport const CollapsibleTrigger = CollapsiblePrimitive.Trigger\n\nexport const CollapsibleContent: ParentComponent<\n    CollapsiblePrimitive.CollapsibleContentProps\n> = (props) => {\n    const [local, rest] = splitProps(props, [\"class\"])\n\n    return (\n        <CollapsiblePrimitive.Content\n            class={cn(\n                \"animate-collapsible-up data-[expanded]:animate-collapsible-down\",\n                local.class\n            )}\n            {...rest}\n        />\n    )\n}\n"
+    }
+  ],
+  "type": "components:ui"
+}

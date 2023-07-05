@@ -1,3 +1,4 @@
+import { cn } from "@/lib/cn"
 import { AlertDialog as AlertDialogPrimitive } from "@kobalte/core"
 import type { ComponentProps } from "solid-js"
 import { splitProps, type ParentComponent } from "solid-js"
@@ -9,14 +10,13 @@ export const AlertDialogTrigger = AlertDialogPrimitive.Trigger
 export const AlertDialogOverlay: ParentComponent<
     AlertDialogPrimitive.AlertDialogOverlayProps
 > = (props) => {
-    const [local, rest] = splitProps(props, ["class", "classList"])
+    const [local, rest] = splitProps(props, ["class"])
     return (
         <AlertDialogPrimitive.Overlay
-            class="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm animate-fade-out data-[expanded]:animate-fade-in"
-            classList={{
-                [local.class!]: Boolean(local.class),
-                ...local.classList,
-            }}
+            class={cn(
+                "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0",
+                local.class
+            )}
             {...rest}
         />
     )
@@ -25,18 +25,17 @@ export const AlertDialogOverlay: ParentComponent<
 export const AlertDialogContent: ParentComponent<
     AlertDialogPrimitive.AlertDialogContentProps
 > = (props) => {
-    const [local, rest] = splitProps(props, ["class", "classList"])
+    const [local, rest] = splitProps(props, ["class"])
 
     return (
         <AlertDialogPrimitive.Portal>
             <AlertDialogOverlay />
             <div class="fixed flex justify-center items-center inset-0 z-50">
                 <AlertDialogPrimitive.Content
-                    class="z-50 grid w-full max-w-lg gap-4 border bg-background p-6 shadow-lg sm:rounded-lg md:w-full animate-content-hide data-[expanded]:animate-content-show"
-                    classList={{
-                        [local.class!]: Boolean(local.class),
-                        ...local.classList,
-                    }}
+                    class={cn(
+                        "z-50 grid w-full max-w-lg gap-4 border bg-background p-6 shadow-lg sm:rounded-lg md:w-full duration-200 data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0 data-[closed]:zoom-out-95 data-[expanded]:zoom-in-95 data-[closed]:slide-out-to-left-1/2 data-[closed]:slide-out-to-top-[48%] data-[expanded]:slide-in-from-left-1/2 data-[expanded]:slide-in-from-top-[48%]",
+                        local.class
+                    )}
                     {...rest}
                 />
             </div>
@@ -47,14 +46,13 @@ export const AlertDialogContent: ParentComponent<
 export const AlertDialogHeader: ParentComponent<ComponentProps<"div">> = (
     props
 ) => {
-    const [local, rest] = splitProps(props, ["class", "classList"])
+    const [local, rest] = splitProps(props, ["class"])
     return (
         <div
-            class="flex flex-col space-y-2 text-center sm:text-left"
-            classList={{
-                [local.class!]: Boolean(local.class),
-                ...local.classList,
-            }}
+            class={cn(
+                "flex flex-col space-y-2 text-center sm:text-left",
+                local.class
+            )}
             {...rest}
         />
     )
@@ -66,11 +64,10 @@ export const AlertDialogFooter: ParentComponent<ComponentProps<"div">> = (
     const [local, rest] = splitProps(props, ["class", "classList"])
     return (
         <div
-            class="flex flex-col-reverse sm:(flex-row justify-end space-x-2)"
-            classList={{
-                [local.class!]: Boolean(local.class),
-                ...local.classList,
-            }}
+            class={cn(
+                "flex flex-col-reverse sm:flex-row m:justify-end m:space-x-2",
+                local.class
+            )}
             {...rest}
         />
     )
@@ -82,11 +79,7 @@ export const AlertDialogTitle: ParentComponent<
     const [local, rest] = splitProps(props, ["class", "classList"])
     return (
         <AlertDialogPrimitive.Title
-            class="text-lg font-semibold"
-            classList={{
-                [local.class!]: Boolean(local.class),
-                ...local.classList,
-            }}
+            class={cn("text-lg font-semibold", local.class)}
             {...rest}
         />
     )
@@ -95,14 +88,10 @@ export const AlertDialogTitle: ParentComponent<
 export const AlertDialogDescription: ParentComponent<
     AlertDialogPrimitive.AlertDialogDescriptionProps
 > = (props) => {
-    const [local, rest] = splitProps(props, ["class", "classList"])
+    const [local, rest] = splitProps(props, ["class"])
     return (
         <AlertDialogPrimitive.Description
-            class="text-sm text-muted-foreground"
-            classList={{
-                [local.class!]: Boolean(local.class),
-                ...local.classList,
-            }}
+            class={cn("text-sm text-muted-foreground", local.class)}
             {...rest}
         />
     )
@@ -111,17 +100,15 @@ export const AlertDialogDescription: ParentComponent<
 export const AlertDialogClose: ParentComponent<
     AlertDialogPrimitive.AlertDialogCloseButtonProps
 > = (props) => {
-    const [local, rest] = splitProps(props, ["class", "classList"])
+    const [local, rest] = splitProps(props, ["class"])
     return (
         <AlertDialogPrimitive.CloseButton
-            class={`${buttonVariants({
-                variant: "outline",
-                class: " mt-2 sm:mt-0",
-            })}`}
-            classList={{
-                [local.class!]: Boolean(local.class),
-                ...local.classList,
-            }}
+            class={cn(
+                buttonVariants({
+                    variant: "outline",
+                }),
+                local.class
+            )}
             {...rest}
         />
     )
@@ -133,11 +120,7 @@ export const AlertDialogAction: ParentComponent<
     const [local, rest] = splitProps(props, ["class", "classList"])
     return (
         <AlertDialogPrimitive.CloseButton
-            class={buttonVariants()}
-            classList={{
-                [local.class!]: Boolean(local.class),
-                ...local.classList,
-            }}
+            class={cn(buttonVariants(), local.class)}
             {...rest}
         />
     )
