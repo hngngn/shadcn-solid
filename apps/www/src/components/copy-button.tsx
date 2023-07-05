@@ -1,6 +1,6 @@
 import { cn } from "@/lib/cn"
 import { Button } from "@/registry/default/ui/button"
-import { IconCheck, IconCopy } from "@tabler/icons-solidjs"
+import { TbCheck, TbCopy } from "solid-icons/tb"
 import type { VoidComponent } from "solid-js"
 import { Show, createSignal } from "solid-js"
 
@@ -30,8 +30,8 @@ export const CopyButton: VoidComponent<Props> = (props) => {
             onClick={copyToClipboard}
         >
             <span class="sr-only">Copy</span>
-            <Show when={isCopied()} fallback={<IconCopy class="w-4 h-4" />}>
-                <IconCheck class="h-4 w-4" />
+            <Show when={isCopied()} fallback={<TbCopy class="w-4 h-4" />}>
+                <TbCheck class="h-4 w-4" />
             </Show>
         </Button>
     )

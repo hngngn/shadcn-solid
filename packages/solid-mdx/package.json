@@ -16,13 +16,11 @@
         "solid-js": "^1.7.0",
         "vite": "*"
     },
-    "exports": {
-        "import": {
-            "types": "./dist/index.d.ts",
-            "default": "./dist/index.mjs"
-        }
-    },
     "main": "./dist/index.mjs",
     "module": "./dist/index.mjs",
-    "types": "./dist/index.d.ts"
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist",
+        "client.d.ts"
+    ]
 }

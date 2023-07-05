@@ -1,6 +1,6 @@
 import { cn } from "@/lib/cn"
 import { Combobox as ComboboxPrimitive } from "@kobalte/core"
-import { IconCheck, IconSelector } from "@tabler/icons-solidjs"
+import { TbCheck, TbSelector } from "solid-icons/tb"
 import type { VoidComponent } from "solid-js"
 import { splitProps, type ParentComponent } from "solid-js"
 
@@ -41,7 +41,7 @@ export const ComboboxTrigger: ParentComponent<
             >
                 {local.children}
                 <ComboboxPrimitive.Icon class="flex h-3.5 w-3.5 items-center justify-center">
-                    <IconSelector class="h-4 w-4 opacity-50" />
+                    <TbSelector class="h-4 w-4 opacity-50" />
                 </ComboboxPrimitive.Icon>
             </ComboboxPrimitive.Trigger>
         </ComboboxPrimitive.Control>
@@ -80,7 +80,7 @@ export const ComboboxItem: ParentComponent<
             {...rest}
         >
             <ComboboxPrimitive.ItemIndicator class="absolute right-2 flex h-3.5 w-3.5 items-center justify-center">
-                <IconCheck class="w-4 h-4" />
+                <TbCheck class="w-4 h-4" />
             </ComboboxPrimitive.ItemIndicator>
             <ComboboxPrimitive.ItemLabel>
                 {local.children}

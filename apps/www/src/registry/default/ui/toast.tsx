@@ -1,8 +1,8 @@
 import { cn } from "@/lib/cn"
 import { Toast as ToastPrimitive } from "@kobalte/core"
-import { IconX } from "@tabler/icons-solidjs"
 import type { VariantProps } from "class-variance-authority"
 import { cva } from "class-variance-authority"
+import { TbX } from "solid-icons/tb"
 import type { ComponentProps, VoidComponent } from "solid-js"
 import { mergeProps, splitProps, type ParentComponent } from "solid-js"
 import { Portal } from "solid-js/web"
@@ -102,7 +102,7 @@ export const ToastContent: ParentComponent<ComponentProps<"div">> = (props) => {
         <div class={cn("w-full", local.class)} {...rest}>
             {local.children}
             <ToastPrimitive.CloseButton class="absolute right-1 top-1 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity hover:text-foreground focus:(opacity-100 outline-none ring) group-hover:opacity-100 group-[.destructive]:text-red-300 group-[.destructive]:hover:text-red-50 group-[.destructive]:focus:(ring-red-400 ring-offset-red-600)">
-                <IconX class="h-4 w-4" />
+                <TbX class="h-4 w-4" />
             </ToastPrimitive.CloseButton>
         </div>
     )

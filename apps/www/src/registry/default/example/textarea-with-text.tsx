@@ -1,8 +1,8 @@
+import { TextFieldTextArea } from "../ui/textarea"
 import {
     TextField,
     TextFieldDescription,
     TextFieldLabel,
-    TextFieldTextArea,
 } from "../ui/textfield"
 
 const TextareaWithText = () => {

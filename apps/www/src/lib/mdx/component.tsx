@@ -28,18 +28,12 @@ export const rehypeComponent = () => {
                         // Replace imports.
                         // TODO: Use @swc/core and a visitor to replace this.
                         // For now a simple regex should do.
-                        source = source.replaceAll(
-                            `../${style.name}/`,
-                            "@/components/"
-                        )
+                        source = source.replaceAll(`../ui`, "@/components/")
 
                         // Add code as children so that rehype can take over at build time.
                         node.children?.push(
                             u("element", {
                                 tagName: "pre",
-                                properties: {
-                                    __src__: src,
-                                },
                                 children: [
                                     u("element", {
                                         tagName: "code",
@@ -82,18 +76,12 @@ export const rehypeComponent = () => {
                         // Replace imports.
                         // TODO: Use @swc/core and a visitor to replace this.
                         // For now a simple regex should do.
-                        source = source.replaceAll(
-                            `../${style.name}/`,
-                            "@/components/"
-                        )
+                        source = source.replaceAll(`../ui`, "@/components/ui")
 
                         // Add code as children so that rehype can take over at build time.
                         node.children?.push(
                             u("element", {
                                 tagName: "pre",
-                                properties: {
-                                    __src__: src,
-                                },
                                 children: [
                                     u("element", {
                                         tagName: "code",
@@ -119,6 +107,6 @@ export const rehypeComponent = () => {
     }
 }
 
-function getNodeAttributeByName(node: any, name: string) {
+const getNodeAttributeByName = (node: any, name: string) => {
     return node.attributes?.find((attribute: any) => attribute.name === name)
 }

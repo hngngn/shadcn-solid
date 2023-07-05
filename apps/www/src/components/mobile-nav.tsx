@@ -2,7 +2,7 @@ import { docsConfig, siteConfig } from "@/config"
 import { Button } from "@/registry/default/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/registry/default/ui/sheet"
 import { As, createDisclosureState } from "@kobalte/core"
-import { IconLayoutSidebar } from "@tabler/icons-solidjs"
+import { TbLayoutSidebar } from "solid-icons/tb"
 import { For, createComputed } from "solid-js"
 import { A, useIsRouting } from "solid-start"
 import { Logo } from "./logo"
@@ -24,7 +24,7 @@ export const MobileNav = () => {
                     size="icon"
                     class="mr-1 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
                 >
-                    <IconLayoutSidebar class="w-[18px] h-[18px]" />
+                    <TbLayoutSidebar class="w-[18px] h-[18px]" />
                     <span class="sr-only">Toggle Menu</span>
                 </As>
             </SheetTrigger>

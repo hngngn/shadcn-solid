@@ -1,7 +1,7 @@
 import { siteConfig } from "@/config"
 import { Button } from "@/registry/default/ui/button"
 import { As } from "@kobalte/core"
-import { IconBrandGithub } from "@tabler/icons-solidjs"
+import { TbBrandGithub } from "solid-icons/tb"
 import { A } from "solid-start"
 import { MainNav } from "./main-nav"
 import { MobileNav } from "./mobile-nav"
@@ -22,7 +22,7 @@ export const SiteHeader = () => {
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                <IconBrandGithub class="w-[18px] h-[18px]" />
+                                <TbBrandGithub class="w-[18px] h-[18px]" />
                                 <span class="sr-only">Github</span>
                             </As>
                         </Button>

@@ -2,7 +2,7 @@ import { docsConfig } from "@/config"
 import { Button } from "@/registry/default/ui/button"
 import type { TNavItem, TNavItemWithChildren } from "@/types"
 import { As } from "@kobalte/core"
-import { IconChevronLeft, IconChevronRight } from "@tabler/icons-solidjs"
+import { TbChevronLeft, TbChevronRight } from "solid-icons/tb"
 import type { Component } from "solid-js"
 import { Show } from "solid-js"
 import { A } from "solid-start"
@@ -51,7 +51,7 @@ export const DocsPager: Component<DocsPagerProps> = (props) => {
             <Show when={pager()?.prev?.href}>
                 <Button asChild variant="outline">
                     <As component={A} href={pager().prev?.href!}>
-                        <IconChevronLeft class="h-4 w-4 mr-2" />
+                        <TbChevronLeft class="h-4 w-4 mr-2" />
                         {pager().prev?.title}
                     </As>
                 </Button>
@@ -60,7 +60,7 @@ export const DocsPager: Component<DocsPagerProps> = (props) => {
                 <Button asChild variant="outline" class="ml-auto">
                     <As component={A} href={pager().next?.href!}>
                         {pager().next?.title}
-                        <IconChevronRight class="h-4 w-4 ml-2" />
+                        <TbChevronRight class="h-4 w-4 ml-2" />
                     </As>
                 </Button>
             </Show>
