@@ -1,10 +1,10 @@
-import { IconAlertCircle } from "@tabler/icons-solidjs"
+import { TbAlertCircle } from "solid-icons/tb"
 import { Alert, AlertDescription, AlertTitle } from "../ui/alert"
 
 const AlertDestructive = () => {
     return (
         <Alert variant="destructive">
-            <IconAlertCircle class="w-4 h-4" />
+            <TbAlertCircle class="w-4 h-4" />
             <AlertTitle>Error</AlertTitle>
             <AlertDescription>
                 Your session has expired. Please log in again.

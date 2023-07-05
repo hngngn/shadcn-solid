@@ -3,8 +3,8 @@ import { DocsPager } from "@/components/pager"
 import { Sidebar } from "@/components/sidebar"
 import { TableOfContents } from "@/components/toc"
 import { badgeVariants } from "@/registry/default/ui/badge"
-import { IconChevronRight } from "@tabler/icons-solidjs"
-import { Show, createMemo } from "solid-js"
+import { TbChevronRight } from "solid-icons/tb"
+import { Show, Suspense, createMemo } from "solid-js"
 import { MDXProvider } from "solid-mdx"
 import { A, Outlet, useLocation } from "solid-start"
 import { Balancer } from "solid-wrap-balancer"
@@ -54,7 +54,7 @@ export default () => {
                         <div class="overflow-hidden text-ellipsis whitespace-nowrap">
                             Docs
                         </div>
-                        <IconChevronRight class="h-4 w-4" />
+                        <TbChevronRight class="h-4 w-4" />
                         <div class="font-medium text-foreground">
                             {data().frontmatter.title}
                         </div>
@@ -100,9 +100,11 @@ export default () => {
                         </div>
                     </Show>
                     <div class="max-w-full pb-12 pt-8">
-                        <MDXProvider components={MDXComponent}>
-                            <Outlet />
-                        </MDXProvider>
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <MDXProvider components={MDXComponent}>
+                                <Outlet />
+                            </MDXProvider>
+                        </Suspense>
                     </div>
                     <DocsPager slug={location.pathname} />
                 </div>

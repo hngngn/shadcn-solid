@@ -1,5 +1,6 @@
 import { Button } from "../ui/button"
-import { TextField, TextFieldTextArea } from "../ui/textfield"
+import { TextFieldTextArea } from "../ui/textarea"
+import { TextField } from "../ui/textfield"
 
 const TextareaWithButton = () => {
     return (

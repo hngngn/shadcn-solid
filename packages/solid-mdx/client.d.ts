@@ -1,4 +1,4 @@
-import type { MDXComponent } from "./types"
+import type { MDXComponent } from "./dist"
 
 declare module "*.mdx" {
     const Comp: MDXComponent

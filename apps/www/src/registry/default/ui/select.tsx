@@ -1,6 +1,6 @@
 import { cn } from "@/lib/cn"
 import { Select as SelectPrimitive } from "@kobalte/core"
-import { IconCheck, IconSelector } from "@tabler/icons-solidjs"
+import { TbCheck, TbSelector } from "solid-icons/tb"
 import type { VoidComponent } from "solid-js"
 import { splitProps, type ParentComponent } from "solid-js"
 
@@ -25,7 +25,7 @@ export const SelectTrigger: ParentComponent<
         >
             {local.children}
             <SelectPrimitive.Icon class="flex h-3.5 w-3.5 items-center justify-center">
-                <IconSelector class="h-4 w-4 opacity-50" />
+                <TbSelector class="h-4 w-4 opacity-50" />
             </SelectPrimitive.Icon>
         </SelectPrimitive.Trigger>
     )
@@ -63,7 +63,7 @@ export const SelectItem: ParentComponent<SelectPrimitive.SelectItemProps> = (
             {...rest}
         >
             <SelectPrimitive.ItemIndicator class="absolute right-2 flex h-3.5 w-3.5 items-center justify-center">
-                <IconCheck class="w-4 h-4" />
+                <TbCheck class="w-4 h-4" />
             </SelectPrimitive.ItemIndicator>
             <SelectPrimitive.ItemLabel>
                 {local.children}

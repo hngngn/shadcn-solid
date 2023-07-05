@@ -276,7 +276,7 @@ const example: Registry = [
     {
         name: "combobox-demo",
         type: "components:example",
-        registryDependencies: ["command"],
+        registryDependencies: ["combobox"],
         files: ["example/combobox-demo.tsx"],
     },
     {
@@ -370,12 +370,6 @@ const example: Registry = [
         files: ["example/skeleton-demo.tsx"],
     },
     {
-        name: "slider-demo",
-        type: "components:example",
-        registryDependencies: ["slider"],
-        files: ["example/slider-demo.tsx"],
-    },
-    {
         name: "switch-demo",
         type: "components:example",
         registryDependencies: ["switch"],
@@ -390,31 +384,31 @@ const example: Registry = [
     {
         name: "textarea-demo",
         type: "components:example",
-        registryDependencies: ["textarea"],
+        registryDependencies: ["textfield", "textarea"],
         files: ["example/textarea-demo.tsx"],
     },
     {
         name: "textarea-disabled",
         type: "components:example",
-        registryDependencies: ["textarea"],
+        registryDependencies: ["textfield", "textarea"],
         files: ["example/textarea-disabled.tsx"],
     },
     {
         name: "textarea-with-button",
         type: "components:example",
-        registryDependencies: ["textarea", "button"],
+        registryDependencies: ["textfield", "button", "textarea"],
         files: ["example/textarea-with-button.tsx"],
     },
     {
         name: "textarea-with-label",
         type: "components:example",
-        registryDependencies: ["textarea", "label"],
+        registryDependencies: ["textfield", "label", "textarea"],
         files: ["example/textarea-with-label.tsx"],
     },
     {
         name: "textarea-with-text",
         type: "components:example",
-        registryDependencies: ["textarea", "label"],
+        registryDependencies: ["textfield", "textarea"],
         files: ["example/textarea-with-text.tsx"],
     },
     {
@@ -444,13 +438,13 @@ const example: Registry = [
     {
         name: "textfield-with-label",
         type: "components:example",
-        registryDependencies: ["textfield", "button", "label"],
+        registryDependencies: ["textfield", "button"],
         files: ["example/textfield-with-label.tsx"],
     },
     {
         name: "textfield-with-text",
         type: "components:example",
-        registryDependencies: ["textfield", "button", "label"],
+        registryDependencies: ["textfield", "button"],
         files: ["example/textfield-with-text.tsx"],
     },
     {
