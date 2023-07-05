@@ -1,3 +1,4 @@
+import { cn } from "@/lib/cn"
 import { Button as ButtonPrimitive } from "@kobalte/core"
 import type { VariantProps } from "class-variance-authority"
 import { cva } from "class-variance-authority"
@@ -41,11 +42,13 @@ export const Button: ParentComponent<
 
     return (
         <ButtonPrimitive.Root
-            class={buttonVariants({
-                class: local.class,
-                size: local.size,
-                variant: local.variant,
-            })}
+            class={cn(
+                buttonVariants({
+                    size: local.size,
+                    variant: local.variant,
+                }),
+                local.class
+            )}
             {...rest}
         />
     )

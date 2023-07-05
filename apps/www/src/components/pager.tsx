@@ -57,7 +57,7 @@ export const DocsPager: Component<DocsPagerProps> = (props) => {
                 </Button>
             </Show>
             <Show when={pager()?.next?.href}>
-                <Button asChild variant="outline">
+                <Button asChild variant="outline" class="ml-auto">
                     <As component={A} href={pager().next?.href!}>
                         {pager().next?.title}
                         <IconChevronRight class="h-4 w-4 ml-2" />

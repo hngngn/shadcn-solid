@@ -1,3 +1,4 @@
+import { cn } from "@/lib/cn"
 import {
     Accordion,
     AccordionContent,
@@ -5,8 +6,18 @@ import {
     AccordionTrigger,
 } from "@/registry/default/ui/accordion"
 import { Alert, AlertDescription } from "@/registry/default/ui/alert"
-import { type ComponentProps } from "solid-js"
+import {
+    Tabs,
+    TabsContent,
+    TabsIndicator,
+    TabsList,
+    TabsTrigger,
+} from "@/registry/default/ui/tabs"
+import { Show, type ComponentProps } from "solid-js"
+import { ComponentPreview } from "./component-preview"
+import { ComponentSource } from "./component-source"
 import { CopyButton } from "./copy-button"
+import { PackageCopyButton } from "./package-copy-button"
 
 export const MDXComponent = {
     h1: (props: ComponentProps<"h1">) => {
@@ -91,8 +102,13 @@ export const MDXComponent = {
             />
         )
     },
-    pre: (props: ComponentProps<"pre">) => {
-        let preRef!: HTMLPreElement
+    pre: (
+        props: ComponentProps<"pre"> & {
+            "data-meta"?: boolean
+            "data-package"?: boolean
+        }
+    ) => {
+        let preRef: HTMLPreElement | undefined
 
         return (
             <>
@@ -101,20 +117,33 @@ export const MDXComponent = {
                     class="mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-lg border bg-zinc-950 py-4 dark:bg-zinc-900"
                     {...props}
                 />
-                <CopyButton preRef={preRef} />
+                <Show
+                    when={!props["data-package"]}
+                    fallback={<PackageCopyButton preRef={preRef} />}
+                >
+                    <CopyButton
+                        preRef={preRef}
+                        class={cn(props["data-meta"] && "top-16")}
+                    />
+                </Show>
             </>
         )
     },
     Step: (props: ComponentProps<"h3">) => {
         return (
             <h3
-                class="mt-8 scroll-m-20 text-base font-normal tracking-tight"
+                class="font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight"
                 {...props}
             />
         )
     },
     Steps: (props: ComponentProps<"div">) => {
-        return <div class="mb-12 ml-4 border-l pl-8 mdx-pre-tag" {...props} />
+        return (
+            <div
+                class="[&>h3]:step steps mb-12 ml-4 border-l pl-8 [counter-reset:step]"
+                {...props}
+            />
+        )
     },
     Alert,
     AlertDescription,
@@ -122,4 +151,34 @@ export const MDXComponent = {
     AccordionItem,
     AccordionTrigger,
     AccordionContent,
+    ComponentPreview,
+    ComponentSource,
+    TabsIndicator,
+    Tabs: (props: ComponentProps<typeof Tabs>) => {
+        return <Tabs class="relative mt-6 w-full" {...props} />
+    },
+    TabsList: (props: ComponentProps<typeof TabsList>) => {
+        return (
+            <TabsList
+                class="w-full justify-start rounded-none border-b bg-transparent p-0"
+                {...props}
+            />
+        )
+    },
+    TabsTrigger: (props: ComponentProps<typeof TabsTrigger>) => {
+        return (
+            <TabsTrigger
+                class="relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pb-3 pt-2 font-semibold text-muted-foreground shadow-none transition-none data-[state=active]:border-b-primary data-[state=active]:text-foreground data-[state=active]:shadow-none"
+                {...props}
+            />
+        )
+    },
+    TabsContent: (props: ComponentProps<typeof TabsContent>) => {
+        return (
+            <TabsContent
+                class="relative [&_h3.font-heading]:text-base [&_h3.font-heading]:font-semibold"
+                {...props}
+            />
+        )
+    },
 }

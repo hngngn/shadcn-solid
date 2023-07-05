@@ -2,9 +2,7 @@ import { MDXComponent } from "@/components/mdx-components"
 import { DocsPager } from "@/components/pager"
 import { Sidebar } from "@/components/sidebar"
 import { TableOfContents } from "@/components/toc"
-import { Button } from "@/registry/default/ui/button"
-import { Separator } from "@/registry/default/ui/separator"
-import { As } from "@kobalte/core"
+import { badgeVariants } from "@/registry/default/ui/badge"
 import { IconChevronRight } from "@tabler/icons-solidjs"
 import { Show, createMemo } from "solid-js"
 import { MDXProvider } from "solid-mdx"
@@ -75,29 +73,29 @@ export default () => {
                     </div>
                     <Show when={data().frontmatter.kobalte}>
                         <div class="flex items-center space-x-2 pt-4">
-                            <Show when={data()?.frontmatter?.kobalte?.link}>
-                                <Button asChild variant="secondary">
-                                    <As
-                                        component={A}
-                                        href={data().frontmatter.kobalte?.link!}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                    >
-                                        Kobalte
-                                    </As>
-                                </Button>
+                            <Show when={data().frontmatter.kobalte?.link}>
+                                <A
+                                    href={data().frontmatter.kobalte?.link!}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    class={badgeVariants({
+                                        variant: "secondary",
+                                    })}
+                                >
+                                    Kobalte
+                                </A>
                             </Show>
-                            <Show when={data()?.frontmatter?.kobalte?.api}>
-                                <Button asChild variant="secondary">
-                                    <As
-                                        component={A}
-                                        href={data().frontmatter.kobalte?.api!}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                    >
-                                        API Reference
-                                    </As>
-                                </Button>
+                            <Show when={data().frontmatter.kobalte?.api}>
+                                <A
+                                    href={data().frontmatter.kobalte?.api!}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    class={badgeVariants({
+                                        variant: "secondary",
+                                    })}
+                                >
+                                    API Reference
+                                </A>
                             </Show>
                         </div>
                     </Show>
@@ -106,7 +104,6 @@ export default () => {
                             <Outlet />
                         </MDXProvider>
                     </div>
-                    <Separator class="my-4 md:my-6" />
                     <DocsPager slug={location.pathname} />
                 </div>
                 <div class="hidden text-sm xl:block">

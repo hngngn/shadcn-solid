@@ -3,6 +3,7 @@ import { Metadata } from "@/components/metadata"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
 import "@/styles/global.css"
+import "@/styles/mdx.css"
 import "@fontsource-variable/inter"
 import {
     ColorModeProvider,

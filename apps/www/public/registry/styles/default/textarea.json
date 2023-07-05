@@ -1,0 +1,13 @@
+{
+  "name": "textarea",
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "files": [
+    {
+      "name": "textfield.tsx",
+      "content": "import { cn } from \"@/lib/cn\"\nimport { TextField as TextFieldPrimitive } from \"@kobalte/core\"\nimport { cva } from \"class-variance-authority\"\nimport { splitProps, type ParentComponent } from \"solid-js\"\n\nexport const TextFieldErrorMessage = TextFieldPrimitive.ErrorMessage\nexport const TextFieldDescription = TextFieldPrimitive.Description\nexport const TextField = TextFieldPrimitive.Root\n\nexport const labelVariants = cva(\n    \"text-sm font-medium leading-none peer-disabled:(cursor-not-allowed opacity-70)\"\n)\n\nexport const TextFieldLabel: ParentComponent<\n    TextFieldPrimitive.TextFieldLabelProps\n> = (props) => {\n    const [local, rest] = splitProps(props, [\"class\"])\n    return (\n        <TextFieldPrimitive.Label\n            class={cn(labelVariants(), local.class)}\n            {...rest}\n        />\n    )\n}\n\nexport const TextFieldInput: ParentComponent<\n    TextFieldPrimitive.TextFieldInputProps\n> = (props) => {\n    const [local, rest] = splitProps(props, [\"class\"])\n    return (\n        <TextFieldPrimitive.Input\n            class={cn(\n                \"flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50 outline-none focus-visible:ring focus-visible:ring-ring\",\n                local.class\n            )}\n            {...rest}\n        />\n    )\n}\n\nexport const TextFieldTextArea: ParentComponent<\n    TextFieldPrimitive.TextFieldTextAreaProps\n> = (props) => {\n    const [local, rest] = splitProps(props, [\"class\"])\n    return (\n        <TextFieldPrimitive.TextArea\n            class={cn(\n                \"flex min-h-60px w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50\",\n                local.class\n            )}\n            {...rest}\n        />\n    )\n}\n"
+    }
+  ],
+  "type": "components:ui"
+}

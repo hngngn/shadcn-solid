@@ -1,9 +1,8 @@
-import type { Component, ParentComponent } from "solid-js"
-import { splitProps } from "solid-js"
-
 import { cn } from "@/lib/cn"
 import { Accordion as AccordionPrimitive } from "@kobalte/core"
 import { IconChevronDown } from "@tabler/icons-solidjs"
+import type { Component, ParentComponent } from "solid-js"
+import { splitProps } from "solid-js"
 
 export const Accordion = AccordionPrimitive.Root
 

@@ -1,0 +1,13 @@
+{
+  "name": "image",
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "files": [
+    {
+      "name": "image.tsx",
+      "content": "import { cn } from \"@/lib/cn\"\nimport { Image as ImagePrimitive } from \"@kobalte/core\"\nimport { splitProps, type ParentComponent } from \"solid-js\"\n\nexport const ImageRoot: ParentComponent<ImagePrimitive.ImageRootProps> = (\n    props\n) => {\n    const [local, rest] = splitProps(props, [\"class\"])\n    return (\n        <ImagePrimitive.Root\n            class={cn(\n                \"relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full\",\n                local.class\n            )}\n            {...rest}\n        />\n    )\n}\n\nexport const Image: ParentComponent<ImagePrimitive.ImageImgProps> = (props) => {\n    const [local, rest] = splitProps(props, [\"class\"])\n    return (\n        <ImagePrimitive.Img\n            class={cn(\"aspect-square h-full w-full\", local.class)}\n            {...rest}\n        />\n    )\n}\n\nexport const ImageFallback: ParentComponent<\n    ImagePrimitive.ImageFallbackProps\n> = (props) => {\n    const [local, rest] = splitProps(props, [\"class\"])\n    return (\n        <ImagePrimitive.Fallback\n            class={cn(\n                \"flex h-full w-full items-center justify-center rounded-full bg-muted\",\n                local.class\n            )}\n            {...rest}\n        />\n    )\n}\n"
+    }
+  ],
+  "type": "components:ui"
+}
