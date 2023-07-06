@@ -1,8 +1,8 @@
 {
     "private": true,
     "scripts": {
-        "build": "turbo run build",
-        "build:registry": "pnpm --filter=www build:registry",
+        "build": "pnpm build:registry && pnpm turbo run build",
+        "build:registry": "pnpm ts-node --esm ./scripts/pre.ts && pnpm --filter=www build:registry && pnpm ts-node --esm ./scripts/post.ts",
         "dev": "turbo run dev",
         "lint": "turbo run lint",
         "format": "turbo run format",
@@ -10,18 +10,19 @@
     },
     "devDependencies": {
         "@turbo/gen": "^1.10.6",
+        "@types/lodash.template": "^4.5.1",
+        "@types/node": "^18.14.0",
         "@typescript-eslint/eslint-plugin": "^5.60.1",
         "@typescript-eslint/parser": "^5.60.1",
         "eslint": "^8.43.0",
         "eslint-config-prettier": "^8.8.0",
         "eslint-config-turbo": "^1.10.6",
         "eslint-plugin-solid": "^0.12.1",
-        "prettier": "^2.8.8",
-        "ts-node": "^10.9.1",
-        "turbo": "^1.10.7",
-        "@types/lodash.template": "^4.5.1",
         "lodash.template": "^4.5.0",
-        "rimraf": "^5.0.1"
+        "prettier": "^2.8.8",
+        "rimraf": "^5.0.1",
+        "ts-node": "^10.9.1",
+        "turbo": "^1.10.7"
     },
     "packageManager": "pnpm@7.15.0",
     "name": "shadcn-solid"
