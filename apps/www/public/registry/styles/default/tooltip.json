@@ -1,0 +1,13 @@
+{
+  "name": "tooltip",
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "files": [
+    {
+      "name": "tooltip.tsx",
+      "content": "import { cn } from \"@/lib/cn\"\nimport { Tooltip as TooltipPrimitive } from \"@kobalte/core\"\nimport type { ParentComponent } from \"solid-js\"\nimport { mergeProps, splitProps } from \"solid-js\"\n\nexport const TooltipTrigger = TooltipPrimitive.Trigger\n\nexport const Tooltip: ParentComponent<TooltipPrimitive.TooltipRootProps> = (\n    props\n) => {\n    const merge = mergeProps<TooltipPrimitive.TooltipRootProps[]>(\n        { gutter: 4 },\n        props\n    )\n\n    return <TooltipPrimitive.Root {...merge} />\n}\n\nexport const TooltipContent: ParentComponent<\n    TooltipPrimitive.TooltipContentProps\n> = (props) => {\n    const [local, rest] = splitProps(props, [\"class\"])\n\n    return (\n        <TooltipPrimitive.Portal>\n            <TooltipPrimitive.Content\n                class={cn(\n                    \"z-50 overflow-hidden rounded-md bg-primary px-3 py-1.5 text-xs text-primary-foreground data-[expanded]:animate-in data-[expanded]:fade-in-0 data-[expanded]:zoom-in-95 data-[closed]:animate-out data-[closed]:fade-out-0 data-[closed]:zoom-out-95\",\n                    local.class\n                )}\n                {...rest}\n            />\n        </TooltipPrimitive.Portal>\n    )\n}\n"
+    }
+  ],
+  "type": "components:ui"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "checkbox",
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "files": [
+    {
+      "name": "checkbox.tsx",
+      "content": "import { cn } from \"@/lib/cn\"\nimport { Checkbox as CheckboxPrimitive } from \"@kobalte/core\"\nimport { TbCheck } from \"solid-icons/tb\"\nimport { splitProps, type ParentComponent } from \"solid-js\"\n\nexport const CheckboxLabel = CheckboxPrimitive.Label\nexport const CheckboxInput = CheckboxPrimitive.Input\nexport const Checkbox = CheckboxPrimitive.Root\nexport const CheckboxErrorMessage = CheckboxPrimitive.ErrorMessage\nexport const CheckboxDescription = CheckboxPrimitive.Description\n\nexport const CheckboxControl: ParentComponent<\n    CheckboxPrimitive.CheckboxControlProps\n> = (props) => {\n    const [local, rest] = splitProps(props, [\"class\", \"children\"])\n\n    return (\n        <CheckboxPrimitive.Control\n            class={cn(\n                \"h-4 w-4 shrink-0 rounded-sm border border-primary shadow focus-visible:outline-none focus-visible:ring focus-visible:ring-ring data-[disabled]:opacity-50 data-[disabled]:cursor-not-allowed data-[checked]:text-primary-foreground data-[checked]:bg-primary\",\n                local.class\n            )}\n            {...rest}\n        >\n            <CheckboxPrimitive.Indicator class=\"flex items-center justify-center text-current\">\n                <TbCheck class=\"w-4 h-4\" />\n            </CheckboxPrimitive.Indicator>\n        </CheckboxPrimitive.Control>\n    )\n}\n"
+    }
+  ],
+  "type": "components:ui"
+}

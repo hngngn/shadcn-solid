@@ -1,0 +1,85 @@
+---
+title: Badge
+description: Displays a badge or a component that looks like a badge.
+component: true
+---
+
+<ComponentPreview name="badge-demo" />
+
+## Installation
+
+<Tabs defaultValue="manual">
+
+<TabsList>
+    <TabsTrigger value="cli" disabled>
+        CLI
+    </TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+    <TabsIndicator class="bg-primary" />
+</TabsList>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="badge" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import { Badge } from "@/components/ui/badge"
+```
+
+```tsx
+<Badge variant="outline">badge</Badge>
+```
+
+### Link
+
+You can use the `badgeVariants` helper to create a link that looks like a badge.
+
+```tsx
+import { badgeVariants } from "@/components/ui/badge"
+```
+
+```tsx
+<A className={badgeVariants({ variant: "outline" })}>Click here</A>
+```
+
+Alternatively, you can set the `asChild` parameter and nest the link component.
+
+```tsx
+<Badge asChild>
+    <As component={A} href="/login">
+        Login
+    </As>
+</Badge>
+```
+
+## Examples
+
+### Primary
+
+<ComponentPreview name="badge-demo" />
+
+### Secondary
+
+<ComponentPreview name="badge-secondary" />
+
+### Destructive
+
+<ComponentPreview name="badge-destructive" />
+
+### Outline
+
+<ComponentPreview name="badge-outline" />

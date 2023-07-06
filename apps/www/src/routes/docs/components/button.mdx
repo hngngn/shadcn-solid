@@ -7,28 +7,46 @@ kobalte:
     api: https://kobalte.dev/docs/core/components/button#api-reference
 ---
 
-import { ComponentExample, ComponentSource } from "~/components"
-
-<ComponentExample src="/src/components/examples/button/demo.tsx">
-    <ButtonDemo />
-</ComponentExample>
+<ComponentPreview name="button-demo" />
 
 ## Installation
 
+<Tabs defaultValue="manual">
+
+<TabsList>
+    <TabsTrigger value="cli" disabled>
+        CLI
+    </TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+    <TabsIndicator class="bg-primary" />
+</TabsList>
+
+<TabsContent value="manual">
+
 <Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @kobalte/core
+```
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource src="/src/components/ui/button.tsx" />
+<ComponentSource name="button" />
 
 <Step>Update the import paths to match your project setup.</Step>
 
 </Steps>
 
+</TabsContent>
+
+</Tabs>
+
 ## Usage
 
 ```tsx
-import { Button } from "~/components"
+import { Button } from "@/components/ui/button"
 ```
 
 ```tsx
@@ -40,11 +58,11 @@ import { Button } from "~/components"
 You can use the `buttonVariants` helper to create a link that looks like a button.
 
 ```tsx
-import { buttonVariants } from "~/components"
+import { buttonVariants } from "@/components/ui/button"
 ```
 
 ```tsx
-<Link className={buttonVariants({ variant: "outline" })}>Click here</Link>
+<A className={buttonVariants({ variant: "outline" })}>Click here</A>
 ```
 
 Alternatively, you can set the `asChild` parameter and nest the link component.
@@ -61,70 +79,40 @@ Alternatively, you can set the `asChild` parameter and nest the link component.
 
 ### Primary
 
-<ComponentExample src="/src/components/examples/button/demo.tsx">
-    <ButtonDemo />
-</ComponentExample>
-
----
+<ComponentPreview name="button-demo" />
 
 ### Secondary
 
-<ComponentExample src="/src/components/examples/button/secondary.tsx">
-    <ButtonSecondary />
-</ComponentExample>
-
----
+<ComponentPreview name="button-secondary" />
 
 ### Destructive
 
-<ComponentExample src="/src/components/examples/button/destructive.tsx">
-    <ButtonDestructive />
-</ComponentExample>
-
----
+<ComponentPreview name="button-destructive" />
 
 ### Outline
 
-<ComponentExample src="/src/components/examples/button/outline.tsx">
-    <ButtonOutline />
-</ComponentExample>
-
----
+<ComponentPreview name="button-outline" />
 
 ### Ghost
 
-<ComponentExample src="/src/components/examples/button/ghost.tsx">
-    <ButtonGhost />
-</ComponentExample>
-
----
+<ComponentPreview name="button-ghost" />
 
 ### Link
 
-<ComponentExample src="/src/components/examples/button/link.tsx">
-    <ButtonLink />
-</ComponentExample>
+<ComponentPreview name="button-link" />
 
----
+### Icon
+
+<ComponentPreview name="button-icon" />
 
 ### With Icon
 
-<ComponentExample src="/src/components/examples/button/with-icon.tsx">
-    <ButtonWithIcon />
-</ComponentExample>
-
----
+<ComponentPreview name="button-with-icon" />
 
 ### Loading
 
-<ComponentExample src="/src/components/examples/button/loading.tsx">
-    <ButtonLoading />
-</ComponentExample>
-
----
+<ComponentPreview name="button-loading" />
 
 ### As Child
 
-<ComponentExample src="/src/components/examples/button/as-child.tsx">
-    <ButtonAsChild />
-</ComponentExample>
+<ComponentPreview name="button-as-child" />

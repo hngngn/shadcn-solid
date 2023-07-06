@@ -15,10 +15,10 @@ export const docsConfig: TDocsConfig = {
             title: "Components",
             href: "/docs/components/accordion",
         },
-        {
-            title: "Examples",
-            href: "/examples/dashboard",
-        },
+        // {
+        //     title: "Examples",
+        //     href: "/examples/dashboard",
+        // },
     ],
     sidebarNav: [
         {
@@ -82,6 +82,11 @@ export const docsConfig: TDocsConfig = {
                     items: [],
                 },
                 {
+                    title: "Badge",
+                    href: "/docs/components/badge",
+                    items: [],
+                },
+                {
                     title: "Button",
                     href: "/docs/components/button",
                     items: [],
@@ -110,13 +115,6 @@ export const docsConfig: TDocsConfig = {
                     title: "Context Menu",
                     href: "/docs/components/context-menu",
                     items: [],
-                },
-                {
-                    title: "Data Table",
-                    href: "#",
-                    items: [],
-                    label: "Soon",
-                    disabled: true,
                 },
                 {
                     title: "Dialog",
@@ -176,6 +174,11 @@ export const docsConfig: TDocsConfig = {
                 {
                     title: "Switch",
                     href: "/docs/components/switch",
+                    items: [],
+                },
+                {
+                    title: "Table",
+                    href: "/docs/components/table",
                     items: [],
                 },
                 {

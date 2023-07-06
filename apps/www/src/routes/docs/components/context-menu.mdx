@@ -7,53 +7,41 @@ kobalte:
     api: https://kobalte.dev/docs/core/components/context-menu#api-reference
 ---
 
-import { ComponentExample, ComponentSource } from "~/components"
-
-<ComponentExample src="/src/components/examples/context-menu/demo.tsx">
-    <ContextMenuDemo />
-</ComponentExample>
+<ComponentPreview name="context-menu-demo" />
 
 ## Installation
 
+<Tabs defaultValue="manual">
+
+<TabsList>
+    <TabsTrigger value="cli" disabled>
+        CLI
+    </TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+    <TabsIndicator class="bg-primary" />
+</TabsList>
+
+<TabsContent value="manual">
+
 <Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @kobalte/core
+```
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource src="/src/components/ui/context-menu.tsx" />
+<ComponentSource name="context-menu" />
 
 <Step>Update the import paths to match your project setup.</Step>
 
-<Step>Update `uno.config.ts`</Step>
-
-Add the following animations to your `uno.config.ts` file:
-
-```tsx title="uno.config.ts" {3-21}
-export default defineConfig({
-    theme: {
-        animation: {
-            keyframes: {
-                "content-show":
-                    "{ from { opacity: 0; transform: scale(0.96) } to { opacity: 1; transform: scale(1) }}",
-                "content-hide":
-                    "{ from { opacity: 1; transform: scale(1) } to { opacity: 0; transform: scale(0.96) }}",
-            },
-            durations: {
-                "content-show": "200ms",
-                "content-hide": "200ms",
-            },
-            timingFns: {
-                "content-show": "ease-out",
-                "content-hide": "ease-in",
-            },
-            counts: {
-                "content-hide": "forwards",
-            },
-        },
-    },
-})
-```
-
 </Steps>
+
+</TabsContent>
+
+</Tabs>
 
 ## Usage
 
@@ -63,7 +51,7 @@ import {
     ContextMenuContent,
     ContextMenuItem,
     ContextMenuTrigger,
-} from "~/components"
+} from "@/components/ui/context-menu"
 ```
 
 ```tsx

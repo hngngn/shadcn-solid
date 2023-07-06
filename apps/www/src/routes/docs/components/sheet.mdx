@@ -7,60 +7,41 @@ kobalte:
     api: https://kobalte.dev/docs/core/components/dialog#api-reference
 ---
 
-import { ComponentExample, ComponentSource } from "~/components"
-
-<ComponentExample src="/src/components/examples/sheet/demo.tsx">
-    <SheetDemo />
-</ComponentExample>
+<ComponentPreview name="sheet-demo" />
 
 ## Installation
 
+<Tabs defaultValue="manual">
+
+<TabsList>
+    <TabsTrigger value="cli" disabled>
+        CLI
+    </TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+    <TabsIndicator class="bg-primary" />
+</TabsList>
+
+<TabsContent value="manual">
+
 <Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @kobalte/core
+```
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource src="/src/components/ui/sheet.tsx" />
+<ComponentSource name="sheet" />
 
 <Step>Update the import paths to match your project setup.</Step>
 
-<Step>Update `uno.config.ts`</Step>
-
-Add the following animations to your `uno.config.ts` file:
-
-```tsx title="uno.config.ts" {3-28}
-export default defineConfig({
-    theme: {
-        animation: {
-            durations: {
-                "slide-out-left": "200ms",
-                "slide-in-left": "300ms",
-                "slide-out-right": "200ms",
-                "slide-in-right": "300ms",
-                "slide-out-down": "200ms",
-                "slide-in-down": "300ms",
-                "slide-out-up": "200ms",
-                "slide-in-up": "300ms",
-                "fade-in": "100ms",
-                "fade-out": "100ms",
-            },
-            timingFns: {
-                "slide-out-left": "ease-out",
-                "slide-in-left": "ease-in",
-                "slide-out-right": "ease-out",
-                "slide-in-right": "ease-in",
-                "slide-out-down": "ease-out",
-                "slide-in-down": "ease-in",
-                "slide-out-up": "ease-out",
-                "slide-in-up": "ease-in",
-                "fade-in": "ease-in",
-                "fade-out": "ease-out",
-            },
-        },
-    },
-})
-```
-
 </Steps>
+
+</TabsContent>
+
+</Tabs>
 
 ## Usage
 
@@ -72,7 +53,7 @@ import {
     SheetHeader,
     SheetTitle,
     SheetTrigger,
-} from "~/components"
+} from "@/components/ui/sheet"
 ```
 
 ```tsx
@@ -96,9 +77,7 @@ import {
 
 Use the `side` property to `<SheetContent />` to indicate the edge of the screen where the component will appear. The values can be `top`, `right`, `bottom` or `left`.
 
-<ComponentExample src="/src/components/examples/sheet/demo-side.tsx">
-    <SheetSide />
-</ComponentExample>
+<ComponentPreview name="sheet-side" />
 
 ### Size
 

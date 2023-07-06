@@ -7,28 +7,46 @@ kobalte:
     api: https://kobalte.dev/docs/core/components/toggle-button#api-reference
 ---
 
-import { ComponentExample, ComponentSource } from "~/components"
-
-<ComponentExample src="/src/components/examples/toggle/demo.tsx">
-    <ToggleDemo />
-</ComponentExample>
+<ComponentPreview name="toggle-demo" />
 
 ## Installation
 
+<Tabs defaultValue="manual">
+
+<TabsList>
+    <TabsTrigger value="cli" disabled>
+        CLI
+    </TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+    <TabsIndicator class="bg-primary" />
+</TabsList>
+
+<TabsContent value="manual">
+
 <Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @kobalte/core
+```
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource src="/src/components/ui/toggle.tsx" />
+<ComponentSource name="toggle" />
 
 <Step>Update the import paths to match your project setup.</Step>
 
 </Steps>
 
+</TabsContent>
+
+</Tabs>
+
 ## Usage
 
 ```tsx
-import { ToggleButton } from "@/components"
+import { ToggleButton } from "@/components/ui/toggle"
 ```
 
 ```tsx
@@ -37,38 +55,22 @@ import { ToggleButton } from "@/components"
 
 ## Examples
 
-### Default
-
-<ComponentExample src="/src/components/examples/toggle/demo.tsx">
-    <ToggleDemo />
-</ComponentExample>
-
 ### Outline
 
-<ComponentExample src="/src/components/examples/toggle/outline.tsx">
-    <ToggleOutline />
-</ComponentExample>
+<ComponentPreview name="toggle-outline" />
 
 ### With Text
 
-<ComponentExample src="/src/components/examples/toggle/with-text.tsx">
-    <ToggleWithText />
-</ComponentExample>
+<ComponentPreview name="toggle-with-text" />
 
 ### Small
 
-<ComponentExample src="/src/components/examples/toggle/small.tsx">
-    <ToggleSmall />
-</ComponentExample>
+<ComponentPreview name="toggle-small" />
 
 ### Large
 
-<ComponentExample src="/src/components/examples/toggle/large.tsx">
-    <ToggleLarge />
-</ComponentExample>
+<ComponentPreview name="toggle-large" />
 
 ### Disabled
 
-<ComponentExample src="/src/components/examples/toggle/disabled.tsx">
-    <ToggleDisabled />
-</ComponentExample>
+<ComponentPreview name="toggle-disabled" />

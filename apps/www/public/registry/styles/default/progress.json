@@ -1,0 +1,13 @@
+{
+  "name": "progress",
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "files": [
+    {
+      "name": "progress.tsx",
+      "content": "import { cn } from \"@/lib/cn\"\nimport { Progress as ProgressPrimitive } from \"@kobalte/core\"\nimport { splitProps, type ParentComponent } from \"solid-js\"\n\nexport const ProgressLabel = ProgressPrimitive.Label\nexport const ProgressValueLabel = ProgressPrimitive.ValueLabel\n\nexport const Progress: ParentComponent<ProgressPrimitive.ProgressRootProps> = (\n    props\n) => {\n    const [local, rest] = splitProps(props, [\"class\", \"children\"])\n\n    return (\n        <ProgressPrimitive.Root\n            class={cn(\"flex flex-col gap-2 w-full\", local.class)}\n            {...rest}\n        >\n            {local.children}\n            <ProgressPrimitive.Track class=\"h-2 bg-primary/20 rounded-full overflow-hidden\">\n                <ProgressPrimitive.Fill class=\"bg-primary h-full w-[--kb-progress-fill-width] transition-all ease-linear duration-500 data-[progress=complete]:bg-primary\" />\n            </ProgressPrimitive.Track>\n        </ProgressPrimitive.Root>\n    )\n}\n"
+    }
+  ],
+  "type": "components:ui"
+}

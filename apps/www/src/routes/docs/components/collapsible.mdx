@@ -7,50 +7,69 @@ kobalte:
     api: https://kobalte.dev/docs/core/components/collapsible#api-reference
 ---
 
-import { ComponentExample, ComponentSource } from "~/components"
-
-<ComponentExample src="/src/components/examples/collapsible/demo.tsx">
-    <CollapsibleDemo />
-</ComponentExample>
+<ComponentPreview name="collapsible-demo" />
 
 ## Installation
 
+<Tabs defaultValue="manual">
+
+<TabsList>
+    <TabsTrigger value="cli" disabled>
+        CLI
+    </TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+    <TabsIndicator class="bg-primary" />
+</TabsList>
+
+<TabsContent value="manual">
+
 <Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @kobalte/core
+```
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource src="/src/components/ui/collapsible.tsx" />
+<ComponentSource name="collapsible" />
 
 <Step>Update the import paths to match your project setup.</Step>
 
-<Step>Update `uno.config.ts`</Step>
+<Step>Update `tailwind.config.cjs`</Step>
 
-Add the following animations to your `uno.config.ts` file:
+Add the following animations to your `tailwind.config.cjs` file:
 
-```tsx title="uno.config.ts" {3-18}
-export default defineConfig({
+```js title="tailwind.config.cjs" {5-18}
+/** @type {import('tailwindcss').Config} */
+module.exports = {
     theme: {
-        animation: {
+        extend: {
             keyframes: {
-                "collapsible-down":
-                    "{ from { height: 0 } to { height: var(--kb-collapsible-content-height) }}",
-                "collapsible-up":
-                    "{ from { height: var(--kb-collapsible-content-height) } to { height: 0 }}",
+                "collapsible-down": {
+                    from: { height: 0 },
+                    to: { height: "var(--kb-collapsible-content-height)" },
+                },
+                "collapsible-up": {
+                    from: { height: "var(--kb-collapsible-content-height)" },
+                    to: { height: 0 },
+                },
             },
-            durations: {
-                "collapsible-down": "200ms",
-                "collapsible-up": "200ms",
-            },
-            timingFns: {
-                "collapsible-down": "ease-out",
-                "collapsible-up": "ease-out",
+            animation: {
+                "collapsible-down": "collapsible-down 0.2s ease-out",
+                "collapsible-up": "collapsible-up 0.2s ease-out",
             },
         },
     },
-})
+}
 ```
 
 </Steps>
+
+</TabsContent>
+
+</Tabs>
 
 ## Usage
 
@@ -60,7 +79,7 @@ import {
     Collapsible,
     CollapsibleContent,
     CollapsibleTrigger,
-} from "~/components"
+} from "@/components/ui/collapsible"
 ```
 
 ```tsx

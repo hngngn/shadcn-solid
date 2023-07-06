@@ -7,52 +7,72 @@ kobalte:
     api: https://kobalte.dev/docs/core/components/accordion#api-reference
 ---
 
-import { ComponentExample, ComponentSource } from "~/components"
-
-<ComponentExample src="/src/components/examples/accordion/demo.tsx">
-    <div className="max-w-[70%] w-full">
-        <AccordionDemo />
-    </div>
-</ComponentExample>
+<ComponentPreview
+    name="accordion-demo"
+    class="[&_.preview>div]:sm:max-w-[70%]"
+/>
 
 ## Installation
 
+<Tabs defaultValue="manual">
+
+<TabsList>
+    <TabsTrigger value="cli" disabled>
+        CLI
+    </TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+    <TabsIndicator class="bg-primary" />
+</TabsList>
+
+<TabsContent value="manual">
+
 <Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @kobalte/core
+```
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource src="/src/components/ui/accordion.tsx" />
+<ComponentSource name="accordion" />
 
 <Step>Update the import paths to match your project setup.</Step>
 
-<Step>Update `uno.config.ts`</Step>
+<Step>Update `tailwind.config.cjs`</Step>
 
-Add the following animations to your `uno.config.ts` file:
+Add the following animations to your `tailwind.config.cjs` file:
 
-```tsx title="uno.config.ts" {3-18}
-export default defineConfig({
+```js title="tailwind.config.cjs" {5-18}
+/** @type {import('tailwindcss').Config} */
+module.exports = {
     theme: {
-        animation: {
+        extend: {
             keyframes: {
-                "accordion-down":
-                    "{ from { height: 0 } to { height: var(--kb-accordion-content-height) }}",
-                "accordion-up":
-                    "{ from { height: var(--kb-accordion-content-height) } to { height: 0 }}",
+                "accordion-down": {
+                    from: { height: 0 },
+                    to: { height: "var(--kb-accordion-content-height)" },
+                },
+                "accordion-up": {
+                    from: { height: "var(--kb-accordion-content-height)" },
+                    to: { height: 0 },
+                },
             },
-            durations: {
-                "accordion-down": "200ms",
-                "accordion-up": "200ms",
-            },
-            timingFns: {
-                "accordion-down": "ease-out",
-                "accordion-up": "ease-out",
+            animation: {
+                "accordion-down": "accordion-down 0.2s ease-out",
+                "accordion-up": "accordion-up 0.2s ease-out",
             },
         },
     },
-})
+}
 ```
 
 </Steps>
+
+</TabsContent>
+
+</Tabs>
 
 ## Usage
 
@@ -62,11 +82,11 @@ import {
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
-} from "~/components"
+} from "@/components/ui/accordion"
 ```
 
 ```tsx
-<Accordion collapsible>
+<Accordion type="single" collapsible>
     <AccordionItem value="item-1">
         <AccordionTrigger>Is it accessible?</AccordionTrigger>
         <AccordionContent>
