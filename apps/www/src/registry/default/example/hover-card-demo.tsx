@@ -1,4 +1,5 @@
 import { As } from "@kobalte/core"
+import { TbCalendar } from "solid-icons/tb"
 import { Button } from "../ui/button"
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card"
 import { Image, ImageFallback, ImageRoot } from "../ui/image"
@@ -24,7 +25,7 @@ const HoverCardDemo = () => {
                             interfaces.
                         </p>
                         <div class="flex items-center pt-2">
-                            <i class="i-lucide:calendar mr-2 opacity-70" />{" "}
+                            <TbCalendar class="h-4 w-4 mr-2 opacity-70" />{" "}
                             <span class="text-xs text-muted-foreground">
                                 Joined March 2021
                             </span>

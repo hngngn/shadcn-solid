@@ -1,5 +1,0 @@
-export * from "./demo"
-export * from "./disabled"
-export * from "./with-button"
-export * from "./with-label"
-export * from "./with-text"

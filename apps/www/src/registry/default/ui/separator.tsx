@@ -10,7 +10,7 @@ export const Separator: VoidComponent<SeparatorPrimitive.SeparatorRootProps> = (
     return (
         <SeparatorPrimitive.Root
             class={cn(
-                "shrink-0 bg-border data-[orientation=horizontal]:h-1px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-1px",
+                "shrink-0 bg-border data-[orientation=horizontal]:h-[1px] data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-[1px]",
                 local.class
             )}
             {...rest}

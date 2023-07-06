@@ -1,0 +1,70 @@
+---
+title: Select
+description: Displays a list of options for the user to pick from—triggered by a button.
+component: true
+kobalte:
+    link: https://kobalte.dev/docs/core/components/select
+    api: https://kobalte.dev/docs/core/components/select#api-reference
+---
+
+<ComponentPreview name="select-demo" />
+
+## Installation
+
+<Tabs defaultValue="manual">
+
+<TabsList>
+    <TabsTrigger value="cli" disabled>
+        CLI
+    </TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+    <TabsIndicator class="bg-primary" />
+</TabsList>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @kobalte/core
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="select" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
+```
+
+```tsx
+<Select
+    options={["Apple", "Banana", "Blueberry", "Grapes", "Pineapple"]}
+    itemComponent={(props) => (
+        <SelectItem item={props.item}>{props.item.rawValue}</SelectItem>
+    )}
+>
+    <SelectTrigger>
+        <SelectValue<string>>{(state) => state.selectedOption()}</SelectValue>
+    </SelectTrigger>
+    <SelectContent />
+</Select>
+```

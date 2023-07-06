@@ -1,9 +1,10 @@
+import { TbBold } from "solid-icons/tb"
 import { ToggleButton } from "../ui/toggle"
 
 const ToggleDemo = () => {
     return (
         <ToggleButton aria-label="Toggle italic">
-            <i class="i-lucide:bold" />
+            <TbBold class="w-4 h-4" />
         </ToggleButton>
     )
 }

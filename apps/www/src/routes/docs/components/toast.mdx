@@ -1,0 +1,58 @@
+---
+title: Toast
+description: A succinct message that is displayed temporarily.
+component: true
+kobalte:
+    link: https://kobalte.dev/docs/core/components/toast
+    api: https://kobalte.dev/docs/core/components/toast#api-reference
+---
+
+<Alert>
+<AlertDescription>
+
+**Note**: You might notice a bug in the examples when swiping or pausing, but it works perfectly fine, see [here](https://stackblitz.com/edit/shadcn-solid-toast).
+
+</AlertDescription>
+</Alert>
+
+<ComponentPreview name="toast-demo" />
+
+## Installation
+
+<Tabs defaultValue="manual">
+
+<TabsList>
+    <TabsTrigger value="cli" disabled>
+        CLI
+    </TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+    <TabsIndicator class="bg-primary" />
+</TabsList>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @kobalte/core
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="toast" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Examples
+
+### Destructive
+
+<ComponentPreview name="toast-destructive" />

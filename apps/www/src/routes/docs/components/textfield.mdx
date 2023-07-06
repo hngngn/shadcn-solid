@@ -1,0 +1,86 @@
+---
+title: TextField
+description: A text input that allow users to input custom text entries with a keyboard.
+component: true
+kobalte:
+    link: https://kobalte.dev/docs/core/components/text-field
+    api: https://kobalte.dev/docs/core/components/text-field#api-reference
+---
+
+<ComponentPreview name="textfield-demo" />
+
+## Installation
+
+<Tabs defaultValue="manual">
+
+<TabsList>
+    <TabsTrigger value="cli" disabled>
+        CLI
+    </TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+    <TabsIndicator class="bg-primary" />
+</TabsList>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @kobalte/core
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="textfield" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import { TextFieldRoot, TextFieldInput } from "@/components/ui/textfield"
+```
+
+```tsx
+<TextFieldRoot>
+    <TextFieldInput type="email" placeholder="Email" />
+</TextFieldRoot>
+```
+
+## Examples
+
+### Disabled
+
+<ComponentPreview name="textfield-disabled" />
+
+---
+
+### With Label
+
+<ComponentPreview name="textfield-with-label" />
+
+---
+
+### With Text
+
+<ComponentPreview name="textfield-with-text" />
+
+---
+
+### With Button
+
+<ComponentPreview name="textfield-with-button" />
+
+---
+
+### File
+
+<ComponentPreview name="textfield-file" />
