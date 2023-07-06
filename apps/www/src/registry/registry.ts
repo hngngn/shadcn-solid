@@ -21,6 +21,11 @@ const ui: Registry = [
         files: ["ui/alert-dialog.tsx"],
     },
     {
+        name: "badge",
+        type: "components:ui",
+        files: ["ui/badge.tsx"],
+    },
+    {
         name: "button",
         type: "components:ui",
         dependencies: ["@kobalte/core"],
@@ -142,6 +147,7 @@ const ui: Registry = [
         name: "textarea",
         type: "components:ui",
         dependencies: ["@kobalte/core"],
+        registryDependencies: ["textfield"],
         files: ["ui/textfield.tsx"],
     },
     {
@@ -212,6 +218,30 @@ const example: Registry = [
         type: "components:example",
         registryDependencies: ["button"],
         files: ["example/button-outline.tsx"],
+    },
+    {
+        name: "badge-demo",
+        type: "components:example",
+        registryDependencies: ["badge"],
+        files: ["example/badge-demo.tsx"],
+    },
+    {
+        name: "badge-secondary",
+        type: "components:example",
+        registryDependencies: ["badge"],
+        files: ["example/badge-secondary.tsx"],
+    },
+    {
+        name: "badge-destructive",
+        type: "components:example",
+        registryDependencies: ["badge"],
+        files: ["example/badge-destructive.tsx"],
+    },
+    {
+        name: "badge-outline",
+        type: "components:example",
+        registryDependencies: ["badge"],
+        files: ["example/badge-outline.tsx"],
     },
     {
         name: "button-ghost",
@@ -314,6 +344,11 @@ const example: Registry = [
         type: "components:example",
         registryDependencies: ["hover-card"],
         files: ["example/hover-card-demo.tsx"],
+    },
+    {
+        name: "mode-toggle",
+        type: "components:example",
+        files: ["example/mode-toggle.tsx"],
     },
     {
         name: "image-demo",

@@ -3,6 +3,9 @@
   "dependencies": [
     "@kobalte/core"
   ],
+  "registryDependencies": [
+    "textfield"
+  ],
   "files": [
     {
       "name": "textfield.tsx",

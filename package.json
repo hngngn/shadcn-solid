@@ -3,7 +3,7 @@
     "scripts": {
         "build": "pnpm build:registry && pnpm turbo run build",
         "build:registry": "pnpm ts-node --esm ./scripts/pre.ts && pnpm --filter=www build:registry && pnpm ts-node --esm ./scripts/post.ts",
-        "dev": "turbo run dev",
+        "dev": "pnpm build:registry && pnpm turbo run dev",
         "lint": "turbo run lint",
         "format": "turbo run format",
         "release": "cd packages/cli && pnpm release"

@@ -33,6 +33,13 @@
     "type": "components:ui"
   },
   {
+    "name": "badge",
+    "files": [
+      "ui/badge.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "button",
     "dependencies": [
       "@kobalte/core"
@@ -230,6 +237,9 @@
     "name": "textarea",
     "dependencies": [
       "@kobalte/core"
+    ],
+    "registryDependencies": [
+      "textfield"
     ],
     "files": [
       "ui/textfield.tsx"

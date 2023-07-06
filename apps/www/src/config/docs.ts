@@ -82,6 +82,12 @@ export const docsConfig: TDocsConfig = {
                     items: [],
                 },
                 {
+                    title: "Badge",
+                    href: "/docs/components/badge",
+                    items: [],
+                    label: "New",
+                },
+                {
                     title: "Button",
                     href: "/docs/components/button",
                     items: [],

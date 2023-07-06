@@ -1,11 +1,11 @@
 import { siteConfig } from "@/config"
+import ModeToggle from "@/registry/default/example/mode-toggle"
 import { Button } from "@/registry/default/ui/button"
 import { As } from "@kobalte/core"
 import { TbBrandGithub } from "solid-icons/tb"
 import { A } from "solid-start"
 import { MainNav } from "./main-nav"
 import { MobileNav } from "./mobile-nav"
-import { ModeToggle } from "./mode-toggle"
 
 export const SiteHeader = () => {
     return (

@@ -8,7 +8,7 @@ import {
 import { As, useColorMode } from "@kobalte/core"
 import { TbDeviceLaptop, TbMoonFilled, TbSunFilled } from "solid-icons/tb"
 
-export const ModeToggle = () => {
+const ModeToggle = () => {
     const { setColorMode } = useColorMode()
 
     return (
@@ -42,3 +42,5 @@ export const ModeToggle = () => {
         </DropdownMenu>
     )
 }
+
+export default ModeToggle

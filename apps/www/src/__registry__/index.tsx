@@ -26,6 +26,13 @@ export const Index: Record<string, any> = {
       component: lazy(() => import("@/registry/default/ui/alert-dialog")),
       files: ["registry/default/ui/alert-dialog.tsx"],
     },
+    "badge": {
+      name: "badge",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/default/ui/badge")),
+      files: ["registry/default/ui/badge.tsx"],
+    },
     "button": {
       name: "button",
       type: "components:ui",
@@ -169,7 +176,7 @@ export const Index: Record<string, any> = {
     "textarea": {
       name: "textarea",
       type: "components:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["textfield"],
       component: lazy(() => import("@/registry/default/ui/textarea")),
       files: ["registry/default/ui/textfield.tsx"],
     },
@@ -249,6 +256,34 @@ export const Index: Record<string, any> = {
       registryDependencies: ["button"],
       component: lazy(() => import("@/registry/default/example/button-outline")),
       files: ["registry/default/example/button-outline.tsx"],
+    },
+    "badge-demo": {
+      name: "badge-demo",
+      type: "components:example",
+      registryDependencies: ["badge"],
+      component: lazy(() => import("@/registry/default/example/badge-demo")),
+      files: ["registry/default/example/badge-demo.tsx"],
+    },
+    "badge-secondary": {
+      name: "badge-secondary",
+      type: "components:example",
+      registryDependencies: ["badge"],
+      component: lazy(() => import("@/registry/default/example/badge-secondary")),
+      files: ["registry/default/example/badge-secondary.tsx"],
+    },
+    "badge-destructive": {
+      name: "badge-destructive",
+      type: "components:example",
+      registryDependencies: ["badge"],
+      component: lazy(() => import("@/registry/default/example/badge-destructive")),
+      files: ["registry/default/example/badge-destructive.tsx"],
+    },
+    "badge-outline": {
+      name: "badge-outline",
+      type: "components:example",
+      registryDependencies: ["badge"],
+      component: lazy(() => import("@/registry/default/example/badge-outline")),
+      files: ["registry/default/example/badge-outline.tsx"],
     },
     "button-ghost": {
       name: "button-ghost",
@@ -368,6 +403,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["hover-card"],
       component: lazy(() => import("@/registry/default/example/hover-card-demo")),
       files: ["registry/default/example/hover-card-demo.tsx"],
+    },
+    "mode-toggle": {
+      name: "mode-toggle",
+      type: "components:example",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/default/example/mode-toggle")),
+      files: ["registry/default/example/mode-toggle.tsx"],
     },
     "image-demo": {
       name: "image-demo",
