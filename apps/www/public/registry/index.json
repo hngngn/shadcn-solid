@@ -214,6 +214,13 @@
     "type": "components:ui"
   },
   {
+    "name": "table",
+    "files": [
+      "ui/table.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "tabs",
     "dependencies": [
       "@kobalte/core"

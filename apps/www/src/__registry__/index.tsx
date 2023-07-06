@@ -159,6 +159,13 @@ export const Index: Record<string, any> = {
       component: lazy(() => import("@/registry/default/ui/switch")),
       files: ["registry/default/ui/switch.tsx"],
     },
+    "table": {
+      name: "table",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/default/ui/table")),
+      files: ["registry/default/ui/table.tsx"],
+    },
     "tabs": {
       name: "tabs",
       type: "components:ui",
@@ -480,6 +487,13 @@ export const Index: Record<string, any> = {
       registryDependencies: ["switch"],
       component: lazy(() => import("@/registry/default/example/switch-demo")),
       files: ["registry/default/example/switch-demo.tsx"],
+    },
+    "table-demo": {
+      name: "table-demo",
+      type: "components:example",
+      registryDependencies: ["table"],
+      component: lazy(() => import("@/registry/default/example/table-demo")),
+      files: ["registry/default/example/table-demo.tsx"],
     },
     "tabs-demo": {
       name: "tabs-demo",

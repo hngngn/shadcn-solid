@@ -85,7 +85,6 @@ export const docsConfig: TDocsConfig = {
                     title: "Badge",
                     href: "/docs/components/badge",
                     items: [],
-                    label: "New",
                 },
                 {
                     title: "Button",
@@ -116,13 +115,6 @@ export const docsConfig: TDocsConfig = {
                     title: "Context Menu",
                     href: "/docs/components/context-menu",
                     items: [],
-                },
-                {
-                    title: "Data Table",
-                    href: "#",
-                    items: [],
-                    label: "Soon",
-                    disabled: true,
                 },
                 {
                     title: "Dialog",
@@ -182,6 +174,11 @@ export const docsConfig: TDocsConfig = {
                 {
                     title: "Switch",
                     href: "/docs/components/switch",
+                    items: [],
+                },
+                {
+                    title: "Table",
+                    href: "/docs/components/table",
                     items: [],
                 },
                 {

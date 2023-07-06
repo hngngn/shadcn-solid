@@ -33,6 +33,7 @@
     "@kobalte/core": "^0.9.7",
     "@solidjs/meta": "^0.28.2",
     "@solidjs/router": "^0.8.2",
+    "@tanstack/solid-table": "^8.9.3",
     "class-variance-authority": "^0.6.1",
     "clsx": "^1.2.1",
     "solid-icons": "^1.0.10",

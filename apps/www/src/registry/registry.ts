@@ -132,6 +132,11 @@ const ui: Registry = [
         files: ["ui/switch.tsx"],
     },
     {
+        name: "table",
+        type: "components:ui",
+        files: ["ui/table.tsx"],
+    },
+    {
         name: "tabs",
         type: "components:ui",
         dependencies: ["@kobalte/core"],
@@ -409,6 +414,12 @@ const example: Registry = [
         type: "components:example",
         registryDependencies: ["switch"],
         files: ["example/switch-demo.tsx"],
+    },
+    {
+        name: "table-demo",
+        type: "components:example",
+        registryDependencies: ["table"],
+        files: ["example/table-demo.tsx"],
     },
     {
         name: "tabs-demo",

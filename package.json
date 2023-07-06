@@ -1,7 +1,8 @@
 {
     "private": true,
     "scripts": {
-        "build": "pnpm build:registry && pnpm turbo run build",
+        "build": "turbo run build",
+        "preinstall": "pnpm build:registry",
         "build:registry": "pnpm ts-node --esm ./scripts/pre.ts && pnpm --filter=www build:registry && pnpm ts-node --esm ./scripts/post.ts",
         "dev": "pnpm build:registry && pnpm turbo run dev",
         "lint": "turbo run lint",
