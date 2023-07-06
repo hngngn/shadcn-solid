@@ -1,4 +1,5 @@
-import { For, Switch } from "solid-js"
+import { TbBell, TbCheck } from "solid-icons/tb"
+import { For } from "solid-js"
 import { Button } from "../ui/button"
 import {
     Card,
@@ -8,7 +9,7 @@ import {
     CardHeader,
     CardTitle,
 } from "../ui/card"
-import { SwitchControl, SwitchThumb } from "../ui/switch"
+import { Switch, SwitchControl, SwitchThumb } from "../ui/switch"
 
 const notifications = [
     {
@@ -34,7 +35,7 @@ const CardDemo = () => {
             </CardHeader>
             <CardContent class="grid gap-4">
                 <div class=" flex items-center space-x-4 rounded-md border p-4">
-                    <i class="i-lucide:bell-ring" />
+                    <TbBell class="w-4 h-4" />
                     <div class="flex-1 space-y-1">
                         <p class="text-sm font-medium leading-none">
                             Push Notifications
@@ -69,7 +70,7 @@ const CardDemo = () => {
             </CardContent>
             <CardFooter>
                 <Button class="w-full">
-                    <i class="mr-2 i-lucide:check" /> Mark all as read
+                    <TbCheck class="mr-2 h-4 w-4" /> Mark all as read
                 </Button>
             </CardFooter>
         </Card>

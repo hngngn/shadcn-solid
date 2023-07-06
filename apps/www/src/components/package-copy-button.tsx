@@ -33,7 +33,7 @@ export const PackageCopyButton: VoidComponent<Props> = (props) => {
                 innerText = innerText.replace("npx create-", "yarn create ")
             }
             if (name === "pnpm") {
-                innerText = innerText.replace("npm install", "pnpm create ")
+                innerText = innerText.replace("npx create-", "pnpm create ")
             }
         }
 

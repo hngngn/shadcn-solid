@@ -74,13 +74,13 @@ export const ComponentPreview: ParentComponent<ComponentPreviewProps> = (
                     <TabsList class="w-full rounded-none bg-transparent p-0">
                         <TabsTrigger
                             value="preview"
-                            class="rounded-none bg-transparent px-4 pb-3.5 pt-2 font-semibold shadow-none"
+                            class="rounded-none bg-transparent px-4 pb-3.5 pt-2 font-semibold data-[selected]:shadow-none"
                         >
                             Preview
                         </TabsTrigger>
                         <TabsTrigger
                             value="code"
-                            class="rounded-none bg-transparent px-4 pb-3.5 pt-2 font-semibold shadow-none"
+                            class="rounded-none bg-transparent px-4 pb-3.5 pt-2 font-semibold data-[selected]:shadow-none"
                         >
                             Code
                         </TabsTrigger>

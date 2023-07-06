@@ -3,194 +3,157 @@ title: Installation
 description: How to install dependencies and structure your app.
 ---
 
-## Manual Installation
+## SolidStart
 
 <Steps>
 
-### Add UnoCSS
+### Create project
 
-Components are styled using UnoCSS. You need to install it in your project.
+Start by creating a new SolidStart project using [`create-jd-app`](https://github.com/OrJDev/create-jd-app) and select tailwind:
 
-[Follow the UnoCSS installation instructions to get started.](https://unocss.dev/integrations/)
+```bash
+npx create-jd-app@latest
+```
 
 ### Add dependencies
 
 Add the following dependencies to your project:
 
 ```bash
-pnpm add class-variance-authority
+npm install tailwindcss-animate class-variance-authority clsx tailwind-merge
 ```
 
 ### Add icon library
 
-This project uses [UnoCSS preset icon](https://unocss.dev/presets/icons) and [Iconify lucide](https://icon-sets.iconify.design/lucide/), but you can use any icon library.
+This project uses [Solid icons](https://github.com/x64Bits/solid-icons), but you can use any icon library.
+
+```bash
+npm install solid-icons
+```
 
 ### Path Aliases
 
-I'm use the `~` alias to make it easier to import your components. This is how you can configure it in `tsconfig.json`:
+I'm use the `@` alias to make it easier to import your components. This is how you can configure it:
 
-```json title="tsconfig.json"
+```json title="tsconfig.json"{3-6}
 {
     "compilerOptions": {
         "baseUrl": "./",
         "paths": {
-            "~/*": ["./src/*"]
+            "@/*": ["./src/*"]
         }
     }
 }
 ```
 
-If you prefer to use a different alias than `~`, you'll need to update the `import` statements when adding components.
+```ts title="vite.config.ts"{6-10}
+import path from "path"
 
-### Configure uno.config.ts
-
-This is what this project's `uno.config.ts` file looks like:
-
-```ts title="uno.config.ts"
-import {
-    defineConfig,
-    presetIcons,
-    presetUno,
-    presetWebFonts,
-    transformerDirectives,
-    transformerVariantGroup,
-} from "unocss"
-import type { Theme } from "unocss/preset-uno"
-
-export default defineConfig<Theme>({
-    presets: [
-        presetUno(),
-        presetWebFonts({
-            fonts: {
-                sans: {
-                    name: "Inter",
-                    italic: false,
-                    provider: "google",
-                    weights: [400, 500, 600, 700],
-                },
+export default defineConfig(async () => {
+    return {
+		...
+        resolve: {
+            alias: {
+                "@": path.resolve(__dirname, "./src"),
             },
-        }),
-        presetIcons({
-            extraProperties: {
-                width: "1rem",
-                height: "1rem",
-            },
-        }),
-    ],
-    transformers: [transformerDirectives(), transformerVariantGroup()],
+        },
+    }
+})
+```
+
+If you prefer to use a different alias than `@`, you'll need to update the `import` statements when adding components.
+
+### Configure tailwind.config.cjs
+
+This is what this project's `tailwind.config.cjs` file looks like:
+
+```js title="tailwind.config.cjs"
+const { fontFamily } = require("tailwindcss/defaultTheme")
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+    darkMode: ["class"],
+    content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
     theme: {
         container: {
             center: true,
             padding: "2rem",
-            maxWidth: {
+            screens: {
                 "2xl": "1400px",
             },
         },
-        colors: {
-            border: "hsl(var(--border))",
-            input: "hsl(var(--input))",
-            ring: "hsl(var(--ring))",
-            background: "hsl(var(--background))",
-            foreground: "hsl(var(--foreground))",
-            primary: {
-                DEFAULT: "hsl(var(--primary))",
-                foreground: "hsl(var(--primary-foreground))",
+        extend: {
+            colors: {
+                border: "hsl(var(--border))",
+                input: "hsl(var(--input))",
+                ring: "hsl(var(--ring))",
+                background: "hsl(var(--background))",
+                foreground: "hsl(var(--foreground))",
+                primary: {
+                    DEFAULT: "hsl(var(--primary))",
+                    foreground: "hsl(var(--primary-foreground))",
+                },
+                secondary: {
+                    DEFAULT: "hsl(var(--secondary))",
+                    foreground: "hsl(var(--secondary-foreground))",
+                },
+                destructive: {
+                    DEFAULT: "hsl(var(--destructive))",
+                    foreground: "hsl(var(--destructive-foreground))",
+                },
+                muted: {
+                    DEFAULT: "hsl(var(--muted))",
+                    foreground: "hsl(var(--muted-foreground))",
+                },
+                accent: {
+                    DEFAULT: "hsl(var(--accent))",
+                    foreground: "hsl(var(--accent-foreground))",
+                },
+                popover: {
+                    DEFAULT: "hsl(var(--popover))",
+                    foreground: "hsl(var(--popover-foreground))",
+                },
+                card: {
+                    DEFAULT: "hsl(var(--card))",
+                    foreground: "hsl(var(--card-foreground))",
+                },
             },
-            secondary: {
-                DEFAULT: "hsl(var(--secondary))",
-                foreground: "hsl(var(--secondary-foreground))",
+            borderRadius: {
+                lg: `var(--radius)`,
+                md: `calc(var(--radius) - 2px)`,
+                sm: "calc(var(--radius) - 4px)",
             },
-            destructive: {
-                DEFAULT: "hsl(var(--destructive))",
-                foreground: "hsl(var(--destructive-foreground))",
+            fontFamily: {
+                sans: ["Inter Variable", ...fontFamily.sans],
             },
-            muted: {
-                DEFAULT: "hsl(var(--muted))",
-                foreground: "hsl(var(--muted-foreground))",
-            },
-            accent: {
-                DEFAULT: "hsl(var(--accent))",
-                foreground: "hsl(var(--accent-foreground))",
-            },
-            popover: {
-                DEFAULT: "hsl(var(--popover))",
-                foreground: "hsl(var(--popover-foreground))",
-            },
-            card: {
-                DEFAULT: "hsl(var(--card))",
-                foreground: "hsl(var(--card-foreground))",
-            },
-        },
-        borderRadius: {
-            lg: `var(--radius)`,
-            md: `calc(var(--radius) - 2px)`,
-            sm: "calc(var(--radius) - 4px)",
-        },
-        animation: {
             keyframes: {
-                "accordion-down":
-                    "{ from { height: 0 } to { height: var(--kb-accordion-content-height) }}",
-                "accordion-up":
-                    "{ from { height: var(--kb-accordion-content-height) } to { height: 0 }}",
-                "collapsible-down":
-                    "{ from { height: 0 } to { height: var(--kb-collapsible-content-height) }}",
-                "collapsible-up":
-                    "{ from { height: var(--kb-collapsible-content-height) } to { height: 0 }}",
-                "content-show":
-                    "{ from { opacity: 0; transform: scale(0.96) } to { opacity: 1; transform: scale(1) }}",
-                "content-hide":
-                    "{ from { opacity: 1; transform: scale(1) } to { opacity: 0; transform: scale(0.96) }}",
-                "slide-in":
-                    "{ from { transform: translateY(calc(100% + var(--viewport-padding))) } to { transform: translateY(0) }}",
-                "slide-out":
-                    "{ from { transform: translateY(var(--kb-toast-swipe-end-y)) } to { transform: translateY(calc(100% + var(--viewport-padding))) }}",
+                "accordion-down": {
+                    from: { height: 0 },
+                    to: { height: "var(--kb-accordion-content-height)" },
+                },
+                "accordion-up": {
+                    from: { height: "var(--kb-accordion-content-height)" },
+                    to: { height: 0 },
+                },
+                "collapsible-down": {
+                    from: { height: 0 },
+                    to: { height: "var(--kb-collapsible-content-height)" },
+                },
+                "collapsible-up": {
+                    from: { height: "var(--kb-collapsible-content-height)" },
+                    to: { height: 0 },
+                },
             },
-            durations: {
-                "accordion-down": "200ms",
-                "accordion-up": "200ms",
-                "collapsible-down": "200ms",
-                "collapsible-up": "200ms",
-                "content-show": "200ms",
-                "content-hide": "200ms",
-                "slide-out-left": "200ms",
-                "slide-in-left": "300ms",
-                "slide-out-right": "200ms",
-                "slide-in-right": "300ms",
-                "slide-out-down": "200ms",
-                "slide-in-down": "300ms",
-                "slide-out-up": "200ms",
-                "slide-in-up": "300ms",
-                "fade-in": "100ms",
-                "fade-out": "100ms",
-                "slide-in": "150ms",
-                "slide-out": "100ms",
-            },
-            timingFns: {
-                "accordion-down": "ease-out",
-                "accordion-up": "ease-out",
-                "collapsible-down": "ease-out",
-                "collapsible-up": "ease-out",
-                "content-show": "ease-out",
-                "content-hide": "ease-in",
-                "slide-out-left": "ease-out",
-                "slide-in-left": "ease-in",
-                "slide-out-right": "ease-out",
-                "slide-in-right": "ease-in",
-                "slide-out-down": "ease-out",
-                "slide-in-down": "ease-in",
-                "slide-out-up": "ease-out",
-                "slide-in-up": "ease-in",
-                "fade-in": "ease-in",
-                "fade-out": "ease-out",
-                "slide-in": "cubic-bezier(0.16, 1, 0.3, 1)",
-                "slide-out": "ease-out",
-            },
-            counts: {
-                "content-hide": "forwards",
+            animation: {
+                "accordion-down": "accordion-down 0.2s ease-out",
+                "accordion-up": "accordion-up 0.2s ease-out",
+                "collapsible-down": "collapsible-down 0.2s ease-out",
+                "collapsible-up": "collapsible-up 0.2s ease-out",
             },
         },
     },
-})
+    plugins: [require("tailwindcss-animate")],
+}
 ```
 
 ### Configure styles
@@ -198,176 +161,100 @@ export default defineConfig<Theme>({
 Add the following to your `src/styles/global.css` file. You can learn more about using CSS variables for theming in the [theming section](/docs/theming).
 
 ```css title="src/styles/global.css"
-:root {
-    --background: 0, 0%, 100%;
-    --foreground: 240, 10%, 3.9%;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-    --muted: 240, 4.8%, 95.9%;
-    --muted-foreground: 240, 3.8%, 46.1%;
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 222.2 47.4% 11.2%;
 
-    --popover: 0, 0%, 100%;
-    --popover-foreground: 240, 10%, 3.9%;
+        --muted: 210 40% 96.1%;
+        --muted-foreground: 215.4 16.3% 46.9%;
 
-    --card: 0, 0%, 100%;
-    --card-foreground: 240, 10%, 3.9%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222.2 47.4% 11.2%;
 
-    --border: 240, 5.9%, 90%;
-    --input: 240, 5.9%, 90%;
+        --border: 214.3 31.8% 91.4%;
+        --input: 214.3 31.8% 91.4%;
 
-    --primary: 240, 5.9%, 10%;
-    --primary-foreground: 0, 0%, 98%;
+        --card: 0 0% 100%;
+        --card-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 240, 4.8%, 95.9%;
-    --secondary-foreground: 240, 5.9%, 10%;
+        --primary: 222.2 47.4% 11.2%;
+        --primary-foreground: 210 40% 98%;
 
-    --accent: 240, 4.8%, 95.9%;
+        --secondary: 210 40% 96.1%;
+        --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --destructive: 0, 84.2%, 60.2%;
-    --destructive-foreground: 0, 0%, 98%;
+        --accent: 210 40% 96.1%;
+        --accent-foreground: 222.2 47.4% 11.2%;
 
-    --ring: 240, 5%, 64.9%;
+        --destructive: 0 100% 50%;
+        --destructive-foreground: 210 40% 98%;
 
-    --radius: 0.5rem;
+        --ring: 215 20.2% 65.1%;
 
-    --viewport-padding: 16px;
+        --radius: 0.5rem;
+    }
+
+    .dark {
+        --background: 224 71% 4%;
+        --foreground: 213 31% 91%;
+
+        --muted: 223 47% 11%;
+        --muted-foreground: 215.4 16.3% 56.9%;
+
+        --accent: 216 34% 17%;
+        --accent-foreground: 210 40% 98%;
+
+        --popover: 224 71% 4%;
+        --popover-foreground: 215 20.2% 65.1%;
+
+        --border: 216 34% 17%;
+        --input: 216 34% 17%;
+
+        --card: 224 71% 4%;
+        --card-foreground: 213 31% 91%;
+
+        --primary: 210 40% 98%;
+        --primary-foreground: 222.2 47.4% 1.2%;
+
+        --secondary: 222.2 47.4% 11.2%;
+        --secondary-foreground: 210 40% 98%;
+
+        --destructive: 0 63% 31%;
+        --destructive-foreground: 210 40% 98%;
+
+        --ring: 216 34% 17%;
+
+        --radius: 0.5rem;
+    }
 }
 
-[data-kb-theme="dark"] {
-    --background: 240, 10%, 3.9%;
-    --foreground: 0, 0%, 98%;
-
-    --muted: 240, 3.7%, 15.9%;
-    --muted-foreground: 240, 5%, 64.9%;
-
-    --popover: 240, 10%, 3.9%;
-    --popover-foreground: 0, 0%, 98%;
-
-    --card: 240, 10%, 3.9%;
-    --card-foreground: 0, 0%, 98%;
-
-    --border: 240, 3.7%, 15.9%;
-    --input: 240, 3.7%, 15.9%;
-
-    --primary: 0, 0%, 98%;
-    --primary-foreground: 240, 5.9%, 10%;
-
-    --secondary: 240, 3.7%, 15.9%;
-    --secondary-foreground: 0, 0%, 98%;
-
-    --accent: 240, 3.7%, 15.9%;
-
-    --destructive: 0, 62.8%, 30.6%;
-    --destructive-foreground: 0, 85.7%, 97.3%;
-
-    --ring: 240, 3.7%, 15.9%;
-}
-
-* {
-    @apply border-border;
-}
-
-body {
-    font-feature-settings: "rlig" 1, "calt" 1;
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
 }
 ```
 
-Or you can use [UnoCSS preflights](https://unocss.dev/config/preflights#preflights).
+### Add a cn helper
 
-```tsx title="uno.config.ts"
-preflights: [
-    {
-      getCSS: () => `
-        :root {
-			--background: 0, 0%, 100%;
-			--foreground: 240, 10%, 3.9%;
+I use a `cn` helper to make it easier to conditionally add Tailwind CSS classes. Here's how I define it in `src/lib/cn.ts`:
 
-			--muted: 240, 4.8%, 95.9%;
-			--muted-foreground: 240, 3.8%, 46.1%;
+```ts title="src/lib/cn.ts"
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
 
-			--popover: 0, 0%, 100%;
-			--popover-foreground: 240, 10%, 3.9%;
-
-			--card: 0, 0%, 100%;
-			--card-foreground: 240, 10%, 3.9%;
-
-			--border: 240, 5.9%, 90%;
-			--input: 240, 5.9%, 90%;
-
-			--primary: 240, 5.9%, 10%;
-			--primary-foreground: 0, 0%, 98%;
-
-			--secondary: 240, 4.8%, 95.9%;
-			--secondary-foreground: 240, 5.9%, 10%;
-
-			--accent: 240, 4.8%, 95.9%;
-
-			--destructive: 0, 84.2%, 60.2%;
-			--destructive-foreground: 0, 0%, 98%;
-
-			--ring: 240, 5%, 64.9%;
-
-			--radius: 0.5rem;
-
-			--viewport-padding: 16px;
-		}
-
-		[data-kb-theme="dark"] {
-			--background: 240, 10%, 3.9%;
-			--foreground: 0, 0%, 98%;
-
-			--muted: 240, 3.7%, 15.9%;
-			--muted-foreground: 240, 5%, 64.9%;
-
-			--popover: 240, 10%, 3.9%;
-			--popover-foreground: 0, 0%, 98%;
-
-			--card: 240, 10%, 3.9%;
-			--card-foreground: 0, 0%, 98%;
-
-			--border: 240, 3.7%, 15.9%;
-			--input: 240, 3.7%, 15.9%;
-
-			--primary: 0, 0%, 98%;
-			--primary-foreground: 240, 5.9%, 10%;
-
-			--secondary: 240, 3.7%, 15.9%;
-			--secondary-foreground: 0, 0%, 98%;
-
-			--accent: 240, 3.7%, 15.9%;
-
-			--destructive: 0, 62.8%, 30.6%;
-			--destructive-foreground: 0, 85.7%, 97.3%;
-
-			--ring: 240, 3.7%, 15.9%;
-		}
-
-		* {
-			@apply border-border;
-		}
-
-		body {
-			font-feature-settings: "rlig" 1, "calt" 1;
-		}
-      `,
-    },
-],
-```
-
-### Import styles to your app
-
-Import the styles to your root:
-
-```tsx title="src/root.tsx"
-import "@unocss/reset/tailwind.css"
-import "uno.css"
-```
-
-If you not using UnoCSS preflights:
-
-```tsx title="src/root.tsx"
-import "@unocss/reset/tailwind.css"
-import "uno.css"
-import "~/styles/global.css"
+export function cn(...inputs: ClassValue[]) {
+    return twMerge(clsx(inputs))
+}
 ```
 
 ### That's it

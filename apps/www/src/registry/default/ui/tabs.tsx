@@ -50,7 +50,7 @@ export const TabsTrigger: ParentComponent<TabsPrimitive.TabsTriggerProps> = (
     return (
         <TabsPrimitive.Trigger
             class={cn(
-                "inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none ocus-visible:ring-2 ocus-visible:ring-ring ocus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[selected]:bg-background data-[selected]:text-foreground shadow",
+                "inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[selected]:bg-background data-[selected]:text-foreground data-[selected]:shadow",
                 local.class
             )}
             {...rest}

@@ -1,6 +1,6 @@
 import { cn } from "@/lib/cn"
 import { DropdownMenu as DropdownMenuPrimitive } from "@kobalte/core"
-import { TbCheck, TbCircleFilled } from "solid-icons/tb"
+import { TbCheck, TbChevronRight, TbCircleFilled } from "solid-icons/tb"
 import type { ComponentProps, VoidComponent } from "solid-js"
 import { mergeProps, splitProps, type ParentComponent } from "solid-js"
 
@@ -120,7 +120,7 @@ export const DropdownMenuSubTrigger: ParentComponent<
             {...rest}
         >
             {local.children}
-            <i class="i-lucide:chevron-right ml-auto" />
+            <TbChevronRight class="h-4 w-4 ml-auto" />
         </DropdownMenuPrimitive.SubTrigger>
     )
 }

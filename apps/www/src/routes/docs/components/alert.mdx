@@ -7,33 +7,51 @@ kobalte:
     api: https://kobalte.dev/docs/core/components/alert#api-reference
 ---
 
-import { ComponentExample, ComponentSource } from "~/components"
-
-<ComponentExample src="/src/components/examples/alert/demo.tsx">
-    <AlertDemo />
-</ComponentExample>
+<ComponentPreview name="alert-demo" />
 
 ## Installation
 
+<Tabs defaultValue="manual">
+
+<TabsList>
+    <TabsTrigger value="cli" disabled>
+        CLI
+    </TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+    <TabsIndicator class="bg-primary" />
+</TabsList>
+
+<TabsContent value="manual">
+
 <Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @kobalte/core
+```
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource src="/src/components/ui/alert.tsx" />
+<ComponentSource name="alert" />
 
 <Step>Update the import paths to match your project setup.</Step>
 
 </Steps>
 
+</TabsContent>
+
+</Tabs>
+
 ## Usage
 
 ```tsx
-import { Alert, AlertDescription, AlertTitle } from "~/components"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 ```
 
 ```tsx
 <Alert>
-    <i class="i-luicde:terminal" />
+    <TbTerminal className="h-4 w-4" />
     <AlertTitle>Heads up!</AlertTitle>
     <AlertDescription>
         You can not add components and dependencies to your app using the cli,
@@ -46,14 +64,10 @@ import { Alert, AlertDescription, AlertTitle } from "~/components"
 
 ### Default
 
-<ComponentExample src="/src/components/examples/alert/demo.tsx">
-    <AlertDemo />
-</ComponentExample>
+<ComponentPreview name="alert-demo" />
 
 ---
 
 ### Destructive
 
-<ComponentExample src="/src/components/examples/alert/destructive.tsx">
-    <AlertDestructive />
-</ComponentExample>
+<ComponentPreview name="alert-destructive" />
