@@ -67,6 +67,10 @@ export const rehypeComponent = () => {
                 try {
                     for (const style of styles) {
                         const component = Index[style.name][name]
+                        if (component === undefined) {
+                            return
+                        }
+
                         const src = component.files[0]
 
                         // Read the source file.

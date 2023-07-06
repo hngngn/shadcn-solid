@@ -14,6 +14,9 @@ importers:
       '@types/lodash.template':
         specifier: ^4.5.1
         version: 4.5.1
+      '@types/node':
+        specifier: ^18.14.0
+        version: 18.14.0
       '@typescript-eslint/eslint-plugin':
         specifier: ^5.60.1
         version: 5.60.1(@typescript-eslint/parser@5.60.1)(eslint@8.43.0)(typescript@4.9.5)
