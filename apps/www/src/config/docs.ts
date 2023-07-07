@@ -46,10 +46,8 @@ export const docsConfig: TDocsConfig = {
                 },
                 {
                     title: "CLI",
-                    href: "#",
+                    href: "/docs/cli",
                     items: [],
-                    label: "Soon",
-                    disabled: true,
                 },
                 {
                     title: "Typography",
