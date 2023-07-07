@@ -1,5 +1,11 @@
 # shadcn-solid
 
+## 0.1.2
+
+### Patch Changes
+
+-   update `README`
+
 ## 0.1.1
 
 ### Patch Changes
