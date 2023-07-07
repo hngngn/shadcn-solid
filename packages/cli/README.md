@@ -1,6 +1,6 @@
 # shadcn-solid
 
-A CLI for adding components to your project.
+A CLI for adding components to your project, port of [shadcn-ui](https://github.com/shadcn/ui/tree/main/packages/cli).
 
 ## Usage
 
@@ -25,7 +25,7 @@ npx shadcn-solid add [component]
 ### Example
 
 ```bash
-npx shadcn-ui add alert-dialog
+npx shadcn-solid add alert-dialog
 ```
 
 You can also run the command without any arguments to view a list of all available components:

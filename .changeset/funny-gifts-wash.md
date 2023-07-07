@@ -2,4 +2,4 @@
 "shadcn-solid": patch
 ---
 
-fix: `package.json` not found
+update `README`
