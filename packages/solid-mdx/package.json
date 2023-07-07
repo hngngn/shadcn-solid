@@ -2,6 +2,7 @@
     "name": "solid-mdx",
     "version": "0.0.7",
     "license": "MIT",
+    "private": true,
     "scripts": {
         "build": "tsup"
     },
