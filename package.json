@@ -2,14 +2,16 @@
     "private": true,
     "scripts": {
         "build": "turbo run build",
+        "build:cli": "turbo --filter=shadcn-solid build",
         "preinstall": "pnpm build:registry",
         "build:registry": "pnpm ts-node --esm ./scripts/pre.ts && pnpm --filter=www build:registry && pnpm ts-node --esm ./scripts/post.ts",
         "dev": "pnpm build:registry && pnpm turbo run dev",
         "lint": "turbo run lint",
         "format": "turbo run format",
-        "release": "cd packages/cli && pnpm release"
+        "release": "changeset version"
     },
     "devDependencies": {
+        "@changesets/cli": "^2.26.2",
         "@turbo/gen": "^1.10.6",
         "@types/lodash.template": "^4.5.1",
         "@types/node": "^18.14.0",
