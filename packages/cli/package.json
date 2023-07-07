@@ -1,5 +1,5 @@
 {
-    "version": "0.0.3",
+    "version": "0.1.0",
     "name": "shadcn-solid",
     "description": "Add components to your apps.",
     "license": "MIT",
@@ -26,16 +26,28 @@
     },
     "devDependencies": {
         "@types/fs-extra": "^11.0.1",
+        "@types/lodash.template": "^4.5.1",
+        "@types/prompts": "^2.4.2",
+        "rimraf": "^5.0.1",
         "tsup": "^6.6.3",
         "type-fest": "^3.8.0",
         "typescript": "^4.9.3"
     },
     "dependencies": {
+        "@antfu/ni": "^0.21.4",
         "chalk": "5.2.0",
         "commander": "^10.0.0",
+        "cosmiconfig": "^8.1.3",
         "execa": "^7.0.0",
         "fs-extra": "^11.1.0",
+        "https-proxy-agent": "^6.2.0",
+        "lodash.template": "^4.5.0",
+        "node-fetch": "^3.3.0",
         "ora": "^6.1.2",
+        "prompts": "^2.4.2",
+        "recast": "^0.23.2",
+        "ts-morph": "^18.0.0",
+        "tsconfig-paths": "^4.2.0",
         "zod": "^3.20.2"
     }
 }

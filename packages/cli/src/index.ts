@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { add } from "@/src/commands/add"
 import { init } from "@/src/commands/init"
 import { Command } from "commander"
 
@@ -14,12 +15,12 @@ async function main() {
         .name("shadcn-solid")
         .description("add components and dependencies to your project")
         .version(
-            packageInfo.version || "1.0.0",
+            packageInfo.version!,
             "-v, --version",
             "display the version number"
         )
 
-    program.addCommand(init)
+    program.addCommand(init).addCommand(add)
 
     program.parse()
 }
