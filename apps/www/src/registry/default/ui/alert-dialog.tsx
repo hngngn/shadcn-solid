@@ -65,7 +65,7 @@ export const AlertDialogFooter: ParentComponent<ComponentProps<"div">> = (
     return (
         <div
             class={cn(
-                "flex flex-col-reverse sm:flex-row md:justify-end md:space-x-2",
+                "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
                 local.class
             )}
             {...rest}
@@ -107,6 +107,7 @@ export const AlertDialogClose: ParentComponent<
                 buttonVariants({
                     variant: "outline",
                 }),
+                "mt-2 md:mt-0",
                 local.class
             )}
             {...rest}

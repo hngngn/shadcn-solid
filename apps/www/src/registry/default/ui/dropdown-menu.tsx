@@ -175,7 +175,7 @@ export const DropdownMenuRadioItem: ParentComponent<
             {...rest}
         >
             <DropdownMenuPrimitive.ItemIndicator class="absolute left-2 h-4 w-4 inline-flex items-center justify-center">
-                <TbCircleFilled class="w-4 h-4" />
+                <TbCircleFilled class="w-2 h-2" />
             </DropdownMenuPrimitive.ItemIndicator>
             {props.children}
         </DropdownMenuPrimitive.RadioItem>
