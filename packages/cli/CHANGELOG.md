@@ -1,5 +1,12 @@
 # shadcn-solid
 
+## 0.1.3
+
+### Patch Changes
+
+-   1fab95c: - update default option.
+    -   check and warning about path aliases to prevent creating folder with symbol.
+
 ## 0.1.2
 
 ### Patch Changes
