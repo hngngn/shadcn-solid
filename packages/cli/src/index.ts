@@ -7,14 +7,14 @@ process.on("SIGINT", () => process.exit(0))
 process.on("SIGTERM", () => process.exit(0))
 
 async function main() {
-    const program = new Command()
-        .name("shadcn-solid")
-        .description("add components and dependencies to your project")
-        .version("0.1.0", "-v, --version", "display the version number")
+	const program = new Command()
+		.name("shadcn-solid")
+		.description("add components and dependencies to your project")
+		.version("0.1.3", "-v, --version", "display the version number")
 
-    program.addCommand(init).addCommand(add)
+	program.addCommand(init).addCommand(add)
 
-    program.parse()
+	program.parse()
 }
 
 main()
