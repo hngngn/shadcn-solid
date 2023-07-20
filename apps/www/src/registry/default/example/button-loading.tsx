@@ -1,12 +1,13 @@
+import { TbLoader } from "solid-icons/tb"
 import { Button } from "../ui/button"
 
 const ButtonLoading = () => {
-    return (
-        <Button disabled>
-            <i class="i-lucide:loader mr-2 animate-spin" />
-            Please wait
-        </Button>
-    )
+	return (
+		<Button disabled>
+			<TbLoader class="mr-2 animate-spin" />
+			Please wait
+		</Button>
+	)
 }
 
 export default ButtonLoading
