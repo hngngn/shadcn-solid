@@ -10,20 +10,18 @@ import {
 } from "@/src/utils/get-config"
 import { getPackageManager } from "@/src/utils/get-package-manager"
 import { handleError } from "@/src/utils/handle-error"
-import { logger } from "@/src/utils/logger"
 import {
 	getRegistryBaseColor,
 	getRegistryBaseColors,
 	getRegistryStyles,
 } from "@/src/utils/registry"
 import * as templates from "@/src/utils/templates"
-import chalk from "chalk"
+import * as p from "@clack/prompts"
 import { Command } from "commander"
 import { execa } from "execa"
 import { existsSync, promises as fs } from "fs"
-import ora from "ora"
 import path from "path"
-import prompts from "prompts"
+import color from "picocolors"
 import { loadConfig } from "tsconfig-paths"
 import * as z from "zod"
 
@@ -36,13 +34,11 @@ const PROJECT_DEPENDENCIES = [
 
 const initOptionsSchema = z.object({
 	cwd: z.string(),
-	yes: z.boolean(),
 })
 
 export const init = new Command()
 	.name("init")
 	.description("initialize your project and install dependencies")
-	.option("-y, --yes", "skip confirmation prompt.", false)
 	.option(
 		"-c, --cwd <cwd>",
 		"the working directory. defaults to the current directory.",
@@ -55,44 +51,20 @@ export const init = new Command()
 
 			// Ensure target directory exists.
 			if (!existsSync(cwd)) {
-				logger.error(
-					`The path ${cwd} does not exist. Please try again.`
-				)
+				p.log.error(`The path ${cwd} does not exist. Please try again.`)
 				process.exit(1)
 			}
 
 			// Read config.
 			const existingConfig = await getConfig(cwd)
 
-			const tsConfig = loadConfig(cwd)
-
-			if (tsConfig.resultType === "failed") {
-				throw new Error(
-					`Failed to load tsconfig.json. ${
-						tsConfig.message ?? ""
-					}`.trim()
-				)
-			}
-
-			if (tsConfig.paths["@/*"] === undefined) {
-				throw new Error(
-					`Please make sure to update your path aliases to '@'. For more information, please visit: https://shadcn-solid.vercel.app/docs/installation#path-aliases.`
-				)
-			}
-
-			const config = await promptForConfig(
-				cwd,
-				existingConfig,
-				options.yes
-			)
+			const config = await promptForConfig(cwd, existingConfig)
 
 			await runInit(cwd, config)
 
-			logger.info("")
-			logger.info(
-				`${chalk.green("Success!")} Project initialization completed.`
+			p.log.info(
+				`${color.blue("Success!")} Project initialization completed.`
 			)
-			logger.info("")
 		} catch (error) {
 			handleError(error)
 		}
@@ -100,75 +72,111 @@ export const init = new Command()
 
 export async function promptForConfig(
 	cwd: string,
-	defaultConfig: Config | null = null,
-	skip = false
+	defaultConfig: Config | null = null
 ) {
-	const highlight = (text: string) => chalk.cyan(text)
+	const highlight = (text: string) => color.cyan(text)
 
 	const styles = await getRegistryStyles()
 	const baseColors = await getRegistryBaseColors()
 
-	const options = await prompts([
+	const options = await p.group(
 		{
-			type: "select",
-			name: "style",
-			message: `Which ${highlight("style")} would you like to use?`,
-			choices: styles.map((style) => ({
-				title: style.label,
-				value: style.name,
-			})),
+			style: () =>
+				p.select({
+					message: `Which ${highlight(
+						"style"
+					)} would you like to use?`,
+					// @ts-ignore
+					options: styles.map((style) => ({
+						label: style.label,
+						value: style.name,
+					})),
+				}),
+			tailwindBaseColor: () =>
+				p.select({
+					message: `Which color would you like to use as ${highlight(
+						"base color"
+					)}?`,
+					// @ts-ignore
+					options: baseColors.map((color) => ({
+						label: color.label,
+						value: color.name,
+					})),
+				}),
+			tailwindCss: () =>
+				p.text({
+					message: `Where is your ${highlight("global CSS")} file?`,
+					placeholder:
+						defaultConfig?.tailwind.css ?? DEFAULT_TAILWIND_CSS,
+					defaultValue:
+						defaultConfig?.tailwind.css ?? DEFAULT_TAILWIND_CSS,
+				}),
+			tailwindCssVariables: () =>
+				p.confirm({
+					message: `Would you like to use ${highlight(
+						"CSS variables"
+					)} for colors?`,
+					initialValue: defaultConfig?.tailwind.cssVariables ?? true,
+				}),
+			tailwindConfig: () =>
+				p.text({
+					message: `Where is your ${highlight(
+						"tailwind.config.cjs"
+					)} located?`,
+					placeholder:
+						defaultConfig?.tailwind.config ??
+						DEFAULT_TAILWIND_CONFIG,
+					defaultValue:
+						defaultConfig?.tailwind.config ??
+						DEFAULT_TAILWIND_CONFIG,
+				}),
+			components: () =>
+				p.text({
+					message: `Configure the import alias for ${highlight(
+						"components"
+					)}:`,
+					placeholder:
+						defaultConfig?.aliases["components"] ??
+						DEFAULT_COMPONENTS,
+					defaultValue:
+						defaultConfig?.aliases["components"] ??
+						DEFAULT_COMPONENTS,
+					validate: () => {
+						const tsConfig = loadConfig(cwd)
+
+						if (
+							tsConfig.resultType === "success" &&
+							tsConfig.paths["@/*"] === undefined
+						) {
+							return `Please make sure to update your path aliases to '@'. For more information, please visit: https://shadcn-solid.vercel.app/docs/installation#path-aliases.`
+						}
+					},
+				}),
+			utils: () =>
+				p.text({
+					message: `Configure the import alias for ${highlight(
+						"utils"
+					)}:`,
+					placeholder:
+						defaultConfig?.aliases["utils"] ?? DEFAULT_UTILS,
+					defaultValue:
+						defaultConfig?.aliases["utils"] ?? DEFAULT_UTILS,
+				}),
+			proceed: () =>
+				p.confirm({
+					message: `Write configuration to ${highlight(
+						"components.json"
+					)}. Proceed?`,
+					initialValue: true,
+				}),
 		},
 		{
-			type: "select",
-			name: "tailwindBaseColor",
-			message: `Which color would you like to use as ${highlight(
-				"base color"
-			)}?`,
-			choices: baseColors.map((color) => ({
-				title: color.label,
-				value: color.name,
-			})),
-			initial: 2,
-		},
-		{
-			type: "text",
-			name: "tailwindCss",
-			message: `Where is your ${highlight("global CSS")} file?`,
-			initial: defaultConfig?.tailwind.css ?? DEFAULT_TAILWIND_CSS,
-		},
-		{
-			type: "toggle",
-			name: "tailwindCssVariables",
-			message: `Would you like to use ${highlight(
-				"CSS variables"
-			)} for colors?`,
-			initial: defaultConfig?.tailwind.cssVariables ?? true,
-			active: "yes",
-			inactive: "no",
-		},
-		{
-			type: "text",
-			name: "tailwindConfig",
-			message: `Where is your ${highlight(
-				"tailwind.config.cjs"
-			)} located?`,
-			initial: defaultConfig?.tailwind.config ?? DEFAULT_TAILWIND_CONFIG,
-		},
-		{
-			type: "text",
-			name: "components",
-			message: `Configure the import alias for ${highlight(
-				"components"
-			)}:`,
-			initial: defaultConfig?.aliases["components"] ?? DEFAULT_COMPONENTS,
-		},
-		{
-			type: "text",
-			name: "utils",
-			message: `Configure the import alias for ${highlight("utils")}:`,
-			initial: defaultConfig?.aliases["utils"] ?? DEFAULT_UTILS,
-		},
-	])
+			onCancel: () => {
+				p.cancel("Cancelled.")
+				process.exit(0)
+			},
+		}
+	)
 
 	const config = rawConfigSchema.parse({
 		$schema: "https://shadcn-solid.vercel.app/schema.json",
@@ -185,33 +193,21 @@ export async function promptForConfig(
 		},
 	})
 
-	if (!skip) {
-		const { proceed } = await prompts({
-			type: "confirm",
-			name: "proceed",
-			message: `Write configuration to ${highlight(
-				"components.json"
-			)}. Proceed?`,
-			initial: true,
-		})
-
-		if (!proceed) {
-			process.exit(0)
-		}
-	}
-
 	// Write to file.
-	logger.info("")
-	const spinner = ora(`Writing components.json...`).start()
-	const targetPath = path.resolve(cwd, "components.json")
-	await fs.writeFile(targetPath, JSON.stringify(config, null, 2), "utf8")
-	spinner.succeed()
+	if (options.proceed) {
+		const spinner = p.spinner()
+		spinner.start("Writing components.json...")
+		const targetPath = path.resolve(cwd, "components.json")
+		await fs.writeFile(targetPath, JSON.stringify(config, null, 2), "utf8")
+		spinner.stop("Components.json written")
+	}
 
 	return await resolveConfigPaths(cwd, config)
 }
 
 export async function runInit(cwd: string, config: Config) {
-	const spinner = ora(`Initializing project...`)?.start()
+	const spinner = p.spinner()
+	spinner.start("Initializing project...")
 
 	// Ensure all resolved paths directories exist.
 	for (const [key, resolvedPath] of Object.entries(config.resolvedPaths)) {
@@ -262,10 +258,10 @@ export async function runInit(cwd: string, config: Config) {
 		"utf8"
 	)
 
-	spinner?.succeed()
+	spinner.stop("Initialized project")
 
 	// Install dependencies.
-	const dependenciesSpinner = ora(`Installing dependencies...`)?.start()
+	spinner.start("Installing dependencies...")
 	const packageManager = await getPackageManager(cwd)
 
 	await execa(
@@ -275,5 +271,5 @@ export async function runInit(cwd: string, config: Config) {
 			cwd,
 		}
 	)
-	dependenciesSpinner?.succeed()
+	spinner.stop("Dependencies installed")
 }
