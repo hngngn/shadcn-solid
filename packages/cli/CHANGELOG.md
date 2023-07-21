@@ -1,5 +1,11 @@
 # shadcn-solid
 
+## 0.2.0
+
+### Minor Changes
+
+-   04182de: new cli
+
 ## 0.1.3
 
 ### Patch Changes
