@@ -1,5 +1,11 @@
 # shadcn-solid
 
+## 0.2.1
+
+### Patch Changes
+
+-   d42cbf1: fix: mismatch version
+
 ## 0.2.0
 
 ### Minor Changes
