@@ -1,18 +1,12 @@
 {
 	"$schema": "https://json.schemastore.org/eslintrc",
 	"root": true,
-	"extends": [
-		"eslint:recommended",
-		"plugin:solid/typescript",
-		"prettier"
-	],
-	"plugins": [
-		"solid",
-		"@typescript-eslint"
-	],
+	"extends": ["eslint:recommended", "plugin:solid/typescript", "prettier"],
+	"plugins": ["solid", "@typescript-eslint"],
 	"rules": {
 		"@typescript-eslint/consistent-type-imports": "error",
-		"no-undef": "off"
+		"no-undef": "off",
+		"no-redeclare": "off"
 	},
 	"parser": "@typescript-eslint/parser"
 }

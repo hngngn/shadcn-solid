@@ -1,69 +1,74 @@
 import { valueToEstree } from "estree-util-value-to-estree"
+import type { Node, Parent } from "unist"
 import { visit } from "unist-util-visit"
 
-export const solidRehypeHeadings = () => {
-	return (tree: any) => {
-		const headings: any[] = []
-
-		visit(tree, "element", (node: any) => {
-			const { tagName } = node
-			if (tagName[0] !== "h") return
-			const [, level] = tagName.match(/h([0-6])/) ?? []
-			if (!level) return
-			const depth = Number.parseInt(level)
-
-			let text = ""
-			visit(node, (child: any, __, parent: any) => {
-				if (child.type === "element" || parent == null) {
-					return
-				}
-				if (child.type === "raw" && child.value.match(/^\n?<.*>\n?$/)) {
-					return
-				}
-				if (new Set(["text"]).has(child.type)) {
-					text += child.value
-				}
-			})
-
-			node.properties = node.properties || {}
-
-			headings.push({
-				depth,
-				slug: node.properties.id,
-				text,
-			})
-		})
-
-		tree.children.unshift({
-			type: "mdxjsEsm",
-			data: {
-				estree: {
-					type: "Program",
-					sourceType: "module",
-					body: [
-						{
-							type: "ExportNamedDeclaration",
-							specifiers: [],
-							declaration: {
-								type: "VariableDeclaration",
-								kind: "const",
-								declarations: Object.entries({
-									headings,
-								}).map(([identifier, val]) => {
-									return {
-										type: "VariableDeclarator",
-										id: {
-											type: "Identifier",
-											name: identifier,
-										},
-										init: valueToEstree(val),
-									}
-								}),
-							},
-						},
-					],
-				},
-			},
-		})
+interface ElementNode extends Node {
+	tagName: string
+	value: string
+	properties: {
+		id: string
 	}
+}
+
+export type THeading = { depth: number; text: string; slug: string }
+
+export const solidHeadings = () => (tree: Parent) => {
+	let headings: THeading[] = []
+
+	visit(tree, "element", (node: ElementNode) => {
+		if (node.tagName[0] !== "h") return
+		const [, level] = node.tagName.match(/h([0-6])/) ?? []
+		const depth = Number.parseInt(level)
+
+		let text = ""
+		visit(node, (node, _, parent) => {
+			if (node.type === "element" || parent === null) {
+				return
+			}
+			if (node.type === "raw" && node.value.match(/^\n?<.*>\n?$/)) {
+				return
+			}
+			if (new Set(["text"]).has(node.type)) {
+				text += node.value
+			}
+		})
+
+		node.properties = node.properties || {}
+
+		headings.push({
+			depth,
+			slug: node.properties.id,
+			text,
+		})
+	})
+
+	tree.children.unshift({
+		type: "mdxjsEsm",
+		data: {
+			estree: {
+				type: "Program",
+				sourceType: "module",
+				body: [
+					{
+						type: "ExportNamedDeclaration",
+						specifiers: [],
+						declaration: {
+							type: "VariableDeclaration",
+							kind: "const",
+							declarations: Object.entries({
+								headings,
+							}).map(([identifier, value]) => ({
+								type: "VariableDeclarator",
+								id: {
+									type: "Identifier",
+									name: identifier,
+								},
+								init: valueToEstree(value),
+							})),
+						},
+					},
+				],
+			},
+		},
+	})
 }

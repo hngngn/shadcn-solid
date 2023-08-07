@@ -6,7 +6,7 @@
   "files": [
     {
       "name": "collapsible.tsx",
-      "content": "import { cn } from \"@/lib/cn\"\nimport { Collapsible as CollapsiblePrimitive } from \"@kobalte/core\"\nimport type { ParentComponent } from \"solid-js\"\nimport { splitProps } from \"solid-js\"\n\nexport const Collapsible = CollapsiblePrimitive.Root\n\nexport const CollapsibleTrigger = CollapsiblePrimitive.Trigger\n\nexport const CollapsibleContent: ParentComponent<\n    CollapsiblePrimitive.CollapsibleContentProps\n> = (props) => {\n    const [local, rest] = splitProps(props, [\"class\"])\n\n    return (\n        <CollapsiblePrimitive.Content\n            class={cn(\n                \"animate-collapsible-up data-[expanded]:animate-collapsible-down\",\n                local.class\n            )}\n            {...rest}\n        />\n    )\n}\n"
+      "content": "import { cn } from \"@/lib/cn\"\nimport { Collapsible as CollapsiblePrimitive } from \"@kobalte/core\"\nimport type { ParentComponent } from \"solid-js\"\nimport { splitProps } from \"solid-js\"\n\nexport const Collapsible = CollapsiblePrimitive.Root\n\nexport const CollapsibleTrigger = CollapsiblePrimitive.Trigger\n\nexport const CollapsibleContent: ParentComponent<\n\tCollapsiblePrimitive.CollapsibleContentProps\n> = (props) => {\n\tconst [local, rest] = splitProps(props, [\"class\"])\n\n\treturn (\n\t\t<CollapsiblePrimitive.Content\n\t\t\tclass={cn(\n\t\t\t\t\"animate-collapsible-up data-[expanded]:animate-collapsible-down\",\n\t\t\t\tlocal.class\n\t\t\t)}\n\t\t\t{...rest}\n\t\t/>\n\t)\n}\n"
     }
   ],
   "type": "components:ui"

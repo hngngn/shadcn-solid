@@ -8,17 +8,17 @@ export const Collapsible = CollapsiblePrimitive.Root
 export const CollapsibleTrigger = CollapsiblePrimitive.Trigger
 
 export const CollapsibleContent: ParentComponent<
-    CollapsiblePrimitive.CollapsibleContentProps
+	CollapsiblePrimitive.CollapsibleContentProps
 > = (props) => {
-    const [local, rest] = splitProps(props, ["class"])
+	const [local, rest] = splitProps(props, ["class"])
 
-    return (
-        <CollapsiblePrimitive.Content
-            class={cn(
-                "animate-collapsible-up data-[expanded]:animate-collapsible-down",
-                local.class
-            )}
-            {...rest}
-        />
-    )
+	return (
+		<CollapsiblePrimitive.Content
+			class={cn(
+				"animate-collapsible-up data-[expanded]:animate-collapsible-down",
+				local.class
+			)}
+			{...rest}
+		/>
+	)
 }
