@@ -1,5 +1,13 @@
 # shadcn-solid
 
+## 0.2.2
+
+### Patch Changes
+
+-   41eceb1: chore: remove unused requirement in `schema.json`
+-   41eceb1: fix: replace `utils` path
+-   41eceb1: feat: allow to skip prompt
+
 ## 0.2.1
 
 ### Patch Changes
