@@ -1,5 +1,11 @@
 # shadcn-solid
 
+## 0.2.3
+
+### Patch Changes
+
+-   54d784b: chore: update version
+
 ## 0.2.2
 
 ### Patch Changes
