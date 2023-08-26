@@ -48,3 +48,7 @@ jobs:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   NPM_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
                   NODE_ENV: "production"
+
+            - name: Update CLI version
+              if: steps.release.outputs.published == 'true'
+              run: node .github/update-version.js
