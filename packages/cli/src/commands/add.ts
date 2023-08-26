@@ -20,6 +20,7 @@ import * as z from "zod"
 const addOptionsSchema = z.object({
 	components: z.array(z.string()).optional(),
 	overwrite: z.boolean(),
+	yes: z.boolean(),
 	cwd: z.string(),
 	path: z.string().optional(),
 })
@@ -35,6 +36,7 @@ export const add = new Command()
 		process.cwd()
 	)
 	.option("-p, --path <path>", "the path to add the component to.")
+	.option("-y --yes", "skip confirmation prompt.", false)
 	.action(async (components, opts) => {
 		try {
 			const options = addOptionsSchema.parse({
@@ -102,21 +104,23 @@ export const add = new Command()
 				process.exit(0)
 			}
 
-			await p.group(
-				{
-					proceed: () =>
-						p.confirm({
-							message: `Ready to install components and dependencies. Proceed?`,
-							initialValue: true,
-						}),
-				},
-				{
-					onCancel: () => {
-						p.cancel("Cancelled.")
-						process.exit(0)
+			if (!options.yes) {
+				await p.group(
+					{
+						proceed: () =>
+							p.confirm({
+								message: `Ready to install components and dependencies. Proceed?`,
+								initialValue: true,
+							}),
 					},
-				}
-			)
+					{
+						onCancel: () => {
+							p.cancel("Cancelled.")
+							process.exit(0)
+						},
+					}
+				)
+			}
 
 			const spinner = p.spinner()
 			spinner.start(

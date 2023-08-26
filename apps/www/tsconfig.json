@@ -8,7 +8,7 @@
 		"moduleResolution": "node",
 		"jsxImportSource": "solid-js",
 		"jsx": "preserve",
-		"types": ["solid-start/env", "solid-jsx/types"],
+		"types": ["solid-start/env"],
 		"baseUrl": "./",
 		"paths": {
 			"@/*": ["./src/*"]
