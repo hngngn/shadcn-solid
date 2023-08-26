@@ -1,5 +1,11 @@
 # shadcn-solid
 
+## 0.2.3
+
+### Patch Changes
+
+-   cd6b4e3: chore(cli): update version
+
 ## 0.2.2
 
 ### Patch Changes
