@@ -1,4 +1,5 @@
 import { MDXComponent } from "@/components/mdx-components"
+import { Metadata } from "@/components/metadata"
 import { DocsPager } from "@/components/pager"
 import { Sidebar } from "@/components/sidebar"
 import { TableOfContents } from "@/components/toc"
@@ -33,11 +34,11 @@ export default () => {
 
 	return (
 		<>
-			{/* <Metadata
+			<Metadata
 				title={data().frontmatter.title}
 				description={data().frontmatter.description}
 				type="article"
-			/> */}
+			/>
 			<div class="container flex-1 items-start md:grid grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
 				<aside class="fixed top-14 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 hover:overflow-y-auto overflow-hidden [scrollbar-gutter:stable] scrollbar-w-2 md:sticky md:block">
 					<div class="h-full py-6 pl-8 pr-6 lg:py-8">

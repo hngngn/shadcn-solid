@@ -1,4 +1,4 @@
-import { siteConfig } from "@/config"
+import { siteConfig } from "@/config/site"
 import ModeToggle from "@/registry/default/example/mode-toggle"
 import { Button } from "@/registry/default/ui/button"
 import { As } from "@kobalte/core"
@@ -7,7 +7,7 @@ import { A } from "solid-start"
 import { MainNav } from "./main-nav"
 import { MobileNav } from "./mobile-nav"
 
-export const SiteHeader = () => {
+const SiteHeader = () => {
 	return (
 		<header class="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur">
 			<div class="container flex h-14 items-center">
@@ -33,3 +33,5 @@ export const SiteHeader = () => {
 		</header>
 	)
 }
+
+export default SiteHeader

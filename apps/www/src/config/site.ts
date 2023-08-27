@@ -6,7 +6,7 @@ export const siteConfig = {
 	links: {
 		facebook: "https://www.facebook.com/huyhoang.hngngn",
 		github: "https://github.com/hngngn/shadcn-solid",
-		shad: {
+		shadcn: {
 			twitter: "https://twitter.com/shadcn",
 			github: "https://github.com/shadcn/ui",
 		},

@@ -1,28 +1,21 @@
-import mdx from "@mdx-js/rollup"
 import path from "path"
-import type { LineElement } from "rehype-pretty-code"
-import rehypePrettyCode from "rehype-pretty-code"
+import rehypePrettyCode, { LineElement } from "rehype-pretty-code"
 import rehypeSlug from "rehype-slug"
 import remarkFrontmatter from "remark-frontmatter"
 import remarkGfm from "remark-gfm"
 import { getHighlighter, loadTheme } from "shiki"
-import vercel from "solid-start-vercel"
+import vercelAdapter from "solid-start-vercel"
 import solid from "solid-start/vite"
+import { visit } from "unist-util-visit"
 import { defineConfig } from "vite"
 import { rehypeComponent } from "./src/lib/mdx/component"
 import { solidFrontmatter } from "./src/lib/mdx/frontmatter"
 import { solidHeadings } from "./src/lib/mdx/headings"
 
-// @ts-ignore
-import node from "solid-start-node"
-import { visit } from "unist-util-visit"
-
-const adapter = process.env.NODE_ENV === "development" ? node() : vercel()
-
 export default defineConfig({
 	plugins: [
 		{
-			...mdx({
+			...(await import("@mdx-js/rollup")).default({
 				jsx: true,
 				jsxImportSource: "solid-js",
 				providerImportSource: "solid-mdx",
@@ -31,6 +24,21 @@ export default defineConfig({
 					rehypeSlug,
 					solidHeadings,
 					rehypeComponent,
+					() => (tree) => {
+						visit(tree, (node) => {
+							if (
+								node?.type === "element" &&
+								node?.tagName === "pre"
+							) {
+								const [codeEl] = node.children
+								if (codeEl.tagName !== "code") {
+									return
+								}
+
+								node.__rawString__ = codeEl.children?.[0].value
+							}
+						})
+					},
 					[
 						rehypePrettyCode,
 						{
@@ -62,21 +70,6 @@ export default defineConfig({
 							},
 						},
 					],
-					() => (tree) => {
-						visit(tree, (node) => {
-							if (
-								node?.type === "element" &&
-								node?.tagName === "pre"
-							) {
-								const [codeEl] = node.children
-								if (codeEl.tagName !== "code") {
-									return
-								}
-
-								node.__rawString__ = codeEl.children?.[0].value
-							}
-						})
-					},
 					() => (tree) => {
 						visit(tree, (node) => {
 							if (
@@ -116,19 +109,14 @@ export default defineConfig({
 			enforce: "pre",
 		},
 		solid({
-			adapter,
+			ssr: false,
 			extensions: [".mdx"],
+			adapter: vercelAdapter(),
 		}),
 	],
 	resolve: {
 		alias: {
 			"@": path.resolve(__dirname, "./src"),
 		},
-	},
-	server: {
-		port: 3030,
-	},
-	ssr: {
-		noExternal: ["@kobalte/core"],
 	},
 })

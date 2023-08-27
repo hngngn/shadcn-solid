@@ -1,4 +1,4 @@
-import { siteConfig } from "@/config"
+import { siteConfig } from "@/config/site"
 import { mergeProps, splitProps, type VoidComponent } from "solid-js"
 import { Link, Meta, Title } from "solid-start"
 

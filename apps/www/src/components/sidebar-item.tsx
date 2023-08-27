@@ -1,5 +1,5 @@
+import type { TSidebarNavItem } from "@/config/docs"
 import { cn } from "@/lib/cn"
-import type { TSidebarNavItem } from "@/types"
 import type { Component } from "solid-js"
 import { For, Match, Switch } from "solid-js"
 import { A, useLocation } from "solid-start"

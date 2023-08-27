@@ -1,7 +1,7 @@
-import { siteConfig } from "@/config"
+import { siteConfig } from "@/config/site"
 import { A } from "solid-start"
 
-export const SiteFooter = () => {
+const SiteFooter = () => {
 	return (
 		<footer class="py-6 md:py-0 md:px-8 border-t">
 			<div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
@@ -9,7 +9,7 @@ export const SiteFooter = () => {
 					<p class="text-center text-sm leading-loose text-muted-foreground md:text-left">
 						Built & designed by{" "}
 						<A
-							href={siteConfig.links.shad.twitter}
+							href={siteConfig.links.shadcn.twitter}
 							target="_blank"
 							rel="noreferrer"
 							class="font-medium underline underline-offset-4"
@@ -40,3 +40,5 @@ export const SiteFooter = () => {
 		</footer>
 	)
 }
+
+export default SiteFooter

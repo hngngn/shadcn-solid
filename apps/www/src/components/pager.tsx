@@ -1,6 +1,6 @@
-import { docsConfig } from "@/config"
+import type { TNavItem, TNavItemWithChildren } from "@/config/docs"
+import { docsConfig } from "@/config/docs"
 import { Button } from "@/registry/default/ui/button"
-import type { TNavItem, TNavItemWithChildren } from "@/types"
 import { As } from "@kobalte/core"
 import { TbChevronLeft, TbChevronRight } from "solid-icons/tb"
 import type { Component } from "solid-js"

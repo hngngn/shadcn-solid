@@ -13,7 +13,7 @@ import {
 const ToastDemo = () => {
 	const showToast = () => {
 		toaster.show((props) => (
-			<Toast toastId={props.toastId} class="flex-col gap-2">
+			<Toast toastId={props.toastId}>
 				<ToastContent>
 					<ToastTitle>Scheduled: Catch up</ToastTitle>
 					<ToastDescription>

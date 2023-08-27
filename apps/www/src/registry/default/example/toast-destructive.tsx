@@ -13,11 +13,7 @@ import {
 const ToastDestructive = () => {
 	const showToast = () =>
 		toaster.show((props) => (
-			<Toast
-				toastId={props.toastId}
-				variant="destructive"
-				class="flex-col gap-2"
-			>
+			<Toast toastId={props.toastId} variant="destructive">
 				<ToastContent>
 					<ToastTitle>Uh oh! Something went wrong.</ToastTitle>
 					<ToastDescription>

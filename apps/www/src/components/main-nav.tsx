@@ -1,4 +1,5 @@
-import { docsConfig, siteConfig } from "@/config"
+import { docsConfig } from "@/config/docs"
+import { siteConfig } from "@/config/site"
 import { For } from "solid-js"
 import { A } from "solid-start"
 import { Logo } from "./logo"

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import fs from "fs"
 import template from "lodash.template"
 import path, { basename } from "path"
@@ -34,10 +35,6 @@ for (const style of styles) {
 
 	// Build style index.
 	for (const item of result.data) {
-		// if (item.type === "components:ui") {
-		//   continue
-		// }
-
 		const resolveFiles = item.files.map(
 			(file) => `registry/${style.name}/${file}`
 		)

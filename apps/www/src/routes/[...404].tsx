@@ -5,7 +5,7 @@ import { A, Title } from "solid-start"
 export default () => {
 	return (
 		<>
-			<Title>404 - shadcn-solid</Title>
+			<Title>404 Not Found</Title>
 			<div class="flex justify-center items-center min-h-[calc(100vh-57px-97px)]">
 				<div class="grid gap-4">
 					<div class="flex flex-col justify-center items-center">

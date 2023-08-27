@@ -1,4 +1,5 @@
-import { docsConfig, siteConfig } from "@/config"
+import { docsConfig } from "@/config/docs"
+import { siteConfig } from "@/config/site"
 import { Button } from "@/registry/default/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/registry/default/ui/sheet"
 import { As, createDisclosureState } from "@kobalte/core"

@@ -1,4 +1,4 @@
-import { docsConfig } from "@/config"
+import { docsConfig } from "@/config/docs"
 import { For } from "solid-js"
 import { SidebarItem } from "./sidebar-item"
 
