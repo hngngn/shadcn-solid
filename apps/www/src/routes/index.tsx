@@ -1,5 +1,5 @@
-import { Navigate } from "solid-start"
+import { Navigate } from "solid-start";
 
 export default () => {
-	return <Navigate href="/docs/introduction" />
-}
+  return <Navigate href="/docs/introduction" />;
+};

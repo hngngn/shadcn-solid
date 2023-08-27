@@ -1,31 +1,30 @@
-This project was created using [Create JD App](https://github.com/OrJDev/create-jd-app)
+# SolidStart
 
-## Start Dev Server
+Everything you need to build a Solid project, powered by [`solid-start`](https://start.solidjs.com);
 
-```bash
-pnpm dev
-```
-
-This will start a dev server on port `3000` and will watch for changes.
-
-## Testing Production Build
-
-### Build
+## Creating a project
 
 ```bash
-pnpm build
+# create a new project in the current directory
+npm init solid@latest
+
+# create a new project in my-app
+npm init solid@latest my-app
 ```
 
-### Start
+## Developing
+
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
 ```bash
-pnpm start
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
 ```
 
-This will start a production server on port `3000`.
+## Building
 
-### Enviroment Variables
+Solid apps are built with _adapters_, which optimise your project for deployment to different environments.
 
-- `ENABLE_VC_BUILD`=1  
-  
-[Sponsor Create JD App](https://github.com/sponsors/OrJDev)
+By default, `npm run build` will generate a Node app that you can run with `npm start`. To use a different adapter, add it to the `devDependencies` in `package.json` and specify in your `vite.config.js`.
