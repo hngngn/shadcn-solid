@@ -1,5 +1,11 @@
 # shadcn-solid
 
+## 0.3.0
+
+### Minor Changes
+
+-   2030e68: bump version
+
 ## 0.2.2
 
 ### Patch Changes
