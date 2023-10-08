@@ -18,7 +18,7 @@
 		"autoprefixer": "^10.4.15",
 		"estree-util-value-to-estree": "^3.0.1",
 		"lodash.template": "^4.5.0",
-		"postcss": "^8.4.28",
+		"postcss": "^8.4.31",
 		"rehype-pretty-code": "^0.10.0",
 		"rehype-slug": "^5.1.0",
 		"remark-frontmatter": "^4.0.1",
