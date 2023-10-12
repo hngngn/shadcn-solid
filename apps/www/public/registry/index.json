@@ -249,7 +249,7 @@
       "textfield"
     ],
     "files": [
-      "ui/textfield.tsx"
+      "ui/textarea.tsx"
     ],
     "type": "components:ui"
   },

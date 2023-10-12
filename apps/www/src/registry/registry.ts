@@ -39,7 +39,7 @@ const ui: Registry = [
 	{
 		name: "checkbox",
 		type: "components:ui",
-		dependencies: ["@kobalte/core", "solid-icons"],
+		dependencies: ["@kobalte/core"],
 		files: ["ui/checkbox.tsx"],
 	},
 	{
@@ -153,7 +153,7 @@ const ui: Registry = [
 		type: "components:ui",
 		dependencies: ["@kobalte/core"],
 		registryDependencies: ["textfield"],
-		files: ["ui/textfield.tsx"],
+		files: ["ui/textarea.tsx"],
 	},
 	{
 		name: "toast",

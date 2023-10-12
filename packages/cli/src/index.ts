@@ -10,7 +10,7 @@ async function main() {
 	const program = new Command()
 		.name("shadcn-solid")
 		.description("add components and dependencies to your project")
-		.version("0.3.0", "-v, --version", "display the version number")
+		.version("0.3.1", "-v, --version", "display the version number")
 
 	program.addCommand(init).addCommand(add)
 

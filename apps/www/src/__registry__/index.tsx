@@ -185,7 +185,7 @@ export const Index: Record<string, any> = {
       type: "components:ui",
       registryDependencies: ["textfield"],
       component: lazy(() => import("@/registry/default/ui/textarea")),
-      files: ["registry/default/ui/textfield.tsx"],
+      files: ["registry/default/ui/textarea.tsx"],
     },
     "toast": {
       name: "toast",
