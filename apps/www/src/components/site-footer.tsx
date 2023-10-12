@@ -32,7 +32,7 @@ const SiteFooter = () => {
 							rel="noreferrer"
 							class="font-medium underline underline-offset-4"
 						>
-							GitHub .
+							GitHub.
 						</A>
 					</p>
 				</div>
