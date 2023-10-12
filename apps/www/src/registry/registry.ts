@@ -39,7 +39,7 @@ const ui: Registry = [
 	{
 		name: "checkbox",
 		type: "components:ui",
-		dependencies: ["@kobalte/core"],
+		dependencies: ["@kobalte/core", "solid-icons"],
 		files: ["ui/checkbox.tsx"],
 	},
 	{
