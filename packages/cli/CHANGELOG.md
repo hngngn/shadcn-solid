@@ -1,5 +1,11 @@
 # shadcn-solid
 
+## 0.3.1
+
+### Patch Changes
+
+-   c502b32: - add `solid-icons` when `init`
+
 ## 0.3.0
 
 ### Minor Changes
