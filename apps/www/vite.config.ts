@@ -22,6 +22,9 @@ export default defineConfig({
 	},
 	start: {
 		extensions: ["mdx", "md"],
+		server: {
+			preset: "vercel",
+		},
 	},
 	plugins: [
 		mdx.withImports({})({
