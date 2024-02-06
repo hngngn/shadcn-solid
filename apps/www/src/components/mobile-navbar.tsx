@@ -3,13 +3,12 @@ import { siteConfig } from "@/config/site"
 import { Button } from "@/registry/default/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/registry/default/ui/sheet"
 import { As, createDisclosureState } from "@kobalte/core"
-import { TbLayoutSidebar } from "solid-icons/tb"
+import { A, useIsRouting } from "@solidjs/router"
 import { For, createComputed } from "solid-js"
-import { A, useIsRouting } from "solid-start"
 import { Logo } from "./logo"
 import { Sidebar } from "./sidebar"
 
-export const MobileNav = () => {
+export const MobileNavbar = () => {
 	const { isOpen, setIsOpen, close } = createDisclosureState()
 
 	const isRouting = useIsRouting()
@@ -25,7 +24,7 @@ export const MobileNav = () => {
 					size="icon"
 					class="mr-1 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
 				>
-					<TbLayoutSidebar class="w-[18px] h-[18px]" />
+					<span class="icon-[tabler--layout-sidebar] w-[18px] h-[18px]" />
 					<span class="sr-only">Toggle Menu</span>
 				</As>
 			</SheetTrigger>

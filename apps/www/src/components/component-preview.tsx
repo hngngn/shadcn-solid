@@ -37,7 +37,8 @@ export const ComponentPreview: ParentComponent<ComponentPreviewProps> = (
 	])
 
 	const Preview = createMemo(() => {
-		const Component = Index["default"][local.name]?.component
+		const Component = (Index as Record<string, any>)["default"][local.name]
+			?.component
 
 		if (!Component) {
 			return (

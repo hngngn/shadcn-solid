@@ -1,21 +1,10 @@
 import { valueToEstree } from "estree-util-value-to-estree"
-import type { Node, Parent } from "unist"
 import { visit } from "unist-util-visit"
 
-interface ElementNode extends Node {
-	tagName: string
-	value: string
-	properties: {
-		id: string
-	}
-}
+export const solidHeadings = () => (tree) => {
+	let headings = []
 
-export type THeading = { depth: number; text: string; slug: string }
-
-export const solidHeadings = () => (tree: Parent) => {
-	let headings: THeading[] = []
-
-	visit(tree, "element", (node: ElementNode) => {
+	visit(tree, "element", (node) => {
 		if (node.tagName[0] !== "h") return
 		const [, level] = node.tagName.match(/h([0-6])/) ?? []
 		const depth = Number.parseInt(level)

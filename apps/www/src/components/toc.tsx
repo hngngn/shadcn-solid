@@ -1,15 +1,15 @@
 import { cn } from "@/lib/cn"
-import type { Accessor, Component } from "solid-js"
+import { A, useLocation } from "@solidjs/router"
+import type { Accessor, VoidComponent } from "solid-js"
 import { For, createEffect, createSignal, onCleanup } from "solid-js"
-import { A, useLocation } from "solid-start"
 
-type TToc = {
+type TableOfContent = {
 	depth: number
 	text: string
 	slug: string
 }
 
-const getHeadingsFromToc = (tableOfContents: TToc[]) => {
+const getHeadingsFromToc = (tableOfContents: TableOfContent[]) => {
 	return tableOfContents.map(({ slug }) => {
 		const el = document.getElementById(slug)
 
@@ -26,7 +26,9 @@ const getHeadingsFromToc = (tableOfContents: TToc[]) => {
 	})
 }
 
-const useCurrentSection = (tableOfContents: Accessor<TToc[] | undefined>) => {
+const useCurrentSection = (
+	tableOfContents: Accessor<TableOfContent[] | undefined>
+) => {
 	const [currentSection, setCurrentSection] = createSignal(
 		tableOfContents()?.[0]?.slug
 	)
@@ -72,19 +74,19 @@ const useCurrentSection = (tableOfContents: Accessor<TToc[] | undefined>) => {
 }
 
 type Props = {
-	toc: TToc[] | undefined
+	data: TableOfContent[] | undefined
 }
 
-export const TableOfContents: Component<Props> = (props) => {
+export const TableOfContents: VoidComponent<Props> = (props) => {
 	const location = useLocation()
 
-	const currentSection = useCurrentSection(() => props.toc)
+	const currentSection = useCurrentSection(() => props.data)
 
 	return (
 		<aside class="space-y-2">
 			<p class="font-medium">On This Page</p>
 			<ul class="m-0 list-none">
-				<For each={props.toc}>
+				<For each={props.data}>
 					{(h) => (
 						<li class={cn("mt-0 pt-2", h.depth === 3 && "pl-4")}>
 							<A

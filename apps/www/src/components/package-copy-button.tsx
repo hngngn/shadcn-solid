@@ -6,7 +6,6 @@ import {
 	DropdownMenuTrigger,
 } from "@/registry/default/ui/dropdown-menu"
 import { As } from "@kobalte/core"
-import { TbCheck, TbCopy } from "solid-icons/tb"
 import { For, Show, createSignal, type VoidComponent } from "solid-js"
 
 type Props = {
@@ -104,9 +103,9 @@ export const PackageCopyButton: VoidComponent<Props> = (props) => {
 				>
 					<Show
 						when={isCopied()}
-						fallback={<TbCopy class="w-4 h-4" />}
+						fallback={<span class="icon-[tabler--copy] w-4 h-4" />}
 					>
-						<TbCheck class="h-4 w-4" />
+						<span class="icon-[tabler--check] h-4 w-4" />
 					</Show>
 				</As>
 			</DropdownMenuTrigger>

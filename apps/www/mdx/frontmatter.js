@@ -1,23 +1,14 @@
 import { valueToEstree } from "estree-util-value-to-estree"
-import type { Literal, Parent } from "unist"
 import { parse } from "yaml"
 
-type TKolbate = {
-	link: string
-	api: string
-}
-
-export type TFrontmatter = {
-	title: string
-	description: string
-	component?: boolean
-	kobalte?: TKolbate
-}
-
-export const solidFrontmatter = () => (tree: Parent) => {
+export const solidFrontmatter = () => (tree) => {
 	const node = tree.children.find((node) => node.type === "yaml")
 
-	const data = parse((node as Literal).value as string)
+	if (node === undefined) {
+		return
+	}
+
+	const data = parse(node.value)
 
 	tree.children.unshift({
 		type: "mdxjsEsm",

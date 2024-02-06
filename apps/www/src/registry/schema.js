@@ -14,4 +14,4 @@ export const registrySchema = z.array(
 	})
 )
 
-export type Registry = z.infer<typeof registrySchema>
+// export type Registry = z.infer<typeof registrySchema>

@@ -1,6 +1,5 @@
 import { cn } from "@/lib/cn"
 import { ContextMenu as ContextMenuPrimitive } from "@kobalte/core"
-import { TbCheck, TbChevronRight, TbCircleFilled } from "solid-icons/tb"
 import type { ComponentProps, VoidComponent } from "solid-js"
 import { splitProps, type ParentComponent } from "solid-js"
 
@@ -27,7 +26,7 @@ export const ContextMenuSubTrigger: ParentComponent<
 			{...rest}
 		>
 			{local.children}
-			<TbChevronRight class="h-4 w-4 ml-auto" />
+			<span class="icon-[tabler--chevron-right] h-4 w-4 ml-auto" />
 		</ContextMenuPrimitive.SubTrigger>
 	)
 }
@@ -101,7 +100,7 @@ export const ContextMenuCheckboxItem: ParentComponent<
 			{...rest}
 		>
 			<ContextMenuPrimitive.ItemIndicator class="absolute left-2 h-3.5 w-3.5 inline-flex items-center justify-center">
-				<TbCheck class="h-4 w-4" />
+				<span class="icon-[tabler--check] h-4 w-4" />
 			</ContextMenuPrimitive.ItemIndicator>
 			{local.children}
 		</ContextMenuPrimitive.CheckboxItem>
@@ -122,7 +121,7 @@ export const ContextMenuRadioItem: ParentComponent<
 			{...rest}
 		>
 			<ContextMenuPrimitive.ItemIndicator class="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
-				<TbCircleFilled class="h-2 w-2" />
+				<span class="icon-[tabler--circle-filled] h-2 w-2" />
 			</ContextMenuPrimitive.ItemIndicator>
 			{local.children}
 		</ContextMenuPrimitive.RadioItem>

@@ -1,7 +1,7 @@
 import { siteConfig } from "@/config/site"
-import { A } from "solid-start"
+import { A } from "@solidjs/router"
 
-const SiteFooter = () => {
+export const Footer = () => {
 	return (
 		<footer class="py-6 md:py-0 md:px-8 border-t">
 			<div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
@@ -40,5 +40,3 @@ const SiteFooter = () => {
 		</footer>
 	)
 }
-
-export default SiteFooter

@@ -1,6 +1,5 @@
 import { cn } from "@/lib/cn"
 import { Accordion as AccordionPrimitive } from "@kobalte/core"
-import { TbChevronDown } from "solid-icons/tb"
 import type { Component, ParentComponent } from "solid-js"
 import { splitProps } from "solid-js"
 
@@ -32,7 +31,7 @@ export const AccordionTrigger: ParentComponent<
 				{...rest}
 			>
 				{local.children}
-				<TbChevronDown class="h-4 w-4 text-muted-foreground transition-transform duration-200" />
+				<span class="icon-[tabler--chevron-down] h-4 w-4 text-muted-foreground transition-transform duration-200" />
 			</AccordionPrimitive.Trigger>
 		</AccordionPrimitive.Header>
 	)

@@ -1,4 +1,3 @@
-import { TbBell, TbCheck } from "solid-icons/tb"
 import { For } from "solid-js"
 import { Button } from "../ui/button"
 import {
@@ -35,7 +34,7 @@ const CardDemo = () => {
 			</CardHeader>
 			<CardContent class="grid gap-4">
 				<div class=" flex items-center space-x-4 rounded-md border p-4">
-					<TbBell class="w-4 h-4" />
+					<span class="icon-[tabler--bell] w-4 h-4" />
 					<div class="flex-1 space-y-1">
 						<p class="text-sm font-medium leading-none">
 							Push Notifications
@@ -70,7 +69,8 @@ const CardDemo = () => {
 			</CardContent>
 			<CardFooter>
 				<Button class="w-full">
-					<TbCheck class="mr-2 h-4 w-4" /> Mark all as read
+					<span class="icon-[tabler--check] mr-2 h-4 w-4" /> Mark all
+					as read
 				</Button>
 			</CardFooter>
 		</Card>

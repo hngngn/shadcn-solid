@@ -1,6 +1,5 @@
 import { cn } from "@/lib/cn"
 import { DropdownMenu as DropdownMenuPrimitive } from "@kobalte/core"
-import { TbCheck, TbChevronRight, TbCircleFilled } from "solid-icons/tb"
 import type { ComponentProps, VoidComponent } from "solid-js"
 import { mergeProps, splitProps, type ParentComponent } from "solid-js"
 
@@ -120,7 +119,7 @@ export const DropdownMenuSubTrigger: ParentComponent<
 			{...rest}
 		>
 			{local.children}
-			<TbChevronRight class="h-4 w-4 ml-auto" />
+			<span class="icon-[tabler--chevron-right] h-4 w-4 ml-auto" />
 		</DropdownMenuPrimitive.SubTrigger>
 	)
 }
@@ -155,7 +154,7 @@ export const DropdownMenuCheckboxItem: ParentComponent<
 			{...rest}
 		>
 			<DropdownMenuPrimitive.ItemIndicator class="absolute left-2 h-4 w-4 inline-flex items-center justify-center">
-				<TbCheck class="h-4 w-4" />
+				<span class="icon-[tabler--check] h-4 w-4" />
 			</DropdownMenuPrimitive.ItemIndicator>
 			{props.children}
 		</DropdownMenuPrimitive.CheckboxItem>
@@ -175,7 +174,7 @@ export const DropdownMenuRadioItem: ParentComponent<
 			{...rest}
 		>
 			<DropdownMenuPrimitive.ItemIndicator class="absolute left-2 h-4 w-4 inline-flex items-center justify-center">
-				<TbCircleFilled class="w-2 h-2" />
+				<span class="icon-[tabler--circle-filled] w-2 h-2" />
 			</DropdownMenuPrimitive.ItemIndicator>
 			{props.children}
 		</DropdownMenuPrimitive.RadioItem>

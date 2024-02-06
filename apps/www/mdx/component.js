@@ -1,19 +1,14 @@
-import fs from "fs"
-import path from "path"
-import type { Node, Parent } from "unist"
+import { readFileSync } from "node:fs"
+import { join } from "node:path"
 import { u } from "unist-builder"
 import { visit } from "unist-util-visit"
-import { Index } from "../../__registry__"
-import { styles } from "../../registry/styles"
+import { Index } from "../src/__registry__"
+import { styles } from "../src/registry/styles"
 
-interface ComponentNode extends Node, Parent {
-	name: string
-}
-
-export const rehypeComponent = () => (tree: ComponentNode) =>
+export const rehypeComponent = () => (tree) =>
 	visit(tree, (node) => {
 		if ("name" in node && node.name === "ComponentSource") {
-			const name = getNodeAttributeByName(node, "name")?.value as string
+			const name = getNodeAttributeByName(node, "name")?.value
 
 			if (!name) {
 				return null
@@ -25,8 +20,8 @@ export const rehypeComponent = () => (tree: ComponentNode) =>
 					const src = component.files[0]
 
 					// Read the source file.
-					const filePath = path.join(process.cwd(), `src/${src}`)
-					let source = fs.readFileSync(filePath, "utf8")
+					const filePath = join(process.cwd(), `src/${src}`)
+					let source = readFileSync(filePath, "utf8")
 
 					// Replace imports.
 					// TODO: Use @swc/core and a visitor to replace this.
@@ -60,7 +55,7 @@ export const rehypeComponent = () => (tree: ComponentNode) =>
 		}
 
 		if ("name" in node && node.name === "ComponentPreview") {
-			const name = getNodeAttributeByName(node, "name")?.value as string
+			const name = getNodeAttributeByName(node, "name")?.value
 
 			if (!name) {
 				return null
@@ -76,8 +71,8 @@ export const rehypeComponent = () => (tree: ComponentNode) =>
 					const src = component.files[0]
 
 					// Read the source file.
-					const filePath = path.join(process.cwd(), `src/${src}`)
-					let source = fs.readFileSync(filePath, "utf8")
+					const filePath = join(process.cwd(), `src/${src}`)
+					let source = readFileSync(filePath, "utf8")
 
 					// Replace imports.
 					// TODO: Use @swc/core and a visitor to replace this.
@@ -114,6 +109,6 @@ export const rehypeComponent = () => (tree: ComponentNode) =>
 		}
 	})
 
-const getNodeAttributeByName = (node: any, name: string) => {
-	return node.attributes?.find((attribute: any) => attribute.name === name)
+const getNodeAttributeByName = (node, name) => {
+	return node.attributes?.find((attribute) => attribute.name === name)
 }

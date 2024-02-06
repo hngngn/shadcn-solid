@@ -2,7 +2,6 @@ export type TNavItem = {
 	title: string
 	href?: string
 	disabled?: boolean
-	external?: boolean
 	label?: string
 }
 
@@ -22,8 +21,8 @@ type TDocsConfig = {
 export const docsConfig: TDocsConfig = {
 	mainNav: [
 		{
-			title: "Documentation",
-			href: "/docs/",
+			title: "Docs",
+			href: "/docs",
 		},
 		{
 			title: "Components",
@@ -36,7 +35,7 @@ export const docsConfig: TDocsConfig = {
 			items: [
 				{
 					title: "Introduction",
-					href: "/docs/introduction",
+					href: "/docs",
 					items: [],
 				},
 				{

@@ -1553,4 +1553,4 @@ export const colorMapping = {
 		"destructive-foreground": "red-50",
 		ring: "{{base}}-800",
 	},
-} as const
+}

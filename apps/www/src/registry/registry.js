@@ -1,6 +1,4 @@
-import type { Registry } from "@/registry/schema"
-
-const ui: Registry = [
+const ui = [
 	{
 		name: "accordion",
 		type: "components:ui",
@@ -175,7 +173,7 @@ const ui: Registry = [
 	},
 ]
 
-const example: Registry = [
+const example = [
 	{
 		name: "accordion-demo",
 		type: "components:example",
@@ -619,4 +617,4 @@ const example: Registry = [
 	},
 ]
 
-export const registry: Registry = [...ui, ...example]
+export const registry = [...ui, ...example]

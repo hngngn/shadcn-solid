@@ -1,10 +1,10 @@
 import { docsConfig } from "@/config/docs"
 import { siteConfig } from "@/config/site"
+import { A } from "@solidjs/router"
 import { For } from "solid-js"
-import { A } from "solid-start"
 import { Logo } from "./logo"
 
-export const MainNav = () => {
+export const Navbar = () => {
 	return (
 		<div class="mr-4 hidden md:flex">
 			<A href="/" class="mr-6 flex items-center space-x-2">
