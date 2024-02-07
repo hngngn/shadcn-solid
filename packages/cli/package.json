@@ -42,7 +42,7 @@
 		"node-fetch": "^3.3.2",
 		"picocolors": "^1.0.0",
 		"prompts": "^2.4.2",
-		"ts-morph": "^19.0.0",
+		"ts-morph": "^18.0.0",
 		"tsconfig-paths": "^4.2.0",
 		"zod": "^3.22.2"
 	}

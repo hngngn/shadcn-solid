@@ -20,17 +20,20 @@ import * as p from "@clack/prompts"
 import { Command } from "commander"
 import { execa } from "execa"
 import { existsSync, promises as fs } from "fs"
+import template from "lodash.template"
 import path from "path"
 import color from "picocolors"
 import { loadConfig } from "tsconfig-paths"
 import * as z from "zod"
+import { applyPrefixesCss } from "../utils/transformers/transform-tw-prefix"
 
 const PROJECT_DEPENDENCIES = [
 	"tailwindcss-animate",
 	"class-variance-authority",
 	"clsx",
 	"tailwind-merge",
-	"solid-icons",
+	"@iconify/tailwind",
+	"@iconify-json/tabler",
 ]
 
 const initOptionsSchema = z.object({
@@ -119,6 +122,14 @@ export async function promptForConfig(
 					)} for colors?`,
 					initialValue: defaultConfig?.tailwind.cssVariables ?? true,
 				}),
+			tailwindPrefix: () =>
+				p.text({
+					message: `Are you using a custom ${highlight(
+						"tailwind prefix eg. tw-"
+					)}? (Leave blank if not)`,
+					placeholder: "",
+					defaultValue: "",
+				}),
 			tailwindConfig: () =>
 				p.text({
 					message: `Where is your ${highlight(
@@ -187,6 +198,7 @@ export async function promptForConfig(
 			css: options.tailwindCss,
 			baseColor: options.tailwindBaseColor,
 			cssVariables: options.tailwindCssVariables,
+			prefix: options.tailwindPrefix,
 		},
 		aliases: {
 			utils: options.utils,
@@ -234,9 +246,13 @@ export async function runInit(cwd: string, config: Config) {
 	// Write tailwind config.
 	await fs.writeFile(
 		config.resolvedPaths.tailwindConfig,
-		config.tailwind.cssVariables
-			? templates.TAILWIND_CONFIG_WITH_VARIABLES
-			: templates.TAILWIND_CONFIG,
+		template(
+			config.tailwind.cssVariables
+				? templates.TAILWIND_CONFIG_WITH_VARIABLES
+				: templates.TAILWIND_CONFIG
+		)({
+			prefix: config.tailwind.prefix,
+		}),
 		"utf8"
 	)
 
@@ -246,7 +262,12 @@ export async function runInit(cwd: string, config: Config) {
 		await fs.writeFile(
 			config.resolvedPaths.tailwindCss,
 			config.tailwind.cssVariables
-				? baseColor.cssVarsTemplate
+				? config.tailwind.prefix
+					? applyPrefixesCss(
+							baseColor.cssVarsTemplate,
+							config.tailwind.prefix
+					  )
+					: baseColor.cssVarsTemplate
 				: baseColor.inlineColorsTemplate,
 			"utf8"
 		)
