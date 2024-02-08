@@ -15,7 +15,7 @@ import { execa } from "execa"
 import { existsSync, promises as fs } from "fs"
 import path from "path"
 import color from "picocolors"
-import * as z from "zod"
+import { z } from "zod"
 
 const addOptionsSchema = z.object({
 	components: z.array(z.string()).optional(),

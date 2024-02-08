@@ -36,7 +36,7 @@ npx shadcn-solid add
 
 ## Documentation
 
-Visit https://shadcn-solid.vercel.app/docs/introduction to view the documentation.
+Visit https://shadcn-solid.vercel.app/docs to view the documentation.
 
 ## License
 

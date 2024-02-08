@@ -13,7 +13,6 @@ import { handleError } from "@/src/utils/handle-error"
 import {
 	getRegistryBaseColor,
 	getRegistryBaseColors,
-	getRegistryStyles,
 } from "@/src/utils/registry"
 import * as templates from "@/src/utils/templates"
 import * as p from "@clack/prompts"
@@ -24,7 +23,7 @@ import template from "lodash.template"
 import path from "path"
 import color from "picocolors"
 import { loadConfig } from "tsconfig-paths"
-import * as z from "zod"
+import { z } from "zod"
 import { applyPrefixesCss } from "../utils/transformers/transform-tw-prefix"
 
 const PROJECT_DEPENDENCIES = [
@@ -80,22 +79,22 @@ export async function promptForConfig(
 ) {
 	const highlight = (text: string) => color.cyan(text)
 
-	const styles = await getRegistryStyles()
+	// const styles = await getRegistryStyles()
 	const baseColors = await getRegistryBaseColors()
 
 	const options = await p.group(
 		{
-			style: () =>
-				p.select({
-					message: `Which ${highlight(
-						"style"
-					)} would you like to use?`,
-					// @ts-ignore
-					options: styles.map((style) => ({
-						label: style.label,
-						value: style.name,
-					})),
-				}),
+			// style: () =>
+			// 	p.select({
+			// 		message: `Which ${highlight(
+			// 			"style"
+			// 		)} would you like to use?`,
+			// 		// @ts-ignore
+			// 		options: styles.map((style) => ({
+			// 			label: style.label,
+			// 			value: style.name,
+			// 		})),
+			// 	}),
 			tailwindBaseColor: () =>
 				p.select({
 					message: `Which color would you like to use as ${highlight(
@@ -192,7 +191,7 @@ export async function promptForConfig(
 
 	const config = rawConfigSchema.parse({
 		$schema: "https://shadcn-solid.vercel.app/schema.json",
-		style: options.style,
+		// style: options.style,
 		tailwind: {
 			config: options.tailwindConfig,
 			css: options.tailwindCss,

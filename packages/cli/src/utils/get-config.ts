@@ -2,12 +2,12 @@ import { resolveImport } from "@/src/utils/resolve-import"
 import { cosmiconfig } from "cosmiconfig"
 import path from "path"
 import { loadConfig } from "tsconfig-paths"
-import * as z from "zod"
+import { z } from "zod"
 
-export const DEFAULT_STYLE = "default"
+// export const DEFAULT_STYLE = "default"
 export const DEFAULT_COMPONENTS = "@/components"
 export const DEFAULT_UTILS = "@/lib/utils"
-export const DEFAULT_TAILWIND_CSS = "src/root.css"
+export const DEFAULT_TAILWIND_CSS = "src/app.css"
 export const DEFAULT_TAILWIND_CONFIG = "tailwind.config.cjs"
 
 // TODO: Figure out if we want to support all cosmiconfig formats.
@@ -19,7 +19,7 @@ const explorer = cosmiconfig("components", {
 export const rawConfigSchema = z
 	.object({
 		$schema: z.string().optional(),
-		style: z.string(),
+		// style: z.string(),
 		tailwind: z.object({
 			config: z.string(),
 			css: z.string(),
