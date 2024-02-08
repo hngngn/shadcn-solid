@@ -2,15 +2,11 @@ import { docsConfig } from "@/config/docs"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/cn"
 import { A, useLocation } from "@solidjs/router"
-import { For, createEffect } from "solid-js"
+import { For } from "solid-js"
 import { Logo } from "./logo"
 
 export const Navbar = () => {
 	const location = useLocation()
-
-	createEffect(() => {
-		console.log(location)
-	})
 
 	return (
 		<div class="mr-4 hidden md:flex">
