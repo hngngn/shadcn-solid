@@ -21,7 +21,7 @@ export const Header = () => {
 								target="_blank"
 								rel="noreferrer"
 							>
-								<span class="icon-[tabler--brand-github-filled] w-[18px] h-[18px]" />
+								<span class="icon-[tabler--brand-github] w-4 h-4" />
 								<span class="sr-only">Github</span>
 							</As>
 						</Button>

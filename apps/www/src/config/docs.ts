@@ -28,6 +28,10 @@ export const docsConfig: TDocsConfig = {
 			title: "Components",
 			href: "/docs/components/accordion",
 		},
+		{
+			title: "Examples",
+			href: "/examples/cards",
+		},
 	],
 	sidebarNav: [
 		{

@@ -2,11 +2,15 @@ import { docsConfig } from "@/config/docs"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/cn"
 import { A, useLocation } from "@solidjs/router"
-import { For } from "solid-js"
+import { For, createEffect } from "solid-js"
 import { Logo } from "./logo"
 
 export const Navbar = () => {
 	const location = useLocation()
+
+	createEffect(() => {
+		console.log(location)
+	})
 
 	return (
 		<div class="mr-4 hidden md:flex">
@@ -23,7 +27,16 @@ export const Navbar = () => {
 							href={item.href!}
 							class={cn(
 								"transition-colors hover:text-foreground/80",
-								location.pathname === item.href
+								location.pathname === item.href ||
+									(item.href ===
+										"/docs/components/accordion" &&
+										location.pathname.startsWith(
+											"/docs/components"
+										)) ||
+									(item.href === "/examples/cards" &&
+										location.pathname.startsWith(
+											"/examples"
+										))
 									? "text-foreground"
 									: "opacity-60"
 							)}
