@@ -1,5 +1,11 @@
 # shadcn-solid
 
+## 0.5.0
+
+### Minor Changes
+
+-   [`2410ce9`](https://github.com/hngngn/shadcn-solid/commit/2410ce939857cb63b9c6d1891969b5da2064caa9) Thanks [@hngngn](https://github.com/hngngn)! - Drop `style` property
+
 ## 0.4.0
 
 ### Minor Changes
