@@ -1,5 +1,12 @@
 # shadcn-solid
 
+## 0.4.0
+
+### Minor Changes
+
+-   [#35](https://github.com/hngngn/shadcn-solid/pull/35) [`cb0e90d`](https://github.com/hngngn/shadcn-solid/commit/cb0e90da855b5cfd91725cc7e2b08e331beb877c) Thanks [@hngngn](https://github.com/hngngn)! - Add support for custom ui dir
+    Add support for custom tailwind prefix
+
 ## 0.3.1
 
 ### Patch Changes
