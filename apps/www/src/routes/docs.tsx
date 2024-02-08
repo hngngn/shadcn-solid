@@ -41,7 +41,8 @@ const Documents = (props: RouteSectionProps) => {
 		frontmatter:
 			contents[
 				`.${
-					location.pathname === "/docs"
+					location.pathname === "/docs" ||
+					location.pathname === "/docs/installation"
 						? location.pathname + "/index"
 						: location.pathname
 				}.mdx`
@@ -49,7 +50,8 @@ const Documents = (props: RouteSectionProps) => {
 		headings:
 			contents[
 				`.${
-					location.pathname === "/docs"
+					location.pathname === "/docs" ||
+					location.pathname === "/docs/installation"
 						? location.pathname + "/index"
 						: location.pathname
 				}.mdx`
@@ -110,7 +112,8 @@ const Documents = (props: RouteSectionProps) => {
 											variant: "secondary",
 										})}
 									>
-										Kobalte
+										Docs{" "}
+										<span class="icon-[tabler--external-link] ml-1" />
 									</A>
 								</Show>
 								<Show
@@ -130,6 +133,7 @@ const Documents = (props: RouteSectionProps) => {
 										})}
 									>
 										API Reference
+										<span class="icon-[tabler--external-link] ml-1" />
 									</A>
 								</Show>
 							</div>

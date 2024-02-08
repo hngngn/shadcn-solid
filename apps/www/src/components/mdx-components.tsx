@@ -13,7 +13,9 @@ import {
 	TabsList,
 	TabsTrigger,
 } from "@/registry/default/ui/tabs"
-import { Show, type ComponentProps } from "solid-js"
+import type { AnchorProps } from "@solidjs/router"
+import { A } from "@solidjs/router"
+import { Show, splitProps, type ComponentProps } from "solid-js"
 import { ComponentPreview } from "./component-preview"
 import { ComponentSource } from "./component-source"
 import { CopyButton } from "./copy-button"
@@ -172,6 +174,18 @@ export const MDXComponent = {
 			/>
 		)
 	},
+	LinkedCard: (props: AnchorProps) => {
+		const [local, rest] = splitProps(props, ["class"])
+		return (
+			<A
+				class={cn(
+					"flex w-full flex-col items-center rounded-xl border bg-card p-6 text-card-foreground shadow transition-colors hover:bg-muted/50 sm:p-10",
+					local.class
+				)}
+				{...rest}
+			/>
+		)
+	},
 	Alert,
 	AlertDescription,
 	Accordion,
@@ -181,4 +195,5 @@ export const MDXComponent = {
 	ComponentPreview,
 	ComponentSource,
 	TabsIndicator,
+	A,
 }

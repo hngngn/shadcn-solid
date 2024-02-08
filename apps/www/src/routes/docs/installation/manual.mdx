@@ -1,89 +1,17 @@
 ---
-title: Installation
-description: How to install dependencies and structure your app.
+title: Manual Installation
+description: Add dependencies to your project manually.
 ---
-
-## CLI
-
-<Steps>
-
-### Create project
-
-Start by creating a new SolidStart project using [`create-jd-app`](https://github.com/OrJDev/create-jd-app) and select tailwind:
-
-```bash
-npx create-jd-app@latest
-```
-
-### Path Aliases
-
-I'm use the `@` alias to make it easier to import your components. This is how you can configure it:
-
-```json title="tsconfig.json"{3-6}
-{
-	"compilerOptions": {
-		"baseUrl": "./",
-		"paths": {
-			"@/*": ["./src/*"]
-		}
-	}
-}
-```
-
-```ts title="vite.config.ts"{6-10}
-import path from "path"
-
-export default defineConfig(async () => {
-    return {
-		...
-        resolve: {
-            alias: {
-                "@": path.resolve(__dirname, "./src"),
-            },
-        },
-    }
-})
-```
-
-### Run the CLI
-
-Run the `shadcn-solid` init command to setup your project:
-
-```bash
-npx shadcn-solid@latest init
-```
-
-### Configure components.json
-
-You will be asked a few questions to configure `components.json`:
-
-```txt
-Which style would you like to use? › Default
-Which color would you like to use as base color? › Slate
-Where is your global CSS file? › › src/globals.css
-Do you want to use CSS variables for colors? › no / yes
-Where is your tailwind.config.js located? › tailwind.config.cjs
-Configure the import alias for components: › @/components
-Configure the import alias for utils: › @/lib/utils
-```
-
-### That's it
-
-You can now start adding components to your project.
-
-</Steps>
 
 ## Manual
 
 <Steps>
 
-### Create project
+### Add Tailwind CSS
 
-Start by creating a new SolidStart project using [`create-jd-app`](https://github.com/OrJDev/create-jd-app) and select tailwind:
+Components are styled using Tailwind CSS. You need to install Tailwind CSS in your project.
 
-```bash
-npx create-jd-app@latest
-```
+[Follow the Tailwind CSS installation instructions to get started.](https://tailwindcss.com/docs/installation)
 
 ### Add dependencies
 
@@ -95,10 +23,10 @@ npm install tailwindcss-animate class-variance-authority clsx tailwind-merge
 
 ### Add icon library
 
-This project uses [Solid icons](https://github.com/x64Bits/solid-icons), but you can use any icon library.
+Install `@iconify/tailwind` and `@iconify-json/tabler`.
 
 ```bash
-npm install solid-icons
+npm install @iconify/tailwind @iconify-json/tabler
 ```
 
 ### Path Aliases
@@ -116,18 +44,16 @@ I'm use the `@` alias to make it easier to import your components. This is how y
 }
 ```
 
-```ts title="vite.config.ts"{6-10}
-import path from "path"
+```ts title="vite.config.ts"{5-9}
+import { defineConfig } from "@solidjs/start/config"
+import { resolve } from "node:path"
 
-export default defineConfig(async () => {
-    return {
-		...
-        resolve: {
-            alias: {
-                "@": path.resolve(__dirname, "./src"),
-            },
-        },
-    }
+export default defineConfig({
+	resolve: {
+		alias: {
+			"@": resolve(__dirname, "./src"),
+		},
+	},
 })
 ```
 
@@ -139,9 +65,10 @@ This is what this project's `tailwind.config.cjs` file looks like:
 
 ```js title="tailwind.config.cjs"
 const { fontFamily } = require("tailwindcss/defaultTheme")
+const { addDynamicIconSelectors } = require("@iconify/tailwind")
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
 	darkMode: ["class", '[data-kb-theme="dark"]'],
 	content: [
 		"src/routes/**/*.{ts,tsx,mdx}",
@@ -149,14 +76,14 @@ module.exports = {
 		"src/registry/**/*.{ts,tsx}",
 	],
 	theme: {
-		container: {
-			center: true,
-			padding: "2rem",
-			screens: {
-				"2xl": "1400px",
-			},
-		},
 		extend: {
+			container: {
+				center: true,
+				padding: "2rem",
+				screens: {
+					"2xl": "1400px",
+				},
+			},
 			colors: {
 				border: "hsl(var(--border))",
 				input: "hsl(var(--input))",
@@ -226,7 +153,7 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [require("tailwindcss-animate"), addDynamicIconSelectors()],
 }
 ```
 

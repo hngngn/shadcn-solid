@@ -44,6 +44,11 @@ export const docsConfig: TDocsConfig = {
 					items: [],
 				},
 				{
+					title: "components.json",
+					href: "/docs/components-json",
+					items: [],
+				},
+				{
 					title: "Theming",
 					href: "/docs/theming",
 					items: [],

@@ -7,63 +7,39 @@ description: Adding dark mode to your site.
 
 ### Wrap your root layout
 
-Add the `ThemeProvider` and `ColorModeScript` to your root.
+Add the `ThemeProvider` and `ColorModeScript` to your app.
 
-```tsx {1-18,21-25,41-45} title="src/root.tsx"
+```tsx {1-5,19-22} title="src/app.tsx"
 import {
-    ColorModeProvider,
-    ColorModeScript,
-    cookieStorageManagerSSR,
+	ColorModeProvider,
+	ColorModeScript,
+	localStorageManager,
 } from "@kobalte/core"
-import { isServer } from "solid-js/web"
-import {
-    Body,
-    ErrorBoundary,
-    FileRoutes,
-    Head,
-    Html,
-    Meta,
-    Routes,
-    Scripts,
-    ServerContext,
-    Title,
-} from "solid-start"
+import { MetaProvider } from "@solidjs/meta"
+import { Router } from "@solidjs/router"
+import { FileRoutes } from "@solidjs/start"
+import { Suspense } from "solid-js"
+import { Metadata } from "./components/metadata"
 
-const Root = () => {
-    const event = useContext(ServerContext)
-
-    const storageManager = cookieStorageManagerSSR(
-        isServer ? event?.request.headers.get("cookie") ?? "" : document.cookie
-    )
-
-    return (
-        <Html lang="en">
-            <Head>
-                <Title>shadcn-solid</Title>
-                <Meta charset="utf-8" />
-                <Meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1"
-                />
-            </Head>
-            <Body>
-                <ErrorBoundary>
-                    <Suspense>
-                        <ColorModeScript storageType={storageManager.type} />
-                        <ColorModeProvider storageManager={storageManager}>
-                            <Routes>
-                                <FileRoutes />
-                            </Routes>
-                        </ColorModeProvider>
-                    </Suspense>
-                </ErrorBoundary>
-                <Scripts />
-            </Body>
-        </Html>
-    )
+export default function App() {
+	return (
+		<Router
+			root={(props) => (
+				<MetaProvider>
+					<Metadata />
+					<Suspense>
+						<ColorModeScript />
+						<ColorModeProvider storageManager={localStorageManager}>
+							{props.children}
+						</ColorModeProvider>
+					</Suspense>
+				</MetaProvider>
+			)}
+		>
+			<FileRoutes />
+		</Router>
+	)
 }
-
-export default Root
 ```
 
 ### Add a mode toggle

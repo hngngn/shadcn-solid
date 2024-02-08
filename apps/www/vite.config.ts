@@ -7,6 +7,7 @@ import { join, resolve } from "node:path"
 import rehypePrettyCode from "rehype-pretty-code"
 import rehypeSlug from "rehype-slug"
 import remarkFrontmatter from "remark-frontmatter"
+import remarkGFM from "remark-gfm"
 import { getHighlighter, loadTheme } from "shiki"
 import type { Parent } from "unist"
 import { visit } from "unist-util-visit"
@@ -31,7 +32,7 @@ export default defineConfig({
 			jsx: true,
 			jsxImportSource: "solid-js",
 			providerImportSource: "solid-mdx",
-			remarkPlugins: [remarkFrontmatter, solidFrontmatter],
+			remarkPlugins: [remarkGFM, remarkFrontmatter, solidFrontmatter],
 			rehypePlugins: [
 				rehypeSlug,
 				solidHeadings,
