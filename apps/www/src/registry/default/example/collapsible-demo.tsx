@@ -1,5 +1,4 @@
 import { As } from "@kobalte/core"
-import { TbSelector } from "solid-icons/tb"
 import { createSignal } from "solid-js"
 import { Button } from "../ui/button"
 import {
@@ -28,7 +27,7 @@ const CollapsibleDemo = () => {
 						size="sm"
 						class="w-9 p-0"
 					>
-						<TbSelector class="w-4 h-4" />
+						<span class="icon-[tabler--selector] w-4 h-4" />
 						<span class="sr-only">Toggle</span>
 					</As>
 				</CollapsibleTrigger>

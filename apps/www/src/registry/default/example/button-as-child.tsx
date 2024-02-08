@@ -1,5 +1,5 @@
 import { As } from "@kobalte/core"
-import { A } from "solid-start"
+import { A } from "@solidjs/router"
 import { Button } from "../ui/button"
 
 const ButtonAsChild = () => {

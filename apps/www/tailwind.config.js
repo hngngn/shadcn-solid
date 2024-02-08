@@ -1,7 +1,8 @@
 const { fontFamily } = require("tailwindcss/defaultTheme")
+const { addDynamicIconSelectors } = require("@iconify/tailwind")
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
 	darkMode: ["class", '[data-kb-theme="dark"]'],
 	content: [
 		"src/routes/**/*.{ts,tsx,mdx}",
@@ -86,5 +87,5 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [require("tailwindcss-animate"), addDynamicIconSelectors()],
 }

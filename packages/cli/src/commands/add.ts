@@ -65,7 +65,7 @@ export const add = new Command()
 
 			let selectedComponents = options.components
 			if (!options.components?.length) {
-				const { components }: { components: string[] } = await p.group(
+				const { components } = await p.group(
 					{
 						components: () =>
 							p.multiselect({
@@ -85,7 +85,7 @@ export const add = new Command()
 						},
 					}
 				)
-				selectedComponents = components
+				selectedComponents = components as string[]
 			}
 
 			if (!selectedComponents?.length) {
@@ -151,7 +151,7 @@ export const add = new Command()
 							`Component ${
 								item.name
 							} already exists. Use ${color.green(
-								"--overwrite"
+								"-o"
 							)} to overwrite.`
 						)
 						process.exit(1)

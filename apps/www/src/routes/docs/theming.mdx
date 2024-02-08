@@ -5,6 +5,56 @@ description: Using CSS Variables or Tailwind CSS for theming.
 
 You can choose between using CSS variables or Tailwind CSS utility classes for theming.
 
+## Utility classes
+
+```tsx /bg-zinc-950/ /text-zinc-50/ /dark:bg-white/ /dark:text-zinc-950/
+<div className="bg-zinc-950 dark:bg-white" />
+```
+
+To use utility classes for theming set `tailwind.cssVariables` to `false` in your `components.json` file.
+
+```json {7} title="components.json"
+{
+	"style": "default",
+	"tailwind": {
+		"config": "tailwind.config.js",
+		"css": "app/globals.css",
+		"baseColor": "slate",
+		"cssVariables": false
+	},
+	"aliases": {
+		"components": "@/components",
+		"utils": "@/lib/utils"
+	}
+}
+```
+
+## CSS Variables
+
+```tsx /bg-background/ /text-foreground/
+<div className="bg-background text-foreground" />
+```
+
+To use CSS variables for theming set `tailwind.cssVariables` to `true` in your `components.json` file.
+
+```json {7} title="components.json"
+{
+	"style": "default",
+	"tailwind": {
+		"config": "tailwind.config.js",
+		"css": "app/globals.css",
+		"baseColor": "slate",
+		"cssVariables": true
+	},
+	"aliases": {
+		"components": "@/components",
+		"utils": "@/lib/utils"
+	}
+}
+```
+
+### Convention
+
 We use a simple `background` and `foreground` convention for colors. The `background` variable is used for the background color of the component and the `foreground` variable is used for the text color.
 
 <Alert class="mt-4">
@@ -66,7 +116,7 @@ Here's the list of variables available for customization:
 --border: 214.3 31.8% 91.4%;
 ```
 
-```css title="Border color for inputs such as <TextField />, <Select />, <TextArea />"
+```css title="Border color for inputs such as <TextField />, <Select />, <Textarea />"
 --input: 214.3 31.8% 91.4%;
 ```
 
@@ -106,26 +156,26 @@ To add new colors, you need to add them to your CSS file and to your `tailwind.c
 
 ```css title="app/globals.css"
 :root {
-    --warning: 38 92% 50%;
-    --warning-foreground: 48 96% 89%;
+	--warning: 38 92% 50%;
+	--warning-foreground: 48 96% 89%;
 }
 
 .dark {
-    --warning: 48 96% 89%;
-    --warning-foreground: 38 92% 50%;
+	--warning: 48 96% 89%;
+	--warning-foreground: 38 92% 50%;
 }
 ```
 
 ```js {5-6} title="tailwind.config.js"
 module.exports = {
-    theme: {
-        extend: {
-            colors: {
-                warning: "hsl(var(--warning))",
-                "warning-foreground": "hsl(var(--warning-foreground))",
-            },
-        },
-    },
+	theme: {
+		extend: {
+			colors: {
+				warning: "hsl(var(--warning))",
+				"warning-foreground": "hsl(var(--warning-foreground))",
+			},
+		},
+	},
 }
 ```
 

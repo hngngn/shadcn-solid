@@ -2,7 +2,6 @@ import { cn } from "@/lib/cn"
 import { Dialog as DialogPrimitive } from "@kobalte/core"
 import type { VariantProps } from "class-variance-authority"
 import { cva } from "class-variance-authority"
-import { TbX } from "solid-icons/tb"
 import type { ComponentProps } from "solid-js"
 import { mergeProps, splitProps, type ParentComponent } from "solid-js"
 
@@ -59,7 +58,7 @@ export const SheetContent: ParentComponent<
 			>
 				{local.children}
 				<DialogPrimitive.CloseButton class="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none">
-					<TbX class="h-4 w-4" />
+					<span class="icon-[tabler--x] h-4 w-4" />
 					<span class="sr-only">Close</span>
 				</DialogPrimitive.CloseButton>
 			</DialogPrimitive.Content>

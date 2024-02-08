@@ -1,6 +1,5 @@
 import { cn } from "@/lib/cn"
 import { Checkbox as CheckboxPrimitive } from "@kobalte/core"
-import { TbCheck } from "solid-icons/tb"
 import { splitProps, type ParentComponent } from "solid-js"
 
 export const CheckboxLabel = CheckboxPrimitive.Label
@@ -23,7 +22,7 @@ export const CheckboxControl: ParentComponent<
 			{...rest}
 		>
 			<CheckboxPrimitive.Indicator class="flex items-center justify-center text-current">
-				<TbCheck class="w-4 h-4" />
+				<span class="icon-[tabler--check] w-4 h-4" />
 			</CheckboxPrimitive.Indicator>
 		</CheckboxPrimitive.Control>
 	)

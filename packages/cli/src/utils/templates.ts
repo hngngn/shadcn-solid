@@ -5,10 +5,13 @@ import { twMerge } from "tailwind-merge"
 export const cn = (...classLists: ClassValue[]) => twMerge(clsx(classLists))
 `
 
-export const TAILWIND_CONFIG = `/** @type {import('tailwindcss').Config} */
+export const TAILWIND_CONFIG = `const { addDynamicIconSelectors } = require("@iconify/tailwind")
+
+/** @type {import('tailwindcss').Config} */
 module.exports = {
     darkMode: ["class", '[data-kb-theme="dark"]'],
     content: ["src/routes/**/*.{ts,tsx}", "src/components/**/*.{ts,tsx}"],
+    prefix: "<%- prefix %>",
     theme: {
         container: {
             center: true,
@@ -44,17 +47,20 @@ module.exports = {
             },
         },
     },
-    plugins: [require("tailwindcss-animate")],
+    plugins: [require("tailwindcss-animate"), addDynamicIconSelectors()],
 }
 `
 
-export const TAILWIND_CONFIG_WITH_VARIABLES = `/** @type {import('tailwindcss').Config} */
+export const TAILWIND_CONFIG_WITH_VARIABLES = `const { addDynamicIconSelectors } = require("@iconify/tailwind")
+
+/** @type {import('tailwindcss').Config} */
 module.exports = {
     darkMode: ["class", '[data-kb-theme="dark"]'],
     content: [
         "src/routes/**/*.{ts,tsx}",
 	  	"src/components/**/*.{ts,tsx}",
     ],
+    prefix: "<%- prefix %>",
     theme: {
         container: {
             center: true,
@@ -130,5 +136,5 @@ module.exports = {
             },
         },
     },
-    plugins: [require("tailwindcss-animate")],
+    plugins: [require("tailwindcss-animate"), addDynamicIconSelectors()],
 }`

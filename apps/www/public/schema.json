@@ -20,6 +20,9 @@
 				},
 				"cssVariables": {
 					"type": "boolean"
+				},
+				"prefix": {
+					"type": "string"
 				}
 			},
 			"required": ["config", "css", "baseColor", "cssVariables"]
@@ -31,6 +34,9 @@
 					"type": "string"
 				},
 				"components": {
+					"type": "string"
+				},
+				"ui": {
 					"type": "string"
 				}
 			},

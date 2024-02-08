@@ -1,6 +1,6 @@
 import { siteConfig } from "@/config/site"
+import { Link, Meta, Title } from "@solidjs/meta"
 import { mergeProps, splitProps, type VoidComponent } from "solid-js"
-import { Link, Meta, Title } from "solid-start"
 
 type MetadataProps = {
 	title?: string
@@ -24,13 +24,11 @@ export const Metadata: VoidComponent<MetadataProps> = (props) => {
 			<Title>
 				{local.title ? `${local.title} - shadcn-solid` : local.title}
 			</Title>
-			<Meta charset="utf-8" />
-			<Meta
-				name="viewport"
-				content="width=device-width, initial-scale=1"
-			/>
 			<Meta name="description" content={rest.description} />
-			<Meta name="keywords" content="Solidjs,SolidStart,UnoCSS,Kobalte" />
+			<Meta
+				name="keywords"
+				content="Solidjs,SolidStart,TailwindCSS,KobalteUI"
+			/>
 			<Meta name="author" content="hngngn" />
 			<Meta property="og:title" content={local.title} />
 			<Meta property="og:description" content={rest.description} />

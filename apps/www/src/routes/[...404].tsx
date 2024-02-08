@@ -1,8 +1,9 @@
 import { Button } from "@/registry/default/ui/button"
 import { As } from "@kobalte/core"
-import { A, Title } from "solid-start"
+import { Title } from "@solidjs/meta"
+import { A } from "@solidjs/router"
 
-export default () => {
+const NotFound = () => {
 	return (
 		<>
 			<Title>404 Not Found</Title>
@@ -25,3 +26,5 @@ export default () => {
 		</>
 	)
 }
+
+export default NotFound

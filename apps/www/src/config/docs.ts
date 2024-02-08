@@ -2,7 +2,6 @@ export type TNavItem = {
 	title: string
 	href?: string
 	disabled?: boolean
-	external?: boolean
 	label?: string
 }
 
@@ -22,12 +21,16 @@ type TDocsConfig = {
 export const docsConfig: TDocsConfig = {
 	mainNav: [
 		{
-			title: "Documentation",
-			href: "/docs/",
+			title: "Docs",
+			href: "/docs",
 		},
 		{
 			title: "Components",
 			href: "/docs/components/accordion",
+		},
+		{
+			title: "Examples",
+			href: "/examples/cards",
 		},
 	],
 	sidebarNav: [
@@ -36,12 +39,17 @@ export const docsConfig: TDocsConfig = {
 			items: [
 				{
 					title: "Introduction",
-					href: "/docs/introduction",
+					href: "/docs",
 					items: [],
 				},
 				{
 					title: "Installation",
 					href: "/docs/installation",
+					items: [],
+				},
+				{
+					title: "components.json",
+					href: "/docs/components-json",
 					items: [],
 				},
 				{

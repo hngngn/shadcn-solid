@@ -2,16 +2,13 @@ import type { TNavItem, TNavItemWithChildren } from "@/config/docs"
 import { docsConfig } from "@/config/docs"
 import { Button } from "@/registry/default/ui/button"
 import { As } from "@kobalte/core"
-import { TbChevronLeft, TbChevronRight } from "solid-icons/tb"
-import type { Component } from "solid-js"
+import { A } from "@solidjs/router"
+import type { VoidComponent } from "solid-js"
 import { Show } from "solid-js"
-import { A } from "solid-start"
 
-interface DocsPagerProps {
+export const Pager: VoidComponent<{
 	slug: string
-}
-
-export const DocsPager: Component<DocsPagerProps> = (props) => {
+}> = (props) => {
 	const getPagerForDoc = (slug: string) => {
 		const flattenedLinks = [null, ...flatten(docsConfig.sidebarNav), null]
 		let activeIndex: number
@@ -51,7 +48,7 @@ export const DocsPager: Component<DocsPagerProps> = (props) => {
 			<Show when={pager()?.prev?.href}>
 				<Button asChild variant="outline">
 					<As component={A} href={pager().prev?.href!}>
-						<TbChevronLeft class="h-4 w-4 mr-2" />
+						<span class="icon-[tabler--chevron-left] h-4 w-4 mr-2" />
 						{pager().prev?.title}
 					</As>
 				</Button>
@@ -60,7 +57,7 @@ export const DocsPager: Component<DocsPagerProps> = (props) => {
 				<Button asChild variant="outline" class="ml-auto">
 					<As component={A} href={pager().next?.href!}>
 						{pager().next?.title}
-						<TbChevronRight class="h-4 w-4 ml-2" />
+						<span class="icon-[tabler--chevron-right] h-4 w-4 ml-2" />
 					</As>
 				</Button>
 			</Show>

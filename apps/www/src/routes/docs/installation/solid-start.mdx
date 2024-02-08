@@ -1,0 +1,88 @@
+---
+title: SolidStart
+description: Install and configure SolidStart.
+---
+
+## CLI
+
+<Steps>
+
+### Create project
+
+Start by creating a new SolidStart project using [`create-solid`](https://github.com/solidjs/solid-start?tab=readme-ov-file#getting-started) and select tailwind:
+
+```bash
+pnpm create solid@latest
+```
+
+### Path Aliases
+
+I'm use the `@` alias to make it easier to import your components. This is how you can configure it:
+
+```json title="tsconfig.json"{3-6}
+{
+	"compilerOptions": {
+		"baseUrl": "./",
+		"paths": {
+			"@/*": ["./src/*"]
+		}
+	}
+}
+```
+
+```ts title="vite.config.ts"{5-9}
+import { defineConfig } from "@solidjs/start/config"
+import { resolve } from "node:path"
+
+export default defineConfig({
+	resolve: {
+		alias: {
+			"@": resolve(__dirname, "./src"),
+		},
+	},
+})
+```
+
+### Run the CLI
+
+Run the `shadcn-solid` init command to setup your project:
+
+```bash
+npx shadcn-solid@latest init
+```
+
+### Configure components.json
+
+You will be asked a few questions to configure `components.json`:
+
+```txt
+◇  Which style would you like to use?
+│  Default
+│
+◇  Which color would you like to use as base color?
+│  Slate
+│
+◇  Where is your global CSS file?
+│  src/app.css
+│
+◇  Would you like to use CSS variables for colors?
+│  Yes
+│
+◇  Are you using a custom tailwind prefix eg. tw-? (Leave blank if not)
+│
+│
+◇  Where is your tailwind.config.cjs located?
+│  tailwind.config.cjs
+│
+◇  Configure the import alias for components:
+│  @/components
+│
+◇  Configure the import alias for utils:
+│  @/lib/utils
+```
+
+### That's it
+
+You can now start adding components to your project.
+
+</Steps>
