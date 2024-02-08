@@ -47,5 +47,6 @@
 		"unist-builder": "^4.0.0",
 		"unist-util-visit": "^5.0.0",
 		"yaml": "^2.3.4"
-	}
+	},
+	"private": true
 }
