@@ -1,0 +1,4 @@
+{
+	"*.{ts,tsx}": ["pnpm format", "pnpm lint --fix"],
+	"*.json": ["pnpm format"]
+}

@@ -5,7 +5,9 @@
 		"dev": "vinxi dev",
 		"build": "vinxi build",
 		"start": "vinxi start",
-		"build:registry": "tsx build-registry.ts"
+		"build:registry": "tsx build-registry.ts",
+		"format": "prettier -w \"./src/**/*.{ts,tsx}\"",
+		"lint": "eslint src --ext ts,tsx --report-unused-disable-directives"
 	},
 	"dependencies": {
 		"@fontsource-variable/inter": "^5.0.16",
@@ -50,5 +52,14 @@
 		"unist-util-visit": "^5.0.0",
 		"yaml": "^2.3.4"
 	},
-	"private": true
+	"private": true,
+	"lint-staged": {
+		"*.{ts,tsx}": [
+			"pnpm format",
+			"pnpm lint --fix"
+		],
+		"*.json": [
+			"pnpm format"
+		]
+	}
 }

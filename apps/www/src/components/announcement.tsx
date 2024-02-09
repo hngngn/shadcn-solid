@@ -7,7 +7,11 @@ export const Announcement = () => {
 			href="/docs/changelog"
 			class="inline-flex items-center rounded-lg bg-muted px-3 py-1 text-sm font-medium"
 		>
-			🎉 <Separator class="mx-2 h-4" orientation="vertical" />{" "}
+			🎉{" "}
+			<Separator
+				class="mx-2 data-[orientation=vertical]:h-4"
+				orientation="vertical"
+			/>{" "}
 			<span class="sm:hidden">New components and more.</span>
 			<span class="hidden sm:inline">
 				New components, cli updates and more.

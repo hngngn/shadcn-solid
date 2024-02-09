@@ -1,13 +1,11 @@
 {
-  "name": "separator",
-  "dependencies": [
-    "@kobalte/core"
-  ],
-  "files": [
-    {
-      "name": "separator.tsx",
-      "content": "import { cn } from \"@/lib/cn\"\r\nimport { Separator as SeparatorPrimitive } from \"@kobalte/core\"\r\nimport type { VoidComponent } from \"solid-js\"\r\nimport { splitProps } from \"solid-js\"\r\n\r\nexport const Separator: VoidComponent<SeparatorPrimitive.SeparatorRootProps> = (\r\n\tprops\r\n) => {\r\n\tconst [local, rest] = splitProps(props, [\"class\"])\r\n\treturn (\r\n\t\t<SeparatorPrimitive.Root\r\n\t\t\tclass={cn(\r\n\t\t\t\t\"shrink-0 bg-border data-[orientation=horizontal]:h-[1px] data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-[1px]\",\r\n\t\t\t\tlocal.class\r\n\t\t\t)}\r\n\t\t\t{...rest}\r\n\t\t/>\r\n\t)\r\n}\r\n"
-    }
-  ],
-  "type": "components:ui"
+	"name": "separator",
+	"dependencies": ["@kobalte/core"],
+	"files": [
+		{
+			"name": "separator.tsx",
+			"content": "import { cn } from \"@/lib/cn\"\nimport { Separator as SeparatorPrimitive } from \"@kobalte/core\"\nimport type { VoidComponent } from \"solid-js\"\nimport { splitProps } from \"solid-js\"\n\nexport const Separator: VoidComponent<SeparatorPrimitive.SeparatorRootProps> = (\n\tprops\n) => {\n\tconst [local, rest] = splitProps(props, [\"class\"])\n\treturn (\n\t\t<SeparatorPrimitive.Root\n\t\t\tclass={cn(\n\t\t\t\t\"shrink-0 bg-border data-[orientation=horizontal]:h-[1px] data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-[1px]\",\n\t\t\t\tlocal.class\n\t\t\t)}\n\t\t\t{...rest}\n\t\t/>\n\t)\n}\n"
+		}
+	],
+	"type": "components:ui"
 }

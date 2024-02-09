@@ -1,13 +1,11 @@
 {
-  "name": "accordion",
-  "dependencies": [
-    "@kobalte/core"
-  ],
-  "files": [
-    {
-      "name": "accordion.tsx",
-      "content": "import { cn } from \"@/lib/cn\"\r\nimport { Accordion as AccordionPrimitive } from \"@kobalte/core\"\r\nimport type { Component, ParentComponent } from \"solid-js\"\r\nimport { splitProps } from \"solid-js\"\r\n\r\nexport const Accordion = AccordionPrimitive.Root\r\n\r\nexport const AccordionItem: Component<AccordionPrimitive.AccordionItemProps> = (\r\n\tprops\r\n) => {\r\n\tconst [local, rest] = splitProps(props, [\"class\"])\r\n\treturn (\r\n\t\t<AccordionPrimitive.Item\r\n\t\t\tclass={cn(\"border-b\", local.class)}\r\n\t\t\t{...rest}\r\n\t\t/>\r\n\t)\r\n}\r\n\r\nexport const AccordionTrigger: ParentComponent<\r\n\tAccordionPrimitive.AccordionTriggerProps\r\n> = (props) => {\r\n\tconst [local, rest] = splitProps(props, [\"class\", \"children\"])\r\n\treturn (\r\n\t\t<AccordionPrimitive.Header class=\"flex\" as=\"div\">\r\n\t\t\t<AccordionPrimitive.Trigger\r\n\t\t\t\tclass={cn(\r\n\t\t\t\t\t\"flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-expanded]>svg]:rotate-180 text-sm\",\r\n\t\t\t\t\tlocal.class\r\n\t\t\t\t)}\r\n\t\t\t\t{...rest}\r\n\t\t\t>\r\n\t\t\t\t{local.children}\r\n\t\t\t\t<span class=\"icon-[tabler--chevron-down] h-4 w-4 text-muted-foreground transition-transform duration-200\" />\r\n\t\t\t</AccordionPrimitive.Trigger>\r\n\t\t</AccordionPrimitive.Header>\r\n\t)\r\n}\r\n\r\nexport const AccordionContent: ParentComponent<\r\n\tAccordionPrimitive.AccordionContentProps\r\n> = (props) => {\r\n\tconst [local, rest] = splitProps(props, [\"class\", \"children\"])\r\n\treturn (\r\n\t\t<AccordionPrimitive.Content\r\n\t\t\tclass={cn(\r\n\t\t\t\t\"overflow-hidden text-sm animate-accordion-up data-[expanded]:animate-accordion-down\",\r\n\t\t\t\tlocal.class\r\n\t\t\t)}\r\n\t\t\t{...rest}\r\n\t\t>\r\n\t\t\t<div class=\"pb-4 pt-0\">{local.children}</div>\r\n\t\t</AccordionPrimitive.Content>\r\n\t)\r\n}\r\n"
-    }
-  ],
-  "type": "components:ui"
+	"name": "accordion",
+	"dependencies": ["@kobalte/core"],
+	"files": [
+		{
+			"name": "accordion.tsx",
+			"content": "import { cn } from \"@/lib/cn\"\nimport { Accordion as AccordionPrimitive } from \"@kobalte/core\"\nimport type { Component, ParentComponent } from \"solid-js\"\nimport { splitProps } from \"solid-js\"\n\nexport const Accordion = AccordionPrimitive.Root\n\nexport const AccordionItem: Component<AccordionPrimitive.AccordionItemProps> = (\n\tprops\n) => {\n\tconst [local, rest] = splitProps(props, [\"class\"])\n\treturn (\n\t\t<AccordionPrimitive.Item\n\t\t\tclass={cn(\"border-b\", local.class)}\n\t\t\t{...rest}\n\t\t/>\n\t)\n}\n\nexport const AccordionTrigger: ParentComponent<\n\tAccordionPrimitive.AccordionTriggerProps\n> = (props) => {\n\tconst [local, rest] = splitProps(props, [\"class\", \"children\"])\n\treturn (\n\t\t<AccordionPrimitive.Header class=\"flex\" as=\"div\">\n\t\t\t<AccordionPrimitive.Trigger\n\t\t\t\tclass={cn(\n\t\t\t\t\t\"flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-expanded]>svg]:rotate-180 text-sm\",\n\t\t\t\t\tlocal.class\n\t\t\t\t)}\n\t\t\t\t{...rest}\n\t\t\t>\n\t\t\t\t{local.children}\n\t\t\t\t<span class=\"icon-[tabler--chevron-down] h-4 w-4 text-muted-foreground transition-transform duration-200\" />\n\t\t\t</AccordionPrimitive.Trigger>\n\t\t</AccordionPrimitive.Header>\n\t)\n}\n\nexport const AccordionContent: ParentComponent<\n\tAccordionPrimitive.AccordionContentProps\n> = (props) => {\n\tconst [local, rest] = splitProps(props, [\"class\", \"children\"])\n\treturn (\n\t\t<AccordionPrimitive.Content\n\t\t\tclass={cn(\n\t\t\t\t\"overflow-hidden text-sm animate-accordion-up data-[expanded]:animate-accordion-down\",\n\t\t\t\tlocal.class\n\t\t\t)}\n\t\t\t{...rest}\n\t\t>\n\t\t\t<div class=\"pb-4 pt-0\">{local.children}</div>\n\t\t</AccordionPrimitive.Content>\n\t)\n}\n"
+		}
+	],
+	"type": "components:ui"
 }
