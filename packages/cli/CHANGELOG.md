@@ -1,5 +1,11 @@
 # shadcn-solid
 
+## 0.5.1
+
+### Patch Changes
+
+-   [`9059bc6`](https://github.com/hngngn/shadcn-solid/commit/9059bc600d0327ed9a3a4dba64fd91e6d0277d9a) Thanks [@hngngn](https://github.com/hngngn)! - Define default style
+
 ## 0.5.0
 
 ### Minor Changes
