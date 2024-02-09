@@ -1,3 +1,4 @@
+import { Announcement } from "@/components/announcement"
 import { Example } from "@/components/example"
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/registry/default/ui/button"
@@ -9,6 +10,7 @@ const Home = () => {
 	return (
 		<div class="container relative">
 			<section class="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">
+				<Announcement />
 				<h1 class="text-center text-3xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1]">
 					Build your component library
 				</h1>
