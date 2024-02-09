@@ -17,6 +17,8 @@
 		"@vinxi/plugin-mdx": "^3.6.7",
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.0",
+		"embla-carousel-autoplay": "8.0.0-rc22",
+		"embla-carousel-solid": "8.0.0-rc22",
 		"solid-js": "^1.8.14",
 		"solid-mdx": "^0.0.7",
 		"solid-wrap-balancer": "^0.0.5",

@@ -1,0 +1,61 @@
+---
+title: Changelog
+description: Latest updates and announcements.
+toc: false
+---
+
+## February 2024 - New components, CLI and more
+
+We've added new components to shadcn-solid and made a improvements to the CLI.
+
+Here's a quick overview of what's new:
+
+-   [**Carousel**](#carousel) - A carousel component with motion, swipe gestures and keyboard support.
+-   [**Pagination**](#pagination) - A pagination component allows the user to select a specific page from a range of pages.
+-   [**CLI updates**](#cli-updates) - Support for custom **Tailwind prefix**, remove `style` and add support for **custom ui dir**.
+
+### Carousel
+
+We've added a fully featured carousel component with motion, swipe gestures and keyboard support. Built on top of [Embla Carousel](https://www.embla-carousel.com).
+
+It has support for infinite looping, autoplay, vertical orientation, and more.
+
+<ComponentPreview name="carousel-demo" />
+
+### Pagination
+
+We've added a pagination component with page navigation, previous and next buttons. Simple and flexible.
+
+<ComponentPreview name="pagination-demo" />
+
+### CLI updates
+
+-   Remove `style` property
+
+    In this update, the `style` property has been removed, but there's a possibility of its return if additional styling features are introduced in future updates.
+
+-   Support **custom ui dir**
+
+    You can use this config to customize the installation directory for your `ui` components.
+
+    ```json title="components.json"
+    {
+    	"aliases": {
+    		"ui": "@/ui"
+    	}
+    }
+    ```
+
+-   Support custom **Tailwind prefix**
+
+    You can now configure a custom Tailwind prefix and the cli will automatically prefix your utility classes when adding components.
+
+    A drop-in for your existing design system with no conflict. 🔥
+
+    ```tsx /tw-/
+    <AlertDialog className="tw-grid tw-gap-4 tw-border tw-bg-background tw-shadow-lg" />
+    ```
+
+    It works with `cn`, `cva` and CSS variables.
+
+That's it. Happy Lunar New Year.

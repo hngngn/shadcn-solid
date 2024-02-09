@@ -57,6 +57,16 @@
     "type": "components:ui"
   },
   {
+    "name": "carousel",
+    "dependencies": [
+      "embla-carousel-solid"
+    ],
+    "files": [
+      "ui/carousel.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "checkbox",
     "dependencies": [
       "@kobalte/core"
@@ -143,6 +153,16 @@
     ],
     "files": [
       "ui/popover.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "pagination",
+    "dependencies": [
+      "@kobalte/core"
+    ],
+    "files": [
+      "ui/pagination.tsx"
     ],
     "type": "components:ui"
   },

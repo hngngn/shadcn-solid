@@ -2,8 +2,8 @@
 title: Hover Card
 description: For sighted users to preview content available behind a link.
 component: true
-kobalte:
-    link: https://kobalte.dev/docs/core/components/hover-card
+link:
+    doc: https://kobalte.dev/docs/core/components/hover-card
     api: https://kobalte.dev/docs/core/components/hover-card#api-reference
 ---
 
@@ -14,9 +14,9 @@ kobalte:
 <Tabs defaultValue="cli">
 
 <TabsList>
-    <TabsTrigger value="cli">CLI</TabsTrigger>
-    <TabsTrigger value="manual">Manual</TabsTrigger>
-    <TabsIndicator class="bg-primary" />
+	<TabsTrigger value="cli">CLI</TabsTrigger>
+	<TabsTrigger value="manual">Manual</TabsTrigger>
+	<TabsIndicator class="bg-primary" />
 </TabsList>
 
 <TabsContent value="cli">
@@ -53,17 +53,17 @@ npm install @kobalte/core
 
 ```tsx
 import {
-    HoverCard,
-    HoverCardContent,
-    HoverCardTrigger,
+	HoverCard,
+	HoverCardContent,
+	HoverCardTrigger,
 } from "@/components/ui/hover-card"
 ```
 
 ```tsx
 <HoverCard>
-    <HoverCardTrigger>Hover</HoverCardTrigger>
-    <HoverCardContent>
-        SolidJS - Simple and performant reactivity for building user interfaces.
-    </HoverCardContent>
+	<HoverCardTrigger>Hover</HoverCardTrigger>
+	<HoverCardContent>
+		SolidJS - Simple and performant reactivity for building user interfaces.
+	</HoverCardContent>
 </HoverCard>
 ```

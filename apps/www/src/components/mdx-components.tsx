@@ -49,7 +49,7 @@ export const MDXComponent = {
 	h4: (props: ComponentProps<"h4">) => {
 		return (
 			<h4
-				class="font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight"
+				class="font-heading mt-8 scroll-m-20 text-lg font-semibold tracking-tight"
 				{...props}
 			/>
 		)
@@ -57,7 +57,7 @@ export const MDXComponent = {
 	h5: (props: ComponentProps<"h5">) => {
 		return (
 			<h5
-				class="font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight"
+				class="font-heading mt-8 scroll-m-20 text-base font-semibold tracking-tight"
 				{...props}
 			/>
 		)
@@ -65,7 +65,7 @@ export const MDXComponent = {
 	h6: (props: ComponentProps<"h6">) => {
 		return (
 			<h6
-				class="font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight"
+				class="font-heading mt-8 scroll-m-20 text-sm font-semibold tracking-tight"
 				{...props}
 			/>
 		)

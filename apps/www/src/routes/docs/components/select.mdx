@@ -2,8 +2,8 @@
 title: Select
 description: Displays a list of options for the user to pick from—triggered by a button.
 component: true
-kobalte:
-    link: https://kobalte.dev/docs/core/components/select
+link:
+    doc: https://kobalte.dev/docs/core/components/select
     api: https://kobalte.dev/docs/core/components/select#api-reference
 ---
 
@@ -14,9 +14,9 @@ kobalte:
 <Tabs defaultValue="cli">
 
 <TabsList>
-    <TabsTrigger value="cli">CLI</TabsTrigger>
-    <TabsTrigger value="manual">Manual</TabsTrigger>
-    <TabsIndicator class="bg-primary" />
+	<TabsTrigger value="cli">CLI</TabsTrigger>
+	<TabsTrigger value="manual">Manual</TabsTrigger>
+	<TabsIndicator class="bg-primary" />
 </TabsList>
 
 <TabsContent value="cli">
@@ -53,24 +53,24 @@ npm install @kobalte/core
 
 ```tsx
 import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
 } from "@/components/ui/select"
 ```
 
 ```tsx
 <Select
-    options={["Apple", "Banana", "Blueberry", "Grapes", "Pineapple"]}
-    itemComponent={(props) => (
-        <SelectItem item={props.item}>{props.item.rawValue}</SelectItem>
-    )}
+	options={["Apple", "Banana", "Blueberry", "Grapes", "Pineapple"]}
+	itemComponent={(props) => (
+		<SelectItem item={props.item}>{props.item.rawValue}</SelectItem>
+	)}
 >
-    <SelectTrigger>
-        <SelectValue<string>>{(state) => state.selectedOption()}</SelectValue>
-    </SelectTrigger>
-    <SelectContent />
+	<SelectTrigger>
+		<SelectValue<string>>{(state) => state.selectedOption()}</SelectValue>
+	</SelectTrigger>
+	<SelectContent />
 </Select>
 ```

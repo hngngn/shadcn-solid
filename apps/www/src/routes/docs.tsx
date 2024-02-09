@@ -11,16 +11,15 @@ import { Balancer } from "solid-wrap-balancer"
 
 type Heading = { depth: number; text: string; slug: string }
 
-type Kolbate = {
-	link: string
-	api: string
-}
-
 type Frontmatter = {
 	title: string
 	description: string
 	component?: boolean
-	kobalte?: Kolbate
+	link?: {
+		doc: string
+		api: string
+	}
+	toc: boolean
 }
 
 const contents = /*#__PURE__*/ import.meta.glob<
@@ -102,18 +101,17 @@ const Documents = (props: RouteSectionProps) => {
 									</p>
 								</Show>
 							</div>
-							<Show when={markdownData().frontmatter.kobalte}>
+							<Show when={markdownData().frontmatter.link}>
 								<div class="flex items-center space-x-2 pt-4">
 									<Show
 										when={
-											markdownData().frontmatter.kobalte
-												?.link
+											markdownData().frontmatter.link?.doc
 										}
 									>
 										<A
 											href={
-												markdownData().frontmatter
-													.kobalte?.link!
+												markdownData().frontmatter.link
+													?.doc!
 											}
 											target="_blank"
 											rel="noreferrer"
@@ -127,14 +125,13 @@ const Documents = (props: RouteSectionProps) => {
 									</Show>
 									<Show
 										when={
-											markdownData().frontmatter.kobalte
-												?.api
+											markdownData().frontmatter.link?.api
 										}
 									>
 										<A
 											href={
-												markdownData().frontmatter
-													.kobalte?.api!
+												markdownData().frontmatter.link
+													?.api!
 											}
 											target="_blank"
 											rel="noreferrer"
@@ -155,13 +152,17 @@ const Documents = (props: RouteSectionProps) => {
 							</div>
 							<Pager slug={location.pathname} />
 						</div>
-						<div class="hidden text-sm xl:block">
-							<div class="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] overflow-hidden pt-6">
-								<TableOfContents
-									data={markdownData().headings}
-								/>
+						<Show
+							when={markdownData().frontmatter.toc === undefined}
+						>
+							<div class="hidden text-sm xl:block">
+								<div class="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] overflow-hidden pt-6">
+									<TableOfContents
+										data={markdownData().headings}
+									/>
+								</div>
 							</div>
-						</div>
+						</Show>
 					</main>
 				</div>
 			</div>

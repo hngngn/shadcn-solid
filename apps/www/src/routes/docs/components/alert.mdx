@@ -2,8 +2,8 @@
 title: Alert
 description: Displays a callout for user attention.
 component: true
-kobalte:
-    link: https://kobalte.dev/docs/core/components/alert
+link:
+    doc: https://kobalte.dev/docs/core/components/alert
     api: https://kobalte.dev/docs/core/components/alert#api-reference
 ---
 
@@ -14,9 +14,9 @@ kobalte:
 <Tabs defaultValue="cli">
 
 <TabsList>
-    <TabsTrigger value="cli">CLI</TabsTrigger>
-    <TabsTrigger value="manual">Manual</TabsTrigger>
-    <TabsIndicator class="bg-primary" />
+	<TabsTrigger value="cli">CLI</TabsTrigger>
+	<TabsTrigger value="manual">Manual</TabsTrigger>
+	<TabsIndicator class="bg-primary" />
 </TabsList>
 
 <TabsContent value="cli">
@@ -57,12 +57,12 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 
 ```tsx
 <Alert>
-    <TbTerminal className="h-4 w-4" />
-    <AlertTitle>Heads up!</AlertTitle>
-    <AlertDescription>
-        You can not add components and dependencies to your app using the cli,
-        yet.
-    </AlertDescription>
+	<TbTerminal className="h-4 w-4" />
+	<AlertTitle>Heads up!</AlertTitle>
+	<AlertDescription>
+		You can not add components and dependencies to your app using the cli,
+		yet.
+	</AlertDescription>
 </Alert>
 ```
 

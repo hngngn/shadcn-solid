@@ -2,8 +2,8 @@
 title: Combobox
 description: Combines a text input with a listbox, allowing users to filter a list of options to items matching a query.
 component: true
-kobalte:
-    link: https://kobalte.dev/docs/core/components/combobox
+link:
+    doc: https://kobalte.dev/docs/core/components/combobox
     api: https://kobalte.dev/docs/core/components/combobox#api-reference
 ---
 
@@ -14,9 +14,9 @@ kobalte:
 <Tabs defaultValue="cli">
 
 <TabsList>
-    <TabsTrigger value="cli">CLI</TabsTrigger>
-    <TabsTrigger value="manual">Manual</TabsTrigger>
-    <TabsIndicator class="bg-primary" />
+	<TabsTrigger value="cli">CLI</TabsTrigger>
+	<TabsTrigger value="manual">Manual</TabsTrigger>
+	<TabsIndicator class="bg-primary" />
 </TabsList>
 
 <TabsContent value="cli">
@@ -53,11 +53,11 @@ npm install @kobalte/core
 
 ```tsx
 import {
-    Combobox,
-    ComboboxControl,
-    ComboboxItem,
-    ComboboxTrigger,
-    ComboboxContent,
+	Combobox,
+	ComboboxControl,
+	ComboboxItem,
+	ComboboxTrigger,
+	ComboboxContent,
 } from "@/components/ui/combobox"
 import { createFilter } from "@kobalte/core"
 import { createSignal } from "solid-js"
@@ -69,21 +69,21 @@ const ALL_OPTIONS = ["Apple", "Banana", "Blueberry", "Grapes", "Pineapple"]
 const filter = createFilter({ sensitivity: "base" })
 const [options, setOptions] = createSignal(ALL_OPTIONS)
 const onInputChange = (value: string) => {
-    setOptions(ALL_OPTIONS.filter((option) => filter.contains(option, value)))
+	setOptions(ALL_OPTIONS.filter((option) => filter.contains(option, value)))
 }
 ```
 
 ```tsx
 <Combobox
-    options={options()}
-    onInputChange={onInputChange}
-    itemComponent={(props) => (
-        <ComboboxItem item={props.item}>{props.item.rawValue}</ComboboxItem>
-    )}
+	options={options()}
+	onInputChange={onInputChange}
+	itemComponent={(props) => (
+		<ComboboxItem item={props.item}>{props.item.rawValue}</ComboboxItem>
+	)}
 >
-    <ComboboxTrigger>
-        <ComboboxInput />
-    </ComboboxTrigger>
-    <ComboboxContent />
+	<ComboboxTrigger>
+		<ComboboxInput />
+	</ComboboxTrigger>
+	<ComboboxContent />
 </Combobox>
 ```

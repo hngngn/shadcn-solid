@@ -2,8 +2,8 @@
 title: Popover
 description: Displays rich content in a portal, triggered by a button.
 component: true
-kobalte:
-    link: https://kobalte.dev/docs/core/components/popover
+link:
+    doc: https://kobalte.dev/docs/core/components/popover
     api: https://kobalte.dev/docs/core/components/popover#api-reference
 ---
 
@@ -14,9 +14,9 @@ kobalte:
 <Tabs defaultValue="cli">
 
 <TabsList>
-    <TabsTrigger value="cli">CLI</TabsTrigger>
-    <TabsTrigger value="manual">Manual</TabsTrigger>
-    <TabsIndicator class="bg-primary" />
+	<TabsTrigger value="cli">CLI</TabsTrigger>
+	<TabsTrigger value="manual">Manual</TabsTrigger>
+	<TabsIndicator class="bg-primary" />
 </TabsList>
 
 <TabsContent value="cli">
@@ -53,15 +53,15 @@ npm install @kobalte/core
 
 ```tsx
 import {
-    Popover,
-    PopoverContent,
-    PopoverTrigger,
+	Popover,
+	PopoverContent,
+	PopoverTrigger,
 } from "@/components/ui/popover"
 ```
 
 ```tsx
 <Popover>
-    <PopoverTrigger>Open</PopoverTrigger>
-    <PopoverContent>Place content for the popover here.</PopoverContent>
+	<PopoverTrigger>Open</PopoverTrigger>
+	<PopoverContent>Place content for the popover here.</PopoverContent>
 </Popover>
 ```

@@ -6,7 +6,8 @@
 	"rules": {
 		"@typescript-eslint/consistent-type-imports": "error",
 		"no-undef": "off",
-		"no-redeclare": "off"
+		"no-redeclare": "off",
+		"no-unused-vars": "off"
 	},
 	"parser": "@typescript-eslint/parser"
 }

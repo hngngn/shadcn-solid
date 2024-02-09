@@ -35,6 +35,12 @@ const ui = [
 		files: ["ui/card.tsx"],
 	},
 	{
+		name: "carousel",
+		type: "components:ui",
+		dependencies: ["embla-carousel-solid"],
+		files: ["ui/carousel.tsx"],
+	},
+	{
 		name: "checkbox",
 		type: "components:ui",
 		dependencies: ["@kobalte/core"],
@@ -87,6 +93,12 @@ const ui = [
 		type: "components:ui",
 		dependencies: ["@kobalte/core"],
 		files: ["ui/popover.tsx"],
+	},
+	{
+		name: "pagination",
+		type: "components:ui",
+		dependencies: ["@kobalte/core"],
+		files: ["ui/pagination.tsx"],
 	},
 	{
 		name: "progress",
@@ -283,6 +295,42 @@ const example = [
 		files: ["example/card-demo.tsx"],
 	},
 	{
+		name: "carousel-demo",
+		type: "components:example",
+		registryDependencies: ["carousel", "card"],
+		files: ["example/carousel-demo.tsx"],
+	},
+	{
+		name: "carousel-size",
+		type: "components:example",
+		registryDependencies: ["carousel", "card"],
+		files: ["example/carousel-size.tsx"],
+	},
+	{
+		name: "carousel-api-demo",
+		type: "components:example",
+		registryDependencies: ["carousel", "card"],
+		files: ["example/carousel-api-demo.tsx"],
+	},
+	{
+		name: "carousel-orientation",
+		type: "components:example",
+		registryDependencies: ["carousel", "card"],
+		files: ["example/carousel-orientation.tsx"],
+	},
+	{
+		name: "carousel-plugin",
+		type: "components:example",
+		registryDependencies: ["carousel", "card"],
+		files: ["example/carousel-plugin.tsx"],
+	},
+	{
+		name: "carousel-spacing",
+		type: "components:example",
+		registryDependencies: ["carousel", "card"],
+		files: ["example/carousel-spacing.tsx"],
+	},
+	{
 		name: "checkbox-demo",
 		type: "components:example",
 		registryDependencies: ["checkbox"],
@@ -364,6 +412,12 @@ const example = [
 		type: "components:example",
 		registryDependencies: ["popover"],
 		files: ["example/popover-demo.tsx"],
+	},
+	{
+		name: "pagination-demo",
+		type: "components:example",
+		registryDependencies: ["pagination"],
+		files: ["example/pagination-demo.tsx"],
 	},
 	{
 		name: "progress-demo",

@@ -77,6 +77,11 @@ export const docsConfig: TDocsConfig = {
 					href: "/docs/figma",
 					items: [],
 				},
+				{
+					title: "Changelog",
+					href: "/docs/changelog",
+					items: [],
+				},
 			],
 		},
 		{
@@ -111,6 +116,12 @@ export const docsConfig: TDocsConfig = {
 					title: "Card",
 					href: "/docs/components/card",
 					items: [],
+				},
+				{
+					title: "Carousel",
+					href: "/docs/components/carousel",
+					items: [],
+					label: "New",
 				},
 				{
 					title: "Checkbox",
@@ -151,6 +162,12 @@ export const docsConfig: TDocsConfig = {
 					title: "Image",
 					href: "/docs/components/image",
 					items: [],
+				},
+				{
+					title: "Pagination",
+					href: "/docs/components/pagination",
+					items: [],
+					label: "New",
 				},
 				{
 					title: "Popover",
