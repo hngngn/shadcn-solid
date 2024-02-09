@@ -20,7 +20,7 @@
 	"bin": "./dist/index.js",
 	"scripts": {
 		"dev": "tsup --watch",
-		"build": "tsup",
+		"build": "tsup --minify",
 		"start": "node dist/index.js"
 	},
 	"devDependencies": {

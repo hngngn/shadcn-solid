@@ -94,7 +94,9 @@ export const add = new Command()
 			}
 
 			const tree = await resolveTree(registryIndex, selectedComponents)
-			const payload = await fetchTree(config.style, tree)
+
+			// If new styling is added, the config.style property will be reinstated.
+			const payload = await fetchTree("default", tree)
 			const baseColor = await getRegistryBaseColor(
 				config.tailwind.baseColor
 			)
