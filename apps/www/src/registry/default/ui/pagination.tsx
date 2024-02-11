@@ -1,7 +1,7 @@
 import { cn } from "@/lib/cn"
 import { Pagination as PaginationPrimitive } from "@kobalte/core"
 import type { VariantProps } from "class-variance-authority"
-import type { VoidComponent } from "solid-js"
+import type { ParentProps, VoidComponent } from "solid-js"
 import { mergeProps, splitProps, type ParentComponent } from "solid-js"
 import { buttonVariants } from "./button"
 
@@ -27,13 +27,12 @@ export const PaginationItem: ParentComponent<
 	PaginationPrimitive.PaginationItemProps &
 		Pick<VariantProps<typeof buttonVariants>, "size">
 > = (props) => {
-	const merge = mergeProps(
-		{ size: "icon" } satisfies Pick<
-			VariantProps<typeof buttonVariants>,
-			"size"
-		>,
-		props
-	)
+	const merge = mergeProps<
+		ParentProps<
+			Pick<VariantProps<typeof buttonVariants>, "size"> &
+				PaginationPrimitive.PaginationItemProps
+		>[]
+	>({ size: "icon" }, props)
 	const [local, rest] = splitProps(merge, ["class", "size"])
 
 	return (
@@ -61,7 +60,20 @@ export const PaginationEllipsis: VoidComponent<
 			class={cn("flex h-9 w-9 items-center justify-center", local.class)}
 			{...rest}
 		>
-			<span class="icon-[tabler--dots] h-4 w-4" />
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				class="w-4 h-4"
+			>
+				<path
+					fill="none"
+					stroke="currentColor"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M4 12a1 1 0 1 0 2 0a1 1 0 1 0-2 0m7 0a1 1 0 1 0 2 0a1 1 0 1 0-2 0m7 0a1 1 0 1 0 2 0a1 1 0 1 0-2 0"
+				/>
+			</svg>
 			<span class="sr-only">More pages</span>
 		</PaginationPrimitive.Ellipsis>
 	)
@@ -71,13 +83,12 @@ export const PaginationPrevious: VoidComponent<
 	PaginationPrimitive.PaginationPreviousProps &
 		Pick<VariantProps<typeof buttonVariants>, "size">
 > = (props) => {
-	const merge = mergeProps(
-		{ size: "icon" } satisfies Pick<
-			VariantProps<typeof buttonVariants>,
-			"size"
-		>,
-		props
-	)
+	const merge = mergeProps<
+		ParentProps<
+			Pick<VariantProps<typeof buttonVariants>, "size"> &
+				PaginationPrimitive.PaginationItemProps
+		>[]
+	>({ size: "icon" }, props)
 	const [local, rest] = splitProps(merge, ["class", "size"])
 
 	return (
@@ -92,7 +103,20 @@ export const PaginationPrevious: VoidComponent<
 			)}
 			{...rest}
 		>
-			<span class="icon-[tabler--chevron-left] h-4 w-4" />
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				class="w-4 h-4"
+			>
+				<path
+					fill="none"
+					stroke="currentColor"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="m15 6l-6 6l6 6"
+				/>
+			</svg>
 		</PaginationPrimitive.Previous>
 	)
 }
@@ -101,13 +125,12 @@ export const PaginationNext: VoidComponent<
 	PaginationPrimitive.PaginationNextProps &
 		Pick<VariantProps<typeof buttonVariants>, "size">
 > = (props) => {
-	const merge = mergeProps(
-		{ size: "icon" } satisfies Pick<
-			VariantProps<typeof buttonVariants>,
-			"size"
-		>,
-		props
-	)
+	const merge = mergeProps<
+		ParentProps<
+			Pick<VariantProps<typeof buttonVariants>, "size"> &
+				PaginationPrimitive.PaginationItemProps
+		>[]
+	>({ size: "icon" }, props)
 	const [local, rest] = splitProps(merge, ["class", "size"])
 
 	return (
@@ -122,7 +145,20 @@ export const PaginationNext: VoidComponent<
 			)}
 			{...rest}
 		>
-			<span class="icon-[tabler--chevron-right] h-4 w-4" />
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				class="w-4 h-4"
+				viewBox="0 0 24 24"
+			>
+				<path
+					fill="none"
+					stroke="currentColor"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="m9 6l6 6l-6 6"
+				/>
+			</svg>
 		</PaginationPrimitive.Next>
 	)
 }

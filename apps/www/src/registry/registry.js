@@ -59,6 +59,12 @@ const ui = [
 		files: ["ui/combobox.tsx"],
 	},
 	{
+		name: "command",
+		type: "components:ui",
+		dependencies: ["@kobalte/core"],
+		files: ["ui/command.tsx"],
+	},
+	{
 		name: "context-menu",
 		type: "components:ui",
 		dependencies: ["@kobalte/core"],
@@ -359,6 +365,18 @@ const example = [
 		type: "components:example",
 		registryDependencies: ["combobox"],
 		files: ["example/combobox-demo.tsx"],
+	},
+	{
+		name: "command-demo",
+		type: "components:example",
+		registryDependencies: ["command"],
+		files: ["example/command-demo.tsx"],
+	},
+	{
+		name: "command-dialog",
+		type: "components:example",
+		registryDependencies: ["command"],
+		files: ["example/command-dialog.tsx"],
 	},
 	{
 		name: "context-menu-demo",

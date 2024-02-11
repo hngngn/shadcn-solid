@@ -3,7 +3,20 @@ import { ToggleButton } from "../ui/toggle"
 const ToggleDemo = () => {
 	return (
 		<ToggleButton aria-label="Toggle italic">
-			<span class="icon-[tabler--bold] w-4 h-4" />
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				class="w-4 h-4"
+				viewBox="0 0 24 24"
+			>
+				<path
+					fill="none"
+					stroke="currentColor"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M7 5h6a3.5 3.5 0 0 1 0 7H7zm6 7h1a3.5 3.5 0 0 1 0 7H7v-7"
+				/>
+			</svg>
 		</ToggleButton>
 	)
 }

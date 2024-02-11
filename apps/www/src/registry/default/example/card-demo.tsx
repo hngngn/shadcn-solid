@@ -34,7 +34,20 @@ const CardDemo = () => {
 			</CardHeader>
 			<CardContent class="grid gap-4">
 				<div class=" flex items-center space-x-4 rounded-md border p-4">
-					<span class="icon-[tabler--bell] w-4 h-4" />
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="w-4 h-4"
+						viewBox="0 0 24 24"
+					>
+						<path
+							fill="none"
+							stroke="currentColor"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3H4a4 4 0 0 0 2-3v-3a7 7 0 0 1 4-6M9 17v1a3 3 0 0 0 6 0v-1"
+						/>
+					</svg>
 					<div class="flex-1 space-y-1">
 						<p class="text-sm font-medium leading-none">
 							Push Notifications
@@ -69,8 +82,21 @@ const CardDemo = () => {
 			</CardContent>
 			<CardFooter>
 				<Button class="w-full">
-					<span class="icon-[tabler--check] mr-2 h-4 w-4" /> Mark all
-					as read
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="mr-2 h-4 w-4"
+						viewBox="0 0 24 24"
+					>
+						<path
+							fill="none"
+							stroke="currentColor"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="m5 12l5 5L20 7"
+						/>
+					</svg>
+					Mark all as read
 				</Button>
 			</CardFooter>
 		</Card>

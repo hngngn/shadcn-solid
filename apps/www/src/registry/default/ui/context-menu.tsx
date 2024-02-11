@@ -26,7 +26,20 @@ export const ContextMenuSubTrigger: ParentComponent<
 			{...rest}
 		>
 			{local.children}
-			<span class="icon-[tabler--chevron-right] h-4 w-4 ml-auto" />
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				class="ml-auto w-4 h-4"
+				viewBox="0 0 24 24"
+			>
+				<path
+					fill="none"
+					stroke="currentColor"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="m9 6l6 6l-6 6"
+				/>
+			</svg>
 		</ContextMenuPrimitive.SubTrigger>
 	)
 }
@@ -100,7 +113,20 @@ export const ContextMenuCheckboxItem: ParentComponent<
 			{...rest}
 		>
 			<ContextMenuPrimitive.ItemIndicator class="absolute left-2 h-3.5 w-3.5 inline-flex items-center justify-center">
-				<span class="icon-[tabler--check] h-4 w-4" />
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					class="w-4 h-4"
+				>
+					<path
+						fill="none"
+						stroke="currentColor"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="m5 12l5 5L20 7"
+					/>
+				</svg>
 			</ContextMenuPrimitive.ItemIndicator>
 			{local.children}
 		</ContextMenuPrimitive.CheckboxItem>
@@ -121,7 +147,24 @@ export const ContextMenuRadioItem: ParentComponent<
 			{...rest}
 		>
 			<ContextMenuPrimitive.ItemIndicator class="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
-				<span class="icon-[tabler--circle-filled] h-2 w-2" />
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					class="h-2 w-2"
+				>
+					<g
+						fill="none"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+					>
+						<path d="M0 0h24v24H0z" />
+						<path
+							fill="currentColor"
+							d="M7 3.34a10 10 0 1 1-4.995 8.984L2 12l.005-.324A10 10 0 0 1 7 3.34"
+						/>
+					</g>
+				</svg>
 			</ContextMenuPrimitive.ItemIndicator>
 			{local.children}
 		</ContextMenuPrimitive.RadioItem>

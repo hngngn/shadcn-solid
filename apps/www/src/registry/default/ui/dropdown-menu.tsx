@@ -1,6 +1,6 @@
 import { cn } from "@/lib/cn"
 import { DropdownMenu as DropdownMenuPrimitive } from "@kobalte/core"
-import type { ComponentProps, VoidComponent } from "solid-js"
+import type { ComponentProps, ParentProps, VoidComponent } from "solid-js"
 import { mergeProps, splitProps, type ParentComponent } from "solid-js"
 
 export const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger
@@ -11,10 +11,9 @@ export const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup
 export const DropdownMenu: ParentComponent<
 	DropdownMenuPrimitive.DropdownMenuRootProps
 > = (props) => {
-	const merge = mergeProps(
-		{ gutter: 4 } as DropdownMenuPrimitive.DropdownMenuRootProps,
-		props
-	)
+	const merge = mergeProps<
+		ParentProps<DropdownMenuPrimitive.DropdownMenuRootProps[]>
+	>({ gutter: 4 }, props)
 	return <DropdownMenuPrimitive.Root {...merge} />
 }
 
@@ -119,7 +118,22 @@ export const DropdownMenuSubTrigger: ParentComponent<
 			{...rest}
 		>
 			{local.children}
-			<span class="icon-[tabler--chevron-right] h-4 w-4 ml-auto" />
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="1em"
+				height="1em"
+				viewBox="0 0 24 24"
+				class="h-4 w-4 ml-auto"
+			>
+				<path
+					fill="none"
+					stroke="currentColor"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="m9 6l6 6l-6 6"
+				/>
+			</svg>
 		</DropdownMenuPrimitive.SubTrigger>
 	)
 }
@@ -154,7 +168,20 @@ export const DropdownMenuCheckboxItem: ParentComponent<
 			{...rest}
 		>
 			<DropdownMenuPrimitive.ItemIndicator class="absolute left-2 h-4 w-4 inline-flex items-center justify-center">
-				<span class="icon-[tabler--check] h-4 w-4" />
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					class="w-4 h-4"
+				>
+					<path
+						fill="none"
+						stroke="currentColor"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="m5 12l5 5L20 7"
+					/>
+				</svg>
 			</DropdownMenuPrimitive.ItemIndicator>
 			{props.children}
 		</DropdownMenuPrimitive.CheckboxItem>
@@ -174,7 +201,24 @@ export const DropdownMenuRadioItem: ParentComponent<
 			{...rest}
 		>
 			<DropdownMenuPrimitive.ItemIndicator class="absolute left-2 h-4 w-4 inline-flex items-center justify-center">
-				<span class="icon-[tabler--circle-filled] w-2 h-2" />
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					class="w-2 h-2"
+				>
+					<g
+						fill="none"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+					>
+						<path d="M0 0h24v24H0z" />
+						<path
+							fill="currentColor"
+							d="M7 3.34a10 10 0 1 1-4.995 8.984L2 12l.005-.324A10 10 0 0 1 7 3.34"
+						/>
+					</g>
+				</svg>
 			</DropdownMenuPrimitive.ItemIndicator>
 			{props.children}
 		</DropdownMenuPrimitive.RadioItem>

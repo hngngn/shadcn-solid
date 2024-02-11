@@ -16,7 +16,20 @@ export const Announcement = () => {
 			<span class="hidden sm:inline">
 				New components, cli updates and more.
 			</span>
-			<span class="icon-[tabler--arrow-right] ml-1 h-4 w-4" />
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				class="ml-1 h-4 w-4"
+				viewBox="0 0 24 24"
+			>
+				<path
+					fill="none"
+					stroke="currentColor"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M5 12h14m-4 4l4-4m-4-4l4 4"
+				/>
+			</svg>
 		</A>
 	)
 }

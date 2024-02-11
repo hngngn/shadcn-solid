@@ -77,7 +77,20 @@ const Documents = (props: RouteSectionProps) => {
 								<div class="overflow-hidden text-ellipsis whitespace-nowrap">
 									Docs
 								</div>
-								<span class="icon-[tabler--chevron-right] h-4 w-4" />
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									class="w-4 h-4"
+									viewBox="0 0 24 24"
+								>
+									<path
+										fill="none"
+										stroke="currentColor"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="m9 6l6 6l-6 6"
+									/>
+								</svg>
 								<div class="font-medium text-foreground">
 									{markdownData().frontmatter.title}
 								</div>
@@ -120,7 +133,20 @@ const Documents = (props: RouteSectionProps) => {
 											})}
 										>
 											Docs{" "}
-											<span class="icon-[tabler--external-link] ml-1" />
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												class="ml-1 h-3 w-3"
+												viewBox="0 0 24 24"
+											>
+												<path
+													fill="none"
+													stroke="currentColor"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													stroke-width="2"
+													d="M12 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6m-7 1l9-9m-5 0h5v5"
+												/>
+											</svg>
 										</A>
 									</Show>
 									<Show
@@ -140,7 +166,20 @@ const Documents = (props: RouteSectionProps) => {
 											})}
 										>
 											API Reference
-											<span class="icon-[tabler--external-link] ml-1" />
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												class="ml-1 h-3 w-3"
+												viewBox="0 0 24 24"
+											>
+												<path
+													fill="none"
+													stroke="currentColor"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													stroke-width="2"
+													d="M12 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6m-7 1l9-9m-5 0h5v5"
+												/>
+											</svg>
 										</A>
 									</Show>
 								</div>

@@ -74,6 +74,13 @@ export const Index = {
       component: lazy(() => import("@/registry/default/ui/combobox")),
       files: ["registry/default/ui/combobox.tsx"],
     },
+    "command": {
+      name: "command",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/default/ui/command")),
+      files: ["registry/default/ui/command.tsx"],
+    },
     "context-menu": {
       name: "context-menu",
       type: "components:ui",
@@ -423,6 +430,20 @@ export const Index = {
       registryDependencies: ["combobox"],
       component: lazy(() => import("@/registry/default/example/combobox-demo")),
       files: ["registry/default/example/combobox-demo.tsx"],
+    },
+    "command-demo": {
+      name: "command-demo",
+      type: "components:example",
+      registryDependencies: ["command"],
+      component: lazy(() => import("@/registry/default/example/command-demo")),
+      files: ["registry/default/example/command-demo.tsx"],
+    },
+    "command-dialog": {
+      name: "command-dialog",
+      type: "components:example",
+      registryDependencies: ["command"],
+      component: lazy(() => import("@/registry/default/example/command-dialog")),
+      files: ["registry/default/example/command-dialog.tsx"],
     },
     "context-menu-demo": {
       name: "context-menu-demo",

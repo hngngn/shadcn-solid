@@ -27,7 +27,20 @@ const CollapsibleDemo = () => {
 						size="sm"
 						class="w-9 p-0"
 					>
-						<span class="icon-[tabler--selector] w-4 h-4" />
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="w-4 h-4"
+							viewBox="0 0 24 24"
+						>
+							<path
+								fill="none"
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="m8 9l4-4l4 4m0 6l-4 4l-4-4"
+							/>
+						</svg>
 						<span class="sr-only">Toggle</span>
 					</As>
 				</CollapsibleTrigger>

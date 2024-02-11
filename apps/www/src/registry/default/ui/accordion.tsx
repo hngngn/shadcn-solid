@@ -31,7 +31,20 @@ export const AccordionTrigger: ParentComponent<
 				{...rest}
 			>
 				{local.children}
-				<span class="icon-[tabler--chevron-down] h-4 w-4 text-muted-foreground transition-transform duration-200" />
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					class="h-4 w-4 text-muted-foreground transition-transform duration-200"
+				>
+					<path
+						fill="none"
+						stroke="currentColor"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="m6 9l6 6l6-6"
+					/>
+				</svg>
 			</AccordionPrimitive.Trigger>
 		</AccordionPrimitive.Header>
 	)

@@ -48,7 +48,20 @@ export const Pager: VoidComponent<{
 			<Show when={pager()?.prev?.href}>
 				<Button asChild variant="outline">
 					<As component={A} href={pager().prev?.href!}>
-						<span class="icon-[tabler--chevron-left] h-4 w-4 mr-2" />
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="w-4 h-4 mr-2"
+							viewBox="0 0 24 24"
+						>
+							<path
+								fill="none"
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="m15 6l-6 6l6 6"
+							/>
+						</svg>
 						{pager().prev?.title}
 					</As>
 				</Button>
@@ -57,7 +70,20 @@ export const Pager: VoidComponent<{
 				<Button asChild variant="outline" class="ml-auto">
 					<As component={A} href={pager().next?.href!}>
 						{pager().next?.title}
-						<span class="icon-[tabler--chevron-right] h-4 w-4 ml-2" />
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="w-4 h-4 ml-2"
+							viewBox="0 0 24 24"
+						>
+							<path
+								fill="none"
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="m9 6l6 6l-6 6"
+							/>
+						</svg>
 					</As>
 				</Button>
 			</Show>

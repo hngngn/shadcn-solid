@@ -24,7 +24,20 @@ const HoverCardDemo = () => {
 							interfaces.
 						</p>
 						<div class="flex items-center pt-2">
-							<span class="icon-[tabler--calendar] h-4 w-4 mr-2 opacity-70" />{" "}
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="h-4 w-4 mr-2 opacity-70"
+								viewBox="0 0 24 24"
+							>
+								<path
+									fill="none"
+									stroke="currentColor"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm12-4v4M8 3v4m-4 4h16m-9 4h1m0 0v3"
+								/>
+							</svg>
 							<span class="text-xs text-muted-foreground">
 								Joined March 2021
 							</span>

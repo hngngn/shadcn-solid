@@ -22,7 +22,20 @@ export const CheckboxControl: ParentComponent<
 			{...rest}
 		>
 			<CheckboxPrimitive.Indicator class="flex items-center justify-center text-current">
-				<span class="icon-[tabler--check] w-4 h-4" />
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					class="w-4 h-4"
+				>
+					<path
+						fill="none"
+						stroke="currentColor"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="m5 12l5 5L20 7"
+					/>
+				</svg>
 			</CheckboxPrimitive.Indicator>
 		</CheckboxPrimitive.Control>
 	)

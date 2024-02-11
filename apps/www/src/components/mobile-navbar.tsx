@@ -24,7 +24,20 @@ export const MobileNavbar = () => {
 					size="icon"
 					class="mr-1 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
 				>
-					<span class="icon-[tabler--layout-sidebar] w-[18px] h-[18px]" />
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="w-4 h-4"
+						viewBox="0 0 24 24"
+					>
+						<path
+							fill="none"
+							stroke="currentColor"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm5-2v16"
+						/>
+					</svg>
 					<span class="sr-only">Toggle Menu</span>
 				</As>
 			</SheetTrigger>

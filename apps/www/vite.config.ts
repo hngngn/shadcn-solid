@@ -24,7 +24,10 @@ export default defineConfig({
 	start: {
 		extensions: ["mdx", "md"],
 		server: {
-			preset: "vercel",
+			preset:
+				process.env.NODE_ENV === "production"
+					? "vercel"
+					: "node-server",
 		},
 	},
 	plugins: [

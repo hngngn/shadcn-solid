@@ -13,7 +13,7 @@ export type TNavItemWithChildren = TNavItem & {
 	items: TNavItemWithChildren[]
 }
 
-type TDocsConfig = {
+export type TDocsConfig = {
 	mainNav: TNavItem[]
 	sidebarNav: TSidebarNavItem[]
 }
@@ -137,6 +137,12 @@ export const docsConfig: TDocsConfig = {
 					title: "Combobox",
 					href: "/docs/components/combobox",
 					items: [],
+				},
+				{
+					title: "Command",
+					href: "/docs/components/command",
+					items: [],
+					label: "New",
 				},
 				{
 					title: "Context Menu",

@@ -6,7 +6,9 @@ import type {
 	Accessor,
 	ComponentProps,
 	ParentComponent,
+	ParentProps,
 	VoidComponent,
+	VoidProps,
 } from "solid-js"
 import {
 	createContext,
@@ -57,10 +59,10 @@ const useCarousel = () => {
 export const Carousel: ParentComponent<
 	ComponentProps<"div"> & CarouselProps
 > = (props) => {
-	const merge = mergeProps(
-		{ orientation: "horizontal" } as CarouselProps,
-		props
-	)
+	const merge = mergeProps<
+		ParentProps<ComponentProps<"div"> & CarouselProps>[]
+	>({ orientation: "horizontal" }, props)
+
 	const [local, rest] = splitProps(merge, [
 		"orientation",
 		"opts",
@@ -197,8 +199,8 @@ export const CarouselItem: ParentComponent<ComponentProps<"div">> = (props) => {
 export const CarouselPrevious: VoidComponent<ComponentProps<typeof Button>> = (
 	props
 ) => {
-	const merge = mergeProps(
-		{ variant: "outline", size: "icon" } as ComponentProps<typeof Button>,
+	const merge = mergeProps<VoidProps<ComponentProps<typeof Button>[]>>(
+		{ variant: "outline", size: "icon" },
 		props
 	)
 	const [local, rest] = splitProps(merge, ["class", "variant", "size"])
@@ -219,7 +221,20 @@ export const CarouselPrevious: VoidComponent<ComponentProps<typeof Button>> = (
 			onClick={scrollPrev}
 			{...rest}
 		>
-			<span class="icon-[tabler--arrow-left] h-4 w-4" />
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				class="h-4 w-4"
+			>
+				<path
+					fill="none"
+					stroke="currentColor"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M5 12h14M5 12l6 6m-6-6l6-6"
+				/>
+			</svg>
 			<span class="sr-only">Previous slide</span>
 		</Button>
 	)
@@ -228,8 +243,8 @@ export const CarouselPrevious: VoidComponent<ComponentProps<typeof Button>> = (
 export const CarouselNext: VoidComponent<ComponentProps<typeof Button>> = (
 	props
 ) => {
-	const merge = mergeProps(
-		{ variant: "outline", size: "icon" } as ComponentProps<typeof Button>,
+	const merge = mergeProps<VoidProps<ComponentProps<typeof Button>[]>>(
+		{ variant: "outline", size: "icon" },
 		props
 	)
 	const [local, rest] = splitProps(merge, ["class", "variant", "size"])
@@ -250,7 +265,20 @@ export const CarouselNext: VoidComponent<ComponentProps<typeof Button>> = (
 			onClick={scrollNext}
 			{...rest}
 		>
-			<span class="icon-[tabler--arrow-right] h-4 w-4" />
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				class="h-4 h-4"
+			>
+				<path
+					fill="none"
+					stroke="currentColor"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M5 12h14m-4 4l4-4m-4-4l4 4"
+				/>
+			</svg>
 			<span class="sr-only">Next slide</span>
 		</Button>
 	)
