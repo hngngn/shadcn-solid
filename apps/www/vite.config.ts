@@ -25,7 +25,7 @@ export default defineConfig({
 		extensions: ["mdx", "md"],
 		server: {
 			preset:
-				process.env.NODE_ENV === "production"
+				process.env.VERCEL_ENV === "production"
 					? "vercel"
 					: "node-server",
 		},
