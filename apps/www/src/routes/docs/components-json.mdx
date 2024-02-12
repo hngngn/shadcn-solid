@@ -8,11 +8,11 @@ The `components.json` file holds configuration for your project.
 We use it to understand how your project is set up and how to generate components customized for your project.
 
 <Alert className="mt-6">
-	<AlertDescription>
-		Note: The `components.json` file is optional and **only required if
-		you're using the CLI** to add components to your project. If you're
-		using the copy and paste method, you don't need this file.
-	</AlertDescription>
+  <AlertDescription>
+    Note: The `components.json` file is optional and **only required if you're
+    using the CLI** to add components to your project. If you're using the copy
+    and paste method, you don't need this file.
+  </AlertDescription>
 </Alert>
 
 You can create a `components.json` file in your project by running the following command:
@@ -29,7 +29,7 @@ You can see the JSON Schema for `components.json` [here](https://shadcn-solid.ve
 
 ```json title="components.json"
 {
-	"$schema": "https:/shadcn-solid.vercel.app/schema.json"
+  "$schema": "https:/shadcn-solid.vercel.app/schema.json"
 }
 ```
 
@@ -57,9 +57,9 @@ Path to the CSS file that imports Tailwind CSS into your project.
 
 ```json title="components.json"
 {
-	"tailwind": {
-		"css": "src/app.css"
-	}
+  "tailwind": {
+    "css": "src/app.css"
+  }
 }
 ```
 
@@ -99,9 +99,9 @@ The prefix to use for your Tailwind CSS utility classes. Components will be adde
 
 ```json title="components.json"
 {
-	"tailwind": {
-		"prefix": "tw-"
-	}
+  "tailwind": {
+    "prefix": "tw-"
+  }
 }
 ```
 
@@ -112,10 +112,10 @@ The CLI uses these values and the `paths` config from your `tsconfig.json` or `j
 Path aliases have to be set up in your `tsconfig.json` or `jsconfig.json` file.
 
 <Alert className="mt-6">
-	<AlertDescription>
-		**Important:** If you're using the `src` directory, make sure it is
-		included under `paths` in your `tsconfig.json` or `jsconfig.json` file.
-	</AlertDescription>
+  <AlertDescription>
+    **Important:** If you're using the `src` directory, make sure it is included
+    under `paths` in your `tsconfig.json` or `jsconfig.json` file.
+  </AlertDescription>
 </Alert>
 
 ### aliases.utils
@@ -124,9 +124,9 @@ Import alias for your utility functions.
 
 ```json title="components.json"
 {
-	"aliases": {
-		"utils": "@/lib/utils"
-	}
+  "aliases": {
+    "utils": "@/lib/utils"
+  }
 }
 ```
 
@@ -136,9 +136,9 @@ Import alias for your components.
 
 ```json title="components.json"
 {
-	"aliases": {
-		"components": "@/components"
-	}
+  "aliases": {
+    "components": "@/components"
+  }
 }
 ```
 
@@ -150,8 +150,8 @@ The CLI will use the `aliases.ui` value to determine where to place your `ui` co
 
 ```json title="components.json"
 {
-	"aliases": {
-		"ui": "@/ui"
-	}
+  "aliases": {
+    "ui": "@/ui"
+  }
 }
 ```

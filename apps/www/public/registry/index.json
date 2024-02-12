@@ -1,192 +1,198 @@
 [
-	{
-		"name": "accordion",
-		"dependencies": ["@kobalte/core"],
-		"files": ["ui/accordion.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "alert",
-		"dependencies": ["@kobalte/core"],
-		"files": ["ui/alert.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "alert-dialog",
-		"dependencies": ["@kobalte/core"],
-		"registryDependencies": ["button"],
-		"files": ["ui/alert-dialog.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "badge",
-		"files": ["ui/badge.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "button",
-		"dependencies": ["@kobalte/core"],
-		"files": ["ui/button.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "card",
-		"files": ["ui/card.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "carousel",
-		"dependencies": ["embla-carousel-solid"],
-		"files": ["ui/carousel.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "checkbox",
-		"dependencies": ["@kobalte/core"],
-		"files": ["ui/checkbox.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "collapsible",
-		"dependencies": ["@kobalte/core"],
-		"files": ["ui/collapsible.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "combobox",
-		"dependencies": ["@kobalte/core"],
-		"files": ["ui/combobox.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "command",
-		"dependencies": ["@kobalte/core"],
-		"files": ["ui/command.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "context-menu",
-		"dependencies": ["@kobalte/core"],
-		"files": ["ui/context-menu.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "dialog",
-		"dependencies": ["@kobalte/core"],
-		"files": ["ui/dialog.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "dropdown-menu",
-		"dependencies": ["@kobalte/core"],
-		"files": ["ui/dropdown-menu.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "hover-card",
-		"dependencies": ["@kobalte/core"],
-		"files": ["ui/hover-card.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "image",
-		"dependencies": ["@kobalte/core"],
-		"files": ["ui/image.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "popover",
-		"dependencies": ["@kobalte/core"],
-		"files": ["ui/popover.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "pagination",
-		"dependencies": ["@kobalte/core"],
-		"files": ["ui/pagination.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "progress",
-		"dependencies": ["@kobalte/core"],
-		"files": ["ui/progress.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "radio-group",
-		"dependencies": ["@kobalte/core"],
-		"files": ["ui/radio-group.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "select",
-		"dependencies": ["@kobalte/core"],
-		"files": ["ui/select.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "separator",
-		"dependencies": ["@kobalte/core"],
-		"files": ["ui/separator.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "sheet",
-		"dependencies": ["@kobalte/core"],
-		"files": ["ui/sheet.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "skeleton",
-		"files": ["ui/skeleton.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "switch",
-		"dependencies": ["@kobalte/core"],
-		"files": ["ui/switch.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "table",
-		"files": ["ui/table.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "tabs",
-		"dependencies": ["@kobalte/core"],
-		"files": ["ui/tabs.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "textfield",
-		"dependencies": ["@kobalte/core"],
-		"files": ["ui/textfield.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "textarea",
-		"dependencies": ["@kobalte/core"],
-		"registryDependencies": ["textfield"],
-		"files": ["ui/textarea.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "toast",
-		"dependencies": ["@kobalte/core"],
-		"files": ["ui/toast.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "toggle",
-		"dependencies": ["@kobalte/core"],
-		"files": ["ui/toggle.tsx"],
-		"type": "components:ui"
-	},
-	{
-		"name": "tooltip",
-		"dependencies": ["@kobalte/core"],
-		"files": ["ui/tooltip.tsx"],
-		"type": "components:ui"
-	}
+  {
+    "name": "accordion",
+    "dependencies": ["@kobalte/core"],
+    "files": ["ui/accordion.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "alert",
+    "dependencies": ["@kobalte/core"],
+    "files": ["ui/alert.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "alert-dialog",
+    "dependencies": ["@kobalte/core"],
+    "registryDependencies": ["button"],
+    "files": ["ui/alert-dialog.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "badge",
+    "files": ["ui/badge.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "button",
+    "dependencies": ["@kobalte/core"],
+    "files": ["ui/button.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "card",
+    "files": ["ui/card.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "carousel",
+    "dependencies": ["embla-carousel-solid"],
+    "files": ["ui/carousel.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "checkbox",
+    "dependencies": ["@kobalte/core"],
+    "files": ["ui/checkbox.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "collapsible",
+    "dependencies": ["@kobalte/core"],
+    "files": ["ui/collapsible.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "combobox",
+    "dependencies": ["@kobalte/core"],
+    "files": ["ui/combobox.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "command",
+    "dependencies": ["@kobalte/core"],
+    "files": ["ui/command.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "context-menu",
+    "dependencies": ["@kobalte/core"],
+    "files": ["ui/context-menu.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "date-picker",
+    "dependencies": ["@ark-ui/solid"],
+    "files": ["ui/date-picker.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "dialog",
+    "dependencies": ["@kobalte/core"],
+    "files": ["ui/dialog.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "dropdown-menu",
+    "dependencies": ["@kobalte/core"],
+    "files": ["ui/dropdown-menu.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "hover-card",
+    "dependencies": ["@kobalte/core"],
+    "files": ["ui/hover-card.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "image",
+    "dependencies": ["@kobalte/core"],
+    "files": ["ui/image.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "popover",
+    "dependencies": ["@kobalte/core"],
+    "files": ["ui/popover.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "pagination",
+    "dependencies": ["@kobalte/core"],
+    "files": ["ui/pagination.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "progress",
+    "dependencies": ["@kobalte/core"],
+    "files": ["ui/progress.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "radio-group",
+    "dependencies": ["@kobalte/core"],
+    "files": ["ui/radio-group.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "select",
+    "dependencies": ["@kobalte/core"],
+    "files": ["ui/select.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "separator",
+    "dependencies": ["@kobalte/core"],
+    "files": ["ui/separator.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "sheet",
+    "dependencies": ["@kobalte/core"],
+    "files": ["ui/sheet.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "skeleton",
+    "files": ["ui/skeleton.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "switch",
+    "dependencies": ["@kobalte/core"],
+    "files": ["ui/switch.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "table",
+    "files": ["ui/table.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "tabs",
+    "dependencies": ["@kobalte/core"],
+    "files": ["ui/tabs.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "textfield",
+    "dependencies": ["@kobalte/core"],
+    "files": ["ui/textfield.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "textarea",
+    "dependencies": ["@kobalte/core"],
+    "registryDependencies": ["textfield"],
+    "files": ["ui/textarea.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "toast",
+    "dependencies": ["@kobalte/core"],
+    "files": ["ui/toast.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "toggle",
+    "dependencies": ["@kobalte/core"],
+    "files": ["ui/toggle.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "tooltip",
+    "dependencies": ["@kobalte/core"],
+    "files": ["ui/tooltip.tsx"],
+    "type": "components:ui"
+  }
 ]

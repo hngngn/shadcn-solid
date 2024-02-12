@@ -11,9 +11,9 @@ Add the `ThemeProvider` and `ColorModeScript` to your app.
 
 ```tsx {1-5,19-22} title="src/app.tsx"
 import {
-	ColorModeProvider,
-	ColorModeScript,
-	localStorageManager,
+  ColorModeProvider,
+  ColorModeScript,
+  localStorageManager,
 } from "@kobalte/core"
 import { MetaProvider } from "@solidjs/meta"
 import { Router } from "@solidjs/router"
@@ -22,23 +22,23 @@ import { Suspense } from "solid-js"
 import { Metadata } from "./components/metadata"
 
 export default function App() {
-	return (
-		<Router
-			root={(props) => (
-				<MetaProvider>
-					<Metadata />
-					<Suspense>
-						<ColorModeScript />
-						<ColorModeProvider storageManager={localStorageManager}>
-							{props.children}
-						</ColorModeProvider>
-					</Suspense>
-				</MetaProvider>
-			)}
-		>
-			<FileRoutes />
-		</Router>
-	)
+  return (
+    <Router
+      root={(props) => (
+        <MetaProvider>
+          <Metadata />
+          <Suspense>
+            <ColorModeScript />
+            <ColorModeProvider storageManager={localStorageManager}>
+              {props.children}
+            </ColorModeProvider>
+          </Suspense>
+        </MetaProvider>
+      )}
+    >
+      <FileRoutes />
+    </Router>
+  )
 }
 ```
 

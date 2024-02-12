@@ -88,6 +88,13 @@ export const Index = {
       component: lazy(() => import("@/registry/default/ui/context-menu")),
       files: ["registry/default/ui/context-menu.tsx"],
     },
+    "date-picker": {
+      name: "date-picker",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/default/ui/date-picker")),
+      files: ["registry/default/ui/date-picker.tsx"],
+    },
     "dialog": {
       name: "dialog",
       type: "components:ui",
@@ -451,6 +458,20 @@ export const Index = {
       registryDependencies: ["context-menu"],
       component: lazy(() => import("@/registry/default/example/context-menu-demo")),
       files: ["registry/default/example/context-menu-demo.tsx"],
+    },
+    "date-picker-demo": {
+      name: "date-picker-demo",
+      type: "components:example",
+      registryDependencies: ["date-picker"],
+      component: lazy(() => import("@/registry/default/example/date-picker-demo")),
+      files: ["registry/default/example/date-picker-demo.tsx"],
+    },
+    "date-picker-with-range-demo": {
+      name: "date-picker-with-range-demo",
+      type: "components:example",
+      registryDependencies: ["date-picker"],
+      component: lazy(() => import("@/registry/default/example/date-picker-with-range-demo")),
+      files: ["registry/default/example/date-picker-with-range-demo.tsx"],
     },
     "dialog-demo": {
       name: "dialog-demo",

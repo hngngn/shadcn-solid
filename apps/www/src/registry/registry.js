@@ -71,6 +71,12 @@ const ui = [
 		files: ["ui/context-menu.tsx"],
 	},
 	{
+		name: "date-picker",
+		type: "components:ui",
+		dependencies: ["@ark-ui/solid"],
+		files: ["ui/date-picker.tsx"],
+	},
+	{
 		name: "dialog",
 		type: "components:ui",
 		dependencies: ["@kobalte/core"],
@@ -383,6 +389,18 @@ const example = [
 		type: "components:example",
 		registryDependencies: ["context-menu"],
 		files: ["example/context-menu-demo.tsx"],
+	},
+	{
+		name: "date-picker-demo",
+		type: "components:example",
+		registryDependencies: ["date-picker"],
+		files: ["example/date-picker-demo.tsx"],
+	},
+	{
+		name: "date-picker-with-range-demo",
+		type: "components:example",
+		registryDependencies: ["date-picker"],
+		files: ["example/date-picker-with-range-demo.tsx"],
 	},
 	{
 		name: "dialog-demo",

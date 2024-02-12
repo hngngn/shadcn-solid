@@ -1,12 +1,12 @@
 {
-	"name": "textarea",
-	"dependencies": ["@kobalte/core"],
-	"registryDependencies": ["textfield"],
-	"files": [
-		{
-			"name": "textarea.tsx",
-			"content": "import { cn } from \"@/lib/cn\"\nimport { TextField as TextFieldPrimitive } from \"@kobalte/core\"\nimport { splitProps, type ParentComponent } from \"solid-js\"\n\nexport const TextFieldTextArea: ParentComponent<\n\tTextFieldPrimitive.TextFieldTextAreaProps\n> = (props) => {\n\tconst [local, rest] = splitProps(props, [\"class\"])\n\treturn (\n\t\t<TextFieldPrimitive.TextArea\n\t\t\tclass={cn(\n\t\t\t\t\"flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50\",\n\t\t\t\tlocal.class\n\t\t\t)}\n\t\t\t{...rest}\n\t\t/>\n\t)\n}\n"
-		}
-	],
-	"type": "components:ui"
+  "name": "textarea",
+  "dependencies": ["@kobalte/core"],
+  "registryDependencies": ["textfield"],
+  "files": [
+    {
+      "name": "textarea.tsx",
+      "content": "import { cn } from \"@/lib/cn\"\nimport { TextField as TextFieldPrimitive } from \"@kobalte/core\"\nimport { splitProps, type ParentComponent } from \"solid-js\"\n\nexport const TextFieldTextArea: ParentComponent<\n  TextFieldPrimitive.TextFieldTextAreaProps\n> = (props) => {\n  const [local, rest] = splitProps(props, [\"class\"])\n  return (\n    <TextFieldPrimitive.TextArea\n      class={cn(\n        \"border-input placeholder:text-muted-foreground focus-visible:ring-ring flex min-h-[60px] w-full rounded-md border bg-transparent px-3 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50\",\n        local.class\n      )}\n      {...rest}\n    />\n  )\n}\n"
+    }
+  ],
+  "type": "components:ui"
 }

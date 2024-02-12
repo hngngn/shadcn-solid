@@ -1,64 +1,65 @@
 {
-	"name": "www",
-	"type": "module",
-	"scripts": {
-		"dev": "vinxi dev",
-		"build": "vinxi build",
-		"start": "vinxi start",
-		"build:registry": "tsx build-registry.ts",
-		"format": "prettier -w \"./src/**/*.{ts,tsx}\"",
-		"lint": "eslint src --ext ts,tsx --report-unused-disable-directives"
-	},
-	"dependencies": {
-		"@fontsource-variable/inter": "^5.0.16",
-		"@kobalte/core": "^0.12.1",
-		"@mdx-js/mdx": "^2.3.0",
-		"@solidjs/meta": "^0.29.3",
-		"@solidjs/router": "^0.12.0",
-		"@solidjs/start": "^0.5.4",
-		"@vinxi/plugin-mdx": "^3.6.7",
-		"class-variance-authority": "^0.7.0",
-		"clsx": "^2.1.0",
-		"embla-carousel-autoplay": "8.0.0-rc22",
-		"embla-carousel-solid": "8.0.0-rc22",
-		"solid-js": "^1.8.14",
-		"solid-mdx": "^0.0.7",
-		"solid-wrap-balancer": "^0.0.5",
-		"tailwind-merge": "^2.2.1",
-		"vinxi": "^0.2.1",
-		"zod": "^3.22.2"
-	},
-	"engines": {
-		"node": ">=18"
-	},
-	"devDependencies": {
-		"@types/unist": "^3.0.2",
-		"autoprefixer": "^10.4.17",
-		"estree-util-value-to-estree": "^3.0.1",
-		"lodash.template": "^4.5.0",
-		"postcss": "^8.4.35",
-		"rehype-pretty-code": "^0.6.0",
-		"rehype-slug": "^6.0.0",
-		"remark-frontmatter": "^5.0.0",
-		"remark-gfm": "^3.0.0",
-		"rimraf": "^5.0.1",
-		"shiki": "^0.12.1",
-		"tailwindcss": "^3.4.1",
-		"tailwindcss-animate": "^1.0.7",
-		"tsx": "^4.7.1",
-		"unist-builder": "^4.0.0",
-		"unist-util-visit": "^5.0.0",
-		"yaml": "^2.3.4"
-	},
-	"private": true,
-	"lint-staged": {
-		"*.{ts,tsx}": [
-			"pnpm build:registry",
-			"pnpm format",
-			"pnpm lint --fix"
-		],
-		"*.json": [
-			"pnpm format"
-		]
-	}
+  "name": "www",
+  "type": "module",
+  "scripts": {
+    "dev": "vinxi dev",
+    "build": "vinxi build",
+    "start": "vinxi start",
+    "build:registry": "tsx build-registry.ts",
+    "format": "prettier -w \"./src/**/*.{ts,tsx,mdx}\"",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives"
+  },
+  "dependencies": {
+    "@ark-ui/solid": "^2.0.1",
+    "@fontsource-variable/inter": "^5.0.16",
+    "@kobalte/core": "^0.12.1",
+    "@mdx-js/mdx": "^2.3.0",
+    "@solidjs/meta": "^0.29.3",
+    "@solidjs/router": "^0.12.0",
+    "@solidjs/start": "^0.5.4",
+    "@vinxi/plugin-mdx": "^3.6.7",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "embla-carousel-autoplay": "8.0.0-rc22",
+    "embla-carousel-solid": "8.0.0-rc22",
+    "solid-js": "^1.8.14",
+    "solid-mdx": "^0.0.7",
+    "solid-wrap-balancer": "^0.0.5",
+    "tailwind-merge": "^2.2.1",
+    "vinxi": "^0.2.1",
+    "zod": "^3.22.2"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/unist": "^3.0.2",
+    "autoprefixer": "^10.4.17",
+    "estree-util-value-to-estree": "^3.0.1",
+    "lodash.template": "^4.5.0",
+    "postcss": "^8.4.35",
+    "rehype-pretty-code": "^0.6.0",
+    "rehype-slug": "^6.0.0",
+    "remark-frontmatter": "^5.0.0",
+    "remark-gfm": "^3.0.0",
+    "rimraf": "^5.0.1",
+    "shiki": "^0.12.1",
+    "tailwindcss": "^3.4.1",
+    "tailwindcss-animate": "^1.0.7",
+    "tsx": "^4.7.1",
+    "unist-builder": "^4.0.0",
+    "unist-util-visit": "^5.0.0",
+    "yaml": "^2.3.4"
+  },
+  "private": true,
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "pnpm build:registry",
+      "pnpm format",
+      "pnpm lint --fix"
+    ],
+    "*.json": [
+      "pnpm format"
+    ]
+  }
 }

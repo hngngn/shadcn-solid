@@ -1,107 +1,107 @@
 import { As } from "@kobalte/core"
 import { Button } from "../ui/button"
 import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuGroup,
-	DropdownMenuGroupLabel,
-	DropdownMenuItem,
-	DropdownMenuSeparator,
-	DropdownMenuShortcut,
-	DropdownMenuSub,
-	DropdownMenuSubContent,
-	DropdownMenuSubTrigger,
-	DropdownMenuTrigger,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuGroupLabel,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
 } from "../ui/dropdown-menu"
 
 const DropdownMenuDemo = () => {
-	return (
-		<DropdownMenu placement="bottom">
-			<DropdownMenuTrigger asChild>
-				<As component={Button} variant="outline">
-					Open
-				</As>
-			</DropdownMenuTrigger>
-			<DropdownMenuContent class="w-56">
-				<DropdownMenuGroup>
-					<DropdownMenuGroupLabel>My Account</DropdownMenuGroupLabel>
-					<DropdownMenuSeparator />
-					<DropdownMenuItem>
-						<i class="mr-2 i-lucide:user" />
-						<span>Profile</span>
-						<DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-					</DropdownMenuItem>
-					<DropdownMenuItem>
-						<i class="mr-2 i-lucide:credit-card" />
-						<span>Billing</span>
-						<DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-					</DropdownMenuItem>
-					<DropdownMenuItem>
-						<i class="mr-2 i-lucide:settings" />
-						<span>Settings</span>
-						<DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-					</DropdownMenuItem>
-					<DropdownMenuItem>
-						<i class="mr-2 i-lucide:keyboard" />
-						<span>Keyboard shortcuts</span>
-						<DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
-					</DropdownMenuItem>
-				</DropdownMenuGroup>
-				<DropdownMenuSeparator />
-				<DropdownMenuGroup>
-					<DropdownMenuItem>
-						<i class="mr-2 i-lucide:user" />
-						<span>Team</span>
-					</DropdownMenuItem>
-					<DropdownMenuSub>
-						<DropdownMenuSubTrigger>
-							<i class="mr-2 i-lucide:user-plus" />
-							<span>Invite users</span>
-						</DropdownMenuSubTrigger>
-						<DropdownMenuSubContent>
-							<DropdownMenuItem>
-								<i class="mr-2 i-lucide:mail" />
-								<span>Email</span>
-							</DropdownMenuItem>
-							<DropdownMenuItem>
-								<i class="mr-2 i-lucide:message-square" />
-								<span>Message</span>
-							</DropdownMenuItem>
-							<DropdownMenuSeparator />
-							<DropdownMenuItem>
-								<i class="mr-2 ilucide:plus-circle" />
-								<span>More...</span>
-							</DropdownMenuItem>
-						</DropdownMenuSubContent>
-					</DropdownMenuSub>
-					<DropdownMenuItem>
-						<i class="mr-2 i-lucide:plus" />
-						<span>New Team</span>
-						<DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
-					</DropdownMenuItem>
-				</DropdownMenuGroup>
-				<DropdownMenuSeparator />
-				<DropdownMenuItem>
-					<i class="mr-2 i-lucide:github" />
-					<span>GitHub</span>
-				</DropdownMenuItem>
-				<DropdownMenuItem>
-					<i class="mr-2 i-lucide:life-buoy" />
-					<span>Support</span>
-				</DropdownMenuItem>
-				<DropdownMenuItem disabled>
-					<i class="mr-2 i-lucide:cloud" />
-					<span>API</span>
-				</DropdownMenuItem>
-				<DropdownMenuSeparator />
-				<DropdownMenuItem>
-					<i class="mr-2 i-lucide:log-out" />
-					<span>Log out</span>
-					<DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-				</DropdownMenuItem>
-			</DropdownMenuContent>
-		</DropdownMenu>
-	)
+  return (
+    <DropdownMenu placement="bottom">
+      <DropdownMenuTrigger asChild>
+        <As component={Button} variant="outline">
+          Open
+        </As>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent class="w-56">
+        <DropdownMenuGroup>
+          <DropdownMenuGroupLabel>My Account</DropdownMenuGroupLabel>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem>
+            <i class="i-lucide:user mr-2" />
+            <span>Profile</span>
+            <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <i class="i-lucide:credit-card mr-2" />
+            <span>Billing</span>
+            <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <i class="i-lucide:settings mr-2" />
+            <span>Settings</span>
+            <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <i class="i-lucide:keyboard mr-2" />
+            <span>Keyboard shortcuts</span>
+            <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
+          </DropdownMenuItem>
+        </DropdownMenuGroup>
+        <DropdownMenuSeparator />
+        <DropdownMenuGroup>
+          <DropdownMenuItem>
+            <i class="i-lucide:user mr-2" />
+            <span>Team</span>
+          </DropdownMenuItem>
+          <DropdownMenuSub>
+            <DropdownMenuSubTrigger>
+              <i class="i-lucide:user-plus mr-2" />
+              <span>Invite users</span>
+            </DropdownMenuSubTrigger>
+            <DropdownMenuSubContent>
+              <DropdownMenuItem>
+                <i class="i-lucide:mail mr-2" />
+                <span>Email</span>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <i class="i-lucide:message-square mr-2" />
+                <span>Message</span>
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>
+                <i class="ilucide:plus-circle mr-2" />
+                <span>More...</span>
+              </DropdownMenuItem>
+            </DropdownMenuSubContent>
+          </DropdownMenuSub>
+          <DropdownMenuItem>
+            <i class="i-lucide:plus mr-2" />
+            <span>New Team</span>
+            <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
+          </DropdownMenuItem>
+        </DropdownMenuGroup>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem>
+          <i class="i-lucide:github mr-2" />
+          <span>GitHub</span>
+        </DropdownMenuItem>
+        <DropdownMenuItem>
+          <i class="i-lucide:life-buoy mr-2" />
+          <span>Support</span>
+        </DropdownMenuItem>
+        <DropdownMenuItem disabled>
+          <i class="i-lucide:cloud mr-2" />
+          <span>API</span>
+        </DropdownMenuItem>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem>
+          <i class="i-lucide:log-out mr-2" />
+          <span>Log out</span>
+          <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  )
 }
 
 export default DropdownMenuDemo

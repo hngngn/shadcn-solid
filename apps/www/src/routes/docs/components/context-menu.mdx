@@ -3,8 +3,8 @@ title: Context Menu
 description: Displays a menu to the user — such as a set of actions or functions — triggered by a button.
 component: true
 link:
-    doc: https://kobalte.dev/docs/core/components/context-menu
-    api: https://kobalte.dev/docs/core/components/context-menu#api-reference
+  doc: https://kobalte.dev/docs/core/components/context-menu
+  api: https://kobalte.dev/docs/core/components/context-menu#api-reference
 ---
 
 <ComponentPreview name="context-menu-demo" />
@@ -14,9 +14,9 @@ link:
 <Tabs defaultValue="cli">
 
 <TabsList>
-	<TabsTrigger value="cli">CLI</TabsTrigger>
-	<TabsTrigger value="manual">Manual</TabsTrigger>
-	<TabsIndicator class="bg-primary" />
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsIndicator class="bg-primary" />
 </TabsList>
 
 <TabsContent value="cli">
@@ -53,21 +53,21 @@ npm install @kobalte/core
 
 ```tsx
 import {
-	ContextMenu,
-	ContextMenuContent,
-	ContextMenuItem,
-	ContextMenuTrigger,
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuTrigger,
 } from "@/components/ui/context-menu"
 ```
 
 ```tsx
 <ContextMenu>
-	<ContextMenuTrigger>Right click</ContextMenuTrigger>
-	<ContextMenuContent>
-		<ContextMenuItem>Profile</ContextMenuItem>
-		<ContextMenuItem>Billing</ContextMenuItem>
-		<ContextMenuItem>Team</ContextMenuItem>
-		<ContextMenuItem>Subscription</ContextMenuItem>
-	</ContextMenuContent>
+  <ContextMenuTrigger>Right click</ContextMenuTrigger>
+  <ContextMenuContent>
+    <ContextMenuItem>Profile</ContextMenuItem>
+    <ContextMenuItem>Billing</ContextMenuItem>
+    <ContextMenuItem>Team</ContextMenuItem>
+    <ContextMenuItem>Subscription</ContextMenuItem>
+  </ContextMenuContent>
 </ContextMenu>
 ```

@@ -3,8 +3,8 @@ title: Pagination
 description: Pagination with page navigation, next and previous links.
 component: true
 link:
-    doc: https://kobalte.dev/docs/core/components/pagination
-    api: https://kobalte.dev/docs/core/components/pagination#api-reference
+  doc: https://kobalte.dev/docs/core/components/pagination
+  api: https://kobalte.dev/docs/core/components/pagination#api-reference
 ---
 
 <ComponentPreview name="pagination-demo" />
@@ -46,25 +46,25 @@ npx shadcn-solid@latest add pagination
 
 ```tsx
 import {
-	Pagination,
-	PaginationEllipsis,
-	PaginationItem,
-	PaginationItems,
-	PaginationNext,
-	PaginationPrevious,
+  Pagination,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationItems,
+  PaginationNext,
+  PaginationPrevious,
 } from "@/components/ui/pagination"
 ```
 
 ```tsx
 <Pagination
-	count={10}
-	itemComponent={(props) => (
-		<PaginationItem page={props.page}>{props.page}</PaginationItem>
-	)}
-	ellipsisComponent={() => <PaginationEllipsis />}
+  count={10}
+  itemComponent={(props) => (
+    <PaginationItem page={props.page}>{props.page}</PaginationItem>
+  )}
+  ellipsisComponent={() => <PaginationEllipsis />}
 >
-	<PaginationPrevious />
-	<PaginationItems />
-	<PaginationNext />
+  <PaginationPrevious />
+  <PaginationItems />
+  <PaginationNext />
 </Pagination>
 ```

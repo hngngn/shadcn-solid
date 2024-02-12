@@ -3,14 +3,14 @@ title: Command
 description: Composable command menu.
 component: true
 link:
-    doc: https://kobalte.dev/docs/core/components/combobox
-    api: https://kobalte.dev/docs/core/components/combobox#api-reference
+  doc: https://kobalte.dev/docs/core/components/combobox
+  api: https://kobalte.dev/docs/core/components/combobox#api-reference
 ---
 
 <ComponentPreview
-	name="command-demo"
-	align="start"
-	className="[&_.preview>div]:max-w-[450px]"
+  name="command-demo"
+  align="start"
+  className="[&_.preview>div]:max-w-[450px]"
 />
 
 ## Installation
@@ -56,11 +56,11 @@ npm install @kobalte/core
 
 ```tsx
 import {
-	Command,
-	CommandInput,
-	CommandItem,
-	CommandItemLabel,
-	CommandList,
+  Command,
+  CommandInput,
+  CommandItem,
+  CommandItemLabel,
+  CommandList,
 } from "@/components/ui/command"
 ```
 
@@ -70,15 +70,15 @@ const ALL_OPTIONS = ["Apple", "Banana", "Blueberry", "Grapes", "Pineapple"]
 
 ```tsx
 <Command
-	options={ALL_OPTIONS}
-	itemComponent={(props) => (
-		<CommandItem item={props.item}>
-			<CommandItemLabel>{props.item.rawValue}</CommandItemLabel>
-		</CommandItem>
-	)}
+  options={ALL_OPTIONS}
+  itemComponent={(props) => (
+    <CommandItem item={props.item}>
+      <CommandItemLabel>{props.item.rawValue}</CommandItemLabel>
+    </CommandItem>
+  )}
 >
-	<CommandInput />
-	<CommandList />
+  <CommandInput />
+  <CommandList />
 </Command>
 ```
 
@@ -92,35 +92,35 @@ To show the command menu in a dialog, use the `<CommandDialog />` component.
 
 ```tsx
 export function CommandMenu() {
-	const [open, setOpen] = createSignal(false)
+  const [open, setOpen] = createSignal(false)
 
-	createEffect(() => {
-		const down = (e: KeyboardEvent) => {
-			if (e.key === "j" && (e.metaKey || e.ctrlKey)) {
-				e.preventDefault()
-				setOpen((open) => !open)
-			}
-		}
+  createEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === "j" && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault()
+        setOpen((open) => !open)
+      }
+    }
 
-		document.addEventListener("keydown", down)
+    document.addEventListener("keydown", down)
 
-		onCleanup(() => {
-			document.removeEventListener("keydown", down)
-		})
-	})
+    onCleanup(() => {
+      document.removeEventListener("keydown", down)
+    })
+  })
 
-	return (
-		<CommandDialog
-			options={ALL_OPTIONS}
-			itemComponent={(props) => (
-				<CommandItem item={props.item}>
-					<CommandItemLabel>{props.item.rawValue}</CommandItemLabel>
-				</CommandItem>
-			)}
-		>
-			<CommandInput />
-			<CommandList />
-		</CommandDialog>
-	)
+  return (
+    <CommandDialog
+      options={ALL_OPTIONS}
+      itemComponent={(props) => (
+        <CommandItem item={props.item}>
+          <CommandItemLabel>{props.item.rawValue}</CommandItemLabel>
+        </CommandItem>
+      )}
+    >
+      <CommandInput />
+      <CommandList />
+    </CommandDialog>
+  )
 }
 ```

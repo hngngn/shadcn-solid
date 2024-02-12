@@ -1,4 +1,5 @@
-{
+/** @type {import('eslint').Linter.Config} */
+module.exports = {
 	"$schema": "https://json.schemastore.org/eslintrc",
 	"root": true,
 	"extends": ["eslint:recommended", "plugin:solid/typescript", "prettier"],
