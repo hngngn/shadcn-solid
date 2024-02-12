@@ -21,12 +21,12 @@ I'm use the `@` alias to make it easier to import your components. This is how y
 
 ```json title="tsconfig.json"{3-6}
 {
-	"compilerOptions": {
-		"baseUrl": "./",
-		"paths": {
-			"@/*": ["./src/*"]
-		}
-	}
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
 }
 ```
 
@@ -35,11 +35,11 @@ import { defineConfig } from "@solidjs/start/config"
 import { resolve } from "node:path"
 
 export default defineConfig({
-	resolve: {
-		alias: {
-			"@": resolve(__dirname, "./src"),
-		},
-	},
+  resolve: {
+    alias: {
+      "@": resolve(__dirname, "./src"),
+    },
+  },
 })
 ```
 

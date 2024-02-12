@@ -3,8 +3,8 @@ title: Dropdown Menu
 description: Displays a menu to the user — such as a set of actions or functions — triggered by a button.
 component: true
 link:
-    doc: https://kobalte.dev/docs/core/components/dropdown-menu
-    api: https://kobalte.dev/docs/core/components/dropdown-menu#api-reference
+  doc: https://kobalte.dev/docs/core/components/dropdown-menu
+  api: https://kobalte.dev/docs/core/components/dropdown-menu#api-reference
 ---
 
 <ComponentPreview name="dropdown-menu-demo" />
@@ -14,9 +14,9 @@ link:
 <Tabs defaultValue="cli">
 
 <TabsList>
-	<TabsTrigger value="cli">CLI</TabsTrigger>
-	<TabsTrigger value="manual">Manual</TabsTrigger>
-	<TabsIndicator class="bg-primary" />
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsIndicator class="bg-primary" />
 </TabsList>
 
 <TabsContent value="cli">
@@ -53,26 +53,26 @@ npm install @kobalte/core
 
 ```tsx
 import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuItemLabel,
-	DropdownMenuSeparator,
-	DropdownMenuTrigger,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuItemLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 ```
 
 ```tsx
 <DropdownMenu>
-	<DropdownMenuTrigger>Open</DropdownMenuTrigger>
-	<DropdownMenuContent>
-		<DropdownMenuItemLabel>My Account</DropdownMenuItemLabel>
-		<DropdownMenuSeparator />
-		<DropdownMenuItem>Profile</DropdownMenuItem>
-		<DropdownMenuItem>Billing</DropdownMenuItem>
-		<DropdownMenuItem>Team</DropdownMenuItem>
-		<DropdownMenuItem>Subscription</DropdownMenuItem>
-	</DropdownMenuContent>
+  <DropdownMenuTrigger>Open</DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuItemLabel>My Account</DropdownMenuItemLabel>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>Profile</DropdownMenuItem>
+    <DropdownMenuItem>Billing</DropdownMenuItem>
+    <DropdownMenuItem>Team</DropdownMenuItem>
+    <DropdownMenuItem>Subscription</DropdownMenuItem>
+  </DropdownMenuContent>
 </DropdownMenu>
 ```
 

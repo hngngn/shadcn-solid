@@ -3,8 +3,8 @@ title: Sheet
 description: Extends the Dialog component to display content that complements the main content of the screen.
 component: true
 link:
-    doc: https://kobalte.dev/docs/core/components/dialog
-    api: https://kobalte.dev/docs/core/components/dialog#api-reference
+  doc: https://kobalte.dev/docs/core/components/dialog
+  api: https://kobalte.dev/docs/core/components/dialog#api-reference
 ---
 
 <ComponentPreview name="sheet-demo" />
@@ -14,9 +14,9 @@ link:
 <Tabs defaultValue="cli">
 
 <TabsList>
-	<TabsTrigger value="cli">CLI</TabsTrigger>
-	<TabsTrigger value="manual">Manual</TabsTrigger>
-	<TabsIndicator class="bg-primary" />
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsIndicator class="bg-primary" />
 </TabsList>
 
 <TabsContent value="cli">
@@ -53,27 +53,27 @@ npm install @kobalte/core
 
 ```tsx
 import {
-	Sheet,
-	SheetContent,
-	SheetDescription,
-	SheetHeader,
-	SheetTitle,
-	SheetTrigger,
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
 } from "@/components/ui/sheet"
 ```
 
 ```tsx
 <Sheet>
-	<SheetTrigger>Open</SheetTrigger>
-	<SheetContent>
-		<SheetHeader>
-			<SheetTitle>Are you sure absolutely sure?</SheetTitle>
-			<SheetDescription>
-				This action cannot be undone. This will permanently delete your
-				account and remove your data from our servers.
-			</SheetDescription>
-		</SheetHeader>
-	</SheetContent>
+  <SheetTrigger>Open</SheetTrigger>
+  <SheetContent>
+    <SheetHeader>
+      <SheetTitle>Are you sure absolutely sure?</SheetTitle>
+      <SheetDescription>
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </SheetDescription>
+    </SheetHeader>
+  </SheetContent>
 </Sheet>
 ```
 
@@ -91,15 +91,15 @@ You can adjust the size of the sheet using CSS classes:
 
 ```tsx {3}
 <Sheet>
-	<SheetTrigger>Open</SheetTrigger>
-	<SheetContent className="w-400px sm:w-540px">
-		<SheetHeader>
-			<SheetTitle>Are you sure absolutely sure?</SheetTitle>
-			<SheetDescription>
-				This action cannot be undone. This will permanently delete your
-				account and remove your data from our servers.
-			</SheetDescription>
-		</SheetHeader>
-	</SheetContent>
+  <SheetTrigger>Open</SheetTrigger>
+  <SheetContent className="w-400px sm:w-540px">
+    <SheetHeader>
+      <SheetTitle>Are you sure absolutely sure?</SheetTitle>
+      <SheetDescription>
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </SheetDescription>
+    </SheetHeader>
+  </SheetContent>
 </Sheet>
 ```

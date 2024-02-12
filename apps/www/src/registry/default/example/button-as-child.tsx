@@ -3,13 +3,13 @@ import { A } from "@solidjs/router"
 import { Button } from "../ui/button"
 
 const ButtonAsChild = () => {
-	return (
-		<Button asChild>
-			<As component={A} href="/login">
-				Login
-			</As>
-		</Button>
-	)
+  return (
+    <Button asChild>
+      <As component={A} href="/login">
+        Login
+      </As>
+    </Button>
+  )
 }
 
 export default ButtonAsChild

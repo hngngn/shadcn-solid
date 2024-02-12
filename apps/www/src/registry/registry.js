@@ -59,10 +59,22 @@ const ui = [
 		files: ["ui/combobox.tsx"],
 	},
 	{
+		name: "command",
+		type: "components:ui",
+		dependencies: ["@kobalte/core"],
+		files: ["ui/command.tsx"],
+	},
+	{
 		name: "context-menu",
 		type: "components:ui",
 		dependencies: ["@kobalte/core"],
 		files: ["ui/context-menu.tsx"],
+	},
+	{
+		name: "date-picker",
+		type: "components:ui",
+		dependencies: ["@ark-ui/solid"],
+		files: ["ui/date-picker.tsx"],
 	},
 	{
 		name: "dialog",
@@ -361,10 +373,34 @@ const example = [
 		files: ["example/combobox-demo.tsx"],
 	},
 	{
+		name: "command-demo",
+		type: "components:example",
+		registryDependencies: ["command"],
+		files: ["example/command-demo.tsx"],
+	},
+	{
+		name: "command-dialog",
+		type: "components:example",
+		registryDependencies: ["command"],
+		files: ["example/command-dialog.tsx"],
+	},
+	{
 		name: "context-menu-demo",
 		type: "components:example",
 		registryDependencies: ["context-menu"],
 		files: ["example/context-menu-demo.tsx"],
+	},
+	{
+		name: "date-picker-demo",
+		type: "components:example",
+		registryDependencies: ["date-picker"],
+		files: ["example/date-picker-demo.tsx"],
+	},
+	{
+		name: "date-picker-with-range-demo",
+		type: "components:example",
+		registryDependencies: ["date-picker"],
+		files: ["example/date-picker-with-range-demo.tsx"],
 	},
 	{
 		name: "dialog-demo",

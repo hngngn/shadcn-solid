@@ -3,8 +3,8 @@ title: Tooltip
 description: A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.
 component: true
 link:
-    doc: https://kobalte.dev/docs/core/components/tooltip
-    api: https://kobalte.dev/docs/core/components/tooltip#api-reference
+  doc: https://kobalte.dev/docs/core/components/tooltip
+  api: https://kobalte.dev/docs/core/components/tooltip#api-reference
 ---
 
 <ComponentPreview name="tooltip-demo" />
@@ -14,9 +14,9 @@ link:
 <Tabs defaultValue="cli">
 
 <TabsList>
-	<TabsTrigger value="cli">CLI</TabsTrigger>
-	<TabsTrigger value="manual">Manual</TabsTrigger>
-	<TabsIndicator class="bg-primary" />
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsIndicator class="bg-primary" />
 </TabsList>
 
 <TabsContent value="cli">
@@ -53,17 +53,17 @@ npm install @kobalte/core
 
 ```tsx
 import {
-	Tooltip,
-	TooltipContent,
-	TooltipTrigger,
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
 } from "@/components/ui/tooltip"
 ```
 
 ```tsx
 <Tooltip>
-	<TooltipTrigger>Hover</TooltipTrigger>
-	<TooltipContent>
-		<p>Add to library</p>
-	</TooltipContent>
+  <TooltipTrigger>Hover</TooltipTrigger>
+  <TooltipContent>
+    <p>Add to library</p>
+  </TooltipContent>
 </Tooltip>
 ```

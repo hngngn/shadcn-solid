@@ -3,13 +3,13 @@ title: Accordion
 description: A vertically stacked set of interactive headings that each reveal a section of content.
 component: true
 link:
-    doc: https://kobalte.dev/docs/core/components/accordion
-    api: https://kobalte.dev/docs/core/components/accordion#api-reference
+  doc: https://kobalte.dev/docs/core/components/accordion
+  api: https://kobalte.dev/docs/core/components/accordion#api-reference
 ---
 
 <ComponentPreview
-	name="accordion-demo"
-	class="[&_.preview>div]:sm:max-w-[70%]"
+  name="accordion-demo"
+  class="[&_.preview>div]:sm:max-w-[70%]"
 />
 
 ## Installation
@@ -17,9 +17,9 @@ link:
 <Tabs defaultValue="cli">
 
 <TabsList>
-	<TabsTrigger value="cli">CLI</TabsTrigger>
-	<TabsTrigger value="manual">Manual</TabsTrigger>
-	<TabsIndicator class="bg-primary" />
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsIndicator class="bg-primary" />
 </TabsList>
 
 <TabsContent value="cli">
@@ -39,24 +39,24 @@ Add the following animations to your `tailwind.config.js` file:
 ```js title="tailwind.config.cjs" {5-18}
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	theme: {
-		extend: {
-			keyframes: {
-				"accordion-down": {
-					from: { height: 0 },
-					to: { height: "var(--kb-accordion-content-height)" },
-				},
-				"accordion-up": {
-					from: { height: "var(--kb-accordion-content-height)" },
-					to: { height: 0 },
-				},
-			},
-			animation: {
-				"accordion-down": "accordion-down 0.2s ease-out",
-				"accordion-up": "accordion-up 0.2s ease-out",
-			},
-		},
-	},
+  theme: {
+    extend: {
+      keyframes: {
+        "accordion-down": {
+          from: { height: 0 },
+          to: { height: "var(--kb-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--kb-accordion-content-height)" },
+          to: { height: 0 },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
+    },
+  },
 }
 ```
 
@@ -87,24 +87,24 @@ Add the following animations to your `tailwind.config.cjs` file:
 ```js title="tailwind.config.cjs" {5-18}
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	theme: {
-		extend: {
-			keyframes: {
-				"accordion-down": {
-					from: { height: 0 },
-					to: { height: "var(--kb-accordion-content-height)" },
-				},
-				"accordion-up": {
-					from: { height: "var(--kb-accordion-content-height)" },
-					to: { height: 0 },
-				},
-			},
-			animation: {
-				"accordion-down": "accordion-down 0.2s ease-out",
-				"accordion-up": "accordion-up 0.2s ease-out",
-			},
-		},
-	},
+  theme: {
+    extend: {
+      keyframes: {
+        "accordion-down": {
+          from: { height: 0 },
+          to: { height: "var(--kb-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--kb-accordion-content-height)" },
+          to: { height: 0 },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
+    },
+  },
 }
 ```
 
@@ -118,20 +118,20 @@ module.exports = {
 
 ```tsx
 import {
-	Accordion,
-	AccordionContent,
-	AccordionItem,
-	AccordionTrigger,
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
 } from "@/components/ui/accordion"
 ```
 
 ```tsx
 <Accordion type="single" collapsible>
-	<AccordionItem value="item-1">
-		<AccordionTrigger>Is it accessible?</AccordionTrigger>
-		<AccordionContent>
-			Yes. It adheres to the WAI-ARIA design pattern.
-		</AccordionContent>
-	</AccordionItem>
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Is it accessible?</AccordionTrigger>
+    <AccordionContent>
+      Yes. It adheres to the WAI-ARIA design pattern.
+    </AccordionContent>
+  </AccordionItem>
 </Accordion>
 ```

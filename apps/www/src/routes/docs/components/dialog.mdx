@@ -3,8 +3,8 @@ title: Dialog
 description: A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
 component: true
 link:
-    doc: https://kobalte.dev/docs/core/components/dialog
-    api: https://kobalte.dev/docs/core/components/dialog#api-reference
+  doc: https://kobalte.dev/docs/core/components/dialog
+  api: https://kobalte.dev/docs/core/components/dialog#api-reference
 ---
 
 <ComponentPreview name="dialog-demo" />
@@ -14,9 +14,9 @@ link:
 <Tabs defaultValue="cli">
 
 <TabsList>
-	<TabsTrigger value="cli">CLI</TabsTrigger>
-	<TabsTrigger value="manual">Manual</TabsTrigger>
-	<TabsIndicator class="bg-primary" />
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsIndicator class="bg-primary" />
 </TabsList>
 
 <TabsContent value="cli">
@@ -53,26 +53,26 @@ npm install @kobalte/core
 
 ```tsx
 import {
-	Dialog,
-	DialogContent,
-	DialogDescription,
-	DialogHeader,
-	DialogTitle,
-	DialogTrigger,
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
 } from "@/components/ui/dialog"
 ```
 
 ```tsx
 <Dialog>
-	<DialogTrigger>Open</DialogTrigger>
-	<DialogContent>
-		<DialogHeader>
-			<DialogTitle>Are you sure absolutely sure?</DialogTitle>
-			<DialogDescription>
-				This action cannot be undone. This will permanently delete your
-				account and remove your data from our servers.
-			</DialogDescription>
-		</DialogHeader>
-	</DialogContent>
+  <DialogTrigger>Open</DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Are you sure absolutely sure?</DialogTitle>
+      <DialogDescription>
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </DialogDescription>
+    </DialogHeader>
+  </DialogContent>
 </Dialog>
 ```

@@ -1,4 +1,4 @@
 {
-	"*.{ts,tsx}": ["pnpm format", "pnpm lint --fix"],
+	"*.{ts,tsx}": ["pnpm build:registry", "pnpm format", "pnpm lint --fix"],
 	"*.json": ["pnpm format"]
 }

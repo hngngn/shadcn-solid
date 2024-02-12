@@ -10,9 +10,19 @@ We've added new components to shadcn-solid and made a improvements to the CLI.
 
 Here's a quick overview of what's new:
 
--   [**Carousel**](#carousel) - A carousel component with motion, swipe gestures and keyboard support.
--   [**Pagination**](#pagination) - A pagination component allows the user to select a specific page from a range of pages.
--   [**CLI updates**](#cli-updates) - Support for custom **Tailwind prefix**, remove `style` and add support for **custom ui dir**.
+- [**Carousel**](#carousel) - A carousel component with motion, swipe gestures and keyboard support.
+- [**Pagination**](#pagination) - A pagination component allows the user to select a specific page from a range of pages.
+- [**Command**](#command) - A Composable command menu component.
+- [**Date Picker**](#date-picker) - A component that allows users to select a date from a calendar.
+- [**CLI updates**](#cli-updates) - Support for custom **Tailwind prefix**, remove `style` and more.
+
+### Date Picker
+
+<ComponentPreview name="date-picker-demo" />
+
+### Command
+
+<ComponentPreview name="command-demo" />
 
 ### Carousel
 
@@ -30,32 +40,36 @@ We've added a pagination component with page navigation, previous and next butto
 
 ### CLI updates
 
--   Remove `style` property
+- Icon library
 
-    In this update, the `style` property has been removed, but there's a possibility of its return if additional styling features are introduced in future updates.
+  We're removed the icon library and using SVG for more flexibility in icons.
 
--   Support **custom ui dir**
+- Remove `style` property
 
-    You can use this config to customize the installation directory for your `ui` components.
+  In this update, the `style` property has been removed, but there's a possibility of its return if additional styling features are introduced in future updates.
 
-    ```json title="components.json"
-    {
-    	"aliases": {
-    		"ui": "@/ui"
-    	}
+- Support **custom ui dir**
+
+  You can use this config to customize the installation directory for your `ui` components.
+
+  ```json title="components.json"
+  {
+    "aliases": {
+      "ui": "@/ui"
     }
-    ```
+  }
+  ```
 
--   Support custom **Tailwind prefix**
+- Support custom **Tailwind prefix**
 
-    You can now configure a custom Tailwind prefix and the cli will automatically prefix your utility classes when adding components.
+  You can now configure a custom Tailwind prefix and the cli will automatically prefix your utility classes when adding components.
 
-    A drop-in for your existing design system with no conflict. 🔥
+  A drop-in for your existing design system with no conflict. 🔥
 
-    ```tsx /tw-/
-    <AlertDialog className="tw-grid tw-gap-4 tw-border tw-bg-background tw-shadow-lg" />
-    ```
+  ```tsx /tw-/
+  <AlertDialog className="tw-grid tw-gap-4 tw-border tw-bg-background tw-shadow-lg" />
+  ```
 
-    It works with `cn`, `cva` and CSS variables.
+  It works with `cn`, `cva` and CSS variables.
 
 That's it. Happy Lunar New Year.

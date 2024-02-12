@@ -1,14 +1,14 @@
 import { Checkbox, CheckboxControl, CheckboxLabel } from "../ui/checkbox"
 
 const CheckboxDisabledDemo = () => {
-	return (
-		<Checkbox class="flex items-center space-x-2" disabled>
-			<CheckboxControl />
-			<CheckboxLabel class="text-sm font-medium leading-none data-[disabled]:(cursor-not-allowed opacity-70)">
-				Accept terms and conditions
-			</CheckboxLabel>
-		</Checkbox>
-	)
+  return (
+    <Checkbox class="flex items-center space-x-2" disabled>
+      <CheckboxControl />
+      <CheckboxLabel class="data-[disabled]:(cursor-not-allowed opacity-70) text-sm font-medium leading-none">
+        Accept terms and conditions
+      </CheckboxLabel>
+    </Checkbox>
+  )
 }
 
 export default CheckboxDisabledDemo

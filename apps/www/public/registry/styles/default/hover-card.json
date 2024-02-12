@@ -1,11 +1,11 @@
 {
-	"name": "hover-card",
-	"dependencies": ["@kobalte/core"],
-	"files": [
-		{
-			"name": "hover-card.tsx",
-			"content": "import { cn } from \"@/lib/cn\"\nimport { HoverCard as HoverCardPrimitive } from \"@kobalte/core\"\nimport { splitProps, type ParentComponent } from \"solid-js\"\n\nexport const HoverCard = HoverCardPrimitive.Root\nexport const HoverCardTrigger = HoverCardPrimitive.Trigger\n\nexport const HoverCardContent: ParentComponent<\n\tHoverCardPrimitive.HoverCardContentProps\n> = (props) => {\n\tconst [local, rest] = splitProps(props, [\"class\"])\n\treturn (\n\t\t<HoverCardPrimitive.Portal>\n\t\t\t<HoverCardPrimitive.Content\n\t\t\t\tclass={cn(\n\t\t\t\t\t\"z-50 w-64 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0 data-[closed]:zoom-out-95 data-[expanded]:zoom-in-95\",\n\t\t\t\t\tlocal.class\n\t\t\t\t)}\n\t\t\t\t{...rest}\n\t\t\t/>\n\t\t</HoverCardPrimitive.Portal>\n\t)\n}\n"
-		}
-	],
-	"type": "components:ui"
+  "name": "hover-card",
+  "dependencies": ["@kobalte/core"],
+  "files": [
+    {
+      "name": "hover-card.tsx",
+      "content": "import { cn } from \"@/lib/cn\"\nimport { HoverCard as HoverCardPrimitive } from \"@kobalte/core\"\nimport { splitProps, type ParentComponent } from \"solid-js\"\n\nexport const HoverCard = HoverCardPrimitive.Root\nexport const HoverCardTrigger = HoverCardPrimitive.Trigger\n\nexport const HoverCardContent: ParentComponent<\n  HoverCardPrimitive.HoverCardContentProps\n> = (props) => {\n  const [local, rest] = splitProps(props, [\"class\"])\n  return (\n    <HoverCardPrimitive.Portal>\n      <HoverCardPrimitive.Content\n        class={cn(\n          \"bg-popover text-popover-foreground data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0 data-[closed]:zoom-out-95 data-[expanded]:zoom-in-95 z-50 w-64 rounded-md border p-4 shadow-md outline-none\",\n          local.class\n        )}\n        {...rest}\n      />\n    </HoverCardPrimitive.Portal>\n  )\n}\n"
+    }
+  ],
+  "type": "components:ui"
 }
