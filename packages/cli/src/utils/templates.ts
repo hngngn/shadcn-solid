@@ -5,9 +5,7 @@ import { twMerge } from "tailwind-merge"
 export const cn = (...classLists: ClassValue[]) => twMerge(clsx(classLists))
 `
 
-export const TAILWIND_CONFIG = `const { addDynamicIconSelectors } = require("@iconify/tailwind")
-
-/** @type {import('tailwindcss').Config} */
+export const TAILWIND_CONFIG = `/** @type {import('tailwindcss').Config} */
 module.exports = {
     darkMode: ["class", '[data-kb-theme="dark"]'],
     content: ["src/routes/**/*.{ts,tsx}", "src/components/**/*.{ts,tsx}"],
@@ -47,13 +45,11 @@ module.exports = {
             },
         },
     },
-    plugins: [require("tailwindcss-animate"), addDynamicIconSelectors()],
+    plugins: [require("tailwindcss-animate")],
 }
 `
 
-export const TAILWIND_CONFIG_WITH_VARIABLES = `const { addDynamicIconSelectors } = require("@iconify/tailwind")
-
-/** @type {import('tailwindcss').Config} */
+export const TAILWIND_CONFIG_WITH_VARIABLES = `/** @type {import('tailwindcss').Config} */
 module.exports = {
     darkMode: ["class", '[data-kb-theme="dark"]'],
     content: [
@@ -136,5 +132,5 @@ module.exports = {
             },
         },
     },
-    plugins: [require("tailwindcss-animate"), addDynamicIconSelectors()],
+    plugins: [require("tailwindcss-animate")],
 }`

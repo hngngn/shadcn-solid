@@ -10,43 +10,43 @@ import type * as z from "zod"
 import { transformTwPrefixes } from "./transform-tw-prefix"
 
 export type TransformOpts = {
-	filename: string
-	raw: string
-	config: Config
-	baseColor?: z.infer<typeof registryBaseColorSchema>
+  filename: string
+  raw: string
+  config: Config
+  baseColor?: z.infer<typeof registryBaseColorSchema>
 }
 
 export type Transformer<Output = SourceFile> = (
-	// eslint-disable-next-line no-unused-vars
-	opts: TransformOpts & {
-		sourceFile: SourceFile
-	}
+  // eslint-disable-next-line no-unused-vars
+  opts: TransformOpts & {
+    sourceFile: SourceFile
+  }
 ) => Promise<Output>
 
 const transformers: Transformer[] = [
-	transformImport,
-	transformCssVars,
-	transformTwPrefixes,
+  transformImport,
+  transformCssVars,
+  transformTwPrefixes,
 ]
 
 const project = new Project({
-	compilerOptions: {},
+  compilerOptions: {},
 })
 
 async function createTempSourceFile(filename: string) {
-	const dir = await fs.mkdtemp(path.join(tmpdir(), "shadcn-"))
-	return path.join(dir, filename)
+  const dir = await fs.mkdtemp(path.join(tmpdir(), "shadcn-"))
+  return path.join(dir, filename)
 }
 
 export async function transform(opts: TransformOpts) {
-	const tempFile = await createTempSourceFile(opts.filename)
-	const sourceFile = project.createSourceFile(tempFile, opts.raw, {
-		scriptKind: ScriptKind.TSX,
-	})
+  const tempFile = await createTempSourceFile(opts.filename)
+  const sourceFile = project.createSourceFile(tempFile, opts.raw, {
+    scriptKind: ScriptKind.TSX,
+  })
 
-	for (const transformer of transformers) {
-		transformer({ sourceFile, ...opts })
-	}
+  for (const transformer of transformers) {
+    transformer({ sourceFile, ...opts })
+  }
 
-	return sourceFile.getFullText()
+  return sourceFile.getFullText()
 }
