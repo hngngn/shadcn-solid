@@ -7,7 +7,8 @@
     "start": "vinxi start",
     "format": "prettier -w \"./src/**/*.{js,ts,tsx,mdx}\"",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives",
-    "build:registry": "tsx build-registry.ts"
+    "build:registry": "tsx scripts/build-registry.ts",
+    "build:contents": "tsx scripts/build-contents.ts"
   },
   "dependencies": {
     "@ark-ui/solid": "^2.0.1",
