@@ -31,11 +31,11 @@ const App = () => {
           <Suspense>
             <ColorModeScript storageType={storageManager.type} />
             <ColorModeProvider storageManager={storageManager}>
-              <Header />
-              <div class="flex min-h-[calc(100dvh-57px-96px)]">
+              <div class="relative flex min-h-screen flex-col">
+                <Header />
                 <div class="flex-1">{props.children}</div>
+                <Footer />
               </div>
-              <Footer />
             </ColorModeProvider>
           </Suspense>
         </MetaProvider>

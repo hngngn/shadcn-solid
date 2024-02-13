@@ -64,7 +64,7 @@ export const DemoShareDocument = () => {
             <div class="flex items-center justify-between space-x-4">
               <div class="flex items-center space-x-4">
                 <ImageRoot>
-                  <Image src="/avatars/05.png" />
+                  <Image src="/avatars/03.png" />
                   <ImageFallback>IN</ImageFallback>
                 </ImageRoot>
                 <div>

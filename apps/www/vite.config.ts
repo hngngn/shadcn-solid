@@ -20,7 +20,10 @@ export default defineConfig({
   start: {
     extensions: ["mdx"],
     server: {
-      preset: "vercel"
+      preset: "vercel",
+      prerender: {
+        crawlLinks: true
+      }
     }
   },
   plugins: [
