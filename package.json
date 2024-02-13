@@ -5,7 +5,10 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo run lint",
-    "format": "turbo run format"
+    "format": "turbo run format",
+    "release": "changeset version",
+    "prepare": "husky",
+    "build:cli": "turbo --filter=shadcn-solid build"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.0",
