@@ -22,9 +22,9 @@ export default defineConfig({
     },
   },
   start: {
-    extensions: ["mdx", "md"],
+    extensions: ["mdx"],
     server: {
-      preset: "vercel",
+      preset: "vercel-edge",
     },
   },
   plugins: [

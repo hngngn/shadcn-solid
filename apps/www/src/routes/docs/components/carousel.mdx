@@ -85,7 +85,7 @@ To set the size of the items, you can use the `basis` utility class on the `<Car
 
 <ComponentPreview name="carousel-size" />
 
-```tsx title="Example" showLineNumbers {4-6}
+```tsx title="Example" {4-6}
 // 33% of the carousel width.
 <Carousel>
   <CarouselContent>
@@ -96,7 +96,7 @@ To set the size of the items, you can use the `basis` utility class on the `<Car
 </Carousel>
 ```
 
-```tsx title="Responsive" showLineNumbers {4-6}
+```tsx title="Responsive" {4-6}
 // 50% on small screens and 33% on larger screens.
 <Carousel>
   <CarouselContent>
@@ -125,7 +125,7 @@ You can always adjust this in your own project if you need to.
 
 <ComponentPreview name="carousel-spacing" />
 
-```tsx title="Example" showLineNumbers /-ml-4/ /pl-4/
+```tsx title="Example" /-ml-4/ /pl-4/
 <Carousel>
   <CarouselContent className="-ml-4">
     <CarouselItem className="pl-4">...</CarouselItem>
@@ -135,7 +135,7 @@ You can always adjust this in your own project if you need to.
 </Carousel>
 ```
 
-```tsx title="Responsive" showLineNumbers /-ml-2/ /pl-2/ /md:-ml-4/ /md:pl-4/
+```tsx title="Responsive" /-ml-2/ /pl-2/ /md:-ml-4/ /md:pl-4/
 <Carousel>
   <CarouselContent className="-ml-2 md:-ml-4">
     <CarouselItem className="pl-2 md:pl-4">...</CarouselItem>
@@ -151,7 +151,7 @@ Use the `orientation` prop to set the orientation of the carousel.
 
 <ComponentPreview name="carousel-orientation" />
 
-```tsx showLineNumbers /vertical | horizontal/
+```tsx/vertical | horizontal/
 <Carousel orientation="vertical | horizontal">
   <CarouselContent>
     <CarouselItem>...</CarouselItem>
@@ -165,7 +165,7 @@ Use the `orientation` prop to set the orientation of the carousel.
 
 You can pass options to the carousel using the `opts` prop. See the [Embla Carousel docs](https://www.embla-carousel.com/api/options/) for more information.
 
-```tsx showLineNumbers {2-5}
+```ts {2-5}
 <Carousel
   opts={{
     align: "start",
@@ -186,7 +186,7 @@ Use a state and the `setApi` props to get an instance of the carousel API.
 
 <ComponentPreview name="carousel-api-demo" />
 
-```tsx showLineNumbers {1,4,22}
+```ts {1,4,22}
 import type { CarouselApi } from "@/components/ui/carousel"
 
 export function Example() {
@@ -223,7 +223,7 @@ export function Example() {
 
 You can listen to events using the api instance from `setApi`.
 
-```tsx showLineNumbers {1,4-16}
+```tsx{1,4-16}
 import type { CarouselApi } from "@/components/ui/carousel"
 
 export function Example() {
@@ -259,7 +259,7 @@ See the [Embla Carousel docs](https://www.embla-carousel.com/api/events/) for mo
 
 You can use the `plugins` prop to add plugins to the carousel.
 
-```ts showLineNumbers {1,6-10}
+```t {1,6-10}
 import Autoplay from "embla-carousel-autoplay"
 
 export function Example() {

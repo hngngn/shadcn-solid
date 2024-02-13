@@ -7,9 +7,9 @@ description: Adding dark mode to your site.
 
 ### Wrap your root layout
 
-Add the `ThemeProvider` and `ColorModeScript` to your app.
+Add the `ColorModeProvider` and `ColorModeScript` to your app.
 
-```tsx {1-5,19-22} title="src/app.tsx"
+```tsx {1-5,28-31} title="src/app.tsx"
 import {
   ColorModeProvider,
   ColorModeScript,
@@ -21,11 +21,8 @@ import { FileRoutes } from "@solidjs/start"
 import { Suspense } from "solid-js"
 import { isServer } from "solid-js/web"
 import { getCookie } from "vinxi/http"
-import { Metadata } from "./components/metadata"
 
 const getServerCookies = () => {
-  "use server"
-
   const colorMode = getCookie("kb-color-mode")
   return colorMode ? `kb-color-mode=${colorMode}` : ""
 }
@@ -39,7 +36,6 @@ export default function App() {
     <Router
       root={(props) => (
         <MetaProvider>
-          <Metadata />
           <Suspense>
             <ColorModeScript storageType={storageManager.type} />
             <ColorModeProvider storageManager={storageManager}>
