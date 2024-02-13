@@ -91,7 +91,7 @@ export const Index = {
     "date-picker": {
       name: "date-picker",
       type: "components:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["button"],
       component: lazy(() => import("@/registry/default/ui/date-picker")),
       files: ["registry/default/ui/date-picker.tsx"]
     },

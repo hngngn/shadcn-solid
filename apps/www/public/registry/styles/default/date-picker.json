@@ -1,6 +1,7 @@
 {
   "name": "date-picker",
   "dependencies": ["@ark-ui/solid"],
+  "registryDependencies": ["button"],
   "files": [
     {
       "name": "date-picker.tsx",

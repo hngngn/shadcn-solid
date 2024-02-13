@@ -72,6 +72,7 @@ const ui = [
   {
     name: "date-picker",
     type: "components:ui",
+    registryDependencies: ["button"],
     dependencies: ["@ark-ui/solid"],
     files: ["ui/date-picker.tsx"]
   },
