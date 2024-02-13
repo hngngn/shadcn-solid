@@ -4,7 +4,7 @@ import { Pager } from "@/components/pager";
 import { Sidebar } from "@/components/sidebar";
 import { TableOfContents } from "@/components/toc";
 import { badgeVariants } from "@/registry/default/ui/badge";
-import { A, useLocation, type RouteSectionProps } from "@solidjs/router";
+import { A, type RouteSectionProps } from "@solidjs/router";
 import { Show, createMemo } from "solid-js";
 import { MDXProvider } from "solid-mdx";
 import { Balancer } from "solid-wrap-balancer";
@@ -29,28 +29,26 @@ const contents = /*#__PURE__*/ import.meta.glob<
     headings: Heading[];
     frontmatter: Frontmatter;
   }
->("./docs/**/*.mdx", {
+>("../contents/docs/**/*.mdx", {
   eager: true
 });
 
-const Documents = (props: RouteSectionProps) => {
-  const location = useLocation();
-
+const DocumentLayout = (props: RouteSectionProps) => {
   const markdownData = createMemo(() => ({
     frontmatter:
       contents[
-        `.${
-          location.pathname === "/docs" || location.pathname === "/docs/installation"
-            ? location.pathname + "/index"
-            : location.pathname
+        `../contents${
+          props.location.pathname === "/docs" || props.location.pathname === "/docs/installation"
+            ? props.location.pathname + "/index"
+            : props.location.pathname
         }.mdx`
       ].frontmatter,
     headings:
       contents[
-        `.${
-          location.pathname === "/docs" || location.pathname === "/docs/installation"
-            ? location.pathname + "/index"
-            : location.pathname
+        `../contents${
+          props.location.pathname === "/docs" || props.location.pathname === "/docs/installation"
+            ? props.location.pathname + "/index"
+            : props.location.pathname
         }.mdx`
       ].headings
   }));
@@ -154,7 +152,7 @@ const Documents = (props: RouteSectionProps) => {
               <div class="max-w-full pb-12 pt-8">
                 <MDXProvider components={MDXComponent}>{props.children}</MDXProvider>
               </div>
-              <Pager slug={location.pathname} />
+              <Pager slug={props.location.pathname} />
             </div>
             <Show when={markdownData().frontmatter.toc === undefined}>
               <div class="hidden text-sm xl:block">
@@ -170,4 +168,4 @@ const Documents = (props: RouteSectionProps) => {
   );
 };
 
-export default Documents;
+export default DocumentLayout;
