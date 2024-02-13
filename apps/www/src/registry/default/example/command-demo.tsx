@@ -1,4 +1,4 @@
-import { type JSXElement } from "solid-js"
+import { type JSXElement } from "solid-js";
 import {
   Command,
   CommandHeading,
@@ -6,20 +6,20 @@ import {
   CommandItem,
   CommandItemLabel,
   CommandList,
-  CommandShortcut,
-} from "../ui/command"
+  CommandShortcut
+} from "../ui/command";
 
 type Option = {
-  icon: JSXElement
-  label: string
-  value: string
-  shortcut?: JSXElement
-}
+  icon: JSXElement;
+  label: string;
+  value: string;
+  shortcut?: JSXElement;
+};
 
 type List = {
-  label: string
-  options: Option[]
-}
+  label: string;
+  options: Option[];
+};
 
 const CommandDemo = () => {
   const data: List[] = [
@@ -28,11 +28,7 @@ const CommandDemo = () => {
       options: [
         {
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              class="mr-2 h-4 w-4"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="mr-2 h-4 w-4">
               <path
                 fill="none"
                 stroke="currentColor"
@@ -44,15 +40,11 @@ const CommandDemo = () => {
             </svg>
           ),
           label: "Calendar",
-          value: "Calendar",
+          value: "Calendar"
         },
         {
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="mr-2 h-4 w-4"
-              viewBox="0 0 24 24"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" viewBox="0 0 24 24">
               <g
                 fill="none"
                 stroke="currentColor"
@@ -66,15 +58,11 @@ const CommandDemo = () => {
             </svg>
           ),
           label: "Search emoji",
-          value: "Search emoji",
+          value: "Search emoji"
         },
         {
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="mr-2 h-4 w-4"
-              viewBox="0 0 24 24"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" viewBox="0 0 24 24">
               <g
                 fill="none"
                 stroke="currentColor"
@@ -88,20 +76,16 @@ const CommandDemo = () => {
             </svg>
           ),
           label: "Launch",
-          value: "Launch",
-        },
-      ],
+          value: "Launch"
+        }
+      ]
     },
     {
       label: "Settings",
       options: [
         {
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="mr-2 h-4 w-4"
-              viewBox="0 0 24 24"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" viewBox="0 0 24 24">
               <path
                 fill="none"
                 stroke="currentColor"
@@ -114,15 +98,11 @@ const CommandDemo = () => {
           ),
           label: "Profile",
           value: "Profile",
-          shortcut: <CommandShortcut>⌘P</CommandShortcut>,
+          shortcut: <CommandShortcut>⌘P</CommandShortcut>
         },
         {
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="mr-2 h-4 w-4"
-              viewBox="0 0 24 24"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" viewBox="0 0 24 24">
               <g
                 fill="none"
                 stroke="currentColor"
@@ -137,15 +117,11 @@ const CommandDemo = () => {
           ),
           label: "Mail",
           value: "Mail",
-          shortcut: <CommandShortcut>⌘B</CommandShortcut>,
+          shortcut: <CommandShortcut>⌘B</CommandShortcut>
         },
         {
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="mr-2 h-4 w-4"
-              viewBox="0 0 24 24"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" viewBox="0 0 24 24">
               <g
                 fill="none"
                 stroke="currentColor"
@@ -160,11 +136,11 @@ const CommandDemo = () => {
           ),
           label: "Setting",
           value: "Setting",
-          shortcut: <CommandShortcut>⌘S</CommandShortcut>,
-        },
-      ],
-    },
-  ]
+          shortcut: <CommandShortcut>⌘S</CommandShortcut>
+        }
+      ]
+    }
+  ];
 
   return (
     <Command<Option, List>
@@ -174,22 +150,20 @@ const CommandDemo = () => {
       optionLabel="label"
       optionGroupChildren="options"
       placeholder="Type a command or search..."
-      itemComponent={(props) => (
+      itemComponent={props => (
         <CommandItem item={props.item}>
           {props.item.rawValue.icon}
           <CommandItemLabel>{props.item.rawValue.label}</CommandItemLabel>
           {props.item.rawValue.shortcut}
         </CommandItem>
       )}
-      sectionComponent={(props) => (
-        <CommandHeading>{props.section.rawValue.label}</CommandHeading>
-      )}
+      sectionComponent={props => <CommandHeading>{props.section.rawValue.label}</CommandHeading>}
       class="rounded-lg border shadow-md"
     >
       <CommandInput />
       <CommandList />
     </Command>
-  )
-}
+  );
+};
 
-export default CommandDemo
+export default CommandDemo;

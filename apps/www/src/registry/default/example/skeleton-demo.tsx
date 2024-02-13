@@ -1,4 +1,4 @@
-import { Skeleton } from "../ui/skeleton"
+import { Skeleton } from "../ui/skeleton";
 
 const SkeletonDemo = () => {
   return (
@@ -9,7 +9,7 @@ const SkeletonDemo = () => {
         <Skeleton class="h-4 w-[200px]" />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SkeletonDemo
+export default SkeletonDemo;

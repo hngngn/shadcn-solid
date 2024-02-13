@@ -1,12 +1,12 @@
-import { docsConfig } from "@/config/docs"
-import { siteConfig } from "@/config/site"
-import { cn } from "@/lib/cn"
-import { A, useLocation } from "@solidjs/router"
-import { For } from "solid-js"
-import { Logo } from "./logo"
+import { docsConfig } from "@/config/docs";
+import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/cn";
+import { A, useLocation } from "@solidjs/router";
+import { For } from "solid-js";
+import { Logo } from "./logo";
 
 export const Navbar = () => {
-  const location = useLocation()
+  const location = useLocation();
 
   return (
     <div class="mr-4 hidden md:flex">
@@ -16,16 +16,15 @@ export const Navbar = () => {
       </A>
       <nav class="flex items-center space-x-6 text-sm font-medium">
         <For each={docsConfig.mainNav}>
-          {(item) => (
+          {item => (
             <A
               href={item.href!}
               class={cn(
-                "hover:text-foreground/80 transition-colors",
+                "transition-colors hover:text-foreground/80",
                 location.pathname === item.href ||
                   (item.href === "/docs/components/accordion" &&
                     location.pathname.startsWith("/docs/components")) ||
-                  (item.href === "/examples/cards" &&
-                    location.pathname.startsWith("/examples"))
+                  (item.href === "/examples/cards" && location.pathname.startsWith("/examples"))
                   ? "text-foreground"
                   : "opacity-60"
               )}
@@ -36,5 +35,5 @@ export const Navbar = () => {
         </For>
       </nav>
     </div>
-  )
-}
+  );
+};

@@ -1,8 +1,8 @@
-import { Example } from "@/components/example"
-import { siteConfig } from "@/config/site"
-import { buttonVariants } from "@/registry/default/ui/button"
-import { A, type RouteSectionProps } from "@solidjs/router"
-import { Balancer } from "solid-wrap-balancer"
+import { Example } from "@/components/example";
+import { siteConfig } from "@/config/site";
+import { buttonVariants } from "@/registry/default/ui/button";
+import { A, type RouteSectionProps } from "@solidjs/router";
+import { Balancer } from "solid-wrap-balancer";
 
 const Examples = (props: RouteSectionProps) => {
   return (
@@ -14,9 +14,8 @@ const Examples = (props: RouteSectionProps) => {
         <h1 class="block text-center text-3xl font-bold leading-tight tracking-tighter md:hidden md:text-6xl lg:leading-[1.1]">
           Examples
         </h1>
-        <Balancer class="text-muted-foreground max-w-[750px] text-center text-lg sm:text-xl">
-          Some examples built using the components. Use this as a guide to build
-          your own.
+        <Balancer class="max-w-[750px] text-center text-lg text-muted-foreground sm:text-xl">
+          Some examples built using the components. Use this as a guide to build your own.
         </Balancer>
         <div class="flex w-full items-center justify-center space-x-4 py-4 md:pb-10">
           <A href="/docs" class={buttonVariants()}>
@@ -28,11 +27,7 @@ const Examples = (props: RouteSectionProps) => {
             href={siteConfig.links.github}
             class={buttonVariants({ variant: "outline" })}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="mr-2 h-4 w-4"
-              viewBox="0 0 24 24"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" viewBox="0 0 24 24">
               <path
                 fill="none"
                 stroke="currentColor"
@@ -48,12 +43,12 @@ const Examples = (props: RouteSectionProps) => {
       </section>
       <section>
         <Example />
-        <div class="bg-background overflow-hidden rounded-[0.5rem] border shadow-md md:shadow-xl">
+        <div class="overflow-hidden rounded-[0.5rem] border bg-background shadow-md md:shadow-xl">
           {props.children}
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Examples
+export default Examples;

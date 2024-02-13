@@ -1,13 +1,9 @@
-import { Alert, AlertDescription, AlertTitle } from "../ui/alert"
+import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
 
 const AlertDestructive = () => {
   return (
     <Alert variant="destructive">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-4 w-4"
-        viewBox="0 0 24 24"
-      >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24">
         <path
           fill="none"
           stroke="currentColor"
@@ -18,11 +14,9 @@ const AlertDestructive = () => {
         />
       </svg>
       <AlertTitle>Error</AlertTitle>
-      <AlertDescription>
-        Your session has expired. Please log in again.
-      </AlertDescription>
+      <AlertDescription>Your session has expired. Please log in again.</AlertDescription>
     </Alert>
-  )
-}
+  );
+};
 
-export default AlertDestructive
+export default AlertDestructive;

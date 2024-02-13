@@ -1,16 +1,16 @@
-import Autoplay from "embla-carousel-autoplay"
-import { Index } from "solid-js"
-import { Card, CardContent } from "../ui/card"
+import Autoplay from "embla-carousel-autoplay";
+import { Index } from "solid-js";
+import { Card, CardContent } from "../ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious,
-} from "../ui/carousel"
+  CarouselPrevious
+} from "../ui/carousel";
 
 const CarouselPlugin = () => {
-  let plugin = Autoplay({ delay: 2000, stopOnInteraction: true })
+  let plugin = Autoplay({ delay: 2000, stopOnInteraction: true });
 
   return (
     <Carousel
@@ -37,7 +37,7 @@ const CarouselPlugin = () => {
       <CarouselPrevious />
       <CarouselNext />
     </Carousel>
-  )
-}
+  );
+};
 
-export default CarouselPlugin
+export default CarouselPlugin;

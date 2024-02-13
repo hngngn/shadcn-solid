@@ -1,13 +1,9 @@
-import { Alert, AlertDescription, AlertTitle } from "../ui/alert"
+import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
 
 const AlertDemo = () => {
   return (
     <Alert>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-4 w-4"
-        viewBox="0 0 24 24"
-      >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24">
         <path
           fill="none"
           stroke="currentColor"
@@ -22,7 +18,7 @@ const AlertDemo = () => {
         You can not add components to your app using the cli, yet.
       </AlertDescription>
     </Alert>
-  )
-}
+  );
+};
 
-export default AlertDemo
+export default AlertDemo;

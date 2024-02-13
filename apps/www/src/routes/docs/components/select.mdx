@@ -57,19 +57,17 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
+  SelectValue
+} from "@/components/ui/select";
 ```
 
 ```tsx
 <Select
   options={["Apple", "Banana", "Blueberry", "Grapes", "Pineapple"]}
-  itemComponent={(props) => (
-    <SelectItem item={props.item}>{props.item.rawValue}</SelectItem>
-  )}
+  itemComponent={props => <SelectItem item={props.item}>{props.item.rawValue}</SelectItem>}
 >
   <SelectTrigger>
-    <SelectValue<string>>{(state) => state.selectedOption()}</SelectValue>
+    <SelectValue<string>>{state => state.selectedOption()}</SelectValue>
   </SelectTrigger>
   <SelectContent />
 </Select>

@@ -1,6 +1,6 @@
-import { Button } from "../ui/button"
-import { TextFieldTextArea } from "../ui/textarea"
-import { TextField } from "../ui/textfield"
+import { Button } from "../ui/button";
+import { TextFieldTextArea } from "../ui/textarea";
+import { TextField } from "../ui/textfield";
 
 const TextareaWithButton = () => {
   return (
@@ -12,7 +12,7 @@ const TextareaWithButton = () => {
         Send message
       </Button>
     </div>
-  )
-}
+  );
+};
 
-export default TextareaWithButton
+export default TextareaWithButton;

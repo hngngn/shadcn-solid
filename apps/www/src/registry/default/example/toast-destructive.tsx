@@ -1,5 +1,5 @@
-import { toaster } from "@kobalte/core"
-import { Button } from "../ui/button"
+import { toaster } from "@kobalte/core";
+import { Button } from "../ui/button";
 import {
   Toast,
   ToastContent,
@@ -7,22 +7,20 @@ import {
   ToastList,
   ToastProgress,
   ToastRegion,
-  ToastTitle,
-} from "../ui/toast"
+  ToastTitle
+} from "../ui/toast";
 
 const ToastDestructive = () => {
   const showToast = () =>
-    toaster.show((props) => (
+    toaster.show(props => (
       <Toast toastId={props.toastId} variant="destructive">
         <ToastContent>
           <ToastTitle>Uh oh! Something went wrong.</ToastTitle>
-          <ToastDescription>
-            There was a problem with your request.
-          </ToastDescription>
+          <ToastDescription>There was a problem with your request.</ToastDescription>
         </ToastContent>
         <ToastProgress />
       </Toast>
-    ))
+    ));
 
   return (
     <>
@@ -33,7 +31,7 @@ const ToastDestructive = () => {
         <ToastList />
       </ToastRegion>
     </>
-  )
-}
+  );
+};
 
-export default ToastDestructive
+export default ToastDestructive;

@@ -5,7 +5,7 @@ const TypographyList = () => {
       <li>2nd level of jokes: 10 gold coins</li>
       <li>3rd level of one-liners : 20 gold coins</li>
     </ul>
-  )
-}
+  );
+};
 
-export default TypographyList
+export default TypographyList;

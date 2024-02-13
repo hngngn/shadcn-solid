@@ -1,7 +1,7 @@
-import { Button } from "@/registry/default/ui/button"
-import { As } from "@kobalte/core"
-import { Title } from "@solidjs/meta"
-import { A } from "@solidjs/router"
+import { Button } from "@/registry/default/ui/button";
+import { As } from "@kobalte/core";
+import { Title } from "@solidjs/meta";
+import { A } from "@solidjs/router";
 
 const NotFound = () => {
   return (
@@ -15,14 +15,14 @@ const NotFound = () => {
           </div>
           <p class="opacity-60">This page doesn't exist or was removed!</p>
           <Button asChild>
-            <As component={A} href="/">
+            <As component={A} href="/" replace>
               Back to homepage
             </As>
           </Button>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default NotFound
+export default NotFound;

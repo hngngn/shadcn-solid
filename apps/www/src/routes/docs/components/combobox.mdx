@@ -57,29 +57,27 @@ import {
   ComboboxControl,
   ComboboxItem,
   ComboboxTrigger,
-  ComboboxContent,
-} from "@/components/ui/combobox"
-import { createFilter } from "@kobalte/core"
-import { createSignal } from "solid-js"
+  ComboboxContent
+} from "@/components/ui/combobox";
+import { createFilter } from "@kobalte/core";
+import { createSignal } from "solid-js";
 ```
 
 ```tsx
-const ALL_OPTIONS = ["Apple", "Banana", "Blueberry", "Grapes", "Pineapple"]
+const ALL_OPTIONS = ["Apple", "Banana", "Blueberry", "Grapes", "Pineapple"];
 
-const filter = createFilter({ sensitivity: "base" })
-const [options, setOptions] = createSignal(ALL_OPTIONS)
+const filter = createFilter({ sensitivity: "base" });
+const [options, setOptions] = createSignal(ALL_OPTIONS);
 const onInputChange = (value: string) => {
-  setOptions(ALL_OPTIONS.filter((option) => filter.contains(option, value)))
-}
+  setOptions(ALL_OPTIONS.filter(option => filter.contains(option, value)));
+};
 ```
 
 ```tsx
 <Combobox
   options={options()}
   onInputChange={onInputChange}
-  itemComponent={(props) => (
-    <ComboboxItem item={props.item}>{props.item.rawValue}</ComboboxItem>
-  )}
+  itemComponent={props => <ComboboxItem item={props.item}>{props.item.rawValue}</ComboboxItem>}
 >
   <ComboboxTrigger>
     <ComboboxInput />

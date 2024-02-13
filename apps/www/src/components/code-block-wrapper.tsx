@@ -1,27 +1,25 @@
-import { cn } from "@/lib/cn"
-import { Button } from "@/registry/default/ui/button"
+import { cn } from "@/lib/cn";
+import { Button } from "@/registry/default/ui/button";
 import {
   Collapsible,
   CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/registry/default/ui/collapsible"
-import { As } from "@kobalte/core"
-import type { ParentComponent } from "solid-js"
-import { createSignal, mergeProps } from "solid-js"
+  CollapsibleTrigger
+} from "@/registry/default/ui/collapsible";
+import { As } from "@kobalte/core";
+import type { ParentComponent } from "solid-js";
+import { createSignal, mergeProps } from "solid-js";
 
 export const CodeBlockWrapper: ParentComponent<{
-  expandButtonTitle?: string
-}> = (props) => {
-  const merge = mergeProps({ expandButtonTitle: "View Code" }, props)
+  expandButtonTitle?: string;
+}> = props => {
+  const merge = mergeProps({ expandButtonTitle: "View Code" }, props);
 
-  const [isOpened, setIsOpened] = createSignal(false)
+  const [isOpened, setIsOpened] = createSignal(false);
 
   return (
     <Collapsible open={isOpened()} onOpenChange={setIsOpened} forceMount>
       <div class={cn("relative my-6 overflow-hidden rounded-md")}>
-        <CollapsibleContent
-          class={cn("overflow-hidden", !isOpened() && "max-h-32")}
-        >
+        <CollapsibleContent class={cn("overflow-hidden", !isOpened() && "max-h-32")}>
           <div
             class={cn(
               "[&_pre]:my-0 [&_pre]:max-h-[650px] [&_pre]:pb-[100px]",
@@ -45,5 +43,5 @@ export const CodeBlockWrapper: ParentComponent<{
         </div>
       </div>
     </Collapsible>
-  )
-}
+  );
+};

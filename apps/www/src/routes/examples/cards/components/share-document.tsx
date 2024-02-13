@@ -1,38 +1,33 @@
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/default/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
-  CardTitle,
-} from "@/registry/default/ui/card"
-import { Image, ImageFallback, ImageRoot } from "@/registry/default/ui/image"
+  CardTitle
+} from "@/registry/default/ui/card";
+import { Image, ImageFallback, ImageRoot } from "@/registry/default/ui/image";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
-} from "@/registry/default/ui/select"
-import { Separator } from "@/registry/default/ui/separator"
-import { TextField, TextFieldInput } from "@/registry/default/ui/textfield"
+  SelectValue
+} from "@/registry/default/ui/select";
+import { Separator } from "@/registry/default/ui/separator";
+import { TextField, TextFieldInput } from "@/registry/default/ui/textfield";
 
 export const DemoShareDocument = () => {
   return (
     <Card>
       <CardHeader>
         <CardTitle>Share this document</CardTitle>
-        <CardDescription>
-          Anyone with the link can view this document.
-        </CardDescription>
+        <CardDescription>Anyone with the link can view this document.</CardDescription>
       </CardHeader>
       <CardContent>
         <div class="flex space-x-2">
           <TextField>
-            <TextFieldInput
-              value="http://example.com/link/to/document"
-              readOnly
-            />
+            <TextFieldInput value="http://example.com/link/to/document" readOnly />
           </TextField>
           <Button variant="secondary" class="shrink-0">
             Copy Link
@@ -50,22 +45,18 @@ export const DemoShareDocument = () => {
                 </ImageRoot>
                 <div>
                   <p class="text-sm font-medium leading-none">Olivia Martin</p>
-                  <p class="text-muted-foreground text-sm">m@example.com</p>
+                  <p class="text-sm text-muted-foreground">m@example.com</p>
                 </div>
               </div>
               <Select
                 options={["Can edit", "Can view"]}
-                itemComponent={(props) => (
-                  <SelectItem item={props.item}>
-                    {props.item.rawValue}
-                  </SelectItem>
+                itemComponent={props => (
+                  <SelectItem item={props.item}>{props.item.rawValue}</SelectItem>
                 )}
                 defaultValue="Can edit"
               >
                 <SelectTrigger class="w-[110px]">
-                  <SelectValue<string>>
-                    {(state) => state.selectedOption()}
-                  </SelectValue>
+                  <SelectValue<string>>{state => state.selectedOption()}</SelectValue>
                 </SelectTrigger>
                 <SelectContent />
               </Select>
@@ -77,25 +68,19 @@ export const DemoShareDocument = () => {
                   <ImageFallback>IN</ImageFallback>
                 </ImageRoot>
                 <div>
-                  <p class="text-sm font-medium leading-none">
-                    Isabella Nguyen
-                  </p>
-                  <p class="text-muted-foreground text-sm">b@example.com</p>
+                  <p class="text-sm font-medium leading-none">Isabella Nguyen</p>
+                  <p class="text-sm text-muted-foreground">b@example.com</p>
                 </div>
               </div>
               <Select
                 options={["Can edit", "Can view"]}
-                itemComponent={(props) => (
-                  <SelectItem item={props.item}>
-                    {props.item.rawValue}
-                  </SelectItem>
+                itemComponent={props => (
+                  <SelectItem item={props.item}>{props.item.rawValue}</SelectItem>
                 )}
                 defaultValue="Can edit"
               >
                 <SelectTrigger class="w-[110px]">
-                  <SelectValue<string>>
-                    {(state) => state.selectedOption()}
-                  </SelectValue>
+                  <SelectValue<string>>{state => state.selectedOption()}</SelectValue>
                 </SelectTrigger>
                 <SelectContent />
               </Select>
@@ -108,22 +93,18 @@ export const DemoShareDocument = () => {
                 </ImageRoot>
                 <div>
                   <p class="text-sm font-medium leading-none">Sofia Davis</p>
-                  <p class="text-muted-foreground text-sm">p@example.com</p>
+                  <p class="text-sm text-muted-foreground">p@example.com</p>
                 </div>
               </div>
               <Select
                 options={["Can edit", "Can view"]}
-                itemComponent={(props) => (
-                  <SelectItem item={props.item}>
-                    {props.item.rawValue}
-                  </SelectItem>
+                itemComponent={props => (
+                  <SelectItem item={props.item}>{props.item.rawValue}</SelectItem>
                 )}
                 defaultValue="Can edit"
               >
                 <SelectTrigger class="w-[110px]">
-                  <SelectValue<string>>
-                    {(state) => state.selectedOption()}
-                  </SelectValue>
+                  <SelectValue<string>>{state => state.selectedOption()}</SelectValue>
                 </SelectTrigger>
                 <SelectContent />
               </Select>
@@ -132,5 +113,5 @@ export const DemoShareDocument = () => {
         </div>
       </CardContent>
     </Card>
-  )
-}
+  );
+};

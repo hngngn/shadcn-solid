@@ -1,6 +1,6 @@
-import { As } from "@kobalte/core"
-import { createSignal } from "solid-js"
-import { Button } from "../ui/button"
+import { As } from "@kobalte/core";
+import { createSignal } from "solid-js";
+import { Button } from "../ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,11 +9,11 @@ import {
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "../ui/dropdown-menu"
+  DropdownMenuTrigger
+} from "../ui/dropdown-menu";
 
 const DropdownMenuRadioGroupDemo = () => {
-  const [position, setPosition] = createSignal("bottom")
+  const [position, setPosition] = createSignal("bottom");
 
   return (
     <DropdownMenu placement="bottom">
@@ -34,7 +34,7 @@ const DropdownMenuRadioGroupDemo = () => {
         </DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
-}
+  );
+};
 
-export default DropdownMenuRadioGroupDemo
+export default DropdownMenuRadioGroupDemo;

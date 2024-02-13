@@ -1,15 +1,15 @@
-import { siteConfig } from "@/config/site"
-import ModeToggle from "@/registry/default/example/mode-toggle"
-import { Button } from "@/registry/default/ui/button"
-import { As } from "@kobalte/core"
-import { A } from "@solidjs/router"
-import CommandMenu from "./command-menu"
-import { MobileNavbar } from "./mobile-navbar"
-import { Navbar } from "./navbar"
+import { siteConfig } from "@/config/site";
+import ModeToggle from "@/registry/default/example/mode-toggle";
+import { Button } from "@/registry/default/ui/button";
+import { As } from "@kobalte/core";
+import { A } from "@solidjs/router";
+import CommandMenu from "./command-menu";
+import { MobileNavbar } from "./mobile-navbar";
+import { Navbar } from "./navbar";
 
 export const Header = () => {
   return (
-    <header class="border-border/40 bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur">
+    <header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div class="container flex h-14 max-w-screen-2xl items-center">
         <Navbar />
         <MobileNavbar />
@@ -19,17 +19,8 @@ export const Header = () => {
           </div>
           <div class="flex items-center">
             <Button asChild variant="ghost" size="icon">
-              <As
-                component={A}
-                href={siteConfig.links.github}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-4 w-4"
-                  viewBox="0 0 24 24"
-                >
+              <As component={A} href={siteConfig.links.github} target="_blank" rel="noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24">
                   <path
                     fill="none"
                     stroke="currentColor"
@@ -47,5 +38,5 @@ export const Header = () => {
         </div>
       </div>
     </header>
-  )
-}
+  );
+};

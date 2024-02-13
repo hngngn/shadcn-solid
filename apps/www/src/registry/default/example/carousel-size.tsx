@@ -1,18 +1,18 @@
-import { Index } from "solid-js"
-import { Card, CardContent } from "../ui/card"
+import { Index } from "solid-js";
+import { Card, CardContent } from "../ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious,
-} from "../ui/carousel"
+  CarouselPrevious
+} from "../ui/carousel";
 
 const CarouselSize = () => {
   return (
     <Carousel
       opts={{
-        align: "start",
+        align: "start"
       }}
       class="w-full max-w-sm"
     >
@@ -34,7 +34,7 @@ const CarouselSize = () => {
       <CarouselPrevious />
       <CarouselNext />
     </Carousel>
-  )
-}
+  );
+};
 
-export default CarouselSize
+export default CarouselSize;

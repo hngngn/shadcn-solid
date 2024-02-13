@@ -1,11 +1,11 @@
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/default/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
-  CardTitle,
-} from "@/registry/default/ui/card"
+  CardTitle
+} from "@/registry/default/ui/card";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -14,10 +14,10 @@ import {
   DropdownMenuGroupLabel,
   DropdownMenuItem,
   DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu"
-import { Separator } from "@/registry/default/ui/separator"
-import { As } from "@kobalte/core"
+  DropdownMenuTrigger
+} from "@/registry/default/ui/dropdown-menu";
+import { Separator } from "@/registry/default/ui/separator";
+import { As } from "@kobalte/core";
 
 export const DemoGithub = () => {
   return (
@@ -26,17 +26,13 @@ export const DemoGithub = () => {
         <div class="space-y-1">
           <CardTitle>shadcn-solid</CardTitle>
           <CardDescription>
-            Beautifully designed components that you can copy and paste into
-            your apps. Accessible. Customizable. Open Source.
+            Beautifully designed components that you can copy and paste into your apps. Accessible.
+            Customizable. Open Source.
           </CardDescription>
         </div>
-        <div class="bg-secondary text-secondary-foreground flex items-center space-x-1 rounded-md">
+        <div class="flex items-center space-x-1 rounded-md bg-secondary text-secondary-foreground">
           <Button variant="secondary" class="px-3 shadow-none">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="mr-2 h-4 w-4"
-              viewBox="0 0 24 24"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" viewBox="0 0 24 24">
               <path
                 fill="none"
                 stroke="currentColor"
@@ -51,14 +47,10 @@ export const DemoGithub = () => {
           <Separator orientation="vertical" class="h-[20px]" />
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <As
-                component={Button}
-                variant="secondary"
-                class="px-2 shadow-none"
-              >
+              <As component={Button} variant="secondary" class="px-2 shadow-none">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="text-secondary-foreground h-4 w-4"
+                  class="h-4 w-4 text-secondary-foreground"
                   viewBox="0 0 24 24"
                 >
                   <path
@@ -76,18 +68,12 @@ export const DemoGithub = () => {
               <DropdownMenuGroup>
                 <DropdownMenuGroupLabel>Suggested Lists</DropdownMenuGroupLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuCheckboxItem checked>
-                  Future Ideas
-                </DropdownMenuCheckboxItem>
+                <DropdownMenuCheckboxItem checked>Future Ideas</DropdownMenuCheckboxItem>
                 <DropdownMenuCheckboxItem>My Stack</DropdownMenuCheckboxItem>
                 <DropdownMenuCheckboxItem>Inspiration</DropdownMenuCheckboxItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="mr-2 h-4 w-4"
-                    viewBox="0 0 24 24"
-                  >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" viewBox="0 0 24 24">
                     <path
                       fill="none"
                       stroke="currentColor"
@@ -105,13 +91,9 @@ export const DemoGithub = () => {
         </div>
       </CardHeader>
       <CardContent>
-        <div class="text-muted-foreground flex space-x-4 text-sm">
+        <div class="flex space-x-4 text-sm text-muted-foreground">
           <div class="flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="mr-1 h-3 w-3"
-              viewBox="0 0 24 24"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 h-3 w-3" viewBox="0 0 24 24">
               <g
                 fill="none"
                 stroke="currentColor"
@@ -126,11 +108,7 @@ export const DemoGithub = () => {
             TypeScript
           </div>
           <div class="flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="mr-1 h-3 w-3"
-              viewBox="0 0 24 24"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 h-3 w-3" viewBox="0 0 24 24">
               <path
                 fill="none"
                 stroke="currentColor"
@@ -146,5 +124,5 @@ export const DemoGithub = () => {
         </div>
       </CardContent>
     </Card>
-  )
-}
+  );
+};

@@ -1,4 +1,4 @@
-import { For } from "solid-js"
+import { For } from "solid-js";
 import {
   DatePicker,
   DatePickerContent,
@@ -13,8 +13,8 @@ import {
   DatePickerTableRow,
   DatePickerView,
   DatePickerViewControl,
-  DatePickerViewTrigger,
-} from "../ui/date-picker"
+  DatePickerViewTrigger
+} from "../ui/date-picker";
 
 const DatePickerDemo = () => {
   return (
@@ -22,7 +22,7 @@ const DatePickerDemo = () => {
       <DatePickerInput />
       <DatePickerContent>
         <DatePickerView view="day">
-          {(api) => (
+          {api => (
             <>
               <DatePickerViewControl>
                 <DatePickerViewTrigger>
@@ -33,24 +33,18 @@ const DatePickerDemo = () => {
                 <DatePickerTableHead>
                   <DatePickerTableRow>
                     <For each={api().weekDays}>
-                      {(weekDay) => (
-                        <DatePickerTableHeader>
-                          {weekDay.short}
-                        </DatePickerTableHeader>
-                      )}
+                      {weekDay => <DatePickerTableHeader>{weekDay.short}</DatePickerTableHeader>}
                     </For>
                   </DatePickerTableRow>
                 </DatePickerTableHead>
                 <DatePickerTableBody>
                   <For each={api().weeks}>
-                    {(week) => (
+                    {week => (
                       <DatePickerTableRow>
                         <For each={week}>
-                          {(day) => (
+                          {day => (
                             <DatePickerTableCell value={day}>
-                              <DatePickerTableCellTrigger>
-                                {day.day}
-                              </DatePickerTableCellTrigger>
+                              <DatePickerTableCellTrigger>{day.day}</DatePickerTableCellTrigger>
                             </DatePickerTableCell>
                           )}
                         </For>
@@ -63,7 +57,7 @@ const DatePickerDemo = () => {
           )}
         </DatePickerView>
         <DatePickerView view="month">
-          {(api) => (
+          {api => (
             <>
               <DatePickerViewControl>
                 <DatePickerViewTrigger>
@@ -75,17 +69,15 @@ const DatePickerDemo = () => {
                   <For
                     each={api().getMonthsGrid({
                       columns: 4,
-                      format: "short",
+                      format: "short"
                     })}
                   >
-                    {(months) => (
+                    {months => (
                       <DatePickerTableRow>
                         <For each={months}>
-                          {(month) => (
+                          {month => (
                             <DatePickerTableCell value={month.value}>
-                              <DatePickerTableCellTrigger>
-                                {month.label}
-                              </DatePickerTableCellTrigger>
+                              <DatePickerTableCellTrigger>{month.label}</DatePickerTableCellTrigger>
                             </DatePickerTableCell>
                           )}
                         </For>
@@ -98,7 +90,7 @@ const DatePickerDemo = () => {
           )}
         </DatePickerView>
         <DatePickerView view="year">
-          {(api) => (
+          {api => (
             <>
               <DatePickerViewControl>
                 <DatePickerViewTrigger>
@@ -109,17 +101,15 @@ const DatePickerDemo = () => {
                 <DatePickerTableBody>
                   <For
                     each={api().getYearsGrid({
-                      columns: 4,
+                      columns: 4
                     })}
                   >
-                    {(years) => (
+                    {years => (
                       <DatePickerTableRow>
                         <For each={years}>
-                          {(year) => (
+                          {year => (
                             <DatePickerTableCell value={year.value}>
-                              <DatePickerTableCellTrigger>
-                                {year.label}
-                              </DatePickerTableCellTrigger>
+                              <DatePickerTableCellTrigger>{year.label}</DatePickerTableCellTrigger>
                             </DatePickerTableCell>
                           )}
                         </For>
@@ -133,7 +123,7 @@ const DatePickerDemo = () => {
         </DatePickerView>
       </DatePickerContent>
     </DatePicker>
-  )
-}
+  );
+};
 
-export default DatePickerDemo
+export default DatePickerDemo;

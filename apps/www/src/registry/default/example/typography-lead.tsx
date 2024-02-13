@@ -1,10 +1,9 @@
 const TypographyLead = () => {
   return (
-    <p class="text-muted-foreground text-xl">
-      A modal dialog that interrupts the user with important content and expects
-      a response.
+    <p class="text-xl text-muted-foreground">
+      A modal dialog that interrupts the user with important content and expects a response.
     </p>
-  )
-}
+  );
+};
 
-export default TypographyLead
+export default TypographyLead;

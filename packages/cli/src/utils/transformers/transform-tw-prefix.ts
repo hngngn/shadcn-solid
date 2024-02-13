@@ -1,14 +1,14 @@
-import type { Transformer } from "@/src/utils/transformers"
-import { SyntaxKind } from "ts-morph"
+import type { Transformer } from "@/src/utils/transformers";
+import { SyntaxKind } from "ts-morph";
 
-import { splitClassName } from "./transform-css-vars"
+import { splitClassName } from "./transform-css-vars";
 
 export const transformTwPrefixes: Transformer = async ({
   sourceFile,
   config,
 }) => {
   if (!config.tailwind?.prefix) {
-    return sourceFile
+    return sourceFile;
   }
 
   // Find the cva function calls.
@@ -18,14 +18,14 @@ export const transformTwPrefixes: Transformer = async ({
     .forEach((node) => {
       // cva(base, ...)
       if (node.getArguments()[0]?.isKind(SyntaxKind.StringLiteral)) {
-        const defaultClassNames = node.getArguments()[0]
+        const defaultClassNames = node.getArguments()[0];
         if (defaultClassNames) {
           defaultClassNames.replaceWithText(
             `"${applyPrefix(
               defaultClassNames.getText()?.replace(/"/g, ""),
-              config.tailwind.prefix
-            )}"`
-          )
+              config.tailwind.prefix,
+            )}"`,
+          );
         }
       }
 
@@ -41,34 +41,34 @@ export const transformTwPrefixes: Transformer = async ({
               .getDescendantsOfKind(SyntaxKind.PropertyAssignment)
               .forEach((node) => {
                 const classNames = node.getInitializerIfKind(
-                  SyntaxKind.StringLiteral
-                )
+                  SyntaxKind.StringLiteral,
+                );
                 if (classNames) {
                   classNames?.replaceWithText(
                     `"${applyPrefix(
                       classNames.getText()?.replace(/"/g, ""),
-                      config.tailwind.prefix
-                    )}"`
-                  )
+                      config.tailwind.prefix,
+                    )}"`,
+                  );
                 }
-              })
-          })
+              });
+          });
       }
-    })
+    });
 
   // Find all jsx attributes with the name class.
   sourceFile.getDescendantsOfKind(SyntaxKind.JsxAttribute).forEach((node) => {
     if (node.getName() === "class") {
       // class="..."
       if (node.getInitializer()?.isKind(SyntaxKind.StringLiteral)) {
-        const value = node.getInitializer()
+        const value = node.getInitializer();
         if (value) {
           value.replaceWithText(
             `"${applyPrefix(
               value.getText()?.replace(/"/g, ""),
-              config.tailwind.prefix
-            )}"`
-          )
+              config.tailwind.prefix,
+            )}"`,
+          );
         }
       }
 
@@ -78,7 +78,7 @@ export const transformTwPrefixes: Transformer = async ({
         const callExpression = node
           .getInitializer()
           ?.getDescendantsOfKind(SyntaxKind.CallExpression)
-          .find((node) => node.getExpression().getText() === "cn")
+          .find((node) => node.getExpression().getText() === "cn");
         if (callExpression) {
           // Loop through the arguments.
           callExpression.getArguments().forEach((node) => {
@@ -92,55 +92,55 @@ export const transformTwPrefixes: Transformer = async ({
                   node.replaceWithText(
                     `"${applyPrefix(
                       node.getText()?.replace(/"/g, ""),
-                      config.tailwind.prefix
-                    )}"`
-                  )
-                })
+                      config.tailwind.prefix,
+                    )}"`,
+                  );
+                });
             }
 
             if (node.isKind(SyntaxKind.StringLiteral)) {
               node.replaceWithText(
                 `"${applyPrefix(
                   node.getText()?.replace(/"/g, ""),
-                  config.tailwind.prefix
-                )}"`
-              )
+                  config.tailwind.prefix,
+                )}"`,
+              );
             }
-          })
+          });
         }
       }
     }
-  })
+  });
 
-  return sourceFile
-}
+  return sourceFile;
+};
 
 export function applyPrefix(input: string, prefix: string = "") {
-  const classNames = input.split(" ")
-  const prefixed: string[] = []
+  const classNames = input.split(" ");
+  const prefixed: string[] = [];
   for (let className of classNames) {
-    const [variant, value, modifier] = splitClassName(className)
+    const [variant, value, modifier] = splitClassName(className);
     if (variant) {
       modifier
         ? prefixed.push(`${variant}:${prefix}${value}/${modifier}`)
-        : prefixed.push(`${variant}:${prefix}${value}`)
+        : prefixed.push(`${variant}:${prefix}${value}`);
     } else {
       modifier
         ? prefixed.push(`${prefix}${value}/${modifier}`)
-        : prefixed.push(`${prefix}${value}`)
+        : prefixed.push(`${prefix}${value}`);
     }
   }
-  return prefixed.join(" ")
+  return prefixed.join(" ");
 }
 
 export function applyPrefixesCss(css: string, prefix: string) {
-  const lines = css.split("\n")
+  const lines = css.split("\n");
   for (let line of lines) {
     if (line.includes("@apply")) {
-      const originalTWCls = line.replace("@apply", "").trim()
-      const prefixedTwCls = applyPrefix(originalTWCls, prefix)
-      css = css.replace(originalTWCls, prefixedTwCls)
+      const originalTWCls = line.replace("@apply", "").trim();
+      const prefixedTwCls = applyPrefix(originalTWCls, prefix);
+      css = css.replace(originalTWCls, prefixedTwCls);
     }
   }
-  return css
+  return css;
 }

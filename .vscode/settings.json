@@ -1,9 +1,7 @@
 {
-	"unocss.root": ["apps/docs"],
-	"files.associations": {
-		"*.css": "tailwindcss"
-	},
-	"editor.quickSuggestions": {
-		"strings": true
-	}
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ]
 }

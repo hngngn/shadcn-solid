@@ -1,6 +1,6 @@
-import { As } from "@kobalte/core"
-import { A } from "@solidjs/router"
-import { Button } from "../ui/button"
+import { As } from "@kobalte/core";
+import { A } from "@solidjs/router";
+import { Button } from "../ui/button";
 
 const ButtonAsChild = () => {
   return (
@@ -9,7 +9,7 @@ const ButtonAsChild = () => {
         Login
       </As>
     </Button>
-  )
-}
+  );
+};
 
-export default ButtonAsChild
+export default ButtonAsChild;

@@ -1,5 +1,5 @@
-import { As } from "@kobalte/core"
-import { Button } from "../ui/button"
+import { As } from "@kobalte/core";
+import { Button } from "../ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,8 +11,8 @@ import {
   DropdownMenuSub,
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
-  DropdownMenuTrigger,
-} from "../ui/dropdown-menu"
+  DropdownMenuTrigger
+} from "../ui/dropdown-menu";
 
 const DropdownMenuDemo = () => {
   return (
@@ -101,7 +101,7 @@ const DropdownMenuDemo = () => {
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
-}
+  );
+};
 
-export default DropdownMenuDemo
+export default DropdownMenuDemo;

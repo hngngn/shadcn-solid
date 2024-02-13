@@ -14,7 +14,6 @@
   {
     "name": "alert-dialog",
     "dependencies": ["@kobalte/core"],
-    "registryDependencies": ["button"],
     "files": ["ui/alert-dialog.tsx"],
     "type": "components:ui"
   },

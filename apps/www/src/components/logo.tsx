@@ -1,6 +1,6 @@
-import type { ComponentProps, VoidComponent } from "solid-js"
+import type { ComponentProps, VoidComponent } from "solid-js";
 
-export const Logo: VoidComponent<ComponentProps<"svg">> = (props) => {
+export const Logo: VoidComponent<ComponentProps<"svg">> = props => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...props}>
       <rect width="256" height="256" fill="none" />
@@ -27,5 +27,5 @@ export const Logo: VoidComponent<ComponentProps<"svg">> = (props) => {
         stroke-width="16"
       />
     </svg>
-  )
-}
+  );
+};

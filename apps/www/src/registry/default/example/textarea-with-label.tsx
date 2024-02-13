@@ -1,5 +1,5 @@
-import { TextFieldTextArea } from "../ui/textarea"
-import { TextField, TextFieldLabel } from "../ui/textfield"
+import { TextFieldTextArea } from "../ui/textarea";
+import { TextField, TextFieldLabel } from "../ui/textfield";
 
 const TextareaWithLabel = () => {
   return (
@@ -7,7 +7,7 @@ const TextareaWithLabel = () => {
       <TextFieldLabel>Your message</TextFieldLabel>
       <TextFieldTextArea placeholder="Type your message here." />
     </TextField>
-  )
-}
+  );
+};
 
-export default TextareaWithLabel
+export default TextareaWithLabel;

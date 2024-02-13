@@ -41,20 +41,20 @@ module.exports = {
       keyframes: {
         "collapsible-down": {
           from: { height: 0 },
-          to: { height: "var(--kb-collapsible-content-height)" },
+          to: { height: "var(--kb-collapsible-content-height)" }
         },
         "collapsible-up": {
           from: { height: "var(--kb-collapsible-content-height)" },
-          to: { height: 0 },
-        },
+          to: { height: 0 }
+        }
       },
       animation: {
         "collapsible-down": "collapsible-down 0.2s ease-out",
-        "collapsible-up": "collapsible-up 0.2s ease-out",
-      },
-    },
-  },
-}
+        "collapsible-up": "collapsible-up 0.2s ease-out"
+      }
+    }
+  }
+};
 ```
 
 </Steps>
@@ -89,20 +89,20 @@ module.exports = {
       keyframes: {
         "collapsible-down": {
           from: { height: 0 },
-          to: { height: "var(--kb-collapsible-content-height)" },
+          to: { height: "var(--kb-collapsible-content-height)" }
         },
         "collapsible-up": {
           from: { height: "var(--kb-collapsible-content-height)" },
-          to: { height: 0 },
-        },
+          to: { height: 0 }
+        }
       },
       animation: {
         "collapsible-down": "collapsible-down 0.2s ease-out",
-        "collapsible-up": "collapsible-up 0.2s ease-out",
-      },
-    },
-  },
-}
+        "collapsible-up": "collapsible-up 0.2s ease-out"
+      }
+    }
+  }
+};
 ```
 
 </Steps>
@@ -118,16 +118,15 @@ import {
   Button,
   Collapsible,
   CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible"
+  CollapsibleTrigger
+} from "@/components/ui/collapsible";
 ```
 
 ```tsx
 <Collapsible>
   <CollapsibleTrigger>Can I use this in my project?</CollapsibleTrigger>
   <CollapsibleContent>
-    Yes. Free to use for personal and commercial projects. No attribution
-    required.
+    Yes. Free to use for personal and commercial projects. No attribution required.
   </CollapsibleContent>
 </Collapsible>
 ```

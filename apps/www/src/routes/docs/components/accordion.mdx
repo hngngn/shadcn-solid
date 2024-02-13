@@ -7,10 +7,7 @@ link:
   api: https://kobalte.dev/docs/core/components/accordion#api-reference
 ---
 
-<ComponentPreview
-  name="accordion-demo"
-  class="[&_.preview>div]:sm:max-w-[70%]"
-/>
+<ComponentPreview name="accordion-demo" class="[&_.preview>div]:sm:max-w-[70%]" />
 
 ## Installation
 
@@ -44,20 +41,20 @@ module.exports = {
       keyframes: {
         "accordion-down": {
           from: { height: 0 },
-          to: { height: "var(--kb-accordion-content-height)" },
+          to: { height: "var(--kb-accordion-content-height)" }
         },
         "accordion-up": {
           from: { height: "var(--kb-accordion-content-height)" },
-          to: { height: 0 },
-        },
+          to: { height: 0 }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-      },
-    },
-  },
-}
+        "accordion-up": "accordion-up 0.2s ease-out"
+      }
+    }
+  }
+};
 ```
 
 </Steps>
@@ -92,20 +89,20 @@ module.exports = {
       keyframes: {
         "accordion-down": {
           from: { height: 0 },
-          to: { height: "var(--kb-accordion-content-height)" },
+          to: { height: "var(--kb-accordion-content-height)" }
         },
         "accordion-up": {
           from: { height: "var(--kb-accordion-content-height)" },
-          to: { height: 0 },
-        },
+          to: { height: 0 }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-      },
-    },
-  },
-}
+        "accordion-up": "accordion-up 0.2s ease-out"
+      }
+    }
+  }
+};
 ```
 
 </Steps>
@@ -121,17 +118,15 @@ import {
   Accordion,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
+  AccordionTrigger
+} from "@/components/ui/accordion";
 ```
 
 ```tsx
 <Accordion type="single" collapsible>
   <AccordionItem value="item-1">
     <AccordionTrigger>Is it accessible?</AccordionTrigger>
-    <AccordionContent>
-      Yes. It adheres to the WAI-ARIA design pattern.
-    </AccordionContent>
+    <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
   </AccordionItem>
 </Accordion>
 ```

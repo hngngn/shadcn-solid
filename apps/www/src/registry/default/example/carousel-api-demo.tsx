@@ -1,33 +1,33 @@
-import { Index, createEffect, createSignal } from "solid-js"
-import { Card, CardContent } from "../ui/card"
+import { Index, createEffect, createSignal } from "solid-js";
+import { Card, CardContent } from "../ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-  type CarouselApi,
-} from "../ui/carousel"
+  type CarouselApi
+} from "../ui/carousel";
 
 const CarouselApiDemo = () => {
-  const [api, setApi] = createSignal<ReturnType<CarouselApi>>()
-  const [current, setCurrent] = createSignal(0)
-  const [count, setCount] = createSignal(0)
+  const [api, setApi] = createSignal<ReturnType<CarouselApi>>();
+  const [current, setCurrent] = createSignal(0);
+  const [count, setCount] = createSignal(0);
 
   const onSelect = () => {
-    setCurrent(api()!.selectedScrollSnap() + 1)
-  }
+    setCurrent(api()!.selectedScrollSnap() + 1);
+  };
 
   createEffect(() => {
     if (!api()) {
-      return
+      return;
     }
 
-    setCount(api()!.scrollSnapList().length)
-    setCurrent(api()!.selectedScrollSnap() + 1)
+    setCount(api()!.scrollSnapList().length);
+    setCurrent(api()!.selectedScrollSnap() + 1);
 
-    api()!.on("select", onSelect)
-  })
+    api()!.on("select", onSelect);
+  });
 
   return (
     <div>
@@ -48,11 +48,11 @@ const CarouselApiDemo = () => {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-      <div class="text-muted-foreground py-2 text-center text-sm">
+      <div class="py-2 text-center text-sm text-muted-foreground">
         Slide {current()} of {count()}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CarouselApiDemo
+export default CarouselApiDemo;

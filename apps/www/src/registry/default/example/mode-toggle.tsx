@@ -1,14 +1,14 @@
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/default/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/registry/default/ui/dropdown-menu"
-import { As, useColorMode } from "@kobalte/core"
+  DropdownMenuTrigger
+} from "@/registry/default/ui/dropdown-menu";
+import { As, useColorMode } from "@kobalte/core";
 
 const ModeToggle = () => {
-  const { setColorMode } = useColorMode()
+  const { setColorMode } = useColorMode();
 
   return (
     <DropdownMenu placement="bottom-end">
@@ -47,11 +47,7 @@ const ModeToggle = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent class="min-w-[8rem]">
         <DropdownMenuItem onSelect={() => setColorMode("light")}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="mr-2 h-4 w-4"
-            viewBox="0 0 24 24"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" viewBox="0 0 24 24">
             <path
               fill="none"
               stroke="currentColor"
@@ -64,11 +60,7 @@ const ModeToggle = () => {
           <span>Light</span>
         </DropdownMenuItem>
         <DropdownMenuItem onSelect={() => setColorMode("dark")}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="mr-2 h-4 w-4"
-            viewBox="0 0 24 24"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" viewBox="0 0 24 24">
             <path
               fill="none"
               stroke="currentColor"
@@ -81,11 +73,7 @@ const ModeToggle = () => {
           <span>Dark</span>
         </DropdownMenuItem>
         <DropdownMenuItem onSelect={() => setColorMode("system")}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="mr-2 h-4 w-4"
-            viewBox="0 0 24 24"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" viewBox="0 0 24 24">
             <path
               fill="none"
               stroke="currentColor"
@@ -99,7 +87,7 @@ const ModeToggle = () => {
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
-}
+  );
+};
 
-export default ModeToggle
+export default ModeToggle;

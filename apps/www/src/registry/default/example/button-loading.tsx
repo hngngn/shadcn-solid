@@ -1,13 +1,9 @@
-import { Button } from "../ui/button"
+import { Button } from "../ui/button";
 
 const ButtonLoading = () => {
   return (
     <Button disabled>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        class="mr-2 h-4 w-4 animate-spin"
-      >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="mr-2 h-4 w-4 animate-spin">
         <path
           fill="none"
           stroke="currentColor"
@@ -19,7 +15,7 @@ const ButtonLoading = () => {
       </svg>
       Please wait
     </Button>
-  )
-}
+  );
+};
 
-export default ButtonLoading
+export default ButtonLoading;

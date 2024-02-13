@@ -1,37 +1,37 @@
 export type TNavItem = {
-  title: string
-  href?: string
-  disabled?: boolean
-  label?: string
-}
+  title: string;
+  href?: string;
+  disabled?: boolean;
+  label?: string;
+};
 
 export type TSidebarNavItem = TNavItem & {
-  items: TSidebarNavItem[]
-}
+  items: TSidebarNavItem[];
+};
 
 export type TNavItemWithChildren = TNavItem & {
-  items: TNavItemWithChildren[]
-}
+  items: TNavItemWithChildren[];
+};
 
 export type TDocsConfig = {
-  mainNav: TNavItem[]
-  sidebarNav: TSidebarNavItem[]
-}
+  mainNav: TNavItem[];
+  sidebarNav: TSidebarNavItem[];
+};
 
 export const docsConfig: TDocsConfig = {
   mainNav: [
     {
       title: "Docs",
-      href: "/docs",
+      href: "/docs"
     },
     {
       title: "Components",
-      href: "/docs/components/accordion",
+      href: "/docs/components/accordion"
     },
     {
       title: "Examples",
-      href: "/examples/cards",
-    },
+      href: "/examples/cards"
+    }
   ],
   sidebarNav: [
     {
@@ -40,49 +40,49 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Introduction",
           href: "/docs",
-          items: [],
+          items: []
         },
         {
           title: "Installation",
           href: "/docs/installation",
-          items: [],
+          items: []
         },
         {
           title: "components.json",
           href: "/docs/components-json",
-          items: [],
+          items: []
         },
         {
           title: "Theming",
           href: "/docs/theming",
-          items: [],
+          items: []
         },
         {
           title: "Dark mode",
           href: "/docs/dark-mode",
-          items: [],
+          items: []
         },
         {
           title: "CLI",
           href: "/docs/cli",
-          items: [],
+          items: []
         },
         {
           title: "Typography",
           href: "/docs/typography",
-          items: [],
+          items: []
         },
         {
           title: "Figma",
           href: "/docs/figma",
-          items: [],
+          items: []
         },
         {
           title: "Changelog",
           href: "/docs/changelog",
-          items: [],
-        },
-      ],
+          items: []
+        }
+      ]
     },
     {
       title: "Components",
@@ -90,173 +90,173 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Accordion",
           href: "/docs/components/accordion",
-          items: [],
+          items: []
         },
         {
           title: "Alert",
           href: "/docs/components/alert",
-          items: [],
+          items: []
         },
         {
           title: "Alert Dialog",
           href: "/docs/components/alert-dialog",
-          items: [],
+          items: []
         },
         {
           title: "Badge",
           href: "/docs/components/badge",
-          items: [],
+          items: []
         },
         {
           title: "Button",
           href: "/docs/components/button",
-          items: [],
+          items: []
         },
         {
           title: "Card",
           href: "/docs/components/card",
-          items: [],
+          items: []
         },
         {
           title: "Carousel",
           href: "/docs/components/carousel",
           items: [],
-          label: "New",
+          label: "New"
         },
         {
           title: "Checkbox",
           href: "/docs/components/checkbox",
-          items: [],
+          items: []
         },
         {
           title: "Collapsible",
           href: "/docs/components/collapsible",
-          items: [],
+          items: []
         },
         {
           title: "Combobox",
           href: "/docs/components/combobox",
-          items: [],
+          items: []
         },
         {
           title: "Command",
           href: "/docs/components/command",
           items: [],
-          label: "New",
+          label: "New"
         },
         {
           title: "Context Menu",
           href: "/docs/components/context-menu",
-          items: [],
+          items: []
         },
         {
           title: "Date Picker",
           href: "/docs/components/date-picker",
           items: [],
-          label: "New",
+          label: "New"
         },
         {
           title: "Dialog",
           href: "/docs/components/dialog",
-          items: [],
+          items: []
         },
         {
           title: "Dropdown Menu",
           href: "/docs/components/dropdown-menu",
-          items: [],
+          items: []
         },
         {
           title: "Hover Card",
           href: "/docs/components/hover-card",
-          items: [],
+          items: []
         },
         {
           title: "Image",
           href: "/docs/components/image",
-          items: [],
+          items: []
         },
         {
           title: "Pagination",
           href: "/docs/components/pagination",
           items: [],
-          label: "New",
+          label: "New"
         },
         {
           title: "Popover",
           href: "/docs/components/popover",
-          items: [],
+          items: []
         },
         {
           title: "Progress",
           href: "/docs/components/progress",
-          items: [],
+          items: []
         },
         {
           title: "Radio Group",
           href: "/docs/components/radio-group",
-          items: [],
+          items: []
         },
         {
           title: "Select",
           href: "/docs/components/select",
-          items: [],
+          items: []
         },
         {
           title: "Separator",
           href: "/docs/components/separator",
-          items: [],
+          items: []
         },
         {
           title: "Sheet",
           href: "/docs/components/sheet",
-          items: [],
+          items: []
         },
         {
           title: "Skeleton",
           href: "/docs/components/skeleton",
-          items: [],
+          items: []
         },
         {
           title: "Switch",
           href: "/docs/components/switch",
-          items: [],
+          items: []
         },
         {
           title: "Table",
           href: "/docs/components/table",
-          items: [],
+          items: []
         },
         {
           title: "Tabs",
           href: "/docs/components/tabs",
-          items: [],
+          items: []
         },
         {
           title: "Text Field",
           href: "/docs/components/textfield",
-          items: [],
+          items: []
         },
         {
           title: "Textarea",
           href: "/docs/components/textarea",
-          items: [],
+          items: []
         },
         {
           title: "Toast",
           href: "/docs/components/toast",
-          items: [],
+          items: []
         },
         {
           title: "Toggle",
           href: "/docs/components/toggle",
-          items: [],
+          items: []
         },
         {
           title: "Tooltip",
           href: "/docs/components/tooltip",
-          items: [],
-        },
-      ],
-    },
-  ],
-}
+          items: []
+        }
+      ]
+    }
+  ]
+};

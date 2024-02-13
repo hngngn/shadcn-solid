@@ -1,17 +1,13 @@
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/default/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
-} from "@/registry/default/ui/card"
-import {
-  Switch,
-  SwitchControl,
-  SwitchThumb,
-} from "@/registry/default/ui/switch"
+  CardTitle
+} from "@/registry/default/ui/card";
+import { Switch, SwitchControl, SwitchThumb } from "@/registry/default/ui/switch";
 
 export const DemoCookieSettings = () => {
   return (
@@ -24,9 +20,8 @@ export const DemoCookieSettings = () => {
         <div class="flex items-center justify-between space-x-2">
           <label class="flex flex-col space-y-1 text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
             <span>Strictly Necessary</span>
-            <span class="text-muted-foreground font-normal leading-snug">
-              These cookies are essential in order to use the website and use
-              its features.
+            <span class="font-normal leading-snug text-muted-foreground">
+              These cookies are essential in order to use the website and use its features.
             </span>
           </label>
           <Switch defaultChecked>
@@ -38,9 +33,8 @@ export const DemoCookieSettings = () => {
         <div class="flex items-center justify-between space-x-2">
           <label class="flex flex-col space-y-1 text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
             <span>Functional Cookies</span>
-            <span class="text-muted-foreground font-normal leading-snug">
-              These cookies allow the website to provide personalized
-              functionality.
+            <span class="font-normal leading-snug text-muted-foreground">
+              These cookies allow the website to provide personalized functionality.
             </span>
           </label>
           <Switch>
@@ -52,7 +46,7 @@ export const DemoCookieSettings = () => {
         <div class="flex items-center justify-between space-x-2">
           <label class="flex flex-col space-y-1 text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
             <span>Performance Cookies</span>
-            <span class="text-muted-foreground font-normal leading-snug">
+            <span class="font-normal leading-snug text-muted-foreground">
               These cookies help to improve the performance of the website.
             </span>
           </label>
@@ -69,5 +63,5 @@ export const DemoCookieSettings = () => {
         </Button>
       </CardFooter>
     </Card>
-  )
-}
+  );
+};

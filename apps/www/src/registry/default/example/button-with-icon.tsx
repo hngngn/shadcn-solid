@@ -1,13 +1,9 @@
-import { Button } from "../ui/button"
+import { Button } from "../ui/button";
 
 const ButtonWithIcon = () => {
   return (
     <Button>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="mr-2 h-4 w-4"
-        viewBox="0 0 24 24"
-      >
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" viewBox="0 0 24 24">
         <g
           fill="none"
           stroke="currentColor"
@@ -21,7 +17,7 @@ const ButtonWithIcon = () => {
       </svg>{" "}
       Login with Email
     </Button>
-  )
-}
+  );
+};
 
-export default ButtonWithIcon
+export default ButtonWithIcon;

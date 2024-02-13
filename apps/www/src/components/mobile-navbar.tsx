@@ -1,19 +1,19 @@
-import { docsConfig } from "@/config/docs"
-import { siteConfig } from "@/config/site"
-import { Button } from "@/registry/default/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/registry/default/ui/sheet"
-import { As, createDisclosureState } from "@kobalte/core"
-import { A, useIsRouting } from "@solidjs/router"
-import { For, createComputed } from "solid-js"
-import { Logo } from "./logo"
-import { Sidebar } from "./sidebar"
+import { docsConfig } from "@/config/docs";
+import { siteConfig } from "@/config/site";
+import { Button } from "@/registry/default/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/registry/default/ui/sheet";
+import { As, createDisclosureState } from "@kobalte/core";
+import { A, useIsRouting } from "@solidjs/router";
+import { For, createComputed } from "solid-js";
+import { Logo } from "./logo";
+import { Sidebar } from "./sidebar";
 
 export const MobileNavbar = () => {
-  const { isOpen, setIsOpen, close } = createDisclosureState()
+  const { isOpen, setIsOpen, close } = createDisclosureState();
 
-  const isRouting = useIsRouting()
+  const isRouting = useIsRouting();
 
-  createComputed(() => isRouting() && close())
+  createComputed(() => isRouting() && close());
 
   return (
     <Sheet open={isOpen()} onOpenChange={setIsOpen}>
@@ -24,11 +24,7 @@ export const MobileNavbar = () => {
           size="icon"
           class="mr-1 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-4 w-4"
-            viewBox="0 0 24 24"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24">
             <path
               fill="none"
               stroke="currentColor"
@@ -50,10 +46,10 @@ export const MobileNavbar = () => {
           <div class="flex flex-col space-y-3">
             <div class="flex flex-col text-sm">
               <For each={docsConfig.mainNav}>
-                {(item) => (
+                {item => (
                   <A
                     href={item.href!}
-                    class="hover:text-foreground/80 text-foreground px-2 py-1 transition-colors"
+                    class="px-2 py-1 text-foreground transition-colors hover:text-foreground/80"
                   >
                     {item.title}
                   </A>
@@ -65,5 +61,5 @@ export const MobileNavbar = () => {
         </div>
       </SheetContent>
     </Sheet>
-  )
-}
+  );
+};

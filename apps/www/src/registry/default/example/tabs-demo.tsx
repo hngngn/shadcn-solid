@@ -1,14 +1,7 @@
-import { Button } from "../ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs"
-import { TextField, TextFieldInput, TextFieldLabel } from "../ui/textfield"
+import { Button } from "../ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import { TextField, TextFieldInput, TextFieldLabel } from "../ui/textfield";
 
 const TabsDemo = () => {
   return (
@@ -64,7 +57,7 @@ const TabsDemo = () => {
         </Card>
       </TabsContent>
     </Tabs>
-  )
-}
+  );
+};
 
-export default TabsDemo
+export default TabsDemo;

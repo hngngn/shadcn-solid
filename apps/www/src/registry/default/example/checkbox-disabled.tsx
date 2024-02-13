@@ -1,4 +1,4 @@
-import { Checkbox, CheckboxControl, CheckboxLabel } from "../ui/checkbox"
+import { Checkbox, CheckboxControl, CheckboxLabel } from "../ui/checkbox";
 
 const CheckboxDisabledDemo = () => {
   return (
@@ -8,7 +8,7 @@ const CheckboxDisabledDemo = () => {
         Accept terms and conditions
       </CheckboxLabel>
     </Checkbox>
-  )
-}
+  );
+};
 
-export default CheckboxDisabledDemo
+export default CheckboxDisabledDemo;

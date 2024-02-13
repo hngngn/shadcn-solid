@@ -1,5 +1,5 @@
-import { toaster } from "@kobalte/core"
-import { Button } from "../ui/button"
+import { toaster } from "@kobalte/core";
+import { Button } from "../ui/button";
 import {
   Toast,
   ToastContent,
@@ -7,23 +7,21 @@ import {
   ToastList,
   ToastProgress,
   ToastRegion,
-  ToastTitle,
-} from "../ui/toast"
+  ToastTitle
+} from "../ui/toast";
 
 const ToastDemo = () => {
   const showToast = () => {
-    toaster.show((props) => (
+    toaster.show(props => (
       <Toast toastId={props.toastId}>
         <ToastContent>
           <ToastTitle>Scheduled: Catch up</ToastTitle>
-          <ToastDescription>
-            Friday, February 10, 2023 at 5:57 PM
-          </ToastDescription>
+          <ToastDescription>Friday, February 10, 2023 at 5:57 PM</ToastDescription>
         </ToastContent>
         <ToastProgress />
       </Toast>
-    ))
-  }
+    ));
+  };
 
   return (
     <>
@@ -34,7 +32,7 @@ const ToastDemo = () => {
         <ToastList />
       </ToastRegion>
     </>
-  )
-}
+  );
+};
 
-export default ToastDemo
+export default ToastDemo;

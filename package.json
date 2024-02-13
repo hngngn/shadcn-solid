@@ -1,30 +1,22 @@
 {
-	"private": true,
-	"scripts": {
-		"build": "turbo run build",
-		"build:cli": "turbo --filter=shadcn-solid build",
-		"build:registry": "pnpm --filter=www build:registry",
-		"dev": "pnpm turbo run dev",
-		"lint": "turbo run lint",
-		"format": "turbo run format",
-		"release": "changeset version",
-		"prepare": "husky"
-	},
-	"devDependencies": {
-		"@changesets/changelog-github": "^0.5.0",
-		"@changesets/cli": "^2.27.1",
-		"@typescript-eslint/eslint-plugin": "^7.0.1",
-		"@typescript-eslint/parser": "^7.0.1",
-		"eslint": "^8.56.0",
-		"eslint-config-prettier": "^9.1.0",
-		"eslint-config-turbo": "^1.12.3",
-		"eslint-plugin-solid": "^0.13.1",
-		"husky": "^9.0.10",
-		"lint-staged": "^15.2.2",
-		"prettier": "^3.2.5",
-		"prettier-plugin-tailwindcss": "^0.5.11",
-		"turbo": "^1.12.3"
-	},
-	"packageManager": "pnpm@7.15.0",
-	"name": "shadcn-solid"
+  "name": "shadcn-solid",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo run lint",
+    "format": "turbo run format"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.1",
+    "husky": "^9.0.10",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.1.1",
+    "turbo": "latest"
+  },
+  "packageManager": "pnpm@8.9.0",
+  "engines": {
+    "node": ">=18"
+  }
 }

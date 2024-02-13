@@ -1,5 +1,5 @@
-import { As } from "@kobalte/core"
-import { Button } from "../ui/button"
+import { As } from "@kobalte/core";
+import { Button } from "../ui/button";
 import {
   Sheet,
   SheetContent,
@@ -7,9 +7,9 @@ import {
   SheetFooter,
   SheetHeader,
   SheetTitle,
-  SheetTrigger,
-} from "../ui/sheet"
-import { TextField, TextFieldInput, TextFieldLabel } from "../ui/textfield"
+  SheetTrigger
+} from "../ui/sheet";
+import { TextField, TextFieldInput, TextFieldLabel } from "../ui/textfield";
 
 const SheetDemo = () => {
   return (
@@ -41,7 +41,7 @@ const SheetDemo = () => {
         </SheetFooter>
       </SheetContent>
     </Sheet>
-  )
-}
+  );
+};
 
-export default SheetDemo
+export default SheetDemo;

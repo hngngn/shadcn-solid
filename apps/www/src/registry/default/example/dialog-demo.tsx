@@ -1,5 +1,5 @@
-import { As } from "@kobalte/core"
-import { Button } from "../ui/button"
+import { As } from "@kobalte/core";
+import { Button } from "../ui/button";
 import {
   Dialog,
   DialogContent,
@@ -7,9 +7,9 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
-} from "../ui/dialog"
-import { TextField, TextFieldInput, TextFieldLabel } from "../ui/textfield"
+  DialogTrigger
+} from "../ui/dialog";
+import { TextField, TextFieldInput, TextFieldLabel } from "../ui/textfield";
 
 const DialogDemo = () => {
   return (
@@ -41,7 +41,7 @@ const DialogDemo = () => {
         </DialogFooter>
       </DialogContent>
     </Dialog>
-  )
-}
+  );
+};
 
-export default DialogDemo
+export default DialogDemo;

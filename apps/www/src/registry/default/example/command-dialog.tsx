@@ -1,9 +1,4 @@
-import {
-  createEffect,
-  createSignal,
-  onCleanup,
-  type JSXElement,
-} from "solid-js"
+import { createEffect, createSignal, onCleanup, type JSXElement } from "solid-js";
 import {
   CommandDialog,
   CommandHeading,
@@ -11,20 +6,20 @@ import {
   CommandItem,
   CommandItemLabel,
   CommandList,
-  CommandShortcut,
-} from "../ui/command"
+  CommandShortcut
+} from "../ui/command";
 
 type Option = {
-  icon: JSXElement
-  label: string
-  value: string
-  shortcut?: JSXElement
-}
+  icon: JSXElement;
+  label: string;
+  value: string;
+  shortcut?: JSXElement;
+};
 
 type List = {
-  label: string
-  options: Option[]
-}
+  label: string;
+  options: Option[];
+};
 
 const CommandDialogDemo = () => {
   const data: List[] = [
@@ -33,11 +28,7 @@ const CommandDialogDemo = () => {
       options: [
         {
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              class="mr-2 h-4 w-4"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="mr-2 h-4 w-4">
               <path
                 fill="none"
                 stroke="currentColor"
@@ -49,15 +40,11 @@ const CommandDialogDemo = () => {
             </svg>
           ),
           label: "Calendar",
-          value: "Calendar",
+          value: "Calendar"
         },
         {
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="mr-2 h-4 w-4"
-              viewBox="0 0 24 24"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" viewBox="0 0 24 24">
               <g
                 fill="none"
                 stroke="currentColor"
@@ -71,15 +58,11 @@ const CommandDialogDemo = () => {
             </svg>
           ),
           label: "Search emoji",
-          value: "Search emoji",
+          value: "Search emoji"
         },
         {
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="mr-2 h-4 w-4"
-              viewBox="0 0 24 24"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" viewBox="0 0 24 24">
               <g
                 fill="none"
                 stroke="currentColor"
@@ -93,20 +76,16 @@ const CommandDialogDemo = () => {
             </svg>
           ),
           label: "Launch",
-          value: "Launch",
-        },
-      ],
+          value: "Launch"
+        }
+      ]
     },
     {
       label: "Settings",
       options: [
         {
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="mr-2 h-4 w-4"
-              viewBox="0 0 24 24"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" viewBox="0 0 24 24">
               <path
                 fill="none"
                 stroke="currentColor"
@@ -119,15 +98,11 @@ const CommandDialogDemo = () => {
           ),
           label: "Profile",
           value: "Profile",
-          shortcut: <CommandShortcut>⌘P</CommandShortcut>,
+          shortcut: <CommandShortcut>⌘P</CommandShortcut>
         },
         {
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="mr-2 h-4 w-4"
-              viewBox="0 0 24 24"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" viewBox="0 0 24 24">
               <g
                 fill="none"
                 stroke="currentColor"
@@ -142,15 +117,11 @@ const CommandDialogDemo = () => {
           ),
           label: "Mail",
           value: "Mail",
-          shortcut: <CommandShortcut>⌘B</CommandShortcut>,
+          shortcut: <CommandShortcut>⌘B</CommandShortcut>
         },
         {
           icon: (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="mr-2 h-4 w-4"
-              viewBox="0 0 24 24"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" viewBox="0 0 24 24">
               <g
                 fill="none"
                 stroke="currentColor"
@@ -165,34 +136,34 @@ const CommandDialogDemo = () => {
           ),
           label: "Setting",
           value: "Setting",
-          shortcut: <CommandShortcut>⌘S</CommandShortcut>,
-        },
-      ],
-    },
-  ]
+          shortcut: <CommandShortcut>⌘S</CommandShortcut>
+        }
+      ]
+    }
+  ];
 
-  const [open, setOpen] = createSignal(false)
+  const [open, setOpen] = createSignal(false);
 
   createEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === "j" && (e.metaKey || e.ctrlKey)) {
-        e.preventDefault()
-        setOpen((open) => !open)
+        e.preventDefault();
+        setOpen(open => !open);
       }
-    }
+    };
 
-    document.addEventListener("keydown", down)
+    document.addEventListener("keydown", down);
 
     onCleanup(() => {
-      document.removeEventListener("keydown", down)
-    })
-  })
+      document.removeEventListener("keydown", down);
+    });
+  });
 
   return (
     <>
-      <p class="text-muted-foreground text-sm">
+      <p class="text-sm text-muted-foreground">
         Press{" "}
-        <kbd class="bg-muted text-muted-foreground pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border px-1.5 font-mono text-[10px] font-medium opacity-100">
+        <kbd class="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
           <span class="text-xs">⌘</span>J
         </kbd>
       </p>
@@ -203,16 +174,14 @@ const CommandDialogDemo = () => {
         optionLabel="label"
         optionGroupChildren="options"
         placeholder="Type a command or search..."
-        itemComponent={(props) => (
+        itemComponent={props => (
           <CommandItem item={props.item}>
             {props.item.rawValue.icon}
             <CommandItemLabel>{props.item.rawValue.label}</CommandItemLabel>
             {props.item.rawValue.shortcut}
           </CommandItem>
         )}
-        sectionComponent={(props) => (
-          <CommandHeading>{props.section.rawValue.label}</CommandHeading>
-        )}
+        sectionComponent={props => <CommandHeading>{props.section.rawValue.label}</CommandHeading>}
         open={open()}
         onOpenChange={setOpen}
       >
@@ -220,7 +189,7 @@ const CommandDialogDemo = () => {
         <CommandList />
       </CommandDialog>
     </>
-  )
-}
+  );
+};
 
-export default CommandDialogDemo
+export default CommandDialogDemo;

@@ -1,31 +1,25 @@
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/default/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
-} from "@/registry/default/ui/card"
-import { TextField, TextFieldInput } from "@/registry/default/ui/textfield"
+  CardTitle
+} from "@/registry/default/ui/card";
+import { TextField, TextFieldInput } from "@/registry/default/ui/textfield";
 
 export const DemoCreateAccount = () => {
   return (
     <Card>
       <CardHeader class="space-y-1">
         <CardTitle class="text-2xl">Create an account</CardTitle>
-        <CardDescription>
-          Enter your email below to create your account
-        </CardDescription>
+        <CardDescription>Enter your email below to create your account</CardDescription>
       </CardHeader>
       <CardContent class="grid gap-4">
         <div class="grid grid-cols-2 gap-6">
           <Button variant="outline">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="mr-2 h-4 w-4"
-              viewBox="0 0 24 24"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" viewBox="0 0 24 24">
               <path
                 fill="none"
                 stroke="currentColor"
@@ -38,17 +32,8 @@ export const DemoCreateAccount = () => {
             Github
           </Button>
           <Button variant="outline">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="mr-2 h-4 w-4"
-              viewBox="0 0 24 24"
-            >
-              <g
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-              >
+            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" viewBox="0 0 24 24">
+              <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
                 <path d="M0 0h24v24H0z" />
                 <path
                   fill="currentColor"
@@ -64,9 +49,7 @@ export const DemoCreateAccount = () => {
             <span class="w-full border-t" />
           </div>
           <div class="relative flex justify-center text-xs uppercase">
-            <span class="bg-background text-muted-foreground px-2">
-              Or continue with
-            </span>
+            <span class="bg-background px-2 text-muted-foreground">Or continue with</span>
           </div>
         </div>
         <div class="grid gap-2">
@@ -86,5 +69,5 @@ export const DemoCreateAccount = () => {
         <Button class="w-full">Create account</Button>
       </CardFooter>
     </Card>
-  )
-}
+  );
+};

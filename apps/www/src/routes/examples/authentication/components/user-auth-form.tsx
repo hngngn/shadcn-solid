@@ -1,21 +1,17 @@
-import { Button } from "@/registry/default/ui/button"
-import {
-  TextField,
-  TextFieldInput,
-  TextFieldLabel,
-} from "@/registry/default/ui/textfield"
-import { createSignal } from "solid-js"
+import { Button } from "@/registry/default/ui/button";
+import { TextField, TextFieldInput, TextFieldLabel } from "@/registry/default/ui/textfield";
+import { createSignal } from "solid-js";
 
 export const UserAuthForm = () => {
-  const [isLoading, setIsLoading] = createSignal<boolean>(false)
+  const [isLoading, setIsLoading] = createSignal<boolean>(false);
 
   async function onSubmit(event: Event) {
-    event.preventDefault()
-    setIsLoading(true)
+    event.preventDefault();
+    setIsLoading(true);
 
     setTimeout(() => {
-      setIsLoading(false)
-    }, 3000)
+      setIsLoading(false);
+    }, 3000);
   }
 
   return (
@@ -62,9 +58,7 @@ export const UserAuthForm = () => {
           <span class="w-full border-t" />
         </div>
         <div class="relative flex justify-center text-xs uppercase">
-          <span class="bg-background text-muted-foreground px-2">
-            Or continue with
-          </span>
+          <span class="bg-background px-2 text-muted-foreground">Or continue with</span>
         </div>
       </div>
       <Button variant="outline" type="button" disabled={isLoading()}>
@@ -84,11 +78,7 @@ export const UserAuthForm = () => {
             />
           </svg>
         ) : (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="mr-2 h-4 w-4"
-            viewBox="0 0 24 24"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" viewBox="0 0 24 24">
             <path
               fill="none"
               stroke="currentColor"
@@ -102,5 +92,5 @@ export const UserAuthForm = () => {
         GitHub
       </Button>
     </div>
-  )
-}
+  );
+};

@@ -1,31 +1,27 @@
 /* @ts-ignore */
-import pkg from "@vinxi/plugin-mdx"
-const { default: mdx } = pkg
+import pkg from "@vinxi/plugin-mdx";
 
-import { defineConfig } from "@solidjs/start/config"
-import { join, resolve } from "node:path"
-import rehypePrettyCode from "rehype-pretty-code"
-import rehypeSlug from "rehype-slug"
-import remarkFrontmatter from "remark-frontmatter"
-import remarkGFM from "remark-gfm"
-import { getHighlighter, loadTheme } from "shiki"
-import type { Parent } from "unist"
-import { visit } from "unist-util-visit"
-import { rehypeComponent } from "./mdx/component"
-import { solidFrontmatter } from "./mdx/frontmatter"
-import { solidHeadings } from "./mdx/headings"
+import { nodeTypes } from "@mdx-js/mdx";
+import { defineConfig } from "@solidjs/start/config";
+import { join, resolve } from "path";
+import rehypePrettyCode from "rehype-pretty-code";
+import rehypeRaw from "rehype-raw";
+import rehypeSlug from "rehype-slug";
+import remarkFrontmatter from "remark-frontmatter";
+import remarkGFM from "remark-gfm";
+import { getHighlighter, loadTheme } from "shiki";
+import { visit } from "unist-util-visit";
+import { rehypeComponent } from "./mdx/component";
+import { solidFrontmatter } from "./mdx/frontmatter";
+import { solidHeadings } from "./mdx/headings";
 
+const { default: mdx } = pkg;
 export default defineConfig({
-  resolve: {
-    alias: {
-      "@": resolve(__dirname, "./src"),
-    },
-  },
   start: {
     extensions: ["mdx"],
     server: {
-      preset: "vercel-edge",
-    },
+      preset: "vercel"
+    }
   },
   plugins: [
     mdx.withImports({})({
@@ -36,72 +32,92 @@ export default defineConfig({
       rehypePlugins: [
         rehypeSlug,
         solidHeadings,
+        [rehypeRaw, { passThrough: nodeTypes }],
         rehypeComponent,
-        () => (tree: Parent) => {
+        () => (tree: any) => {
           visit(tree, (node: any) => {
             if (node?.type === "element" && node?.tagName === "pre") {
-              const [codeEl] = node.children
+              const [codeEl] = node.children;
               if (codeEl.tagName !== "code") {
-                return
+                return;
               }
 
-              node.__rawString__ = codeEl.children?.[0].value
+              node.__rawString__ = codeEl.children?.[0].value;
             }
-          })
+          });
         },
         [
           rehypePrettyCode,
           {
             getHighlighter: async () => {
-              const theme = await loadTheme(
-                join(process.cwd(), "/src/lib/themes/dark.json")
-              )
-              return await getHighlighter({ theme })
+              const theme = await loadTheme(join(process.cwd(), "/src/lib/themes/dark.json"));
+              return await getHighlighter({ theme });
             },
             onVisitLine(node: any) {
               if (node.children.length === 0) {
-                node.children = [{ type: "text", value: " " }]
+                node.children = [{ type: "text", value: " " }];
               }
             },
             onVisitHighlightedLine(node: any) {
-              node.properties.className?.push("line--highlighted")
+              node.properties.className?.push("line--highlighted");
             },
             onVisitHighlightedWord(node: any) {
-              node.properties.className = ["word--highlighted"]
-            },
-          },
+              node.properties.className = ["word--highlighted"];
+            }
+          }
         ],
-        () => (tree: Parent) => {
+        () => (tree: any) => {
           visit(tree, (node: any) => {
             if (node?.type === "element" && node?.tagName === "div") {
               if (!("data-rehype-pretty-code-fragment" in node.properties)) {
-                return
+                return;
               }
 
-              const preElement = node.children.at(-1)
+              const preElement = node.children.at(-1);
               if (preElement.tagName !== "pre") {
-                return
+                return;
               }
 
-              preElement.properties["data-meta"] =
-                node.children.at(0).tagName === "div"
+              preElement.properties["data-meta"] = node.children.at(0).tagName === "div";
 
               preElement.properties["data-package"] =
                 node.__rawString__?.startsWith("npm install") ||
                 node.__rawString__?.startsWith("npx create-") ||
-                node.__rawString__?.startsWith("npx")
+                node.__rawString__?.startsWith("npx");
             }
-          })
-        },
-      ],
-    }),
+          });
+        }
+      ]
+    })
   ],
+  resolve: {
+    alias: {
+      "@": resolve(__dirname, "./src")
+    }
+  },
   server: {
     fs: {
-      allow: ["../.."],
-    },
+      allow: ["../.."]
+    }
   },
   ssr: {
-    noExternal: ["@kobalte/core"],
+    noExternal: ["@kobalte/core"]
   },
-})
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id: string) {
+          if (id.indexOf("node_modules") !== -1) {
+            const basic = id.toString().split("node_modules/")[1];
+            const sub1 = basic.split("/")[0];
+            if (sub1 !== ".pnpm") {
+              return sub1.toString();
+            }
+            const name2 = basic.split("/")[1];
+            return name2.split("@")[name2[0] === "@" ? 1 : 0].toString();
+          }
+        }
+      }
+    }
+  }
+});

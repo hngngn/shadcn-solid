@@ -1,20 +1,20 @@
-import { resolveImport } from "@/src/utils/resolve-import"
-import { cosmiconfig } from "cosmiconfig"
-import path from "path"
-import { loadConfig } from "tsconfig-paths"
-import { z } from "zod"
+import { resolveImport } from "@/src/utils/resolve-import";
+import { cosmiconfig } from "cosmiconfig";
+import path from "path";
+import { loadConfig } from "tsconfig-paths";
+import { z } from "zod";
 
 // export const DEFAULT_STYLE = "default"
-export const DEFAULT_COMPONENTS = "@/components"
-export const DEFAULT_UTILS = "@/lib/utils"
-export const DEFAULT_TAILWIND_CSS = "src/app.css"
-export const DEFAULT_TAILWIND_CONFIG = "tailwind.config.cjs"
+export const DEFAULT_COMPONENTS = "@/components";
+export const DEFAULT_UTILS = "@/lib/utils";
+export const DEFAULT_TAILWIND_CSS = "src/app.css";
+export const DEFAULT_TAILWIND_CONFIG = "tailwind.config.cjs";
 
 // TODO: Figure out if we want to support all cosmiconfig formats.
 // A simple components.json file would be nice.
 const explorer = cosmiconfig("components", {
   searchPlaces: ["components.json"],
-})
+});
 
 export const rawConfigSchema = z
   .object({
@@ -33,9 +33,9 @@ export const rawConfigSchema = z
       ui: z.string().optional(),
     }),
   })
-  .strict()
+  .strict();
 
-export type RawConfig = z.infer<typeof rawConfigSchema>
+export type RawConfig = z.infer<typeof rawConfigSchema>;
 
 export const configSchema = rawConfigSchema.extend({
   resolvedPaths: z.object({
@@ -45,28 +45,28 @@ export const configSchema = rawConfigSchema.extend({
     components: z.string(),
     ui: z.string(),
   }),
-})
+});
 
-export type Config = z.infer<typeof configSchema>
+export type Config = z.infer<typeof configSchema>;
 
 export async function getConfig(cwd: string) {
-  const config = await getRawConfig(cwd)
+  const config = await getRawConfig(cwd);
 
   if (!config) {
-    return null
+    return null;
   }
 
-  return await resolveConfigPaths(cwd, config)
+  return await resolveConfigPaths(cwd, config);
 }
 
 export async function resolveConfigPaths(cwd: string, config: RawConfig) {
   // Read tsconfig.json.
-  const tsConfig = loadConfig(cwd)
+  const tsConfig = loadConfig(cwd);
 
   if (tsConfig.resultType === "failed") {
     throw new Error(
-      `Failed to load tsconfig.json. ${tsConfig.message ?? ""}`.trim()
-    )
+      `Failed to load tsconfig.json. ${tsConfig.message ?? ""}`.trim(),
+    );
   }
 
   return configSchema.parse({
@@ -80,19 +80,19 @@ export async function resolveConfigPaths(cwd: string, config: RawConfig) {
         ? await resolveImport(config.aliases["ui"], tsConfig)
         : await resolveImport(config.aliases["components"], tsConfig),
     },
-  })
+  });
 }
 
 export async function getRawConfig(cwd: string): Promise<RawConfig | null> {
   try {
-    const configResult = await explorer.search(cwd)
+    const configResult = await explorer.search(cwd);
 
     if (!configResult) {
-      return null
+      return null;
     }
 
-    return rawConfigSchema.parse(configResult.config)
+    return rawConfigSchema.parse(configResult.config);
   } catch (error) {
-    throw new Error(`Invalid configuration found in ${cwd}/components.json.`)
+    throw new Error(`Invalid configuration found in ${cwd}/components.json.`);
   }
 }

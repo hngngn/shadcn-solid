@@ -1,36 +1,34 @@
-import { Button } from "@/registry/default/ui/button"
+import { Button } from "@/registry/default/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
-} from "@/registry/default/ui/card"
-import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group"
+  CardTitle
+} from "@/registry/default/ui/card";
+import { RadioGroup, RadioGroupItem } from "@/registry/default/ui/radio-group";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
-} from "@/registry/default/ui/select"
-import { TextField, TextFieldInput } from "@/registry/default/ui/textfield"
+  SelectValue
+} from "@/registry/default/ui/select";
+import { TextField, TextFieldInput } from "@/registry/default/ui/textfield";
 
 export const DemoPaymentMethod = () => {
   return (
     <Card>
       <CardHeader>
         <CardTitle>Payment Method</CardTitle>
-        <CardDescription>
-          Add a new payment method to your account.
-        </CardDescription>
+        <CardDescription>Add a new payment method to your account.</CardDescription>
       </CardHeader>
       <CardContent class="grid gap-6">
         <RadioGroup defaultValue="card" class="grid grid-cols-3 gap-4">
           <div>
             <RadioGroupItem value="card" id="card" class="peer sr-only" />
-            <label class="border-muted bg-popover hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary flex flex-col items-center justify-between rounded-md border-2 p-4">
+            <label class="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -50,20 +48,11 @@ export const DemoPaymentMethod = () => {
           <div>
             <RadioGroupItem value="paypal" id="paypal" class="peer sr-only" />
             <label
-              class="border-muted bg-popover hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary flex flex-col items-center justify-between rounded-md
-						border-2 p-4"
+              class="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground
+						peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="mb-3 h-6 w-6"
-                viewBox="0 0 24 24"
-              >
-                <g
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                >
+              <svg xmlns="http://www.w3.org/2000/svg" class="mb-3 h-6 w-6" viewBox="0 0 24 24">
+                <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
                   <path d="M0 0h24v24H0z" />
                   <path
                     fill="currentColor"
@@ -76,18 +65,9 @@ export const DemoPaymentMethod = () => {
           </div>
           <div>
             <RadioGroupItem value="apple" id="apple" class="peer sr-only" />
-            <label class="border-muted bg-popover hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary flex flex-col items-center justify-between rounded-md border-2 p-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="mb-3 h-6 w-6"
-                viewBox="0 0 24 24"
-              >
-                <g
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                >
+            <label class="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" class="mb-3 h-6 w-6" viewBox="0 0 24 24">
+                <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
                   <path d="M0 0h24v24H0z" />
                   <path
                     fill="currentColor"
@@ -126,17 +106,15 @@ export const DemoPaymentMethod = () => {
                 "September",
                 "October",
                 "November",
-                "December",
+                "December"
               ]}
               placeholder="Month"
-              itemComponent={(props) => (
+              itemComponent={props => (
                 <SelectItem item={props.item}>{props.item.rawValue}</SelectItem>
               )}
             >
               <SelectTrigger>
-                <SelectValue<string>>
-                  {(state) => state.selectedOption()}
-                </SelectValue>
+                <SelectValue<string>>{state => state.selectedOption()}</SelectValue>
               </SelectTrigger>
               <SelectContent />
             </Select>
@@ -144,18 +122,14 @@ export const DemoPaymentMethod = () => {
           <div class="grid gap-2">
             <label>Year</label>
             <Select
-              options={Array.from({ length: 10 }).map(
-                (_, i) => new Date().getFullYear() + i
-              )}
+              options={Array.from({ length: 10 }).map((_, i) => new Date().getFullYear() + i)}
               placeholder="Year"
-              itemComponent={(props) => (
+              itemComponent={props => (
                 <SelectItem item={props.item}>{props.item.rawValue}</SelectItem>
               )}
             >
               <SelectTrigger>
-                <SelectValue<string>>
-                  {(state) => state.selectedOption()}
-                </SelectValue>
+                <SelectValue<string>>{state => state.selectedOption()}</SelectValue>
               </SelectTrigger>
               <SelectContent />
             </Select>
@@ -172,5 +146,5 @@ export const DemoPaymentMethod = () => {
         <Button class="w-full">Continue</Button>
       </CardFooter>
     </Card>
-  )
-}
+  );
+};

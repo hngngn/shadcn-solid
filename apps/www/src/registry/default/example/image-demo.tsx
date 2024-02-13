@@ -1,4 +1,4 @@
-import { Image, ImageFallback, ImageRoot } from "../ui/image"
+import { Image, ImageFallback, ImageRoot } from "../ui/image";
 
 const ImageDemo = () => {
   return (
@@ -6,7 +6,7 @@ const ImageDemo = () => {
       <Image src="https://github.com/hngngn.png" alt="hngngn" />
       <ImageFallback>HN</ImageFallback>
     </ImageRoot>
-  )
-}
+  );
+};
 
-export default ImageDemo
+export default ImageDemo;

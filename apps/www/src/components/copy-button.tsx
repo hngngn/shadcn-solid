@@ -1,22 +1,22 @@
-import { cn } from "@/lib/cn"
-import { Button } from "@/registry/default/ui/button"
-import type { VoidComponent } from "solid-js"
-import { Show, createSignal } from "solid-js"
+import { cn } from "@/lib/cn";
+import { Button } from "@/registry/default/ui/button";
+import type { VoidComponent } from "solid-js";
+import { Show, createSignal } from "solid-js";
 
 type Props = {
-  preRef: HTMLPreElement | undefined
-  class?: string
-}
+  preRef: HTMLPreElement | undefined;
+  class?: string;
+};
 
-export const CopyButton: VoidComponent<Props> = (props) => {
-  const [isCopied, setIsCopied] = createSignal(false)
+export const CopyButton: VoidComponent<Props> = props => {
+  const [isCopied, setIsCopied] = createSignal(false);
 
   const copyToClipboard = () => {
-    const innerText = props.preRef?.querySelector("code")?.innerText ?? ""
-    setIsCopied(true)
-    void navigator.clipboard.writeText(innerText)
-    setTimeout(() => setIsCopied(false), 2000)
-  }
+    const innerText = props.preRef?.querySelector("code")?.innerText ?? "";
+    setIsCopied(true);
+    void navigator.clipboard.writeText(innerText);
+    setTimeout(() => setIsCopied(false), 2000);
+  };
 
   return (
     <Button
@@ -32,11 +32,7 @@ export const CopyButton: VoidComponent<Props> = (props) => {
       <Show
         when={isCopied()}
         fallback={
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-4 w-4"
-            viewBox="0 0 24 24"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24">
             <g
               fill="none"
               stroke="currentColor"
@@ -50,11 +46,7 @@ export const CopyButton: VoidComponent<Props> = (props) => {
           </svg>
         }
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-4 w-4"
-          viewBox="0 0 24 24"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24">
           <g
             fill="none"
             stroke="currentColor"
@@ -68,5 +60,5 @@ export const CopyButton: VoidComponent<Props> = (props) => {
         </svg>
       </Show>
     </Button>
-  )
-}
+  );
+};

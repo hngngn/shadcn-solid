@@ -1,4 +1,4 @@
-import { TextField, TextFieldInput, TextFieldLabel } from "../ui/textfield"
+import { TextField, TextFieldInput, TextFieldLabel } from "../ui/textfield";
 
 const TextFieldFile = () => {
   return (
@@ -6,7 +6,7 @@ const TextFieldFile = () => {
       <TextFieldLabel>Picture</TextFieldLabel>
       <TextFieldInput disabled type="file" />
     </TextField>
-  )
-}
+  );
+};
 
-export default TextFieldFile
+export default TextFieldFile;

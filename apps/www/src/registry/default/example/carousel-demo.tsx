@@ -1,12 +1,12 @@
-import { Index } from "solid-js"
-import { Card, CardContent } from "../ui/card"
+import { Index } from "solid-js";
+import { Card, CardContent } from "../ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious,
-} from "../ui/carousel"
+  CarouselPrevious
+} from "../ui/carousel";
 
 const CarouselDemo = () => {
   return (
@@ -29,7 +29,7 @@ const CarouselDemo = () => {
       <CarouselPrevious />
       <CarouselNext />
     </Carousel>
-  )
-}
+  );
+};
 
-export default CarouselDemo
+export default CarouselDemo;

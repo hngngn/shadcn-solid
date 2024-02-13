@@ -51,16 +51,14 @@ import {
   PaginationItem,
   PaginationItems,
   PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination"
+  PaginationPrevious
+} from "@/components/ui/pagination";
 ```
 
 ```tsx
 <Pagination
   count={10}
-  itemComponent={(props) => (
-    <PaginationItem page={props.page}>{props.page}</PaginationItem>
-  )}
+  itemComponent={props => <PaginationItem page={props.page}>{props.page}</PaginationItem>}
   ellipsisComponent={() => <PaginationEllipsis />}
 >
   <PaginationPrevious />

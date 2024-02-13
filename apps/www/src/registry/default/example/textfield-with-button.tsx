@@ -1,5 +1,5 @@
-import { Button } from "../ui/button"
-import { TextField, TextFieldInput } from "../ui/textfield"
+import { Button } from "../ui/button";
+import { TextField, TextFieldInput } from "../ui/textfield";
 
 const TextFieldWithButton = () => {
   return (
@@ -9,7 +9,7 @@ const TextFieldWithButton = () => {
       </TextField>
       <Button type="submit">Subscribe</Button>
     </div>
-  )
-}
+  );
+};
 
-export default TextFieldWithButton
+export default TextFieldWithButton;

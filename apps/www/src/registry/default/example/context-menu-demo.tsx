@@ -12,8 +12,8 @@ import {
   ContextMenuSub,
   ContextMenuSubContent,
   ContextMenuSubTrigger,
-  ContextMenuTrigger,
-} from "../ui/context-menu"
+  ContextMenuTrigger
+} from "../ui/context-menu";
 
 const ContextMenuDemo = () => {
   return (
@@ -58,15 +58,13 @@ const ContextMenuDemo = () => {
           <ContextMenuGroupLabel inset>People</ContextMenuGroupLabel>
           <ContextMenuSeparator />
           <ContextMenuRadioGroup value="pedro">
-            <ContextMenuRadioItem value="pedro">
-              Pedro Duarte
-            </ContextMenuRadioItem>
+            <ContextMenuRadioItem value="pedro">Pedro Duarte</ContextMenuRadioItem>
             <ContextMenuRadioItem value="colm">Colm Tuite</ContextMenuRadioItem>
           </ContextMenuRadioGroup>
         </ContextMenuGroup>
       </ContextMenuContent>
     </ContextMenu>
-  )
-}
+  );
+};
 
-export default ContextMenuDemo
+export default ContextMenuDemo;

@@ -1,17 +1,17 @@
-import { As } from "@kobalte/core"
-import { createSignal } from "solid-js"
-import { Button } from "../ui/button"
+import { As } from "@kobalte/core";
+import { createSignal } from "solid-js";
+import { Button } from "../ui/button";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuTrigger,
-} from "../ui/dropdown-menu"
+  DropdownMenuTrigger
+} from "../ui/dropdown-menu";
 
 const DropdownMenuCheckboxes = () => {
-  const [showStatusBar, setShowStatusBar] = createSignal<boolean>(true)
-  const [showActivityBar, setShowActivityBar] = createSignal<boolean>(false)
-  const [showPanel, setShowPanel] = createSignal<boolean>(false)
+  const [showStatusBar, setShowStatusBar] = createSignal<boolean>(true);
+  const [showActivityBar, setShowActivityBar] = createSignal<boolean>(false);
+  const [showPanel, setShowPanel] = createSignal<boolean>(false);
 
   return (
     <DropdownMenu placement="bottom">
@@ -21,10 +21,7 @@ const DropdownMenuCheckboxes = () => {
         </As>
       </DropdownMenuTrigger>
       <DropdownMenuContent class="w-56">
-        <DropdownMenuCheckboxItem
-          checked={showStatusBar()}
-          onChange={setShowStatusBar}
-        >
+        <DropdownMenuCheckboxItem checked={showStatusBar()} onChange={setShowStatusBar}>
           Status Bar
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
@@ -39,7 +36,7 @@ const DropdownMenuCheckboxes = () => {
         </DropdownMenuCheckboxItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
-}
+  );
+};
 
-export default DropdownMenuCheckboxes
+export default DropdownMenuCheckboxes;

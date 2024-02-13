@@ -1,34 +1,31 @@
-import { siteConfig } from "@/config/site"
-import { Link, Meta, Title } from "@solidjs/meta"
-import { mergeProps, splitProps, type VoidComponent } from "solid-js"
+import { siteConfig } from "@/config/site";
+import { Link, Meta, Title } from "@solidjs/meta";
+import { mergeProps, splitProps, type VoidComponent } from "solid-js";
 
 type MetadataProps = {
-  title?: string
-  description?: string
-  type?: "website" | "article"
-}
+  title?: string;
+  description?: string;
+  type?: "website" | "article";
+};
 
-export const Metadata: VoidComponent<MetadataProps> = (props) => {
+export const Metadata: VoidComponent<MetadataProps> = props => {
   const merge = mergeProps<MetadataProps[]>(
     {
       title: siteConfig.title,
       description: siteConfig.description,
-      type: "website",
+      type: "website"
     },
     props
-  )
-  const [local, rest] = splitProps(merge, ["title"])
+  );
+  const [local, rest] = splitProps(merge, ["title"]);
 
   return (
     <>
       <Title>
-        {local.title ? `${local.title} - shadcn-solid` : local.title}
+        {local.title !== siteConfig.title ? `${local.title} - shadcn-solid` : local.title}
       </Title>
       <Meta name="description" content={rest.description} />
-      <Meta
-        name="keywords"
-        content="Solidjs,SolidStart,TailwindCSS,KobalteUI"
-      />
+      <Meta name="keywords" content="Solidjs,SolidStart,TailwindCSS,KobalteUI" />
       <Meta name="author" content="hngngn" />
       <Meta property="og:title" content={local.title} />
       <Meta property="og:description" content={rest.description} />
@@ -41,5 +38,5 @@ export const Metadata: VoidComponent<MetadataProps> = (props) => {
       <Link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       <Link rel="manifest" href="/site.webmanifest" />
     </>
-  )
-}
+  );
+};

@@ -1,10 +1,10 @@
-import { Announcement } from "@/components/announcement"
-import { Example } from "@/components/example"
-import { siteConfig } from "@/config/site"
-import { buttonVariants } from "@/registry/default/ui/button"
-import { A } from "@solidjs/router"
-import { Balancer } from "solid-wrap-balancer"
-import Cards from "./examples/cards"
+import { Announcement } from "@/components/announcement";
+import { Example } from "@/components/example";
+import { siteConfig } from "@/config/site";
+import { buttonVariants } from "@/registry/default/ui/button";
+import { A } from "@solidjs/router";
+import { Balancer } from "solid-wrap-balancer";
+import Cards from "./examples/cards";
 
 const Home = () => {
   return (
@@ -14,9 +14,9 @@ const Home = () => {
         <h1 class="text-center text-3xl font-bold leading-tight tracking-tighter md:text-6xl lg:leading-[1.1]">
           Build your component library
         </h1>
-        <Balancer class="text-muted-foreground max-w-[750px] text-center text-lg sm:text-xl">
-          Beautifully designed components that you can copy and paste into your
-          apps. Accessible. Customizable. Open Source.
+        <Balancer class="max-w-[750px] text-center text-lg text-muted-foreground sm:text-xl">
+          Beautifully designed components that you can copy and paste into your apps. Accessible.
+          Customizable. Open Source.
         </Balancer>
         <div class="flex w-full items-center justify-center space-x-4 py-4 md:pb-10">
           <A href="/docs" class={buttonVariants()}>
@@ -28,11 +28,7 @@ const Home = () => {
             href={siteConfig.links.github}
             class={buttonVariants({ variant: "outline" })}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="mr-2 h-4 w-4"
-              viewBox="0 0 24 24"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" viewBox="0 0 24 24">
               <path
                 fill="none"
                 stroke="currentColor"
@@ -47,7 +43,7 @@ const Home = () => {
         </div>
       </section>
       <Example />
-      <section class="bg-background overflow-hidden rounded-lg border shadow-md md:hidden md:shadow-xl">
+      <section class="overflow-hidden rounded-lg border bg-background shadow-md md:hidden md:shadow-xl">
         <img
           src="/examples/cards-dark.png"
           width={1280}
@@ -64,12 +60,12 @@ const Home = () => {
         />
       </section>
       <section class="hidden md:block">
-        <div class="bg-background overflow-hidden rounded-lg border shadow-lg">
+        <div class="overflow-hidden rounded-lg border bg-background shadow-lg">
           <Cards />
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

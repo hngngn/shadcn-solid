@@ -1,19 +1,15 @@
-import type { ParentComponent } from "solid-js"
-import { DemoCookieSettings } from "./components/cookie-setting"
-import { DemoCreateAccount } from "./components/create-account"
-import { DemoGithub } from "./components/github-cards"
-import { DemoNotifications } from "./components/notifications"
-import { DemoPaymentMethod } from "./components/payment-method"
-import { DemoReportAnIssue } from "./components/report-an-issue"
-import { DemoShareDocument } from "./components/share-document"
+import type { ParentComponent } from "solid-js";
+import { DemoCookieSettings } from "./components/cookie-setting";
+import { DemoCreateAccount } from "./components/create-account";
+import { DemoGithub } from "./components/github-cards";
+import { DemoNotifications } from "./components/notifications";
+import { DemoPaymentMethod } from "./components/payment-method";
+import { DemoReportAnIssue } from "./components/report-an-issue";
+import { DemoShareDocument } from "./components/share-document";
 
-const DemoContainer: ParentComponent = (props) => {
-  return (
-    <div class="flex items-center justify-center [&>div]:w-full">
-      {props.children}
-    </div>
-  )
-}
+const DemoContainer: ParentComponent = props => {
+  return <div class="flex items-center justify-center [&>div]:w-full">{props.children}</div>;
+};
 
 const Cards = () => {
   return (
@@ -64,7 +60,7 @@ const Cards = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Cards
+export default Cards;

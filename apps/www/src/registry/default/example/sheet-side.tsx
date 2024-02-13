@@ -1,6 +1,6 @@
-import { As } from "@kobalte/core"
-import { For } from "solid-js"
-import { Button } from "../ui/button"
+import { As } from "@kobalte/core";
+import { For } from "solid-js";
+import { Button } from "../ui/button";
 import {
   Sheet,
   SheetContent,
@@ -8,17 +8,17 @@ import {
   SheetFooter,
   SheetHeader,
   SheetTitle,
-  SheetTrigger,
-} from "../ui/sheet"
-import { TextField, TextFieldInput, TextFieldLabel } from "../ui/textfield"
+  SheetTrigger
+} from "../ui/sheet";
+import { TextField, TextFieldInput, TextFieldLabel } from "../ui/textfield";
 
-const SHEET_SIDES = ["top", "right", "bottom", "left"] as const
+const SHEET_SIDES = ["top", "right", "bottom", "left"] as const;
 
 const SheetSide = () => {
   return (
     <div class="grid grid-cols-2 gap-2">
       <For each={SHEET_SIDES}>
-        {(side) => (
+        {side => (
           <Sheet>
             <SheetTrigger asChild>
               <As component={Button} variant="outline">
@@ -29,8 +29,7 @@ const SheetSide = () => {
               <SheetHeader>
                 <SheetTitle>Edit profile</SheetTitle>
                 <SheetDescription>
-                  Make changes to your profile here. Click save when you're
-                  done.
+                  Make changes to your profile here. Click save when you're done.
                 </SheetDescription>
               </SheetHeader>
               <div class="grid gap-4 py-4">
@@ -51,7 +50,7 @@ const SheetSide = () => {
         )}
       </For>
     </div>
-  )
-}
+  );
+};
 
-export default SheetSide
+export default SheetSide;

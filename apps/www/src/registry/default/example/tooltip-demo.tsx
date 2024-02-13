@@ -1,6 +1,6 @@
-import { As } from "@kobalte/core"
-import { Button } from "../ui/button"
-import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip"
+import { As } from "@kobalte/core";
+import { Button } from "../ui/button";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 const TooltipDemo = () => {
   return (
@@ -14,7 +14,7 @@ const TooltipDemo = () => {
         <p>Add to library</p>
       </TooltipContent>
     </Tooltip>
-  )
-}
+  );
+};
 
-export default TooltipDemo
+export default TooltipDemo;

@@ -1,12 +1,12 @@
-import { Index } from "solid-js"
-import { Card, CardContent } from "../ui/card"
+import { Index } from "solid-js";
+import { Card, CardContent } from "../ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious,
-} from "../ui/carousel"
+  CarouselPrevious
+} from "../ui/carousel";
 const CarouselSpacing = () => {
   return (
     <Carousel class="w-full max-w-sm">
@@ -28,7 +28,7 @@ const CarouselSpacing = () => {
       <CarouselPrevious />
       <CarouselNext />
     </Carousel>
-  )
-}
+  );
+};
 
-export default CarouselSpacing
+export default CarouselSpacing;

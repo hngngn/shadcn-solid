@@ -1,4 +1,4 @@
-import { As } from "@kobalte/core"
+import { As } from "@kobalte/core";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -8,9 +8,9 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-  AlertDialogTrigger,
-} from "../ui/alert-dialog"
-import { Button } from "../ui/button"
+  AlertDialogTrigger
+} from "../ui/alert-dialog";
+import { Button } from "../ui/button";
 
 const AlertDialogDemo = () => {
   return (
@@ -24,8 +24,8 @@ const AlertDialogDemo = () => {
         <AlertDialogHeader>
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
           <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
+            This action cannot be undone. This will permanently delete your account and remove your
+            data from our servers.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
@@ -34,7 +34,7 @@ const AlertDialogDemo = () => {
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
-  )
-}
+  );
+};
 
-export default AlertDialogDemo
+export default AlertDialogDemo;

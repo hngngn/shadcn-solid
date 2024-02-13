@@ -1,4 +1,4 @@
-import { Switch, SwitchControl, SwitchLabel, SwitchThumb } from "../ui/switch"
+import { Switch, SwitchControl, SwitchLabel, SwitchThumb } from "../ui/switch";
 
 const SwitchDemo = () => {
   return (
@@ -10,7 +10,7 @@ const SwitchDemo = () => {
         Airplane Mode
       </SwitchLabel>
     </Switch>
-  )
-}
+  );
+};
 
-export default SwitchDemo
+export default SwitchDemo;

@@ -1,65 +1,54 @@
-import { Index } from "@/__registry__"
-import { cn } from "@/lib/cn"
+import { Index } from "@/__registry__";
+import { cn } from "@/lib/cn";
 import {
   Tabs,
   TabsContent,
   TabsIndicator,
   TabsList,
-  TabsTrigger,
-} from "@/registry/default/ui/tabs"
+  TabsTrigger
+} from "@/registry/default/ui/tabs";
 import {
   createMemo,
   mergeProps,
   splitProps,
   type ComponentProps,
-  type ParentComponent,
-} from "solid-js"
+  type ParentComponent
+} from "solid-js";
 
 type ComponentPreviewProps = ComponentProps<"div"> & {
-  name: string
-  align?: "center" | "start" | "end"
-}
+  name: string;
+  align?: "center" | "start" | "end";
+};
 
-export const ComponentPreview: ParentComponent<ComponentPreviewProps> = (
-  props
-) => {
+export const ComponentPreview: ParentComponent<ComponentPreviewProps> = props => {
   const merge = mergeProps(
     {
-      align: "center",
+      align: "center"
     },
     props
-  )
-  const [local, rest] = splitProps(merge, [
-    "class",
-    "align",
-    "children",
-    "name",
-  ])
+  );
+  const [local, rest] = splitProps(merge, ["class", "align", "children", "name"]);
 
   const Preview = createMemo(() => {
-    const Component = (Index as Record<string, any>)["default"][local.name]
-      ?.component
+    const Component = (Index as Record<string, any>)["default"][local.name]?.component;
 
     if (!Component) {
       return (
-        <p class="text-muted-foreground text-sm">
+        <p class="text-sm text-muted-foreground">
           Component{" "}
-          <code class="bg-muted relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm">
+          <code class="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm">
             {local.name}
           </code>{" "}
           not found in registry.
         </p>
-      )
+      );
     }
 
-    return <Component />
-  })
+    return <Component />;
+  });
 
   return (
-    <div
-      class={cn("group relative my-4 flex flex-col space-y-2", local.class)}
-      {...rest}
-    >
+    <div class={cn("group relative my-4 flex flex-col space-y-2", local.class)} {...rest}>
       <Tabs defaultValue="preview">
         <div class="pb-3">
           <TabsList class="w-full rounded-none bg-transparent p-0">
@@ -99,5 +88,5 @@ export const ComponentPreview: ParentComponent<ComponentPreviewProps> = (
         </TabsContent>
       </Tabs>
     </div>
-  )
-}
+  );
+};

@@ -1,18 +1,18 @@
-import { Index } from "solid-js"
-import { Card, CardContent } from "../ui/card"
+import { Index } from "solid-js";
+import { Card, CardContent } from "../ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious,
-} from "../ui/carousel"
+  CarouselPrevious
+} from "../ui/carousel";
 
 const CarouselOrientation = () => {
   return (
     <Carousel
       opts={{
-        align: "start",
+        align: "start"
       }}
       orientation="vertical"
       class="w-full max-w-xs"
@@ -35,7 +35,7 @@ const CarouselOrientation = () => {
       <CarouselPrevious />
       <CarouselNext />
     </Carousel>
-  )
-}
+  );
+};
 
-export default CarouselOrientation
+export default CarouselOrientation;

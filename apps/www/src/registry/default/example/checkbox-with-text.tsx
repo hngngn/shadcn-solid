@@ -1,9 +1,4 @@
-import {
-  Checkbox,
-  CheckboxControl,
-  CheckboxDescription,
-  CheckboxLabel,
-} from "../ui/checkbox"
+import { Checkbox, CheckboxControl, CheckboxDescription, CheckboxLabel } from "../ui/checkbox";
 
 const CheckboxWithTextDemo = () => {
   return (
@@ -13,12 +8,12 @@ const CheckboxWithTextDemo = () => {
         <CheckboxLabel class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
           Accept terms and conditions
         </CheckboxLabel>
-        <CheckboxDescription class="text-muted-foreground text-sm">
+        <CheckboxDescription class="text-sm text-muted-foreground">
           You agree to our Terms of Service and Privacy Policy.
         </CheckboxDescription>
       </div>
     </Checkbox>
-  )
-}
+  );
+};
 
-export default CheckboxWithTextDemo
+export default CheckboxWithTextDemo;

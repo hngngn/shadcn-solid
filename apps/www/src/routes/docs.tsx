@@ -1,47 +1,46 @@
-import { MDXComponent } from "@/components/mdx-components"
-import { Metadata } from "@/components/metadata"
-import { Pager } from "@/components/pager"
-import { Sidebar } from "@/components/sidebar"
-import { TableOfContents } from "@/components/toc"
-import { badgeVariants } from "@/registry/default/ui/badge"
-import { A, useLocation, type RouteSectionProps } from "@solidjs/router"
-import { Show, createMemo } from "solid-js"
-import { MDXProvider } from "solid-mdx"
-import { Balancer } from "solid-wrap-balancer"
+import { MDXComponent } from "@/components/mdx-components";
+import { Metadata } from "@/components/metadata";
+import { Pager } from "@/components/pager";
+import { Sidebar } from "@/components/sidebar";
+import { TableOfContents } from "@/components/toc";
+import { badgeVariants } from "@/registry/default/ui/badge";
+import { A, useLocation, type RouteSectionProps } from "@solidjs/router";
+import { Show, createMemo } from "solid-js";
+import { MDXProvider } from "solid-mdx";
+import { Balancer } from "solid-wrap-balancer";
 
-type Heading = { depth: number; text: string; slug: string }
+type Heading = { depth: number; text: string; slug: string };
 
 type Frontmatter = {
-  title: string
-  description: string
-  component?: boolean
+  title: string;
+  description: string;
+  component?: boolean;
   link?: {
-    doc: string
-    api: string
-  }
-  toc: boolean
-}
+    doc: string;
+    api: string;
+  };
+  toc: boolean;
+};
 
 const contents = /*#__PURE__*/ import.meta.glob<
   true,
   any,
   {
-    headings: Heading[]
-    frontmatter: Frontmatter
+    headings: Heading[];
+    frontmatter: Frontmatter;
   }
 >("./docs/**/*.mdx", {
-  eager: true,
-})
+  eager: true
+});
 
 const Documents = (props: RouteSectionProps) => {
-  const location = useLocation()
+  const location = useLocation();
 
   const markdownData = createMemo(() => ({
     frontmatter:
       contents[
         `.${
-          location.pathname === "/docs" ||
-          location.pathname === "/docs/installation"
+          location.pathname === "/docs" || location.pathname === "/docs/installation"
             ? location.pathname + "/index"
             : location.pathname
         }.mdx`
@@ -49,13 +48,12 @@ const Documents = (props: RouteSectionProps) => {
     headings:
       contents[
         `.${
-          location.pathname === "/docs" ||
-          location.pathname === "/docs/installation"
+          location.pathname === "/docs" || location.pathname === "/docs/installation"
             ? location.pathname + "/index"
             : location.pathname
         }.mdx`
-      ].headings,
-  }))
+      ].headings
+  }));
 
   return (
     <>
@@ -73,15 +71,9 @@ const Documents = (props: RouteSectionProps) => {
           </aside>
           <main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
             <div class="mx-auto w-full min-w-0">
-              <div class="text-muted-foreground mb-4 flex items-center space-x-1 text-sm">
-                <div class="overflow-hidden text-ellipsis whitespace-nowrap">
-                  Docs
-                </div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-4 w-4"
-                  viewBox="0 0 24 24"
-                >
+              <div class="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
+                <div class="overflow-hidden text-ellipsis whitespace-nowrap">Docs</div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24">
                   <path
                     fill="none"
                     stroke="currentColor"
@@ -91,19 +83,15 @@ const Documents = (props: RouteSectionProps) => {
                     d="m9 6l6 6l-6 6"
                   />
                 </svg>
-                <div class="text-foreground font-medium">
-                  {markdownData().frontmatter.title}
-                </div>
+                <div class="font-medium text-foreground">{markdownData().frontmatter.title}</div>
               </div>
               <div class="space-y-2">
                 <h1 class="scroll-m-20 text-4xl font-bold tracking-tight">
                   {markdownData().frontmatter.title}
                 </h1>
                 <Show when={markdownData().frontmatter.description}>
-                  <p class="text-muted-foreground text-lg">
-                    <Balancer>
-                      {markdownData().frontmatter.description}
-                    </Balancer>
+                  <p class="text-lg text-muted-foreground">
+                    <Balancer>{markdownData().frontmatter.description}</Balancer>
                   </p>
                 </Show>
               </div>
@@ -115,7 +103,7 @@ const Documents = (props: RouteSectionProps) => {
                       target="_blank"
                       rel="noreferrer"
                       class={badgeVariants({
-                        variant: "secondary",
+                        variant: "secondary"
                       })}
                     >
                       Docs{" "}
@@ -141,7 +129,7 @@ const Documents = (props: RouteSectionProps) => {
                       target="_blank"
                       rel="noreferrer"
                       class={badgeVariants({
-                        variant: "secondary",
+                        variant: "secondary"
                       })}
                     >
                       API Reference
@@ -164,9 +152,7 @@ const Documents = (props: RouteSectionProps) => {
                 </div>
               </Show>
               <div class="max-w-full pb-12 pt-8">
-                <MDXProvider components={MDXComponent}>
-                  {props.children}
-                </MDXProvider>
+                <MDXProvider components={MDXComponent}>{props.children}</MDXProvider>
               </div>
               <Pager slug={location.pathname} />
             </div>
@@ -181,7 +167,7 @@ const Documents = (props: RouteSectionProps) => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Documents
+export default Documents;

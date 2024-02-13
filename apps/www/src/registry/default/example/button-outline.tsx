@@ -1,7 +1,7 @@
-import { Button } from "../ui/button"
+import { Button } from "../ui/button";
 
 const ButtonOutline = () => {
-  return <Button variant="outline">Outline</Button>
-}
+  return <Button variant="outline">Outline</Button>;
+};
 
-export default ButtonOutline
+export default ButtonOutline;

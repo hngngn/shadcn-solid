@@ -1,4 +1,4 @@
-import { TextField, TextFieldInput, TextFieldLabel } from "../ui/textfield"
+import { TextField, TextFieldInput, TextFieldLabel } from "../ui/textfield";
 
 const TextFieldWithLabel = () => {
   return (
@@ -6,7 +6,7 @@ const TextFieldWithLabel = () => {
       <TextFieldLabel>Email</TextFieldLabel>
       <TextFieldInput type="email" placeholder="Email" />
     </TextField>
-  )
-}
+  );
+};
 
-export default TextFieldWithLabel
+export default TextFieldWithLabel;

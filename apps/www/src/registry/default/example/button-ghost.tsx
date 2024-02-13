@@ -1,7 +1,7 @@
-import { Button } from "../ui/button"
+import { Button } from "../ui/button";
 
 const ButtonGhost = () => {
-  return <Button variant="ghost">Ghost</Button>
-}
+  return <Button variant="ghost">Ghost</Button>;
+};
 
-export default ButtonGhost
+export default ButtonGhost;
