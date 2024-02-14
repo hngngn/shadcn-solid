@@ -5,7 +5,7 @@ import { Button } from "../ui/button";
 const ButtonAsChild = () => {
   return (
     <Button asChild>
-      <As component={A} href="/login">
+      <As component={A} href="#">
         Login
       </As>
     </Button>

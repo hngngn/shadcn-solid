@@ -25,7 +25,7 @@ export const Metadata: VoidComponent<MetadataProps> = props => {
         {local.title !== siteConfig.title ? `${local.title} - shadcn-solid` : local.title}
       </Title>
       <Meta name="description" content={rest.description} />
-      <Meta name="keywords" content="Solidjs,SolidStart,TailwindCSS,KobalteUI" />
+      <Meta name="keywords" content="Solidjs,Solid Start,Tailwind CSS,Kobalte UI" />
       <Meta name="author" content="hngngn" />
       <Meta property="og:title" content={local.title} />
       <Meta property="og:description" content={rest.description} />

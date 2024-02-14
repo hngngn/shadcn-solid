@@ -70,11 +70,11 @@ const Authentication = () => {
             <UserAuthForm />
             <p class="px-8 text-center text-sm text-muted-foreground">
               By clicking continue, you agree to our{" "}
-              <A href="/terms" class="underline underline-offset-4 hover:text-primary">
+              <A href="#" class="underline underline-offset-4 hover:text-primary">
                 Terms of Service
               </A>{" "}
               and{" "}
-              <A href="/privacy" class="underline underline-offset-4 hover:text-primary">
+              <A href="#" class="underline underline-offset-4 hover:text-primary">
                 Privacy Policy
               </A>
               .

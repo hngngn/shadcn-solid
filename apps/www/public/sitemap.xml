@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>https://shadcn-solid.vercel.app</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/accordion</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/examples/cards</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/changelog</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/examples/authentication</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/installation</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components-json</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/theming</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/dark-mode</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/cli</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/typography</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/figma</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/alert</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/alert-dialog</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/badge</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/button</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/card</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/carousel</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/checkbox</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/collapsible</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/combobox</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/command</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/context-menu</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/date-picker</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/dialog</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/dropdown-menu</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/hover-card</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/image</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/pagination</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/popover</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/progress</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/radio-group</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/select</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/separator</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/sheet</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/skeleton</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/switch</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/table</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/tabs</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/textfield</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/textarea</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/toast</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/toggle</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/components/tooltip</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/installation/solid-start</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://shadcn-solid.vercel.app/docs/installation/manual</loc>
+  <lastmod>2024-02-14T05:33:28+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
+</urlset>
