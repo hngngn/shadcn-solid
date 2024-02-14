@@ -1,11 +1,9 @@
 /* @ts-ignore */
 import pkg from "@vinxi/plugin-mdx";
 
-import { nodeTypes } from "@mdx-js/mdx";
 import { defineConfig } from "@solidjs/start/config";
 import { join, resolve } from "path";
 import rehypePrettyCode from "rehype-pretty-code";
-import rehypeRaw from "rehype-raw";
 import rehypeSlug from "rehype-slug";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkGFM from "remark-gfm";
@@ -35,7 +33,6 @@ export default defineConfig({
       rehypePlugins: [
         rehypeSlug,
         solidHeadings,
-        [rehypeRaw, { passThrough: nodeTypes }],
         rehypeComponent,
         () => (tree: any) => {
           visit(tree, (node: any) => {
