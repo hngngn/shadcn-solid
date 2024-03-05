@@ -39,5 +39,5 @@
       "required": ["utils", "components"]
     }
   },
-  "required": ["style", "tailwind", "aliases"]
+  "required": ["tailwind", "aliases"]
 }

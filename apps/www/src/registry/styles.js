@@ -4,5 +4,3 @@ export const styles = [
     label: "Default"
   }
 ];
-
-// export type Style = (typeof styles)[number]

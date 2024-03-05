@@ -9,5 +9,3 @@ export const registrySchema = z.array(
     type: z.enum(["components:ui", "components:component", "components:example"])
   })
 );
-
-// export type Registry = z.infer<typeof registrySchema>
