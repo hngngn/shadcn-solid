@@ -36,19 +36,6 @@ I'm use the `@` alias to make it easier to import your components. This is how y
 }
 ```
 
-```ts title="vite.config.ts"{5-9}
-import { defineConfig } from "@solidjs/start/config";
-import { resolve } from "node:path";
-
-export default defineConfig({
-  resolve: {
-    alias: {
-      "@": resolve(__dirname, "./src")
-    }
-  }
-});
-```
-
 If you prefer to use a different alias than `@`, you'll need to update the `import` statements when adding components.
 
 ### Configure tailwind.config.cjs
