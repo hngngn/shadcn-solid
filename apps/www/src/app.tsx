@@ -1,4 +1,3 @@
-// @refresh reload
 import "@fontsource-variable/inter";
 import { ColorModeProvider, ColorModeScript, cookieStorageManagerSSR } from "@kobalte/core";
 import { MetaProvider } from "@solidjs/meta";

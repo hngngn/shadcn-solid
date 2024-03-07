@@ -30,14 +30,20 @@ I'm use the `@` alias to make it easier to import your components. This is how y
 }
 ```
 
-```ts title="vite.config.ts"{5-9}
+```ts title="app.config.ts"{10-14}
 import { defineConfig } from "@solidjs/start/config";
-import { resolve } from "node:path";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export default defineConfig({
-  resolve: {
-    alias: {
-      "@": resolve(__dirname, "./src")
+  vite: {
+    resolve: {
+      alias: {
+        "@": resolve(__dirname, "./src")
+      }
     }
   }
 });

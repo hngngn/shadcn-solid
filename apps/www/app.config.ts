@@ -2,7 +2,8 @@
 import pkg from "@vinxi/plugin-mdx";
 
 import { defineConfig } from "@solidjs/start/config";
-import { join, resolve } from "path";
+import { dirname, join, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import remarkFrontmatter from "remark-frontmatter";
@@ -12,6 +13,9 @@ import { visit } from "unist-util-visit";
 import { rehypeComponent } from "./mdx/component";
 import { solidFrontmatter } from "./mdx/frontmatter";
 import { solidHeadings } from "./mdx/headings";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const { default: mdx } = pkg;
 export default defineConfig({
@@ -93,9 +97,6 @@ export default defineConfig({
       alias: {
         "@": resolve(__dirname, "./src")
       }
-    },
-    ssr: {
-      noExternal: ["@kobalte/core"]
     }
   }
 });
