@@ -57,7 +57,7 @@ export const TabsIndicator: ParentComponent<TabsPrimitive.TabsIndicatorProps> = 
   return (
     <TabsPrimitive.Indicator
       class={cn(
-        "duration-250ms absolute transition-all data-[orientation=horizontal]:-bottom-[1px] data-[orientation=vertical]:-right-[1px] data-[orientation=horizontal]:h-[2px] data-[orientation=vertical]:w-[2px]",
+        "absolute transition-all duration-200 data-[orientation=horizontal]:-bottom-[1px] data-[orientation=vertical]:-right-[1px] data-[orientation=horizontal]:h-[2px] data-[orientation=vertical]:w-[2px]",
         local.class
       )}
       {...rest}

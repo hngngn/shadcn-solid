@@ -225,7 +225,8 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Tabs",
           href: "/docs/components/tabs",
-          items: []
+          items: [],
+          label: "Updated"
         },
         {
           title: "Text Field",
