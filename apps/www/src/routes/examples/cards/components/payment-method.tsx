@@ -15,7 +15,7 @@ import {
   SelectTrigger,
   SelectValue
 } from "@/registry/default/ui/select";
-import { TextField, TextFieldInput } from "@/registry/default/ui/textfield";
+import { TextField, TextFieldInput, TextFieldLabel } from "@/registry/default/ui/textfield";
 
 export const DemoPaymentMethod = () => {
   return (
@@ -80,14 +80,14 @@ export const DemoPaymentMethod = () => {
           </div>
         </RadioGroup>
         <div class="grid gap-2">
-          <label>Name</label>
           <TextField>
+            <TextFieldLabel>Name</TextFieldLabel>
             <TextFieldInput placeholder="First Last" />
           </TextField>
         </div>
         <div class="grid gap-2">
-          <label>Card number</label>
           <TextField>
+            <TextFieldLabel>Card number</TextFieldLabel>
             <TextFieldInput placeholder="" />
           </TextField>
         </div>
@@ -135,8 +135,8 @@ export const DemoPaymentMethod = () => {
             </Select>
           </div>
           <div class="grid gap-2">
-            <label>CVC</label>
             <TextField>
+              <TextFieldLabel>CVC</TextFieldLabel>
               <TextFieldInput id="cvc" placeholder="CVC" />
             </TextField>
           </div>

@@ -2,9 +2,9 @@ import { TextField, TextFieldInput, TextFieldLabel } from "../ui/textfield";
 
 const TextFieldFile = () => {
   return (
-    <TextField class="grid w-full max-w-sm gap-1.5">
+    <TextField disabled class="w-full max-w-xs">
       <TextFieldLabel>Picture</TextFieldLabel>
-      <TextFieldInput disabled type="file" />
+      <TextFieldInput type="file" />
     </TextField>
   );
 };

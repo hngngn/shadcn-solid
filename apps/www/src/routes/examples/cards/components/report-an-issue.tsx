@@ -15,7 +15,7 @@ import {
   SelectValue
 } from "@/registry/default/ui/select";
 import { TextFieldTextArea } from "@/registry/default/ui/textarea";
-import { TextField, TextFieldInput } from "@/registry/default/ui/textfield";
+import { TextField, TextFieldInput, TextFieldLabel } from "@/registry/default/ui/textfield";
 
 export const DemoReportAnIssue = () => {
   return (
@@ -64,14 +64,14 @@ export const DemoReportAnIssue = () => {
           </div>
         </div>
         <div class="grid gap-2">
-          <label>Subject</label>
           <TextField>
+            <TextFieldLabel>Subject</TextFieldLabel>
             <TextFieldInput placeholder="I need help with..." />
           </TextField>
         </div>
         <div class="grid gap-2">
-          <label>Description</label>
           <TextField>
+            <TextFieldLabel>Description</TextFieldLabel>
             <TextFieldTextArea placeholder="Please include all information relevant to your issue." />
           </TextField>
         </div>

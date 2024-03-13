@@ -683,6 +683,13 @@ export const Index = {
       component: lazy(() => import("@/registry/default/example/textfield-with-text")),
       files: ["registry/default/example/textfield-with-text.tsx"]
     },
+    "textfield-with-error": {
+      name: "textfield-with-error",
+      type: "components:example",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/default/example/textfield-with-error")),
+      files: ["registry/default/example/textfield-with-error.tsx"]
+    },
     "toast-demo": {
       name: "toast-demo",
       type: "components:example",

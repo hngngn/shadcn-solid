@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle
 } from "@/registry/default/ui/card";
-import { TextField, TextFieldInput } from "@/registry/default/ui/textfield";
+import { TextField, TextFieldInput, TextFieldLabel } from "@/registry/default/ui/textfield";
 
 export const DemoCreateAccount = () => {
   return (
@@ -53,14 +53,14 @@ export const DemoCreateAccount = () => {
           </div>
         </div>
         <div class="grid gap-2">
-          <label>Email</label>
           <TextField>
+            <TextFieldLabel>Email</TextFieldLabel>
             <TextFieldInput type="email" placeholder="m@example.com" />
           </TextField>
         </div>
         <div class="grid gap-2">
-          <label>Password</label>
           <TextField>
+            <TextFieldLabel>Password</TextFieldLabel>
             <TextFieldInput type="password" />
           </TextField>
         </div>

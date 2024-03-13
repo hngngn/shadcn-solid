@@ -1,15 +1,9 @@
-const { fontFamily } = require("tailwindcss/defaultTheme");
+import { fontFamily } from "tailwindcss/defaultTheme";
 
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ["class", '[data-kb-theme="dark"]'],
-  content: [
-    "src/routes/**/*.{ts,tsx,mdx}",
-    "src/components/**/*.{ts,tsx}",
-    "src/registry/**/*.{ts,tsx}",
-    "src/app.tsx",
-    "src/contents/docs/**/*.mdx"
-  ],
+  content: ["src/**/*.{ts,tsx,mdx}"],
   theme: {
     extend: {
       container: {

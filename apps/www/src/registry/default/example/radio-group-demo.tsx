@@ -5,7 +5,6 @@ import {
   RadioGroupItemControl,
   RadioGroupItemLabel
 } from "../ui/radio-group";
-import { labelVariants } from "../ui/textfield";
 
 const RadioGroupDemo = () => {
   return (
@@ -14,9 +13,7 @@ const RadioGroupDemo = () => {
         {fruit => (
           <RadioGroupItem value={fruit} class="flex items-center gap-2">
             <RadioGroupItemControl />
-            <RadioGroupItemLabel class={labelVariants({ class: "ml-1" })}>
-              {fruit}
-            </RadioGroupItemLabel>
+            <RadioGroupItemLabel class="text-sm">{fruit}</RadioGroupItemLabel>
           </RadioGroupItem>
         )}
       </For>

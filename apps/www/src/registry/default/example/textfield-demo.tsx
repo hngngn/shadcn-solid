@@ -2,7 +2,7 @@ import { TextField, TextFieldInput } from "../ui/textfield";
 
 const TextFieldDemo = () => {
   return (
-    <TextField>
+    <TextField class="w-full max-w-xs">
       <TextFieldInput type="email" placeholder="Email" />
     </TextField>
   );
