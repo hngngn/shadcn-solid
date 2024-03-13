@@ -1,14 +1,6 @@
 import { toaster } from "@kobalte/core";
 import { Button } from "../ui/button";
-import {
-  Toast,
-  ToastContent,
-  ToastDescription,
-  ToastList,
-  ToastProgress,
-  ToastRegion,
-  ToastTitle
-} from "../ui/toast";
+import { Toast, ToastContent, ToastDescription, ToastProgress, ToastTitle } from "../ui/toast";
 
 const ToastDemo = () => {
   const showToast = () => {
@@ -24,14 +16,9 @@ const ToastDemo = () => {
   };
 
   return (
-    <>
-      <Button variant="outline" onClick={showToast}>
-        Add to calendar
-      </Button>
-      <ToastRegion>
-        <ToastList />
-      </ToastRegion>
-    </>
+    <Button variant="outline" onClick={showToast}>
+      Add to calendar
+    </Button>
   );
 };
 

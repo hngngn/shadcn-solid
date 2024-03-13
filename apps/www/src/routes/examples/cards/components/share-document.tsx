@@ -26,7 +26,7 @@ export const DemoShareDocument = () => {
       </CardHeader>
       <CardContent>
         <div class="flex space-x-2">
-          <TextField>
+          <TextField class="w-full">
             <TextFieldInput value="http://example.com/link/to/document" readOnly />
           </TextField>
           <Button variant="secondary" class="shrink-0">

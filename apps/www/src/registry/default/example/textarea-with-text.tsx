@@ -3,12 +3,10 @@ import { TextField, TextFieldDescription, TextFieldLabel } from "../ui/textfield
 
 const TextareaWithText = () => {
   return (
-    <TextField class="grid w-full max-w-sm gap-1.5">
+    <TextField class="w-full max-w-xs">
       <TextFieldLabel>Your message</TextFieldLabel>
       <TextFieldTextArea placeholder="Type your message here." />
-      <TextFieldDescription class="text-sm text-muted-foreground">
-        Enter your email address.
-      </TextFieldDescription>
+      <TextFieldDescription>Enter your email address.</TextFieldDescription>
     </TextField>
   );
 };

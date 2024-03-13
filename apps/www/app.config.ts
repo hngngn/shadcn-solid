@@ -97,6 +97,15 @@ export default defineConfig({
       alias: {
         "@": resolve(__dirname, "./src")
       }
+    },
+    optimizeDeps: {
+      include: [
+        "solid-mdx",
+        "embla-carousel-solid",
+        "embla-carousel-autoplay",
+        "@kobalte/core > solid-js",
+        "@ark-ui/solid > solid-js"
+      ]
     }
   }
 });

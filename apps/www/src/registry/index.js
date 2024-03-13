@@ -519,6 +519,11 @@ const example = [
     files: ["example/textfield-with-text.tsx"]
   },
   {
+    name: "textfield-with-error",
+    type: "components:example",
+    files: ["example/textfield-with-error.tsx"]
+  },
+  {
     name: "toast-demo",
     type: "components:example",
     files: ["example/toast-demo.tsx"]

@@ -120,13 +120,13 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Carousel",
           href: "/docs/components/carousel",
-          items: [],
-          label: "New"
+          items: []
         },
         {
           title: "Checkbox",
           href: "/docs/components/checkbox",
-          items: []
+          items: [],
+          label: "Updated"
         },
         {
           title: "Collapsible",
@@ -141,8 +141,7 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Command",
           href: "/docs/components/command",
-          items: [],
-          label: "New"
+          items: []
         },
         {
           title: "Context Menu",
@@ -152,8 +151,7 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Date Picker",
           href: "/docs/components/date-picker",
-          items: [],
-          label: "New"
+          items: []
         },
         {
           title: "Dialog",
@@ -178,8 +176,7 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Pagination",
           href: "/docs/components/pagination",
-          items: [],
-          label: "New"
+          items: []
         },
         {
           title: "Popover",
@@ -229,27 +226,32 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Tabs",
           href: "/docs/components/tabs",
-          items: []
+          items: [],
+          label: "Updated"
         },
         {
           title: "Text Field",
           href: "/docs/components/textfield",
-          items: []
+          items: [],
+          label: "Updated"
         },
         {
           title: "Textarea",
           href: "/docs/components/textarea",
-          items: []
+          items: [],
+          label: "Updated"
         },
         {
           title: "Toast",
           href: "/docs/components/toast",
-          items: []
+          items: [],
+          label: "Updated"
         },
         {
           title: "Toggle",
           href: "/docs/components/toggle",
-          items: []
+          items: [],
+          label: "Updated"
         },
         {
           title: "Tooltip",

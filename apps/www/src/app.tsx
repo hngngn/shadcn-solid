@@ -11,6 +11,7 @@ import { Footer } from "./components/footer";
 import { Header } from "./components/header";
 import { Metadata } from "./components/metadata";
 import "./mdx.css";
+import { ToastList, ToastRegion } from "./registry/default/ui/toast";
 
 const getServerCookies = () => {
   "use server";
@@ -37,6 +38,9 @@ const App = () => {
               </div>
             </ColorModeProvider>
           </Suspense>
+          <ToastRegion>
+            <ToastList />
+          </ToastRegion>
         </MetaProvider>
       )}
     >
