@@ -243,7 +243,8 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Toast",
           href: "/docs/components/toast",
-          items: []
+          items: [],
+          label: "Updated"
         },
         {
           title: "Toggle",

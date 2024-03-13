@@ -2,8 +2,8 @@
 title: Toast
 description: A succinct message that is displayed temporarily.
 component: true
-kobalte:
-  link: https://kobalte.dev/docs/core/components/toast
+link:
+  doc: https://kobalte.dev/docs/core/components/toast
   api: https://kobalte.dev/docs/core/components/toast#api-reference
 ---
 
@@ -48,6 +48,50 @@ npm install @kobalte/core
 </TabsContent>
 
 </Tabs>
+
+## Usage
+
+```tsx
+import { toaster } from "@kobalte/core";
+import { Button } from "@/components/ui/button";
+import {
+  Toast,
+  ToastContent,
+  ToastDescription,
+  ToastProgress,
+  ToastTitle
+} from "@/components/ui/toast";
+```
+
+```tsx
+const showToast = () => {
+  toaster.show(props => (
+    <Toast toastId={props.toastId}>
+      <ToastContent>
+        <ToastTitle>Toast</ToastTitle>
+      </ToastContent>
+      <ToastProgress />
+    </Toast>
+  ));
+};
+
+return <Button onClick={showToast}>Show Toast</Button>;
+```
+
+```tsx title="app.tsx" {5-7}
+<Router
+  root={props => (
+    <MetaProvider>
+      <Suspense>{props.children}</Suspense>
+      <ToastRegion>
+        <ToastList />
+      </ToastRegion>
+    </MetaProvider>
+  )}
+>
+  <FileRoutes />
+</Router>
+```
 
 ## Examples
 
