@@ -125,7 +125,8 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Checkbox",
           href: "/docs/components/checkbox",
-          items: []
+          items: [],
+          label: "Updated"
         },
         {
           title: "Collapsible",
@@ -249,7 +250,8 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Toggle",
           href: "/docs/components/toggle",
-          items: []
+          items: [],
+          label: "Updated"
         },
         {
           title: "Tooltip",
