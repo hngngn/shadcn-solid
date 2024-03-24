@@ -21,7 +21,7 @@ const DatePickerDemo = () => {
 
   return (
     <DatePicker
-      class="w-full max-w-[16rem]"
+      class="w-full max-w-xs"
       numOfMonths={2}
       selectionMode="range"
       format={() =>
@@ -49,7 +49,7 @@ const DatePickerDemo = () => {
                     <DatePickerRangeText />
                   </DatePickerViewTrigger>
                 </DatePickerViewControl>
-                <div class="flex gap-4">
+                <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
                   <DatePickerTable>
                     <DatePickerTableHead>
                       <DatePickerTableRow>

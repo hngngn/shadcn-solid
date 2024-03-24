@@ -32,9 +32,6 @@ importers:
       '@ark-ui/solid':
         specifier: ^2.2.0
         version: 2.2.0(@internationalized/date@3.5.2)(solid-js@1.8.16)
-      '@fontsource-variable/inter':
-        specifier: ^5.0.17
-        version: 5.0.17
       '@kobalte/core':
         specifier: ^0.12.6
         version: 0.12.6(solid-js@1.8.16)
@@ -2008,10 +2005,6 @@ packages:
 
   /@floating-ui/utils@0.2.1:
     resolution: {integrity: sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==}
-    dev: false
-
-  /@fontsource-variable/inter@5.0.17:
-    resolution: {integrity: sha512-sa80nNnqF8kzhBvqusWiL9vlPMVpdmOwMmDBup46Jggsr1VBqo+YuzwB36Ls+X6uHJtb8Yv3ALBHL/zGmT862A==}
     dev: false
 
   /@humanwhocodes/config-array@0.11.14:

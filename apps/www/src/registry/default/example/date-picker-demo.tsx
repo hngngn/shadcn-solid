@@ -18,7 +18,7 @@ import {
 
 const DatePickerDemo = () => {
   return (
-    <DatePicker class="w-full max-w-[16rem]">
+    <DatePicker>
       <DatePickerInput placeholder="Pick a date" />
       <DatePickerContent>
         <DatePickerView view="day">

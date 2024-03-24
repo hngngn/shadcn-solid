@@ -3,7 +3,7 @@
   "files": [
     {
       "name": "skeleton.tsx",
-      "content": "import { cn } from \"@/lib/cn\";\r\nimport { splitProps, type ComponentProps, type ParentComponent } from \"solid-js\";\r\n\r\nexport const Skeleton: ParentComponent<ComponentProps<\"div\">> = props => {\r\n  const [local, rest] = splitProps(props, [\"class\"]);\r\n\r\n  return <div class={cn(\"animate-pulse rounded-md bg-primary/10\", local.class)} {...rest} />;\r\n};\r\n"
+      "content": "import { cn } from \"@/lib/cn\";\nimport { splitProps, type ComponentProps, type ParentComponent } from \"solid-js\";\n\nexport const Skeleton: ParentComponent<ComponentProps<\"div\">> = props => {\n  const [local, rest] = splitProps(props, [\"class\"]);\n\n  return <div class={cn(\"animate-pulse rounded-md bg-primary/10\", local.class)} {...rest} />;\n};\n"
     }
   ],
   "type": "components:ui"

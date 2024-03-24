@@ -4,7 +4,7 @@
   "files": [
     {
       "name": "separator.tsx",
-      "content": "import { cn } from \"@/lib/cn\";\r\nimport { Separator as SeparatorPrimitive } from \"@kobalte/core\";\r\nimport type { VoidComponent } from \"solid-js\";\r\nimport { splitProps } from \"solid-js\";\r\n\r\nexport const Separator: VoidComponent<SeparatorPrimitive.SeparatorRootProps> = props => {\r\n  const [local, rest] = splitProps(props, [\"class\"]);\r\n  return (\r\n    <SeparatorPrimitive.Root\r\n      class={cn(\r\n        \"shrink-0 bg-border data-[orientation=horizontal]:h-[1px] data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-[1px]\",\r\n        local.class\r\n      )}\r\n      {...rest}\r\n    />\r\n  );\r\n};\r\n"
+      "content": "import { cn } from \"@/lib/cn\";\nimport { Separator as SeparatorPrimitive } from \"@kobalte/core\";\nimport type { VoidComponent } from \"solid-js\";\nimport { splitProps } from \"solid-js\";\n\nexport const Separator: VoidComponent<SeparatorPrimitive.SeparatorRootProps> = props => {\n  const [local, rest] = splitProps(props, [\"class\"]);\n  return (\n    <SeparatorPrimitive.Root\n      class={cn(\n        \"shrink-0 bg-border data-[orientation=horizontal]:h-[1px] data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-[1px]\",\n        local.class\n      )}\n      {...rest}\n    />\n  );\n};\n"
     }
   ],
   "type": "components:ui"

@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@ark-ui/solid": "^2.2.0",
-    "@fontsource-variable/inter": "^5.0.17",
     "@kobalte/core": "^0.12.6",
     "@mdx-js/mdx": "^2.3.0",
     "@solidjs/meta": "^0.29.3",

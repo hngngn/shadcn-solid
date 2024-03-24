@@ -54,7 +54,7 @@ export default {
         sm: "calc(var(--radius) - 4px)"
       },
       fontFamily: {
-        sans: ["Inter Variable", ...fontFamily.sans]
+        sans: ["Geist Sans Variable", ...fontFamily.sans]
       },
       keyframes: {
         "accordion-down": {

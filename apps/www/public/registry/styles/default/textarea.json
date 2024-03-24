@@ -5,7 +5,7 @@
   "files": [
     {
       "name": "textarea.tsx",
-      "content": "import { cn } from \"@/lib/cn\";\r\nimport { TextField as TextFieldPrimitive } from \"@kobalte/core\";\r\nimport { splitProps, type ParentComponent } from \"solid-js\";\r\n\r\nexport const TextFieldTextArea: ParentComponent<\r\n  TextFieldPrimitive.TextFieldTextAreaProps\r\n> = props => {\r\n  const [local, rest] = splitProps(props, [\"class\"]);\r\n  return (\r\n    <TextFieldPrimitive.TextArea\r\n      class={cn(\r\n        \"flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50\",\r\n        local.class\r\n      )}\r\n      {...rest}\r\n    />\r\n  );\r\n};\r\n"
+      "content": "import { cn } from \"@/lib/cn\";\nimport { TextField as TextFieldPrimitive } from \"@kobalte/core\";\nimport { splitProps, type ParentComponent } from \"solid-js\";\n\nexport const TextFieldTextArea: ParentComponent<\n  TextFieldPrimitive.TextFieldTextAreaProps\n> = props => {\n  const [local, rest] = splitProps(props, [\"class\"]);\n  return (\n    <TextFieldPrimitive.TextArea\n      class={cn(\n        \"flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50\",\n        local.class\n      )}\n      {...rest}\n    />\n  );\n};\n"
     }
   ],
   "type": "components:ui"
