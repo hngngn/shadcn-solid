@@ -101,7 +101,8 @@ export default defineConfig({
         "embla-carousel-solid",
         "embla-carousel-autoplay",
         "@kobalte/core > solid-js",
-        "@ark-ui/solid > solid-js"
+        "@ark-ui/solid > solid-js",
+        "corvu > solid-js"
       ]
     }
   }

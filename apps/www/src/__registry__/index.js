@@ -102,6 +102,13 @@ export const Index = {
       component: lazy(() => import("@/registry/default/ui/dialog")),
       files: ["registry/default/ui/dialog.tsx"]
     },
+    drawer: {
+      name: "drawer",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/default/ui/drawer")),
+      files: ["registry/default/ui/drawer.tsx"]
+    },
     "dropdown-menu": {
       name: "dropdown-menu",
       type: "components:ui",
@@ -479,6 +486,13 @@ export const Index = {
       registryDependencies: undefined,
       component: lazy(() => import("@/registry/default/example/dialog-demo")),
       files: ["registry/default/example/dialog-demo.tsx"]
+    },
+    "drawer-demo": {
+      name: "drawer-demo",
+      type: "components:example",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/default/example/drawer-demo")),
+      files: ["registry/default/example/drawer-demo.tsx"]
     },
     "dropdown-menu-demo": {
       name: "dropdown-menu-demo",

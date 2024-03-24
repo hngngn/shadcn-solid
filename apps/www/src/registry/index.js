@@ -83,6 +83,12 @@ const ui = [
     files: ["ui/dialog.tsx"]
   },
   {
+    name: "drawer",
+    type: "components:ui",
+    dependencies: ["corvu"],
+    files: ["ui/drawer.tsx"]
+  },
+  {
     name: "dropdown-menu",
     type: "components:ui",
     dependencies: ["@kobalte/core"],
@@ -372,6 +378,11 @@ const example = [
     name: "dialog-demo",
     type: "components:example",
     files: ["example/dialog-demo.tsx"]
+  },
+  {
+    name: "drawer-demo",
+    type: "components:example",
+    files: ["example/drawer-demo.tsx"]
   },
   {
     name: "dropdown-menu-demo",

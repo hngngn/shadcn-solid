@@ -15,7 +15,7 @@ import {
 } from "@/registry/default/ui/tabs";
 import type { AnchorProps } from "@solidjs/router";
 import { A } from "@solidjs/router";
-import { Show, splitProps, type ComponentProps } from "solid-js";
+import { type ComponentProps, Show, splitProps } from "solid-js";
 import { ComponentPreview } from "./component-preview";
 import { ComponentSource } from "./component-source";
 import { CopyButton } from "./copy-button";
@@ -54,7 +54,7 @@ export const MDXComponent = {
     );
   },
   a: (props: ComponentProps<"a">) => {
-    return <a class="font-medium underline underline-offset-4" {...props} />;
+    return <a class="font-medium underline underline-offset-4" target="_blank" {...props} />;
   },
   p: (props: ComponentProps<"p">) => {
     return <p class="break-words leading-7 [&:not(:first-child)]:mt-6" {...props} />;

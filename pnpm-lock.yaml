@@ -56,6 +56,9 @@ importers:
       clsx:
         specifier: ^2.1.0
         version: 2.1.0
+      corvu:
+        specifier: ^0.4.8
+        version: 0.4.8(solid-js@1.8.16)
       embla-carousel-autoplay:
         specifier: 8.0.0
         version: 8.0.0(embla-carousel@8.0.0)
@@ -2787,6 +2790,16 @@ packages:
       solid-js: 1.8.16
     dev: false
 
+  /@solid-primitives/memo@1.3.8(solid-js@1.8.16):
+    resolution: {integrity: sha512-U75pfLFSxFmM2xbx1+2XPPyWbaXrnUFF10spbFuOUgJ7azrC+4y+FnrVi4RKqHw9gftd8aKQuTiyMQq468YLQw==}
+    peerDependencies:
+      solid-js: ^1.6.12
+    dependencies:
+      '@solid-primitives/scheduled': 1.4.3(solid-js@1.8.16)
+      '@solid-primitives/utils': 6.2.3(solid-js@1.8.16)
+      solid-js: 1.8.16
+    dev: false
+
   /@solid-primitives/props@3.1.11(solid-js@1.8.16):
     resolution: {integrity: sha512-jZAKWwvDRHjiydIumDgMj68qviIbowQ1ci7nkEAgzgvanNkhKSQV8iPgR2jMk1uv7S2ZqXYHslVQTgJel/TEyg==}
     peerDependencies:
@@ -2811,6 +2824,14 @@ packages:
       solid-js: ^1.6.12
     dependencies:
       '@solid-primitives/utils': 6.2.3(solid-js@1.8.16)
+      solid-js: 1.8.16
+    dev: false
+
+  /@solid-primitives/scheduled@1.4.3(solid-js@1.8.16):
+    resolution: {integrity: sha512-HfWN5w7b7FEc6VPLBKnnE302h90jsLMuR28Fcf7neRGGf8jBj6wm6/UFQ00VlKexHFMR6KQ2u4VBh5a1ZcqM8g==}
+    peerDependencies:
+      solid-js: ^1.6.12
+    dependencies:
       solid-js: 1.8.16
     dev: false
 
@@ -4646,6 +4667,21 @@ packages:
 
   /core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
+    dev: false
+
+  /corvu@0.4.8(solid-js@1.8.16):
+    resolution: {integrity: sha512-6oway9VuOiLUDYYo7jtd4OVdOxiIEhCd6HaswKQLX0q8+dc5Ul2tMhrVr8YRFbf0OE4TBiveJ+px+afSH30MJg==}
+    peerDependencies:
+      solid-js: ^1.8
+    dependencies:
+      '@corvu/utils': 0.1.1(solid-js@1.8.16)
+      '@floating-ui/dom': 1.6.3
+      '@solid-primitives/memo': 1.3.8(solid-js@1.8.16)
+      solid-focus-trap: 0.1.5(solid-js@1.8.16)
+      solid-js: 1.8.16
+      solid-presence: 0.1.5(solid-js@1.8.16)
+      solid-prevent-scroll: 0.1.6(solid-js@1.8.16)
+      solid-transition-size: 0.1.1(solid-js@1.8.16)
     dev: false
 
   /cosmiconfig@8.3.6(typescript@5.3.3):
@@ -9141,6 +9177,15 @@ packages:
     resolution: {integrity: sha512-9LK+E7Hv5R9u4g4C3p+jjLstaLe11MDsL21UpYaCNmapvMkYhqCV4A/f/3gyH8QjMyh6l68q9xC85vihY9ahMQ==}
     dev: false
 
+  /solid-focus-trap@0.1.5(solid-js@1.8.16):
+    resolution: {integrity: sha512-8qTlDJDRhKE+qWt4T5MLaeuv7RMJ13tEEmHASjieO6q6/nCmw842T4lG8kAly4VC1bKCxUf0/oCczo9TD5096A==}
+    peerDependencies:
+      solid-js: ^1.8
+    dependencies:
+      '@corvu/utils': 0.1.1(solid-js@1.8.16)
+      solid-js: 1.8.16
+    dev: false
+
   /solid-js@1.8.16:
     resolution: {integrity: sha512-rja94MNU9flF3qQRLNsu60QHKBDKBkVE1DldJZPIfn2ypIn3NV2WpSbGTQIvsyGPBo+9E2IMjwqnqpbgfWuzeg==}
     dependencies:
@@ -9157,6 +9202,15 @@ packages:
     dependencies:
       solid-js: 1.8.16
       vite: 5.2.5
+    dev: false
+
+  /solid-presence@0.1.5(solid-js@1.8.16):
+    resolution: {integrity: sha512-4BRCJ+ElC1wjUbYQV67WOYSozXgtmeSZ47NPrps0mREjJYKBCw+j0PXhktQUnpK2pPf95BTgB7BsXeIxM+Vz3Q==}
+    peerDependencies:
+      solid-js: ^1.8
+    dependencies:
+      '@corvu/utils': 0.1.1(solid-js@1.8.16)
+      solid-js: 1.8.16
     dev: false
 
   /solid-prevent-scroll@0.1.6(solid-js@1.8.16):
@@ -9176,6 +9230,15 @@ packages:
       '@babel/generator': 7.24.1
       '@babel/helper-module-imports': 7.24.3
       '@babel/types': 7.24.0
+      solid-js: 1.8.16
+    dev: false
+
+  /solid-transition-size@0.1.1(solid-js@1.8.16):
+    resolution: {integrity: sha512-jvb2zFwL3JgZs11zd3aNi0wurNS8M1u9LfvHCk8jdRmYZSRrpB2l10mDy9TeMKOW7Kx49ZComARlD9tTcWULXg==}
+    peerDependencies:
+      solid-js: ^1.8
+    dependencies:
+      '@corvu/utils': 0.1.1(solid-js@1.8.16)
       solid-js: 1.8.16
     dev: false
 
