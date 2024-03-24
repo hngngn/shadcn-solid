@@ -18,8 +18,8 @@ import {
 
 const DatePickerDemo = () => {
   return (
-    <DatePicker positioning={{ sameWidth: true }}>
-      <DatePickerInput />
+    <DatePicker class="w-full max-w-[16rem]">
+      <DatePickerInput placeholder="Pick a date" />
       <DatePickerContent>
         <DatePickerView view="day">
           {api => (

@@ -1,4 +1,4 @@
-import { For } from "solid-js";
+import { createSignal, For } from "solid-js";
 import {
   DatePicker,
   DatePickerContent,
@@ -17,9 +17,26 @@ import {
 } from "../ui/date-picker";
 
 const DatePickerDemo = () => {
+  const [date, setDate] = createSignal<string[]>([]);
+
   return (
-    <DatePicker numOfMonths={2} selectionMode="range">
-      <DatePickerInput />
+    <DatePicker
+      class="w-full max-w-[16rem]"
+      numOfMonths={2}
+      selectionMode="range"
+      format={() =>
+        date()
+          .map(e =>
+            new Intl.DateTimeFormat("en-US", {
+              dateStyle: "long"
+            }).format(new Date(e))
+          )
+          .join(" - ")
+      }
+      value={date()}
+      onValueChange={e => setDate(e.valueAsString)}
+    >
+      <DatePickerInput placeholder="Pick a date" />
       <DatePickerContent>
         <DatePickerView view="day">
           {api => {
@@ -98,7 +115,7 @@ const DatePickerDemo = () => {
                   <DatePickerRangeText />
                 </DatePickerViewTrigger>
               </DatePickerViewControl>
-              <DatePickerTable class="w-[calc(var(--reference-width)-26px)]">
+              <DatePickerTable>
                 <DatePickerTableBody>
                   <For
                     each={api().getMonthsGrid({
@@ -131,7 +148,7 @@ const DatePickerDemo = () => {
                   <DatePickerRangeText />
                 </DatePickerViewTrigger>
               </DatePickerViewControl>
-              <DatePickerTable class="w-[calc(var(--reference-width)-26px)]">
+              <DatePickerTable>
                 <DatePickerTableBody>
                   <For
                     each={api().getYearsGrid({
