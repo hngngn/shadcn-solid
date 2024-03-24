@@ -3,6 +3,7 @@ import type {
   DatePickerContentProps,
   DatePickerInputProps,
   DatePickerRangeTextProps,
+  DatePickerRootProps,
   DatePickerTableCellProps,
   DatePickerTableCellTriggerProps,
   DatePickerTableHeaderProps,
@@ -17,11 +18,23 @@ import { splitProps } from "solid-js";
 import { Portal } from "solid-js/web";
 import { Button } from "./button";
 
-export const DatePicker = DatePickerPrimitive.Root;
 export const DatePickerLabel = DatePickerPrimitive.Label;
 export const DatePickerTableHead = DatePickerPrimitive.TableHead;
 export const DatePickerTableBody = DatePickerPrimitive.TableBody;
 export const DatePickerClearTrigger = DatePickerPrimitive.ClearTrigger;
+
+export const DatePicker = (props: DatePickerRootProps) => {
+  return (
+    <DatePickerPrimitive.Root
+      format={e =>
+        new Intl.DateTimeFormat("en-US", {
+          dateStyle: "long"
+        }).format(new Date(e.toString()))
+      }
+      {...props}
+    />
+  );
+};
 
 export const DatePickerView = (props: DatePickerViewProps) => {
   const [local, rest] = splitProps(props, ["class"]);
@@ -102,7 +115,7 @@ export const DatePickerTableHeader = (props: DatePickerTableHeaderProps) => {
 
   return (
     <DatePickerPrimitive.TableHeader
-      class={cn("w-8 text-[0.8rem] font-normal text-muted-foreground", local.class)}
+      class={cn("w-8 flex-1 text-[0.8rem] font-normal text-muted-foreground", local.class)}
       {...rest}
     />
   );
@@ -114,7 +127,7 @@ export const DatePickerTableCell = (props: DatePickerTableCellProps) => {
   return (
     <DatePickerPrimitive.TableCell
       class={cn(
-        "flex-1 p-0 text-center text-sm aria-selected:bg-accent aria-selected:text-accent-foreground aria-selected:first-of-type:rounded-l-md aria-selected:last-of-type:rounded-r-md",
+        "flex-1 p-0 text-center text-sm aria-selected:bg-accent aria-selected:text-accent-foreground aria-selected:first-of-type:rounded-l-md aria-selected:last-of-type:rounded-r-md aria-selected:has-[[data-outside-range]]:bg-accent/50",
         local.class
       )}
       {...rest}
@@ -130,7 +143,7 @@ export const DatePickerTableCellTrigger = (props: DatePickerTableCellTriggerProp
       as={Button}
       variant="ghost"
       class={cn(
-        "h-8 w-full p-0 font-normal aria-disabled:cursor-not-allowed aria-disabled:text-muted-foreground aria-disabled:opacity-50 aria-disabled:hover:bg-transparent data-[selected]:bg-primary data-[selected]:text-primary-foreground data-[selected]:hover:bg-primary data-[selected]:hover:text-primary-foreground data-[selected]:focus:bg-primary data-[selected]:focus:text-primary-foreground [&[data-today]:not([data-selected])]:bg-accent [&[data-today]:not([data-selected])]:text-accent-foreground",
+        "h-8 w-full p-0 font-normal aria-disabled:cursor-not-allowed aria-disabled:text-muted-foreground aria-disabled:opacity-50 aria-disabled:hover:bg-transparent data-[selected]:bg-primary data-[selected]:text-primary-foreground data-[selected]:hover:bg-primary data-[selected]:hover:text-primary-foreground data-[selected]:focus:bg-primary data-[selected]:focus:text-primary-foreground aria-disabled:data-[in-range]:data-[outside-range]:opacity-30 [&[data-today]:not([data-selected])]:bg-accent [&[data-today]:not([data-selected])]:text-accent-foreground",
         local.class
       )}
       {...rest}
@@ -181,7 +194,7 @@ export const DatePickerInput = (props: DatePickerInputProps) => {
         {...rest}
       />
       <DatePickerPrimitive.Trigger>
-        <svg xmlns="http://www.w3.org/2000/svg" class="ml-3 h-4 w-4" viewBox="0 0 24 24">
+        <svg xmlns="http://www.w3.org/2000/svg" class="mx-1 h-4 w-4" viewBox="0 0 24 24">
           <path
             fill="none"
             stroke="currentColor"

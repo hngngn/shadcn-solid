@@ -21,10 +21,7 @@ const { default: mdx } = pkg;
 export default defineConfig({
   extensions: ["mdx"],
   server: {
-    preset: "vercel",
-    prerender: {
-      crawlLinks: true
-    }
+    preset: "vercel"
   },
   vite: {
     plugins: [

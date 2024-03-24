@@ -125,8 +125,7 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Checkbox",
           href: "/docs/components/checkbox",
-          items: [],
-          label: "Updated"
+          items: []
         },
         {
           title: "Collapsible",
@@ -151,7 +150,8 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Date Picker",
           href: "/docs/components/date-picker",
-          items: []
+          items: [],
+          label: "Updated"
         },
         {
           title: "Dialog",
@@ -226,32 +226,27 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Tabs",
           href: "/docs/components/tabs",
-          items: [],
-          label: "Updated"
+          items: []
         },
         {
           title: "Text Field",
           href: "/docs/components/textfield",
-          items: [],
-          label: "Updated"
+          items: []
         },
         {
           title: "Textarea",
           href: "/docs/components/textarea",
-          items: [],
-          label: "Updated"
+          items: []
         },
         {
           title: "Toast",
           href: "/docs/components/toast",
-          items: [],
-          label: "Updated"
+          items: []
         },
         {
           title: "Toggle",
           href: "/docs/components/toggle",
-          items: [],
-          label: "Updated"
+          items: []
         },
         {
           title: "Tooltip",

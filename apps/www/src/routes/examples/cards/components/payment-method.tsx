@@ -134,12 +134,10 @@ export const DemoPaymentMethod = () => {
               <SelectContent />
             </Select>
           </div>
-          <div class="grid gap-2">
-            <TextField>
-              <TextFieldLabel>CVC</TextFieldLabel>
-              <TextFieldInput id="cvc" placeholder="CVC" />
-            </TextField>
-          </div>
+          <TextField class="grid gap-2">
+            <TextFieldLabel>CVC</TextFieldLabel>
+            <TextFieldInput id="cvc" placeholder="CVC" />
+          </TextField>
         </div>
       </CardContent>
       <CardFooter>

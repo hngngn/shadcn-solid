@@ -77,3 +77,11 @@
     @apply px-4;
   }
 }
+
+@font-face {
+  font-family: "Geist Sans Variable";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/GeistVariableVF.woff2") format("woff2");
+  font-display: swap;
+}
