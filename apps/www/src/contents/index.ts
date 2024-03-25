@@ -92,6 +92,9 @@ export const Contents: Record<string, Record<"component", Component<unknown>>> =
   "/docs/components/skeleton": {
     component: lazy(() => import("@/contents/docs/components/skeleton.mdx"))
   },
+  "/docs/components/splitter": {
+    component: lazy(() => import("@/contents/docs/components/splitter.mdx"))
+  },
   "/docs/components/switch": {
     component: lazy(() => import("@/contents/docs/components/switch.mdx"))
   },

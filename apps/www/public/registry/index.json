@@ -154,6 +154,12 @@
     "type": "components:ui"
   },
   {
+    "name": "splitter",
+    "dependencies": ["@ark-ui/solid"],
+    "files": ["ui/splitter.tsx"],
+    "type": "components:ui"
+  },
+  {
     "name": "switch",
     "dependencies": ["@kobalte/core"],
     "files": ["ui/switch.tsx"],

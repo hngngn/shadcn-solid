@@ -186,6 +186,13 @@ export const Index = {
       component: lazy(() => import("@/registry/default/ui/skeleton")),
       files: ["registry/default/ui/skeleton.tsx"]
     },
+    splitter: {
+      name: "splitter",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/default/ui/splitter")),
+      files: ["registry/default/ui/splitter.tsx"]
+    },
     switch: {
       name: "switch",
       type: "components:ui",
@@ -598,6 +605,27 @@ export const Index = {
       registryDependencies: undefined,
       component: lazy(() => import("@/registry/default/example/skeleton-demo")),
       files: ["registry/default/example/skeleton-demo.tsx"]
+    },
+    "splitter-demo": {
+      name: "splitter-demo",
+      type: "components:example",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/default/example/splitter-demo")),
+      files: ["registry/default/example/splitter-demo.tsx"]
+    },
+    "splitter-vertical-demo": {
+      name: "splitter-vertical-demo",
+      type: "components:example",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/default/example/splitter-vertical-demo")),
+      files: ["registry/default/example/splitter-vertical-demo.tsx"]
+    },
+    "splitter-with-handle-demo": {
+      name: "splitter-with-handle-demo",
+      type: "components:example",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/default/example/splitter-with-handle-demo")),
+      files: ["registry/default/example/splitter-with-handle-demo.tsx"]
     },
     "switch-demo": {
       name: "switch-demo",

@@ -154,6 +154,12 @@ const ui = [
     files: ["ui/skeleton.tsx"]
   },
   {
+    name: "splitter",
+    type: "components:ui",
+    dependencies: ["@ark-ui/solid"],
+    files: ["ui/splitter.tsx"]
+  },
+  {
     name: "switch",
     type: "components:ui",
     dependencies: ["@kobalte/core"],
@@ -458,6 +464,21 @@ const example = [
     name: "skeleton-demo",
     type: "components:example",
     files: ["example/skeleton-demo.tsx"]
+  },
+  {
+    name: "splitter-demo",
+    type: "components:example",
+    files: ["example/splitter-demo.tsx"]
+  },
+  {
+    name: "splitter-vertical-demo",
+    type: "components:example",
+    files: ["example/splitter-vertical-demo.tsx"]
+  },
+  {
+    name: "splitter-with-handle-demo",
+    type: "components:example",
+    files: ["example/splitter-with-handle-demo.tsx"]
   },
   {
     name: "switch-demo",
