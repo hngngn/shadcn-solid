@@ -1,5 +1,5 @@
 import * as DrawerPrimitive from "corvu/drawer";
-import type { ComponentProps, ParentComponent} from "solid-js";
+import type { ComponentProps, ParentComponent } from "solid-js";
 import { splitProps } from "solid-js";
 import { cn } from "@/lib/cn";
 
@@ -14,14 +14,14 @@ export const DrawerContent = (props: DrawerPrimitive.ContentProps) => {
   return (
     <DrawerPrimitive.Portal>
       <DrawerPrimitive.Overlay
-        class="fixed inset-0 z-50 data-[transitioning]:transition-colors data-[transitioning]:duration-300"
+        class="fixed inset-0 z-50 data-[transitioning]:transition-colors data-[transitioning]:duration-200"
         style={{
           "background-color": `rgb(0 0 0 / ${0.8 * ctx.openPercentage()})`
         }}
       />
       <DrawerPrimitive.Content
         class={cn(
-          "fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border bg-background after:absolute after:inset-x-0 after:top-full after:h-[50%] after:bg-inherit data-[transitioning]:transition-transform data-[transitioning]:duration-500 md:select-none",
+          "fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-xl border bg-background after:absolute after:inset-x-0 after:top-full after:h-[50%] after:bg-inherit data-[transitioning]:transition-transform data-[transitioning]:duration-200 md:select-none",
           local.class
         )}
         {...rest}

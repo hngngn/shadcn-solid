@@ -54,7 +54,7 @@ export const MDXComponent = {
     );
   },
   a: (props: ComponentProps<"a">) => {
-    return <a class="font-medium underline underline-offset-4" target="_blank" {...props} />;
+    return <a class="font-medium underline underline-offset-4" {...props} />;
   },
   p: (props: ComponentProps<"p">) => {
     return <p class="break-words leading-7 [&:not(:first-child)]:mt-6" {...props} />;

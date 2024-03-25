@@ -11,48 +11,6 @@ import {
 import { Button } from "../ui/button";
 import { createSignal } from "solid-js";
 
-const data = [
-  {
-    goal: 400
-  },
-  {
-    goal: 300
-  },
-  {
-    goal: 200
-  },
-  {
-    goal: 300
-  },
-  {
-    goal: 200
-  },
-  {
-    goal: 278
-  },
-  {
-    goal: 189
-  },
-  {
-    goal: 239
-  },
-  {
-    goal: 300
-  },
-  {
-    goal: 200
-  },
-  {
-    goal: 278
-  },
-  {
-    goal: 189
-  },
-  {
-    goal: 349
-  }
-];
-
 const DrawerDemo = () => {
   const [goal, setGoal] = createSignal(350);
 
@@ -93,7 +51,7 @@ const DrawerDemo = () => {
                     stroke-width="1.5"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                   />
+                  />
                 </svg>
                 <span class="sr-only">Decrease</span>
               </Button>
@@ -121,7 +79,7 @@ const DrawerDemo = () => {
                     stroke-width="1.5"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                   />
+                  />
                 </svg>
                 <span class="sr-only">Increase</span>
               </Button>
