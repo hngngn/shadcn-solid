@@ -1,5 +1,11 @@
 # shadcn-solid
 
+## 0.5.3
+
+### Patch Changes
+
+- [#48](https://github.com/hngngn/shadcn-solid/pull/48) [`9baf0fa`](https://github.com/hngngn/shadcn-solid/commit/9baf0fa74c21a6aaa76b2f8875ab01f04eaecd48) Thanks [@hngngn](https://github.com/hngngn)! - ensure creating file only when using custom utils path (#49)
+
 ## 0.5.2
 
 ### Patch Changes
