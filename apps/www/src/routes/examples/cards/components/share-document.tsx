@@ -15,7 +15,7 @@ import {
   SelectValue
 } from "@/registry/default/ui/select";
 import { Separator } from "@/registry/default/ui/separator";
-import { TextField, TextFieldInput } from "@/registry/default/ui/textfield";
+import { TextField, TextFieldInput, TextFieldLabel } from "@/registry/default/ui/textfield";
 
 export const DemoShareDocument = () => {
   return (
@@ -26,7 +26,8 @@ export const DemoShareDocument = () => {
       </CardHeader>
       <CardContent>
         <div class="flex space-x-2">
-          <TextField class="w-full">
+          <TextField class="w-full space-y-0">
+            <TextFieldLabel class="sr-only">Link</TextFieldLabel>
             <TextFieldInput value="http://example.com/link/to/document" readOnly />
           </TextField>
           <Button variant="secondary" class="shrink-0">
@@ -40,7 +41,7 @@ export const DemoShareDocument = () => {
             <div class="flex items-center justify-between space-x-4">
               <div class="flex items-center space-x-4">
                 <ImageRoot>
-                  <Image src="/avatars/03.png" />
+                  <Image src="/avatars/03.png" alt="Olivia Martin" />
                   <ImageFallback>OM</ImageFallback>
                 </ImageRoot>
                 <div>
@@ -64,7 +65,7 @@ export const DemoShareDocument = () => {
             <div class="flex items-center justify-between space-x-4">
               <div class="flex items-center space-x-4">
                 <ImageRoot>
-                  <Image src="/avatars/03.png" />
+                  <Image src="/avatars/03.png" alt="Isabella Nguye" />
                   <ImageFallback>IN</ImageFallback>
                 </ImageRoot>
                 <div>
@@ -88,7 +89,7 @@ export const DemoShareDocument = () => {
             <div class="flex items-center justify-between space-x-4">
               <div class="flex items-center space-x-4">
                 <ImageRoot>
-                  <Image src="/avatars/01.png" />
+                  <Image src="/avatars/01.png" alt="Sofia Davis" />
                   <ImageFallback>SD</ImageFallback>
                 </ImageRoot>
                 <div>

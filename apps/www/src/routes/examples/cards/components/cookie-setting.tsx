@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle
 } from "@/registry/default/ui/card";
-import { Switch, SwitchControl, SwitchThumb } from "@/registry/default/ui/switch";
+import { Switch, SwitchControl, SwitchLabel, SwitchThumb } from "@/registry/default/ui/switch";
 
 export const DemoCookieSettings = () => {
   return (
@@ -26,6 +26,7 @@ export const DemoCookieSettings = () => {
           </label>
           <Switch defaultChecked>
             <SwitchControl>
+              <SwitchLabel class="sr-only">Strictly Necessary</SwitchLabel>
               <SwitchThumb />
             </SwitchControl>
           </Switch>
@@ -39,6 +40,7 @@ export const DemoCookieSettings = () => {
           </label>
           <Switch>
             <SwitchControl>
+              <SwitchLabel class="sr-only">Functional Cookies</SwitchLabel>
               <SwitchThumb />
             </SwitchControl>
           </Switch>
@@ -52,6 +54,7 @@ export const DemoCookieSettings = () => {
           </label>
           <Switch>
             <SwitchControl>
+              <SwitchLabel class="sr-only">Performance Cookies</SwitchLabel>
               <SwitchThumb />
             </SwitchControl>
           </Switch>

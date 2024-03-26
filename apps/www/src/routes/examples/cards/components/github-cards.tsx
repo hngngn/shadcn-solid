@@ -62,6 +62,7 @@ export const DemoGithub = () => {
                     d="m6 9l6 6l6-6"
                   />
                 </svg>
+                <span class="sr-only">Arrow</span>
               </As>
             </DropdownMenuTrigger>
             <DropdownMenuContent class="w-[200px]">

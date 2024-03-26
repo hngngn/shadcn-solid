@@ -81,4 +81,5 @@
 @font-face {
   font-family: "Geist Sans Variable";
   src: url("/fonts/GeistVariableVF.woff2") format("woff2");
+  font-display: swap;
 }
