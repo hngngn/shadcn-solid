@@ -1,7 +1,7 @@
 import { cn } from "@/lib/cn";
 import { ContextMenu as ContextMenuPrimitive } from "@kobalte/core";
 import type { ComponentProps, VoidComponent } from "solid-js";
-import { splitProps, type ParentComponent } from "solid-js";
+import { type ParentComponent, splitProps } from "solid-js";
 
 export const ContextMenu = ContextMenuPrimitive.Root;
 export const ContextMenuTrigger = ContextMenuPrimitive.Trigger;
@@ -86,7 +86,7 @@ export const ContextMenuItem: ParentComponent<
   return (
     <ContextMenuPrimitive.Item
       class={cn(
-        "focus:(bg-accent text-accent-foreground) data-[disabled]:(pointer-events-none opacity-50) relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none",
+        "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
         local.inset && "pl-8",
         local.class
       )}
