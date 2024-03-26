@@ -1,4 +1,5 @@
 import {
+  type Config,
   DEFAULT_COMPONENTS,
   DEFAULT_TAILWIND_CONFIG,
   DEFAULT_TAILWIND_CSS,
@@ -6,7 +7,6 @@ import {
   getConfig,
   rawConfigSchema,
   resolveConfigPaths,
-  type Config,
 } from "@/src/utils/get-config";
 import { getPackageManager } from "@/src/utils/get-package-manager";
 import { handleError } from "@/src/utils/handle-error";
@@ -145,7 +145,7 @@ export async function promptForConfig(
               tsConfig.resultType === "success" &&
               tsConfig.paths["@/*"] === undefined
             ) {
-              return `Please make sure to update your path aliases to '@'. For more information, please visit: https://shadcn-solid.vercel.app/docs/installation#path-aliases.`;
+              return `Please make sure to update your path aliases to '@'. For more information, please visit: https://shadcn-solid.com/docs/installation`;
             }
           },
         }),
@@ -172,7 +172,7 @@ export async function promptForConfig(
   );
 
   const config = rawConfigSchema.parse({
-    $schema: "https://shadcn-solid.vercel.app/schema.json",
+    $schema: "https://shadcn-solid.com/schema.json",
     // style: options.style,
     tailwind: {
       config: options.tailwindConfig,
@@ -204,24 +204,14 @@ export async function runInit(cwd: string, config: Config) {
   spinner.start("Initializing project...");
 
   // Ensure all resolved paths directories exist.
-  for (const [key, resolvedPath] of Object.entries(config.resolvedPaths)) {
-    // Determine if the path is a file or directory.
-    // TODO: is there a better way to do this?
-    let dirname = path.extname(resolvedPath)
-      ? path.dirname(resolvedPath)
-      : resolvedPath;
+  for (const [, resolvedPath] of Object.entries(config.resolvedPaths)) {
+    const isFile = path.extname(resolvedPath);
+    let dirname = isFile ? path.dirname(resolvedPath) : resolvedPath;
 
-    // If the utils alias is set to something like "@/lib/utils",
-    // assume this is a file and remove the "utils" file name.
-    // TODO: In future releases we should add support for individual utils.
-    if (key === "utils" && resolvedPath.endsWith("/utils")) {
-      // Remove /utils at the end.
-      dirname = dirname.replace(/\/utils$/, "");
-    }
+    const parsedPath = path.parse(resolvedPath);
+    dirname = parsedPath.dir;
 
-    if (!existsSync(dirname)) {
-      await fs.mkdir(dirname, { recursive: true });
-    }
+    await fs.mkdir(dirname, { recursive: true });
   }
 
   // Write tailwind config.

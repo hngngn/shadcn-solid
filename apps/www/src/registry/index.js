@@ -83,6 +83,12 @@ const ui = [
     files: ["ui/dialog.tsx"]
   },
   {
+    name: "drawer",
+    type: "components:ui",
+    dependencies: ["corvu"],
+    files: ["ui/drawer.tsx"]
+  },
+  {
     name: "dropdown-menu",
     type: "components:ui",
     dependencies: ["@kobalte/core"],
@@ -146,6 +152,12 @@ const ui = [
     name: "skeleton",
     type: "components:ui",
     files: ["ui/skeleton.tsx"]
+  },
+  {
+    name: "splitter",
+    type: "components:ui",
+    dependencies: ["@ark-ui/solid"],
+    files: ["ui/splitter.tsx"]
   },
   {
     name: "switch",
@@ -374,6 +386,11 @@ const example = [
     files: ["example/dialog-demo.tsx"]
   },
   {
+    name: "drawer-demo",
+    type: "components:example",
+    files: ["example/drawer-demo.tsx"]
+  },
+  {
     name: "dropdown-menu-demo",
     type: "components:example",
     files: ["example/dropdown-menu-demo.tsx"]
@@ -447,6 +464,21 @@ const example = [
     name: "skeleton-demo",
     type: "components:example",
     files: ["example/skeleton-demo.tsx"]
+  },
+  {
+    name: "splitter-demo",
+    type: "components:example",
+    files: ["example/splitter-demo.tsx"]
+  },
+  {
+    name: "splitter-vertical-demo",
+    type: "components:example",
+    files: ["example/splitter-vertical-demo.tsx"]
+  },
+  {
+    name: "splitter-with-handle-demo",
+    type: "components:example",
+    files: ["example/splitter-with-handle-demo.tsx"]
   },
   {
     name: "switch-demo",

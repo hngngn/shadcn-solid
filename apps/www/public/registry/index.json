@@ -83,6 +83,12 @@
     "type": "components:ui"
   },
   {
+    "name": "drawer",
+    "dependencies": ["corvu"],
+    "files": ["ui/drawer.tsx"],
+    "type": "components:ui"
+  },
+  {
     "name": "dropdown-menu",
     "dependencies": ["@kobalte/core"],
     "files": ["ui/dropdown-menu.tsx"],
@@ -145,6 +151,12 @@
   {
     "name": "skeleton",
     "files": ["ui/skeleton.tsx"],
+    "type": "components:ui"
+  },
+  {
+    "name": "splitter",
+    "dependencies": ["@ark-ui/solid"],
+    "files": ["ui/splitter.tsx"],
     "type": "components:ui"
   },
   {

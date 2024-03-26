@@ -15,7 +15,7 @@ import {
 } from "@/registry/default/ui/tabs";
 import type { AnchorProps } from "@solidjs/router";
 import { A } from "@solidjs/router";
-import { Show, splitProps, type ComponentProps } from "solid-js";
+import { type ComponentProps, Show, splitProps } from "solid-js";
 import { ComponentPreview } from "./component-preview";
 import { ComponentSource } from "./component-source";
 import { CopyButton } from "./copy-button";

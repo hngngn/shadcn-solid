@@ -81,6 +81,11 @@ export const docsConfig: TDocsConfig = {
           title: "Changelog",
           href: "/docs/changelog",
           items: []
+        },
+        {
+          title: "About",
+          href: "/docs/about",
+          items: []
         }
       ]
     },
@@ -150,13 +155,18 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Date Picker",
           href: "/docs/components/date-picker",
-          items: [],
-          label: "Updated"
+          items: []
         },
         {
           title: "Dialog",
           href: "/docs/components/dialog",
           items: []
+        },
+        {
+          title: "Drawer",
+          href: "/docs/components/drawer",
+          items: [],
+          label: "New"
         },
         {
           title: "Dropdown Menu",
@@ -212,6 +222,12 @@ export const docsConfig: TDocsConfig = {
           title: "Skeleton",
           href: "/docs/components/skeleton",
           items: []
+        },
+        {
+          title: "Splitter",
+          href: "/docs/components/splitter",
+          items: [],
+          label: "New"
         },
         {
           title: "Switch",

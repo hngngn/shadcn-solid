@@ -12,7 +12,7 @@ import path from "path";
 import type * as z from "zod";
 
 const baseUrl =
-  process.env.COMPONENTS_REGISTRY_URL ?? "https://shadcn-solid.vercel.app";
+  process.env.COMPONENTS_REGISTRY_URL ?? "https://shadcn-solid.com";
 const agent = process.env.https_proxy
   ? new HttpsProxyAgent(process.env.https_proxy)
   : undefined;
@@ -139,7 +139,7 @@ export async function getItemTargetPath(
 
 async function fetchRegistry(paths: string[]) {
   try {
-    const results = await Promise.all(
+    return await Promise.all(
       paths.map(async (path) => {
         const response = await fetch(`${baseUrl}/registry/${path}`, {
           agent,
@@ -147,8 +147,6 @@ async function fetchRegistry(paths: string[]) {
         return await response.json();
       }),
     );
-
-    return results;
   } catch (error) {
     console.log(error);
     throw new Error(`Failed to fetch registry from ${baseUrl}.`);

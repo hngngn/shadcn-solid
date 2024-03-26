@@ -5,6 +5,9 @@ import type { Component } from "solid-js";
 import { lazy } from "solid-js";
 
 export const Contents: Record<string, Record<"component", Component<unknown>>> = {
+  "/docs/about": {
+    component: lazy(() => import("@/contents/docs/about.mdx"))
+  },
   "/docs/changelog": {
     component: lazy(() => import("@/contents/docs/changelog.mdx"))
   },
@@ -53,6 +56,9 @@ export const Contents: Record<string, Record<"component", Component<unknown>>> =
   "/docs/components/dialog": {
     component: lazy(() => import("@/contents/docs/components/dialog.mdx"))
   },
+  "/docs/components/drawer": {
+    component: lazy(() => import("@/contents/docs/components/drawer.mdx"))
+  },
   "/docs/components/dropdown-menu": {
     component: lazy(() => import("@/contents/docs/components/dropdown-menu.mdx"))
   },
@@ -85,6 +91,9 @@ export const Contents: Record<string, Record<"component", Component<unknown>>> =
   },
   "/docs/components/skeleton": {
     component: lazy(() => import("@/contents/docs/components/skeleton.mdx"))
+  },
+  "/docs/components/splitter": {
+    component: lazy(() => import("@/contents/docs/components/splitter.mdx"))
   },
   "/docs/components/switch": {
     component: lazy(() => import("@/contents/docs/components/switch.mdx"))

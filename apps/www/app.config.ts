@@ -21,7 +21,10 @@ const { default: mdx } = pkg;
 export default defineConfig({
   extensions: ["mdx"],
   server: {
-    preset: "vercel"
+    preset: "vercel",
+    prerender: {
+      crawlLinks: true
+    }
   },
   vite: {
     plugins: [
@@ -101,7 +104,8 @@ export default defineConfig({
         "embla-carousel-solid",
         "embla-carousel-autoplay",
         "@kobalte/core > solid-js",
-        "@ark-ui/solid > solid-js"
+        "@ark-ui/solid > solid-js",
+        "corvu > solid-js"
       ]
     }
   }

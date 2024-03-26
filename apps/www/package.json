@@ -20,6 +20,7 @@
     "@vinxi/plugin-mdx": "^3.6.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "corvu": "^0.4.8",
     "embla-carousel-autoplay": "8.0.0",
     "embla-carousel-solid": "8.0.0",
     "solid-js": "^1.8.16",
