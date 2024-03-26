@@ -204,24 +204,14 @@ export async function runInit(cwd: string, config: Config) {
   spinner.start("Initializing project...");
 
   // Ensure all resolved paths directories exist.
-  for (const [key, resolvedPath] of Object.entries(config.resolvedPaths)) {
-    // Determine if the path is a file or directory.
-    // TODO: is there a better way to do this?
-    let dirname = path.extname(resolvedPath)
-      ? path.dirname(resolvedPath)
-      : resolvedPath;
+  for (const [, resolvedPath] of Object.entries(config.resolvedPaths)) {
+    const isFile = path.extname(resolvedPath);
+    let dirname = isFile ? path.dirname(resolvedPath) : resolvedPath;
 
-    // If the utils alias is set to something like "@/lib/utils",
-    // assume this is a file and remove the "utils" file name.
-    // TODO: In future releases we should add support for individual utils.
-    if (key === "utils" && resolvedPath.endsWith("/utils")) {
-      // Remove /utils at the end.
-      dirname = dirname.replace(/\/utils$/, "");
-    }
+    const parsedPath = path.parse(resolvedPath);
+    dirname = parsedPath.dir;
 
-    if (!existsSync(dirname)) {
-      await fs.mkdir(dirname, { recursive: true });
-    }
+    await fs.mkdir(dirname, { recursive: true });
   }
 
   // Write tailwind config.

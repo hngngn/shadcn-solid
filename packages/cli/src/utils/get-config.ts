@@ -6,7 +6,7 @@ import { z } from "zod";
 
 // export const DEFAULT_STYLE = "default"
 export const DEFAULT_COMPONENTS = "@/components";
-export const DEFAULT_UTILS = "@/lib/utils";
+export const DEFAULT_UTILS = "@/libs/cn";
 export const DEFAULT_TAILWIND_CSS = "src/app.css";
 export const DEFAULT_TAILWIND_CONFIG = "tailwind.config.cjs";
 
