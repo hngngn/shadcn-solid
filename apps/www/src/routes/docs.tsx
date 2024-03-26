@@ -1,13 +1,14 @@
 import { MDXComponent } from "@/components/mdx-components";
-import { Metadata } from "@/components/metadata";
 import { Pager } from "@/components/pager";
 import { Sidebar } from "@/components/sidebar";
 import { TableOfContents } from "@/components/toc";
 import { badgeVariants } from "@/registry/default/ui/badge";
 import { A, type RouteSectionProps } from "@solidjs/router";
-import { Show, createMemo } from "solid-js";
+import { createMemo, Show } from "solid-js";
 import { MDXProvider } from "solid-mdx";
 import { Balancer } from "solid-wrap-balancer";
+import { Meta, Title } from "@solidjs/meta";
+import { siteConfig } from "@/config/site";
 
 type Heading = { depth: number; text: string; slug: string };
 
@@ -35,31 +36,42 @@ const contents = /*#__PURE__*/ import.meta.glob<
 
 const DocumentLayout = (props: RouteSectionProps) => {
   const markdownData = createMemo(() => ({
-    frontmatter:
-      contents[
-        `../contents${
-          props.location.pathname === "/docs" || props.location.pathname === "/docs/installation"
-            ? props.location.pathname + "/index"
-            : props.location.pathname
-        }.mdx`
-      ].frontmatter,
-    headings:
-      contents[
-        `../contents${
-          props.location.pathname === "/docs" || props.location.pathname === "/docs/installation"
-            ? props.location.pathname + "/index"
-            : props.location.pathname
-        }.mdx`
-      ].headings
+    frontmatter: contents[
+      `../contents${
+        props.location.pathname === "/docs" || props.location.pathname === "/docs/installation"
+          ? props.location.pathname + "/index"
+          : props.location.pathname
+      }.mdx`
+    ].frontmatter as Frontmatter,
+    headings: contents[
+      `../contents${
+        props.location.pathname === "/docs" || props.location.pathname === "/docs/installation"
+          ? props.location.pathname + "/index"
+          : props.location.pathname
+      }.mdx`
+    ].headings as Heading[]
   }));
 
   return (
     <>
-      <Metadata
-        title={markdownData().frontmatter.title}
-        description={markdownData().frontmatter.description}
-        type="article"
-      />
+      <Title>{`${markdownData().frontmatter.title} - shadcn-solid`}</Title>
+      <Meta name="description" content={markdownData().frontmatter.description} />
+
+      <Meta name="twitter:card" content="summary_large_image" />
+      <Meta name="twitter:title" content={`${markdownData().frontmatter.title} - shadcn-solid`} />
+      <Meta name="twitter:description" content={markdownData().frontmatter.description} />
+      <Meta name="twitter:image" content="https://shadcn-solid.com/og.png" />
+      <Meta name="twitter:creator" content="@hnggngnn" />
+
+      <Meta property="og:title" content={`${markdownData().frontmatter.title} - shadcn-solid`} />
+      <Meta property="og:description" content={markdownData().frontmatter.description} />
+      <Meta property="og:type" content="article" />
+      <Meta property="og:url" content={`${siteConfig.url + props.location.pathname}`} />
+      <Meta property="og:image" content="https://shadcn-solid.com/og.png" />
+      <Meta property="og:alt" content={siteConfig.title} />
+      <Meta property="og:image:width" content="1200" />
+      <Meta property="og:image:height" content="630" />
+
       <div class="border-b">
         <div class="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
           <aside class="fixed top-14 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 md:sticky md:block">
