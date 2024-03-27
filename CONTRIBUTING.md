@@ -35,7 +35,7 @@ packages
 | Path                      | Description                                 |
 | ------------------------- | ------------------------------------------- |
 | `apps/www/src`            | The SolidStart application for the website. |
-| `apps/www/src/components` | The React components for the website.       |
+| `apps/www/src/components` | The Solid components for the website.       |
 | `apps/www/src/content`    | The content for the website.                |
 | `apps/www/src/registry`   | The registry for the components.            |
 | `packages/cli`            | The `shadcn-solid` package.                 |
@@ -49,13 +49,13 @@ You can fork this repo by clicking the fork button in the top right corner of th
 ### Clone on your local machine
 
 ```bash
-git clone https://github.com/your-username/ui.git
+git clone https://github.com/your-username/shadcn-solid.git
 ```
 
 ### Navigate to project directory
 
 ```bash
-cd ui
+cd shadcn-solid
 ```
 
 ### Create a new Branch
@@ -97,6 +97,11 @@ pnpm --filter=www dev
 ```
 
 Documentation is written using [MDX](https://mdxjs.com). You can find the documentation files in the `apps/www/src/contents/docs` directory.
+
+When adding new documentation, please ensure that:
+
+1. You update path in `docs` config.
+2. You run `pnpm build:contents` to add the documentation.
 
 ## Components
 
