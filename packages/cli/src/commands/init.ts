@@ -6,14 +6,11 @@ import {
   DEFAULT_UTILS,
   getConfig,
   rawConfigSchema,
-  resolveConfigPaths,
+  resolveConfigPaths
 } from "@/src/utils/get-config";
 import { getPackageManager } from "@/src/utils/get-package-manager";
 import { handleError } from "@/src/utils/handle-error";
-import {
-  getRegistryBaseColor,
-  getRegistryBaseColors,
-} from "@/src/utils/registry";
+import { getRegistryBaseColor, getRegistryBaseColors } from "@/src/utils/registry";
 import * as templates from "@/src/utils/templates";
 import * as p from "@clack/prompts";
 import { Command } from "commander";
@@ -30,11 +27,11 @@ const PROJECT_DEPENDENCIES = [
   "tailwindcss-animate",
   "class-variance-authority",
   "clsx",
-  "tailwind-merge",
+  "tailwind-merge"
 ];
 
 const initOptionsSchema = z.object({
-  cwd: z.string(),
+  cwd: z.string()
 });
 
 export const init = new Command()
@@ -43,9 +40,9 @@ export const init = new Command()
   .option(
     "-c, --cwd <cwd>",
     "the working directory. defaults to the current directory.",
-    process.cwd(),
+    process.cwd()
   )
-  .action(async (opts) => {
+  .action(async opts => {
     try {
       const options = initOptionsSchema.parse(opts);
       const cwd = path.resolve(options.cwd);
@@ -69,10 +66,7 @@ export const init = new Command()
     }
   });
 
-export async function promptForConfig(
-  cwd: string,
-  defaultConfig: Config | null = null,
-) {
+export async function promptForConfig(cwd: string, defaultConfig: Config | null = null) {
   const highlight = (text: string) => color.cyan(text);
 
   // const styles = await getRegistryStyles()
@@ -93,82 +87,69 @@ export async function promptForConfig(
       // 	}),
       tailwindBaseColor: () =>
         p.select({
-          message: `Which color would you like to use as ${highlight(
-            "base color",
-          )}?`,
+          message: `Which color would you like to use as ${highlight("base color")}?`,
           // @ts-ignore
-          options: baseColors.map((color) => ({
+          options: baseColors.map(color => ({
             label: color.label,
-            value: color.name,
-          })),
+            value: color.name
+          }))
         }),
       tailwindCss: () =>
         p.text({
           message: `Where is your ${highlight("global CSS")} file?`,
           placeholder: defaultConfig?.tailwind.css ?? DEFAULT_TAILWIND_CSS,
-          defaultValue: defaultConfig?.tailwind.css ?? DEFAULT_TAILWIND_CSS,
+          defaultValue: defaultConfig?.tailwind.css ?? DEFAULT_TAILWIND_CSS
         }),
       tailwindCssVariables: () =>
         p.confirm({
-          message: `Would you like to use ${highlight(
-            "CSS variables",
-          )} for colors?`,
-          initialValue: defaultConfig?.tailwind.cssVariables ?? true,
+          message: `Would you like to use ${highlight("CSS variables")} for colors?`,
+          initialValue: defaultConfig?.tailwind.cssVariables ?? true
         }),
       tailwindPrefix: () =>
         p.text({
           message: `Are you using a custom ${highlight(
-            "tailwind prefix eg. tw-",
+            "tailwind prefix eg. tw-"
           )}? (Leave blank if not)`,
           placeholder: "",
-          defaultValue: "",
+          defaultValue: ""
         }),
       tailwindConfig: () =>
         p.text({
           message: `Where is your ${highlight("tailwind.config.cjs")} located?`,
-          placeholder:
-            defaultConfig?.tailwind.config ?? DEFAULT_TAILWIND_CONFIG,
-          defaultValue:
-            defaultConfig?.tailwind.config ?? DEFAULT_TAILWIND_CONFIG,
+          placeholder: defaultConfig?.tailwind.config ?? DEFAULT_TAILWIND_CONFIG,
+          defaultValue: defaultConfig?.tailwind.config ?? DEFAULT_TAILWIND_CONFIG
         }),
       components: () =>
         p.text({
           message: `Configure the import alias for ${highlight("components")}:`,
-          placeholder:
-            defaultConfig?.aliases["components"] ?? DEFAULT_COMPONENTS,
-          defaultValue:
-            defaultConfig?.aliases["components"] ?? DEFAULT_COMPONENTS,
+          placeholder: defaultConfig?.aliases["components"] ?? DEFAULT_COMPONENTS,
+          defaultValue: defaultConfig?.aliases["components"] ?? DEFAULT_COMPONENTS,
           validate: () => {
             const tsConfig = loadConfig(cwd);
 
-            if (
-              tsConfig.resultType === "success" &&
-              tsConfig.paths["@/*"] === undefined
-            ) {
+            if (tsConfig.resultType === "success" && tsConfig.paths["@/*"] === undefined) {
               return `Please make sure to update your path aliases to '@'. For more information, please visit: https://shadcn-solid.com/docs/installation`;
             }
-          },
+          }
         }),
       utils: () =>
         p.text({
           message: `Configure the import alias for ${highlight("utils")}:`,
           placeholder: defaultConfig?.aliases["utils"] ?? DEFAULT_UTILS,
-          defaultValue: defaultConfig?.aliases["utils"] ?? DEFAULT_UTILS,
+          defaultValue: defaultConfig?.aliases["utils"] ?? DEFAULT_UTILS
         }),
       proceed: () =>
         p.confirm({
-          message: `Write configuration to ${highlight(
-            "components.json",
-          )}. Proceed?`,
-          initialValue: true,
-        }),
+          message: `Write configuration to ${highlight("components.json")}. Proceed?`,
+          initialValue: true
+        })
     },
     {
       onCancel: () => {
         p.cancel("Cancelled.");
         process.exit(0);
-      },
-    },
+      }
+    }
   );
 
   const config = rawConfigSchema.parse({
@@ -179,12 +160,12 @@ export async function promptForConfig(
       css: options.tailwindCss,
       baseColor: options.tailwindBaseColor,
       cssVariables: options.tailwindCssVariables,
-      prefix: options.tailwindPrefix,
+      prefix: options.tailwindPrefix
     },
     aliases: {
       utils: options.utils,
-      components: options.components,
-    },
+      components: options.components
+    }
   });
 
   // Write to file.
@@ -220,11 +201,11 @@ export async function runInit(cwd: string, config: Config) {
     template(
       config.tailwind.cssVariables
         ? templates.TAILWIND_CONFIG_WITH_VARIABLES
-        : templates.TAILWIND_CONFIG,
+        : templates.TAILWIND_CONFIG
     )({
-      prefix: config.tailwind.prefix,
+      prefix: config.tailwind.prefix
     }),
-    "utf8",
+    "utf8"
   );
 
   // Write css file.
@@ -237,16 +218,12 @@ export async function runInit(cwd: string, config: Config) {
           ? applyPrefixesCss(baseColor.cssVarsTemplate, config.tailwind.prefix)
           : baseColor.cssVarsTemplate
         : baseColor.inlineColorsTemplate,
-      "utf8",
+      "utf8"
     );
   }
 
   // Write cn file.
-  await fs.writeFile(
-    `${config.resolvedPaths.utils}.ts`,
-    templates.UTILS,
-    "utf8",
-  );
+  await fs.writeFile(`${config.resolvedPaths.utils}.ts`, templates.UTILS, "utf8");
 
   spinner.stop("Initialized project");
 
@@ -258,8 +235,8 @@ export async function runInit(cwd: string, config: Config) {
     packageManager,
     [packageManager === "npm" ? "install" : "add", ...PROJECT_DEPENDENCIES],
     {
-      cwd,
-    },
+      cwd
+    }
   );
   spinner.stop("Dependencies installed");
 }

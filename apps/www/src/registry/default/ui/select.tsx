@@ -1,7 +1,7 @@
 import { cn } from "@/lib/cn";
 import { Select as SelectPrimitive } from "@kobalte/core";
-import type { VoidComponent } from "solid-js";
-import { splitProps, type ParentComponent } from "solid-js";
+import type { VoidProps } from "solid-js";
+import { splitProps } from "solid-js";
 
 export const Select = SelectPrimitive.Root;
 export const SelectValue = SelectPrimitive.Value;
@@ -10,8 +10,9 @@ export const SelectErrorMessage = SelectPrimitive.ErrorMessage;
 export const SelectItemDescription = SelectPrimitive.ItemDescription;
 export const SelectHiddenSelect = SelectPrimitive.HiddenSelect;
 
-export const SelectTrigger: ParentComponent<SelectPrimitive.SelectTriggerProps> = props => {
+export const SelectTrigger = (props: SelectPrimitive.SelectTriggerProps) => {
   const [local, rest] = splitProps(props, ["class", "children"]);
+
   return (
     <SelectPrimitive.Trigger
       class={cn(
@@ -43,8 +44,9 @@ export const SelectTrigger: ParentComponent<SelectPrimitive.SelectTriggerProps> 
   );
 };
 
-export const SelectContent: VoidComponent<SelectPrimitive.SelectContentProps> = props => {
+export const SelectContent = (props: VoidProps<SelectPrimitive.SelectContentProps>) => {
   const [local, rest] = splitProps(props, ["class"]);
+
   return (
     <SelectPrimitive.Portal>
       <SelectPrimitive.Content
@@ -60,8 +62,9 @@ export const SelectContent: VoidComponent<SelectPrimitive.SelectContentProps> = 
   );
 };
 
-export const SelectItem: ParentComponent<SelectPrimitive.SelectItemProps> = props => {
+export const SelectItem = (props: SelectPrimitive.SelectItemProps) => {
   const [local, rest] = splitProps(props, ["class", "children"]);
+
   return (
     <SelectPrimitive.Item
       class={cn(

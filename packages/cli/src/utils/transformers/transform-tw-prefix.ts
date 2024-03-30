@@ -3,10 +3,7 @@ import { SyntaxKind } from "ts-morph";
 
 import { splitClassName } from "./transform-css-vars";
 
-export const transformTwPrefixes: Transformer = async ({
-  sourceFile,
-  config,
-}) => {
+export const transformTwPrefixes: Transformer = async ({ sourceFile, config }) => {
   if (!config.tailwind?.prefix) {
     return sourceFile;
   }
@@ -14,8 +11,8 @@ export const transformTwPrefixes: Transformer = async ({
   // Find the cva function calls.
   sourceFile
     .getDescendantsOfKind(SyntaxKind.CallExpression)
-    .filter((node) => node.getExpression().getText() === "cva")
-    .forEach((node) => {
+    .filter(node => node.getExpression().getText() === "cva")
+    .forEach(node => {
       // cva(base, ...)
       if (node.getArguments()[0]?.isKind(SyntaxKind.StringLiteral)) {
         const defaultClassNames = node.getArguments()[0];
@@ -23,8 +20,8 @@ export const transformTwPrefixes: Transformer = async ({
           defaultClassNames.replaceWithText(
             `"${applyPrefix(
               defaultClassNames.getText()?.replace(/"/g, ""),
-              config.tailwind.prefix,
-            )}"`,
+              config.tailwind.prefix
+            )}"`
           );
         }
       }
@@ -34,40 +31,33 @@ export const transformTwPrefixes: Transformer = async ({
         node
           .getArguments()[1]
           ?.getDescendantsOfKind(SyntaxKind.PropertyAssignment)
-          .find((node) => node.getName() === "variants")
+          .find(node => node.getName() === "variants")
           ?.getDescendantsOfKind(SyntaxKind.PropertyAssignment)
-          .forEach((node) => {
-            node
-              .getDescendantsOfKind(SyntaxKind.PropertyAssignment)
-              .forEach((node) => {
-                const classNames = node.getInitializerIfKind(
-                  SyntaxKind.StringLiteral,
+          .forEach(node => {
+            node.getDescendantsOfKind(SyntaxKind.PropertyAssignment).forEach(node => {
+              const classNames = node.getInitializerIfKind(SyntaxKind.StringLiteral);
+              if (classNames) {
+                classNames?.replaceWithText(
+                  `"${applyPrefix(
+                    classNames.getText()?.replace(/"/g, ""),
+                    config.tailwind.prefix
+                  )}"`
                 );
-                if (classNames) {
-                  classNames?.replaceWithText(
-                    `"${applyPrefix(
-                      classNames.getText()?.replace(/"/g, ""),
-                      config.tailwind.prefix,
-                    )}"`,
-                  );
-                }
-              });
+              }
+            });
           });
       }
     });
 
   // Find all jsx attributes with the name class.
-  sourceFile.getDescendantsOfKind(SyntaxKind.JsxAttribute).forEach((node) => {
+  sourceFile.getDescendantsOfKind(SyntaxKind.JsxAttribute).forEach(node => {
     if (node.getName() === "class") {
       // class="..."
       if (node.getInitializer()?.isKind(SyntaxKind.StringLiteral)) {
         const value = node.getInitializer();
         if (value) {
           value.replaceWithText(
-            `"${applyPrefix(
-              value.getText()?.replace(/"/g, ""),
-              config.tailwind.prefix,
-            )}"`,
+            `"${applyPrefix(value.getText()?.replace(/"/g, ""), config.tailwind.prefix)}"`
           );
         }
       }
@@ -78,32 +68,24 @@ export const transformTwPrefixes: Transformer = async ({
         const callExpression = node
           .getInitializer()
           ?.getDescendantsOfKind(SyntaxKind.CallExpression)
-          .find((node) => node.getExpression().getText() === "cn");
+          .find(node => node.getExpression().getText() === "cn");
         if (callExpression) {
           // Loop through the arguments.
-          callExpression.getArguments().forEach((node) => {
+          callExpression.getArguments().forEach(node => {
             if (
               node.isKind(SyntaxKind.ConditionalExpression) ||
               node.isKind(SyntaxKind.BinaryExpression)
             ) {
-              node
-                .getChildrenOfKind(SyntaxKind.StringLiteral)
-                .forEach((node) => {
-                  node.replaceWithText(
-                    `"${applyPrefix(
-                      node.getText()?.replace(/"/g, ""),
-                      config.tailwind.prefix,
-                    )}"`,
-                  );
-                });
+              node.getChildrenOfKind(SyntaxKind.StringLiteral).forEach(node => {
+                node.replaceWithText(
+                  `"${applyPrefix(node.getText()?.replace(/"/g, ""), config.tailwind.prefix)}"`
+                );
+              });
             }
 
             if (node.isKind(SyntaxKind.StringLiteral)) {
               node.replaceWithText(
-                `"${applyPrefix(
-                  node.getText()?.replace(/"/g, ""),
-                  config.tailwind.prefix,
-                )}"`,
+                `"${applyPrefix(node.getText()?.replace(/"/g, ""), config.tailwind.prefix)}"`
               );
             }
           });

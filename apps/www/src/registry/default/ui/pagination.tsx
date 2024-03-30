@@ -1,8 +1,8 @@
 import { cn } from "@/lib/cn";
 import { Pagination as PaginationPrimitive } from "@kobalte/core";
 import type { VariantProps } from "class-variance-authority";
-import type { ParentProps, VoidComponent } from "solid-js";
-import { mergeProps, splitProps, type ParentComponent } from "solid-js";
+import type { VoidProps } from "solid-js";
+import { mergeProps, type ParentComponent, splitProps } from "solid-js";
 import { buttonVariants } from "./button";
 
 export const PaginationItems = PaginationPrimitive.Items;
@@ -21,14 +21,13 @@ export const Pagination: ParentComponent<PaginationPrimitive.PaginationRootProps
   );
 };
 
-export const PaginationItem: ParentComponent<
-  PaginationPrimitive.PaginationItemProps & Pick<VariantProps<typeof buttonVariants>, "size">
-> = props => {
-  const merge = mergeProps<
-    ParentProps<
-      Pick<VariantProps<typeof buttonVariants>, "size"> & PaginationPrimitive.PaginationItemProps
-    >[]
-  >({ size: "icon" }, props);
+export const PaginationItem = (
+  props: PaginationPrimitive.PaginationItemProps & Pick<VariantProps<typeof buttonVariants>, "size">
+) => {
+  const merge = mergeProps(
+    { size: "icon" } as Pick<VariantProps<typeof buttonVariants>, "size">,
+    props
+  );
   const [local, rest] = splitProps(merge, ["class", "size"]);
 
   return (
@@ -46,9 +45,9 @@ export const PaginationItem: ParentComponent<
   );
 };
 
-export const PaginationEllipsis: VoidComponent<
-  PaginationPrimitive.PaginationEllipsisProps
-> = props => {
+export const PaginationEllipsis = (
+  props: VoidProps<PaginationPrimitive.PaginationEllipsisProps>
+) => {
   const [local, rest] = splitProps(props, ["class"]);
 
   return (
@@ -71,14 +70,15 @@ export const PaginationEllipsis: VoidComponent<
   );
 };
 
-export const PaginationPrevious: VoidComponent<
-  PaginationPrimitive.PaginationPreviousProps & Pick<VariantProps<typeof buttonVariants>, "size">
-> = props => {
-  const merge = mergeProps<
-    ParentProps<
-      Pick<VariantProps<typeof buttonVariants>, "size"> & PaginationPrimitive.PaginationItemProps
-    >[]
-  >({ size: "icon" }, props);
+export const PaginationPrevious = (
+  props: VoidProps<
+    PaginationPrimitive.PaginationPreviousProps & Pick<VariantProps<typeof buttonVariants>, "size">
+  >
+) => {
+  const merge = mergeProps(
+    { size: "icon" } as Pick<VariantProps<typeof buttonVariants>, "size">,
+    props
+  );
   const [local, rest] = splitProps(merge, ["class", "size"]);
 
   return (
@@ -107,14 +107,13 @@ export const PaginationPrevious: VoidComponent<
   );
 };
 
-export const PaginationNext: VoidComponent<
-  PaginationPrimitive.PaginationNextProps & Pick<VariantProps<typeof buttonVariants>, "size">
-> = props => {
-  const merge = mergeProps<
-    ParentProps<
-      Pick<VariantProps<typeof buttonVariants>, "size"> & PaginationPrimitive.PaginationItemProps
-    >[]
-  >({ size: "icon" }, props);
+export const PaginationNext = (
+  props: PaginationPrimitive.PaginationNextProps & Pick<VariantProps<typeof buttonVariants>, "size">
+) => {
+  const merge = mergeProps(
+    { size: "icon" } as Pick<VariantProps<typeof buttonVariants>, "size">,
+    props
+  );
   const [local, rest] = splitProps(merge, ["class", "size"]);
 
   return (

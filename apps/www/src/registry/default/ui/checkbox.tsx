@@ -1,14 +1,13 @@
 import { cn } from "@/lib/cn";
 import { Checkbox as CheckboxPrimitive } from "@kobalte/core";
-import { splitProps, type ParentComponent } from "solid-js";
+import { splitProps } from "solid-js";
 
 export const CheckboxLabel = CheckboxPrimitive.Label;
-export const CheckboxInput = CheckboxPrimitive.Input;
 export const Checkbox = CheckboxPrimitive.Root;
 export const CheckboxErrorMessage = CheckboxPrimitive.ErrorMessage;
 export const CheckboxDescription = CheckboxPrimitive.Description;
 
-export const CheckboxControl: ParentComponent<CheckboxPrimitive.CheckboxControlProps> = props => {
+export const CheckboxControl = (props: CheckboxPrimitive.CheckboxControlProps) => {
   const [local, rest] = splitProps(props, ["class", "children"]);
 
   return (

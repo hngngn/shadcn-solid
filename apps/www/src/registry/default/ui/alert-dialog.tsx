@@ -1,35 +1,23 @@
 import { cn } from "@/lib/cn";
 import { AlertDialog as AlertDialogPrimitive } from "@kobalte/core";
 import type { ComponentProps } from "solid-js";
-import { splitProps, type ParentComponent } from "solid-js";
+import { splitProps } from "solid-js";
 import { buttonVariants } from "./button";
 
 export const AlertDialog = AlertDialogPrimitive.Root;
 export const AlertDialogTrigger = AlertDialogPrimitive.Trigger;
 
-export const AlertDialogOverlay: ParentComponent<
-  AlertDialogPrimitive.AlertDialogOverlayProps
-> = props => {
-  const [local, rest] = splitProps(props, ["class"]);
-  return (
-    <AlertDialogPrimitive.Overlay
-      class={cn(
-        "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0",
-        local.class
-      )}
-      {...rest}
-    />
-  );
-};
-
-export const AlertDialogContent: ParentComponent<
-  AlertDialogPrimitive.AlertDialogContentProps
-> = props => {
+export const AlertDialogContent = (props: AlertDialogPrimitive.AlertDialogContentProps) => {
   const [local, rest] = splitProps(props, ["class"]);
 
   return (
     <AlertDialogPrimitive.Portal>
-      <AlertDialogOverlay />
+      <AlertDialogPrimitive.Overlay
+        class={cn(
+          "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0",
+          local.class
+        )}
+      />
       <div class="fixed inset-0 z-50 flex items-center justify-center">
         <AlertDialogPrimitive.Content
           class={cn(
@@ -43,15 +31,15 @@ export const AlertDialogContent: ParentComponent<
   );
 };
 
-export const AlertDialogHeader: ParentComponent<ComponentProps<"div">> = props => {
+export const AlertDialogHeader = (props: ComponentProps<"div">) => {
   const [local, rest] = splitProps(props, ["class"]);
   return (
     <div class={cn("flex flex-col space-y-2 text-center sm:text-left", local.class)} {...rest} />
   );
 };
 
-export const AlertDialogFooter: ParentComponent<ComponentProps<"div">> = props => {
-  const [local, rest] = splitProps(props, ["class", "classList"]);
+export const AlertDialogFooter = (props: ComponentProps<"div">) => {
+  const [local, rest] = splitProps(props, ["class"]);
   return (
     <div
       class={cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", local.class)}
@@ -60,16 +48,12 @@ export const AlertDialogFooter: ParentComponent<ComponentProps<"div">> = props =
   );
 };
 
-export const AlertDialogTitle: ParentComponent<
-  AlertDialogPrimitive.AlertDialogTitleProps
-> = props => {
-  const [local, rest] = splitProps(props, ["class", "classList"]);
+export const AlertDialogTitle = (props: AlertDialogPrimitive.AlertDialogTitleProps) => {
+  const [local, rest] = splitProps(props, ["class"]);
   return <AlertDialogPrimitive.Title class={cn("text-lg font-semibold", local.class)} {...rest} />;
 };
 
-export const AlertDialogDescription: ParentComponent<
-  AlertDialogPrimitive.AlertDialogDescriptionProps
-> = props => {
+export const AlertDialogDescription = (props: AlertDialogPrimitive.AlertDialogDescriptionProps) => {
   const [local, rest] = splitProps(props, ["class"]);
   return (
     <AlertDialogPrimitive.Description
@@ -79,9 +63,7 @@ export const AlertDialogDescription: ParentComponent<
   );
 };
 
-export const AlertDialogClose: ParentComponent<
-  AlertDialogPrimitive.AlertDialogCloseButtonProps
-> = props => {
+export const AlertDialogClose = (props: AlertDialogPrimitive.AlertDialogCloseButtonProps) => {
   const [local, rest] = splitProps(props, ["class"]);
   return (
     <AlertDialogPrimitive.CloseButton
@@ -97,9 +79,7 @@ export const AlertDialogClose: ParentComponent<
   );
 };
 
-export const AlertDialogAction: ParentComponent<
-  AlertDialogPrimitive.AlertDialogCloseButtonProps
-> = props => {
-  const [local, rest] = splitProps(props, ["class", "classList"]);
+export const AlertDialogAction = (props: AlertDialogPrimitive.AlertDialogCloseButtonProps) => {
+  const [local, rest] = splitProps(props, ["class"]);
   return <AlertDialogPrimitive.CloseButton class={cn(buttonVariants(), local.class)} {...rest} />;
 };

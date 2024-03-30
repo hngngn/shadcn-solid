@@ -1,7 +1,7 @@
 import { cn } from "@/lib/cn";
 import { ContextMenu as ContextMenuPrimitive } from "@kobalte/core";
-import type { ComponentProps, VoidComponent } from "solid-js";
-import { type ParentComponent, splitProps } from "solid-js";
+import type { ComponentProps, VoidProps } from "solid-js";
+import { splitProps } from "solid-js";
 
 export const ContextMenu = ContextMenuPrimitive.Root;
 export const ContextMenuTrigger = ContextMenuPrimitive.Trigger;
@@ -9,11 +9,11 @@ export const ContextMenuGroup = ContextMenuPrimitive.Group;
 export const ContextMenuSub = ContextMenuPrimitive.Sub;
 export const ContextMenuRadioGroup = ContextMenuPrimitive.RadioGroup;
 
-export const ContextMenuSubTrigger: ParentComponent<
-  ContextMenuPrimitive.ContextMenuSubTriggerProps & {
+export const ContextMenuSubTrigger = (
+  props: ContextMenuPrimitive.ContextMenuSubTriggerProps & {
     inset?: boolean;
   }
-> = props => {
+) => {
   const [local, rest] = splitProps(props, ["class", "children", "inset"]);
 
   return (
@@ -40,9 +40,7 @@ export const ContextMenuSubTrigger: ParentComponent<
   );
 };
 
-export const ContextMenuSubContent: ParentComponent<
-  ContextMenuPrimitive.ContextMenuSubContentProps
-> = props => {
+export const ContextMenuSubContent = (props: ContextMenuPrimitive.ContextMenuSubContentProps) => {
   const [local, rest] = splitProps(props, ["class"]);
 
   return (
@@ -58,9 +56,7 @@ export const ContextMenuSubContent: ParentComponent<
   );
 };
 
-export const ContextMenuContent: ParentComponent<
-  ContextMenuPrimitive.ContextMenuContentProps
-> = props => {
+export const ContextMenuContent = (props: ContextMenuPrimitive.ContextMenuContentProps) => {
   const [local, rest] = splitProps(props, ["class"]);
 
   return (
@@ -76,11 +72,11 @@ export const ContextMenuContent: ParentComponent<
   );
 };
 
-export const ContextMenuItem: ParentComponent<
-  ContextMenuPrimitive.ContextMenuItemProps & {
+export const ContextMenuItem = (
+  props: ContextMenuPrimitive.ContextMenuItemProps & {
     inset?: boolean;
   }
-> = props => {
+) => {
   const [local, rest] = splitProps(props, ["class", "inset"]);
 
   return (
@@ -95,9 +91,9 @@ export const ContextMenuItem: ParentComponent<
   );
 };
 
-export const ContextMenuCheckboxItem: ParentComponent<
-  ContextMenuPrimitive.ContextMenuCheckboxItemProps
-> = props => {
+export const ContextMenuCheckboxItem = (
+  props: ContextMenuPrimitive.ContextMenuCheckboxItemProps
+) => {
   const [local, rest] = splitProps(props, ["class", "children"]);
 
   return (
@@ -125,9 +121,7 @@ export const ContextMenuCheckboxItem: ParentComponent<
   );
 };
 
-export const ContextMenuRadioItem: ParentComponent<
-  ContextMenuPrimitive.ContextMenuRadioItemProps
-> = props => {
+export const ContextMenuRadioItem = (props: ContextMenuPrimitive.ContextMenuRadioItemProps) => {
   const [local, rest] = splitProps(props, ["class", "children"]);
 
   return (
@@ -154,11 +148,11 @@ export const ContextMenuRadioItem: ParentComponent<
   );
 };
 
-export const ContextMenuItemLabel: ParentComponent<
-  ContextMenuPrimitive.ContextMenuItemLabelProps & {
+export const ContextMenuItemLabel = (
+  props: ContextMenuPrimitive.ContextMenuItemLabelProps & {
     inset?: boolean;
   }
-> = props => {
+) => {
   const [local, rest] = splitProps(props, ["class", "inset"]);
 
   return (
@@ -173,11 +167,11 @@ export const ContextMenuItemLabel: ParentComponent<
   );
 };
 
-export const ContextMenuGroupLabel: ParentComponent<
-  ContextMenuPrimitive.ContextMenuGroupLabelProps & {
+export const ContextMenuGroupLabel = (
+  props: ContextMenuPrimitive.ContextMenuGroupLabelProps & {
     inset?: boolean;
   }
-> = props => {
+) => {
   const [local, rest] = splitProps(props, ["class", "inset"]);
 
   return (
@@ -193,9 +187,9 @@ export const ContextMenuGroupLabel: ParentComponent<
   );
 };
 
-export const ContextMenuSeparator: VoidComponent<
-  ContextMenuPrimitive.ContextMenuSeparatorProps
-> = props => {
+export const ContextMenuSeparator = (
+  props: VoidProps<ContextMenuPrimitive.ContextMenuSeparatorProps>
+) => {
   const [local, rest] = splitProps(props, ["class"]);
 
   return (
@@ -206,7 +200,7 @@ export const ContextMenuSeparator: VoidComponent<
   );
 };
 
-export const ContextMenuShortcut: ParentComponent<ComponentProps<"span">> = props => {
+export const ContextMenuShortcut = (props: ComponentProps<"span">) => {
   const [local, rest] = splitProps(props, ["class"]);
 
   return (

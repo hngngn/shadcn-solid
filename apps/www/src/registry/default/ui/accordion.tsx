@@ -1,19 +1,18 @@
 import { cn } from "@/lib/cn";
 import { Accordion as AccordionPrimitive } from "@kobalte/core";
-import type { Component, ParentComponent } from "solid-js";
 import { splitProps } from "solid-js";
 
 export const Accordion = AccordionPrimitive.Root;
 
-export const AccordionItem: Component<AccordionPrimitive.AccordionItemProps> = props => {
+export const AccordionItem = (props: AccordionPrimitive.AccordionItemProps) => {
   const [local, rest] = splitProps(props, ["class"]);
+
   return <AccordionPrimitive.Item class={cn("border-b", local.class)} {...rest} />;
 };
 
-export const AccordionTrigger: ParentComponent<
-  AccordionPrimitive.AccordionTriggerProps
-> = props => {
+export const AccordionTrigger = (props: AccordionPrimitive.AccordionTriggerProps) => {
   const [local, rest] = splitProps(props, ["class", "children"]);
+
   return (
     <AccordionPrimitive.Header class="flex" as="div">
       <AccordionPrimitive.Trigger
@@ -43,10 +42,9 @@ export const AccordionTrigger: ParentComponent<
   );
 };
 
-export const AccordionContent: ParentComponent<
-  AccordionPrimitive.AccordionContentProps
-> = props => {
+export const AccordionContent = (props: AccordionPrimitive.AccordionContentProps) => {
   const [local, rest] = splitProps(props, ["class", "children"]);
+
   return (
     <AccordionPrimitive.Content
       class={cn(

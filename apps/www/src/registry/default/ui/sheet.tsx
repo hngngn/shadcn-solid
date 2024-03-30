@@ -3,13 +3,14 @@ import { Dialog as DialogPrimitive } from "@kobalte/core";
 import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
 import type { ComponentProps, ParentProps } from "solid-js";
-import { mergeProps, splitProps, type ParentComponent } from "solid-js";
+import { mergeProps, splitProps } from "solid-js";
 
 export const Sheet = DialogPrimitive.Root;
 export const SheetTrigger = DialogPrimitive.Trigger;
 
-export const SheetOverlay: ParentComponent<DialogPrimitive.DialogOverlayProps> = props => {
+export const SheetOverlay = (props: DialogPrimitive.DialogOverlayProps) => {
   const [local, rest] = splitProps(props, ["class"]);
+
   return (
     <DialogPrimitive.Overlay
       class={cn(
@@ -40,9 +41,9 @@ export const sheetVariants = cva(
   }
 );
 
-export const SheetContent: ParentComponent<
-  DialogPrimitive.DialogContentProps & VariantProps<typeof sheetVariants>
-> = props => {
+export const SheetContent = (
+  props: DialogPrimitive.DialogContentProps & VariantProps<typeof sheetVariants>
+) => {
   const merge = mergeProps<
     ParentProps<DialogPrimitive.DialogContentProps & VariantProps<typeof sheetVariants>>[]
   >({ side: "right" }, props);
@@ -74,8 +75,9 @@ export const SheetContent: ParentComponent<
   );
 };
 
-export const SheetTitle: ParentComponent<DialogPrimitive.DialogTitleProps> = props => {
+export const SheetTitle = (props: DialogPrimitive.DialogTitleProps) => {
   const [local, rest] = splitProps(props, ["class"]);
+
   return (
     <DialogPrimitive.Title
       class={cn("text-lg font-semibold text-foreground", local.class)}
@@ -84,8 +86,9 @@ export const SheetTitle: ParentComponent<DialogPrimitive.DialogTitleProps> = pro
   );
 };
 
-export const SheetDescription: ParentComponent<DialogPrimitive.DialogDescriptionProps> = props => {
+export const SheetDescription = (props: DialogPrimitive.DialogDescriptionProps) => {
   const [local, rest] = splitProps(props, ["class"]);
+
   return (
     <DialogPrimitive.Description
       class={cn("text-sm text-muted-foreground", local.class)}
@@ -94,15 +97,17 @@ export const SheetDescription: ParentComponent<DialogPrimitive.DialogDescription
   );
 };
 
-export const SheetHeader: ParentComponent<ComponentProps<"div">> = props => {
+export const SheetHeader = (props: ComponentProps<"div">) => {
   const [local, rest] = splitProps(props, ["class"]);
+
   return (
     <div class={cn("flex flex-col space-y-2 text-center sm:text-left", local.class)} {...rest} />
   );
 };
 
-export const SheetFooter: ParentComponent<ComponentProps<"div">> = props => {
+export const SheetFooter = (props: ComponentProps<"div">) => {
   const [local, rest] = splitProps(props, ["class"]);
+
   return (
     <div
       class={cn("flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2", local.class)}

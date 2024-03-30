@@ -1,7 +1,7 @@
 import { cn } from "@/lib/cn";
-import { splitProps, type ComponentProps, type ParentComponent } from "solid-js";
+import { type ComponentProps, type ParentComponent, splitProps } from "solid-js";
 
-export const Card: ParentComponent<ComponentProps<"div">> = props => {
+export const Card = (props: ComponentProps<"div">) => {
   const [local, rest] = splitProps(props, ["class"]);
   return (
     <div
@@ -11,14 +11,14 @@ export const Card: ParentComponent<ComponentProps<"div">> = props => {
   );
 };
 
-export const CardHeader: ParentComponent<ComponentProps<"div">> = props => {
+export const CardHeader = (props: ComponentProps<"div">) => {
   const [local, rest] = splitProps(props, ["class", "classList"]);
   return <div class={cn("flex flex-col space-y-1.5 p-6", local.class)} {...rest} />;
 };
 
-export const CardTitle: ParentComponent<ComponentProps<"h3">> = props => {
+export const CardTitle: ParentComponent<ComponentProps<"h1">> = props => {
   const [local, rest] = splitProps(props, ["class", "classList"]);
-  return <h3 class={cn("font-semibold leading-none tracking-tight", local.class)} {...rest} />;
+  return <h1 class={cn("font-semibold leading-none tracking-tight", local.class)} {...rest} />;
 };
 
 export const CardDescription: ParentComponent<ComponentProps<"h3">> = props => {
@@ -26,12 +26,12 @@ export const CardDescription: ParentComponent<ComponentProps<"h3">> = props => {
   return <h3 class={cn("text-sm text-muted-foreground", local.class)} {...rest} />;
 };
 
-export const CardContent: ParentComponent<ComponentProps<"div">> = props => {
+export const CardContent = (props: ComponentProps<"div">) => {
   const [local, rest] = splitProps(props, ["class", "classList"]);
   return <div class={cn("p-6 pt-0", local.class)} {...rest} />;
 };
 
-export const CardFooter: ParentComponent<ComponentProps<"div">> = props => {
+export const CardFooter = (props: ComponentProps<"div">) => {
   const [local, rest] = splitProps(props, ["class", "classList"]);
   return <div class={cn("flex items-center p-6 pt-0", local.class)} {...rest} />;
 };

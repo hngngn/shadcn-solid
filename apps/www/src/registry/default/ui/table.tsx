@@ -1,7 +1,7 @@
 import { cn } from "@/lib/cn";
-import { splitProps, type ComponentProps, type ParentComponent } from "solid-js";
+import { type ComponentProps, splitProps } from "solid-js";
 
-export const Table: ParentComponent<ComponentProps<"table">> = props => {
+export const Table = (props: ComponentProps<"table">) => {
   const [local, rest] = splitProps(props, ["class"]);
   return (
     <div class="w-full overflow-auto">
@@ -10,24 +10,24 @@ export const Table: ParentComponent<ComponentProps<"table">> = props => {
   );
 };
 
-export const TableHeader: ParentComponent<ComponentProps<"thead">> = props => {
+export const TableHeader = (props: ComponentProps<"thead">) => {
   const [local, rest] = splitProps(props, ["class"]);
   return <thead class={cn("[&_tr]:border-b", local.class)} {...rest} />;
 };
 
-export const TableBody: ParentComponent<ComponentProps<"tbody">> = props => {
+export const TableBody = (props: ComponentProps<"tbody">) => {
   const [local, rest] = splitProps(props, ["class"]);
   return <tbody class={cn("[&_tr:last-child]:border-0", local.class)} {...rest} />;
 };
 
-export const TableFooter: ParentComponent<ComponentProps<"tfoot">> = props => {
+export const TableFooter = (props: ComponentProps<"tfoot">) => {
   const [local, rest] = splitProps(props, ["class"]);
   return (
     <tbody class={cn("bg-primary font-medium text-primary-foreground", local.class)} {...rest} />
   );
 };
 
-export const TableRow: ParentComponent<ComponentProps<"tr">> = props => {
+export const TableRow = (props: ComponentProps<"tr">) => {
   const [local, rest] = splitProps(props, ["class"]);
   return (
     <tr
@@ -40,7 +40,7 @@ export const TableRow: ParentComponent<ComponentProps<"tr">> = props => {
   );
 };
 
-export const TableHead: ParentComponent<ComponentProps<"th">> = props => {
+export const TableHead = (props: ComponentProps<"th">) => {
   const [local, rest] = splitProps(props, ["class"]);
   return (
     <th
@@ -53,7 +53,7 @@ export const TableHead: ParentComponent<ComponentProps<"th">> = props => {
   );
 };
 
-export const TableCell: ParentComponent<ComponentProps<"td">> = props => {
+export const TableCell = (props: ComponentProps<"td">) => {
   const [local, rest] = splitProps(props, ["class"]);
   return (
     <td
@@ -66,7 +66,7 @@ export const TableCell: ParentComponent<ComponentProps<"td">> = props => {
   );
 };
 
-export const TableCaption: ParentComponent<ComponentProps<"caption">> = props => {
+export const TableCaption = (props: ComponentProps<"caption">) => {
   const [local, rest] = splitProps(props, ["class"]);
   return <caption class={cn("mt-4 text-sm text-muted-foreground", local.class)} {...rest} />;
 };

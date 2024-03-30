@@ -1,5 +1,5 @@
 import * as DrawerPrimitive from "corvu/drawer";
-import type { ComponentProps, ParentComponent } from "solid-js";
+import type { ComponentProps } from "solid-js";
 import { splitProps } from "solid-js";
 import { cn } from "@/lib/cn";
 
@@ -33,13 +33,13 @@ export const DrawerContent = (props: DrawerPrimitive.ContentProps) => {
   );
 };
 
-export const DrawerHeader: ParentComponent<ComponentProps<"div">> = props => {
+export const DrawerHeader = (props: ComponentProps<"div">) => {
   const [local, rest] = splitProps(props, ["class"]);
 
   return <div class={cn("grid gap-1.5 p-4 text-center sm:text-left", local.class)} {...rest} />;
 };
 
-export const DrawerFooter: ParentComponent<ComponentProps<"div">> = props => {
+export const DrawerFooter = (props: ComponentProps<"div">) => {
   const [local, rest] = splitProps(props, ["class"]);
 
   return <div class={cn("mt-auto flex flex-col gap-2 p-4", local.class)} {...rest} />;

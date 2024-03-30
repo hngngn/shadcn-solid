@@ -1,11 +1,11 @@
 import { cn } from "@/lib/cn";
 import { TextField as TextFieldPrimitive } from "@kobalte/core";
-import { splitProps, type ParentComponent } from "solid-js";
+import type { VoidProps } from "solid-js";
+import { splitProps } from "solid-js";
 
-export const TextFieldTextArea: ParentComponent<
-  TextFieldPrimitive.TextFieldTextAreaProps
-> = props => {
+export const TextFieldTextArea = (props: VoidProps<TextFieldPrimitive.TextFieldTextAreaProps>) => {
   const [local, rest] = splitProps(props, ["class"]);
+
   return (
     <TextFieldPrimitive.TextArea
       class={cn(

@@ -1,15 +1,12 @@
 import { cn } from "@/lib/cn";
 import { Collapsible as CollapsiblePrimitive } from "@kobalte/core";
-import type { ParentComponent } from "solid-js";
 import { splitProps } from "solid-js";
 
 export const Collapsible = CollapsiblePrimitive.Root;
 
 export const CollapsibleTrigger = CollapsiblePrimitive.Trigger;
 
-export const CollapsibleContent: ParentComponent<
-  CollapsiblePrimitive.CollapsibleContentProps
-> = props => {
+export const CollapsibleContent = (props: CollapsiblePrimitive.CollapsibleContentProps) => {
   const [local, rest] = splitProps(props, ["class"]);
 
   return (

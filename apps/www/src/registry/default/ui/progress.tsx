@@ -1,11 +1,11 @@
 import { cn } from "@/lib/cn";
 import { Progress as ProgressPrimitive } from "@kobalte/core";
-import { splitProps, type ParentComponent } from "solid-js";
+import { splitProps } from "solid-js";
 
 export const ProgressLabel = ProgressPrimitive.Label;
 export const ProgressValueLabel = ProgressPrimitive.ValueLabel;
 
-export const Progress: ParentComponent<ProgressPrimitive.ProgressRootProps> = props => {
+export const Progress = (props: ProgressPrimitive.ProgressRootProps) => {
   const [local, rest] = splitProps(props, ["class", "children"]);
 
   return (

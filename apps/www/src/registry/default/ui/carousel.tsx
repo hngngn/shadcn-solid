@@ -2,14 +2,7 @@ import { cn } from "@/lib/cn";
 import type { CreateEmblaCarouselType } from "embla-carousel-solid";
 import createEmblaCarousel from "embla-carousel-solid";
 
-import type {
-  Accessor,
-  ComponentProps,
-  ParentComponent,
-  ParentProps,
-  VoidComponent,
-  VoidProps
-} from "solid-js";
+import type { Accessor, ComponentProps, ParentProps, VoidProps } from "solid-js";
 import {
   createContext,
   createEffect,
@@ -54,7 +47,7 @@ const useCarousel = () => {
   return context();
 };
 
-export const Carousel: ParentComponent<ComponentProps<"div"> & CarouselProps> = props => {
+export const Carousel = (props: ComponentProps<"div"> & CarouselProps) => {
   const merge = mergeProps<ParentProps<ComponentProps<"div"> & CarouselProps>[]>(
     { orientation: "horizontal" },
     props
@@ -153,7 +146,7 @@ export const Carousel: ParentComponent<ComponentProps<"div"> & CarouselProps> = 
   );
 };
 
-export const CarouselContent: ParentComponent<ComponentProps<"div">> = props => {
+export const CarouselContent = (props: ComponentProps<"div">) => {
   const [local, rest] = splitProps(props, ["class"]);
   const { carouselRef, orientation } = useCarousel();
 
@@ -167,7 +160,7 @@ export const CarouselContent: ParentComponent<ComponentProps<"div">> = props => 
   );
 };
 
-export const CarouselItem: ParentComponent<ComponentProps<"div">> = props => {
+export const CarouselItem = (props: ComponentProps<"div">) => {
   const [local, rest] = splitProps(props, ["class"]);
   const { orientation } = useCarousel();
 
@@ -185,7 +178,7 @@ export const CarouselItem: ParentComponent<ComponentProps<"div">> = props => {
   );
 };
 
-export const CarouselPrevious: VoidComponent<ComponentProps<typeof Button>> = props => {
+export const CarouselPrevious = (props: VoidProps<ComponentProps<typeof Button>>) => {
   const merge = mergeProps<VoidProps<ComponentProps<typeof Button>[]>>(
     { variant: "outline", size: "icon" },
     props
@@ -223,7 +216,7 @@ export const CarouselPrevious: VoidComponent<ComponentProps<typeof Button>> = pr
   );
 };
 
-export const CarouselNext: VoidComponent<ComponentProps<typeof Button>> = props => {
+export const CarouselNext = (props: VoidProps<ComponentProps<typeof Button>>) => {
   const merge = mergeProps<VoidProps<ComponentProps<typeof Button>[]>>(
     { variant: "outline", size: "icon" },
     props

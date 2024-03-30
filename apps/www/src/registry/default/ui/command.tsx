@@ -1,8 +1,8 @@
 import { cn } from "@/lib/cn";
 import type { Dialog as DialogPrimitive } from "@kobalte/core";
 import { Combobox as ComboboxPrimitive } from "@kobalte/core";
-import type { ComponentProps, ParentProps, VoidComponent, VoidProps } from "solid-js";
-import { splitProps, type ParentComponent } from "solid-js";
+import type { ComponentProps, ParentProps, VoidProps } from "solid-js";
+import { splitProps } from "solid-js";
 import { Dialog, DialogContent } from "./dialog";
 
 export const CommandItemLabel = ComboboxPrimitive.ItemLabel;
@@ -52,7 +52,7 @@ export const CommandList = <Option, OptGroup>(
   );
 };
 
-export const CommandInput: VoidComponent<ComboboxPrimitive.ComboboxInputProps> = props => {
+export const CommandInput = (props: VoidProps<ComboboxPrimitive.ComboboxInputProps>) => {
   const [local, rest] = splitProps(props, ["class"]);
 
   return (
@@ -83,7 +83,7 @@ export const CommandInput: VoidComponent<ComboboxPrimitive.ComboboxInputProps> =
   );
 };
 
-export const CommandItem: ParentComponent<ComboboxPrimitive.ComboboxItemProps> = props => {
+export const CommandItem = (props: ComboboxPrimitive.ComboboxItemProps) => {
   const [local, rest] = splitProps(props, ["class", "item"]);
 
   return (
@@ -99,7 +99,7 @@ export const CommandItem: ParentComponent<ComboboxPrimitive.ComboboxItemProps> =
   );
 };
 
-export const CommandShortcut: ParentComponent<ComponentProps<"span">> = props => {
+export const CommandShortcut = (props: ComponentProps<"span">) => {
   const [local, rest] = splitProps(props, ["class"]);
 
   return (
@@ -110,7 +110,7 @@ export const CommandShortcut: ParentComponent<ComponentProps<"span">> = props =>
   );
 };
 
-export const CommandHeading: ParentComponent<ComboboxPrimitive.ComboboxSectionProps> = props => {
+export const CommandHeading = (props: ComboboxPrimitive.ComboboxSectionProps) => {
   const [local, rest] = splitProps(props, ["class"]);
 
   return (

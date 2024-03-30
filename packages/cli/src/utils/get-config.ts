@@ -13,7 +13,7 @@ export const DEFAULT_TAILWIND_CONFIG = "tailwind.config.cjs";
 // TODO: Figure out if we want to support all cosmiconfig formats.
 // A simple components.json file would be nice.
 const explorer = cosmiconfig("components", {
-  searchPlaces: ["components.json"],
+  searchPlaces: ["components.json"]
 });
 
 export const rawConfigSchema = z
@@ -25,13 +25,13 @@ export const rawConfigSchema = z
       css: z.string(),
       baseColor: z.string(),
       cssVariables: z.boolean().default(true),
-      prefix: z.string().default("").optional(),
+      prefix: z.string().default("").optional()
     }),
     aliases: z.object({
       components: z.string(),
       utils: z.string(),
-      ui: z.string().optional(),
-    }),
+      ui: z.string().optional()
+    })
   })
   .strict();
 
@@ -43,8 +43,8 @@ export const configSchema = rawConfigSchema.extend({
     tailwindCss: z.string(),
     utils: z.string(),
     components: z.string(),
-    ui: z.string(),
-  }),
+    ui: z.string()
+  })
 });
 
 export type Config = z.infer<typeof configSchema>;
@@ -64,9 +64,7 @@ export async function resolveConfigPaths(cwd: string, config: RawConfig) {
   const tsConfig = loadConfig(cwd);
 
   if (tsConfig.resultType === "failed") {
-    throw new Error(
-      `Failed to load tsconfig.json. ${tsConfig.message ?? ""}`.trim(),
-    );
+    throw new Error(`Failed to load tsconfig.json. ${tsConfig.message ?? ""}`.trim());
   }
 
   return configSchema.parse({
@@ -78,8 +76,8 @@ export async function resolveConfigPaths(cwd: string, config: RawConfig) {
       components: await resolveImport(config.aliases["components"], tsConfig),
       ui: config.aliases["ui"]
         ? await resolveImport(config.aliases["ui"], tsConfig)
-        : await resolveImport(config.aliases["components"], tsConfig),
-    },
+        : await resolveImport(config.aliases["components"], tsConfig)
+    }
   });
 }
 

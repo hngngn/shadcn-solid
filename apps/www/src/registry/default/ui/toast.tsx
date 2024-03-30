@@ -2,8 +2,8 @@ import { cn } from "@/lib/cn";
 import { Toast as ToastPrimitive } from "@kobalte/core";
 import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
-import type { ComponentProps, VoidComponent } from "solid-js";
-import { mergeProps, splitProps, type ParentComponent } from "solid-js";
+import type { ComponentProps, VoidComponent, VoidProps } from "solid-js";
+import { mergeProps, splitProps } from "solid-js";
 import { Portal } from "solid-js/web";
 
 export const toastVariants = cva(
@@ -22,9 +22,9 @@ export const toastVariants = cva(
   }
 );
 
-export const Toast: ParentComponent<
-  ToastPrimitive.ToastRootProps & VariantProps<typeof toastVariants>
-> = props => {
+export const Toast = (
+  props: ToastPrimitive.ToastRootProps & VariantProps<typeof toastVariants>
+) => {
   const [local, rest] = splitProps(props, ["class", "variant"]);
 
   return (
@@ -35,7 +35,7 @@ export const Toast: ParentComponent<
   );
 };
 
-export const ToastTitle: ParentComponent<ToastPrimitive.ToastTitleProps> = props => {
+export const ToastTitle = (props: ToastPrimitive.ToastTitleProps) => {
   const [local, rest] = splitProps(props, ["class"]);
 
   return (
@@ -46,13 +46,13 @@ export const ToastTitle: ParentComponent<ToastPrimitive.ToastTitleProps> = props
   );
 };
 
-export const ToastDescription: ParentComponent<ToastPrimitive.ToastDescriptionProps> = props => {
+export const ToastDescription = (props: ToastPrimitive.ToastDescriptionProps) => {
   const [local, rest] = splitProps(props, ["class"]);
 
   return <ToastPrimitive.Description class={cn("text-sm opacity-90", local.class)} {...rest} />;
 };
 
-export const ToastRegion: ParentComponent<ToastPrimitive.ToastRegionProps> = props => {
+export const ToastRegion = (props: ToastPrimitive.ToastRegionProps) => {
   const merge = mergeProps<ToastPrimitive.ToastRegionProps[]>(
     {
       swipeDirection: "down"
@@ -67,7 +67,7 @@ export const ToastRegion: ParentComponent<ToastPrimitive.ToastRegionProps> = pro
   );
 };
 
-export const ToastList: VoidComponent<ToastPrimitive.ToastListProps> = props => {
+export const ToastList = (props: VoidProps<ToastPrimitive.ToastListProps>) => {
   const [local, rest] = splitProps(props, ["class"]);
 
   return (
@@ -81,7 +81,7 @@ export const ToastList: VoidComponent<ToastPrimitive.ToastListProps> = props => 
   );
 };
 
-export const ToastContent: ParentComponent<ComponentProps<"div">> = props => {
+export const ToastContent = (props: ComponentProps<"div">) => {
   const [local, rest] = splitProps(props, ["class", "children"]);
 
   return (

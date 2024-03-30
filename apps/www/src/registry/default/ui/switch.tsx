@@ -1,13 +1,14 @@
 import { cn } from "@/lib/cn";
 import { Switch as SwitchPrimitive } from "@kobalte/core";
-import { splitProps, type ParentComponent } from "solid-js";
+import type { VoidProps } from "solid-js";
+import { splitProps } from "solid-js";
 
 export const SwitchLabel = SwitchPrimitive.Label;
 export const Switch = SwitchPrimitive.Root;
 export const SwitchErrorMessage = SwitchPrimitive.ErrorMessage;
 export const SwitchDescription = SwitchPrimitive.Description;
 
-export const SwitchControl: ParentComponent<SwitchPrimitive.SwitchControlProps> = props => {
+export const SwitchControl = (props: SwitchPrimitive.SwitchControlProps) => {
   const [local, rest] = splitProps(props, ["class", "children"]);
 
   return (
@@ -31,7 +32,7 @@ export const SwitchControl: ParentComponent<SwitchPrimitive.SwitchControlProps> 
   );
 };
 
-export const SwitchThumb: ParentComponent<SwitchPrimitive.SwitchThumbProps> = props => {
+export const SwitchThumb = (props: VoidProps<SwitchPrimitive.SwitchThumbProps>) => {
   const [local, rest] = splitProps(props, ["class"]);
 
   return (

@@ -1,10 +1,11 @@
 import { cn } from "@/lib/cn";
 import { Tabs as TabsPrimitive } from "@kobalte/core";
-import type { ParentComponent } from "solid-js";
+import type { VoidProps } from "solid-js";
 import { splitProps } from "solid-js";
 
-export const Tabs: ParentComponent<TabsPrimitive.TabsRootProps> = props => {
+export const Tabs = (props: TabsPrimitive.TabsRootProps) => {
   const [local, rest] = splitProps(props, ["class"]);
+
   return (
     <TabsPrimitive.Root
       class={cn("w-full data-[orientation=vertical]:flex", local.class)}
@@ -13,8 +14,9 @@ export const Tabs: ParentComponent<TabsPrimitive.TabsRootProps> = props => {
   );
 };
 
-export const TabsList: ParentComponent<TabsPrimitive.TabsListProps> = props => {
+export const TabsList = (props: TabsPrimitive.TabsListProps) => {
   const [local, rest] = splitProps(props, ["class"]);
+
   return (
     <TabsPrimitive.List
       class={cn(
@@ -26,8 +28,9 @@ export const TabsList: ParentComponent<TabsPrimitive.TabsListProps> = props => {
   );
 };
 
-export const TabsContent: ParentComponent<TabsPrimitive.TabsContentProps> = props => {
+export const TabsContent = (props: TabsPrimitive.TabsContentProps) => {
   const [local, rest] = splitProps(props, ["class"]);
+
   return (
     <TabsPrimitive.Content
       class={cn(
@@ -39,8 +42,9 @@ export const TabsContent: ParentComponent<TabsPrimitive.TabsContentProps> = prop
   );
 };
 
-export const TabsTrigger: ParentComponent<TabsPrimitive.TabsTriggerProps> = props => {
+export const TabsTrigger = (props: TabsPrimitive.TabsTriggerProps) => {
   const [local, rest] = splitProps(props, ["class"]);
+
   return (
     <TabsPrimitive.Trigger
       class={cn(
@@ -52,8 +56,9 @@ export const TabsTrigger: ParentComponent<TabsPrimitive.TabsTriggerProps> = prop
   );
 };
 
-export const TabsIndicator: ParentComponent<TabsPrimitive.TabsIndicatorProps> = props => {
+export const TabsIndicator = (props: VoidProps<TabsPrimitive.TabsIndicatorProps>) => {
   const [local, rest] = splitProps(props, ["class"]);
+
   return (
     <TabsPrimitive.Indicator
       class={cn(

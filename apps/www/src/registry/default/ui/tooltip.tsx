@@ -1,17 +1,16 @@
 import { cn } from "@/lib/cn";
 import { Tooltip as TooltipPrimitive } from "@kobalte/core";
-import type { ParentComponent } from "solid-js";
 import { mergeProps, splitProps } from "solid-js";
 
 export const TooltipTrigger = TooltipPrimitive.Trigger;
 
-export const Tooltip: ParentComponent<TooltipPrimitive.TooltipRootProps> = props => {
+export const Tooltip = (props: TooltipPrimitive.TooltipRootProps) => {
   const merge = mergeProps<TooltipPrimitive.TooltipRootProps[]>({ gutter: 4 }, props);
 
   return <TooltipPrimitive.Root {...merge} />;
 };
 
-export const TooltipContent: ParentComponent<TooltipPrimitive.TooltipContentProps> = props => {
+export const TooltipContent = (props: TooltipPrimitive.TooltipContentProps) => {
   const [local, rest] = splitProps(props, ["class"]);
 
   return (

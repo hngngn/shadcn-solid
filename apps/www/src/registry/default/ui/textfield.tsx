@@ -1,9 +1,10 @@
 import { cn } from "@/lib/cn";
 import { TextField as TextFieldPrimitive } from "@kobalte/core";
 import { cva } from "class-variance-authority";
-import { splitProps, type ParentComponent } from "solid-js";
+import type { VoidProps } from "solid-js";
+import { splitProps } from "solid-js";
 
-export const TextField: ParentComponent<TextFieldPrimitive.TextFieldRootProps> = props => {
+export const TextField = (props: TextFieldPrimitive.TextFieldRootProps) => {
   const [local, rest] = splitProps(props, ["class"]);
   return <TextFieldPrimitive.Root class={cn("space-y-1", local.class)} {...rest} />;
 };
@@ -28,14 +29,12 @@ const textfieldLabel = cva(
   }
 );
 
-export const TextFieldLabel: ParentComponent<TextFieldPrimitive.TextFieldLabelProps> = props => {
+export const TextFieldLabel = (props: TextFieldPrimitive.TextFieldLabelProps) => {
   const [local, rest] = splitProps(props, ["class"]);
   return <TextFieldPrimitive.Label class={cn(textfieldLabel(), local.class)} {...rest} />;
 };
 
-export const TextFieldErrorMessage: ParentComponent<
-  TextFieldPrimitive.TextFieldErrorMessageProps
-> = props => {
+export const TextFieldErrorMessage = (props: TextFieldPrimitive.TextFieldErrorMessageProps) => {
   const [local, rest] = splitProps(props, ["class"]);
   return (
     <TextFieldPrimitive.ErrorMessage
@@ -45,9 +44,7 @@ export const TextFieldErrorMessage: ParentComponent<
   );
 };
 
-export const TextFieldDescription: ParentComponent<
-  TextFieldPrimitive.TextFieldDescriptionProps
-> = props => {
+export const TextFieldDescription = (props: TextFieldPrimitive.TextFieldDescriptionProps) => {
   const [local, rest] = splitProps(props, ["class"]);
   return (
     <TextFieldPrimitive.Description
@@ -57,7 +54,7 @@ export const TextFieldDescription: ParentComponent<
   );
 };
 
-export const TextFieldInput: ParentComponent<TextFieldPrimitive.TextFieldInputProps> = props => {
+export const TextFieldInput = (props: VoidProps<TextFieldPrimitive.TextFieldInputProps>) => {
   const [local, rest] = splitProps(props, ["class"]);
   return (
     <TextFieldPrimitive.Input

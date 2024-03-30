@@ -14,6 +14,7 @@ import type {
   DatePickerViewTriggerProps
 } from "@ark-ui/solid";
 import { DatePicker as DatePickerPrimitive } from "@ark-ui/solid";
+import type { VoidProps } from "solid-js";
 import { splitProps } from "solid-js";
 import { Portal } from "solid-js/web";
 import { Button } from "./button";
@@ -87,7 +88,7 @@ export const DatePickerViewControl = (props: DatePickerViewControlProps) => {
   );
 };
 
-export const DatePickerRangeText = (props: DatePickerRangeTextProps) => {
+export const DatePickerRangeText = (props: VoidProps<DatePickerRangeTextProps>) => {
   const [local, rest] = splitProps(props, ["class"]);
 
   return <DatePickerPrimitive.RangeText class={cn("text-sm font-medium", local.class)} {...rest} />;

@@ -1,15 +1,15 @@
 import type { SplitterResizeTriggerProps } from "@ark-ui/solid";
 import { Splitter as SplitterPrimitive } from "@ark-ui/solid";
-import type { VoidComponent } from "solid-js";
+import type { VoidProps } from "solid-js";
 import { Show, splitProps } from "solid-js";
 import { cn } from "@/lib/cn";
 
 export const Splitter = SplitterPrimitive.Root;
 export const SplitterPanel = SplitterPrimitive.Panel;
 
-export const SplitterResizeTrigger: VoidComponent<
-  SplitterResizeTriggerProps & { withHandle?: boolean }
-> = props => {
+export const SplitterResizeTrigger = (
+  props: VoidProps<SplitterResizeTriggerProps & { withHandle?: boolean }>
+) => {
   const [local, rest] = splitProps(props, ["class", "withHandle"]);
 
   return (

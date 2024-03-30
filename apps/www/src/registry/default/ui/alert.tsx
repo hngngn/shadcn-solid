@@ -2,7 +2,7 @@ import { cn } from "@/lib/cn";
 import { Alert as AlertPrimitive } from "@kobalte/core";
 import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
-import type { ComponentProps, ParentComponent } from "solid-js";
+import type { ComponentProps } from "solid-js";
 import { splitProps } from "solid-js";
 
 export const alertVariants = cva(
@@ -21,9 +21,9 @@ export const alertVariants = cva(
   }
 );
 
-export const Alert: ParentComponent<
-  AlertPrimitive.AlertRootProps & VariantProps<typeof alertVariants>
-> = props => {
+export const Alert = (
+  props: AlertPrimitive.AlertRootProps & VariantProps<typeof alertVariants>
+) => {
   const [local, rest] = splitProps(props, ["class", "variant"]);
 
   return (
@@ -39,13 +39,13 @@ export const Alert: ParentComponent<
   );
 };
 
-export const AlertTitle: ParentComponent<ComponentProps<"div">> = props => {
+export const AlertTitle = (props: ComponentProps<"div">) => {
   const [local, rest] = splitProps(props, ["class"]);
 
   return <div class={cn("font-medium leading-5 tracking-tight", local.class)} {...rest} />;
 };
 
-export const AlertDescription: ParentComponent<ComponentProps<"div">> = props => {
+export const AlertDescription = (props: ComponentProps<"div">) => {
   const [local, rest] = splitProps(props, ["class"]);
 
   return <div class={cn("text-sm [&_p]:leading-relaxed", local.class)} {...rest} />;

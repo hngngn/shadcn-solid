@@ -10,14 +10,11 @@ export const transformImport: Transformer = async ({ sourceFile, config }) => {
     if (moduleSpecifier.startsWith("@/registry/")) {
       if (config.aliases.ui) {
         importDeclaration.setModuleSpecifier(
-          moduleSpecifier.replace(/^@\/registry\/[^/]+\/ui/, config.aliases.ui),
+          moduleSpecifier.replace(/^@\/registry\/[^/]+\/ui/, config.aliases.ui)
         );
       } else {
         importDeclaration.setModuleSpecifier(
-          moduleSpecifier.replace(
-            /^@\/registry\/[^/]+/,
-            config.aliases.components,
-          ),
+          moduleSpecifier.replace(/^@\/registry\/[^/]+/, config.aliases.components)
         );
       }
     }
@@ -25,10 +22,10 @@ export const transformImport: Transformer = async ({ sourceFile, config }) => {
     // Replace `import { cn } from "@/lib/cn"`
     if (moduleSpecifier == "@/lib/cn") {
       const namedImports = importDeclaration.getNamedImports();
-      const cnImport = namedImports.find((i) => i.getName() === "cn");
+      const cnImport = namedImports.find(i => i.getName() === "cn");
       if (cnImport) {
         importDeclaration.setModuleSpecifier(
-          moduleSpecifier.replace(/^@\/lib\/cn/, config.aliases.utils),
+          moduleSpecifier.replace(/^@\/lib\/cn/, config.aliases.utils)
         );
       }
     }

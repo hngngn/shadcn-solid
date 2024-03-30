@@ -4,18 +4,15 @@ import {
   registryBaseColorSchema,
   registryIndexSchema,
   registryWithContentSchema,
-  stylesSchema,
+  stylesSchema
 } from "@/src/utils/registry/schema";
 import { HttpsProxyAgent } from "https-proxy-agent";
 import fetch from "node-fetch";
 import path from "path";
 import type * as z from "zod";
 
-const baseUrl =
-  process.env.COMPONENTS_REGISTRY_URL ?? "https://shadcn-solid.com";
-const agent = process.env.https_proxy
-  ? new HttpsProxyAgent(process.env.https_proxy)
-  : undefined;
+const baseUrl = process.env.COMPONENTS_REGISTRY_URL ?? "https://shadcn-solid.com";
+const agent = process.env.https_proxy ? new HttpsProxyAgent(process.env.https_proxy) : undefined;
 
 export async function getRegistryIndex() {
   try {
@@ -41,24 +38,24 @@ export async function getRegistryBaseColors() {
   return [
     {
       name: "slate",
-      label: "Slate",
+      label: "Slate"
     },
     {
       name: "gray",
-      label: "Gray",
+      label: "Gray"
     },
     {
       name: "zinc",
-      label: "Zinc",
+      label: "Zinc"
     },
     {
       name: "neutral",
-      label: "Neutral",
+      label: "Neutral"
     },
     {
       name: "stone",
-      label: "Stone",
-    },
+      label: "Stone"
+    }
   ];
 }
 
@@ -72,14 +69,11 @@ export async function getRegistryBaseColor(baseColor: string) {
   }
 }
 
-export async function resolveTree(
-  index: z.infer<typeof registryIndexSchema>,
-  names: string[],
-) {
+export async function resolveTree(index: z.infer<typeof registryIndexSchema>, names: string[]) {
   const tree: z.infer<typeof registryIndexSchema> = [];
 
   for (const name of names) {
-    const entry = index.find((entry) => entry.name === name);
+    const entry = index.find(entry => entry.name === name);
 
     if (!entry) {
       continue;
@@ -94,17 +88,13 @@ export async function resolveTree(
   }
 
   return tree.filter(
-    (component, index, self) =>
-      self.findIndex((c) => c.name === component.name) === index,
+    (component, index, self) => self.findIndex(c => c.name === component.name) === index
   );
 }
 
-export async function fetchTree(
-  style: string,
-  tree: z.infer<typeof registryIndexSchema>,
-) {
+export async function fetchTree(style: string, tree: z.infer<typeof registryIndexSchema>) {
   try {
-    const paths = tree.map((item) => `styles/${style}/${item.name}.json`);
+    const paths = tree.map(item => `styles/${style}/${item.name}.json`);
     const result = await fetchRegistry(paths);
 
     return registryWithContentSchema.parse(result);
@@ -116,7 +106,7 @@ export async function fetchTree(
 export async function getItemTargetPath(
   config: Config,
   item: Pick<z.infer<typeof registryItemWithContentSchema>, "type">,
-  override?: string,
+  override?: string
 ) {
   if (override) {
     return override;
@@ -131,21 +121,18 @@ export async function getItemTargetPath(
     return null;
   }
 
-  return path.join(
-    config.resolvedPaths[parent as keyof typeof config.resolvedPaths],
-    type,
-  );
+  return path.join(config.resolvedPaths[parent as keyof typeof config.resolvedPaths], type);
 }
 
 async function fetchRegistry(paths: string[]) {
   try {
     return await Promise.all(
-      paths.map(async (path) => {
+      paths.map(async path => {
         const response = await fetch(`${baseUrl}/registry/${path}`, {
-          agent,
+          agent
         });
         return await response.json();
-      }),
+      })
     );
   } catch (error) {
     console.log(error);

@@ -1,6 +1,6 @@
 import { cn } from "@/lib/cn";
 import { RadioGroup as RadioGroupPrimitive } from "@kobalte/core";
-import type { VoidComponent } from "solid-js";
+import type { VoidProps } from "solid-js";
 import { splitProps } from "solid-js";
 
 export const RadioGroupDescription = RadioGroupPrimitive.Description;
@@ -12,9 +12,9 @@ export const RadioGroupLabel = RadioGroupPrimitive.Label;
 export const RadioGroup = RadioGroupPrimitive.Root;
 export const RadioGroupItem = RadioGroupPrimitive.Item;
 
-export const RadioGroupItemControl: VoidComponent<
-  RadioGroupPrimitive.RadioGroupItemControlProps
-> = props => {
+export const RadioGroupItemControl = (
+  props: VoidProps<RadioGroupPrimitive.RadioGroupItemControlProps>
+) => {
   const [local, rest] = splitProps(props, ["class"]);
 
   return (

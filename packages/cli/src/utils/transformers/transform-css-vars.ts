@@ -3,11 +3,7 @@ import type { Transformer } from "@/src/utils/transformers";
 import { SyntaxKind } from "ts-morph";
 import type * as z from "zod";
 
-export const transformCssVars: Transformer = async ({
-  sourceFile,
-  config,
-  baseColor,
-}) => {
+export const transformCssVars: Transformer = async ({ sourceFile, config, baseColor }) => {
   // No transform if using css variables.
   if (config.tailwind?.cssVariables || !baseColor?.inlineColors) {
     return sourceFile;
@@ -30,12 +26,12 @@ export const transformCssVars: Transformer = async ({
   //     jsxAttribute.setInitializer(`"${valueWithColorMapping}"`)
   //   }
   // }
-  sourceFile.getDescendantsOfKind(SyntaxKind.StringLiteral).forEach((node) => {
+  sourceFile.getDescendantsOfKind(SyntaxKind.StringLiteral).forEach(node => {
     const value = node.getText();
     if (value) {
       const valueWithColorMapping = applyColorMapping(
         value.replace(/"/g, ""),
-        baseColor.inlineColors,
+        baseColor.inlineColors
       );
       node.replaceWithText(`"${valueWithColorMapping.trim()}"`);
     }
@@ -137,7 +133,7 @@ const PREFIXES = ["bg-", "text-", "border-", "ring-offset-", "ring-"];
 
 export function applyColorMapping(
   input: string,
-  mapping: z.infer<typeof registryBaseColorSchema>["inlineColors"],
+  mapping: z.infer<typeof registryBaseColorSchema>["inlineColors"]
 ) {
   // Handle border classes.
   if (input.includes(" border ")) {
@@ -150,7 +146,7 @@ export function applyColorMapping(
   const darkMode: string[] = [];
   for (let className of classNames) {
     const [variant, value, modifier] = splitClassName(className);
-    const prefix = PREFIXES.find((prefix) => value?.startsWith(prefix));
+    const prefix = PREFIXES.find(prefix => value?.startsWith(prefix));
     if (!prefix) {
       if (!lightMode.includes(className)) {
         lightMode.push(className);
@@ -161,15 +157,13 @@ export function applyColorMapping(
     const needle = value?.replace(prefix, "");
     if (needle && needle in mapping.light) {
       lightMode.push(
-        [variant, `${prefix}${mapping.light[needle]}`]
-          .filter(Boolean)
-          .join(":") + (modifier ? `/${modifier}` : ""),
+        [variant, `${prefix}${mapping.light[needle]}`].filter(Boolean).join(":") +
+          (modifier ? `/${modifier}` : "")
       );
 
       darkMode.push(
-        ["dark", variant, `${prefix}${mapping.dark[needle]}`]
-          .filter(Boolean)
-          .join(":") + (modifier ? `/${modifier}` : ""),
+        ["dark", variant, `${prefix}${mapping.dark[needle]}`].filter(Boolean).join(":") +
+          (modifier ? `/${modifier}` : "")
       );
       continue;
     }

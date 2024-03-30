@@ -11,11 +11,7 @@ async function main() {
   const program = new Command()
     .name("shadcn-solid")
     .description("add components and dependencies to your project")
-    .version(
-      getPackageInfo().version!,
-      "-v, --version",
-      "display the version number",
-    );
+    .version(getPackageInfo().version!, "-v, --version", "display the version number");
 
   program.addCommand(init).addCommand(add);
 

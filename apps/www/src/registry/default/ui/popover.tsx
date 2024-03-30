@@ -1,19 +1,21 @@
 import { cn } from "@/lib/cn";
 import { Popover as PopoverPrimitive } from "@kobalte/core";
 import type { ParentProps } from "solid-js";
-import { mergeProps, splitProps, type ParentComponent } from "solid-js";
+import { mergeProps, splitProps } from "solid-js";
 
 export const PopoverTrigger = PopoverPrimitive.Trigger;
 export const PopoverTitle = PopoverPrimitive.Title;
 export const PopoverDescription = PopoverPrimitive.Description;
 
-export const Popover: ParentComponent<PopoverPrimitive.PopoverRootProps> = props => {
+export const Popover = (props: PopoverPrimitive.PopoverRootProps) => {
   const merge = mergeProps<ParentProps<PopoverPrimitive.PopoverRootProps>[]>({ gutter: 4 }, props);
+
   return <PopoverPrimitive.Root {...merge} />;
 };
 
-export const PopoverContent: ParentComponent<PopoverPrimitive.PopoverContentProps> = props => {
+export const PopoverContent = (props: PopoverPrimitive.PopoverContentProps) => {
   const [local, rest] = splitProps(props, ["class", "children"]);
+
   return (
     <PopoverPrimitive.Portal>
       <PopoverPrimitive.Content

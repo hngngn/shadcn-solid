@@ -1,25 +1,25 @@
 import { cn } from "@/lib/cn";
 import { DropdownMenu as DropdownMenuPrimitive } from "@kobalte/core";
-import type { ComponentProps, ParentProps, VoidComponent } from "solid-js";
-import { mergeProps, splitProps, type ParentComponent } from "solid-js";
+import type { ComponentProps, ParentProps, VoidProps } from "solid-js";
+import { mergeProps, splitProps } from "solid-js";
 
 export const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
 export const DropdownMenuGroup = DropdownMenuPrimitive.Group;
 export const DropdownMenuSub = DropdownMenuPrimitive.Sub;
 export const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup;
 
-export const DropdownMenu: ParentComponent<DropdownMenuPrimitive.DropdownMenuRootProps> = props => {
+export const DropdownMenu = (props: DropdownMenuPrimitive.DropdownMenuRootProps) => {
   const merge = mergeProps<ParentProps<DropdownMenuPrimitive.DropdownMenuRootProps[]>>(
     { gutter: 4 },
     props
   );
+
   return <DropdownMenuPrimitive.Root {...merge} />;
 };
 
-export const DropdownMenuContent: ParentComponent<
-  DropdownMenuPrimitive.DropdownMenuContentProps
-> = props => {
+export const DropdownMenuContent = (props: DropdownMenuPrimitive.DropdownMenuContentProps) => {
   const [local, rest] = splitProps(props, ["class"]);
+
   return (
     <DropdownMenuPrimitive.Portal>
       <DropdownMenuPrimitive.Content
@@ -33,12 +33,13 @@ export const DropdownMenuContent: ParentComponent<
   );
 };
 
-export const DropdownMenuItem: ParentComponent<
-  DropdownMenuPrimitive.DropdownMenuItemProps & {
+export const DropdownMenuItem = (
+  props: DropdownMenuPrimitive.DropdownMenuItemProps & {
     inset?: boolean;
   }
-> = props => {
+) => {
   const [local, rest] = splitProps(props, ["class", "inset"]);
+
   return (
     <DropdownMenuPrimitive.Item
       class={cn(
@@ -51,10 +52,11 @@ export const DropdownMenuItem: ParentComponent<
   );
 };
 
-export const DropdownMenuGroupLabel: ParentComponent<
-  DropdownMenuPrimitive.DropdownMenuGroupLabelProps
-> = props => {
+export const DropdownMenuGroupLabel = (
+  props: DropdownMenuPrimitive.DropdownMenuGroupLabelProps
+) => {
   const [local, rest] = splitProps(props, ["class"]);
+
   return (
     <DropdownMenuPrimitive.GroupLabel
       as="div"
@@ -64,10 +66,9 @@ export const DropdownMenuGroupLabel: ParentComponent<
   );
 };
 
-export const DropdownMenuItemLabel: ParentComponent<
-  DropdownMenuPrimitive.DropdownMenuItemLabelProps
-> = props => {
+export const DropdownMenuItemLabel = (props: DropdownMenuPrimitive.DropdownMenuItemLabelProps) => {
   const [local, rest] = splitProps(props, ["class"]);
+
   return (
     <DropdownMenuPrimitive.ItemLabel
       as="div"
@@ -77,10 +78,11 @@ export const DropdownMenuItemLabel: ParentComponent<
   );
 };
 
-export const DropdownMenuSeparator: VoidComponent<
-  DropdownMenuPrimitive.DropdownMenuSeparatorProps
-> = props => {
+export const DropdownMenuSeparator = (
+  props: VoidProps<DropdownMenuPrimitive.DropdownMenuSeparatorProps>
+) => {
   const [local, rest] = splitProps(props, ["class"]);
+
   return (
     <DropdownMenuPrimitive.Separator
       class={cn("-mx-1 my-1 h-px bg-muted", local.class)}
@@ -89,15 +91,17 @@ export const DropdownMenuSeparator: VoidComponent<
   );
 };
 
-export const DropdownMenuShortcut: ParentComponent<ComponentProps<"span">> = props => {
+export const DropdownMenuShortcut = (props: ComponentProps<"span">) => {
   const [local, rest] = splitProps(props, ["class"]);
+
   return <span class={cn("ml-auto text-xs tracking-widest opacity-60", local.class)} {...rest} />;
 };
 
-export const DropdownMenuSubTrigger: ParentComponent<
-  DropdownMenuPrimitive.DropdownMenuSubTriggerProps
-> = props => {
+export const DropdownMenuSubTrigger = (
+  props: DropdownMenuPrimitive.DropdownMenuSubTriggerProps
+) => {
   const [local, rest] = splitProps(props, ["class", "children"]);
+
   return (
     <DropdownMenuPrimitive.SubTrigger
       class={cn(
@@ -127,10 +131,11 @@ export const DropdownMenuSubTrigger: ParentComponent<
   );
 };
 
-export const DropdownMenuSubContent: ParentComponent<
-  DropdownMenuPrimitive.DropdownMenuSubContentProps
-> = props => {
+export const DropdownMenuSubContent = (
+  props: DropdownMenuPrimitive.DropdownMenuSubContentProps
+) => {
   const [local, rest] = splitProps(props, ["class"]);
+
   return (
     <DropdownMenuPrimitive.Portal>
       <DropdownMenuPrimitive.SubContent
@@ -144,10 +149,11 @@ export const DropdownMenuSubContent: ParentComponent<
   );
 };
 
-export const DropdownMenuCheckboxItem: ParentComponent<
-  DropdownMenuPrimitive.DropdownMenuCheckboxItemProps
-> = props => {
-  const [local, rest] = splitProps(props, ["class", "children", "classList"]);
+export const DropdownMenuCheckboxItem = (
+  props: DropdownMenuPrimitive.DropdownMenuCheckboxItemProps
+) => {
+  const [local, rest] = splitProps(props, ["class", "children"]);
+
   return (
     <DropdownMenuPrimitive.CheckboxItem
       class={cn(
@@ -173,10 +179,9 @@ export const DropdownMenuCheckboxItem: ParentComponent<
   );
 };
 
-export const DropdownMenuRadioItem: ParentComponent<
-  DropdownMenuPrimitive.DropdownMenuRadioItemProps
-> = props => {
+export const DropdownMenuRadioItem = (props: DropdownMenuPrimitive.DropdownMenuRadioItemProps) => {
   const [local, rest] = splitProps(props, ["class", "children"]);
+
   return (
     <DropdownMenuPrimitive.RadioItem
       class={cn(

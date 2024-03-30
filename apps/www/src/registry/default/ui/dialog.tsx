@@ -1,12 +1,12 @@
 import { cn } from "@/lib/cn";
 import { Dialog as DialogPrimitive } from "@kobalte/core";
-import type { ComponentProps, ParentComponent } from "solid-js";
+import type { ComponentProps } from "solid-js";
 import { splitProps } from "solid-js";
 
 export const Dialog = DialogPrimitive.Root;
 export const DialogTrigger = DialogPrimitive.Trigger;
 
-export const DialogOverlay: ParentComponent<DialogPrimitive.DialogOverlayProps> = props => {
+export const DialogOverlay = (props: DialogPrimitive.DialogOverlayProps) => {
   const [local, rest] = splitProps(props, ["class"]);
   return (
     <DialogPrimitive.Overlay
@@ -19,7 +19,7 @@ export const DialogOverlay: ParentComponent<DialogPrimitive.DialogOverlayProps> 
   );
 };
 
-export const DialogContent: ParentComponent<DialogPrimitive.DialogContentProps> = props => {
+export const DialogContent = (props: DialogPrimitive.DialogContentProps) => {
   const [local, rest] = splitProps(props, ["class", "children"]);
 
   return (
@@ -53,7 +53,7 @@ export const DialogContent: ParentComponent<DialogPrimitive.DialogContentProps> 
   );
 };
 
-export const DialogTitle: ParentComponent<DialogPrimitive.DialogTitleProps> = props => {
+export const DialogTitle = (props: DialogPrimitive.DialogTitleProps) => {
   const [local, rest] = splitProps(props, ["class"]);
   return (
     <DialogPrimitive.Title
@@ -63,7 +63,7 @@ export const DialogTitle: ParentComponent<DialogPrimitive.DialogTitleProps> = pr
   );
 };
 
-export const DialogDescription: ParentComponent<DialogPrimitive.DialogDescriptionProps> = props => {
+export const DialogDescription = (props: DialogPrimitive.DialogDescriptionProps) => {
   const [local, rest] = splitProps(props, ["class"]);
   return (
     <DialogPrimitive.Description
@@ -73,14 +73,14 @@ export const DialogDescription: ParentComponent<DialogPrimitive.DialogDescriptio
   );
 };
 
-export const DialogHeader: ParentComponent<ComponentProps<"div">> = props => {
+export const DialogHeader = (props: ComponentProps<"div">) => {
   const [local, rest] = splitProps(props, ["class"]);
   return (
     <div class={cn("flex flex-col space-y-2 text-center sm:text-left", local.class)} {...rest} />
   );
 };
 
-export const DialogFooter: ParentComponent<ComponentProps<"div">> = props => {
+export const DialogFooter = (props: ComponentProps<"div">) => {
   const [local, rest] = splitProps(props, ["class"]);
   return (
     <div

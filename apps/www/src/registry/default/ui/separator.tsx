@@ -1,10 +1,11 @@
 import { cn } from "@/lib/cn";
 import { Separator as SeparatorPrimitive } from "@kobalte/core";
-import type { VoidComponent } from "solid-js";
+import type { VoidProps } from "solid-js";
 import { splitProps } from "solid-js";
 
-export const Separator: VoidComponent<SeparatorPrimitive.SeparatorRootProps> = props => {
+export const Separator = (props: VoidProps<SeparatorPrimitive.SeparatorRootProps>) => {
   const [local, rest] = splitProps(props, ["class"]);
+
   return (
     <SeparatorPrimitive.Root
       class={cn(

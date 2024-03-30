@@ -1,7 +1,7 @@
 import { cn } from "@/lib/cn";
 import { Combobox as ComboboxPrimitive } from "@kobalte/core";
-import type { VoidComponent } from "solid-js";
-import { splitProps, type ParentComponent } from "solid-js";
+import type { VoidProps } from "solid-js";
+import { splitProps } from "solid-js";
 
 export const Combobox = ComboboxPrimitive.Root;
 export const ComboboxDescription = ComboboxPrimitive.Description;
@@ -10,8 +10,9 @@ export const ComboboxItemDescription = ComboboxPrimitive.ItemDescription;
 export const ComboboxHiddenSelect = ComboboxPrimitive.HiddenSelect;
 export type ComboboxTriggerMode = ComboboxPrimitive.ComboboxTriggerMode;
 
-export const ComboboxInput: VoidComponent<ComboboxPrimitive.ComboboxInputProps> = props => {
+export const ComboboxInput = (props: VoidProps<ComboboxPrimitive.ComboboxInputProps>) => {
   const [local, rest] = splitProps(props, ["class", "children"]);
+
   return (
     <ComboboxPrimitive.Input
       class={cn(
@@ -23,8 +24,9 @@ export const ComboboxInput: VoidComponent<ComboboxPrimitive.ComboboxInputProps> 
   );
 };
 
-export const ComboboxTrigger: ParentComponent<ComboboxPrimitive.ComboboxTriggerProps> = props => {
+export const ComboboxTrigger = (props: ComboboxPrimitive.ComboboxTriggerProps) => {
   const [local, rest] = splitProps(props, ["class", "children"]);
+
   return (
     <ComboboxPrimitive.Control>
       <ComboboxPrimitive.Trigger
@@ -52,8 +54,9 @@ export const ComboboxTrigger: ParentComponent<ComboboxPrimitive.ComboboxTriggerP
   );
 };
 
-export const ComboboxContent: VoidComponent<ComboboxPrimitive.ComboboxContentProps> = props => {
+export const ComboboxContent = (props: VoidProps<ComboboxPrimitive.ComboboxContentProps>) => {
   const [local, rest] = splitProps(props, ["class"]);
+
   return (
     <ComboboxPrimitive.Portal>
       <ComboboxPrimitive.Content
@@ -69,8 +72,9 @@ export const ComboboxContent: VoidComponent<ComboboxPrimitive.ComboboxContentPro
   );
 };
 
-export const ComboboxItem: ParentComponent<ComboboxPrimitive.ComboboxItemProps> = props => {
+export const ComboboxItem = (props: ComboboxPrimitive.ComboboxItemProps) => {
   const [local, rest] = splitProps(props, ["class", "classList", "children"]);
+
   return (
     <ComboboxPrimitive.Item
       class={cn(

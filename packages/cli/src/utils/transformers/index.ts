@@ -20,17 +20,13 @@ export type Transformer<Output = SourceFile> = (
   // eslint-disable-next-line no-unused-vars
   opts: TransformOpts & {
     sourceFile: SourceFile;
-  },
+  }
 ) => Promise<Output>;
 
-const transformers: Transformer[] = [
-  transformImport,
-  transformCssVars,
-  transformTwPrefixes,
-];
+const transformers: Transformer[] = [transformImport, transformCssVars, transformTwPrefixes];
 
 const project = new Project({
-  compilerOptions: {},
+  compilerOptions: {}
 });
 
 async function createTempSourceFile(filename: string) {
@@ -41,7 +37,7 @@ async function createTempSourceFile(filename: string) {
 export async function transform(opts: TransformOpts) {
   const tempFile = await createTempSourceFile(opts.filename);
   const sourceFile = project.createSourceFile(tempFile, opts.raw, {
-    scriptKind: ScriptKind.TSX,
+    scriptKind: ScriptKind.TSX
   });
 
   for (const transformer of transformers) {

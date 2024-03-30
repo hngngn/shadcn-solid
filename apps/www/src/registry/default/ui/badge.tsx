@@ -1,8 +1,7 @@
 import { cn } from "@/lib/cn";
 import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
-import type { ParentComponent } from "solid-js";
-import { splitProps, type ComponentProps } from "solid-js";
+import { type ComponentProps, splitProps } from "solid-js";
 
 export const badgeVariants = cva(
   "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
@@ -23,9 +22,7 @@ export const badgeVariants = cva(
   }
 );
 
-export const Badge: ParentComponent<
-  ComponentProps<"div"> & VariantProps<typeof badgeVariants>
-> = props => {
+export const Badge = (props: ComponentProps<"div"> & VariantProps<typeof badgeVariants>) => {
   const [local, rest] = splitProps(props, ["class", "variant"]);
 
   return (

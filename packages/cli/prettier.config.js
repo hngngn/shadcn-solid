@@ -6,6 +6,5 @@ export default {
   singleQuote: false,
   arrowParens: "avoid",
   printWidth: 100,
-  plugins: ["prettier-plugin-tailwindcss"],
   endOfLine: "crlf"
 };

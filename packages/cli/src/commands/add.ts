@@ -6,7 +6,7 @@ import {
   getItemTargetPath,
   getRegistryBaseColor,
   getRegistryIndex,
-  resolveTree,
+  resolveTree
 } from "@/src/utils/registry";
 import { transform } from "@/src/utils/transformers";
 import * as p from "@clack/prompts";
@@ -22,7 +22,7 @@ const addOptionsSchema = z.object({
   overwrite: z.boolean(),
   yes: z.boolean(),
   cwd: z.string(),
-  path: z.string().optional(),
+  path: z.string().optional()
 });
 
 export const add = new Command()
@@ -33,7 +33,7 @@ export const add = new Command()
   .option(
     "-c, --cwd <cwd>",
     "the working directory. defaults to the current directory.",
-    process.cwd(),
+    process.cwd()
   )
   .option("-p, --path <path>", "the path to add the component to.")
   .option("-y --yes", "skip confirmation prompt.", false)
@@ -41,7 +41,7 @@ export const add = new Command()
     try {
       const options = addOptionsSchema.parse({
         components,
-        ...opts,
+        ...opts
       });
 
       const cwd = path.resolve(options.cwd);
@@ -55,8 +55,8 @@ export const add = new Command()
       if (!config) {
         p.log.warn(
           `Configuration is missing. Please run ${color.green(
-            `init`,
-          )} to create a components.json file.`,
+            `init`
+          )} to create a components.json file.`
         );
         process.exit(1);
       }
@@ -70,19 +70,19 @@ export const add = new Command()
             components: () =>
               p.multiselect({
                 message: "Which components would you like to add?",
-                options: registryIndex.map((entry) => ({
+                options: registryIndex.map(entry => ({
                   label: entry.name,
                   value: entry.name,
-                  hint: "Space to select. A to toggle all. Enter to submit.",
-                })),
-              }),
+                  hint: "Space to select. A to toggle all. Enter to submit."
+                }))
+              })
           },
           {
             onCancel: () => {
               p.cancel("Cancelled.");
               process.exit(0);
-            },
-          },
+            }
+          }
         );
         selectedComponents = components as string[];
       }
@@ -109,25 +109,25 @@ export const add = new Command()
             proceed: () =>
               p.confirm({
                 message: `Ready to install components and dependencies. Proceed?`,
-                initialValue: true,
-              }),
+                initialValue: true
+              })
           },
           {
             onCancel: () => {
               p.cancel("Cancelled.");
               process.exit(0);
-            },
-          },
+            }
+          }
         );
       }
 
       const spinner = p.spinner();
-      spinner.start(`Installing ${payload.map((i) => i.name).join(", ")}...`);
+      spinner.start(`Installing ${payload.map(i => i.name).join(", ")}...`);
       for (const item of payload) {
         const targetDir = await getItemTargetPath(
           config,
           item,
-          options.path ? path.resolve(cwd, options.path) : undefined,
+          options.path ? path.resolve(cwd, options.path) : undefined
         );
 
         if (!targetDir) {
@@ -138,16 +138,14 @@ export const add = new Command()
           await fs.mkdir(targetDir, { recursive: true });
         }
 
-        const existingComponent = item.files.filter((file) =>
-          existsSync(path.resolve(targetDir, file.name)),
+        const existingComponent = item.files.filter(file =>
+          existsSync(path.resolve(targetDir, file.name))
         );
 
         if (existingComponent.length && !options.overwrite) {
           if (selectedComponents.includes(item.name)) {
             p.log.warn(
-              `Component ${item.name} already exists. Use ${color.green(
-                "-o",
-              )} to overwrite.`,
+              `Component ${item.name} already exists. Use ${color.green("-o")} to overwrite.`
             );
             process.exit(1);
           }
@@ -163,7 +161,7 @@ export const add = new Command()
             filename: file.name,
             raw: file.content,
             config,
-            baseColor,
+            baseColor
           });
 
           await fs.writeFile(filePath, content);
@@ -174,13 +172,10 @@ export const add = new Command()
           const packageManager = await getPackageManager(cwd);
           await execa(
             packageManager,
-            [
-              packageManager === "npm" ? "install" : "add",
-              ...item.dependencies,
-            ],
+            [packageManager === "npm" ? "install" : "add", ...item.dependencies],
             {
-              cwd,
-            },
+              cwd
+            }
           );
         }
       }
