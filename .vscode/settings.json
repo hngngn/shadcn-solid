@@ -4,7 +4,6 @@
       "mode": "auto"
     }
   ],
-  "prettier.configPath": "./apps/www/prettier.config.js",
   "tailwindCSS.experimental.classRegex": [
     ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
     ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]

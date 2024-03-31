@@ -1,0 +1,3 @@
+{
+	"*.{ts,tsx}": ["pnpm format"]
+}
