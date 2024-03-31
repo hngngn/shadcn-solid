@@ -27,6 +27,10 @@ export const Index = {
 `;
 
 for (const style of styles) {
+  if (style.name === "unocss") {
+    break;
+  }
+
   index += `  "${style.name}": {`;
 
   // Build style index.
@@ -73,6 +77,18 @@ for (const style of styles) {
     }
 
     const files = item.files?.map(file => {
+      if (style.name === "unocss") {
+        const content = fs.readFileSync(
+          join(process.cwd(), "../../packages", style.name, file),
+          "utf8"
+        );
+
+        return {
+          name: basename(file),
+          content
+        };
+      }
+
       const content = fs.readFileSync(
         join(process.cwd(), "src/registry", style.name, file),
         "utf8"

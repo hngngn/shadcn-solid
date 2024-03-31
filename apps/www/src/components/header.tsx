@@ -1,6 +1,6 @@
 import { siteConfig } from "@/config/site";
-import ModeToggle from "@/registry/default/example/mode-toggle";
-import { Button } from "@/registry/default/ui/button";
+import ModeToggle from "@/registry/tailwindcss/example/mode-toggle";
+import { Button } from "@/registry/tailwindcss/ui/button";
 import { As } from "@kobalte/core";
 import { A } from "@solidjs/router";
 import CommandMenu from "./command-menu";

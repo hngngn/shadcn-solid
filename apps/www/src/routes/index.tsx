@@ -1,7 +1,7 @@
 import { Announcement } from "@/components/announcement";
 import { Example } from "@/components/example";
 import { siteConfig } from "@/config/site";
-import { buttonVariants } from "@/registry/default/ui/button";
+import { buttonVariants } from "@/registry/tailwindcss/ui/button";
 import { A } from "@solidjs/router";
 import { Balancer } from "solid-wrap-balancer";
 import Cards from "./examples/cards";

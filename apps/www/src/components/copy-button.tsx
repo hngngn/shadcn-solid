@@ -1,5 +1,5 @@
 import { cn } from "@/lib/cn";
-import { Button } from "@/registry/default/ui/button";
+import { Button } from "@/registry/tailwindcss/ui/button";
 import type { VoidComponent } from "solid-js";
 import { Show, createSignal } from "solid-js";
 

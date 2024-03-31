@@ -7,8 +7,9 @@ import { z } from "zod";
 // export const DEFAULT_STYLE = "default"
 export const DEFAULT_COMPONENTS = "@/components";
 export const DEFAULT_UTILS = "@/libs/cn";
-export const DEFAULT_TAILWIND_CSS = "src/app.css";
+export const DEFAULT_CSS = "src/app.css";
 export const DEFAULT_TAILWIND_CONFIG = "tailwind.config.cjs";
+export const DEFAULT_UNO_CONFIG = "uno.config.ts";
 
 // TODO: Figure out if we want to support all cosmiconfig formats.
 // A simple components.json file would be nice.
@@ -20,13 +21,24 @@ export const rawConfigSchema = z
   .object({
     $schema: z.string().optional(),
     // style: z.string(),
-    tailwind: z.object({
-      config: z.string(),
-      css: z.string(),
-      baseColor: z.string(),
-      cssVariables: z.boolean().default(true),
-      prefix: z.string().default("").optional()
-    }),
+    tailwind: z
+      .object({
+        config: z.string(),
+        css: z.string(),
+        baseColor: z.string(),
+        cssVariables: z.boolean().default(true),
+        prefix: z.string().default("").optional()
+      })
+      .optional(),
+    uno: z
+      .object({
+        config: z.string(),
+        css: z.string(),
+        baseColor: z.string(),
+        cssVariables: z.boolean().default(true),
+        prefix: z.string().default("").optional()
+      })
+      .optional(),
     aliases: z.object({
       components: z.string(),
       utils: z.string(),
@@ -39,8 +51,8 @@ export type RawConfig = z.infer<typeof rawConfigSchema>;
 
 export const configSchema = rawConfigSchema.extend({
   resolvedPaths: z.object({
-    tailwindConfig: z.string(),
-    tailwindCss: z.string(),
+    config: z.string(),
+    css: z.string(),
     utils: z.string(),
     components: z.string(),
     ui: z.string()
@@ -70,8 +82,8 @@ export async function resolveConfigPaths(cwd: string, config: RawConfig) {
   return configSchema.parse({
     ...config,
     resolvedPaths: {
-      tailwindConfig: path.resolve(cwd, config.tailwind.config),
-      tailwindCss: path.resolve(cwd, config.tailwind.css),
+      config: path.resolve(cwd, config.uno ? config.uno.config : config.tailwind!.config),
+      css: path.resolve(cwd, config.uno ? config.uno.css : config.tailwind!.css),
       utils: await resolveImport(config.aliases["utils"], tsConfig),
       components: await resolveImport(config.aliases["components"], tsConfig),
       ui: config.aliases["ui"]

@@ -1,11 +1,11 @@
-import { Button } from "@/registry/default/ui/button";
+import { Button } from "@/registry/tailwindcss/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle
-} from "@/registry/default/ui/card";
+} from "@/registry/tailwindcss/ui/card";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -15,8 +15,8 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger
-} from "@/registry/default/ui/dropdown-menu";
-import { Separator } from "@/registry/default/ui/separator";
+} from "@/registry/tailwindcss/ui/dropdown-menu";
+import { Separator } from "@/registry/tailwindcss/ui/separator";
 import { As } from "@kobalte/core";
 
 export const DemoGithub = () => {

@@ -1,6 +1,6 @@
 import type { TNavItem } from "@/config/docs";
 import { docsConfig } from "@/config/docs";
-import { Button } from "@/registry/default/ui/button";
+import { Button } from "@/registry/tailwindcss/ui/button";
 import {
   CommandDialog,
   CommandHeading,
@@ -8,7 +8,7 @@ import {
   CommandItem,
   CommandItemLabel,
   CommandList
-} from "@/registry/default/ui/command";
+} from "@/registry/tailwindcss/ui/command";
 import { useColorMode } from "@kobalte/core";
 import { useNavigate } from "@solidjs/router";
 import type { JSXElement } from "solid-js";

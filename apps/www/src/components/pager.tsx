@@ -1,6 +1,6 @@
 import type { TNavItem, TNavItemWithChildren } from "@/config/docs";
 import { docsConfig } from "@/config/docs";
-import { Button } from "@/registry/default/ui/button";
+import { Button } from "@/registry/tailwindcss/ui/button";
 import { As } from "@kobalte/core";
 import { A } from "@solidjs/router";
 import type { VoidComponent } from "solid-js";

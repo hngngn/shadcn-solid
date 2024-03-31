@@ -2,13 +2,13 @@ import { MDXComponent } from "@/components/mdx-components";
 import { Pager } from "@/components/pager";
 import { Sidebar } from "@/components/sidebar";
 import { TableOfContents } from "@/components/toc";
-import { badgeVariants } from "@/registry/default/ui/badge";
+import { siteConfig } from "@/config/site";
+import { badgeVariants } from "@/registry/tailwindcss/ui/badge";
+import { Meta, Title } from "@solidjs/meta";
 import { A, type RouteSectionProps } from "@solidjs/router";
-import { createMemo, Show } from "solid-js";
+import { Show, createMemo } from "solid-js";
 import { MDXProvider } from "solid-mdx";
 import { Balancer } from "solid-wrap-balancer";
-import { Meta, Title } from "@solidjs/meta";
-import { siteConfig } from "@/config/site";
 
 type Heading = { depth: number; text: string; slug: string };
 
@@ -71,6 +71,8 @@ const DocumentLayout = (props: RouteSectionProps) => {
       <Meta property="og:alt" content={siteConfig.title} />
       <Meta property="og:image:width" content="1200" />
       <Meta property="og:image:height" content="630" />
+
+      <Meta property="canonical" content={`${siteConfig.url + props.location.pathname}`} />
 
       <div class="border-b">
         <div class="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">

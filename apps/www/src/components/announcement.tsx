@@ -1,4 +1,4 @@
-import { Separator } from "@/registry/default/ui/separator";
+import { Separator } from "@/registry/tailwindcss/ui/separator";
 import { A } from "@solidjs/router";
 
 export const Announcement = () => {

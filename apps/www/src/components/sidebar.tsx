@@ -37,7 +37,7 @@ export const Sidebar = () => {
                         {item.label ? (
                           <span
                             class={cn(
-                              "ml-2 rounded-md bg-[#adfa1d] px-1.5 py-0.5 text-xs leading-none text-[#000000] no-underline group-hover:no-underline",
+                              "ml-2 rounded-md bg-lime-600/10 px-1.5 py-0.5 text-xs leading-none text-lime-600 no-underline ring-1 ring-inset ring-lime-600/20 group-hover:no-underline dark:bg-lime-500/10 dark:text-lime-500 dark:ring-lime-500/20",
                               item.label === "Soon" && "bg-muted text-muted-foreground"
                             )}
                           >

@@ -4,18 +4,18 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger
-} from "@/registry/default/ui/accordion";
-import { Alert, AlertDescription } from "@/registry/default/ui/alert";
+} from "@/registry/tailwindcss/ui/accordion";
+import { Alert, AlertDescription } from "@/registry/tailwindcss/ui/alert";
 import {
   Tabs,
   TabsContent,
   TabsIndicator,
   TabsList,
   TabsTrigger
-} from "@/registry/default/ui/tabs";
+} from "@/registry/tailwindcss/ui/tabs";
 import type { AnchorProps } from "@solidjs/router";
 import { A } from "@solidjs/router";
-import { type ComponentProps, Show, splitProps } from "solid-js";
+import { Show, splitProps, type ComponentProps } from "solid-js";
 import { ComponentPreview } from "./component-preview";
 import { ComponentSource } from "./component-source";
 import { CopyButton } from "./copy-button";

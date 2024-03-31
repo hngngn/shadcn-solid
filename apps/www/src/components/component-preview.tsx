@@ -1,23 +1,41 @@
 import { Index } from "@/__registry__";
 import { cn } from "@/lib/cn";
+import { styles } from "@/registry/styles";
 import {
   Tabs,
   TabsContent,
   TabsIndicator,
   TabsList,
   TabsTrigger
-} from "@/registry/default/ui/tabs";
-import {
-  createMemo,
-  mergeProps,
-  splitProps,
-  type ComponentProps,
-  type ParentComponent
-} from "solid-js";
+} from "@/registry/tailwindcss/ui/tabs";
+import { Show, mergeProps, splitProps, type ComponentProps, type ParentComponent } from "solid-js";
 
 type ComponentPreviewProps = ComponentProps<"div"> & {
   name: string;
   align?: "center" | "start" | "end";
+};
+
+const Preview = (props: { name: string }) => {
+  // @ts-expect-error
+  // eslint-disable-next-line solid/reactivity
+  const Component = Index[styles[0].name][props.name]?.component;
+
+  return (
+    <Show
+      when={Component}
+      fallback={
+        <p class="text-sm text-muted-foreground">
+          Component{" "}
+          <code class="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm">
+            {props.name}
+          </code>{" "}
+          not found in registry.
+        </p>
+      }
+    >
+      <Component />
+    </Show>
+  );
 };
 
 export const ComponentPreview: ParentComponent<ComponentPreviewProps> = props => {
@@ -28,24 +46,6 @@ export const ComponentPreview: ParentComponent<ComponentPreviewProps> = props =>
     props
   );
   const [local, rest] = splitProps(merge, ["class", "align", "children", "name"]);
-
-  const Preview = createMemo(() => {
-    const Component = (Index as Record<string, any>)["default"][local.name]?.component;
-
-    if (!Component) {
-      return (
-        <p class="text-sm text-muted-foreground">
-          Component{" "}
-          <code class="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm">
-            {local.name}
-          </code>{" "}
-          not found in registry.
-        </p>
-      );
-    }
-
-    return <Component />;
-  });
 
   return (
     <div class={cn("group relative my-4 flex flex-col space-y-2", local.class)} {...rest}>
@@ -76,7 +76,7 @@ export const ComponentPreview: ParentComponent<ComponentPreviewProps> = props =>
               local.align === "end" && "items-end"
             )}
           >
-            {Preview()}
+            <Preview name={local.name} />
           </div>
         </TabsContent>
         <TabsContent value="code">
