@@ -1,5 +1,11 @@
 # shadcn-solid
 
+## 0.6.1
+
+### Patch Changes
+
+- [`afe2fd8`](https://github.com/hngngn/shadcn-solid/commit/afe2fd888cfcd13cbaf7d7ba6f1850244238f4eb) Thanks [@hngngn](https://github.com/hngngn)! - update base URL
+
 ## 0.6.0
 
 ### Minor Changes
