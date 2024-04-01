@@ -11,7 +11,7 @@ import fetch from "node-fetch";
 import path from "path";
 import type * as z from "zod";
 
-const baseUrl = process.env.COMPONENTS_REGISTRY_URL ?? "http://localhost:3000";
+const baseUrl = process.env.COMPONENTS_REGISTRY_URL ?? "https://shadcn-solid.com";
 const agent = process.env.https_proxy ? new HttpsProxyAgent(process.env.https_proxy) : undefined;
 
 export async function getRegistryIndex() {
