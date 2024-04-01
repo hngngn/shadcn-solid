@@ -1,9 +1,9 @@
-import { readFileSync } from "fs";
-import { join } from "path";
-import { u } from "unist-builder";
-import { visit } from "unist-util-visit";
-import { Index } from "../src/__registry__";
-import { frameworks } from "../src/registry/framework";
+import {readFileSync} from "fs";
+import {join} from "path";
+import {u} from "unist-builder";
+import {visit} from "unist-util-visit";
+import {Index} from "../src/__registry__";
+import {frameworks} from "../src/registry/framework";
 
 export const rehypeComponent = () => tree =>
   visit(tree, node => {
@@ -16,9 +16,11 @@ export const rehypeComponent = () => tree =>
 
       try {
         for (const framework of frameworks) {
+          if (Index[framework.name] === undefined) {
+            break;
+          }
           const component = Index[framework.name][name];
           const src = component.files[0];
-
           // Read the source file.
           const filePath = join(process.cwd(), `src/${src}`);
           let source = readFileSync(filePath, "utf8");
@@ -63,6 +65,9 @@ export const rehypeComponent = () => tree =>
 
       try {
         for (const framework of frameworks) {
+          if (Index[framework.name] === undefined) {
+            break;
+          }
           const component = Index[framework.name][name];
           if (!component) {
             continue;
