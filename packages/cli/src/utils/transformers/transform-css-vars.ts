@@ -5,7 +5,10 @@ import type * as z from "zod";
 
 export const transformCssVars: Transformer = async ({ sourceFile, config, baseColor }) => {
   // No transform if using css variables.
-  if (config.tailwind?.cssVariables || !baseColor?.inlineColors) {
+  if (
+    (config.uno ? config.uno.cssVariables : config.tailwind?.cssVariables) ||
+    !baseColor?.inlineColors
+  ) {
     return sourceFile;
   }
 

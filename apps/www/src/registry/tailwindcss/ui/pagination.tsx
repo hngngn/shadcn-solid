@@ -1,4 +1,4 @@
-import { cn } from "@/lib/cn";
+import { cn } from "@/libs/cn";
 import { Pagination as PaginationPrimitive } from "@kobalte/core";
 import type { VariantProps } from "class-variance-authority";
 import type { VoidProps } from "solid-js";

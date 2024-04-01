@@ -1,4 +1,4 @@
-import { cn } from "@/lib/cn";
+import { cn } from "@/libs/cn";
 import { type ComponentProps, splitProps } from "solid-js";
 
 export const Skeleton = (props: ComponentProps<"div">) => {

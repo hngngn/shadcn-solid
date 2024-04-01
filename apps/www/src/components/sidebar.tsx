@@ -1,5 +1,5 @@
 import { docsConfig } from "@/config/docs";
-import { cn } from "@/lib/cn";
+import { cn } from "@/libs/cn";
 import { A, useLocation } from "@solidjs/router";
 import { For, Match, Switch } from "solid-js";
 

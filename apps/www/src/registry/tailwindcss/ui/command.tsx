@@ -1,4 +1,4 @@
-import { cn } from "@/lib/cn";
+import { cn } from "@/libs/cn";
 import type { Dialog as DialogPrimitive } from "@kobalte/core";
 import { Combobox as ComboboxPrimitive } from "@kobalte/core";
 import type { ComponentProps, ParentProps, VoidProps } from "solid-js";

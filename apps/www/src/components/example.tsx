@@ -1,4 +1,4 @@
-import { cn } from "@/lib/cn";
+import { cn } from "@/libs/cn";
 import { A, useLocation } from "@solidjs/router";
 import { Index } from "solid-js";
 

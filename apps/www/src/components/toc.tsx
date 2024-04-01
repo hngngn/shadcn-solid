@@ -1,7 +1,7 @@
-import { cn } from "@/lib/cn";
+import { cn } from "@/libs/cn";
 import { A, useLocation } from "@solidjs/router";
 import type { Accessor, VoidComponent } from "solid-js";
-import { For, createEffect, createSignal, onCleanup } from "solid-js";
+import { createEffect, createSignal, For, onCleanup } from "solid-js";
 
 type TableOfContent = {
   depth: number;

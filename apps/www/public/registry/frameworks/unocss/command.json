@@ -3,6 +3,9 @@
   "dependencies": [
     "@kobalte/core"
   ],
+  "registryDependencies": [
+    "dialog"
+  ],
   "files": [
     {
       "name": "command.tsx",

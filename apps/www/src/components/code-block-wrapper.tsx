@@ -1,4 +1,4 @@
-import { cn } from "@/lib/cn";
+import { cn } from "@/libs/cn";
 import { Button } from "@/registry/tailwindcss/ui/button";
 import {
   Collapsible,

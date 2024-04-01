@@ -1,4 +1,4 @@
-import { cn } from "@/lib/cn";
+import { cn } from "@/libs/cn";
 import { buttonVariants } from "@/registry/tailwindcss/ui/button";
 import { A } from "@solidjs/router";
 import { UserAuthForm } from "./components/user-auth-form";

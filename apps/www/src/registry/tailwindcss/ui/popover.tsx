@@ -1,4 +1,4 @@
-import { cn } from "@/lib/cn";
+import { cn } from "@/libs/cn";
 import { Popover as PopoverPrimitive } from "@kobalte/core";
 import type { ParentProps } from "solid-js";
 import { mergeProps, splitProps } from "solid-js";

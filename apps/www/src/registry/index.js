@@ -15,7 +15,8 @@ const ui = [
     name: "alert-dialog",
     type: "components:ui",
     dependencies: ["@kobalte/core"],
-    files: ["ui/alert-dialog.tsx"]
+    files: ["ui/alert-dialog.tsx"],
+    registryDependencies: ["button"]
   },
   {
     name: "badge",
@@ -60,6 +61,7 @@ const ui = [
   {
     name: "command",
     type: "components:ui",
+    registryDependencies: ["dialog"],
     dependencies: ["@kobalte/core"],
     files: ["ui/command.tsx"]
   },
@@ -116,7 +118,8 @@ const ui = [
     name: "pagination",
     type: "components:ui",
     dependencies: ["@kobalte/core"],
-    files: ["ui/pagination.tsx"]
+    files: ["ui/pagination.tsx"],
+    registryDependencies: ["button"]
   },
   {
     name: "progress",

@@ -1,4 +1,4 @@
-import { cn } from "@/lib/cn";
+import { cn } from "@/libs/cn";
 import { DropdownMenu as DropdownMenuPrimitive } from "@kobalte/core";
 import type { ComponentProps, ParentProps, VoidProps } from "solid-js";
 import { mergeProps, splitProps } from "solid-js";

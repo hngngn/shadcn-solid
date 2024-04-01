@@ -1,4 +1,5 @@
 import {
+  type Config,
   DEFAULT_COMPONENTS,
   DEFAULT_CSS,
   DEFAULT_TAILWIND_CONFIG,
@@ -6,8 +7,7 @@ import {
   DEFAULT_UTILS,
   getConfig,
   rawConfigSchema,
-  resolveConfigPaths,
-  type Config
+  resolveConfigPaths
 } from "@/src/utils/get-config";
 import { getPackageManager } from "@/src/utils/get-package-manager";
 import { handleError } from "@/src/utils/handle-error";
@@ -24,9 +24,10 @@ import { existsSync, promises as fs } from "fs";
 import template from "lodash.template";
 import path from "path";
 import color from "picocolors";
-import { loadConfig } from "tsconfig-paths";
 import { z } from "zod";
 import { applyPrefixesCss } from "../utils/transformers/transform-tw-prefix";
+import { getPackageInfo } from "@/src/utils/get-package-info";
+import { loadConfig } from "tsconfig-paths";
 
 let PROJECT_DEPENDENCIES = ["class-variance-authority", "clsx", "tailwind-merge"];
 const TAILWIND_DEPENDENCIES = ["tailwindcss-animate"];
@@ -62,7 +63,7 @@ export const init = new Command()
 
       await runInit(cwd, config);
 
-      p.log.info(`${color.blue("Success!")} Project initialization completed.`);
+      p.outro(`${color.cyan("Success!")} Project initialization completed.`);
     } catch (error) {
       handleError(error);
     }
@@ -73,6 +74,17 @@ export async function promptForConfig(cwd: string, defaultConfig: Config | null 
 
   const framework = await getRegistryFrameworks();
   const baseColors = await getRegistryBaseColors();
+
+  p.intro(color.bgCyan(color.black(` shadcn-solid - ${getPackageInfo().version!} `)));
+
+  const tsConfig = loadConfig(cwd);
+
+  if (tsConfig.resultType === "success" && tsConfig.paths["@/*"] === undefined) {
+    p.note(
+      `Please make sure to use the same alias defined in your ${highlight("tsconfig")}.`,
+      "Note."
+    );
+  }
 
   const firstOptions = await p.group(
     {
@@ -131,13 +143,10 @@ export async function promptForConfig(cwd: string, defaultConfig: Config | null 
             firstOptions.framework === "unocss" ? "uno prefix eg. uno-" : "tailwind prefix eg. tw-"
           )}? (Leave blank if not)`,
           placeholder:
-            firstOptions.framework === "unocss"
+            (firstOptions.framework === "unocss"
               ? defaultConfig?.uno?.prefix
-              : defaultConfig?.tailwind?.prefix ?? "",
-          defaultValue:
-            firstOptions.framework === "unocss"
-              ? defaultConfig?.uno?.prefix
-              : defaultConfig?.tailwind?.prefix ?? ""
+              : defaultConfig?.tailwind?.prefix) ?? "",
+          defaultValue: ""
         }),
       config: () =>
         p.text({
@@ -170,14 +179,7 @@ export async function promptForConfig(cwd: string, defaultConfig: Config | null 
         p.text({
           message: `Configure the import alias for ${highlight("components")}:`,
           placeholder: defaultConfig?.aliases["components"] ?? DEFAULT_COMPONENTS,
-          defaultValue: defaultConfig?.aliases["components"] ?? DEFAULT_COMPONENTS,
-          validate: () => {
-            const tsConfig = loadConfig(cwd);
-
-            if (tsConfig.resultType === "success" && tsConfig.paths["@/*"] === undefined) {
-              return `Please make sure to update your path aliases to '@'. For more information, please visit: https://shadcn-solid.com/docs/installation`;
-            }
-          }
+          defaultValue: defaultConfig?.aliases["components"] ?? DEFAULT_COMPONENTS
         }),
       utils: () =>
         p.text({
@@ -309,10 +311,10 @@ export async function runInit(cwd: string, config: Config) {
   // Write cn file.
   await fs.writeFile(`${config.resolvedPaths.utils}.ts`, templates.UTILS, "utf8");
 
-  spinner.stop("Initialized project");
+  spinner.message("Initialized project");
 
   // Install dependencies.
-  spinner.start("Installing dependencies...");
+  spinner.message("Installing dependencies...");
   const packageManager = await getPackageManager(cwd);
 
   if (config.uno) {

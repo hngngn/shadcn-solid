@@ -1,4 +1,4 @@
-import { cn } from "@/lib/cn";
+import { cn } from "@/libs/cn";
 import { Dialog as DialogPrimitive } from "@kobalte/core";
 import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";

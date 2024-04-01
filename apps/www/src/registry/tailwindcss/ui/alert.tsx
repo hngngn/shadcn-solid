@@ -1,4 +1,4 @@
-import { cn } from "@/lib/cn";
+import { cn } from "@/libs/cn";
 import { Alert as AlertPrimitive } from "@kobalte/core";
 import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";

@@ -1,5 +1,5 @@
 import { Index } from "@/__registry__";
-import { cn } from "@/lib/cn";
+import { cn } from "@/libs/cn";
 import { frameworks } from "@/registry/framework";
 import {
   Tabs,
@@ -8,7 +8,7 @@ import {
   TabsList,
   TabsTrigger
 } from "@/registry/tailwindcss/ui/tabs";
-import { Show, mergeProps, splitProps, type ComponentProps, type ParentComponent } from "solid-js";
+import { type ComponentProps, mergeProps, type ParentComponent, Show, splitProps } from "solid-js";
 
 type ComponentPreviewProps = ComponentProps<"div"> & {
   name: string;

@@ -1,4 +1,4 @@
-import { cn } from "@/lib/cn";
+import { cn } from "@/libs/cn";
 import { type ComponentProps, type ParentComponent, splitProps } from "solid-js";
 
 export const Card = (props: ComponentProps<"div">) => {

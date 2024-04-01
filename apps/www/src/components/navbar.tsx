@@ -1,6 +1,6 @@
 import { docsConfig } from "@/config/docs";
 import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/cn";
+import { cn } from "@/libs/cn";
 import { A, useLocation } from "@solidjs/router";
 import { For } from "solid-js";
 import { Logo } from "./logo";

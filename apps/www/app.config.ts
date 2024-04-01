@@ -53,7 +53,7 @@ export default defineConfig({
             rehypePrettyCode,
             {
               getHighlighter: async () => {
-                const theme = await loadTheme(join(process.cwd(), "/src/lib/themes/dark.json"));
+                const theme = await loadTheme(join(process.cwd(), "/src/libs/themes/dark.json"));
                 return await getHighlighter({ theme });
               },
               onVisitLine(node: any) {

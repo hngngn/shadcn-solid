@@ -24,6 +24,9 @@
     "dependencies": [
       "@kobalte/core"
     ],
+    "registryDependencies": [
+      "button"
+    ],
     "files": [
       "ui/alert-dialog.tsx"
     ],
@@ -97,6 +100,9 @@
     "name": "command",
     "dependencies": [
       "@kobalte/core"
+    ],
+    "registryDependencies": [
+      "dialog"
     ],
     "files": [
       "ui/command.tsx"
@@ -190,6 +196,9 @@
     "name": "pagination",
     "dependencies": [
       "@kobalte/core"
+    ],
+    "registryDependencies": [
+      "button"
     ],
     "files": [
       "ui/pagination.tsx"

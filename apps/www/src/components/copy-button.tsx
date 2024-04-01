@@ -1,7 +1,7 @@
-import { cn } from "@/lib/cn";
+import { cn } from "@/libs/cn";
 import { Button } from "@/registry/tailwindcss/ui/button";
 import type { VoidComponent } from "solid-js";
-import { Show, createSignal } from "solid-js";
+import { createSignal, Show } from "solid-js";
 
 type Props = {
   preRef: HTMLPreElement | undefined;

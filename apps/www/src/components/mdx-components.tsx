@@ -1,4 +1,4 @@
-import { cn } from "@/lib/cn";
+import { cn } from "@/libs/cn";
 import {
   Accordion,
   AccordionContent,
@@ -15,7 +15,7 @@ import {
 } from "@/registry/tailwindcss/ui/tabs";
 import type { AnchorProps } from "@solidjs/router";
 import { A } from "@solidjs/router";
-import { Show, splitProps, type ComponentProps } from "solid-js";
+import { type ComponentProps, Show, splitProps } from "solid-js";
 import { ComponentPreview } from "./component-preview";
 import { ComponentSource } from "./component-source";
 import { CopyButton } from "./copy-button";

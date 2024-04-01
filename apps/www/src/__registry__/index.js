@@ -21,7 +21,7 @@ export const Index = {
     "alert-dialog": {
       name: "alert-dialog",
       type: "components:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["button"],
       component: lazy(() => import("@/registry/tailwindcss/ui/alert-dialog")),
       files: ["registry/tailwindcss/ui/alert-dialog.tsx"],
     },
@@ -77,7 +77,7 @@ export const Index = {
     "command": {
       name: "command",
       type: "components:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["dialog"],
       component: lazy(() => import("@/registry/tailwindcss/ui/command")),
       files: ["registry/tailwindcss/ui/command.tsx"],
     },
@@ -140,7 +140,7 @@ export const Index = {
     "pagination": {
       name: "pagination",
       type: "components:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["button"],
       component: lazy(() => import("@/registry/tailwindcss/ui/pagination")),
       files: ["registry/tailwindcss/ui/pagination.tsx"],
     },

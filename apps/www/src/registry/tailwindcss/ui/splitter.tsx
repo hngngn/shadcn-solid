@@ -2,7 +2,7 @@ import type { SplitterResizeTriggerProps } from "@ark-ui/solid";
 import { Splitter as SplitterPrimitive } from "@ark-ui/solid";
 import type { VoidProps } from "solid-js";
 import { Show, splitProps } from "solid-js";
-import { cn } from "@/lib/cn";
+import { cn } from "@/libs/cn";
 
 export const Splitter = SplitterPrimitive.Root;
 export const SplitterPanel = SplitterPrimitive.Panel;

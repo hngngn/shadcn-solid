@@ -1,4 +1,4 @@
-import { cn } from "@/lib/cn";
+import { cn } from "@/libs/cn";
 import { Progress as ProgressPrimitive } from "@kobalte/core";
 import { splitProps } from "solid-js";
 

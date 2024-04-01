@@ -1,4 +1,4 @@
-import { cn } from "@/lib/cn";
+import { cn } from "@/libs/cn";
 import { Tabs as TabsPrimitive } from "@kobalte/core";
 import type { VoidProps } from "solid-js";
 import { splitProps } from "solid-js";
