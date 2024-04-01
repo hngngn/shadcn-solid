@@ -1,5 +1,15 @@
 # shadcn-solid
 
+## 0.6.0
+
+### Minor Changes
+
+- [#51](https://github.com/hngngn/shadcn-solid/pull/51) [`b16539b`](https://github.com/hngngn/shadcn-solid/commit/b16539b562ec1bb2c9ff841ad42754f64a554c3b) Thanks [@hngngn](https://github.com/hngngn)! - add support for UnoCSS
+
+### Patch Changes
+
+- [#51](https://github.com/hngngn/shadcn-solid/pull/51) [`73e8f20`](https://github.com/hngngn/shadcn-solid/commit/73e8f20b119ba83c370a5b8051e64d338414315d) Thanks [@hngngn](https://github.com/hngngn)! - add option to easy install all components
+
 ## 0.5.3
 
 ### Patch Changes
