@@ -1,5 +1,13 @@
 # shadcn-solid
 
+## 0.6.2
+
+### Patch Changes
+
+- [`29b073e`](https://github.com/hngngn/shadcn-solid/commit/29b073e8a09289451327d04083b54a005a0274f0) Thanks [@hngngn](https://github.com/hngngn)! - do not force to use `@` alias
+
+- [`29b073e`](https://github.com/hngngn/shadcn-solid/commit/29b073e8a09289451327d04083b54a005a0274f0) Thanks [@hngngn](https://github.com/hngngn)! - fix transform when using with uno
+
 ## 0.6.1
 
 ### Patch Changes
