@@ -1,6 +1,6 @@
 import { Index } from "@/__registry__";
 import { cn } from "@/lib/cn";
-import { styles } from "@/registry/styles";
+import { frameworks } from "@/registry/framework";
 import {
   Tabs,
   TabsContent,
@@ -18,7 +18,7 @@ type ComponentPreviewProps = ComponentProps<"div"> & {
 const Preview = (props: { name: string }) => {
   // @ts-expect-error
   // eslint-disable-next-line solid/reactivity
-  const Component = Index[styles[0].name][props.name]?.component;
+  const Component = Index[frameworks[0].name][props.name]?.component;
 
   return (
     <Show

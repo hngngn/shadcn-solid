@@ -1,0 +1,13 @@
+{
+  "name": "hover-card",
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "files": [
+    {
+      "name": "hover-card.tsx",
+      "content": "import { cn } from \"@/lib/cn\";\r\nimport { HoverCard as HoverCardPrimitive } from \"@kobalte/core\";\r\nimport { splitProps } from \"solid-js\";\r\n\r\nexport const HoverCard = HoverCardPrimitive.Root;\r\nexport const HoverCardTrigger = HoverCardPrimitive.Trigger;\r\n\r\nexport const HoverCardContent = (props: HoverCardPrimitive.HoverCardContentProps) => {\r\n  const [local, rest] = splitProps(props, [\"class\"]);\r\n\r\n  return (\r\n    <HoverCardPrimitive.Portal>\r\n      <HoverCardPrimitive.Content\r\n        class={cn(\r\n          \"z-50 w-64 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0 data-[closed]:zoom-out-95 data-[expanded]:zoom-in-95\",\r\n          local.class\r\n        )}\r\n        {...rest}\r\n      />\r\n    </HoverCardPrimitive.Portal>\r\n  );\r\n};\r\n"
+    }
+  ],
+  "type": "components:ui"
+}

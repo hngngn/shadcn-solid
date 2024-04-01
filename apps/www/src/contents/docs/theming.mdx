@@ -1,9 +1,9 @@
 ---
 title: Theming
-description: Using CSS Variables or Tailwind CSS for theming.
+description: Using CSS Variables or your choice of CSS frameworks for theming.
 ---
 
-You can choose between using CSS variables or Tailwind CSS utility classes for theming.
+You can choose between using CSS variables or your choice of CSS frameworks utility classes for theming.
 
 ## Utility classes
 
@@ -18,7 +18,25 @@ To use utility classes for theming set `tailwind.cssVariables` to `false` in you
   "style": "default",
   "tailwind": {
     "config": "tailwind.config.js",
-    "css": "app/globals.css",
+    "css": "app/app.css",
+    "baseColor": "slate",
+    "cssVariables": false
+  },
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils"
+  }
+}
+```
+
+or using uno.
+
+```json {7} title="components.json"
+{
+  "style": "default",
+  "uno": {
+    "config": "uno.config.ts",
+    "css": "app/app.css",
     "baseColor": "slate",
     "cssVariables": false
   },
@@ -43,6 +61,24 @@ To use CSS variables for theming set `tailwind.cssVariables` to `true` in your `
   "tailwind": {
     "config": "tailwind.config.js",
     "css": "app/globals.css",
+    "baseColor": "slate",
+    "cssVariables": true
+  },
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils"
+  }
+}
+```
+
+or using uno.
+
+```json {7} title="components.json"
+{
+  "style": "default",
+  "uno": {
+    "config": "uno.config.ts",
+    "css": "app/app.css",
     "baseColor": "slate",
     "cssVariables": true
   },
@@ -154,7 +190,7 @@ Here's the list of variables available for customization:
 
 To add new colors, you need to add them to your CSS file and to your `tailwind.config.js` file.
 
-```css title="app/globals.css"
+```css title="app/app.css"
 :root {
   --warning: 38 92% 50%;
   --warning-foreground: 48 96% 89%;
@@ -177,6 +213,19 @@ module.exports = {
     }
   }
 };
+```
+
+or using uno.
+
+```js {4-5} title="uno.config.ts"
+export default defineConfig({
+  theme: {
+    colors: {
+      warning: "hsl(var(--warning))",
+      "warning-foreground": "hsl(var(--warning-foreground))"
+    }
+  }
+});
 ```
 
 You can now use the `warning` utility class in your components.

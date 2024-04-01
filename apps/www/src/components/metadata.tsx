@@ -9,7 +9,7 @@ export const Metadata: VoidComponent = () => {
       <Meta name="description" content={siteConfig.description} />
       <Meta
         name="keywords"
-        content="Solidjs,SolidStart,TailwindCSS,Kobalte UI,shadcn,Solid Component"
+        content="Solidjs,SolidStart,TailwindCSS,Kobalte UI,shadcn,Solid Component,UnoCSS"
       />
       <Meta name="author" content="hngngn" />
 

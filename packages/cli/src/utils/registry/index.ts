@@ -11,7 +11,7 @@ import fetch from "node-fetch";
 import path from "path";
 import type * as z from "zod";
 
-const baseUrl = process.env.COMPONENTS_REGISTRY_URL ?? "https://shadcn-solid.com";
+const baseUrl = process.env.COMPONENTS_REGISTRY_URL ?? "http://localhost:3000";
 const agent = process.env.https_proxy ? new HttpsProxyAgent(process.env.https_proxy) : undefined;
 
 export async function getRegistryIndex() {
@@ -24,9 +24,9 @@ export async function getRegistryIndex() {
   }
 }
 
-export async function getRegistryStyles() {
+export async function getRegistryFrameworks() {
   try {
-    const [result] = await fetchRegistry(["styles/index.json"]);
+    const [result] = await fetchRegistry(["frameworks/index.json"]);
 
     return stylesSchema.parse(result);
   } catch (error) {
@@ -59,9 +59,9 @@ export async function getRegistryBaseColors() {
   ];
 }
 
-export async function getRegistryBaseColor(baseColor: string) {
+export async function getRegistryBaseColor(baseColor: string, name: string) {
   try {
-    const [result] = await fetchRegistry([`colors/${baseColor}.json`]);
+    const [result] = await fetchRegistry([`colors/${name}/${baseColor}.json`]);
 
     return registryBaseColorSchema.parse(result);
   } catch (error) {
@@ -94,7 +94,7 @@ export async function resolveTree(index: z.infer<typeof registryIndexSchema>, na
 
 export async function fetchTree(style: string, tree: z.infer<typeof registryIndexSchema>) {
   try {
-    const paths = tree.map(item => `styles/${style}/${item.name}.json`);
+    const paths = tree.map(item => `frameworks/${style}/${item.name}.json`);
     const result = await fetchRegistry(paths);
 
     return registryWithContentSchema.parse(result);
@@ -131,6 +131,7 @@ async function fetchRegistry(paths: string[]) {
         const response = await fetch(`${baseUrl}/registry/${path}`, {
           agent
         });
+
         return await response.json();
       })
     );

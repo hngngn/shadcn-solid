@@ -1,0 +1,13 @@
+{
+  "name": "splitter",
+  "dependencies": [
+    "@ark-ui/solid"
+  ],
+  "files": [
+    {
+      "name": "splitter.tsx",
+      "content": "import { cn } from \"@/libs/cn\";\r\nimport type { SplitterResizeTriggerProps } from \"@ark-ui/solid\";\r\nimport { Splitter as SplitterPrimitive } from \"@ark-ui/solid\";\r\nimport type { VoidProps } from \"solid-js\";\r\nimport { Show, splitProps } from \"solid-js\";\r\n\r\nexport const Splitter = SplitterPrimitive.Root;\r\nexport const SplitterPanel = SplitterPrimitive.Panel;\r\n\r\nexport const SplitterResizeTrigger = (\r\n  props: VoidProps<SplitterResizeTriggerProps & { withHandle?: boolean }>\r\n) => {\r\n  const [local, rest] = splitProps(props, [\"class\", \"withHandle\"]);\r\n\r\n  return (\r\n    <SplitterPrimitive.ResizeTrigger\r\n      class={cn(\r\n        \"flex w-px items-center justify-center bg-border focus-visible:(outline-none ring-1 ring-ring ring-offset-1) data-[orientation=vertical]:(h-px w-full)\",\r\n        local.class\r\n      )}\r\n      {...rest}\r\n    >\r\n      <Show when={local.withHandle}>\r\n        <div class=\"z-10 flex h-4 w-3 items-center justify-center rounded-sm border bg-border\">\r\n          <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-2.5 w-2.5\" viewBox=\"0 0 15 15\">\r\n            <path\r\n              fill=\"currentColor\"\r\n              fill-rule=\"evenodd\"\r\n              d=\"M5.5 4.625a1.125 1.125 0 1 0 0-2.25a1.125 1.125 0 0 0 0 2.25m4 0a1.125 1.125 0 1 0 0-2.25a1.125 1.125 0 0 0 0 2.25M10.625 7.5a1.125 1.125 0 1 1-2.25 0a1.125 1.125 0 0 1 2.25 0M5.5 8.625a1.125 1.125 0 1 0 0-2.25a1.125 1.125 0 0 0 0 2.25m5.125 2.875a1.125 1.125 0 1 1-2.25 0a1.125 1.125 0 0 1 2.25 0M5.5 12.625a1.125 1.125 0 1 0 0-2.25a1.125 1.125 0 0 0 0 2.25\"\r\n              clip-rule=\"evenodd\"\r\n            />\r\n          </svg>\r\n        </div>\r\n      </Show>\r\n    </SplitterPrimitive.ResizeTrigger>\r\n  );\r\n};\r\n"
+    }
+  ],
+  "type": "components:ui"
+}

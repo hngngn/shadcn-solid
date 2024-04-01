@@ -38,6 +38,6 @@ export const registryBaseColorSchema = z.object({
     light: z.record(z.string(), z.string()),
     dark: z.record(z.string(), z.string())
   }),
-  inlineColorsTemplate: z.string(),
+  inlineColorsTemplate: z.string().optional(),
   cssVarsTemplate: z.string()
 });

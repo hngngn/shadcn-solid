@@ -1,7 +1,8 @@
 export const siteConfig = {
   title: "shadcn-solid",
   url: "https://shadcn-solid.com",
-  description: "Beautifully designed components built with Kobalte UI and Tailwind CSS.",
+  description:
+    "Beautifully designed components built with Kobalte UI and your choice of CSS frameworks.",
   links: {
     facebook: "https://twitter.com/hnggngnn",
     github: "https://github.com/hngngn/shadcn-solid",

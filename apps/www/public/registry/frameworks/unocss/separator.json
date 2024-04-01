@@ -1,0 +1,13 @@
+{
+  "name": "separator",
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "files": [
+    {
+      "name": "separator.tsx",
+      "content": "import { cn } from \"@/libs/cn\";\r\nimport { Separator as SeparatorPrimitive } from \"@kobalte/core\";\r\nimport type { VoidProps } from \"solid-js\";\r\nimport { splitProps } from \"solid-js\";\r\n\r\nexport const Separator = (props: VoidProps<SeparatorPrimitive.SeparatorRootProps>) => {\r\n  const [local, rest] = splitProps(props, [\"class\"]);\r\n\r\n  return (\r\n    <SeparatorPrimitive.Root\r\n      class={cn(\r\n        \"shrink-0 bg-border data-[orientation=horizontal]:h-[1px] data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-[1px]\",\r\n        local.class\r\n      )}\r\n      {...rest}\r\n    />\r\n  );\r\n};\r\n"
+    }
+  ],
+  "type": "components:ui"
+}

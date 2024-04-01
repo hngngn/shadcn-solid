@@ -1,0 +1,16 @@
+{
+  "name": "textarea",
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "registryDependencies": [
+    "textfield"
+  ],
+  "files": [
+    {
+      "name": "textarea.tsx",
+      "content": "import { cn } from \"@/libs/cn\";\r\nimport { TextField as TextFieldPrimitive } from \"@kobalte/core\";\r\nimport type { VoidProps } from \"solid-js\";\r\nimport { splitProps } from \"solid-js\";\r\n\r\nexport const TextFieldTextArea = (props: VoidProps<TextFieldPrimitive.TextFieldTextAreaProps>) => {\r\n  const [local, rest] = splitProps(props, [\"class\"]);\r\n\r\n  return (\r\n    <TextFieldPrimitive.TextArea\r\n      class={cn(\r\n        \"flex min-h-[60px] w-full rounded-md border border-input bg-inherit px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:(outline-none ring-1 ring-ring) disabled:(cursor-not-allowed opacity-50) transition-shadow\",\r\n        local.class\r\n      )}\r\n      {...rest}\r\n    />\r\n  );\r\n};\r\n"
+    }
+  ],
+  "type": "components:ui"
+}

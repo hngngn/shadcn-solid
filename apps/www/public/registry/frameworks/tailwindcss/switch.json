@@ -1,0 +1,13 @@
+{
+  "name": "switch",
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "files": [
+    {
+      "name": "switch.tsx",
+      "content": "import { cn } from \"@/lib/cn\";\r\nimport { Switch as SwitchPrimitive } from \"@kobalte/core\";\r\nimport type { VoidProps } from \"solid-js\";\r\nimport { splitProps } from \"solid-js\";\r\n\r\nexport const SwitchLabel = SwitchPrimitive.Label;\r\nexport const Switch = SwitchPrimitive.Root;\r\nexport const SwitchErrorMessage = SwitchPrimitive.ErrorMessage;\r\nexport const SwitchDescription = SwitchPrimitive.Description;\r\n\r\nexport const SwitchControl = (props: SwitchPrimitive.SwitchControlProps) => {\r\n  const [local, rest] = splitProps(props, [\"class\", \"children\"]);\r\n\r\n  return (\r\n    <>\r\n      <SwitchPrimitive.Input\r\n        class={cn(\r\n          \"[&:focus-visible+div]:outline-none [&:focus-visible+div]:ring-2 [&:focus-visible+div]:ring-ring [&:focus-visible+div]:ring-offset-2 [&:focus-visible+div]:ring-offset-background\",\r\n          local.class\r\n        )}\r\n      />\r\n      <SwitchPrimitive.Control\r\n        class={cn(\r\n          \"inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent bg-input shadow-sm transition-colors data-[disabled]:cursor-not-allowed data-[checked]:bg-primary data-[disabled]:opacity-50\",\r\n          local.class\r\n        )}\r\n        {...rest}\r\n      >\r\n        {local.children}\r\n      </SwitchPrimitive.Control>\r\n    </>\r\n  );\r\n};\r\n\r\nexport const SwitchThumb = (props: VoidProps<SwitchPrimitive.SwitchThumbProps>) => {\r\n  const [local, rest] = splitProps(props, [\"class\"]);\r\n\r\n  return (\r\n    <SwitchPrimitive.Thumb\r\n      class={cn(\r\n        \"pointer-events-none block h-4 w-4 translate-x-0 rounded-full bg-background shadow-lg ring-0 transition-transform data-[checked]:translate-x-4\",\r\n        local.class\r\n      )}\r\n      {...rest}\r\n    />\r\n  );\r\n};\r\n"
+    }
+  ],
+  "type": "components:ui"
+}

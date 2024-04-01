@@ -1,7 +1,7 @@
 import { registry } from "@/registry";
 import { colorMapping, colors } from "@/registry/colors";
+import { frameworks } from "@/registry/framework";
 import { registrySchema } from "@/registry/schema";
-import { styles } from "@/registry/styles";
 import fs from "fs";
 import template from "lodash.template";
 import { basename, join } from "path";
@@ -26,16 +26,16 @@ import { lazy } from "solid-js"
 export const Index = {
 `;
 
-for (const style of styles) {
-  if (style.name === "unocss") {
+for (const framework of frameworks) {
+  if (framework.name === "unocss") {
     break;
   }
 
-  index += `  "${style.name}": {`;
+  index += `  "${framework.name}": {`;
 
   // Build style index.
   for (const item of result.data) {
-    const resolveFiles = item.files.map(file => `registry/${style.name}/${file}`);
+    const resolveFiles = item.files.map(file => `registry/${framework.name}/${file}`);
 
     const type = item.type.split(":")[1];
     index += `
@@ -43,7 +43,7 @@ for (const style of styles) {
       name: "${item.name}",
       type: "${item.type}",
       registryDependencies: ${JSON.stringify(item.registryDependencies)},
-      component: lazy(() => import("@/registry/${style.name}/${type}/${item.name}")),
+      component: lazy(() => import("@/registry/${framework.name}/${type}/${item.name}")),
       files: [${resolveFiles.map(file => `"${file}"`)}],
     },`;
   }
@@ -61,10 +61,10 @@ rimraf.sync(join(process.cwd(), "src/__registry__/index.js"));
 fs.writeFileSync(join(process.cwd(), "src/__registry__/index.js"), index);
 
 // ----------------------------------------------------------------------------
-// Build registry/styles/[style]/[name].json.
+// Build registry/frameworks/[framework]/[name].json.
 // ----------------------------------------------------------------------------
-for (const style of styles) {
-  const targetPath = join(REGISTRY_PATH, "styles", style.name);
+for (const framework of frameworks) {
+  const targetPath = join(REGISTRY_PATH, "frameworks", framework.name);
 
   // Create directory if it doesn't exist.
   if (!fs.existsSync(targetPath)) {
@@ -77,9 +77,9 @@ for (const style of styles) {
     }
 
     const files = item.files?.map(file => {
-      if (style.name === "unocss") {
+      if (framework.name === "unocss") {
         const content = fs.readFileSync(
-          join(process.cwd(), "../../packages", style.name, file),
+          join(process.cwd(), "../../packages", framework.name, file),
           "utf8"
         );
 
@@ -90,7 +90,7 @@ for (const style of styles) {
       }
 
       const content = fs.readFileSync(
-        join(process.cwd(), "src/registry", style.name, file),
+        join(process.cwd(), "src/registry", framework.name, file),
         "utf8"
       );
 
@@ -114,10 +114,10 @@ for (const style of styles) {
 }
 
 // ----------------------------------------------------------------------------
-// Build registry/styles/index.json.
+// Build registry/frameworks/index.json.
 // ----------------------------------------------------------------------------
-const stylesJson = JSON.stringify(styles, null, 2);
-fs.writeFileSync(join(REGISTRY_PATH, "styles/index.json"), stylesJson, "utf8");
+const stylesJson = JSON.stringify(frameworks, null, 2);
+fs.writeFileSync(join(REGISTRY_PATH, "frameworks/index.json"), stylesJson, "utf8");
 
 // ----------------------------------------------------------------------------
 // Build registry/index.json.
@@ -165,14 +165,14 @@ for (const [color, value] of Object.entries(colors)) {
 fs.writeFileSync(join(colorsTargetPath, "index.json"), JSON.stringify(colorsData, null, 2), "utf8");
 
 // ----------------------------------------------------------------------------
-// Build registry/colors/[base].json.
+// Build registry/colors/[framework]/[base].json.
 // ----------------------------------------------------------------------------
-export const BASE_STYLES = `@tailwind base;
+const TAILWIND_BASE_STYLES = `@tailwind base;
 @tailwind components;
 @tailwind utilities;
 `;
 
-export const BASE_STYLES_WITH_VARIABLES = `@tailwind base;
+const TAILWIND_BASE_STYLES_WITH_VARIABLES = `@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -249,6 +249,76 @@ export const BASE_STYLES_WITH_VARIABLES = `@tailwind base;
   }
 }`;
 
+const UNO_BASE_STYLES_WITH_VARIABLES = `:root {
+  --background: <%- colors.light["background"] %>;
+  --foreground: <%- colors.light["foreground"] %>;
+
+  --card: <%- colors.light["card"] %>;
+  --card-foreground: <%- colors.light["card-foreground"] %>;
+
+  --popover: <%- colors.light["popover"] %>;
+  --popover-foreground: <%- colors.light["popover-foreground"] %>;
+
+  --primary: <%- colors.light["primary"] %>;
+  --primary-foreground: <%- colors.light["primary-foreground"] %>;
+
+  --secondary: <%- colors.light["secondary"] %>;
+  --secondary-foreground: <%- colors.light["secondary-foreground"] %>;
+
+  --muted: <%- colors.light["muted"] %>;
+  --muted-foreground: <%- colors.light["muted-foreground"] %>;
+
+  --accent: <%- colors.light["accent"] %>;
+  --accent-foreground: <%- colors.light["accent-foreground"] %>;
+
+  --destructive: <%- colors.light["destructive"] %>;
+  --destructive-foreground: <%- colors.light["destructive-foreground"] %>;
+
+  --border: <%- colors.light["border"] %>;
+  --input: <%- colors.light["input"] %>;
+  --ring: <%- colors.light["ring"] %>;
+
+  --radius: 0.5rem;
+}
+
+[data-kb-theme="dark"] {
+  --background: <%- colors.dark["background"] %>;
+  --foreground: <%- colors.dark["foreground"] %>;
+
+  --card: <%- colors.dark["card"] %>;
+  --card-foreground: <%- colors.dark["card-foreground"] %>;
+
+  --popover: <%- colors.dark["popover"] %>;
+  --popover-foreground: <%- colors.dark["popover-foreground"] %>;
+
+  --primary: <%- colors.dark["primary"] %>;
+  --primary-foreground: <%- colors.dark["primary-foreground"] %>;
+
+  --secondary: <%- colors.dark["secondary"] %>;
+  --secondary-foreground: <%- colors.dark["secondary-foreground"] %>;
+
+  --muted: <%- colors.dark["muted"] %>;
+  --muted-foreground: <%- colors.dark["muted-foreground"] %>;
+
+  --accent: <%- colors.dark["accent"] %>;
+  --accent-foreground: <%- colors.dark["accent-foreground"] %>;
+
+  --destructive: <%- colors.dark["destructive"] %>;
+  --destructive-foreground: <%- colors.dark["destructive-foreground"] %>;
+
+  --border: <%- colors.dark["border"] %>;
+  --input: <%- colors.dark["input"] %>;
+  --ring: <%- colors.dark["ring"] %>;
+}
+
+
+* {
+  @apply border-border;
+}
+body {
+  @apply bg-background text-foreground;
+}`;
+
 for (const baseColor of ["slate", "gray", "zinc", "neutral", "stone"]) {
   const base: Record<string, any> = {
     inlineColors: {},
@@ -273,17 +343,30 @@ for (const baseColor of ["slate", "gray", "zinc", "neutral", "stone"]) {
     }
   }
 
-  // Build css vars.
-  base["inlineColorsTemplate"] = template(BASE_STYLES)({});
-  base["cssVarsTemplate"] = template(BASE_STYLES_WITH_VARIABLES)({
-    colors: base["cssVars"]
-  });
+  for (const framework of frameworks) {
+    const frameworkColorPath = join(REGISTRY_PATH, "colors", framework.name);
+    if (!fs.existsSync(frameworkColorPath)) {
+      fs.mkdirSync(frameworkColorPath, { recursive: true });
+    }
+    // Build css vars.
+    if (framework.name === "unocss") {
+      delete base["inlineColorsTemplate"];
+      base["cssVarsTemplate"] = template(UNO_BASE_STYLES_WITH_VARIABLES)({
+        colors: base["cssVars"]
+      });
+    } else {
+      base["inlineColorsTemplate"] = template(TAILWIND_BASE_STYLES)({});
+      base["cssVarsTemplate"] = template(TAILWIND_BASE_STYLES_WITH_VARIABLES)({
+        colors: base["cssVars"]
+      });
+    }
 
-  fs.writeFileSync(
-    join(REGISTRY_PATH, `colors/${baseColor}.json`),
-    JSON.stringify(base, null, 2),
-    "utf8"
-  );
+    fs.writeFileSync(
+      join(REGISTRY_PATH, `colors/${framework.name}/${baseColor}.json`),
+      JSON.stringify(base, null, 2),
+      "utf8"
+    );
+  }
 }
 
 console.log("✅ Done!");

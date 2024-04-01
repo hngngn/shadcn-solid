@@ -22,7 +22,8 @@ const addOptionsSchema = z.object({
   overwrite: z.boolean(),
   yes: z.boolean(),
   cwd: z.string(),
-  path: z.string().optional()
+  path: z.string().optional(),
+  all: z.boolean()
 });
 
 export const add = new Command()
@@ -37,6 +38,7 @@ export const add = new Command()
   )
   .option("-p, --path <path>", "the path to add the component to.")
   .option("-y --yes", "skip confirmation prompt.", false)
+  .option("-a --all", "install all components.", false)
   .action(async (components, opts) => {
     try {
       const options = addOptionsSchema.parse({
@@ -63,8 +65,11 @@ export const add = new Command()
 
       const registryIndex = await getRegistryIndex();
 
-      let selectedComponents = options.components;
-      if (!options.components?.length) {
+      let selectedComponents = options.all
+        ? registryIndex.map(entry => entry.name)
+        : options.components;
+
+      if (!options.all && !options.components?.length) {
         const { components } = await p.group(
           {
             components: () =>
@@ -87,17 +92,18 @@ export const add = new Command()
         selectedComponents = components as string[];
       }
 
-      if (!selectedComponents?.length) {
+      if (!options.all && !selectedComponents?.length) {
         p.log.warn("No components selected. Exiting.");
         process.exit(0);
       }
 
-      const tree = await resolveTree(registryIndex, selectedComponents);
+      const tree = await resolveTree(registryIndex, selectedComponents!);
 
       // If new styling is added, the config.style property will be reinstated.
       const payload = await fetchTree(config.uno ? "unocss" : "tailwindcss", tree);
       const baseColor = await getRegistryBaseColor(
-        config.uno ? config.uno.baseColor : config.tailwind!.baseColor
+        config.uno ? config.uno.baseColor : config.tailwind!.baseColor,
+        config.uno ? "unocss" : "tailwindcss"
       );
 
       if (!payload.length) {
@@ -124,8 +130,10 @@ export const add = new Command()
       }
 
       const spinner = p.spinner();
-      spinner.start(`Installing ${payload.map(i => i.name).join(", ")}...`);
+      spinner.start();
       for (const item of payload) {
+        spinner.message(`Installing ${item.name}`);
+
         const targetDir = await getItemTargetPath(
           config,
           item,
@@ -145,7 +153,7 @@ export const add = new Command()
         );
 
         if (existingComponent.length && !options.overwrite) {
-          if (selectedComponents.includes(item.name)) {
+          if (selectedComponents!.includes(item.name)) {
             p.log.warn(
               `Component ${item.name} already exists. Use ${color.green("-o")} to overwrite.`
             );

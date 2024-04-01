@@ -14,7 +14,7 @@ import { handleError } from "@/src/utils/handle-error";
 import {
   getRegistryBaseColor,
   getRegistryBaseColors,
-  getRegistryStyles
+  getRegistryFrameworks
 } from "@/src/utils/registry";
 import * as templates from "@/src/utils/templates";
 import * as p from "@clack/prompts";
@@ -71,16 +71,16 @@ export const init = new Command()
 export async function promptForConfig(cwd: string, defaultConfig: Config | null = null) {
   const highlight = (text: string) => color.cyan(text);
 
-  const styles = await getRegistryStyles();
+  const framework = await getRegistryFrameworks();
   const baseColors = await getRegistryBaseColors();
 
   const firstOptions = await p.group(
     {
-      style: () =>
+      framework: () =>
         p.select({
-          message: `How would you like to use to ${highlight("style")} your app?`,
+          message: `Which ${highlight("CSS framework")} would you like to use?`,
           // @ts-ignore
-          options: styles.map(style => ({
+          options: framework.map(style => ({
             label: style.label,
             value: style.name
           }))
@@ -109,11 +109,11 @@ export async function promptForConfig(cwd: string, defaultConfig: Config | null 
         p.text({
           message: `Where is your ${highlight("global CSS")} file?`,
           placeholder:
-            (firstOptions.style === "unocss"
+            (firstOptions.framework === "unocss"
               ? defaultConfig?.uno?.css
               : defaultConfig?.tailwind?.css) ?? DEFAULT_CSS,
           defaultValue:
-            (firstOptions.style === "unocss"
+            (firstOptions.framework === "unocss"
               ? defaultConfig?.uno?.css
               : defaultConfig?.tailwind?.css) ?? DEFAULT_CSS
         }),
@@ -121,31 +121,37 @@ export async function promptForConfig(cwd: string, defaultConfig: Config | null 
         p.confirm({
           message: `Would you like to use ${highlight("CSS variables")} for colors?`,
           initialValue:
-            firstOptions.style === "unocss"
+            firstOptions.framework === "unocss"
               ? defaultConfig?.uno?.cssVariables
               : defaultConfig?.tailwind?.cssVariables ?? true
         }),
       prefix: () =>
         p.text({
           message: `Are you using a custom ${highlight(
-            firstOptions.style === "unocss" ? "uno prefix eg. uno-" : "tailwind prefix eg. tw-"
+            firstOptions.framework === "unocss" ? "uno prefix eg. uno-" : "tailwind prefix eg. tw-"
           )}? (Leave blank if not)`,
-          placeholder: "",
-          defaultValue: ""
+          placeholder:
+            firstOptions.framework === "unocss"
+              ? defaultConfig?.uno?.prefix
+              : defaultConfig?.tailwind?.prefix ?? "",
+          defaultValue:
+            firstOptions.framework === "unocss"
+              ? defaultConfig?.uno?.prefix
+              : defaultConfig?.tailwind?.prefix ?? ""
         }),
       config: () =>
         p.text({
-          message: `Where is your ${highlight(firstOptions.style === "unocss" ? DEFAULT_UNO_CONFIG : DEFAULT_TAILWIND_CONFIG)} located?`,
+          message: `Where is your ${highlight(firstOptions.framework === "unocss" ? DEFAULT_UNO_CONFIG : DEFAULT_TAILWIND_CONFIG)} located?`,
           placeholder:
-            (firstOptions.style === "unocss"
+            (firstOptions.framework === "unocss"
               ? defaultConfig?.uno?.config
-              : defaultConfig?.tailwind?.config) ?? firstOptions.style === "unocss"
+              : defaultConfig?.tailwind?.config) ?? firstOptions.framework === "unocss"
               ? DEFAULT_UNO_CONFIG
               : DEFAULT_TAILWIND_CONFIG,
           defaultValue:
-            (firstOptions.style === "unocss"
+            (firstOptions.framework === "unocss"
               ? defaultConfig?.uno?.config
-              : defaultConfig?.tailwind?.config) ?? firstOptions.style === "unocss"
+              : defaultConfig?.tailwind?.config) ?? firstOptions.framework === "unocss"
               ? DEFAULT_UNO_CONFIG
               : DEFAULT_TAILWIND_CONFIG
         })
@@ -236,14 +242,14 @@ export async function promptForConfig(cwd: string, defaultConfig: Config | null 
   const targetPath = path.resolve(cwd, "components.json");
   await fs.writeFile(
     targetPath,
-    JSON.stringify(firstOptions.style === "unocss" ? unoConfig : tailwindConfig, null, 2),
+    JSON.stringify(firstOptions.framework === "unocss" ? unoConfig : tailwindConfig, null, 2),
     "utf8"
   );
   spinner.stop("Components.json written");
 
   return await resolveConfigPaths(
     cwd,
-    firstOptions.style === "unocss" ? unoConfig : tailwindConfig
+    firstOptions.framework === "unocss" ? unoConfig : tailwindConfig
   );
 }
 
@@ -281,21 +287,23 @@ export async function runInit(cwd: string, config: Config) {
 
   // Write css file.
   const baseColor = await getRegistryBaseColor(
-    config.uno ? config.uno.baseColor : config.tailwind!.baseColor
+    config.uno ? config.uno.baseColor : config.tailwind!.baseColor,
+    config.uno ? "unocss" : "tailwindcss"
   );
-  if (baseColor) {
-    await fs.writeFile(
-      config.resolvedPaths.css,
-      (config.uno ? config.uno.cssVariables : config.tailwind!.cssVariables)
-        ? (config.uno ? config.uno.prefix : config.tailwind!.prefix)
-          ? applyPrefixesCss(
-              baseColor.cssVarsTemplate,
-              config.uno ? config.uno.prefix! : config.tailwind!.prefix!
-            )
-          : baseColor.cssVarsTemplate
-        : baseColor.inlineColorsTemplate,
-      "utf8"
-    );
+
+  const baseColorConfig = (config.uno ? config.uno.cssVariables : config.tailwind!.cssVariables)
+    ? (config.uno ? config.uno.prefix : config.tailwind!.prefix)
+      ? applyPrefixesCss(
+          baseColor.cssVarsTemplate,
+          config.uno ? config.uno.prefix! : config.tailwind!.prefix!
+        )
+      : baseColor.cssVarsTemplate
+    : baseColor.inlineColorsTemplate;
+
+  if (baseColorConfig !== undefined) {
+    if (baseColor) {
+      await fs.writeFile(config.resolvedPaths.css, baseColorConfig, "utf8");
+    }
   }
 
   // Write cn file.
