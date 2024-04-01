@@ -1,10 +1,10 @@
-import { Button } from "@/registry/default/ui/button";
+import { Button } from "@/registry/tailwindcss/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger
-} from "@/registry/default/ui/dropdown-menu";
+} from "@/registry/tailwindcss/ui/dropdown-menu";
 import { As } from "@kobalte/core";
 import { For, Show, createSignal, type VoidComponent } from "solid-js";
 

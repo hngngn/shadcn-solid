@@ -4,9 +4,11 @@ import { SyntaxKind } from "ts-morph";
 import { splitClassName } from "./transform-css-vars";
 
 export const transformTwPrefixes: Transformer = async ({ sourceFile, config }) => {
-  if (!config.tailwind?.prefix) {
+  if (config.uno ? !config.uno.prefix : !config.tailwind?.prefix) {
     return sourceFile;
   }
+
+  const _config = config.uno ? config.uno.prefix : config.tailwind?.prefix;
 
   // Find the cva function calls.
   sourceFile
@@ -18,10 +20,7 @@ export const transformTwPrefixes: Transformer = async ({ sourceFile, config }) =
         const defaultClassNames = node.getArguments()[0];
         if (defaultClassNames) {
           defaultClassNames.replaceWithText(
-            `"${applyPrefix(
-              defaultClassNames.getText()?.replace(/"/g, ""),
-              config.tailwind.prefix
-            )}"`
+            `"${applyPrefix(defaultClassNames.getText()?.replace(/"/g, ""), _config)}"`
           );
         }
       }
@@ -38,10 +37,7 @@ export const transformTwPrefixes: Transformer = async ({ sourceFile, config }) =
               const classNames = node.getInitializerIfKind(SyntaxKind.StringLiteral);
               if (classNames) {
                 classNames?.replaceWithText(
-                  `"${applyPrefix(
-                    classNames.getText()?.replace(/"/g, ""),
-                    config.tailwind.prefix
-                  )}"`
+                  `"${applyPrefix(classNames.getText()?.replace(/"/g, ""), _config)}"`
                 );
               }
             });
@@ -56,9 +52,7 @@ export const transformTwPrefixes: Transformer = async ({ sourceFile, config }) =
       if (node.getInitializer()?.isKind(SyntaxKind.StringLiteral)) {
         const value = node.getInitializer();
         if (value) {
-          value.replaceWithText(
-            `"${applyPrefix(value.getText()?.replace(/"/g, ""), config.tailwind.prefix)}"`
-          );
+          value.replaceWithText(`"${applyPrefix(value.getText()?.replace(/"/g, ""), _config)}"`);
         }
       }
 
@@ -78,15 +72,13 @@ export const transformTwPrefixes: Transformer = async ({ sourceFile, config }) =
             ) {
               node.getChildrenOfKind(SyntaxKind.StringLiteral).forEach(node => {
                 node.replaceWithText(
-                  `"${applyPrefix(node.getText()?.replace(/"/g, ""), config.tailwind.prefix)}"`
+                  `"${applyPrefix(node.getText()?.replace(/"/g, ""), _config)}"`
                 );
               });
             }
 
             if (node.isKind(SyntaxKind.StringLiteral)) {
-              node.replaceWithText(
-                `"${applyPrefix(node.getText()?.replace(/"/g, ""), config.tailwind.prefix)}"`
-              );
+              node.replaceWithText(`"${applyPrefix(node.getText()?.replace(/"/g, ""), _config)}"`);
             }
           });
         }
@@ -104,12 +96,20 @@ export function applyPrefix(input: string, prefix: string = "") {
     const [variant, value, modifier] = splitClassName(className);
     if (variant) {
       modifier
-        ? prefixed.push(`${variant}:${prefix}${value}/${modifier}`)
-        : prefixed.push(`${variant}:${prefix}${value}`);
+        ? prefixed.push(
+            `${variant}:${value!.startsWith("(") ? "(" + prefix + value!.slice(1) : prefix + value}/${modifier}`
+          )
+        : prefixed.push(
+            `${variant}:${value!.startsWith("(") ? "(" + prefix + value!.slice(1) : prefix + value}`
+          );
     } else {
       modifier
-        ? prefixed.push(`${prefix}${value}/${modifier}`)
-        : prefixed.push(`${prefix}${value}`);
+        ? prefixed.push(
+            `${value!.startsWith("(") ? "(" + prefix + value!.slice(1) : prefix + value}/${modifier}`
+          )
+        : prefixed.push(
+            `${value!.startsWith("(") ? "(" + prefix + value!.slice(1) : prefix + value}`
+          );
     }
   }
   return prefixed.join(" ");

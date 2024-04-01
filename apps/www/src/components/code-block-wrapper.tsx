@@ -1,10 +1,10 @@
 import { cn } from "@/lib/cn";
-import { Button } from "@/registry/default/ui/button";
+import { Button } from "@/registry/tailwindcss/ui/button";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger
-} from "@/registry/default/ui/collapsible";
+} from "@/registry/tailwindcss/ui/collapsible";
 import { As } from "@kobalte/core";
 import type { ParentComponent } from "solid-js";
 import { createSignal, mergeProps } from "solid-js";

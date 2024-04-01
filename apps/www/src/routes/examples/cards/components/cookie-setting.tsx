@@ -1,4 +1,4 @@
-import { Button } from "@/registry/default/ui/button";
+import { Button } from "@/registry/tailwindcss/ui/button";
 import {
   Card,
   CardContent,
@@ -6,8 +6,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle
-} from "@/registry/default/ui/card";
-import { Switch, SwitchControl, SwitchLabel, SwitchThumb } from "@/registry/default/ui/switch";
+} from "@/registry/tailwindcss/ui/card";
+import { Switch, SwitchControl, SwitchLabel, SwitchThumb } from "@/registry/tailwindcss/ui/switch";
 
 export const DemoCookieSettings = () => {
   return (

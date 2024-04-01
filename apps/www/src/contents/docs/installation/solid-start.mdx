@@ -7,9 +7,13 @@ description: Install and configure SolidStart.
 
 <Steps>
 
+### UnoCSS
+
+If you using UnoCSS, then make sure to use `@unocss/reset/tailwind-compat.css`.
+
 ### Create project
 
-Start by creating a new SolidStart project using [`create-solid`](https://github.com/solidjs/solid-start?tab=readme-ov-file#getting-started) and select tailwind:
+Start by creating a new SolidStart project using [`create-solid`](https://github.com/solidjs/solid-start?tab=readme-ov-file#getting-started) and select tailwind or uno:
 
 ```bash
 pnpm create solid@latest
@@ -61,9 +65,10 @@ npx shadcn-solid@latest init
 
 You will be asked a few questions to configure `components.json`:
 
-```txt
-◇  Which style would you like to use?
-│  Default
+```bash
+◆  Which CSS framework would you like to use?
+│  ● TailwindCSS
+│  ○ UnoCSS
 │
 ◇  Which color would you like to use as base color?
 │  Slate

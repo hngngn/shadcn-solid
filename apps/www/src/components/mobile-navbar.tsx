@@ -1,7 +1,7 @@
 import { docsConfig } from "@/config/docs";
 import { siteConfig } from "@/config/site";
-import { Button } from "@/registry/default/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/registry/default/ui/sheet";
+import { Button } from "@/registry/tailwindcss/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/registry/tailwindcss/ui/sheet";
 import { As, createDisclosureState } from "@kobalte/core";
 import { A, useIsRouting } from "@solidjs/router";
 import { For, createComputed } from "solid-js";

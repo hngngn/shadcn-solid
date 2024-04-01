@@ -105,6 +105,78 @@ The prefix to use for your Tailwind CSS utility classes. Components will be adde
 }
 ```
 
+## uno
+
+Configuration to help the CLI understand how Uno CSS is set up in your project.
+
+See the <A href="/docs/installation">installation section</A> for how to set up Uno CSS.
+
+### uno.config
+
+Path to where your `uno.config.ts` file is located.
+
+```json title="components.json"
+{
+  "uno": {
+    "config": "uno.config.ts"
+  }
+}
+```
+
+### uno.css
+
+Path to the CSS file that imports Uno CSS into your project.
+
+```json title="components.json"
+{
+  "uno": {
+    "css": "src/app.css"
+  }
+}
+```
+
+### uno.baseColor
+
+This is used to generate the default color palette for your components. **This cannot be changed after initialization.**
+
+```json title="components.json"
+{
+  "uno": {
+    "baseColor": "gray" | "neutral" | "slate" | "stone" | "zinc"
+  }
+}
+```
+
+### uno.cssVariables
+
+You can choose between using CSS variables or Uno CSS utility classes for theming.
+
+To use utility classes for theming set `uno.cssVariables` to `false`. For CSS variables, set `uno.cssVariables` to `true`.
+
+```json title="components.json"
+{
+  "uno": {
+    "cssVariables": `true` | `false`
+  }
+}
+```
+
+For more information, see the <A href="/docs/theming">theming docs</A>.
+
+**This cannot be changed after initialization.** To switch between CSS variables and utility classes, you'll have to delete and re-install your components.
+
+### uno.prefix
+
+The prefix to use for your Uno CSS utility classes. Components will be added with this prefix.
+
+```json title="components.json"
+{
+  "uno": {
+    "prefix": "uno-"
+  }
+}
+```
+
 ## aliases
 
 The CLI uses these values and the `paths` config from your `tsconfig.json` or `jsconfig.json` file to place generated components in the correct location.

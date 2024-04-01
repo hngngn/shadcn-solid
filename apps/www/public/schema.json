@@ -23,6 +23,27 @@
       },
       "required": ["config", "css", "baseColor", "cssVariables"]
     },
+    "uno": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "string"
+        },
+        "css": {
+          "type": "string"
+        },
+        "baseColor": {
+          "type": "string"
+        },
+        "cssVariables": {
+          "type": "boolean"
+        },
+        "prefix": {
+          "type": "string"
+        }
+      },
+      "required": ["config", "css", "baseColor", "cssVariables"]
+    },
     "aliases": {
       "type": "object",
       "properties": {
@@ -39,5 +60,5 @@
       "required": ["utils", "components"]
     }
   },
-  "required": ["tailwind", "aliases"]
+  "required": ["aliases"]
 }

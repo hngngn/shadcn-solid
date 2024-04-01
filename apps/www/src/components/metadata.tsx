@@ -1,5 +1,5 @@
 import { siteConfig } from "@/config/site";
-import { Link, Meta, Title } from "@solidjs/meta";
+import { Link, Meta, Style, Title } from "@solidjs/meta";
 import { type VoidComponent } from "solid-js";
 
 export const Metadata: VoidComponent = () => {
@@ -9,7 +9,7 @@ export const Metadata: VoidComponent = () => {
       <Meta name="description" content={siteConfig.description} />
       <Meta
         name="keywords"
-        content="Solidjs,SolidStart,TailwindCSS,Kobalte UI,shadcn,Solid Component"
+        content="Solidjs,SolidStart,TailwindCSS,Kobalte UI,shadcn,Solid Component,UnoCSS"
       />
       <Meta name="author" content="hngngn" />
 
@@ -32,6 +32,8 @@ export const Metadata: VoidComponent = () => {
       <Meta property="og:image:width" content="1200" />
       <Meta property="og:image:height" content="630" />
 
+      <Meta property="canonical" content={siteConfig.url} />
+
       <Link rel="shortcut icon" href="/favicon-16x16.png" />
       <Link rel="icon" href="/favicon.ico" />
       <Link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -43,6 +45,11 @@ export const Metadata: VoidComponent = () => {
         type="font/woff2"
         crossOrigin="anonymous"
       />
+      <Style type="text/css">
+        {
+          '@font-face { font-family: "Geist Sans Variable"; src: url("/fonts/GeistVariableVF.woff2") format("woff2"); font-display: swap;}'
+        }
+      </Style>
     </>
   );
 };

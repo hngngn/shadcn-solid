@@ -53,6 +53,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background font-sans text-foreground antialiased;
     font-synthesis-weight: none;
@@ -76,10 +77,4 @@
   .container {
     @apply px-4;
   }
-}
-
-@font-face {
-  font-family: "Geist Sans Variable";
-  src: url("/fonts/GeistVariableVF.woff2") format("woff2");
-  font-display: swap;
 }

@@ -1,5 +1,5 @@
 import { cn } from "@/lib/cn";
-import { buttonVariants } from "@/registry/default/ui/button";
+import { buttonVariants } from "@/registry/tailwindcss/ui/button";
 import { A } from "@solidjs/router";
 import { UserAuthForm } from "./components/user-auth-form";
 

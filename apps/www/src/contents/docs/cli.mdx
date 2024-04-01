@@ -15,9 +15,10 @@ npx shadcn-solid@latest init
 
 You will be asked a few questions to configure `components.json`:
 
-```txt
-◇  Which style would you like to use?
-│  Default
+```bash
+◆  Which CSS framework would you like to use?
+│  ● TailwindCSS
+│  ○ UnoCSS
 │
 ◇  Which color would you like to use as base color?
 │  Slate
@@ -38,7 +39,7 @@ You will be asked a few questions to configure `components.json`:
 │  @/components
 │
 ◇  Configure the import alias for utils:
-│  @/lib/utils
+│  @/libs/cn
 ```
 
 ### Options
@@ -109,6 +110,7 @@ Arguments:
 Options:
   -y, --yes          skip confirmation prompt. (default: false)
   -o, --overwrite    overwrite existing files. (default: false)
+  -a --all           install all components. (default: false)
   -c, --cwd <cwd>    the working directory. defaults to the current directory.
   -p, --path <path>  the path to add the component to.
   -h, --help         display help for command

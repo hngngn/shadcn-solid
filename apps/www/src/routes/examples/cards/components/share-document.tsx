@@ -1,21 +1,21 @@
-import { Button } from "@/registry/default/ui/button";
+import { Button } from "@/registry/tailwindcss/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle
-} from "@/registry/default/ui/card";
-import { Image, ImageFallback, ImageRoot } from "@/registry/default/ui/image";
+} from "@/registry/tailwindcss/ui/card";
+import { Image, ImageFallback, ImageRoot } from "@/registry/tailwindcss/ui/image";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue
-} from "@/registry/default/ui/select";
-import { Separator } from "@/registry/default/ui/separator";
-import { TextField, TextFieldInput, TextFieldLabel } from "@/registry/default/ui/textfield";
+} from "@/registry/tailwindcss/ui/select";
+import { Separator } from "@/registry/tailwindcss/ui/separator";
+import { TextField, TextFieldInput, TextFieldLabel } from "@/registry/tailwindcss/ui/textfield";
 
 export const DemoShareDocument = () => {
   return (

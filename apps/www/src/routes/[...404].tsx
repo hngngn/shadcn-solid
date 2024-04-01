@@ -1,4 +1,4 @@
-import { Button } from "@/registry/default/ui/button";
+import { Button } from "@/registry/tailwindcss/ui/button";
 import { As } from "@kobalte/core";
 import { Title } from "@solidjs/meta";
 import { A } from "@solidjs/router";
