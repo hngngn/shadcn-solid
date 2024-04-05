@@ -14,13 +14,13 @@ export const CheckboxControl = (props: CheckboxPrimitive.CheckboxControlProps) =
     <>
       <CheckboxPrimitive.Input
         class={cn(
-          "[&:focus-visible+div]:(outline-none ring-2 ring-ring ring-offset-2 ring-offset-background)",
+          "[&:focus-visible+div]:(outline-none ring-1.5 ring-ring ring-offset-2 ring-offset-background)",
           local.class
         )}
       />
       <CheckboxPrimitive.Control
         class={cn(
-          "h-4 w-4 shrink-0 rounded-sm border border-primary shadow focus-visible:(outline-none ring ring-ring) data-[disabled]:(cursor-not-allowed opacity-50) data-[checked]:(bg-primary text-primary-foreground)",
+          "h-4 w-4 shrink-0 rounded-sm border border-primary shadow focus-visible:(outline-none ring-1.5 ring-ring) data-[disabled]:(cursor-not-allowed opacity-50) data-[checked]:(bg-primary text-primary-foreground) transition-shadow",
           local.class
         )}
         {...rest}

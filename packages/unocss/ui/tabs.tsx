@@ -34,7 +34,7 @@ export const TabsContent = (props: TabsPrimitive.TabsContentProps) => {
   return (
     <TabsPrimitive.Content
       class={cn(
-        "mt-2 ring-offset-background focus-visible:(outline-none ring-2 ring-ring ring-offset-2)",
+        "mt-2 ring-offset-background focus-visible:(outline-none ring-1.5 ring-ring ring-offset-2)",
         local.class
       )}
       {...rest}
@@ -48,7 +48,7 @@ export const TabsTrigger = (props: TabsPrimitive.TabsTriggerProps) => {
   return (
     <TabsPrimitive.Trigger
       class={cn(
-        "inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:(outline-none ring-2 ring-ring ring-offset-2) disabled:(pointer-events-none opacity-50) data-[selected]:(bg-background text-foreground shadow) bg-inherit",
+        "inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:(outline-none ring-1.5 ring-ring ring-offset-2) disabled:(pointer-events-none opacity-50) data-[selected]:(bg-background text-foreground shadow) bg-inherit",
         local.class
       )}
       {...rest}

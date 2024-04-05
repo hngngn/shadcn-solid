@@ -22,7 +22,7 @@ export const RadioGroupItemControl = (
       as="button"
       role="radio"
       class={cn(
-        "flex aspect-square h-4 w-4 items-center justify-center rounded-full border border-primary text-primary shadow focus:outline-none focus-visible:(ring ring-ring) disabled:(cursor-not-allowed opacity-50) data-[checked]:bg-foreground bg-inherit",
+        "flex aspect-square h-4 w-4 items-center justify-center rounded-full border border-primary text-primary shadow focus:outline-none focus-visible:(ring-1.5 ring-ring) disabled:(cursor-not-allowed opacity-50) data-[checked]:bg-foreground bg-inherit transition-shadow",
         local.class
       )}
       {...rest}

@@ -1,5 +1,5 @@
 import { ColorModeProvider, ColorModeScript } from "@kobalte/core";
-import "@unocss/reset/tailwind-compat.css";
+import "@unocss/reset/tailwind.css";
 import { render } from "solid-js/web";
 import "virtual:uno.css";
 import { ToastList, ToastRegion } from "../ui/toast";

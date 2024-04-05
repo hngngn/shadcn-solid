@@ -16,7 +16,7 @@ export const SelectTrigger = (props: SelectPrimitive.SelectTriggerProps) => {
   return (
     <SelectPrimitive.Trigger
       class={cn(
-        "flex h-9 w-full items-center justify-between rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus-visible:ring focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
+        "flex h-9 w-full items-center justify-between rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background transition-shadow placeholder:text-muted-foreground focus:outline-none focus-visible:ring-[1.5px] focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
         local.class
       )}
       {...rest}
@@ -56,7 +56,7 @@ export const SelectContent = (props: VoidProps<SelectPrimitive.SelectContentProp
         )}
         {...rest}
       >
-        <SelectPrimitive.Listbox class="p-1" />
+        <SelectPrimitive.Listbox class="p-1 focus-visible:outline-none" />
       </SelectPrimitive.Content>
     </SelectPrimitive.Portal>
   );

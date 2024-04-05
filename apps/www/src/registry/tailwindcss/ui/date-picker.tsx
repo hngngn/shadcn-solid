@@ -189,12 +189,12 @@ export const DatePickerInput = (props: DatePickerInputProps) => {
   const [local, rest] = splitProps(props, ["class", "children"]);
 
   return (
-    <DatePickerPrimitive.Control class="flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50">
+    <DatePickerPrimitive.Control class="flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-[1.5px] focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50">
       <DatePickerPrimitive.Input
         class={cn("w-full appearance-none bg-transparent outline-none", local.class)}
         {...rest}
       />
-      <DatePickerPrimitive.Trigger>
+      <DatePickerPrimitive.Trigger class="transition-shadow focus-visible:outline-none focus-visible:ring-[1.5px] focus-visible:ring-ring">
         <svg xmlns="http://www.w3.org/2000/svg" class="mx-1 h-4 w-4" viewBox="0 0 24 24">
           <path
             fill="none"

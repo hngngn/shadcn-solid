@@ -17,7 +17,7 @@ export const AccordionTrigger = (props: AccordionPrimitive.AccordionTriggerProps
     <AccordionPrimitive.Header class="flex" as="div">
       <AccordionPrimitive.Trigger
         class={cn(
-          "flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all hover:underline [&[data-expanded]>svg]:rotate-180",
+          "flex flex-1 items-center justify-between py-4 text-sm font-medium transition-shadow hover:underline focus-visible:outline-none focus-visible:ring-[1.5px] focus-visible:ring-ring [&[data-expanded]>svg]:rotate-180",
           local.class
         )}
         {...rest}

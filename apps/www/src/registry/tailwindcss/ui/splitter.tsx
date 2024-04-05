@@ -1,8 +1,8 @@
+import { cn } from "@/libs/cn";
 import type { SplitterResizeTriggerProps } from "@ark-ui/solid";
 import { Splitter as SplitterPrimitive } from "@ark-ui/solid";
 import type { VoidProps } from "solid-js";
 import { Show, splitProps } from "solid-js";
-import { cn } from "@/libs/cn";
 
 export const Splitter = SplitterPrimitive.Root;
 export const SplitterPanel = SplitterPrimitive.Panel;
@@ -15,7 +15,7 @@ export const SplitterResizeTrigger = (
   return (
     <SplitterPrimitive.ResizeTrigger
       class={cn(
-        "flex w-px items-center justify-center bg-border focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-1 data-[orientation=vertical]:h-px data-[orientation=vertical]:w-full",
+        "flex w-px items-center justify-center bg-border transition-shadow focus-visible:outline-none focus-visible:ring-[1.5px] focus-visible:ring-ring focus-visible:ring-offset-1 data-[orientation=vertical]:h-px data-[orientation=vertical]:w-full",
         local.class
       )}
       {...rest}

@@ -15,7 +15,7 @@ export const SplitterResizeTrigger = (
   return (
     <SplitterPrimitive.ResizeTrigger
       class={cn(
-        "flex w-px items-center justify-center bg-border focus-visible:(outline-none ring-1 ring-ring ring-offset-1) data-[orientation=vertical]:(h-px w-full)",
+        "flex w-px items-center justify-center bg-border focus-visible:(outline-none ring-1.5 ring-ring ring-offset-1) data-[orientation=vertical]:(h-px w-full) transition-shadow",
         local.class
       )}
       {...rest}
