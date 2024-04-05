@@ -5,7 +5,7 @@ import { cva } from "class-variance-authority";
 import { splitProps } from "solid-js";
 
 export const toggleVariants = cva(
-  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors hover:(bg-muted text-muted-foreground) focus-visible:(outline-none ring-1.5 ring-ring) disabled:(pointer-events-none opacity-50) data-[pressed]:(bg-accent text-accent-foreground) transition-shadow",
+  "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors transition-property-[box-shadow,color,background-color] hover:(bg-muted text-muted-foreground) focus-visible:(outline-none ring-1.5 ring-ring) disabled:(pointer-events-none opacity-50) data-[pressed]:(bg-accent text-accent-foreground) transition-shadow",
   {
     variants: {
       variant: {

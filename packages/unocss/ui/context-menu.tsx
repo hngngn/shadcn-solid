@@ -63,7 +63,7 @@ export const ContextMenuContent = (props: ContextMenuPrimitive.ContextMenuConten
     <ContextMenuPrimitive.Portal>
       <ContextMenuPrimitive.Content
         class={cn(
-          "z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[expanded]:(animate-in fade-in-0 zoom-in-95) data-[closed]:(animate-out fade-out-0 zoom-out-95)",
+          "z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[expanded]:(animate-in fade-in-0 zoom-in-95) data-[closed]:(animate-out fade-out-0 zoom-out-95) focus-visible:(outline-none ring-1.5 ring-ring) transition-shadow",
           local.class
         )}
         {...rest}

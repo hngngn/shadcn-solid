@@ -1,10 +1,10 @@
 import { cn } from "@/libs/cn";
 import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
-import { splitProps, type ComponentProps } from "solid-js";
+import { type ComponentProps, splitProps } from "solid-js";
 
 export const badgeVariants = cva(
-  "inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-semibold transition-colors",
+  "inline-flex items-center rounded-md px-2.5 py-0.5 text-xs font-semibold transition-shadow focus-visible:(outline-none ring-1.5 ring-ring)",
   {
     variants: {
       variant: {
