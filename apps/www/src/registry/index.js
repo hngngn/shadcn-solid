@@ -374,6 +374,11 @@ const example = [
     files: ["example/context-menu-demo.tsx"]
   },
   {
+    name: "data-table-demo",
+    type: "components:example",
+    files: ["example/data-table-demo.tsx"]
+  },
+  {
     name: "date-picker-demo",
     type: "components:example",
     files: ["example/date-picker-demo.tsx"]
@@ -676,3 +681,4 @@ const example = [
 ];
 
 export const registry = [...ui, ...example];
+

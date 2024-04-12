@@ -473,6 +473,13 @@ export const Index = {
       component: lazy(() => import("@/registry/tailwindcss/example/context-menu-demo")),
       files: ["registry/tailwindcss/example/context-menu-demo.tsx"],
     },
+    "data-table-demo": {
+      name: "data-table-demo",
+      type: "components:example",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/tailwindcss/example/data-table-demo")),
+      files: ["registry/tailwindcss/example/data-table-demo.tsx"],
+    },
     "date-picker-demo": {
       name: "date-picker-demo",
       type: "components:example",

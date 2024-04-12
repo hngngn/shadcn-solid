@@ -39,8 +39,9 @@
     "format": "prettier -w \"./{ui,libs,dev}/**/*.{ts,tsx}\""
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "pnpm format"
+    "src/**/*.{ts,tsx,mdx}": [
+      "bun prettier -w ui/**/*.tsx"
     ]
   }
 }
+

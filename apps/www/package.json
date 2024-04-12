@@ -5,7 +5,7 @@
     "dev": "vinxi dev",
     "build": "vinxi build",
     "start": "vinxi start",
-    "format": "prettier -w \"./src/**/*.{ts,tsx,mdx}\"",
+    "format": "prettier -w ./src/**/*.{ts,tsx}",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives",
     "build:registry": "tsx scripts/build-registry.ts",
     "build:contents": "tsx scripts/build-contents.ts"
@@ -60,10 +60,10 @@
   },
   "private": true,
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "pnpm build:registry",
-      "pnpm format",
-      "pnpm lint --fix"
+    "src/**/*.{ts,tsx,mdx}": [
+      "bun prettier -w ./src/**/*.{ts,tsx,mdx}",
+      "bun eslint src --ext ts,tsx --report-unused-disable-directives --fix"
     ]
   }
 }
+

@@ -6,5 +6,6 @@ export default {
   singleQuote: false,
   arrowParens: "avoid",
   printWidth: 100,
-  endOfLine: "crlf"
+  endOfLine: "auto"
 };
+
