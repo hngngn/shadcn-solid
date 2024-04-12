@@ -8,7 +8,7 @@ import {
   TabsList,
   TabsTrigger
 } from "@/registry/tailwindcss/ui/tabs";
-import { type ComponentProps, mergeProps, type ParentComponent, Show, splitProps } from "solid-js";
+import { Show, mergeProps, splitProps, type ComponentProps, type ParentComponent } from "solid-js";
 
 type ComponentPreviewProps = ComponentProps<"div"> & {
   name: string;
@@ -67,10 +67,10 @@ export const ComponentPreview: ParentComponent<ComponentPreviewProps> = props =>
             <TabsIndicator class="bg-primary" />
           </TabsList>
         </div>
-        <TabsContent value="preview" class="relative rounded-md border">
+        <TabsContent value="preview" class="relative rounded-md border has-[table]:border-none">
           <div
             class={cn(
-              "preview flex min-h-[350px] w-full justify-center p-10",
+              "preview flex min-h-[350px] w-full justify-center p-10 has-[table]:p-0",
               local.align === "center" && "items-center",
               local.align === "start" && "items-start",
               local.align === "end" && "items-end"

@@ -153,6 +153,12 @@ export const docsConfig: TDocsConfig = {
           items: []
         },
         {
+          title: "Data Table",
+          href: "/docs/components/data-table",
+          items: [],
+          label: "New"
+        },
+        {
           title: "Date Picker",
           href: "/docs/components/date-picker",
           items: []

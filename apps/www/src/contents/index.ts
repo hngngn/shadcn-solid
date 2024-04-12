@@ -50,6 +50,9 @@ export const Contents: Record<string, Record<"component", Component<unknown>>> =
   "/docs/components/context-menu": {
     component: lazy(() => import("@/contents/docs/components/context-menu.mdx"))
   },
+  "/docs/components/data-table": {
+    component: lazy(() => import("@/contents/docs/components/data-table.mdx"))
+  },
   "/docs/components/date-picker": {
     component: lazy(() => import("@/contents/docs/components/date-picker.mdx"))
   },

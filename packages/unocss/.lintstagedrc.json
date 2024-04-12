@@ -1,0 +1,4 @@
+{
+  "ui/**/*.{ts,tsx}": ["bun prettier -w ui/**/*.tsx"]
+}
+

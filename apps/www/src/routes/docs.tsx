@@ -1,10 +1,10 @@
 import { MDXComponent } from "@/components/mdx-components";
+import { Metadata } from "@/components/metadata";
 import { Pager } from "@/components/pager";
 import { Sidebar } from "@/components/sidebar";
 import { TableOfContents } from "@/components/toc";
 import { siteConfig } from "@/config/site";
 import { badgeVariants } from "@/registry/tailwindcss/ui/badge";
-import { Meta, Title } from "@solidjs/meta";
 import { A, type RouteSectionProps } from "@solidjs/router";
 import { Show, createMemo } from "solid-js";
 import { MDXProvider } from "solid-mdx";
@@ -54,25 +54,11 @@ const DocumentLayout = (props: RouteSectionProps) => {
 
   return (
     <>
-      <Title>{`${markdownData().frontmatter.title} - shadcn-solid`}</Title>
-      <Meta name="description" content={markdownData().frontmatter.description} />
-
-      <Meta name="twitter:card" content="summary_large_image" />
-      <Meta name="twitter:title" content={`${markdownData().frontmatter.title} - shadcn-solid`} />
-      <Meta name="twitter:description" content={markdownData().frontmatter.description} />
-      <Meta name="twitter:image" content="https://shadcn-solid.com/og.png" />
-      <Meta name="twitter:creator" content="@hnggngnn" />
-
-      <Meta property="og:title" content={`${markdownData().frontmatter.title} - shadcn-solid`} />
-      <Meta property="og:description" content={markdownData().frontmatter.description} />
-      <Meta property="og:type" content="article" />
-      <Meta property="og:url" content={`${siteConfig.url + props.location.pathname}`} />
-      <Meta property="og:image" content="https://shadcn-solid.com/og.png" />
-      <Meta property="og:alt" content={siteConfig.title} />
-      <Meta property="og:image:width" content="1200" />
-      <Meta property="og:image:height" content="630" />
-
-      <Meta property="canonical" content={`${siteConfig.url + props.location.pathname}`} />
+      <Metadata
+        title={`${markdownData().frontmatter.title} - shadcn-solid`}
+        description={markdownData().frontmatter.description}
+        url={siteConfig.url + props.location.pathname}
+      />
 
       <div class="border-b">
         <div class="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">

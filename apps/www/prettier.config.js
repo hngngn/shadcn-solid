@@ -7,5 +7,6 @@ export default {
   arrowParens: "avoid",
   printWidth: 100,
   plugins: ["prettier-plugin-tailwindcss"],
-  endOfLine: "crlf"
+  endOfLine: "auto"
 };
+

@@ -5,18 +5,20 @@
     "dev": "vinxi dev",
     "build": "vinxi build",
     "start": "vinxi start",
-    "format": "prettier -w \"./src/**/*.{ts,tsx,mdx}\"",
+    "format": "prettier -w ./src/**/*.{ts,tsx}",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives",
     "build:registry": "tsx scripts/build-registry.ts",
     "build:contents": "tsx scripts/build-contents.ts"
   },
   "dependencies": {
     "@ark-ui/solid": "^2.2.0",
+    "@faker-js/faker": "^8.4.1",
     "@kobalte/core": "^0.12.6",
     "@mdx-js/mdx": "^2.3.0",
     "@solidjs/meta": "^0.29.3",
     "@solidjs/router": "^0.13.1",
     "@solidjs/start": "1.0.0-rc.0",
+    "@tanstack/solid-table": "^8.15.3",
     "@vinxi/plugin-mdx": "^3.6.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
@@ -60,10 +62,9 @@
   },
   "private": true,
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "pnpm build:registry",
-      "pnpm format",
-      "pnpm lint --fix"
+    "src/**/*.{ts,tsx,mdx}": [
+      "bun prettier -w ./src/**/*.{ts,tsx,mdx}",
+      "bun eslint src --ext ts,tsx --report-unused-disable-directives --fix"
     ]
   }
 }

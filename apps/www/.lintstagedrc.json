@@ -1,0 +1,7 @@
+{
+  "src/**/*.{ts,tsx}": [
+    "bun build:registry",
+    "bun prettier -w src/**/*.{ts,tsx}",
+    "bun eslint src --ext ts,tsx --report-unused-disable-directives --fix"
+  ]
+}

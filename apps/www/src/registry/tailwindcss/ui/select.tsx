@@ -1,5 +1,5 @@
 import { cn } from "@/libs/cn";
-import { Select as SelectPrimitive } from "@kobalte/core";
+import { As, Select as SelectPrimitive } from "@kobalte/core";
 import type { VoidProps } from "solid-js";
 import { splitProps } from "solid-js";
 
@@ -22,8 +22,9 @@ export const SelectTrigger = (props: SelectPrimitive.SelectTriggerProps) => {
       {...rest}
     >
       {local.children}
-      <SelectPrimitive.Icon class="flex h-3.5 w-3.5 items-center justify-center">
-        <svg
+      <SelectPrimitive.Icon class="flex h-3.5 w-3.5 items-center justify-center" asChild>
+        <As
+          component="svg"
           xmlns="http://www.w3.org/2000/svg"
           width="1em"
           height="1em"
@@ -38,7 +39,7 @@ export const SelectTrigger = (props: SelectPrimitive.SelectTriggerProps) => {
             stroke-width="2"
             d="m8 9l4-4l4 4m0 6l-4 4l-4-4"
           />
-        </svg>
+        </As>
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
   );
