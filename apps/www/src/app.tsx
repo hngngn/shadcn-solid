@@ -8,7 +8,6 @@ import { getCookie } from "vinxi/http";
 import "./app.css";
 import { Footer } from "./components/footer";
 import { Header } from "./components/header";
-import { Metadata } from "./components/metadata";
 import "./mdx.css";
 import { ToastList, ToastRegion } from "./registry/tailwindcss/ui/toast";
 
@@ -26,7 +25,6 @@ const App = () => {
     <Router
       root={props => (
         <MetaProvider>
-          <Metadata />
           <Suspense>
             <ColorModeScript storageType={storageManager.type} />
             <ColorModeProvider storageManager={storageManager}>

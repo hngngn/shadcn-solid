@@ -1,29 +1,14 @@
 import { Example } from "@/components/example";
+import { Metadata } from "@/components/metadata";
 import { siteConfig } from "@/config/site";
 import { buttonVariants } from "@/registry/tailwindcss/ui/button";
-import { Meta, Title } from "@solidjs/meta";
 import { A, type RouteSectionProps } from "@solidjs/router";
 import { Balancer } from "solid-wrap-balancer";
 
 const Examples = (props: RouteSectionProps) => {
   return (
     <>
-      <Title>Example - shadcn-solid</Title>
-
-      <Meta name="twitter:card" content="summary_large_image" />
-      <Meta name="twitter:title" content="Example - shadcn-solid" />
-      <Meta name="twitter:image" content="https://shadcn-solid.com/og.png" />
-      <Meta name="twitter:creator" content="@hnggngnn" />
-
-      <Meta property="og:title" content="Example - shadcn-solid" />
-      <Meta property="og:type" content="article" />
-      <Meta property="og:url" content={`${siteConfig.url + props.location.pathname}`} />
-      <Meta property="og:image" content="https://shadcn-solid.com/og.png" />
-      <Meta property="og:alt" content={siteConfig.title} />
-      <Meta property="og:image:width" content="1200" />
-      <Meta property="og:image:height" content="630" />
-
-      <Meta property="canonical" content={`${siteConfig.url + props.location.pathname}`} />
+      <Metadata title="Example - shadcn-solid" url={siteConfig.url + props.location.pathname} />
 
       <div class="container relative">
         <section class="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20">
