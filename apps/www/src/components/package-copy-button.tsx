@@ -6,7 +6,7 @@ import {
   DropdownMenuTrigger
 } from "@/registry/tailwindcss/ui/dropdown-menu";
 import { As } from "@kobalte/core";
-import { For, Show, createSignal, type VoidComponent } from "solid-js";
+import { For, Show, type VoidComponent, createSignal } from "solid-js";
 
 type Props = {
   preRef: HTMLPreElement | undefined;

@@ -1,9 +1,7 @@
 {
   "name": "@repo-registry/unocss",
   "version": "0.0.1",
-  "files": [
-    "ui"
-  ],
+  "files": ["ui"],
   "devDependencies": {
     "@ark-ui/solid": "^2.2.0",
     "@kobalte/core": "^0.12.6",
@@ -36,12 +34,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite serve dev",
-    "format": "prettier -w \"./{ui,libs,dev}/**/*.{ts,tsx}\""
+    "check": "biome check --apply-unsafe ui"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx,mdx}": [
-      "bun prettier -w ui/**/*.tsx"
-    ]
+    "src/**/*.{ts,tsx}": ["bun run check"]
   }
 }
-

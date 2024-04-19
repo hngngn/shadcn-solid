@@ -6,11 +6,8 @@
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
-    "lint": {
-      "dependsOn": ["^lint"]
-    },
-    "format": {
-      "dependsOn": ["^format"]
+    "check": {
+      "dependsOn": ["^check"]
     },
     "dev": {
       "cache": false,

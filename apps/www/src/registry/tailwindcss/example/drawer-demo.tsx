@@ -1,3 +1,5 @@
+import { createSignal } from "solid-js";
+import { Button } from "../ui/button";
 import {
   Drawer,
   DrawerClose,
@@ -8,8 +10,6 @@ import {
   DrawerLabel,
   DrawerTrigger
 } from "../ui/drawer";
-import { Button } from "../ui/button";
-import { createSignal } from "solid-js";
 
 const DrawerDemo = () => {
   const [goal, setGoal] = createSignal(350);

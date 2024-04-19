@@ -8,7 +8,7 @@ import {
   TabsList,
   TabsTrigger
 } from "@/registry/tailwindcss/ui/tabs";
-import { Show, mergeProps, splitProps, type ComponentProps, type ParentComponent } from "solid-js";
+import { type ComponentProps, type ParentComponent, Show, mergeProps, splitProps } from "solid-js";
 
 type ComponentPreviewProps = ComponentProps<"div"> & {
   name: string;

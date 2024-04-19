@@ -10,7 +10,7 @@ import {
 } from "../ui/carousel";
 
 const CarouselPlugin = () => {
-  let plugin = Autoplay({ delay: 2000, stopOnInteraction: true });
+  const plugin = Autoplay({ delay: 2000, stopOnInteraction: true });
 
   return (
     <Carousel

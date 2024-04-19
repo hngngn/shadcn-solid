@@ -7,7 +7,8 @@ export const Announcement = () => {
       href="/docs/changelog"
       class="inline-flex items-center rounded-lg bg-muted px-3 py-1 text-sm font-medium"
     >
-      ✨<Separator class="mx-2 data-[orientation=vertical]:h-4" orientation="vertical" />
+      ✨
+      <Separator class="mx-2 data-[orientation=vertical]:h-4" orientation="vertical" />
       <span class="sm:hidden">UnoCSS</span>
       <span class="hidden sm:inline">UnoCSS</span>
       <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-4 w-4" viewBox="0 0 24 24">

@@ -5,6 +5,7 @@
     "dev": "vinxi dev",
     "build": "vinxi build",
     "start": "vinxi start",
+    "check": "bun run format && biome check --apply-unsafe src && bun run lint",
     "format": "prettier -w ./src/**/*.{ts,tsx}",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives",
     "build:registry": "tsx scripts/build-registry.ts",
@@ -62,9 +63,6 @@
   },
   "private": true,
   "lint-staged": {
-    "src/**/*.{ts,tsx,mdx}": [
-      "bun prettier -w ./src/**/*.{ts,tsx,mdx}",
-      "bun eslint src --ext ts,tsx --report-unused-disable-directives --fix"
-    ]
+    "src/**/*.{ts,tsx}": ["bun run check"]
   }
 }
