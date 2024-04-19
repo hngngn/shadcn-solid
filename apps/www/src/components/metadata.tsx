@@ -1,6 +1,6 @@
 import { siteConfig } from "@/config/site";
 import { Link, Meta, Style, Title } from "@solidjs/meta";
-import { type VoidComponent } from "solid-js";
+import type { VoidComponent } from "solid-js";
 
 type Props = {
   title?: string;

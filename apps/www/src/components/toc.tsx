@@ -1,7 +1,7 @@
 import { cn } from "@/libs/cn";
 import { A, useLocation } from "@solidjs/router";
 import type { Accessor, VoidComponent } from "solid-js";
-import { createEffect, createSignal, For, onCleanup } from "solid-js";
+import { For, createEffect, createSignal, onCleanup } from "solid-js";
 
 type TableOfContent = {
   depth: number;
@@ -18,7 +18,7 @@ const getHeadingsFromToc = (tableOfContents: TableOfContent[]) => {
     }
 
     const style = window.getComputedStyle(el);
-    const scrollMt = parseFloat(style.scrollMarginTop) * 2;
+    const scrollMt = Number.parseFloat(style.scrollMarginTop) * 2;
 
     const top = window.scrollY + el.getBoundingClientRect().top - scrollMt;
 

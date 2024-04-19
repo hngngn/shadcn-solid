@@ -1,0 +1,10 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.7.0/schema.json",
+  "extends": ["../../biome.json"],
+  "formatter": {
+    "ignore": ["__registry__", "*.json"]
+  },
+  "linter": {
+    "ignore": ["*.js", "*.json"]
+  }
+}

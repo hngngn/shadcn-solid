@@ -1,4 +1,4 @@
-import { createEffect, createSignal, onCleanup, type JSXElement } from "solid-js";
+import { type JSXElement, createEffect, createSignal, onCleanup } from "solid-js";
 import {
   CommandDialog,
   CommandHeading,

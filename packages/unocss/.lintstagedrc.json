@@ -1,4 +1,3 @@
 {
-  "ui/**/*.{ts,tsx}": ["bun prettier -w ui/**/*.tsx"]
+  "ui/**/*.{ts,tsx}": ["bun run check"]
 }
-

@@ -1,7 +1,7 @@
+import { cn } from "@/libs/cn";
 import * as DrawerPrimitive from "corvu/drawer";
 import type { ComponentProps } from "solid-js";
 import { splitProps } from "solid-js";
-import { cn } from "@/libs/cn";
 
 export const Drawer = DrawerPrimitive.Root;
 export const DrawerTrigger = DrawerPrimitive.Trigger;

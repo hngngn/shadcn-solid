@@ -2,7 +2,7 @@ import { cn } from "@/libs/cn";
 import { Pagination as PaginationPrimitive } from "@kobalte/core";
 import type { VariantProps } from "class-variance-authority";
 import type { VoidProps } from "solid-js";
-import { mergeProps, type ParentComponent, splitProps } from "solid-js";
+import { type ParentComponent, mergeProps, splitProps } from "solid-js";
 import { buttonVariants } from "./button";
 
 export const PaginationItems = PaginationPrimitive.Items;

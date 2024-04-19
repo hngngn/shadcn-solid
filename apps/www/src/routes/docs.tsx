@@ -39,14 +39,14 @@ const DocumentLayout = (props: RouteSectionProps) => {
     frontmatter: contents[
       `../contents${
         props.location.pathname === "/docs" || props.location.pathname === "/docs/installation"
-          ? props.location.pathname + "/index"
+          ? `${props.location.pathname}/index`
           : props.location.pathname
       }.mdx`
     ].frontmatter as Frontmatter,
     headings: contents[
       `../contents${
         props.location.pathname === "/docs" || props.location.pathname === "/docs/installation"
-          ? props.location.pathname + "/index"
+          ? `${props.location.pathname}/index`
           : props.location.pathname
       }.mdx`
     ].headings as Heading[]

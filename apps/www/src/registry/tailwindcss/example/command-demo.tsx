@@ -1,4 +1,4 @@
-import { type JSXElement } from "solid-js";
+import type { JSXElement } from "solid-js";
 import {
   Command,
   CommandHeading,

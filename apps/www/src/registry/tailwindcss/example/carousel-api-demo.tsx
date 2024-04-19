@@ -2,11 +2,11 @@ import { Index, createEffect, createSignal } from "solid-js";
 import { Card, CardContent } from "../ui/card";
 import {
   Carousel,
+  type CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious,
-  type CarouselApi
+  CarouselPrevious
 } from "../ui/carousel";
 
 const CarouselApiDemo = () => {
@@ -15,7 +15,7 @@ const CarouselApiDemo = () => {
   const [count, setCount] = createSignal(0);
 
   const onSelect = () => {
-    setCurrent(api()!.selectedScrollSnap() + 1);
+    setCurrent(api()?.selectedScrollSnap() + 1);
   };
 
   createEffect(() => {
@@ -23,10 +23,10 @@ const CarouselApiDemo = () => {
       return;
     }
 
-    setCount(api()!.scrollSnapList().length);
-    setCurrent(api()!.selectedScrollSnap() + 1);
+    setCount(api()?.scrollSnapList().length);
+    setCurrent(api()?.selectedScrollSnap() + 1);
 
-    api()!.on("select", onSelect);
+    api()?.on("select", onSelect);
   });
 
   return (

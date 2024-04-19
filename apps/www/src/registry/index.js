@@ -681,4 +681,3 @@ const example = [
 ];
 
 export const registry = [...ui, ...example];
-

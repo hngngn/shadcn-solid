@@ -109,8 +109,8 @@ export const Carousel = (props: ComponentProps<"div"> & CarouselProps) => {
     }
 
     onSelect(api()!);
-    api()!.on("reInit", onSelect);
-    api()!.on("select", onSelect);
+    api()?.on("reInit", onSelect);
+    api()?.on("select", onSelect);
 
     return () => {
       api()?.off("select", onSelect);
