@@ -37,6 +37,7 @@ const ui = [
   {
     name: "carousel",
     type: "components:ui",
+    registryDependencies: ["button"],
     dependencies: ["embla-carousel-solid"],
     files: ["ui/carousel.tsx"]
   },

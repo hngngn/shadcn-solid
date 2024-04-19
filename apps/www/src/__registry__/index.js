@@ -49,7 +49,7 @@ export const Index = {
     "carousel": {
       name: "carousel",
       type: "components:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["button"],
       component: lazy(() => import("@/registry/tailwindcss/ui/carousel")),
       files: ["registry/tailwindcss/ui/carousel.tsx"],
     },
