@@ -8,6 +8,7 @@
     "@unocss/reset": "^0.58.8",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "cmdk-solid": "^1.0.1",
     "corvu": "^0.5.1",
     "embla-carousel-autoplay": "8.0.0",
     "embla-carousel-solid": "8.0.0",
