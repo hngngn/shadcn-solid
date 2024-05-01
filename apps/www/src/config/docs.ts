@@ -145,7 +145,8 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Command",
           href: "/docs/components/command",
-          items: []
+          items: [],
+          label: "Updated"
         },
         {
           title: "Context Menu",
@@ -213,7 +214,7 @@ export const docsConfig: TDocsConfig = {
           title: "Resizable",
           href: "/docs/components/resizable",
           items: [],
-          label: "New"
+          label: "Updated"
         },
         {
           title: "Select",
