@@ -108,6 +108,8 @@ export function CommandMenu() {
   return (
     <CommandDialog
       options={ALL_OPTIONS}
+      open={open()}
+      onOpenChange={setOpen}
       itemComponent={props => (
         <CommandItem item={props.item}>
           <CommandItemLabel>{props.item.rawValue}</CommandItemLabel>
