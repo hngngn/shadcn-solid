@@ -3,16 +3,16 @@ import { docsConfig } from "@/config/docs";
 import { Button } from "@/registry/tailwindcss/ui/button";
 import {
   CommandDialog,
-  CommandHeading,
+  CommandEmpty,
+  CommandGroup,
   CommandInput,
   CommandItem,
-  CommandItemLabel,
   CommandList
 } from "@/registry/tailwindcss/ui/command";
 import { useColorMode } from "@kobalte/core";
 import { useNavigate } from "@solidjs/router";
 import type { JSXElement } from "solid-js";
-import { createEffect, createSignal, onCleanup } from "solid-js";
+import { For, createEffect, createSignal, onCleanup } from "solid-js";
 
 type Option = TNavItem & { value: string; icon: JSXElement };
 
@@ -162,41 +162,44 @@ const CommandMenu = () => {
           <span class="text-xs">⌘</span>K
         </kbd>
       </Button>
-      <CommandDialog<Option, List>
-        options={data()}
-        optionValue="value"
-        optionTextValue="label"
-        optionLabel="title"
-        optionGroupChildren="options"
-        placeholder="Type a command or search..."
-        onChange={(e: Option) => {
-          switch (e.title) {
-            case "Light":
-              setColorMode("light");
-              break;
-            case "Dark":
-              setColorMode("dark");
-              break;
-            case "System":
-              setColorMode("system");
-              break;
-            default:
-              navigate(e.href!);
-              break;
-          }
-        }}
-        itemComponent={props => (
-          <CommandItem item={props.item}>
-            {props.item.rawValue.icon}
-            <CommandItemLabel>{props.item.rawValue.title}</CommandItemLabel>
-          </CommandItem>
-        )}
-        sectionComponent={props => <CommandHeading>{props.section.rawValue.label}</CommandHeading>}
-        open={open()}
-        onOpenChange={setOpen}
-      >
-        <CommandInput />
-        <CommandList />
+      <CommandDialog class="rounded-lg border shadow-md" open={open()} onOpenChange={setOpen}>
+        <CommandInput placeholder="Type a command or search..." />
+        <CommandList>
+          <CommandEmpty>No results found.</CommandEmpty>
+          <For each={data()}>
+            {item => (
+              <CommandGroup heading={item.label}>
+                <For each={item.options}>
+                  {item => (
+                    <CommandItem
+                      disabled={item.disabled}
+                      onSelect={() => {
+                        switch (item.value) {
+                          case "light":
+                            setColorMode("light");
+                            break;
+                          case "dark":
+                            setColorMode("dark");
+                            break;
+                          case "system":
+                            setColorMode("system");
+                            break;
+                          default:
+                            navigate(item.href!);
+                            break;
+                        }
+                        setOpen(false);
+                      }}
+                    >
+                      {item.icon}
+                      <span>{item.title}</span>
+                    </CommandItem>
+                  )}
+                </For>
+              </CommandGroup>
+            )}
+          </For>
+        </CommandList>
       </CommandDialog>
     </>
   );

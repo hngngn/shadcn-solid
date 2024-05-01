@@ -83,6 +83,9 @@ export const Contents: Record<string, Record<"component", Component<unknown>>> =
   "/docs/components/radio-group": {
     component: lazy(() => import("@/contents/docs/components/radio-group.mdx"))
   },
+  "/docs/components/resizable": {
+    component: lazy(() => import("@/contents/docs/components/resizable.mdx"))
+  },
   "/docs/components/select": {
     component: lazy(() => import("@/contents/docs/components/select.mdx"))
   },
@@ -94,9 +97,6 @@ export const Contents: Record<string, Record<"component", Component<unknown>>> =
   },
   "/docs/components/skeleton": {
     component: lazy(() => import("@/contents/docs/components/skeleton.mdx"))
-  },
-  "/docs/components/splitter": {
-    component: lazy(() => import("@/contents/docs/components/splitter.mdx"))
   },
   "/docs/components/switch": {
     component: lazy(() => import("@/contents/docs/components/switch.mdx"))

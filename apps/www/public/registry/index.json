@@ -229,6 +229,16 @@
     "type": "components:ui"
   },
   {
+    "name": "resizable",
+    "dependencies": [
+      "corvu"
+    ],
+    "files": [
+      "ui/resizable.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "select",
     "dependencies": [
       "@kobalte/core"
@@ -262,16 +272,6 @@
     "name": "skeleton",
     "files": [
       "ui/skeleton.tsx"
-    ],
-    "type": "components:ui"
-  },
-  {
-    "name": "splitter",
-    "dependencies": [
-      "@ark-ui/solid"
-    ],
-    "files": [
-      "ui/splitter.tsx"
     ],
     "type": "components:ui"
   },

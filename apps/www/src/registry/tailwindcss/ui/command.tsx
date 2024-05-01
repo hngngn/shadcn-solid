@@ -1,36 +1,26 @@
 import { cn } from "@/libs/cn";
-import type { Dialog as DialogPrimitive } from "@kobalte/core";
-import { Combobox as ComboboxPrimitive } from "@kobalte/core";
-import type { ComponentProps, ParentProps, VoidProps } from "solid-js";
+import type { ComponentProps, VoidProps } from "solid-js";
 import { splitProps } from "solid-js";
 import { Dialog, DialogContent } from "./dialog";
 
-export const CommandItemLabel = ComboboxPrimitive.ItemLabel;
+import {
+  type CommandDialogProps,
+  type CommandEmptyProps,
+  type CommandGroupProps,
+  type CommandInputProps,
+  type CommandItemProps,
+  type CommandListProps,
+  Command as CommandPrimitive,
+  type CommandRootProps
+} from "cmdk-solid";
 
-export const Command = <Option, OptGroup>(
-  props: Omit<
-    ParentProps<ComboboxPrimitive.ComboboxRootProps<Option, OptGroup>>,
-    | "open"
-    | "defaultOpen"
-    | "multiple"
-    | "value"
-    | "defaultValue"
-    | "removeOnBackspace"
-    | "readOnly"
-    | "allowsEmptyCollection"
-  >
-) => {
+export const Command = (props: CommandRootProps) => {
   const [local, rest] = splitProps(props, ["class"]);
 
   return (
-    <ComboboxPrimitive.Root
-      // force render list
-      open
-      // @ts-ignore -- prevent select
-      value=""
-      allowsEmptyCollection
+    <CommandPrimitive
       class={cn(
-        "flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground",
+        "flex size-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground",
         local.class
       )}
       {...rest}
@@ -38,25 +28,22 @@ export const Command = <Option, OptGroup>(
   );
 };
 
-export const CommandList = <Option, OptGroup>(
-  props: VoidProps<ComboboxPrimitive.ComboboxListboxProps<Option, OptGroup>>
-) => {
+export const CommandList = (props: CommandListProps) => {
   const [local, rest] = splitProps(props, ["class"]);
 
   return (
-    <ComboboxPrimitive.Listbox
-      cmdk-list=""
+    <CommandPrimitive.List
       class={cn("max-h-[300px] overflow-y-auto overflow-x-hidden p-1", local.class)}
       {...rest}
     />
   );
 };
 
-export const CommandInput = (props: VoidProps<ComboboxPrimitive.ComboboxInputProps>) => {
+export const CommandInput = (props: VoidProps<CommandInputProps>) => {
   const [local, rest] = splitProps(props, ["class"]);
 
   return (
-    <ComboboxPrimitive.Control class="flex items-center border-b px-3" cmdk-input-wrapper="">
+    <div class="flex items-center border-b px-3" cmdk-input-wrapper="">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -71,27 +58,24 @@ export const CommandInput = (props: VoidProps<ComboboxPrimitive.ComboboxInputPro
           d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0-14 0m18 11l-6-6"
         />
       </svg>
-      <ComboboxPrimitive.Input
-        cmdk-input=""
+      <CommandPrimitive.Input
         class={cn(
           "flex h-10 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50",
           local.class
         )}
         {...rest}
       />
-    </ComboboxPrimitive.Control>
+    </div>
   );
 };
 
-export const CommandItem = (props: ComboboxPrimitive.ComboboxItemProps) => {
-  const [local, rest] = splitProps(props, ["class", "item"]);
+export const CommandItem = (props: CommandItemProps) => {
+  const [local, rest] = splitProps(props, ["class"]);
 
   return (
-    <ComboboxPrimitive.Item
-      item={local.item}
-      cmdk-item=""
+    <CommandPrimitive.Item
       class={cn(
-        "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50",
+        "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground aria-disabled:pointer-events-none aria-disabled:opacity-50",
         local.class
       )}
       {...rest}
@@ -110,14 +94,33 @@ export const CommandShortcut = (props: ComponentProps<"span">) => {
   );
 };
 
-export const CommandHeading = (props: ComboboxPrimitive.ComboboxSectionProps) => {
+export const CommandDialog = (props: CommandDialogProps) => {
+  const [local, rest] = splitProps(props, ["children"]);
+
+  return (
+    <Dialog {...rest}>
+      <DialogContent class="overflow-hidden p-0">
+        <Command class="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:size-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:size-5">
+          {local.children}
+        </Command>
+      </DialogContent>
+    </Dialog>
+  );
+};
+
+export const CommandEmpty = (props: CommandEmptyProps) => {
+  const [local, rest] = splitProps(props, ["class"]);
+
+  return <CommandPrimitive.Empty class={cn("py-6 text-center text-sm", local.class)} {...rest} />;
+};
+
+export const CommandGroup = (props: CommandGroupProps) => {
   const [local, rest] = splitProps(props, ["class"]);
 
   return (
-    <ComboboxPrimitive.Section
-      cmdk-heading=""
+    <CommandPrimitive.Group
       class={cn(
-        "px-2 py-1.5 text-xs font-medium text-muted-foreground [&:not(&:first-of-type)]:mt-2",
+        "overflow-hidden p-1 text-foreground [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground",
         local.class
       )}
       {...rest}
@@ -125,32 +128,8 @@ export const CommandHeading = (props: ComboboxPrimitive.ComboboxSectionProps) =>
   );
 };
 
-export const CommandDialog = <Option, OptGroup>(
-  props: DialogPrimitive.DialogRootProps &
-    Omit<
-      ParentProps<ComboboxPrimitive.ComboboxRootProps<Option, OptGroup>>,
-      | "open"
-      | "defaultOpen"
-      | "multiple"
-      | "value"
-      | "defaultValue"
-      | "removeOnBackspace"
-      | "readOnly"
-      | "allowsEmptyCollection"
-    >
-) => {
-  const [local, rest] = splitProps(props, ["children"]);
+export const CommandSeparator = (props: CommandEmptyProps) => {
+  const [local, rest] = splitProps(props, ["class"]);
 
-  return (
-    <Dialog {...rest}>
-      <DialogContent class="overflow-hidden p-0">
-        <Command
-          class="[&_[cmdk-heading]]:px-2 [&_[cmdk-heading]]:font-medium [&_[cmdk-heading]]:text-muted-foreground [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5 [&_[cmdk-list]:not([hidden])_~[cmdk-list]]:pt-0 [&_[cmdk-list]]:px-2"
-          {...rest}
-        >
-          {local.children}
-        </Command>
-      </DialogContent>
-    </Dialog>
-  );
+  return <CommandPrimitive.Separator class={cn("-mx-1 h-px bg-border", local.class)} {...rest} />;
 };

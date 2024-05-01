@@ -1,19 +1,26 @@
 import { cn } from "@/libs/cn";
-import type { SplitterResizeTriggerProps } from "@ark-ui/solid";
-import { Splitter as SplitterPrimitive } from "@ark-ui/solid";
+import { type HandleProps, Resizable as ResizablePrimitive, type RootProps } from "corvu/resizable";
 import type { VoidProps } from "solid-js";
 import { Show, splitProps } from "solid-js";
 
-export const Splitter = SplitterPrimitive.Root;
-export const SplitterPanel = SplitterPrimitive.Panel;
+export const ResizablePanel = ResizablePrimitive.Panel;
 
-export const SplitterResizeTrigger = (
-  props: VoidProps<SplitterResizeTriggerProps & { withHandle?: boolean }>
-) => {
+export const Resizable = (props: RootProps) => {
+  const [local, rest] = splitProps(props, ["class"]);
+
+  return (
+    <ResizablePrimitive
+      class={cn("flex h-full w-full data-[orientation=vertical]:flex-col", local.class)}
+      {...rest}
+    />
+  );
+};
+
+export const ResizableHandle = (props: VoidProps<HandleProps & { withHandle?: boolean }>) => {
   const [local, rest] = splitProps(props, ["class", "withHandle"]);
 
   return (
-    <SplitterPrimitive.ResizeTrigger
+    <ResizablePrimitive.Handle
       class={cn(
         "flex w-px items-center justify-center bg-border focus-visible:(outline-none ring-1.5 ring-ring ring-offset-1) data-[orientation=vertical]:(h-px w-full) transition-shadow",
         local.class
@@ -32,6 +39,6 @@ export const SplitterResizeTrigger = (
           </svg>
         </div>
       </Show>
-    </SplitterPrimitive.ResizeTrigger>
+    </ResizablePrimitive.Handle>
   );
 };

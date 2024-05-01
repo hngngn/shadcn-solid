@@ -106,19 +106,17 @@ export function CommandMenu() {
   });
 
   return (
-    <CommandDialog
-      options={ALL_OPTIONS}
-      open={open()}
-      onOpenChange={setOpen}
-      itemComponent={props => (
-        <CommandItem item={props.item}>
-          <CommandItemLabel>{props.item.rawValue}</CommandItemLabel>
-        </CommandItem>
-      )}
-    >
-      <CommandInput />
-      <CommandList />
-    </CommandDialog>
+    <CommandDialog open={open()} onOpenChange={setOpen}>
+        <CommandInput placeholder="Type a command or search..." />
+        <CommandList>
+          <CommandEmpty>No results found.</CommandEmpty>
+          <CommandGroup heading="Suggestions">
+            <CommandItem>Calendar</CommandItem>
+            <CommandItem>Search Emoji</CommandItem>
+            <CommandItem>Calculator</CommandItem>
+          </CommandGroup>
+        </CommandList>
+      </CommandDialog>
   );
 }
 ```

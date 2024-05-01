@@ -158,6 +158,13 @@ export const Index = {
       component: lazy(() => import("@/registry/tailwindcss/ui/radio-group")),
       files: ["registry/tailwindcss/ui/radio-group.tsx"],
     },
+    "resizable": {
+      name: "resizable",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/tailwindcss/ui/resizable")),
+      files: ["registry/tailwindcss/ui/resizable.tsx"],
+    },
     "select": {
       name: "select",
       type: "components:ui",
@@ -185,13 +192,6 @@ export const Index = {
       registryDependencies: undefined,
       component: lazy(() => import("@/registry/tailwindcss/ui/skeleton")),
       files: ["registry/tailwindcss/ui/skeleton.tsx"],
-    },
-    "splitter": {
-      name: "splitter",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/splitter")),
-      files: ["registry/tailwindcss/ui/splitter.tsx"],
     },
     "switch": {
       name: "switch",
@@ -578,6 +578,27 @@ export const Index = {
       component: lazy(() => import("@/registry/tailwindcss/example/radio-group-demo")),
       files: ["registry/tailwindcss/example/radio-group-demo.tsx"],
     },
+    "resizable-demo": {
+      name: "resizable-demo",
+      type: "components:example",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/tailwindcss/example/resizable-demo")),
+      files: ["registry/tailwindcss/example/resizable-demo.tsx"],
+    },
+    "resizable-vertical-demo": {
+      name: "resizable-vertical-demo",
+      type: "components:example",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/tailwindcss/example/resizable-vertical-demo")),
+      files: ["registry/tailwindcss/example/resizable-vertical-demo.tsx"],
+    },
+    "resizable-with-handle-demo": {
+      name: "resizable-with-handle-demo",
+      type: "components:example",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/tailwindcss/example/resizable-with-handle-demo")),
+      files: ["registry/tailwindcss/example/resizable-with-handle-demo.tsx"],
+    },
     "select-demo": {
       name: "select-demo",
       type: "components:example",
@@ -612,27 +633,6 @@ export const Index = {
       registryDependencies: undefined,
       component: lazy(() => import("@/registry/tailwindcss/example/skeleton-demo")),
       files: ["registry/tailwindcss/example/skeleton-demo.tsx"],
-    },
-    "splitter-demo": {
-      name: "splitter-demo",
-      type: "components:example",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/splitter-demo")),
-      files: ["registry/tailwindcss/example/splitter-demo.tsx"],
-    },
-    "splitter-vertical-demo": {
-      name: "splitter-vertical-demo",
-      type: "components:example",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/splitter-vertical-demo")),
-      files: ["registry/tailwindcss/example/splitter-vertical-demo.tsx"],
-    },
-    "splitter-with-handle-demo": {
-      name: "splitter-with-handle-demo",
-      type: "components:example",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/splitter-with-handle-demo")),
-      files: ["registry/tailwindcss/example/splitter-with-handle-demo.tsx"],
     },
     "switch-demo": {
       name: "switch-demo",

@@ -135,6 +135,12 @@ const ui = [
     files: ["ui/radio-group.tsx"]
   },
   {
+    name: "resizable",
+    type: "components:ui",
+    dependencies: ["corvu"],
+    files: ["ui/resizable.tsx"]
+  },
+  {
     name: "select",
     type: "components:ui",
     dependencies: ["@kobalte/core"],
@@ -156,12 +162,6 @@ const ui = [
     name: "skeleton",
     type: "components:ui",
     files: ["ui/skeleton.tsx"]
-  },
-  {
-    name: "splitter",
-    type: "components:ui",
-    dependencies: ["@ark-ui/solid"],
-    files: ["ui/splitter.tsx"]
   },
   {
     name: "switch",
@@ -450,6 +450,21 @@ const example = [
     files: ["example/radio-group-demo.tsx"]
   },
   {
+    name: "resizable-demo",
+    type: "components:example",
+    files: ["example/resizable-demo.tsx"]
+  },
+  {
+    name: "resizable-vertical-demo",
+    type: "components:example",
+    files: ["example/resizable-vertical-demo.tsx"]
+  },
+  {
+    name: "resizable-with-handle-demo",
+    type: "components:example",
+    files: ["example/resizable-with-handle-demo.tsx"]
+  },
+  {
     name: "select-demo",
     type: "components:example",
     files: ["example/select-demo.tsx"]
@@ -473,21 +488,6 @@ const example = [
     name: "skeleton-demo",
     type: "components:example",
     files: ["example/skeleton-demo.tsx"]
-  },
-  {
-    name: "splitter-demo",
-    type: "components:example",
-    files: ["example/splitter-demo.tsx"]
-  },
-  {
-    name: "splitter-vertical-demo",
-    type: "components:example",
-    files: ["example/splitter-vertical-demo.tsx"]
-  },
-  {
-    name: "splitter-with-handle-demo",
-    type: "components:example",
-    files: ["example/splitter-with-handle-demo.tsx"]
   },
   {
     name: "switch-demo",
