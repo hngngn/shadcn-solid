@@ -1,0 +1,13 @@
+{
+  "name": "resizable",
+  "dependencies": [
+    "corvu"
+  ],
+  "files": [
+    {
+      "name": "resizable.tsx",
+      "content": "import { cn } from \"@/libs/cn\";\nimport { type HandleProps, Resizable as ResizablePrimitive, type RootProps } from \"corvu/resizable\";\nimport type { VoidProps } from \"solid-js\";\nimport { Show, splitProps } from \"solid-js\";\n\nexport const ResizablePanel = ResizablePrimitive.Panel;\n\nexport const Resizable = (props: RootProps) => {\n  const [local, rest] = splitProps(props, [\"class\"]);\n\n  return (\n    <ResizablePrimitive\n      class={cn(\"flex h-full w-full data-[orientation=vertical]:flex-col\", local.class)}\n      {...rest}\n    />\n  );\n};\n\nexport const ResizableHandle = (props: VoidProps<HandleProps & { withHandle?: boolean }>) => {\n  const [local, rest] = splitProps(props, [\"class\", \"withHandle\"]);\n\n  return (\n    <ResizablePrimitive.Handle\n      class={cn(\n        \"flex w-px items-center justify-center bg-border focus-visible:(outline-none ring-1.5 ring-ring ring-offset-1) data-[orientation=vertical]:(h-px w-full) transition-shadow\",\n        local.class\n      )}\n      {...rest}\n    >\n      <Show when={local.withHandle}>\n        <div class=\"z-10 flex h-4 w-3 items-center justify-center rounded-sm border bg-border\">\n          <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-2.5 w-2.5\" viewBox=\"0 0 15 15\">\n            <path\n              fill=\"currentColor\"\n              fill-rule=\"evenodd\"\n              d=\"M5.5 4.625a1.125 1.125 0 1 0 0-2.25a1.125 1.125 0 0 0 0 2.25m4 0a1.125 1.125 0 1 0 0-2.25a1.125 1.125 0 0 0 0 2.25M10.625 7.5a1.125 1.125 0 1 1-2.25 0a1.125 1.125 0 0 1 2.25 0M5.5 8.625a1.125 1.125 0 1 0 0-2.25a1.125 1.125 0 0 0 0 2.25m5.125 2.875a1.125 1.125 0 1 1-2.25 0a1.125 1.125 0 0 1 2.25 0M5.5 12.625a1.125 1.125 0 1 0 0-2.25a1.125 1.125 0 0 0 0 2.25\"\n              clip-rule=\"evenodd\"\n            />\n          </svg>\n        </div>\n      </Show>\n    </ResizablePrimitive.Handle>\n  );\n};\n"
+    }
+  ],
+  "type": "components:ui"
+}

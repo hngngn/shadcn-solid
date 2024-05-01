@@ -210,6 +210,12 @@ export const docsConfig: TDocsConfig = {
           items: []
         },
         {
+          title: "Resizable",
+          href: "/docs/components/resizable",
+          items: [],
+          label: "New"
+        },
+        {
           title: "Select",
           href: "/docs/components/select",
           items: []
@@ -228,12 +234,6 @@ export const docsConfig: TDocsConfig = {
           title: "Skeleton",
           href: "/docs/components/skeleton",
           items: []
-        },
-        {
-          title: "Splitter",
-          href: "/docs/components/splitter",
-          items: [],
-          label: "New"
         },
         {
           title: "Switch",

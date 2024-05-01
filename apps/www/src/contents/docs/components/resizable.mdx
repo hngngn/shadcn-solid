@@ -1,13 +1,13 @@
 ---
-title: Splitter
+title: Resizable
 description: A component that divides your interface into resizable sections.
 component: true
 link:
-  doc: https://ark-ui.com/docs/components/splitter
-  api: https://ark-ui.com/docs/components/splitter#api-reference
+  doc: https://corvu.dev/docs/primitives/resizable
+  api: https://corvu.dev/docs/primitives/resizable#api-reference
 ---
 
-<ComponentPreview name="splitter-demo" />
+<ComponentPreview name="resizable-demo" />
 
 ## Installation
 
@@ -22,7 +22,7 @@ link:
     <TabsContent value="cli">
 
         ```bash
-        npx shadcn-solid@latest add splitter
+        npx shadcn-solid@latest add resizable
         ```
 
     </TabsContent>
@@ -34,12 +34,12 @@ link:
             <Step>Install the following dependencies:</Step>
 
             ```bash
-            npm install @ark-ui/solid
+            npm install corvu
             ```
 
             <Step>Copy and paste the following code into your project.</Step>
 
-            <ComponentSource name="splitter" />
+            <ComponentSource name="resizable" />
 
             <Step>Update the import paths to match your project setup.</Step>
 
@@ -52,20 +52,15 @@ link:
 ## Usage
 
 ```tsx
-import { Splitter, SplitterPanel, SplitterResizeTrigger } from "@/components/ui/splitter";
+import { Resizable, ResizablePanel, ResizableHandle } from "@/components/ui/resizable";
 ```
 
 ```tsx
-<Splitter
-  size={[
-    { id: "1", size: 50 },
-    { id: "2", size: 50 }
-  ]}
->
-  <SplitterPanel id="1">A</SplitterPanel>
-  <SplitterResizeTrigger id="1:2" />
-  <SplitterPanel id="2">B</SplitterPanel>
-</Splitter>
+<Resizable>
+  <ResizablePanel>A</ResizablePanel>
+  <ResizableHandle />
+  <ResizablePanel>B</ResizablePanel>
+</Resizable>
 ```
 
 ## Examples
@@ -74,10 +69,10 @@ import { Splitter, SplitterPanel, SplitterResizeTrigger } from "@/components/ui/
 
 Use the `orientation` prop to set the orientation of the resizable panels.
 
-<ComponentPreview name="splitter-vertical-demo" />
+<ComponentPreview name="resizable-vertical-demo" />
 
 ### Handle
 
-You can set or hide the handle by using the `withHandle` prop on the `SplitterResizeTrigger` component.
+You can set or hide the handle by using the `withHandle` prop on the `resizableResizeTrigger` component.
 
-<ComponentPreview name="splitter-with-handle-demo" />
+<ComponentPreview name="resizable-with-handle-demo" />
