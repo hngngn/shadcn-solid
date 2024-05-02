@@ -63,7 +63,7 @@ const ui = [
     name: "command",
     type: "components:ui",
     registryDependencies: ["dialog"],
-    dependencies: ["@kobalte/core"],
+    dependencies: ["cmdk-solid"],
     files: ["ui/command.tsx"]
   },
   {
