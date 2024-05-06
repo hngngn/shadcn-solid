@@ -1,4 +1,3 @@
-import { As } from "@kobalte/core";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -15,11 +14,7 @@ import { Button } from "../ui/button";
 const AlertDialogDemo = () => {
   return (
     <AlertDialog>
-      <AlertDialogTrigger asChild>
-        <As component={Button} variant="outline">
-          Show Dialog
-        </As>
-      </AlertDialogTrigger>
+      <AlertDialogTrigger as={() => <Button variant="outline">Show Dialog</Button>} />
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>

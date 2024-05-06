@@ -5,10 +5,9 @@ import { type ParentProps, type ValidComponent, splitProps } from "solid-js";
 
 export const Accordion = AccordionPrimitive.Root;
 
-type AccordionItemProps = AccordionPrimitive.AccordionItemProps &
-  ParentProps<{
-    class?: string;
-  }>;
+type AccordionItemProps = AccordionPrimitive.AccordionItemProps & {
+  class?: string;
+};
 
 export const AccordionItem = <T extends ValidComponent = "div">(
   props: PolymorphicProps<T, AccordionItemProps>
@@ -18,10 +17,11 @@ export const AccordionItem = <T extends ValidComponent = "div">(
   return <AccordionPrimitive.Item class={cn("border-b", local.class)} {...rest} />;
 };
 
-type AccordionTriggerProps = AccordionPrimitive.AccordionTriggerProps &
-  ParentProps<{
+type AccordionTriggerProps = ParentProps<
+  AccordionPrimitive.AccordionTriggerProps & {
     class?: string;
-  }>;
+  }
+>;
 
 export const AccordionTrigger = <T extends ValidComponent = "button">(
   props: PolymorphicProps<T, AccordionTriggerProps>
@@ -57,10 +57,11 @@ export const AccordionTrigger = <T extends ValidComponent = "button">(
   );
 };
 
-type AccordionContentProps = AccordionPrimitive.AccordionContentProps &
-  ParentProps<{
+type AccordionContentProps = ParentProps<
+  AccordionPrimitive.AccordionContentProps & {
     class?: string;
-  }>;
+  }
+>;
 
 export const AccordionContent = <T extends ValidComponent = "div">(
   props: PolymorphicProps<T, AccordionContentProps>
