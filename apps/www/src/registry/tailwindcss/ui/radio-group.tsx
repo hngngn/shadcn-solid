@@ -1,6 +1,7 @@
 import { cn } from "@/libs/cn";
-import { RadioGroup as RadioGroupPrimitive } from "@kobalte/core";
-import type { VoidProps } from "solid-js";
+import type { PolymorphicProps } from "@kobalte/core/polymorphic";
+import * as RadioGroupPrimitive from "@kobalte/core/radio-group";
+import type { ValidComponent, VoidProps } from "solid-js";
 import { splitProps } from "solid-js";
 
 export const RadioGroupDescription = RadioGroupPrimitive.Description;
@@ -12,10 +13,14 @@ export const RadioGroupLabel = RadioGroupPrimitive.Label;
 export const RadioGroup = RadioGroupPrimitive.Root;
 export const RadioGroupItem = RadioGroupPrimitive.Item;
 
-export const RadioGroupItemControl = (
-  props: VoidProps<RadioGroupPrimitive.RadioGroupItemControlProps>
+type RadioGroupItemControlProps = VoidProps<
+  RadioGroupPrimitive.RadioGroupItemControlProps & { class?: string }
+>;
+
+export const RadioGroupItemControl = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, RadioGroupItemControlProps>
 ) => {
-  const [local, rest] = splitProps(props, ["class"]);
+  const [local, rest] = splitProps(props as RadioGroupItemControlProps, ["class"]);
 
   return (
     <RadioGroupPrimitive.ItemControl
