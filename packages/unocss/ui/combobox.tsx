@@ -1,6 +1,7 @@
 import { cn } from "@/libs/cn";
-import { Combobox as ComboboxPrimitive } from "@kobalte/core";
-import type { VoidProps } from "solid-js";
+import * as ComboboxPrimitive from "@kobalte/core/combobox";
+import type { PolymorphicProps } from "@kobalte/core/polymorphic";
+import type { ParentProps, ValidComponent, VoidProps } from "solid-js";
 import { splitProps } from "solid-js";
 
 export const Combobox = ComboboxPrimitive.Root;
@@ -10,8 +11,16 @@ export const ComboboxItemDescription = ComboboxPrimitive.ItemDescription;
 export const ComboboxHiddenSelect = ComboboxPrimitive.HiddenSelect;
 export type ComboboxTriggerMode = ComboboxPrimitive.ComboboxTriggerMode;
 
-export const ComboboxInput = (props: VoidProps<ComboboxPrimitive.ComboboxInputProps>) => {
-  const [local, rest] = splitProps(props, ["class", "children"]);
+type ComboboxInputProps = VoidProps<
+  ComboboxPrimitive.ComboboxInputProps & {
+    class?: string;
+  }
+>;
+
+export const ComboboxInput = <T extends ValidComponent = "input">(
+  props: PolymorphicProps<T, ComboboxInputProps>
+) => {
+  const [local, rest] = splitProps(props as ComboboxInputProps, ["class"]);
 
   return (
     <ComboboxPrimitive.Input
@@ -24,8 +33,16 @@ export const ComboboxInput = (props: VoidProps<ComboboxPrimitive.ComboboxInputPr
   );
 };
 
-export const ComboboxTrigger = (props: ComboboxPrimitive.ComboboxTriggerProps) => {
-  const [local, rest] = splitProps(props, ["class", "children"]);
+type ComboboxTriggerProps = ParentProps<
+  ComboboxPrimitive.ComboboxTriggerProps & {
+    class?: string;
+  }
+>;
+
+export const ComboboxTrigger = <T extends ValidComponent = "button">(
+  props: PolymorphicProps<T, ComboboxTriggerProps>
+) => {
+  const [local, rest] = splitProps(props as ComboboxTriggerProps, ["class", "children"]);
 
   return (
     <ComboboxPrimitive.Control>
@@ -54,8 +71,14 @@ export const ComboboxTrigger = (props: ComboboxPrimitive.ComboboxTriggerProps) =
   );
 };
 
-export const ComboboxContent = (props: VoidProps<ComboboxPrimitive.ComboboxContentProps>) => {
-  const [local, rest] = splitProps(props, ["class"]);
+type ComboboxContentProps = ComboboxPrimitive.ComboboxContentProps & {
+  class?: string;
+};
+
+export const ComboboxContent = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, ComboboxContentProps>
+) => {
+  const [local, rest] = splitProps(props as ComboboxContentProps, ["class"]);
 
   return (
     <ComboboxPrimitive.Portal>
@@ -72,8 +95,16 @@ export const ComboboxContent = (props: VoidProps<ComboboxPrimitive.ComboboxConte
   );
 };
 
-export const ComboboxItem = (props: ComboboxPrimitive.ComboboxItemProps) => {
-  const [local, rest] = splitProps(props, ["class", "classList", "children"]);
+type ComboboxItemProps = ParentProps<
+  ComboboxPrimitive.ComboboxItemProps & {
+    class?: string;
+  }
+>;
+
+export const ComboboxItem = <T extends ValidComponent = "li">(
+  props: PolymorphicProps<T, ComboboxPrimitive.ComboboxItemProps>
+) => {
+  const [local, rest] = splitProps(props as ComboboxItemProps, ["class", "children"]);
 
   return (
     <ComboboxPrimitive.Item
