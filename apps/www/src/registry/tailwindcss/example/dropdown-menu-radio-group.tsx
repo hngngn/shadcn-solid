@@ -1,4 +1,3 @@
-import { As } from "@kobalte/core";
 import { createSignal } from "solid-js";
 import { Button } from "../ui/button";
 import {
@@ -17,11 +16,7 @@ const DropdownMenuRadioGroupDemo = () => {
 
   return (
     <DropdownMenu placement="bottom">
-      <DropdownMenuTrigger asChild>
-        <As component={Button} variant="outline">
-          Open
-        </As>
-      </DropdownMenuTrigger>
+      <DropdownMenuTrigger as={() => <Button variant="outline">Open</Button>} />
       <DropdownMenuContent class="w-56">
         <DropdownMenuGroup>
           <DropdownMenuGroupLabel>Panel Position</DropdownMenuGroupLabel>

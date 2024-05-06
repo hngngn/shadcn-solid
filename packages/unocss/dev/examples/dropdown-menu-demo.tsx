@@ -1,4 +1,3 @@
-import { As } from "@kobalte/core";
 import { Button } from "../../ui/button";
 import {
   DropdownMenu,
@@ -17,11 +16,7 @@ import {
 const DropdownMenuDemo = () => {
   return (
     <DropdownMenu placement="bottom">
-      <DropdownMenuTrigger asChild>
-        <As component={Button} variant="outline">
-          Open
-        </As>
-      </DropdownMenuTrigger>
+      <DropdownMenuTrigger as={() => <Button variant="outline">Open</Button>} />
       <DropdownMenuContent class="w-56">
         <DropdownMenuGroup>
           <DropdownMenuGroupLabel>My Account</DropdownMenuGroupLabel>
