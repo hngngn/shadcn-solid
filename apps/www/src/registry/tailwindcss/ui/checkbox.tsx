@@ -1,23 +1,23 @@
 import { cn } from "@/libs/cn";
-import { Checkbox as CheckboxPrimitive } from "@kobalte/core";
-import { splitProps } from "solid-js";
+import * as CheckboxPrimitive from "@kobalte/core/checkbox";
+import type { PolymorphicProps } from "@kobalte/core/polymorphic";
+import { type ValidComponent, type VoidProps, splitProps } from "solid-js";
 
 export const CheckboxLabel = CheckboxPrimitive.Label;
 export const Checkbox = CheckboxPrimitive.Root;
 export const CheckboxErrorMessage = CheckboxPrimitive.ErrorMessage;
 export const CheckboxDescription = CheckboxPrimitive.Description;
 
-export const CheckboxControl = (props: CheckboxPrimitive.CheckboxControlProps) => {
-  const [local, rest] = splitProps(props, ["class", "children"]);
+type CheckboxControlProps = VoidProps<CheckboxPrimitive.CheckboxControlProps & { class?: string }>;
+
+export const CheckboxControl = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, CheckboxControlProps>
+) => {
+  const [local, rest] = splitProps(props as CheckboxControlProps, ["class", "children"]);
 
   return (
     <>
-      <CheckboxPrimitive.Input
-        class={cn(
-          "[&:focus-visible+div]:outline-none [&:focus-visible+div]:ring-[1.5px] [&:focus-visible+div]:ring-ring [&:focus-visible+div]:ring-offset-2 [&:focus-visible+div]:ring-offset-background",
-          local.class
-        )}
-      />
+      <CheckboxPrimitive.Input class="[&:focus-visible+div]:outline-none [&:focus-visible+div]:ring-[1.5px] [&:focus-visible+div]:ring-ring [&:focus-visible+div]:ring-offset-2 [&:focus-visible+div]:ring-offset-background" />
       <CheckboxPrimitive.Control
         class={cn(
           "h-4 w-4 shrink-0 rounded-sm border border-primary shadow transition-shadow focus-visible:outline-none focus-visible:ring-[1.5px] focus-visible:ring-ring data-[disabled]:cursor-not-allowed data-[checked]:bg-primary data-[checked]:text-primary-foreground data-[disabled]:opacity-50",
