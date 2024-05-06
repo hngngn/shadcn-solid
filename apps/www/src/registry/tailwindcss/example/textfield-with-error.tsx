@@ -1,12 +1,12 @@
-import { TextField, TextFieldErrorMessage, TextFieldInput, TextFieldLabel } from "../ui/textfield";
+import { TextField, TextFieldErrorMessage, TextFieldLabel, TextFieldRoot } from "../ui/textfield";
 
 const TextFieldWithError = () => {
   return (
-    <TextField class="w-full max-w-xs" validationState="invalid">
+    <TextFieldRoot class="w-full max-w-xs" validationState="invalid">
       <TextFieldLabel>Email</TextFieldLabel>
-      <TextFieldInput type="email" placeholder="Email" />
+      <TextField type="email" placeholder="Email" />
       <TextFieldErrorMessage>Email is required.</TextFieldErrorMessage>
-    </TextField>
+    </TextFieldRoot>
   );
 };
 

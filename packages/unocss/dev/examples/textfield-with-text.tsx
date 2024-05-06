@@ -1,17 +1,12 @@
-import {
-  TextField,
-  TextFieldDescription,
-  TextFieldInput,
-  TextFieldLabel
-} from "../../ui/textfield";
+import { TextField, TextFieldDescription, TextFieldLabel, TextFieldRoot } from "../../ui/textfield";
 
 const TextFieldWithText = () => {
   return (
-    <TextField class="w-full max-w-xs">
+    <TextFieldRoot class="w-full max-w-xs">
       <TextFieldLabel>Email</TextFieldLabel>
-      <TextFieldInput type="email" placeholder="Email" />
+      <TextField type="email" placeholder="Email" />
       <TextFieldDescription>Enter your email address.</TextFieldDescription>
-    </TextField>
+    </TextFieldRoot>
   );
 };
 

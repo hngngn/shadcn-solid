@@ -1,10 +1,10 @@
-import { TextField, TextFieldInput } from "../ui/textfield";
+import { TextField, TextFieldRoot } from "../ui/textfield";
 
 const TextFieldDisabled = () => {
   return (
-    <TextField disabled class="w-full max-w-xs">
-      <TextFieldInput type="email" placeholder="Email" />
-    </TextField>
+    <TextFieldRoot disabled class="w-full max-w-xs">
+      <TextField type="email" placeholder="Email" />
+    </TextFieldRoot>
   );
 };
 
