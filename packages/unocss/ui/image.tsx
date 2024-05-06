@@ -1,9 +1,14 @@
 import { cn } from "@/libs/cn";
-import { Image as ImagePrimitive } from "@kobalte/core";
-import { splitProps } from "solid-js";
+import * as ImagePrimitive from "@kobalte/core/image";
+import type { PolymorphicProps } from "@kobalte/core/polymorphic";
+import { type ValidComponent, splitProps } from "solid-js";
 
-export const ImageRoot = (props: ImagePrimitive.ImageRootProps) => {
-  const [local, rest] = splitProps(props, ["class"]);
+type ImageRootProps = ImagePrimitive.ImageRootProps & { class?: string };
+
+export const ImageRoot = <T extends ValidComponent = "span">(
+  props: PolymorphicProps<T, ImageRootProps>
+) => {
+  const [local, rest] = splitProps(props as ImageRootProps, ["class"]);
 
   return (
     <ImagePrimitive.Root
@@ -13,14 +18,20 @@ export const ImageRoot = (props: ImagePrimitive.ImageRootProps) => {
   );
 };
 
-export const Image = (props: ImagePrimitive.ImageImgProps) => {
-  const [local, rest] = splitProps(props, ["class"]);
+type ImageProps = ImagePrimitive.ImageImgProps & { class?: string };
+
+export const Image = <T extends ValidComponent = "img">(props: PolymorphicProps<T, ImageProps>) => {
+  const [local, rest] = splitProps(props as ImageProps, ["class"]);
 
   return <ImagePrimitive.Img class={cn("aspect-square h-full w-full", local.class)} {...rest} />;
 };
 
-export const ImageFallback = (props: ImagePrimitive.ImageFallbackProps) => {
-  const [local, rest] = splitProps(props, ["class"]);
+type ImageFallbackProps = ImagePrimitive.ImageFallbackProps & { class?: string };
+
+export const ImageFallback = <T extends ValidComponent = "span">(
+  props: PolymorphicProps<T, ImageFallbackProps>
+) => {
+  const [local, rest] = splitProps(props as ImageFallbackProps, ["class"]);
 
   return (
     <ImagePrimitive.Fallback
