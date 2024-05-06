@@ -1,12 +1,21 @@
 import { cn } from "@/libs/cn";
-import { Progress as ProgressPrimitive } from "@kobalte/core";
-import { splitProps } from "solid-js";
+import type { PolymorphicProps } from "@kobalte/core/polymorphic";
+import * as ProgressPrimitive from "@kobalte/core/progress";
+import { type ParentProps, type ValidComponent, splitProps } from "solid-js";
 
 export const ProgressLabel = ProgressPrimitive.Label;
 export const ProgressValueLabel = ProgressPrimitive.ValueLabel;
 
-export const Progress = (props: ProgressPrimitive.ProgressRootProps) => {
-  const [local, rest] = splitProps(props, ["class", "children"]);
+type ProgressProps = ParentProps<
+  ProgressPrimitive.ProgressRootProps & {
+    class?: string;
+  }
+>;
+
+export const Progress = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, ProgressProps>
+) => {
+  const [local, rest] = splitProps(props as ProgressProps, ["class", "children"]);
 
   return (
     <ProgressPrimitive.Root class={cn("flex w-full flex-col gap-2", local.class)} {...rest}>
