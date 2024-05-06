@@ -1,6 +1,7 @@
 import { cn } from "@/libs/cn";
-import { As, Select as SelectPrimitive } from "@kobalte/core";
-import type { VoidProps } from "solid-js";
+import type { PolymorphicProps } from "@kobalte/core/polymorphic";
+import * as SelectPrimitive from "@kobalte/core/select";
+import type { ParentProps, ValidComponent } from "solid-js";
 import { splitProps } from "solid-js";
 
 export const Select = SelectPrimitive.Root;
@@ -10,8 +11,12 @@ export const SelectErrorMessage = SelectPrimitive.ErrorMessage;
 export const SelectItemDescription = SelectPrimitive.ItemDescription;
 export const SelectHiddenSelect = SelectPrimitive.HiddenSelect;
 
-export const SelectTrigger = (props: SelectPrimitive.SelectTriggerProps) => {
-  const [local, rest] = splitProps(props, ["class", "children"]);
+type SelectTriggerProps = ParentProps<SelectPrimitive.SelectTriggerProps & { class?: string }>;
+
+export const SelectTrigger = <T extends ValidComponent = "button">(
+  props: PolymorphicProps<T, SelectTriggerProps>
+) => {
+  const [local, rest] = splitProps(props as SelectTriggerProps, ["class", "children"]);
 
   return (
     <SelectPrimitive.Trigger
@@ -22,31 +27,33 @@ export const SelectTrigger = (props: SelectPrimitive.SelectTriggerProps) => {
       {...rest}
     >
       {local.children}
-      <SelectPrimitive.Icon class="flex h-3.5 w-3.5 items-center justify-center" asChild>
-        <As
-          component="svg"
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          viewBox="0 0 24 24"
-          class="h-4 w-4 opacity-50"
-        >
-          <path
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="m8 9l4-4l4 4m0 6l-4 4l-4-4"
-          />
-        </As>
+      <SelectPrimitive.Icon
+        as="svg"
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        viewBox="0 0 24 24"
+        class="size-4 opacity-50 flex items-center justify-center"
+      >
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="m8 9l4-4l4 4m0 6l-4 4l-4-4"
+        />
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
   );
 };
 
-export const SelectContent = (props: VoidProps<SelectPrimitive.SelectContentProps>) => {
-  const [local, rest] = splitProps(props, ["class"]);
+type SelectContentProps = SelectPrimitive.SelectContentProps & { class?: string };
+
+export const SelectContent = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, SelectContentProps>
+) => {
+  const [local, rest] = splitProps(props as SelectContentProps, ["class"]);
 
   return (
     <SelectPrimitive.Portal>
@@ -63,8 +70,12 @@ export const SelectContent = (props: VoidProps<SelectPrimitive.SelectContentProp
   );
 };
 
-export const SelectItem = (props: SelectPrimitive.SelectItemProps) => {
-  const [local, rest] = splitProps(props, ["class", "children"]);
+type SelectItemProps = ParentProps<SelectPrimitive.SelectItemProps & { class?: string }>;
+
+export const SelectItem = <T extends ValidComponent = "li">(
+  props: PolymorphicProps<T, SelectItemProps>
+) => {
+  const [local, rest] = splitProps(props as SelectItemProps, ["class", "children"]);
 
   return (
     <SelectPrimitive.Item
