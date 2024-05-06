@@ -6,7 +6,7 @@
   "files": [
     {
       "name": "separator.tsx",
-      "content": "import { cn } from \"@/libs/cn\";\nimport { Separator as SeparatorPrimitive } from \"@kobalte/core\";\nimport type { VoidProps } from \"solid-js\";\nimport { splitProps } from \"solid-js\";\n\nexport const Separator = (props: VoidProps<SeparatorPrimitive.SeparatorRootProps>) => {\n  const [local, rest] = splitProps(props, [\"class\"]);\n\n  return (\n    <SeparatorPrimitive.Root\n      class={cn(\n        \"shrink-0 bg-border data-[orientation=horizontal]:h-[1px] data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-[1px]\",\n        local.class\n      )}\n      {...rest}\n    />\n  );\n};\n"
+      "content": "import { cn } from \"@/libs/cn\";\nimport type { PolymorphicProps } from \"@kobalte/core/polymorphic\";\nimport * as SeparatorPrimitive from \"@kobalte/core/separator\";\nimport type { ValidComponent } from \"solid-js\";\nimport { splitProps } from \"solid-js\";\n\ntype SeparatorProps = SeparatorPrimitive.SeparatorRootProps & {\n  class?: string;\n};\n\nexport const Separator = <T extends ValidComponent = \"hr\">(\n  props: PolymorphicProps<T, SeparatorProps>\n) => {\n  const [local, rest] = splitProps(props as SeparatorProps, [\"class\"]);\n\n  return (\n    <SeparatorPrimitive.Root\n      class={cn(\n        \"shrink-0 bg-border data-[orientation=horizontal]:h-[1px] data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-[1px]\",\n        local.class\n      )}\n      {...rest}\n    />\n  );\n};\n"
     }
   ],
   "type": "components:ui"
