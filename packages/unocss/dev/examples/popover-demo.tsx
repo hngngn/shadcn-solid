@@ -1,4 +1,3 @@
-import { As } from "@kobalte/core";
 import { Button } from "../../ui/button";
 import {
   Popover,
@@ -12,11 +11,7 @@ import { TextField, TextFieldInput, TextFieldLabel } from "../../ui/textfield";
 const PopoverDemo = () => {
   return (
     <Popover>
-      <PopoverTrigger asChild>
-        <As component={Button} variant="outline">
-          Open popover
-        </As>
-      </PopoverTrigger>
+      <PopoverTrigger as={() => <Button variant="outline">Open popover</Button>} />
       <PopoverContent class="w-80">
         <div class="grid gap-4">
           <PopoverTitle class="space-y-2">
