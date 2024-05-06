@@ -1,6 +1,7 @@
 import { cn } from "@/libs/cn";
-import { Switch as SwitchPrimitive } from "@kobalte/core";
-import type { VoidProps } from "solid-js";
+import type { PolymorphicProps } from "@kobalte/core/polymorphic";
+import * as SwitchPrimitive from "@kobalte/core/switch";
+import type { ParentProps, ValidComponent, VoidProps } from "solid-js";
 import { splitProps } from "solid-js";
 
 export const SwitchLabel = SwitchPrimitive.Label;
@@ -8,17 +9,16 @@ export const Switch = SwitchPrimitive.Root;
 export const SwitchErrorMessage = SwitchPrimitive.ErrorMessage;
 export const SwitchDescription = SwitchPrimitive.Description;
 
-export const SwitchControl = (props: SwitchPrimitive.SwitchControlProps) => {
-  const [local, rest] = splitProps(props, ["class", "children"]);
+type SwitchControlProps = ParentProps<SwitchPrimitive.SwitchControlProps & { class?: string }>;
+
+export const SwitchControl = <T extends ValidComponent = "input">(
+  props: PolymorphicProps<T, SwitchControlProps>
+) => {
+  const [local, rest] = splitProps(props as SwitchControlProps, ["class", "children"]);
 
   return (
     <>
-      <SwitchPrimitive.Input
-        class={cn(
-          "[&:focus-visible+div]:(outline-none ring-1.5 ring-ring ring-offset-2 ring-offset-background)",
-          local.class
-        )}
-      />
+      <SwitchPrimitive.Input class="[&:focus-visible+div]:(outline-none ring-1.5 ring-ring ring-offset-2 ring-offset-background)" />
       <SwitchPrimitive.Control
         class={cn(
           "inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent bg-input shadow-sm transition-shadow data-[disabled]:(cursor-not-allowed opacity-50) data-[checked]:bg-primary transition-property-[box-shadow,color,background-color]",
@@ -32,8 +32,12 @@ export const SwitchControl = (props: SwitchPrimitive.SwitchControlProps) => {
   );
 };
 
-export const SwitchThumb = (props: VoidProps<SwitchPrimitive.SwitchThumbProps>) => {
-  const [local, rest] = splitProps(props, ["class"]);
+type SwitchThumbProps = VoidProps<SwitchPrimitive.SwitchControlProps & { class?: string }>;
+
+export const SwitchThumb = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, SwitchThumbProps>
+) => {
+  const [local, rest] = splitProps(props as SwitchThumbProps, ["class"]);
 
   return (
     <SwitchPrimitive.Thumb
