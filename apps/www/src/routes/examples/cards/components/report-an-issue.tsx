@@ -14,8 +14,8 @@ import {
   SelectTrigger,
   SelectValue
 } from "@/registry/tailwindcss/ui/select";
-import { TextFieldTextArea } from "@/registry/tailwindcss/ui/textarea";
-import { TextField, TextFieldInput, TextFieldLabel } from "@/registry/tailwindcss/ui/textfield";
+import { TextArea } from "@/registry/tailwindcss/ui/textarea";
+import { TextField, TextFieldLabel, TextFieldRoot } from "@/registry/tailwindcss/ui/textfield";
 
 export const DemoReportAnIssue = () => {
   return (
@@ -64,16 +64,16 @@ export const DemoReportAnIssue = () => {
           </div>
         </div>
         <div class="grid gap-2">
-          <TextField>
+          <TextFieldRoot>
             <TextFieldLabel>Subject</TextFieldLabel>
-            <TextFieldInput placeholder="I need help with..." />
-          </TextField>
+            <TextField placeholder="I need help with..." />
+          </TextFieldRoot>
         </div>
         <div class="grid gap-2">
-          <TextField>
+          <TextFieldRoot>
             <TextFieldLabel>Description</TextFieldLabel>
-            <TextFieldTextArea placeholder="Please include all information relevant to your issue." />
-          </TextField>
+            <TextArea placeholder="Please include all information relevant to your issue." />
+          </TextFieldRoot>
         </div>
       </CardContent>
       <CardFooter class="justify-between space-x-2">

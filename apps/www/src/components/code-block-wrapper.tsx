@@ -5,7 +5,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger
 } from "@/registry/tailwindcss/ui/collapsible";
-import { As } from "@kobalte/core";
+import type { CollapsibleTriggerProps } from "@kobalte/core/collapsible";
 import type { ParentComponent } from "solid-js";
 import { createSignal, mergeProps } from "solid-js";
 
@@ -35,11 +35,13 @@ export const CodeBlockWrapper: ParentComponent<{
             isOpened() ? "inset-x-0 bottom-0 h-36 from-zinc-700/0" : "inset-0"
           )}
         >
-          <CollapsibleTrigger asChild>
-            <As component={Button} variant="secondary" class="h-8 text-xs">
-              {isOpened() ? "Collapse" : merge.expandButtonTitle}
-            </As>
-          </CollapsibleTrigger>
+          <CollapsibleTrigger
+            as={(props: CollapsibleTriggerProps) => (
+              <Button variant="secondary" class="h-8 text-xs" {...props}>
+                {isOpened() ? "Collapse" : merge.expandButtonTitle}
+              </Button>
+            )}
+          />
         </div>
       </div>
     </Collapsible>

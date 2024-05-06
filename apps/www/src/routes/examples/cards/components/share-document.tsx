@@ -15,7 +15,7 @@ import {
   SelectValue
 } from "@/registry/tailwindcss/ui/select";
 import { Separator } from "@/registry/tailwindcss/ui/separator";
-import { TextField, TextFieldInput, TextFieldLabel } from "@/registry/tailwindcss/ui/textfield";
+import { TextField, TextFieldLabel, TextFieldRoot } from "@/registry/tailwindcss/ui/textfield";
 
 export const DemoShareDocument = () => {
   return (
@@ -26,10 +26,10 @@ export const DemoShareDocument = () => {
       </CardHeader>
       <CardContent>
         <div class="flex space-x-2">
-          <TextField class="w-full space-y-0">
+          <TextFieldRoot class="w-full space-y-0">
             <TextFieldLabel class="sr-only">Link</TextFieldLabel>
-            <TextFieldInput value="http://example.com/link/to/document" readOnly />
-          </TextField>
+            <TextField value="http://example.com/link/to/document" readOnly />
+          </TextFieldRoot>
           <Button variant="secondary" class="shrink-0">
             Copy Link
           </Button>

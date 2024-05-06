@@ -17,7 +17,7 @@ import {
   DropdownMenuTrigger
 } from "@/registry/tailwindcss/ui/dropdown-menu";
 import { Separator } from "@/registry/tailwindcss/ui/separator";
-import { As } from "@kobalte/core";
+import type { DropdownMenuTriggerProps } from "@kobalte/core/dropdown-menu";
 
 export const DemoGithub = () => {
   return (
@@ -46,25 +46,27 @@ export const DemoGithub = () => {
           </Button>
           <Separator orientation="vertical" class="h-[20px]" />
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <As component={Button} variant="secondary" class="px-2 shadow-none">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-4 w-4 text-secondary-foreground"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m6 9l6 6l6-6"
-                  />
-                </svg>
-                <span class="sr-only">Arrow</span>
-              </As>
-            </DropdownMenuTrigger>
+            <DropdownMenuTrigger
+              as={(props: DropdownMenuTriggerProps) => (
+                <Button variant="secondary" class="px-2 shadow-none" {...props}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 text-secondary-foreground"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m6 9l6 6l6-6"
+                    />
+                  </svg>
+                  <span class="sr-only">Arrow</span>
+                </Button>
+              )}
+            />
             <DropdownMenuContent class="w-[200px]">
               <DropdownMenuGroup>
                 <DropdownMenuGroupLabel>Suggested Lists</DropdownMenuGroupLabel>

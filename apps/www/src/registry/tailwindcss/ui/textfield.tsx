@@ -84,7 +84,7 @@ export const TextFieldDescription = <T extends ValidComponent = "div">(
 };
 
 type TextFieldInputProps = VoidProps<
-  TextFieldPrimitive.TextFieldDescriptionProps & {
+  TextFieldPrimitive.TextFieldInputProps & {
     class?: string;
   }
 >;

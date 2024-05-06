@@ -1,23 +1,21 @@
 import { cn } from "@/libs/cn";
 import * as AlertDialogPrimitive from "@kobalte/core/alert-dialog";
 import type { PolymorphicProps } from "@kobalte/core/polymorphic";
-import type { ComponentProps, ParentProps, ValidComponent } from "solid-js";
+import type { ComponentProps, ValidComponent } from "solid-js";
 import { splitProps } from "solid-js";
 import { buttonVariants } from "./button";
 
 export const AlertDialog = AlertDialogPrimitive.Root;
 export const AlertDialogTrigger = AlertDialogPrimitive.Trigger;
 
-type AlertDialogContentProps = ParentProps<
-  AlertDialogPrimitive.AlertDialogRootProps & {
-    class?: string;
-  }
->;
+type AlertDialogContentProps = AlertDialogPrimitive.AlertDialogContentProps & {
+  class?: string;
+};
 
 export const AlertDialogContent = <T extends ValidComponent = "div">(
   props: PolymorphicProps<T, AlertDialogContentProps>
 ) => {
-  const [local, rest] = splitProps(props as AlertDialogContentProps, ["class", "children"]);
+  const [local, rest] = splitProps(props as AlertDialogContentProps, ["class"]);
 
   return (
     <AlertDialogPrimitive.Portal>

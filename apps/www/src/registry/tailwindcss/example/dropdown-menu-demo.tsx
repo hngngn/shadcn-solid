@@ -1,3 +1,4 @@
+import type { DropdownMenuSubTriggerProps } from "@kobalte/core/dropdown-menu";
 import { Button } from "../ui/button";
 import {
   DropdownMenu,
@@ -16,7 +17,13 @@ import {
 const DropdownMenuDemo = () => {
   return (
     <DropdownMenu placement="bottom">
-      <DropdownMenuTrigger as={() => <Button variant="outline">Open</Button>} />
+      <DropdownMenuTrigger
+        as={(props: DropdownMenuSubTriggerProps) => (
+          <Button variant="outline" {...props}>
+            Open
+          </Button>
+        )}
+      />
       <DropdownMenuContent class="w-56">
         <DropdownMenuGroup>
           <DropdownMenuGroupLabel>My Account</DropdownMenuGroupLabel>

@@ -1,3 +1,4 @@
+import type { AlertDialogTriggerProps } from "@kobalte/core/alert-dialog";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -14,7 +15,13 @@ import { Button } from "../ui/button";
 const AlertDialogDemo = () => {
   return (
     <AlertDialog>
-      <AlertDialogTrigger as={() => <Button variant="outline">Show Dialog</Button>} />
+      <AlertDialogTrigger
+        as={(props: AlertDialogTriggerProps) => (
+          <Button variant="outline" {...props}>
+            Show Dialog
+          </Button>
+        )}
+      />
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
