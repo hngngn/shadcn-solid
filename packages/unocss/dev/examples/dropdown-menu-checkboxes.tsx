@@ -1,4 +1,4 @@
-import { As } from "@kobalte/core";
+import type { DropdownMenuSubTriggerProps } from "@kobalte/core/dropdown-menu";
 import { createSignal } from "solid-js";
 import { Button } from "../../ui/button";
 import {
@@ -15,11 +15,13 @@ const DropdownMenuCheckboxes = () => {
 
   return (
     <DropdownMenu placement="bottom">
-      <DropdownMenuTrigger asChild>
-        <As component={Button} variant="outline">
-          Open
-        </As>
-      </DropdownMenuTrigger>
+      <DropdownMenuTrigger
+        as={(props: DropdownMenuSubTriggerProps) => (
+          <Button variant="outline" {...props}>
+            Open
+          </Button>
+        )}
+      />
       <DropdownMenuContent class="w-56">
         <DropdownMenuCheckboxItem checked={showStatusBar()} onChange={setShowStatusBar}>
           Status Bar

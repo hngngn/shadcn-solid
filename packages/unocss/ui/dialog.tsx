@@ -1,13 +1,21 @@
 import { cn } from "@/libs/cn";
-import { Dialog as DialogPrimitive } from "@kobalte/core";
-import type { ComponentProps } from "solid-js";
+import * as DialogPrimitive from "@kobalte/core/dialog";
+import type { PolymorphicProps } from "@kobalte/core/polymorphic";
+import type { ComponentProps, ParentProps, ValidComponent } from "solid-js";
 import { splitProps } from "solid-js";
 
 export const Dialog = DialogPrimitive.Root;
 export const DialogTrigger = DialogPrimitive.Trigger;
 
-export const DialogOverlay = (props: DialogPrimitive.DialogOverlayProps) => {
-  const [local, rest] = splitProps(props, ["class"]);
+type DialogOverlayProps = DialogPrimitive.DialogOverlayProps & {
+  class?: string;
+};
+
+export const DialogOverlay = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, DialogOverlayProps>
+) => {
+  const [local, rest] = splitProps(props as DialogOverlayProps, ["class"]);
+
   return (
     <DialogPrimitive.Overlay
       class={cn(
@@ -19,8 +27,16 @@ export const DialogOverlay = (props: DialogPrimitive.DialogOverlayProps) => {
   );
 };
 
-export const DialogContent = (props: DialogPrimitive.DialogContentProps) => {
-  const [local, rest] = splitProps(props, ["class", "children"]);
+type DialogContentProps = ParentProps<
+  DialogPrimitive.DialogOverlayProps & {
+    class?: string;
+  }
+>;
+
+export const DialogContent = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, DialogContentProps>
+) => {
+  const [local, rest] = splitProps(props as DialogContentProps, ["class", "children"]);
 
   return (
     <DialogPrimitive.Portal>
@@ -53,8 +69,15 @@ export const DialogContent = (props: DialogPrimitive.DialogContentProps) => {
   );
 };
 
-export const DialogTitle = (props: DialogPrimitive.DialogTitleProps) => {
-  const [local, rest] = splitProps(props, ["class"]);
+type DialogTitleProps = DialogPrimitive.DialogTitleProps & {
+  class?: string;
+};
+
+export const DialogTitle = <T extends ValidComponent = "h2">(
+  props: PolymorphicProps<T, DialogTitleProps>
+) => {
+  const [local, rest] = splitProps(props as DialogTitleProps, ["class"]);
+
   return (
     <DialogPrimitive.Title
       class={cn("text-lg font-semibold text-foreground", local.class)}
@@ -63,8 +86,15 @@ export const DialogTitle = (props: DialogPrimitive.DialogTitleProps) => {
   );
 };
 
-export const DialogDescription = (props: DialogPrimitive.DialogDescriptionProps) => {
-  const [local, rest] = splitProps(props, ["class"]);
+type DialogDescriptionProps = DialogPrimitive.DialogDescriptionProps & {
+  class?: string;
+};
+
+export const DialogDescription = <T extends ValidComponent = "p">(
+  props: PolymorphicProps<T, DialogDescriptionProps>
+) => {
+  const [local, rest] = splitProps(props as DialogDescriptionProps, ["class"]);
+
   return (
     <DialogPrimitive.Description
       class={cn("text-sm text-muted-foreground", local.class)}
@@ -75,6 +105,7 @@ export const DialogDescription = (props: DialogPrimitive.DialogDescriptionProps)
 
 export const DialogHeader = (props: ComponentProps<"div">) => {
   const [local, rest] = splitProps(props, ["class"]);
+
   return (
     <div class={cn("flex flex-col space-y-2 text-center sm:text-left", local.class)} {...rest} />
   );
@@ -82,6 +113,7 @@ export const DialogHeader = (props: ComponentProps<"div">) => {
 
 export const DialogFooter = (props: ComponentProps<"div">) => {
   const [local, rest] = splitProps(props, ["class"]);
+
   return (
     <div
       class={cn("flex flex-col-reverse sm:(flex-row justify-end space-x-2)", local.class)}

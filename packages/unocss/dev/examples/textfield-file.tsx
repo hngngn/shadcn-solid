@@ -1,11 +1,11 @@
-import { TextField, TextFieldInput, TextFieldLabel } from "../../ui/textfield";
+import { TextField, TextFieldLabel, TextFieldRoot } from "../../ui/textfield";
 
 const TextFieldFile = () => {
   return (
-    <TextField disabled class="w-full max-w-xs">
+    <TextFieldRoot disabled class="w-full max-w-xs">
       <TextFieldLabel>Picture</TextFieldLabel>
-      <TextFieldInput type="file" />
-    </TextField>
+      <TextField type="file" />
+    </TextFieldRoot>
   );
 };
 

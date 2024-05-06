@@ -1,15 +1,22 @@
 import { cn } from "@/libs/cn";
-import { Dialog as DialogPrimitive } from "@kobalte/core";
+import * as DialogPrimitive from "@kobalte/core/dialog";
+import type { PolymorphicProps } from "@kobalte/core/polymorphic";
 import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
-import type { ComponentProps, ParentProps } from "solid-js";
+import type { ComponentProps, ParentProps, ValidComponent } from "solid-js";
 import { mergeProps, splitProps } from "solid-js";
 
 export const Sheet = DialogPrimitive.Root;
 export const SheetTrigger = DialogPrimitive.Trigger;
 
-export const SheetOverlay = (props: DialogPrimitive.DialogOverlayProps) => {
-  const [local, rest] = splitProps(props, ["class"]);
+type SheetOverlayProps = DialogPrimitive.DialogOverlayProps & {
+  class?: string;
+};
+
+export const SheetOverlay = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, SheetOverlayProps>
+) => {
+  const [local, rest] = splitProps(props as SheetOverlayProps, ["class"]);
 
   return (
     <DialogPrimitive.Overlay
@@ -23,7 +30,7 @@ export const SheetOverlay = (props: DialogPrimitive.DialogOverlayProps) => {
 };
 
 export const sheetVariants = cva(
-  "fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out data-[expanded]:(animate-in duration-500) data-[closed]:(animate-out duration-300)",
+  "fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out duration-200 data-[expanded]:animate-in data-[closed]:animate-out",
   {
     variants: {
       side: {
@@ -41,12 +48,17 @@ export const sheetVariants = cva(
   }
 );
 
-export const SheetContent = (
-  props: DialogPrimitive.DialogContentProps & VariantProps<typeof sheetVariants>
+type SheetContentProps = ParentProps<
+  DialogPrimitive.DialogContentProps &
+    VariantProps<typeof sheetVariants> & {
+      class?: string;
+    }
+>;
+
+export const SheetContent = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, SheetContentProps>
 ) => {
-  const merge = mergeProps<
-    ParentProps<DialogPrimitive.DialogContentProps & VariantProps<typeof sheetVariants>>[]
-  >({ side: "right" }, props);
+  const merge = mergeProps({ side: "right" }, props);
   const [local, rest] = splitProps(merge, ["class", "children", "side"]);
 
   return (
@@ -75,8 +87,14 @@ export const SheetContent = (
   );
 };
 
-export const SheetTitle = (props: DialogPrimitive.DialogTitleProps) => {
-  const [local, rest] = splitProps(props, ["class"]);
+type SheetTitleProps = DialogPrimitive.DialogTitleProps & {
+  class?: string;
+};
+
+export const SheetTitle = <T extends ValidComponent = "h2">(
+  props: PolymorphicProps<T, SheetTitleProps>
+) => {
+  const [local, rest] = splitProps(props as SheetTitleProps, ["class"]);
 
   return (
     <DialogPrimitive.Title
@@ -86,8 +104,14 @@ export const SheetTitle = (props: DialogPrimitive.DialogTitleProps) => {
   );
 };
 
-export const SheetDescription = (props: DialogPrimitive.DialogDescriptionProps) => {
-  const [local, rest] = splitProps(props, ["class"]);
+type SheetDescriptionProps = DialogPrimitive.DialogTitleProps & {
+  class?: string;
+};
+
+export const SheetDescription = <T extends ValidComponent = "p">(
+  props: PolymorphicProps<T, SheetDescriptionProps>
+) => {
+  const [local, rest] = splitProps(props as SheetDescriptionProps, ["class"]);
 
   return (
     <DialogPrimitive.Description

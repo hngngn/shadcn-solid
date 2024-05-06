@@ -1,4 +1,4 @@
-import { As } from "@kobalte/core";
+import type { PopoverTriggerProps } from "@kobalte/core/popover";
 import { Button } from "../../ui/button";
 import {
   Popover,
@@ -7,16 +7,18 @@ import {
   PopoverTitle,
   PopoverTrigger
 } from "../../ui/popover";
-import { TextField, TextFieldInput, TextFieldLabel } from "../../ui/textfield";
+import { TextField, TextFieldLabel, TextFieldRoot } from "../../ui/textfield";
 
 const PopoverDemo = () => {
   return (
     <Popover>
-      <PopoverTrigger asChild>
-        <As component={Button} variant="outline">
-          Open popover
-        </As>
-      </PopoverTrigger>
+      <PopoverTrigger
+        as={(props: PopoverTriggerProps) => (
+          <Button variant="outline" {...props}>
+            Open popover
+          </Button>
+        )}
+      />
       <PopoverContent class="w-80">
         <div class="grid gap-4">
           <PopoverTitle class="space-y-2">
@@ -24,22 +26,22 @@ const PopoverDemo = () => {
             <p class="text-sm text-muted-foreground">Set the dimensions for the layer.</p>
           </PopoverTitle>
           <PopoverDescription class="grid gap-2">
-            <TextField class="grid grid-cols-3 items-center gap-4">
+            <TextFieldRoot class="grid grid-cols-3 items-center gap-4">
               <TextFieldLabel class="text-right">Width</TextFieldLabel>
-              <TextFieldInput value="100%" class="col-span-2 h-8" />
-            </TextField>
-            <TextField class="grid grid-cols-3 items-center gap-4">
+              <TextField value="100%" class="col-span-2 h-8" />
+            </TextFieldRoot>
+            <TextFieldRoot class="grid grid-cols-3 items-center gap-4">
               <TextFieldLabel class="text-right">Max. width</TextFieldLabel>
-              <TextFieldInput value="300px" class="col-span-2 h-8" />
-            </TextField>
-            <TextField class="grid grid-cols-3 items-center gap-4">
+              <TextField value="300px" class="col-span-2 h-8" />
+            </TextFieldRoot>
+            <TextFieldRoot class="grid grid-cols-3 items-center gap-4">
               <TextFieldLabel class="text-right">Height</TextFieldLabel>
-              <TextFieldInput value="25px" class="col-span-2 h-8" />
-            </TextField>
-            <TextField class="grid grid-cols-3 items-center gap-4">
+              <TextField value="25px" class="col-span-2 h-8" />
+            </TextFieldRoot>
+            <TextFieldRoot class="grid grid-cols-3 items-center gap-4">
               <TextFieldLabel class="text-right">Max. height</TextFieldLabel>
-              <TextFieldInput value="none" class="col-span-2 h-8" />
-            </TextField>
+              <TextField value="none" class="col-span-2 h-8" />
+            </TextFieldRoot>
           </PopoverDescription>
         </div>
       </PopoverContent>

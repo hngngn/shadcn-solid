@@ -1,5 +1,4 @@
 import { Button } from "@/registry/tailwindcss/ui/button";
-import { As } from "@kobalte/core";
 import { Title } from "@solidjs/meta";
 import { A } from "@solidjs/router";
 
@@ -14,10 +13,8 @@ const NotFound = () => {
             <p class="text-xl font-medium">Page not found</p>
           </div>
           <p class="opacity-60">This page doesn't exist or was removed!</p>
-          <Button asChild>
-            <As component={A} href="/" replace>
-              Back to homepage
-            </As>
+          <Button as={A} href="/" replace>
+            Back to homepage
           </Button>
         </div>
       </div>

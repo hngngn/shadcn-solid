@@ -1,15 +1,17 @@
-import { As } from "@kobalte/core";
+import type { TooltipTriggerProps } from "@kobalte/core/tooltip";
 import { Button } from "../../ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../../ui/tooltip";
 
 const TooltipDemo = () => {
   return (
     <Tooltip>
-      <TooltipTrigger asChild>
-        <As component={Button} variant="outline">
-          Hover
-        </As>
-      </TooltipTrigger>
+      <TooltipTrigger
+        as={(props: TooltipTriggerProps) => (
+          <Button variant="outline" {...props}>
+            Hover
+          </Button>
+        )}
+      />
       <TooltipContent>
         <p>Add to library</p>
       </TooltipContent>

@@ -1,5 +1,6 @@
 import { faker } from "@faker-js/faker";
-import { As } from "@kobalte/core";
+import type { DropdownMenuTriggerProps } from "@kobalte/core/dropdown-menu";
+import type { SelectTriggerProps } from "@kobalte/core/select";
 import { useSearchParams } from "@solidjs/router";
 import type {
   Column,
@@ -45,7 +46,7 @@ import {
 } from "../ui/dropdown-menu";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../ui/table";
-import { TextField, TextFieldInput } from "../ui/textfield";
+import { TextField, TextFieldRoot } from "../ui/textfield";
 
 type Task = {
   id: string;
@@ -92,78 +93,80 @@ const TableColumnHeader = <TData, TValue>(
     >
       <div class="flex items-center space-x-2">
         <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <As
-              component={Button}
-              aria-label={
-                local.column.getIsSorted() === "desc"
-                  ? "Sorted descending. Click to sort ascending."
-                  : local.column.getIsSorted() === "asc"
-                    ? "Sorted ascending. Click to sort descending."
-                    : "Not sorted. Click to sort ascending."
-              }
-              variant="ghost"
-              class="-ml-4 h-8 data-[expanded]:bg-accent"
-            >
-              <span>{local.title}</span>
-              <div class="ml-1">
-                <Switch
-                  fallback={
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="size-3.5"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="m8 9l4-4l4 4m0 6l-4 4l-4-4"
-                      />
-                    </svg>
-                  }
-                >
-                  <Match when={local.column.getIsSorted() === "asc"}>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="size-3.5"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M12 5v14m4-10l-4-4M8 9l4-4"
-                      />
-                    </svg>
-                  </Match>
-                  <Match when={local.column.getIsSorted() === "desc"}>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="size-3.5"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M12 5v14m4-4l-4 4m-4-4l4 4"
-                      />
-                    </svg>
-                  </Match>
-                </Switch>
-              </div>
-            </As>
-          </DropdownMenuTrigger>
+          <DropdownMenuTrigger
+            as={(props: DropdownMenuTriggerProps) => (
+              <Button
+                aria-label={
+                  local.column.getIsSorted() === "desc"
+                    ? "Sorted descending. Click to sort ascending."
+                    : local.column.getIsSorted() === "asc"
+                      ? "Sorted ascending. Click to sort descending."
+                      : "Not sorted. Click to sort ascending."
+                }
+                variant="ghost"
+                class="-ml-4 h-8 data-[expanded]:bg-accent"
+                {...props}
+              >
+                <span>{local.title}</span>
+                <div class="ml-1">
+                  <Switch
+                    fallback={
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="size-3.5"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="m8 9l4-4l4 4m0 6l-4 4l-4-4"
+                        />
+                      </svg>
+                    }
+                  >
+                    <Match when={local.column.getIsSorted() === "asc"}>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="size-3.5"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M12 5v14m4-10l-4-4M8 9l4-4"
+                        />
+                      </svg>
+                    </Match>
+                    <Match when={local.column.getIsSorted() === "desc"}>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="size-3.5"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M12 5v14m4-4l-4 4m-4-4l4 4"
+                        />
+                      </svg>
+                    </Match>
+                  </Switch>
+                </div>
+              </Button>
+            )}
+          />
           <DropdownMenuContent>
             <Show when={local.column.getCanSort()}>
               <DropdownMenuItem
@@ -495,15 +498,15 @@ const DataTableDemo = () => {
   return (
     <div class="w-full space-y-2.5">
       <div class="flex items-center justify-between gap-2">
-        <TextField>
-          <TextFieldInput
+        <TextFieldRoot>
+          <TextField
             type="text"
             placeholder="Filter titles..."
             class="h-8"
             value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
             onInput={e => table.getColumn("title")?.setFilterValue(e.currentTarget.value)}
           />
-        </TextField>
+        </TextFieldRoot>
         <div class="flex items-center gap-2">
           <Select
             onChange={e => {
@@ -521,80 +524,84 @@ const DataTableDemo = () => {
               </SelectItem>
             )}
           >
-            <SelectTrigger asChild>
-              <As
-                component={Button}
-                variant="outline"
-                size="sm"
-                class="relative flex h-8 w-full gap-2 [&>svg]:hidden"
-              >
-                <div class="flex items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 size-4" viewBox="0 0 24 24">
-                    <path
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="m12 20l-3 1v-8.5L4.52 7.572A2 2 0 0 1 4 6.227V4h16v2.172a2 2 0 0 1-.586 1.414L15 12v1.5m2.001 5.5a2 2 0 1 0 4 0a2 2 0 1 0-4 0m2-3.5V17m0 4v1.5m3.031-5.25l-1.299.75m-3.463 2l-1.3.75m0-3.5l1.3.75m3.463 2l1.3.75"
-                    />
-                  </svg>
-                  <span>Status</span>
-                </div>
-                <SelectValue<
-                  ReturnType<typeof filteredStatusList>[0]
-                > class="flex h-full items-center gap-1">
-                  {state => (
-                    <Show
-                      when={state.selectedOptions().length <= 2}
-                      fallback={
-                        <>
-                          <Badge class="absolute -top-2 right-0 block size-4 rounded-full p-0 capitalize md:hidden">
-                            {state.selectedOptions().length}
-                          </Badge>
-                          <Badge variant="secondary" class="hidden capitalize md:inline-flex">
-                            {state.selectedOptions().length} selected
-                          </Badge>
-                        </>
-                      }
-                    >
-                      <For each={state.selectedOptions()}>
-                        {item => (
+            <SelectTrigger
+              as={(props: SelectTriggerProps) => (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  class="relative flex h-8 w-full gap-2 [&>svg]:hidden"
+                  {...props}
+                >
+                  <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 size-4" viewBox="0 0 24 24">
+                      <path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m12 20l-3 1v-8.5L4.52 7.572A2 2 0 0 1 4 6.227V4h16v2.172a2 2 0 0 1-.586 1.414L15 12v1.5m2.001 5.5a2 2 0 1 0 4 0a2 2 0 1 0-4 0m2-3.5V17m0 4v1.5m3.031-5.25l-1.299.75m-3.463 2l-1.3.75m0-3.5l1.3.75m3.463 2l1.3.75"
+                      />
+                    </svg>
+                    <span>Status</span>
+                  </div>
+                  <SelectValue<
+                    ReturnType<typeof filteredStatusList>[0]
+                  > class="flex h-full items-center gap-1">
+                    {state => (
+                      <Show
+                        when={state.selectedOptions().length <= 2}
+                        fallback={
                           <>
                             <Badge class="absolute -top-2 right-0 block size-4 rounded-full p-0 capitalize md:hidden">
                               {state.selectedOptions().length}
                             </Badge>
                             <Badge variant="secondary" class="hidden capitalize md:inline-flex">
-                              {item.title}
+                              {state.selectedOptions().length} selected
                             </Badge>
                           </>
-                        )}
-                      </For>
-                    </Show>
-                  )}
-                </SelectValue>
-              </As>
-            </SelectTrigger>
+                        }
+                      >
+                        <For each={state.selectedOptions()}>
+                          {item => (
+                            <>
+                              <Badge class="absolute -top-2 right-0 block size-4 rounded-full p-0 capitalize md:hidden">
+                                {state.selectedOptions().length}
+                              </Badge>
+                              <Badge variant="secondary" class="hidden capitalize md:inline-flex">
+                                {item.title}
+                              </Badge>
+                            </>
+                          )}
+                        </For>
+                      </Show>
+                    )}
+                  </SelectValue>
+                </Button>
+              )}
+            />
             <SelectContent />
           </Select>
           <DropdownMenu placement="bottom-end">
-            <DropdownMenuTrigger asChild>
-              <As component={Button} aria-label="Toggle columns" variant="outline" class="flex h-8">
-                <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 size-4" viewBox="0 0 24 24">
-                  <g
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                  >
-                    <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0-4 0" />
-                    <path d="M12 18c-3.6 0-6.6-2-9-6c2.4-4 5.4-6 9-6c3.6 0 6.6 2 9 6m-3.999 7a2 2 0 1 0 4 0a2 2 0 1 0-4 0m2-3.5V17m0 4v1.5m3.031-5.25l-1.299.75m-3.463 2l-1.3.75m0-3.5l1.3.75m3.463 2l1.3.75" />
-                  </g>
-                </svg>
-                View
-              </As>
-            </DropdownMenuTrigger>
+            <DropdownMenuTrigger
+              as={(props: DropdownMenuTriggerProps) => (
+                <Button aria-label="Toggle columns" variant="outline" class="flex h-8" {...props}>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 size-4" viewBox="0 0 24 24">
+                    <g
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                    >
+                      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0-4 0" />
+                      <path d="M12 18c-3.6 0-6.6-2-9-6c2.4-4 5.4-6 9-6c3.6 0 6.6 2 9 6m-3.999 7a2 2 0 1 0 4 0a2 2 0 1 0-4 0m2-3.5V17m0 4v1.5m3.031-5.25l-1.299.75m-3.463 2l-1.3.75m0-3.5l1.3.75m3.463 2l1.3.75" />
+                    </g>
+                  </svg>
+                  View
+                </Button>
+              )}
+            />
             <DropdownMenuContent class="w-40">
               <DropdownMenuGroup>
                 <DropdownMenuGroupLabel>Toggle columns</DropdownMenuGroupLabel>

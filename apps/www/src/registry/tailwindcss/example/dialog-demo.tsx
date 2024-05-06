@@ -1,4 +1,4 @@
-import { As } from "@kobalte/core";
+import type { DialogTriggerProps } from "@kobalte/core/dialog";
 import { Button } from "../ui/button";
 import {
   Dialog,
@@ -9,16 +9,18 @@ import {
   DialogTitle,
   DialogTrigger
 } from "../ui/dialog";
-import { TextField, TextFieldInput, TextFieldLabel } from "../ui/textfield";
+import { TextField, TextFieldLabel, TextFieldRoot } from "../ui/textfield";
 
 const DialogDemo = () => {
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <As component={Button} variant="outline">
-          Edit Profile
-        </As>
-      </DialogTrigger>
+      <DialogTrigger
+        as={(props: DialogTriggerProps) => (
+          <Button variant="outline" {...props}>
+            Edit Profile
+          </Button>
+        )}
+      />
       <DialogContent class="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Edit profile</DialogTitle>
@@ -27,14 +29,14 @@ const DialogDemo = () => {
           </DialogDescription>
         </DialogHeader>
         <div class="grid gap-4 py-4">
-          <TextField class="grid grid-cols-3 items-center gap-4 md:grid-cols-4">
+          <TextFieldRoot class="grid grid-cols-3 items-center gap-4 md:grid-cols-4">
             <TextFieldLabel class="text-right">Name</TextFieldLabel>
-            <TextFieldInput class="col-span-2 md:col-span-3" />
-          </TextField>
-          <TextField class="grid grid-cols-3 items-center gap-4 md:grid-cols-4">
+            <TextField class="col-span-2 md:col-span-3" />
+          </TextFieldRoot>
+          <TextFieldRoot class="grid grid-cols-3 items-center gap-4 md:grid-cols-4">
             <TextFieldLabel class="text-right">Username</TextFieldLabel>
-            <TextFieldInput class="col-span-2 md:col-span-3" />
-          </TextField>
+            <TextField class="col-span-2 md:col-span-3" />
+          </TextFieldRoot>
         </div>
         <DialogFooter>
           <Button type="submit">Save changes</Button>

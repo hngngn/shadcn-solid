@@ -5,7 +5,7 @@
     "dev": "vinxi dev",
     "build": "vinxi build",
     "start": "vinxi start",
-    "check": "bun run format && biome check --apply-unsafe src && bun run lint",
+    "check": "bun run format && biome check --apply-unsafe src && bun run lint --fix",
     "format": "prettier -w ./src/**/*.{ts,tsx}",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives",
     "build:registry": "tsx scripts/build-registry.ts",
@@ -14,7 +14,7 @@
   "dependencies": {
     "@ark-ui/solid": "^2.2.0",
     "@faker-js/faker": "^8.4.1",
-    "@kobalte/core": "^0.12.6",
+    "@kobalte/core": "^0.13.1",
     "@mdx-js/mdx": "^2.3.0",
     "@solidjs/meta": "^0.29.3",
     "@solidjs/router": "^0.13.1",

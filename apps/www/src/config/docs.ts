@@ -188,7 +188,8 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Image",
           href: "/docs/components/image",
-          items: []
+          items: [],
+          label: "Updated"
         },
         {
           title: "Pagination",
@@ -254,12 +255,14 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Text Field",
           href: "/docs/components/textfield",
-          items: []
+          items: [],
+          label: "Updated"
         },
         {
           title: "Textarea",
           href: "/docs/components/textarea",
-          items: []
+          items: [],
+          label: "Updated"
         },
         {
           title: "Toast",

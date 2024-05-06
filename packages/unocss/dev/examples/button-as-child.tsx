@@ -1,12 +1,9 @@
-import { As } from "@kobalte/core";
 import { Button } from "../../ui/button";
 
 const ButtonAsChild = () => {
   return (
-    <Button asChild>
-      <As component="a" href="#">
+    <Button as="a" href="#">
         Login
-      </As>
     </Button>
   );
 };

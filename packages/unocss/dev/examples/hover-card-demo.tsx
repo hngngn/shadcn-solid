@@ -1,4 +1,4 @@
-import { As } from "@kobalte/core";
+import type { HoverCardTriggerProps } from "@kobalte/core/hover-card";
 import { Button } from "../../ui/button";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "../../ui/hover-card";
 import { Image, ImageFallback, ImageRoot } from "../../ui/image";
@@ -6,11 +6,13 @@ import { Image, ImageFallback, ImageRoot } from "../../ui/image";
 const HoverCardDemo = () => {
   return (
     <HoverCard>
-      <HoverCardTrigger asChild>
-        <As component={Button} variant="link">
-          @solid_js
-        </As>
-      </HoverCardTrigger>
+      <HoverCardTrigger
+        as={(props: HoverCardTriggerProps) => (
+          <Button variant="link" {...props}>
+            @solid_js
+          </Button>
+        )}
+      />
       <HoverCardContent class="w-80">
         <div class="flex justify-between space-x-4">
           <ImageRoot fallbackDelay={400}>

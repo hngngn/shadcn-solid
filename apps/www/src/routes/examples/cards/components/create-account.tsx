@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle
 } from "@/registry/tailwindcss/ui/card";
-import { TextField, TextFieldInput, TextFieldLabel } from "@/registry/tailwindcss/ui/textfield";
+import { TextField, TextFieldLabel, TextFieldRoot } from "@/registry/tailwindcss/ui/textfield";
 
 export const DemoCreateAccount = () => {
   return (
@@ -53,16 +53,16 @@ export const DemoCreateAccount = () => {
           </div>
         </div>
         <div class="grid gap-2">
-          <TextField>
+          <TextFieldRoot>
             <TextFieldLabel>Email</TextFieldLabel>
-            <TextFieldInput type="email" placeholder="m@example.com" />
-          </TextField>
+            <TextField type="email" placeholder="m@example.com" />
+          </TextFieldRoot>
         </div>
         <div class="grid gap-2">
-          <TextField>
+          <TextFieldRoot>
             <TextFieldLabel>Password</TextFieldLabel>
-            <TextFieldInput type="password" />
-          </TextField>
+            <TextField type="password" />
+          </TextFieldRoot>
         </div>
       </CardContent>
       <CardFooter>

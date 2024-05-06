@@ -1,5 +1,5 @@
 import { Button } from "@/registry/tailwindcss/ui/button";
-import { TextField, TextFieldInput, TextFieldLabel } from "@/registry/tailwindcss/ui/textfield";
+import { TextField, TextFieldLabel, TextFieldRoot } from "@/registry/tailwindcss/ui/textfield";
 import { createSignal } from "solid-js";
 
 export const UserAuthForm = () => {
@@ -19,9 +19,9 @@ export const UserAuthForm = () => {
       <form onSubmit={onSubmit}>
         <div class="grid gap-2">
           <div class="grid gap-1">
-            <TextField>
+            <TextFieldRoot>
               <TextFieldLabel class="sr-only">Email</TextFieldLabel>
-              <TextFieldInput
+              <TextField
                 id="email"
                 placeholder="name@example.com"
                 type="email"
@@ -30,7 +30,7 @@ export const UserAuthForm = () => {
                 autocorrect="off"
                 disabled={isLoading()}
               />
-            </TextField>
+            </TextFieldRoot>
           </div>
           <Button disabled={isLoading()}>
             {isLoading() && (

@@ -8,7 +8,7 @@ import {
   CardTitle
 } from "../../ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../ui/tabs";
-import { TextField, TextFieldInput, TextFieldLabel } from "../../ui/textfield";
+import { TextField, TextFieldLabel, TextFieldRoot } from "../../ui/textfield";
 
 const TabsDemo = () => {
   return (
@@ -26,14 +26,14 @@ const TabsDemo = () => {
             </CardDescription>
           </CardHeader>
           <CardContent class="space-y-2">
-            <TextField class="space-y-1">
+            <TextFieldRoot class="space-y-1">
               <TextFieldLabel>Name</TextFieldLabel>
-              <TextFieldInput />
-            </TextField>
-            <TextField class="space-y-1">
+              <TextField />
+            </TextFieldRoot>
+            <TextFieldRoot class="space-y-1">
               <TextFieldLabel>Username</TextFieldLabel>
-              <TextFieldInput />
-            </TextField>
+              <TextField />
+            </TextFieldRoot>
           </CardContent>
           <CardFooter>
             <Button>Save changes</Button>
@@ -49,14 +49,14 @@ const TabsDemo = () => {
             </CardDescription>
           </CardHeader>
           <CardContent class="space-y-2">
-            <TextField class="space-y-1">
+            <TextFieldRoot class="space-y-1">
               <TextFieldLabel>Current password</TextFieldLabel>
-              <TextFieldInput />
-            </TextField>
-            <TextField class="space-y-1">
+              <TextField />
+            </TextFieldRoot>
+            <TextFieldRoot class="space-y-1">
               <TextFieldLabel>New password</TextFieldLabel>
-              <TextFieldInput />
-            </TextField>
+              <TextField />
+            </TextFieldRoot>
           </CardContent>
           <CardFooter>
             <Button>Save password</Button>

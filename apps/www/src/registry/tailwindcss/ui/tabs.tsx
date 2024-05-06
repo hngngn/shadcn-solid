@@ -1,10 +1,15 @@
 import { cn } from "@/libs/cn";
-import { Tabs as TabsPrimitive } from "@kobalte/core";
-import type { VoidProps } from "solid-js";
+import type { PolymorphicProps } from "@kobalte/core/polymorphic";
+import * as TabsPrimitive from "@kobalte/core/tabs";
+import type { ValidComponent, VoidProps } from "solid-js";
 import { splitProps } from "solid-js";
 
-export const Tabs = (props: TabsPrimitive.TabsRootProps) => {
-  const [local, rest] = splitProps(props, ["class"]);
+type TabsProps = TabsPrimitive.TabsRootProps & {
+  class?: string;
+};
+
+export const Tabs = <T extends ValidComponent = "div">(props: PolymorphicProps<T, TabsProps>) => {
+  const [local, rest] = splitProps(props as TabsProps, ["class"]);
 
   return (
     <TabsPrimitive.Root
@@ -14,8 +19,14 @@ export const Tabs = (props: TabsPrimitive.TabsRootProps) => {
   );
 };
 
-export const TabsList = (props: TabsPrimitive.TabsListProps) => {
-  const [local, rest] = splitProps(props, ["class"]);
+type TabsListProps = TabsPrimitive.TabsListProps & {
+  class?: string;
+};
+
+export const TabsList = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, TabsListProps>
+) => {
+  const [local, rest] = splitProps(props as TabsListProps, ["class"]);
 
   return (
     <TabsPrimitive.List
@@ -28,8 +39,14 @@ export const TabsList = (props: TabsPrimitive.TabsListProps) => {
   );
 };
 
-export const TabsContent = (props: TabsPrimitive.TabsContentProps) => {
-  const [local, rest] = splitProps(props, ["class"]);
+type TabsContentProps = TabsPrimitive.TabsContentProps & {
+  class?: string;
+};
+
+export const TabsContent = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, TabsContentProps>
+) => {
+  const [local, rest] = splitProps(props as TabsContentProps, ["class"]);
 
   return (
     <TabsPrimitive.Content
@@ -42,8 +59,14 @@ export const TabsContent = (props: TabsPrimitive.TabsContentProps) => {
   );
 };
 
-export const TabsTrigger = (props: TabsPrimitive.TabsTriggerProps) => {
-  const [local, rest] = splitProps(props, ["class"]);
+type TabsTriggerProps = TabsPrimitive.TabsTriggerProps & {
+  class?: string;
+};
+
+export const TabsTrigger = <T extends ValidComponent = "button">(
+  props: PolymorphicProps<T, TabsTriggerProps>
+) => {
+  const [local, rest] = splitProps(props as TabsTriggerProps, ["class"]);
 
   return (
     <TabsPrimitive.Trigger
@@ -56,8 +79,16 @@ export const TabsTrigger = (props: TabsPrimitive.TabsTriggerProps) => {
   );
 };
 
-export const TabsIndicator = (props: VoidProps<TabsPrimitive.TabsIndicatorProps>) => {
-  const [local, rest] = splitProps(props, ["class"]);
+type TabsIndicatorProps = VoidProps<
+  TabsPrimitive.TabsIndicatorProps & {
+    class?: string;
+  }
+>;
+
+export const TabsIndicator = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, TabsIndicatorProps>
+) => {
+  const [local, rest] = splitProps(props as TabsIndicatorProps, ["class"]);
 
   return (
     <TabsPrimitive.Indicator

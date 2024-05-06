@@ -4,7 +4,7 @@
   "files": ["ui"],
   "devDependencies": {
     "@ark-ui/solid": "^2.2.0",
-    "@kobalte/core": "^0.12.6",
+    "@kobalte/core": "^0.13.1",
     "@unocss/reset": "^0.58.8",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",

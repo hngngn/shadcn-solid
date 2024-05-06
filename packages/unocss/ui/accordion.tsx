@@ -1,17 +1,32 @@
 import { cn } from "@/libs/cn";
-import { Accordion as AccordionPrimitive } from "@kobalte/core";
-import { splitProps } from "solid-js";
+import * as AccordionPrimitive from "@kobalte/core/accordion";
+import type { PolymorphicProps } from "@kobalte/core/polymorphic";
+import { type ParentProps, type ValidComponent, splitProps } from "solid-js";
 
 export const Accordion = AccordionPrimitive.Root;
 
-export const AccordionItem = (props: AccordionPrimitive.AccordionItemProps) => {
-  const [local, rest] = splitProps(props, ["class"]);
+type AccordionItemProps = AccordionPrimitive.AccordionItemProps & {
+  class?: string;
+};
+
+export const AccordionItem = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, AccordionItemProps>
+) => {
+  const [local, rest] = splitProps(props as AccordionItemProps, ["class"]);
 
   return <AccordionPrimitive.Item class={cn("border-b", local.class)} {...rest} />;
 };
 
-export const AccordionTrigger = (props: AccordionPrimitive.AccordionTriggerProps) => {
-  const [local, rest] = splitProps(props, ["class", "children"]);
+type AccordionTriggerProps = ParentProps<
+  AccordionPrimitive.AccordionTriggerProps & {
+    class?: string;
+  }
+>;
+
+export const AccordionTrigger = <T extends ValidComponent = "button">(
+  props: PolymorphicProps<T, AccordionTriggerProps>
+) => {
+  const [local, rest] = splitProps(props as AccordionTriggerProps, ["class", "children"]);
 
   return (
     <AccordionPrimitive.Header class="flex" as="div">
@@ -42,8 +57,16 @@ export const AccordionTrigger = (props: AccordionPrimitive.AccordionTriggerProps
   );
 };
 
-export const AccordionContent = (props: AccordionPrimitive.AccordionContentProps) => {
-  const [local, rest] = splitProps(props, ["class", "children"]);
+type AccordionContentProps = ParentProps<
+  AccordionPrimitive.AccordionContentProps & {
+    class?: string;
+  }
+>;
+
+export const AccordionContent = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, AccordionContentProps>
+) => {
+  const [local, rest] = splitProps(props as AccordionContentProps, ["class", "children"]);
 
   return (
     <AccordionPrimitive.Content

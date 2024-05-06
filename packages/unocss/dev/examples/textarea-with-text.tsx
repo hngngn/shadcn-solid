@@ -1,13 +1,13 @@
-import { TextFieldTextArea } from "../../ui/textarea";
-import { TextField, TextFieldDescription, TextFieldLabel } from "../../ui/textfield";
+import { TextArea } from "../../ui/textarea";
+import { TextFieldDescription, TextFieldLabel, TextFieldRoot } from "../../ui/textfield";
 
 const TextareaWithText = () => {
   return (
-    <TextField class="w-full max-w-xs">
+    <TextFieldRoot class="w-full max-w-xs">
       <TextFieldLabel>Your message</TextFieldLabel>
-      <TextFieldTextArea placeholder="Type your message here." />
+      <TextArea placeholder="Type your message here." />
       <TextFieldDescription>Enter your email address.</TextFieldDescription>
-    </TextField>
+    </TextFieldRoot>
   );
 };
 

@@ -1,9 +1,11 @@
 import { cn } from "@/libs/cn";
-import { Toast as ToastPrimitive } from "@kobalte/core";
+import type { PolymorphicProps } from "@kobalte/core/polymorphic";
+import * as ToastPrimitive from "@kobalte/core/toast";
+import { mergeDefaultProps } from "@kobalte/utils";
 import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
-import type { ComponentProps, VoidComponent, VoidProps } from "solid-js";
-import { mergeProps, splitProps } from "solid-js";
+import type { ComponentProps, ValidComponent, VoidComponent, VoidProps } from "solid-js";
+import { splitProps } from "solid-js";
 import { Portal } from "solid-js/web";
 
 export const toastVariants = cva(
@@ -22,10 +24,13 @@ export const toastVariants = cva(
   }
 );
 
-export const Toast = (
-  props: ToastPrimitive.ToastRootProps & VariantProps<typeof toastVariants>
-) => {
-  const [local, rest] = splitProps(props, ["class", "variant"]);
+type ToastProps = ToastPrimitive.ToastRootProps &
+  VariantProps<typeof toastVariants> & {
+    class?: string;
+  };
+
+export const Toast = <T extends ValidComponent = "li">(props: PolymorphicProps<T, ToastProps>) => {
+  const [local, rest] = splitProps(props as ToastProps, ["class", "variant"]);
 
   return (
     <ToastPrimitive.Root
@@ -35,8 +40,14 @@ export const Toast = (
   );
 };
 
-export const ToastTitle = (props: ToastPrimitive.ToastTitleProps) => {
-  const [local, rest] = splitProps(props, ["class"]);
+type ToastTitleProps = ToastPrimitive.ToastTitleProps & {
+  class?: string;
+};
+
+export const ToastTitle = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, ToastTitleProps>
+) => {
+  const [local, rest] = splitProps(props as ToastTitleProps, ["class"]);
 
   return (
     <ToastPrimitive.Title
@@ -46,18 +57,30 @@ export const ToastTitle = (props: ToastPrimitive.ToastTitleProps) => {
   );
 };
 
-export const ToastDescription = (props: ToastPrimitive.ToastDescriptionProps) => {
-  const [local, rest] = splitProps(props, ["class"]);
+type ToastDescriptionProps = ToastPrimitive.ToastDescriptionProps & {
+  class?: string;
+};
+
+export const ToastDescription = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, ToastDescriptionProps>
+) => {
+  const [local, rest] = splitProps(props as ToastDescriptionProps, ["class"]);
 
   return <ToastPrimitive.Description class={cn("text-sm opacity-90", local.class)} {...rest} />;
 };
 
-export const ToastRegion = (props: ToastPrimitive.ToastRegionProps) => {
-  const merge = mergeProps<ToastPrimitive.ToastRegionProps[]>(
+type ToastRegionProps = ToastPrimitive.ToastRegionProps & {
+  class?: string;
+};
+
+export const ToastRegion = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, ToastRegionProps>
+) => {
+  const merge = mergeDefaultProps(
     {
       swipeDirection: "down"
     },
-    props
+    props as ToastRegionProps
   );
 
   return (
@@ -67,8 +90,16 @@ export const ToastRegion = (props: ToastPrimitive.ToastRegionProps) => {
   );
 };
 
-export const ToastList = (props: VoidProps<ToastPrimitive.ToastListProps>) => {
-  const [local, rest] = splitProps(props, ["class"]);
+type ToastListProps = VoidProps<
+  ToastPrimitive.ToastListProps & {
+    class?: string;
+  }
+>;
+
+export const ToastList = <T extends ValidComponent = "ol">(
+  props: PolymorphicProps<T, ToastListProps>
+) => {
+  const [local, rest] = splitProps(props as ToastListProps, ["class"]);
 
   return (
     <ToastPrimitive.List

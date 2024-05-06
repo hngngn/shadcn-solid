@@ -15,7 +15,7 @@ import {
   SelectTrigger,
   SelectValue
 } from "@/registry/tailwindcss/ui/select";
-import { TextField, TextFieldInput, TextFieldLabel } from "@/registry/tailwindcss/ui/textfield";
+import { TextField, TextFieldLabel, TextFieldRoot } from "@/registry/tailwindcss/ui/textfield";
 
 export const DemoPaymentMethod = () => {
   return (
@@ -80,16 +80,16 @@ export const DemoPaymentMethod = () => {
           </div>
         </RadioGroup>
         <div class="grid gap-2">
-          <TextField>
+          <TextFieldRoot>
             <TextFieldLabel>Name</TextFieldLabel>
-            <TextFieldInput placeholder="First Last" />
-          </TextField>
+            <TextField placeholder="First Last" />
+          </TextFieldRoot>
         </div>
         <div class="grid gap-2">
-          <TextField>
+          <TextFieldRoot>
             <TextFieldLabel>Card number</TextFieldLabel>
-            <TextFieldInput placeholder="" />
-          </TextField>
+            <TextField placeholder="" />
+          </TextFieldRoot>
         </div>
         <div class="grid grid-cols-3 gap-4">
           <div class="grid gap-2">
@@ -134,10 +134,10 @@ export const DemoPaymentMethod = () => {
               <SelectContent />
             </Select>
           </div>
-          <TextField class="grid gap-2">
+          <TextFieldRoot class="grid gap-2">
             <TextFieldLabel>CVC</TextFieldLabel>
-            <TextFieldInput id="cvc" placeholder="CVC" />
-          </TextField>
+            <TextField id="cvc" placeholder="CVC" />
+          </TextFieldRoot>
         </div>
       </CardContent>
       <CardFooter>

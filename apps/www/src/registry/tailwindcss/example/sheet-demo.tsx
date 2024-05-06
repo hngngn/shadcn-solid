@@ -1,4 +1,4 @@
-import { As } from "@kobalte/core";
+import type { DialogTriggerProps } from "@kobalte/core/dialog";
 import { Button } from "../ui/button";
 import {
   Sheet,
@@ -9,16 +9,18 @@ import {
   SheetTitle,
   SheetTrigger
 } from "../ui/sheet";
-import { TextField, TextFieldInput, TextFieldLabel } from "../ui/textfield";
+import { TextField, TextFieldLabel, TextFieldRoot } from "../ui/textfield";
 
 const SheetDemo = () => {
   return (
     <Sheet>
-      <SheetTrigger asChild>
-        <As component={Button} variant="outline">
-          Open
-        </As>
-      </SheetTrigger>
+      <SheetTrigger
+        as={(props: DialogTriggerProps) => (
+          <Button variant="outline" {...props}>
+            Open
+          </Button>
+        )}
+      />
       <SheetContent>
         <SheetHeader>
           <SheetTitle>Edit profile</SheetTitle>
@@ -27,14 +29,14 @@ const SheetDemo = () => {
           </SheetDescription>
         </SheetHeader>
         <div class="grid gap-4 py-4">
-          <TextField class="grid grid-cols-3 items-center gap-4 md:grid-cols-4">
+          <TextFieldRoot class="grid grid-cols-3 items-center gap-4 md:grid-cols-4">
             <TextFieldLabel class="text-right">Name</TextFieldLabel>
-            <TextFieldInput class="col-span-2 md:col-span-3" />
-          </TextField>
-          <TextField class="grid grid-cols-3 items-center gap-4 md:grid-cols-4">
+            <TextField class="col-span-2 md:col-span-3" />
+          </TextFieldRoot>
+          <TextFieldRoot class="grid grid-cols-3 items-center gap-4 md:grid-cols-4">
             <TextFieldLabel class="text-right">Username</TextFieldLabel>
-            <TextFieldInput class="col-span-2 md:col-span-3" />
-          </TextField>
+            <TextField class="col-span-2 md:col-span-3" />
+          </TextFieldRoot>
         </div>
         <SheetFooter>
           <Button type="submit">Save changes</Button>
