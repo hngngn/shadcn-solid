@@ -3,7 +3,7 @@ import { Resizable, ResizableHandle, ResizablePanel } from "@/registry/tailwindc
 import { Separator } from "@/registry/tailwindcss/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/registry/tailwindcss/ui/tabs";
 import { TextField, TextFieldRoot } from "@/registry/tailwindcss/ui/textfield";
-import { makePersisted } from "@solid-primitives/storage";
+import { cookieStorage, makePersisted } from "@solid-primitives/storage";
 import { createSignal } from "solid-js";
 import { AccountSwitcher } from "./components/account-switcher";
 import { MailDisplay } from "./components/mail-display";
@@ -12,8 +12,12 @@ import { Nav } from "./components/nav";
 
 const Mail = () => {
   // eslint-disable-next-line solid/reactivity
-  const [sizes, setSizes] = makePersisted(createSignal<number[]>([]), {
-    name: "resizable-sizes"
+  const [sizes, setSizes] = makePersisted(createSignal<number[]>([0.2, 0.4, 0.4]), {
+    name: "resizable-sizes",
+    storage: cookieStorage,
+    storageOptions: {
+      path: "/"
+    }
   });
 
   const [isCollapsed, setIsCollapsed] = createSignal(false);
@@ -39,7 +43,7 @@ const Mail = () => {
       <div class="hidden md:block">
         <Resizable sizes={sizes()} onSizesChange={setSizes}>
           <ResizablePanel
-            initialSize={0.2}
+            initialSize={sizes()[0]}
             minSize={0.1}
             maxSize={0.2}
             collapsible
@@ -239,7 +243,7 @@ const Mail = () => {
             />
           </ResizablePanel>
           <ResizableHandle withHandle />
-          <ResizablePanel initialSize={0.4} minSize={0.3}>
+          <ResizablePanel initialSize={sizes()[1]} minSize={0.3}>
             <Tabs defaultValue="all">
               <div class="flex items-center px-4 py-2">
                 <h1 class="text-xl font-bold">Inbox</h1>
@@ -281,7 +285,7 @@ const Mail = () => {
             </Tabs>
           </ResizablePanel>
           <ResizableHandle withHandle />
-          <ResizablePanel initialSize={0.4} minSize={0.3}>
+          <ResizablePanel initialSize={sizes()[2]} minSize={0.3}>
             <MailDisplay />
           </ResizablePanel>
         </Resizable>
