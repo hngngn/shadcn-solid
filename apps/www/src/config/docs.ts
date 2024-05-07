@@ -30,7 +30,7 @@ export const docsConfig: TDocsConfig = {
     },
     {
       title: "Examples",
-      href: "/examples/cards"
+      href: "/examples/mail"
     }
   ],
   sidebarNav: [

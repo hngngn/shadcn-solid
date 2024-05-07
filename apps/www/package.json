@@ -16,6 +16,7 @@
     "@faker-js/faker": "^8.4.1",
     "@kobalte/core": "^0.13.1",
     "@mdx-js/mdx": "^2.3.0",
+    "@solid-primitives/storage": "^3.5.0",
     "@solidjs/meta": "^0.29.3",
     "@solidjs/router": "^0.13.1",
     "@solidjs/start": "1.0.0-rc.0",

@@ -8,12 +8,7 @@ export const ResizablePanel = ResizablePrimitive.Panel;
 export const Resizable = (props: RootProps) => {
   const [local, rest] = splitProps(props, ["class"]);
 
-  return (
-    <ResizablePrimitive
-      class={cn("flex h-full w-full data-[orientation=vertical]:flex-col", local.class)}
-      {...rest}
-    />
-  );
+  return <ResizablePrimitive class={cn("size-full", local.class)} {...rest} />;
 };
 
 export const ResizableHandle = (props: VoidProps<HandleProps & { withHandle?: boolean }>) => {
