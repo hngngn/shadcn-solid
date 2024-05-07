@@ -3,8 +3,7 @@ title: Command
 description: Composable command menu.
 component: true
 link:
-  doc: https://kobalte.dev/docs/core/components/combobox
-  api: https://kobalte.dev/docs/core/components/combobox#api-reference
+  doc: https://cmdk-solid.vercel.app
 ---
 
 <ComponentPreview name="command-demo" align="start" class="[&_.preview>div]:max-w-[450px]" />
@@ -33,7 +32,7 @@ npx shadcn-solid@latest add command
 <Step>Install the following dependencies:</Step>
 
 ```bash
-npm install @kobalte/core
+npm install cmdk-solid
 ```
 
 <Step>Copy and paste the following code into your project.</Step>
@@ -53,28 +52,34 @@ npm install @kobalte/core
 ```tsx
 import {
   Command,
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
   CommandInput,
   CommandItem,
-  CommandItemLabel,
-  CommandList
-} from "@/components/ui/command";
+  CommandList,
+  CommandSeparator,
+  CommandShortcut,
+} from "@/components/ui/command"
 ```
 
 ```tsx
-const ALL_OPTIONS = ["Apple", "Banana", "Blueberry", "Grapes", "Pineapple"];
-```
-
-```tsx
-<Command
-  options={ALL_OPTIONS}
-  itemComponent={props => (
-    <CommandItem item={props.item}>
-      <CommandItemLabel>{props.item.rawValue}</CommandItemLabel>
-    </CommandItem>
-  )}
->
-  <CommandInput />
-  <CommandList />
+<Command>
+  <CommandInput placeholder="Type a command or search..." />
+  <CommandList>
+    <CommandEmpty>No results found.</CommandEmpty>
+    <CommandGroup heading="Suggestions">
+      <CommandItem>Calendar</CommandItem>
+      <CommandItem>Search Emoji</CommandItem>
+      <CommandItem>Calculator</CommandItem>
+    </CommandGroup>
+    <CommandSeparator />
+    <CommandGroup heading="Settings">
+      <CommandItem>Profile</CommandItem>
+      <CommandItem>Billing</CommandItem>
+      <CommandItem>Settings</CommandItem>
+    </CommandGroup>
+  </CommandList>
 </Command>
 ```
 
