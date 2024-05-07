@@ -5,7 +5,7 @@ import { siteConfig } from "@/config/site";
 import { buttonVariants } from "@/registry/tailwindcss/ui/button";
 import { A } from "@solidjs/router";
 import { Balancer } from "solid-wrap-balancer";
-import Cards from "./examples/cards";
+import Mail from "./examples/mail";
 
 const Home = () => {
   return (
@@ -48,14 +48,14 @@ const Home = () => {
         <Example />
         <section class="overflow-hidden rounded-lg border bg-background shadow-md md:hidden md:shadow-xl">
           <img
-            src="/examples/cards-dark.png"
+            src="/examples/mail-dark.png"
             width={1280}
             height={727}
             alt="Mail"
             class="hidden dark:block"
           />
           <img
-            src="/examples/cards-light.png"
+            src="/examples/mail-light.png"
             width={1280}
             height={727}
             alt="Mail"
@@ -64,7 +64,7 @@ const Home = () => {
         </section>
         <section class="hidden md:block">
           <div class="overflow-hidden rounded-lg border bg-background shadow-lg">
-            <Cards />
+            <Mail />
           </div>
         </section>
       </div>
