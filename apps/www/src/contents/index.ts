@@ -116,6 +116,9 @@ export const Contents: Record<string, Record<"component", Component<unknown>>> =
   "/docs/components/toast": {
     component: lazy(() => import("@/contents/docs/components/toast.mdx"))
   },
+  "/docs/components/toggle-group": {
+    component: lazy(() => import("@/contents/docs/components/toggle-group.mdx"))
+  },
   "/docs/components/toggle": {
     component: lazy(() => import("@/contents/docs/components/toggle.mdx"))
   },

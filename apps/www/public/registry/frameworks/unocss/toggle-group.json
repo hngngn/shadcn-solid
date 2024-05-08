@@ -1,0 +1,13 @@
+{
+  "name": "toggle-group",
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "files": [
+    {
+      "name": "toggle-group.tsx",
+      "content": "import { cn } from \"@/libs/cn\";\nimport type { PolymorphicProps } from \"@kobalte/core/polymorphic\";\nimport * as ToggleGroupPrimitive from \"@kobalte/core/toggle-group\";\nimport type { VariantProps } from \"class-variance-authority\";\nimport { splitProps, type ValidComponent } from \"solid-js\";\nimport { toggleVariants } from \"./toggle\";\n\ntype ToggleGroupProps = ToggleGroupPrimitive.ToggleGroupRootProps & {\n  class?: string;\n};\n\nexport const ToggleGroup = <T extends ValidComponent = \"div\">(\n  props: PolymorphicProps<T, ToggleGroupProps>\n) => {\n  const [local, rest] = splitProps(props as ToggleGroupProps, [\"class\"]);\n\n  return (\n    <ToggleGroupPrimitive.Root\n      class={cn(\"flex items-center justify-center gap-1\", local.class)}\n      {...rest}\n    />\n  );\n};\n\ntype ToggleGroupItemProps = ToggleGroupPrimitive.ToggleGroupItemProps &\n  VariantProps<typeof toggleVariants> & {\n    class?: string;\n  };\n\nexport const ToggleGroupItem = <T extends ValidComponent = \"button\">(\n  props: PolymorphicProps<T, ToggleGroupItemProps>\n) => {\n  const [local, rest] = splitProps(props as ToggleGroupItemProps, [\"class\", \"variant\", \"size\"]);\n\n  return (\n    <ToggleGroupPrimitive.Item\n      class={cn(\n        toggleVariants({\n          variant: local.variant,\n          size: local.size\n        }),\n        local.class\n      )}\n      {...rest}\n    />\n  );\n};\n"
+    }
+  ],
+  "type": "components:ui"
+}

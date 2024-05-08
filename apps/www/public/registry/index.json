@@ -336,6 +336,16 @@
     "type": "components:ui"
   },
   {
+    "name": "toggle-group",
+    "dependencies": [
+      "@kobalte/core"
+    ],
+    "files": [
+      "ui/toggle-group.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "toggle",
     "dependencies": [
       "@kobalte/core"
