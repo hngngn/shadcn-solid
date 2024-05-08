@@ -236,6 +236,12 @@ export const docsConfig: TDocsConfig = {
           items: []
         },
         {
+          title: "Sonner",
+          href: "/docs/components/sonner",
+          items: [],
+          label: "New"
+        },
+        {
           title: "Switch",
           href: "/docs/components/switch",
           items: []

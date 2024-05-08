@@ -164,6 +164,12 @@ const ui = [
     files: ["ui/skeleton.tsx"]
   },
   {
+    name: "sonner",
+    type: "components:ui",
+    dependencies: ["solid-sonner", "@kobalte/core"],
+    files: ["ui/sonner.tsx"]
+  },
+  {
     name: "switch",
     type: "components:ui",
     dependencies: ["@kobalte/core"],
@@ -494,6 +500,11 @@ const example = [
     name: "skeleton-demo",
     type: "components:example",
     files: ["example/skeleton-demo.tsx"]
+  },
+  {
+    name: "sonner-demo",
+    type: "components:example",
+    files: ["example/sonner-demo.tsx"]
   },
   {
     name: "switch-demo",

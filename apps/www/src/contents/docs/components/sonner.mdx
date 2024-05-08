@@ -1,0 +1,83 @@
+---
+title: Sonner
+description: An opinionated toast component for Solid.
+component: true
+link:
+  doc: https://solid-sonner.vercel.app
+---
+
+<ComponentPreview name="sonner-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsIndicator class="bg-primary" />
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn-solid@latest add sonner
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install solid-sonner
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="sonner" />
+
+<Step>Add the Toaster component</Step>
+
+```tsx title="src/app.tsx" {1,11}
+import { Toaster } from "@/components/ui/sonner"
+
+const App = () => {
+  return (
+    <Router
+      root={props => (
+          <Suspense>
+            <ColorModeScript />
+            <ColorModeProvider>
+              {props.children}
+              <Toaster />
+            </ColorModeProvider>
+          </Suspense>
+      )}
+    >
+      <FileRoutes />
+    </Router>
+  );
+};
+
+export default App;
+```
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import { toast } from "sonner"
+```
+
+```tsx
+toast("Event has been created.")
+```

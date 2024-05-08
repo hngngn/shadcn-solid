@@ -193,6 +193,13 @@ export const Index = {
       component: lazy(() => import("@/registry/tailwindcss/ui/skeleton")),
       files: ["registry/tailwindcss/ui/skeleton.tsx"],
     },
+    "sonner": {
+      name: "sonner",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/tailwindcss/ui/sonner")),
+      files: ["registry/tailwindcss/ui/sonner.tsx"],
+    },
     "switch": {
       name: "switch",
       type: "components:ui",
@@ -640,6 +647,13 @@ export const Index = {
       registryDependencies: undefined,
       component: lazy(() => import("@/registry/tailwindcss/example/skeleton-demo")),
       files: ["registry/tailwindcss/example/skeleton-demo.tsx"],
+    },
+    "sonner-demo": {
+      name: "sonner-demo",
+      type: "components:example",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/tailwindcss/example/sonner-demo")),
+      files: ["registry/tailwindcss/example/sonner-demo.tsx"],
     },
     "switch-demo": {
       name: "switch-demo",

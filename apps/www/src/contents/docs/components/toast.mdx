@@ -41,7 +41,33 @@ npm install @kobalte/core
 
 <ComponentSource name="toast" />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>Add the `ToastRegion` and `ToastList` component</Step>
+
+```tsx title="src/app.tsx" {1,11-13}
+import { ToastRegion, ToastList } from "@/components/ui/toast"
+
+const App = () => {
+  return (
+    <Router
+      root={props => (
+          <Suspense>
+            <ColorModeScript />
+            <ColorModeProvider>
+              {props.children}
+              <ToastRegion>
+                <ToastList />
+              </ToastRegion>
+            </ColorModeProvider>
+          </Suspense>
+      )}
+    >
+      <FileRoutes />
+    </Router>
+  );
+};
+
+export default App;
+```
 
 </Steps>
 
@@ -53,44 +79,23 @@ npm install @kobalte/core
 
 ```tsx
 import { toaster } from "@kobalte/core";
-import { Button } from "@/components/ui/button";
 import {
   Toast,
   ToastContent,
-  ToastDescription,
   ToastProgress,
   ToastTitle
 } from "@/components/ui/toast";
 ```
 
 ```tsx
-const showToast = () => {
-  toaster.show(props => (
-    <Toast toastId={props.toastId}>
-      <ToastContent>
-        <ToastTitle>Toast</ToastTitle>
-      </ToastContent>
-      <ToastProgress />
-    </Toast>
-  ));
-};
-
-return <Button onClick={showToast}>Show Toast</Button>;
-```
-
-```tsx title="app.tsx" {5-7}
-<Router
-  root={props => (
-    <MetaProvider>
-      <Suspense>{props.children}</Suspense>
-      <ToastRegion>
-        <ToastList />
-      </ToastRegion>
-    </MetaProvider>
-  )}
->
-  <FileRoutes />
-</Router>
+toaster.show(props => (
+  <Toast toastId={props.toastId}>
+    <ToastContent>
+      <ToastTitle>Toast</ToastTitle>
+    </ToastContent>
+    <ToastProgress />
+  </Toast>
+))
 ```
 
 ## Examples

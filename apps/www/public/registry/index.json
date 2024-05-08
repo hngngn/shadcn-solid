@@ -276,6 +276,17 @@
     "type": "components:ui"
   },
   {
+    "name": "sonner",
+    "dependencies": [
+      "solid-sonner",
+      "@kobalte/core"
+    ],
+    "files": [
+      "ui/sonner.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "switch",
     "dependencies": [
       "@kobalte/core"
