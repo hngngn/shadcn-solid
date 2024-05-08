@@ -18,7 +18,8 @@
     "unocss": "^0.58.8",
     "unocss-preset-animations": "^1.0.2",
     "vite": "^5.2.7",
-    "vite-plugin-solid": "^2.10.2"
+    "vite-plugin-solid": "^2.10.2",
+    "solid-sonner": "^0.2.6"
   },
   "peerDependencies": {
     "@ark-ui/solid": "^2.2.0",

@@ -156,8 +156,7 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Data Table",
           href: "/docs/components/data-table",
-          items: [],
-          label: "New"
+          items: []
         },
         {
           title: "Date Picker",
@@ -172,8 +171,7 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Drawer",
           href: "/docs/components/drawer",
-          items: [],
-          label: "New"
+          items: []
         },
         {
           title: "Dropdown Menu",
@@ -238,6 +236,12 @@ export const docsConfig: TDocsConfig = {
           items: []
         },
         {
+          title: "Sonner",
+          href: "/docs/components/sonner",
+          items: [],
+          label: "New"
+        },
+        {
           title: "Switch",
           href: "/docs/components/switch",
           items: []
@@ -268,6 +272,12 @@ export const docsConfig: TDocsConfig = {
           title: "Toast",
           href: "/docs/components/toast",
           items: []
+        },
+        {
+          title: "Toggle Group",
+          href: "/docs/components/toggle-group",
+          items: [],
+          label: "New"
         },
         {
           title: "Toggle",

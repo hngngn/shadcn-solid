@@ -276,6 +276,17 @@
     "type": "components:ui"
   },
   {
+    "name": "sonner",
+    "dependencies": [
+      "solid-sonner",
+      "@kobalte/core"
+    ],
+    "files": [
+      "ui/sonner.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "switch",
     "dependencies": [
       "@kobalte/core"
@@ -332,6 +343,16 @@
     ],
     "files": [
       "ui/toast.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "toggle-group",
+    "dependencies": [
+      "@kobalte/core"
+    ],
+    "files": [
+      "ui/toggle-group.tsx"
     ],
     "type": "components:ui"
   },

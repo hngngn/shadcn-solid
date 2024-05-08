@@ -98,6 +98,9 @@ export const Contents: Record<string, Record<"component", Component<unknown>>> =
   "/docs/components/skeleton": {
     component: lazy(() => import("@/contents/docs/components/skeleton.mdx"))
   },
+  "/docs/components/sonner": {
+    component: lazy(() => import("@/contents/docs/components/sonner.mdx"))
+  },
   "/docs/components/switch": {
     component: lazy(() => import("@/contents/docs/components/switch.mdx"))
   },
@@ -115,6 +118,9 @@ export const Contents: Record<string, Record<"component", Component<unknown>>> =
   },
   "/docs/components/toast": {
     component: lazy(() => import("@/contents/docs/components/toast.mdx"))
+  },
+  "/docs/components/toggle-group": {
+    component: lazy(() => import("@/contents/docs/components/toggle-group.mdx"))
   },
   "/docs/components/toggle": {
     component: lazy(() => import("@/contents/docs/components/toggle.mdx"))

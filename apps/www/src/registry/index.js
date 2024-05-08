@@ -164,6 +164,12 @@ const ui = [
     files: ["ui/skeleton.tsx"]
   },
   {
+    name: "sonner",
+    type: "components:ui",
+    dependencies: ["solid-sonner", "@kobalte/core"],
+    files: ["ui/sonner.tsx"]
+  },
+  {
     name: "switch",
     type: "components:ui",
     dependencies: ["@kobalte/core"],
@@ -198,6 +204,12 @@ const ui = [
     type: "components:ui",
     dependencies: ["@kobalte/core"],
     files: ["ui/toast.tsx"]
+  },
+  {
+    name: "toggle-group",
+    type: "components:ui",
+    dependencies: ["@kobalte/core"],
+    files: ["ui/toggle-group.tsx"]
   },
   {
     name: "toggle",
@@ -490,6 +502,11 @@ const example = [
     files: ["example/skeleton-demo.tsx"]
   },
   {
+    name: "sonner-demo",
+    type: "components:example",
+    files: ["example/sonner-demo.tsx"]
+  },
+  {
     name: "switch-demo",
     type: "components:example",
     files: ["example/switch-demo.tsx"]
@@ -573,6 +590,36 @@ const example = [
     name: "toast-destructive",
     type: "components:example",
     files: ["example/toast-destructive.tsx"]
+  },
+  {
+    name: "toggle-group-demo",
+    type: "components:example",
+    files: ["example/toggle-group-demo.tsx"]
+  },
+  {
+    name: "toggle-group-outline-demo",
+    type: "components:example",
+    files: ["example/toggle-group-outline-demo.tsx"]
+  },
+  {
+    name: "toggle-group-single-demo",
+    type: "components:example",
+    files: ["example/toggle-group-single-demo.tsx"]
+  },
+  {
+    name: "toggle-group-small-demo",
+    type: "components:example",
+    files: ["example/toggle-group-small-demo.tsx"]
+  },
+  {
+    name: "toggle-group-large-demo",
+    type: "components:example",
+    files: ["example/toggle-group-large-demo.tsx"]
+  },
+  {
+    name: "toggle-group-disabled-demo",
+    type: "components:example",
+    files: ["example/toggle-group-disabled-demo.tsx"]
   },
   {
     name: "toggle-demo",

@@ -9,6 +9,7 @@ import "./app.css";
 import { Footer } from "./components/footer";
 import { Header } from "./components/header";
 import "./mdx.css";
+import { Toaster } from "./registry/tailwindcss/ui/sonner";
 import { ToastList, ToastRegion } from "./registry/tailwindcss/ui/toast";
 
 const getServerCookies = () => {
@@ -33,11 +34,12 @@ const App = () => {
                 <div class="flex-1">{props.children}</div>
                 <Footer />
               </div>
+              <ToastRegion>
+                <ToastList />
+              </ToastRegion>
+              <Toaster />
             </ColorModeProvider>
           </Suspense>
-          <ToastRegion>
-            <ToastList />
-          </ToastRegion>
         </MetaProvider>
       )}
     >
