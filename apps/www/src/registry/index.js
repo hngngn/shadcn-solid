@@ -88,7 +88,7 @@ const ui = [
   {
     name: "drawer",
     type: "components:ui",
-    dependencies: ["corvu"],
+    dependencies: ["@corvu/drawer"],
     files: ["ui/drawer.tsx"]
   },
   {
@@ -137,7 +137,7 @@ const ui = [
   {
     name: "resizable",
     type: "components:ui",
-    dependencies: ["corvu"],
+    dependencies: ["@corvu/resizable"],
     files: ["ui/resizable.tsx"]
   },
   {

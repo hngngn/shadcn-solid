@@ -148,7 +148,7 @@
   {
     "name": "drawer",
     "dependencies": [
-      "corvu"
+      "@corvu/drawer"
     ],
     "files": [
       "ui/drawer.tsx"
@@ -231,7 +231,7 @@
   {
     "name": "resizable",
     "dependencies": [
-      "corvu"
+      "@corvu/resizable"
     ],
     "files": [
       "ui/resizable.tsx"

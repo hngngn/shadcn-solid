@@ -1,14 +1,31 @@
 import { cn } from "@/libs/cn";
-import * as DrawerPrimitive from "corvu/drawer";
-import type { ComponentProps } from "solid-js";
+import type {
+  ContentElementProps,
+  ContentProps,
+  DescriptionElementProps,
+  DescriptionProps,
+  DynamicProps,
+  LabelElementProps,
+  LabelProps
+} from "@corvu/drawer";
+import DrawerPrimitive from "@corvu/drawer";
+import type { ComponentProps, ParentProps, ValidComponent } from "solid-js";
 import { splitProps } from "solid-js";
 
-export const Drawer = DrawerPrimitive.Root;
+export const Drawer = DrawerPrimitive;
 export const DrawerTrigger = DrawerPrimitive.Trigger;
 export const DrawerClose = DrawerPrimitive.Close;
 
-export const DrawerContent = (props: DrawerPrimitive.ContentProps) => {
-  const [local, rest] = splitProps(props, ["class", "children"]);
+type DrawerContentProps = ParentProps<
+  ContentProps & {
+    class?: string;
+  }
+>;
+
+export const DrawerContent = <T extends ValidComponent = "div">(
+  props: DynamicProps<T, DrawerContentProps, ContentElementProps>
+) => {
+  const [local, rest] = splitProps(props as DrawerContentProps, ["class", "children"]);
   const ctx = DrawerPrimitive.useContext();
 
   return (
@@ -45,8 +62,14 @@ export const DrawerFooter = (props: ComponentProps<"div">) => {
   return <div class={cn("mt-auto flex flex-col gap-2 p-4", local.class)} {...rest} />;
 };
 
-export const DrawerLabel = (props: DrawerPrimitive.LabelProps) => {
-  const [local, rest] = splitProps(props, ["class"]);
+type DrawerLabelProps = LabelProps & {
+  class?: string;
+};
+
+export const DrawerLabel = <T extends ValidComponent = "h2">(
+  props: DynamicProps<T, DrawerLabelProps, LabelElementProps>
+) => {
+  const [local, rest] = splitProps(props as DrawerLabelProps, ["class"]);
 
   return (
     <DrawerPrimitive.Label
@@ -56,8 +79,14 @@ export const DrawerLabel = (props: DrawerPrimitive.LabelProps) => {
   );
 };
 
-export const DrawerDescription = (props: DrawerPrimitive.DescriptionProps) => {
-  const [local, rest] = splitProps(props, ["class"]);
+type DrawerDescriptionProps = DescriptionProps & {
+  class?: string;
+};
+
+export const DrawerDescription = <T extends ValidComponent = "p">(
+  props: DynamicProps<T, DrawerDescriptionProps, DescriptionElementProps>
+) => {
+  const [local, rest] = splitProps(props as DrawerDescriptionProps, ["class"]);
 
   return (
     <DrawerPrimitive.Description

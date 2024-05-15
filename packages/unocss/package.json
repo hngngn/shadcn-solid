@@ -1,7 +1,9 @@
 {
   "name": "@repo-registry/unocss",
   "version": "0.0.1",
-  "files": ["ui"],
+  "files": [
+    "ui"
+  ],
   "devDependencies": {
     "@ark-ui/solid": "^2.2.0",
     "@kobalte/core": "^0.13.1",
@@ -9,24 +11,24 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "cmdk-solid": "^1.0.1",
-    "corvu": "^0.5.1",
     "embla-carousel-autoplay": "8.0.0",
     "embla-carousel-solid": "8.0.0",
     "prettier": "^3.2.5",
     "solid-js": "^1.8.16",
+    "solid-sonner": "^0.2.6",
     "tailwind-merge": "^2.2.2",
     "unocss": "^0.58.8",
     "unocss-preset-animations": "^1.0.2",
     "vite": "^5.2.7",
     "vite-plugin-solid": "^2.10.2",
-    "solid-sonner": "^0.2.6"
+    "@corvu/drawer": "^0.1.0",
+    "@corvu/resizable": "^0.1.0"
   },
   "peerDependencies": {
     "@ark-ui/solid": "^2.2.0",
     "@kobalte/core": "^0.12.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
-    "corvu": "^0.4.0",
     "embla-carousel-autoplay": "8.0.0",
     "embla-carousel-solid": "8.0.0",
     "solid-js": "^1.8.0",
@@ -39,6 +41,8 @@
     "check": "biome check --apply-unsafe ui"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": ["bun run check"]
+    "src/**/*.{ts,tsx}": [
+      "bun run check"
+    ]
   }
 }

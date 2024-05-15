@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "@ark-ui/solid": "^2.2.0",
+    "@corvu/drawer": "^0.1.0",
+    "@corvu/resizable": "^0.1.0",
     "@faker-js/faker": "^8.4.1",
     "@kobalte/core": "^0.13.1",
     "@mdx-js/mdx": "^2.3.0",
@@ -25,7 +27,6 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "cmdk-solid": "^1.0.1",
-    "corvu": "^0.5.1",
     "embla-carousel-autoplay": "8.0.0",
     "embla-carousel-solid": "8.0.0",
     "solid-js": "^1.8.16",
