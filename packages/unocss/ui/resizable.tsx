@@ -1,9 +1,5 @@
 import { cn } from "@/libs/cn";
-import ResizablePrimitive, {
-  type HandleElementProps,
-  type HandleProps,
-  type RootElementProps
-} from "@corvu/resizable";
+import ResizablePrimitive, { type HandleProps } from "@corvu/resizable";
 import type { DynamicProps, RootProps } from "@corvu/resizable";
 import type { ValidComponent, VoidProps } from "solid-js";
 import { Show, splitProps } from "solid-js";
@@ -15,7 +11,7 @@ type ResizableProps = RootProps & {
 };
 
 export const Resizable = <T extends ValidComponent = "div">(
-  props: DynamicProps<T, ResizableProps, RootElementProps>
+  props: DynamicProps<T, ResizableProps>
 ) => {
   const [local, rest] = splitProps(props as ResizableProps, ["class"]);
 
@@ -30,7 +26,7 @@ type ResizableHandleProps = VoidProps<
 >;
 
 export const ResizableHandle = <T extends ValidComponent = "button">(
-  props: DynamicProps<T, ResizableHandleProps, HandleElementProps>
+  props: DynamicProps<T, ResizableHandleProps>
 ) => {
   const [local, rest] = splitProps(props as ResizableHandleProps, ["class", "withHandle"]);
 

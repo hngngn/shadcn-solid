@@ -1,13 +1,5 @@
 import { cn } from "@/libs/cn";
-import type {
-  ContentElementProps,
-  ContentProps,
-  DescriptionElementProps,
-  DescriptionProps,
-  DynamicProps,
-  LabelElementProps,
-  LabelProps
-} from "@corvu/drawer";
+import type { ContentProps, DescriptionProps, DynamicProps, LabelProps } from "@corvu/drawer";
 import DrawerPrimitive from "@corvu/drawer";
 import type { ComponentProps, ParentProps, ValidComponent } from "solid-js";
 import { splitProps } from "solid-js";
@@ -23,7 +15,7 @@ type DrawerContentProps = ParentProps<
 >;
 
 export const DrawerContent = <T extends ValidComponent = "div">(
-  props: DynamicProps<T, DrawerContentProps, ContentElementProps>
+  props: DynamicProps<T, DrawerContentProps>
 ) => {
   const [local, rest] = splitProps(props as DrawerContentProps, ["class", "children"]);
   const ctx = DrawerPrimitive.useContext();
@@ -67,7 +59,7 @@ type DrawerLabelProps = LabelProps & {
 };
 
 export const DrawerLabel = <T extends ValidComponent = "h2">(
-  props: DynamicProps<T, DrawerLabelProps, LabelElementProps>
+  props: DynamicProps<T, DrawerLabelProps>
 ) => {
   const [local, rest] = splitProps(props as DrawerLabelProps, ["class"]);
 
@@ -84,7 +76,7 @@ type DrawerDescriptionProps = DescriptionProps & {
 };
 
 export const DrawerDescription = <T extends ValidComponent = "p">(
-  props: DynamicProps<T, DrawerDescriptionProps, DescriptionElementProps>
+  props: DynamicProps<T, DrawerDescriptionProps>
 ) => {
   const [local, rest] = splitProps(props as DrawerDescriptionProps, ["class"]);
 

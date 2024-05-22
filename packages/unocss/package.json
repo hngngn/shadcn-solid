@@ -21,8 +21,8 @@
     "unocss-preset-animations": "^1.0.2",
     "vite": "^5.2.7",
     "vite-plugin-solid": "^2.10.2",
-    "@corvu/drawer": "^0.1.0",
-    "@corvu/resizable": "^0.1.0"
+    "@corvu/drawer": "^0.2.0",
+    "@corvu/resizable": "^0.2.0"
   },
   "peerDependencies": {
     "@ark-ui/solid": "^2.2.0",

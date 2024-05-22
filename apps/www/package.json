@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "@ark-ui/solid": "^2.2.0",
-    "@corvu/drawer": "^0.1.0",
-    "@corvu/resizable": "^0.1.0",
+    "@corvu/drawer": "^0.2.0",
+    "@corvu/resizable": "^0.2.0",
     "@faker-js/faker": "^8.4.1",
     "@kobalte/core": "^0.13.1",
     "@mdx-js/mdx": "^2.3.0",
