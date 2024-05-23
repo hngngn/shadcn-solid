@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { Command } from "commander";
+import { addCommand } from "./commands/add";
 import { initCommand } from "./commands/init";
 import { readPackageJSON } from "./utils/package-json";
 
@@ -14,6 +15,7 @@ const run = async () => {
     .description(info.description)
     .version(info.version, "-v, --version")
     .addCommand(initCommand)
+    .addCommand(addCommand)
     .parse(process.argv);
 };
 

@@ -1,6 +1,6 @@
 {
   "name": "shadcn-solid",
-  "description": "Add components to your apps.",
+  "description": "Initialize and add components to your project",
   "version": "0.6.2",
   "repository": {
     "type": "git",
@@ -14,7 +14,9 @@
   "license": "MIT",
   "exports": "./dist/index.js",
   "bin": "./dist/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "scripts": {
     "dev": "tsup src/index.ts --watch --format esm --clean",
@@ -27,6 +29,7 @@
     "execa": "^9.1.0",
     "lodash.template": "^4.5.0",
     "picocolors": "^1.0.1",
+    "ts-morph": "^18.0.0",
     "tsconfig-paths": "^4.2.0",
     "valibot": "^0.31.0-rc.0"
   },

@@ -40,12 +40,12 @@ const configSchema = object({
     config: string(),
     css: string(),
     cn: string(),
-    component: string(),
+    components: string(),
     ui: string()
   })
 });
 
-type Config = InferInput<typeof configSchema>;
+export type Config = InferInput<typeof configSchema>;
 
 const getRawConfig = (cwd: string) => {
   try {
@@ -57,7 +57,6 @@ const getRawConfig = (cwd: string) => {
 
     return parse(rawConfigSchema, config);
   } catch (error) {
-    console.log(error);
     throw new Error(`Invalid configuration found in ${cwd}/components.json.`);
   }
 };
@@ -85,7 +84,7 @@ export const resolveConfigPath = (cwd: string, config: RawConfig) => {
       config: resolve(cwd, config.uno ? config.uno.config : config.tailwind!.config),
       css: resolve(cwd, config.uno ? config.uno.css.path : config.tailwind!.css.path),
       cn: resolveImport(config.alias.cn, tsConfig)!,
-      component: resolveImport(config.alias.component, tsConfig)!,
+      components: resolveImport(config.alias.component, tsConfig)!,
       ui: config.alias.ui
         ? resolveImport(config.alias.ui, tsConfig)!
         : resolveImport(config.alias.component, tsConfig)!
