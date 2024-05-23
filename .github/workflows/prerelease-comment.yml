@@ -3,9 +3,8 @@ name: Write Beta Release comment
 
 on:
   workflow_run:
-    workflows: ["Release - Beta"]
-    types:
-      - completed
+    workflows: ["Release Beta"]
+    types: [completed]
 
 jobs:
   comment:

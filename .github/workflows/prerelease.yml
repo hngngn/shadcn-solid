@@ -1,12 +1,11 @@
 # Adapted from create-t3-app.
 
-name: Release - Beta
+name: Release Beta
 
 on:
   pull_request:
     types: [labeled]
-    branches:
-      - main
+
 jobs:
   prerelease:
     if: |
