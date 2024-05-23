@@ -1,5 +1,11 @@
 # shadcn-solid
 
+## 0.7.2
+
+### Patch Changes
+
+- [`b4433bb`](https://github.com/hngngn/shadcn-solid/commit/b4433bb6398c874b6781d241b26531ec4011a8fd) Thanks [@hngngn](https://github.com/hngngn)! - improve `diff` message
+
 ## 0.7.1
 
 ### Patch Changes
