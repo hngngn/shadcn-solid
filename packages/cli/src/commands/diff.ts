@@ -149,7 +149,7 @@ export const diffCommand = new Command()
         }
 
         if (!componentWithUpdate.length) {
-          p.log.info("No updates found");
+          spinner.stop("No updates found");
           process.exit(0);
         }
 
