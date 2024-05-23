@@ -15,7 +15,7 @@
               "type": "string"
             },
             "variable": {
-              "type": "string"
+              "type": "boolean"
             }
           }
         },
@@ -41,7 +41,7 @@
               "type": "string"
             },
             "variable": {
-              "type": "string"
+              "type": "boolean"
             }
           }
         },

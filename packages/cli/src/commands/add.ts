@@ -106,7 +106,7 @@ export const addCommand = new Command()
 
       const spinner = p.spinner();
 
-      spinner.start();
+      spinner.start("Installing component");
 
       const dependencies = new Set<string>();
 
@@ -124,14 +124,13 @@ export const addCommand = new Command()
 
         const existingComponent = item.files.filter(v => existsSync(resolve(targetDir, v.name)));
 
-        if (existingComponent && !parsed.overwrite) {
+        if (existingComponent.length && !parsed.overwrite) {
           if (selectComponents!.includes(item.name)) {
             p.log.warning(
               cl.yellow(`Component ${item.name} already exists. Use ${cl.bold("-o")} to overwrite`)
             );
             process.exit(1);
           }
-          continue;
         }
 
         for (const file of item.files) {
