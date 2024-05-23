@@ -99,7 +99,7 @@ const componentItemSchema = object({
 
 const componentSchema = array(componentItemSchema);
 
-type ComponentSchema = InferInput<typeof componentSchema>;
+export type ComponentSchema = InferInput<typeof componentSchema>;
 
 export const getRegistryComponent = async () => {
   try {

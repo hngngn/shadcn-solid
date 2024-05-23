@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { Command } from "commander";
 import { addCommand } from "./commands/add";
+import { diffCommand } from "./commands/diff";
 import { initCommand } from "./commands/init";
 import { readPackageJSON } from "./utils/package-json";
 
@@ -16,6 +17,7 @@ const run = async () => {
     .version(info.version, "-v, --version")
     .addCommand(initCommand)
     .addCommand(addCommand)
+    .addCommand(diffCommand)
     .parse(process.argv);
 };
 

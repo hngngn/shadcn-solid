@@ -24,6 +24,7 @@
   "dependencies": {
     "@clack/prompts": "^0.7.0",
     "commander": "^12.1.0",
+    "diff": "^5.2.0",
     "execa": "^9.1.0",
     "lodash.template": "^4.5.0",
     "picocolors": "^1.0.1",
@@ -32,6 +33,7 @@
     "valibot": "^0.31.0-rc.0"
   },
   "devDependencies": {
+    "@types/diff": "^5.2.1",
     "@types/lodash.template": "^4.5.3",
     "@types/node": "^20.12.12",
     "tsup": "^8.0.2",
