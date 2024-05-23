@@ -44,14 +44,14 @@ You will be asked a few questions to configure `components.json`:
 
 ### Options
 
-```txt
+```bash
 Usage: shadcn-solid init [options]
 
-initialize your project and install dependencies
+initialize and install dependencies
 
 Options:
-  -c, --cwd <cwd>  the working directory. defaults to the current directory.
-  -h, --help       display help for command
+  -c, --cwd <path>  the working directory (default: "path\to\my-app")
+  -h, --help        display help for command
 ```
 
 ## add
@@ -99,19 +99,67 @@ You will be presented with a list of components to choose from:
 
 ### Options
 
-```txt
-Usage: shadcn-solid add [options] [components...]
+```bash
+Usage: shadcn-solid add [components...] [options]
 
-add a component to your project
+add components to your project
 
 Arguments:
-  components         the components to add
+  components        the components to add
 
 Options:
-  -y, --yes          skip confirmation prompt. (default: false)
-  -o, --overwrite    overwrite existing files. (default: false)
-  -a --all           install all components. (default: false)
-  -c, --cwd <cwd>    the working directory. defaults to the current directory.
-  -p, --path <path>  the path to add the component to.
-  -h, --help         display help for command
+  -o, --overwrite   overwrite existing file (default: false)
+  -c, --cwd <path>  the working directory (default: "path\to\my-app")
+  -a, --all         install all components (default: false)
+  -h, --help        display help for command
+```
+
+## `diff`
+
+Track upstream component updates with `diff`.
+
+Run the `diff` command to get a list of components that have updates available:
+
+```bash
+npx shadcn-solid@latest diff
+```
+
+```bash
+┌   shadcn-solid
+│
+◇  The following components have updates avaiable
+│
+●  alert - path\to\my-ap\components\ui\alert.tsx
+│
+●  card - path\to\my-ap\components\ui\card.tsx
+│
+└  Run diff <component> to see the changes
+```
+
+Then run `diff [component]` to see the changes:
+
+```bash
+npx shadcn-solid@latest diff alert
+```
+
+```tsx
+const alertVariants = cva(
+- "relative w-full rounded-lg border",
++ "relative w-full pl-12 rounded-lg border"
+)
+```
+
+### Options
+
+```bash
+Usage: shadcn-solid diff [component] [options]
+
+check for updates agaist the registry
+
+Arguments:
+  component         the component name
+
+Options:
+  -c, --cwd <path>  the working directory (default: "path\to\my-app")
+  -h, --help        display help for command
 ```

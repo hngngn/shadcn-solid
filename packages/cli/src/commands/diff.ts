@@ -89,6 +89,7 @@ export const diffCommand = new Command()
   .name("diff")
   .description("check for updates agaist the registry")
   .argument("[component]", "the component name")
+  .usage("[component] [options]")
   .option("-c, --cwd <path>", "the working directory", process.cwd())
   .action(async (name, opts) => {
     try {
