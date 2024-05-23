@@ -8,8 +8,7 @@
     "format": "turbo run format",
     "check": "turbo run check",
     "release": "changeset version",
-    "prepare": "husky",
-    "build:cli": "turbo --filter=shadcn-solid build"
+    "prepare": "husky"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.7.3",
