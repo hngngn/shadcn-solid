@@ -1,0 +1,15 @@
+# shadcn-solid
+
+## 0.7.0
+
+### Minor Changes
+
+- [#72](https://github.com/hngngn/shadcn-solid/pull/72) [`41fc6ce`](https://github.com/hngngn/shadcn-solid/commit/41fc6ce410f3cdd9ab11f1b2f13cd0252c9d3164) Thanks [@hngngn](https://github.com/hngngn)! - add `diff` command
+
+### Patch Changes
+
+- [#72](https://github.com/hngngn/shadcn-solid/pull/72) [`03cae6e`](https://github.com/hngngn/shadcn-solid/commit/03cae6e16dda24250f4b210c5ca7c5fdee390c93) Thanks [@hngngn](https://github.com/hngngn)! - improve installing time when adding multiple components
+
+- [#72](https://github.com/hngngn/shadcn-solid/pull/72) [`73c6602`](https://github.com/hngngn/shadcn-solid/commit/73c6602059c9ebbd43aaf60cc29c0142f995fd48) Thanks [@hngngn](https://github.com/hngngn)! - update schemas
+
+- [#72](https://github.com/hngngn/shadcn-solid/pull/72) [`73c6602`](https://github.com/hngngn/shadcn-solid/commit/73c6602059c9ebbd43aaf60cc29c0142f995fd48) Thanks [@hngngn](https://github.com/hngngn)! - fix logic in `config`
