@@ -30,7 +30,7 @@ jobs:
         run: bun install
 
       - name: Modify package.json version
-        run: node .github/version-script-beta.js
+        run: node .github/version-script-beta.mjs
 
       - name: Authenticate to NPM
         run: echo "//registry.npmjs.org/:_authToken=$NPM_ACCESS_TOKEN" >> packages/cli/.npmrc
