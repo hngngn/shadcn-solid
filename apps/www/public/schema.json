@@ -9,19 +9,24 @@
           "type": "string"
         },
         "css": {
-          "type": "string"
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string"
+            },
+            "variable": {
+              "type": "string"
+            }
+          }
         },
-        "baseColor": {
+        "color": {
           "type": "string"
-        },
-        "cssVariables": {
-          "type": "boolean"
         },
         "prefix": {
           "type": "string"
         }
       },
-      "required": ["config", "css", "baseColor", "cssVariables"]
+      "required": ["config", "css", "color"]
     },
     "uno": {
       "type": "object",
@@ -30,35 +35,40 @@
           "type": "string"
         },
         "css": {
-          "type": "string"
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string"
+            },
+            "variable": {
+              "type": "string"
+            }
+          }
         },
-        "baseColor": {
+        "color": {
           "type": "string"
-        },
-        "cssVariables": {
-          "type": "boolean"
         },
         "prefix": {
           "type": "string"
         }
       },
-      "required": ["config", "css", "baseColor", "cssVariables"]
+      "required": ["config", "css", "color"]
     },
-    "aliases": {
+    "alias": {
       "type": "object",
       "properties": {
-        "utils": {
+        "cn": {
           "type": "string"
         },
-        "components": {
+        "component": {
           "type": "string"
         },
         "ui": {
           "type": "string"
         }
       },
-      "required": ["utils", "components"]
+      "required": ["cn", "component"]
     }
   },
-  "required": ["aliases"]
+  "required": ["alias"]
 }

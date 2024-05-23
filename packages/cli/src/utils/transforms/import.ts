@@ -1,4 +1,4 @@
-import type { Transformer } from "@/src/utils/transformers";
+import type { Transformer } from ".";
 
 export const transformImport: Transformer = async ({ sourceFile, config }) => {
   const importDeclarations = sourceFile.getImportDeclarations();
@@ -7,12 +7,12 @@ export const transformImport: Transformer = async ({ sourceFile, config }) => {
     const moduleSpecifier = importDeclaration.getModuleSpecifierValue();
 
     // Replace `import { cn } from "@/libs/cn"`
-    if (moduleSpecifier == "@/libs/cn") {
+    if (moduleSpecifier === "@/libs/cn") {
       const namedImports = importDeclaration.getNamedImports();
       const cnImport = namedImports.find(i => i.getName() === "cn");
       if (cnImport) {
         importDeclaration.setModuleSpecifier(
-          moduleSpecifier.replace(/^@\/libs\/cn/, config.aliases.utils)
+          moduleSpecifier.replace(/^@\/libs\/cn/, config.alias.cn)
         );
       }
     }

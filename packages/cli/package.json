@@ -1,51 +1,42 @@
 {
-  "version": "0.6.2",
   "name": "shadcn-solid",
-  "description": "Add components to your apps.",
-  "license": "MIT",
+  "description": "Initialize and add components to your project",
+  "version": "0.6.2",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hngngn/shadcn-solid.git",
     "directory": "packages/cli"
   },
-  "homepage": "https://github.com/hngngn/shadcn-solid#readme",
   "bugs": {
     "url": "https://github.com/hngngn/shadcn-solid/issues"
   },
-  "files": [
-    "dist"
-  ],
-  "type": "module",
+  "homepage": "https://github.com/hngngn/shadcn-solid#readme",
+  "license": "MIT",
   "exports": "./dist/index.js",
   "bin": "./dist/index.js",
+  "files": ["dist"],
+  "type": "module",
   "scripts": {
-    "dev": "tsup --watch",
-    "build": "tsup --minify",
-    "start": "node dist/index.js",
-    "format": "prettier -w \"./src/**/*.{ts,tsx,mdx}\""
-  },
-  "devDependencies": {
-    "@types/fs-extra": "^11.0.1",
-    "@types/lodash.template": "^4.5.1",
-    "rimraf": "^5.0.1",
-    "tsup": "^8.0.2",
-    "type-fest": "^4.10.2",
-    "typescript": "^5.2.2"
+    "dev": "tsup src/index.ts --watch --format esm --clean",
+    "build": "tsup src/index.ts --minify --format esm --clean",
+    "check": "biome check --apply-unsafe src"
   },
   "dependencies": {
-    "@antfu/ni": "^0.21.6",
     "@clack/prompts": "^0.7.0",
-    "commander": "^11.0.0",
-    "cosmiconfig": "^8.2.0",
-    "execa": "^8.0.1",
-    "fs-extra": "^11.1.0",
-    "https-proxy-agent": "^7.0.1",
+    "commander": "^12.1.0",
+    "diff": "^5.2.0",
+    "execa": "^9.1.0",
     "lodash.template": "^4.5.0",
-    "node-fetch": "^3.3.2",
-    "picocolors": "^1.0.0",
-    "prompts": "^2.4.2",
+    "picocolors": "^1.0.1",
     "ts-morph": "^18.0.0",
     "tsconfig-paths": "^4.2.0",
-    "zod": "^3.22.2"
+    "valibot": "^0.31.0-rc.0"
+  },
+  "devDependencies": {
+    "@types/diff": "^5.2.1",
+    "@types/lodash.template": "^4.5.3",
+    "@types/node": "^20.12.12",
+    "tsup": "^8.0.2",
+    "typescript": "^5.0.0"
   }
 }

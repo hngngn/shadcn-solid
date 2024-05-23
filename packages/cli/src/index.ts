@@ -1,21 +1,24 @@
 #!/usr/bin/env node
-import { add } from "@/src/commands/add";
-import { init } from "@/src/commands/init";
 import { Command } from "commander";
-import { getPackageInfo } from "./utils/get-package-info";
+import { addCommand } from "./commands/add";
+import { diffCommand } from "./commands/diff";
+import { initCommand } from "./commands/init";
+import { readPackageJSON } from "./utils/package-json";
 
 process.on("SIGINT", () => process.exit(0));
 process.on("SIGTERM", () => process.exit(0));
 
-async function main() {
-  const program = new Command()
-    .name("shadcn-solid")
-    .description("add components and dependencies to your project")
-    .version(getPackageInfo().version!, "-v, --version", "display the version number");
+const run = async () => {
+  const info = await readPackageJSON();
 
-  program.addCommand(init).addCommand(add);
+  new Command()
+    .name(info.name)
+    .description(info.description)
+    .version(info.version, "-v, --version")
+    .addCommand(initCommand)
+    .addCommand(addCommand)
+    .addCommand(diffCommand)
+    .parse(process.argv);
+};
 
-  program.parse();
-}
-
-main();
+run();

@@ -1,9 +1,52 @@
-import type { Transformer } from "@/src/utils/transformers";
 import { SyntaxKind } from "ts-morph";
+import type { Transformer } from ".";
+import { splitClassName } from "./css";
 
-import { splitClassName } from "./transform-css-vars";
+export const applyPrefix = (input: string, prefix = "") => {
+  const classNames = input.split(" ");
+  const prefixed: string[] = [];
+  for (const className of classNames) {
+    const [variant, value, modifier] = splitClassName(className);
+    if (variant) {
+      modifier
+        ? prefixed.push(
+            `${variant}:${
+              value!.startsWith("(") ? `(${prefix}${value!.slice(1)}` : prefix + value
+            }/${modifier}`
+          )
+        : prefixed.push(
+            `${variant}:${value!.startsWith("(") ? `(${prefix}${value!.slice(1)}` : prefix + value}`
+          );
+    } else {
+      modifier
+        ? prefixed.push(
+            `${
+              value!.startsWith("(") ? `(${prefix}${value!.slice(1)}` : prefix + value
+            }/${modifier}`
+          )
+        : prefixed.push(
+            `${value!.startsWith("(") ? `(${prefix}${value!.slice(1)}` : prefix + value}`
+          );
+    }
+  }
+  return prefixed.join(" ");
+};
 
-export const transformTwPrefixes: Transformer = async ({ sourceFile, config }) => {
+export const applyPrefixesCSS = (css: string, prefix: string) => {
+  const lines = css.split("\n");
+  let innerCSS = "";
+
+  for (const line of lines) {
+    if (line.includes("@apply")) {
+      const originalTWCls = line.replace("@apply", "").trim();
+      const prefixedTwCls = applyPrefix(originalTWCls, prefix);
+      innerCSS = css.replace(originalTWCls, prefixedTwCls);
+    }
+  }
+  return innerCSS;
+};
+
+export const transformPrefix: Transformer = async ({ sourceFile, config }) => {
   if (config.uno ? !config.uno.prefix : !config.tailwind?.prefix) {
     return sourceFile;
   }
@@ -88,41 +131,3 @@ export const transformTwPrefixes: Transformer = async ({ sourceFile, config }) =
 
   return sourceFile;
 };
-
-export function applyPrefix(input: string, prefix: string = "") {
-  const classNames = input.split(" ");
-  const prefixed: string[] = [];
-  for (let className of classNames) {
-    const [variant, value, modifier] = splitClassName(className);
-    if (variant) {
-      modifier
-        ? prefixed.push(
-            `${variant}:${value!.startsWith("(") ? "(" + prefix + value!.slice(1) : prefix + value}/${modifier}`
-          )
-        : prefixed.push(
-            `${variant}:${value!.startsWith("(") ? "(" + prefix + value!.slice(1) : prefix + value}`
-          );
-    } else {
-      modifier
-        ? prefixed.push(
-            `${value!.startsWith("(") ? "(" + prefix + value!.slice(1) : prefix + value}/${modifier}`
-          )
-        : prefixed.push(
-            `${value!.startsWith("(") ? "(" + prefix + value!.slice(1) : prefix + value}`
-          );
-    }
-  }
-  return prefixed.join(" ");
-}
-
-export function applyPrefixesCss(css: string, prefix: string) {
-  const lines = css.split("\n");
-  for (let line of lines) {
-    if (line.includes("@apply")) {
-      const originalTWCls = line.replace("@apply", "").trim();
-      const prefixedTwCls = applyPrefix(originalTWCls, prefix);
-      css = css.replace(originalTWCls, prefixedTwCls);
-    }
-  }
-  return css;
-}

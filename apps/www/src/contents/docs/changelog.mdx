@@ -4,7 +4,73 @@ description: Latest updates and announcements.
 toc: false
 ---
 
-## May 2024 - Component updates
+## May 2024 - CLI and Component updates
+
+### CLI Updates
+
+#### `diff`
+
+Track upstream component updates with `diff`.
+
+Run the `diff` command to get a list of components that have updates available:
+
+```bash
+npx shadcn-solid diff
+```
+
+```bash
+┌   shadcn-solid
+│
+◇  The following components have updates avaiable
+│
+●  alert - path\to\my-ap\components\ui\alert.tsx
+│
+●  card - path\to\my-ap\components\ui\card.tsx
+│
+└  Run diff <component> to see the changes
+```
+
+Then run `diff [component]` to see the changes:
+
+```bash
+npx shadcn-solid diff alert
+```
+
+```tsx
+const alertVariants = cva(
+- "relative w-full rounded-lg border",
++ "relative w-full pl-12 rounded-lg border"
+)
+```
+
+#### `add`
+
+Adding multiple components or using --all is significantly faster
+
+### Schema update
+
+The `components.json` schema has been updated
+
+```json title="New schema" {5-9,12-15}
+{
+  "$schema": "https://shadcn-solid.com/schema.json",
+  "tailwind": {
+    "config": "tailwind.config.cjs",
+    "css": {
+      "path": "src/app.css",
+      "variable": true
+    },
+    "color": "slate",
+    "prefix": ""
+  },
+  "alias": {
+    "component": "@/components",
+    "cn": "@/libs/cn"
+  }
+}
+```
+
+### Component updates
 
 We've added new components to shadcn-solid.
 

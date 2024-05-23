@@ -1,195 +1,185 @@
-import { getConfig } from "@/src/utils/get-config";
-import { getPackageManager } from "@/src/utils/get-package-manager";
-import { handleError } from "@/src/utils/handle-error";
-import {
-  fetchTree,
-  getItemTargetPath,
-  getRegistryBaseColor,
-  getRegistryIndex,
-  resolveTree
-} from "@/src/utils/registry";
-import { transform } from "@/src/utils/transformers";
+import { existsSync } from "node:fs";
+import { mkdir, writeFile } from "node:fs/promises";
+import { resolve } from "node:path";
 import * as p from "@clack/prompts";
 import { Command } from "commander";
 import { execa } from "execa";
-import { existsSync, promises as fs } from "fs";
-import path from "path";
-import color from "picocolors";
-import { z } from "zod";
+import cl from "picocolors";
+import { type InferInput, array, boolean, object, optional, parse, string } from "valibot";
+import { getConfig } from "../utils/config";
+import { handleError } from "../utils/error";
+import { readPackageJSON } from "../utils/package-json";
+import { getPackageManager } from "../utils/package-manager";
+import {
+  fetchTree,
+  getItemTargetPath,
+  getRegistryColor,
+  getRegistryComponent,
+  resolveTree
+} from "../utils/registry";
+import { transform } from "../utils/transforms";
 
-const addOptionsSchema = z.object({
-  components: z.array(z.string()).optional(),
-  overwrite: z.boolean(),
-  yes: z.boolean(),
-  cwd: z.string(),
-  path: z.string().optional(),
-  all: z.boolean()
+const schema = object({
+  components: optional(array(string())),
+  overwrite: boolean(),
+  cwd: string(),
+  all: boolean()
 });
 
-export const add = new Command()
+type Schema = InferInput<typeof schema>;
+
+export const addCommand = new Command()
   .name("add")
-  .description("add a component to your project")
+  .description("add components to your project")
   .argument("[components...]", "the components to add")
-  .option("-o, --overwrite", "overwrite existing files.", false)
-  .option(
-    "-c, --cwd <cwd>",
-    "the working directory. defaults to the current directory.",
-    process.cwd()
-  )
-  .option("-p, --path <path>", "the path to add the component to.")
-  .option("-y --yes", "skip confirmation prompt.", false)
-  .option("-a --all", "install all components.", false)
+  .usage("[components...] [options]")
+  .option("-o, --overwrite", "overwrite existing file", false)
+  .option("-c, --cwd <path>", "the working directory", process.cwd())
+  .option("-a, --all", "install all components", false)
   .action(async (components, opts) => {
     try {
-      const options = addOptionsSchema.parse({
+      const parsed = parse(schema, {
         components,
         ...opts
-      });
+      } satisfies Schema);
 
-      const cwd = path.resolve(options.cwd);
-
+      const cwd = resolve(parsed.cwd);
       if (!existsSync(cwd)) {
-        p.log.error(`The path ${cwd} does not exist. Please try again.`);
-        process.exit(1);
+        throw new Error(`The path ${cwd} does not exist`);
       }
 
-      const config = await getConfig(cwd);
-      if (!config) {
-        p.log.warn(
-          `Configuration is missing. Please run ${color.green(
-            `init`
-          )} to create a components.json file.`
+      const config = getConfig(cwd);
+      if (config === undefined) {
+        p.log.warning(
+          cl.yellow(
+            `Configuration is missing. Please run ${cl.bold(
+              "init"
+            )} to create a components.json file`
+          )
         );
         process.exit(1);
       }
 
-      const registryIndex = await getRegistryIndex();
+      const registryComponent = await getRegistryComponent();
 
-      let selectedComponents = options.all
-        ? registryIndex.map(entry => entry.name)
-        : options.components;
+      let selectComponents = parsed.all ? registryComponent.map(v => v.name) : parsed.components;
 
-      if (!options.all && !options.components?.length) {
-        const { components } = await p.group(
+      const info = await readPackageJSON();
+
+      p.intro(cl.bgCyan(cl.black(` ${info.name} - ${info.version} `)));
+
+      if (!parsed.all && !parsed.components?.length) {
+        const group = await p.group(
           {
             components: () =>
-              p.multiselect({
-                message: "Which components would you like to add?",
-                options: registryIndex.map(entry => ({
-                  label: entry.name,
-                  value: entry.name,
-                  hint: "Space to select. A to toggle all. Enter to submit."
+              p.multiselect<{ label: string; value: string; hint?: string }[], string>({
+                message: `Which ${cl.cyan("component")} would you like to add?`,
+                options: registryComponent.map(v => ({
+                  label: v.name,
+                  value: v.name
                 }))
               })
           },
           {
             onCancel: () => {
-              p.cancel("Cancelled.");
+              p.cancel("Cancelled");
               process.exit(0);
             }
           }
         );
-        selectedComponents = components as string[];
+
+        selectComponents = group.components;
       }
 
-      if (!options.all && !selectedComponents?.length) {
-        p.log.warn("No components selected. Exiting.");
-        process.exit(0);
-      }
+      const tree = await resolveTree(registryComponent, selectComponents!);
 
-      const tree = await resolveTree(registryIndex, selectedComponents!);
-
-      // If new styling is added, the config.style property will be reinstated.
       const payload = await fetchTree(config.uno ? "unocss" : "tailwindcss", tree);
-      const baseColor = await getRegistryBaseColor(
-        config.uno ? config.uno.baseColor : config.tailwind!.baseColor,
+      const color = await getRegistryColor(
+        config.uno ? config.uno.color : config.tailwind!.color,
         config.uno ? "unocss" : "tailwindcss"
       );
 
       if (!payload.length) {
-        p.log.warn("Selected components not found. Exiting.");
+        p.log.warning("Selected components not found");
         process.exit(0);
       }
 
-      if (!options.yes) {
-        await p.group(
-          {
-            proceed: () =>
-              p.confirm({
-                message: `Ready to install components and dependencies. Proceed?`,
-                initialValue: true
-              })
-          },
-          {
-            onCancel: () => {
-              p.cancel("Cancelled.");
-              process.exit(0);
-            }
-          }
-        );
-      }
-
       const spinner = p.spinner();
+
       spinner.start();
+
+      const dependencies = new Set<string>();
+
       for (const item of payload) {
-        spinner.message(`Installing ${item.name}`);
+        spinner.message(`Installing ${cl.cyan(item.name)}`);
 
-        const targetDir = await getItemTargetPath(
-          config,
-          item,
-          options.path ? path.resolve(cwd, options.path) : undefined
-        );
-
+        const targetDir = await getItemTargetPath(config, item);
         if (!targetDir) {
           continue;
         }
 
         if (!existsSync(targetDir)) {
-          await fs.mkdir(targetDir, { recursive: true });
+          await mkdir(targetDir, { recursive: true });
         }
 
-        const existingComponent = item.files.filter(file =>
-          existsSync(path.resolve(targetDir, file.name))
-        );
+        const existingComponent = item.files.filter(v => existsSync(resolve(targetDir, v.name)));
 
-        if (existingComponent.length && !options.overwrite) {
-          if (selectedComponents!.includes(item.name)) {
-            p.log.warn(
-              `Component ${item.name} already exists. Use ${color.green("-o")} to overwrite.`
+        if (existingComponent && !parsed.overwrite) {
+          if (selectComponents!.includes(item.name)) {
+            p.log.warning(
+              cl.yellow(`Component ${item.name} already exists. Use ${cl.bold("-o")} to overwrite`)
             );
             process.exit(1);
           }
-
           continue;
         }
 
         for (const file of item.files) {
-          let filePath = path.resolve(targetDir, file.name);
+          const path = resolve(targetDir, file.name);
 
-          // Run transformers.
           const content = await transform({
             filename: file.name,
             raw: file.content,
             config,
-            baseColor
+            color
           });
 
-          await fs.writeFile(filePath, content);
+          await writeFile(path, content);
         }
 
-        // Install dependencies.
         if (item.dependencies?.length) {
-          const packageManager = await getPackageManager(cwd);
-          await execa(
-            packageManager,
-            [packageManager === "npm" ? "install" : "add", ...item.dependencies],
-            {
-              cwd
-            }
-          );
+          item.dependencies.map(v => dependencies.add(v));
         }
       }
-      spinner.stop(`Done.`);
+
+      spinner.stop(
+        selectComponents!.length > 1 || parsed.all
+          ? `${cl.cyan("Components")} installed`
+          : `${cl.cyan("Component")} installed`
+      );
+
+      spinner.start(
+        `Installing ${cl.cyan(
+          Array.from(dependencies)
+            .map(v => v)
+            .join(", ")
+            .toString()
+        )}`
+      );
+      const pm = getPackageManager();
+
+      await execa(pm, ["add", ...Array.from(dependencies)], {
+        cwd,
+        env: { NODE_ENV: undefined }
+      });
+
+      spinner.stop(
+        `${cl.cyan(
+          selectComponents!.length > 1 || parsed.all ? "Dependencies" : "Dependency"
+        )} installed`
+      );
+
+      p.outro("Component addition completed");
     } catch (error) {
       handleError(error);
     }
