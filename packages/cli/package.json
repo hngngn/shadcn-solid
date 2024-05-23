@@ -1,7 +1,7 @@
 {
   "name": "shadcn-solid",
   "description": "Initialize and add components to your project",
-  "version": "0.6.2",
+  "version": "0.7.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hngngn/shadcn-solid.git",
@@ -14,7 +14,9 @@
   "license": "MIT",
   "exports": "./dist/index.js",
   "bin": "./dist/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "scripts": {
     "dev": "tsup src/index.ts --watch --format esm --clean",
