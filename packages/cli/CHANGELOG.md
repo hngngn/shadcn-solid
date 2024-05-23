@@ -1,5 +1,11 @@
 # shadcn-solid
 
+## 0.7.1
+
+### Patch Changes
+
+- [`efedf05`](https://github.com/hngngn/shadcn-solid/commit/efedf057cd18bff389f1775f3c8e265fb59eb6c0) Thanks [@hngngn](https://github.com/hngngn)! - hot fix `add` logic
+
 ## 0.7.0
 
 ### Minor Changes
