@@ -239,7 +239,7 @@ export const CarouselNext = (props: VoidProps<ComponentProps<typeof Button>>) =>
       onClick={scrollNext}
       {...rest}
     >
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 h-4">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4">
         <path
           fill="none"
           stroke="currentColor"
