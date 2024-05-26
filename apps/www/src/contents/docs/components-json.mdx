@@ -51,31 +51,33 @@ Path to where your `tailwind.config.js` file is located.
 }
 ```
 
-### tailwind.css
+### tailwind.css.path
 
 Path to the CSS file that imports Tailwind CSS into your project.
 
 ```json title="components.json"
 {
   "tailwind": {
-    "css": "src/app.css"
+    "css": {
+      "path": "src/app.css"
+    }
   }
 }
 ```
 
-### tailwind.baseColor
+### tailwind.color
 
 This is used to generate the default color palette for your components. **This cannot be changed after initialization.**
 
 ```json title="components.json"
 {
   "tailwind": {
-    "baseColor": "gray" | "neutral" | "slate" | "stone" | "zinc"
+    "color": "gray" | "neutral" | "slate" | "stone" | "zinc"
   }
 }
 ```
 
-### tailwind.cssVariables
+### tailwind.css.variable
 
 You can choose between using CSS variables or Tailwind CSS utility classes for theming.
 
@@ -84,7 +86,9 @@ To use utility classes for theming set `tailwind.cssVariables` to `false`. For C
 ```json title="components.json"
 {
   "tailwind": {
-    "cssVariables": `true` | `false`
+    "css": {
+      "variabe": `true` | `false`
+    }
   }
 }
 ```
@@ -123,31 +127,33 @@ Path to where your `uno.config.ts` file is located.
 }
 ```
 
-### uno.css
+### uno.css.path
 
 Path to the CSS file that imports Uno CSS into your project.
 
 ```json title="components.json"
 {
   "uno": {
-    "css": "src/app.css"
+    "css": {
+      "path": "src/app.css"
+    }
   }
 }
 ```
 
-### uno.baseColor
+### uno.color
 
 This is used to generate the default color palette for your components. **This cannot be changed after initialization.**
 
 ```json title="components.json"
 {
   "uno": {
-    "baseColor": "gray" | "neutral" | "slate" | "stone" | "zinc"
+    "color": "gray" | "neutral" | "slate" | "stone" | "zinc"
   }
 }
 ```
 
-### uno.cssVariables
+### uno.css.variable
 
 You can choose between using CSS variables or Uno CSS utility classes for theming.
 
@@ -156,7 +162,9 @@ To use utility classes for theming set `uno.cssVariables` to `false`. For CSS va
 ```json title="components.json"
 {
   "uno": {
-    "cssVariables": `true` | `false`
+    "css": {
+      "variabe": `true` | `false`
+    }
   }
 }
 ```
@@ -177,7 +185,7 @@ The prefix to use for your Uno CSS utility classes. Components will be added wit
 }
 ```
 
-## aliases
+## alias
 
 The CLI uses these values and the `paths` config from your `tsconfig.json` or `jsconfig.json` file to place generated components in the correct location.
 
@@ -190,31 +198,31 @@ Path aliases have to be set up in your `tsconfig.json` or `jsconfig.json` file.
   </AlertDescription>
 </Alert>
 
-### aliases.utils
+### alias.cn
 
 Import alias for your utility functions.
 
 ```json title="components.json"
 {
   "aliases": {
-    "utils": "@/lib/utils"
+    "cn": "@/lib/utils"
   }
 }
 ```
 
-### aliases.components
+### alias.component
 
 Import alias for your components.
 
 ```json title="components.json"
 {
-  "aliases": {
-    "components": "@/components"
+  "alias": {
+    "component": "@/components"
   }
 }
 ```
 
-### aliases.ui
+### alias.ui
 
 Import alias for `ui` components.
 
@@ -222,7 +230,7 @@ The CLI will use the `aliases.ui` value to determine where to place your `ui` co
 
 ```json title="components.json"
 {
-  "aliases": {
+  "alias": {
     "ui": "@/ui"
   }
 }
