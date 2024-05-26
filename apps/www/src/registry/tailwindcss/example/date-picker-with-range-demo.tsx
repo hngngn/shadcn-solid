@@ -1,7 +1,8 @@
-import { For, createSignal } from "solid-js";
+import { For, createMemo, createSignal } from "solid-js";
 import {
   DatePicker,
   DatePickerContent,
+  DatePickerContext,
   DatePickerInput,
   DatePickerRangeText,
   DatePickerTable,
@@ -39,138 +40,155 @@ const DatePickerDemo = () => {
       <DatePickerInput placeholder="Pick a date" />
       <DatePickerContent>
         <DatePickerView view="day">
-          {api => {
-            const offset = api().getOffset({ months: 1 });
+          <DatePickerContext>
+            {api => {
+              const offset = createMemo(() => api().getOffset({ months: 1 }));
 
-            return (
+              return (
+                <>
+                  <DatePickerViewControl>
+                    <DatePickerViewTrigger>
+                      <DatePickerRangeText />
+                    </DatePickerViewTrigger>
+                  </DatePickerViewControl>
+                  <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+                    <DatePickerTable>
+                      <DatePickerTableHead>
+                        <DatePickerTableRow>
+                          <For each={api().weekDays}>
+                            {weekDay => (
+                              <DatePickerTableHeader>{weekDay.short}</DatePickerTableHeader>
+                            )}
+                          </For>
+                        </DatePickerTableRow>
+                      </DatePickerTableHead>
+                      <DatePickerTableBody>
+                        <For each={api().weeks}>
+                          {week => (
+                            <DatePickerTableRow>
+                              <For each={week}>
+                                {day => (
+                                  <DatePickerTableCell value={day}>
+                                    <DatePickerTableCellTrigger>
+                                      {day.day}
+                                    </DatePickerTableCellTrigger>
+                                  </DatePickerTableCell>
+                                )}
+                              </For>
+                            </DatePickerTableRow>
+                          )}
+                        </For>
+                      </DatePickerTableBody>
+                    </DatePickerTable>
+                    <DatePickerTable>
+                      <DatePickerTableHead>
+                        <DatePickerTableRow>
+                          <For each={api().weekDays}>
+                            {weekDay => (
+                              <DatePickerTableHeader>{weekDay.short}</DatePickerTableHeader>
+                            )}
+                          </For>
+                        </DatePickerTableRow>
+                      </DatePickerTableHead>
+                      <DatePickerTableBody>
+                        <For each={offset().weeks}>
+                          {week => (
+                            <DatePickerTableRow>
+                              <For each={week}>
+                                {day => (
+                                  <DatePickerTableCell
+                                    value={day}
+                                    visibleRange={offset().visibleRange}
+                                  >
+                                    <DatePickerTableCellTrigger>
+                                      {day.day}
+                                    </DatePickerTableCellTrigger>
+                                  </DatePickerTableCell>
+                                )}
+                              </For>
+                            </DatePickerTableRow>
+                          )}
+                        </For>
+                      </DatePickerTableBody>
+                    </DatePickerTable>
+                  </div>
+                </>
+              );
+            }}
+          </DatePickerContext>
+        </DatePickerView>
+        <DatePickerView view="month" class="w-[calc(var(--reference-width)-(0.75rem*2))]">
+          <DatePickerContext>
+            {api => (
               <>
                 <DatePickerViewControl>
                   <DatePickerViewTrigger>
                     <DatePickerRangeText />
                   </DatePickerViewTrigger>
                 </DatePickerViewControl>
-                <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-                  <DatePickerTable>
-                    <DatePickerTableHead>
-                      <DatePickerTableRow>
-                        <For each={api().weekDays}>
-                          {weekDay => (
-                            <DatePickerTableHeader>{weekDay.short}</DatePickerTableHeader>
-                          )}
-                        </For>
-                      </DatePickerTableRow>
-                    </DatePickerTableHead>
-                    <DatePickerTableBody>
-                      <For each={api().weeks}>
-                        {week => (
-                          <DatePickerTableRow>
-                            <For each={week}>
-                              {day => (
-                                <DatePickerTableCell value={day}>
-                                  <DatePickerTableCellTrigger>{day.day}</DatePickerTableCellTrigger>
-                                </DatePickerTableCell>
-                              )}
-                            </For>
-                          </DatePickerTableRow>
-                        )}
-                      </For>
-                    </DatePickerTableBody>
-                  </DatePickerTable>
-                  <DatePickerTable>
-                    <DatePickerTableHead>
-                      <DatePickerTableRow>
-                        <For each={api().weekDays}>
-                          {weekDay => (
-                            <DatePickerTableHeader>{weekDay.short}</DatePickerTableHeader>
-                          )}
-                        </For>
-                      </DatePickerTableRow>
-                    </DatePickerTableHead>
-                    <DatePickerTableBody>
-                      <For each={offset.weeks}>
-                        {week => (
-                          <DatePickerTableRow>
-                            <For each={week}>
-                              {day => (
-                                <DatePickerTableCell value={day} visibleRange={offset.visibleRange}>
-                                  <DatePickerTableCellTrigger>{day.day}</DatePickerTableCellTrigger>
-                                </DatePickerTableCell>
-                              )}
-                            </For>
-                          </DatePickerTableRow>
-                        )}
-                      </For>
-                    </DatePickerTableBody>
-                  </DatePickerTable>
-                </div>
+                <DatePickerTable>
+                  <DatePickerTableBody>
+                    <For
+                      each={api().getMonthsGrid({
+                        columns: 4,
+                        format: "short"
+                      })}
+                    >
+                      {months => (
+                        <DatePickerTableRow>
+                          <For each={months}>
+                            {month => (
+                              <DatePickerTableCell value={month.value}>
+                                <DatePickerTableCellTrigger>
+                                  {month.label}
+                                </DatePickerTableCellTrigger>
+                              </DatePickerTableCell>
+                            )}
+                          </For>
+                        </DatePickerTableRow>
+                      )}
+                    </For>
+                  </DatePickerTableBody>
+                </DatePickerTable>
               </>
-            );
-          }}
+            )}
+          </DatePickerContext>
         </DatePickerView>
-        <DatePickerView view="month">
-          {api => (
-            <>
-              <DatePickerViewControl>
-                <DatePickerViewTrigger>
-                  <DatePickerRangeText />
-                </DatePickerViewTrigger>
-              </DatePickerViewControl>
-              <DatePickerTable>
-                <DatePickerTableBody>
-                  <For
-                    each={api().getMonthsGrid({
-                      columns: 4,
-                      format: "short"
-                    })}
-                  >
-                    {months => (
-                      <DatePickerTableRow>
-                        <For each={months}>
-                          {month => (
-                            <DatePickerTableCell value={month.value}>
-                              <DatePickerTableCellTrigger>{month.label}</DatePickerTableCellTrigger>
-                            </DatePickerTableCell>
-                          )}
-                        </For>
-                      </DatePickerTableRow>
-                    )}
-                  </For>
-                </DatePickerTableBody>
-              </DatePickerTable>
-            </>
-          )}
-        </DatePickerView>
-        <DatePickerView view="year">
-          {api => (
-            <>
-              <DatePickerViewControl>
-                <DatePickerViewTrigger>
-                  <DatePickerRangeText />
-                </DatePickerViewTrigger>
-              </DatePickerViewControl>
-              <DatePickerTable>
-                <DatePickerTableBody>
-                  <For
-                    each={api().getYearsGrid({
-                      columns: 4
-                    })}
-                  >
-                    {years => (
-                      <DatePickerTableRow>
-                        <For each={years}>
-                          {year => (
-                            <DatePickerTableCell value={year.value}>
-                              <DatePickerTableCellTrigger>{year.label}</DatePickerTableCellTrigger>
-                            </DatePickerTableCell>
-                          )}
-                        </For>
-                      </DatePickerTableRow>
-                    )}
-                  </For>
-                </DatePickerTableBody>
-              </DatePickerTable>
-            </>
-          )}
+        <DatePickerView view="year" class="w-[calc(var(--reference-width)-(0.75rem*2))]">
+          <DatePickerContext>
+            {api => (
+              <>
+                <DatePickerViewControl>
+                  <DatePickerViewTrigger>
+                    <DatePickerRangeText />
+                  </DatePickerViewTrigger>
+                </DatePickerViewControl>
+                <DatePickerTable>
+                  <DatePickerTableBody>
+                    <For
+                      each={api().getYearsGrid({
+                        columns: 4
+                      })}
+                    >
+                      {years => (
+                        <DatePickerTableRow>
+                          <For each={years}>
+                            {year => (
+                              <DatePickerTableCell value={year.value}>
+                                <DatePickerTableCellTrigger>
+                                  {year.label}
+                                </DatePickerTableCellTrigger>
+                              </DatePickerTableCell>
+                            )}
+                          </For>
+                        </DatePickerTableRow>
+                      )}
+                    </For>
+                  </DatePickerTableBody>
+                </DatePickerTable>
+              </>
+            )}
+          </DatePickerContext>
         </DatePickerView>
       </DatePickerContent>
     </DatePicker>
