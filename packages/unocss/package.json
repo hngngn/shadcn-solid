@@ -1,11 +1,9 @@
 {
   "name": "@repo-registry/unocss",
   "version": "0.0.1",
-  "files": [
-    "ui"
-  ],
+  "files": ["ui"],
   "devDependencies": {
-    "@ark-ui/solid": "^2.2.0",
+    "@ark-ui/solid": "^3.0.0",
     "@kobalte/core": "^0.13.1",
     "@unocss/reset": "^0.58.8",
     "class-variance-authority": "^0.7.0",
@@ -41,8 +39,6 @@
     "check": "biome check --apply-unsafe ui"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": [
-      "bun run check"
-    ]
+    "src/**/*.{ts,tsx}": ["bun run check"]
   }
 }

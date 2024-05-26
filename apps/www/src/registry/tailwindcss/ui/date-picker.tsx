@@ -17,12 +17,15 @@ import { DatePicker as DatePickerPrimitive } from "@ark-ui/solid";
 import type { VoidProps } from "solid-js";
 import { splitProps } from "solid-js";
 import { Portal } from "solid-js/web";
-import { Button } from "./button";
+import { buttonVariants } from "./button";
 
 export const DatePickerLabel = DatePickerPrimitive.Label;
 export const DatePickerTableHead = DatePickerPrimitive.TableHead;
 export const DatePickerTableBody = DatePickerPrimitive.TableBody;
 export const DatePickerClearTrigger = DatePickerPrimitive.ClearTrigger;
+export const DatePickerYearSelect = DatePickerPrimitive.YearSelect;
+export const DatePickerMonthSelect = DatePickerPrimitive.MonthSelect;
+export const DatePickerContext = DatePickerPrimitive.Context;
 
 export const DatePicker = (props: DatePickerRootProps) => {
   return (
@@ -52,9 +55,12 @@ export const DatePickerViewControl = (props: DatePickerViewControlProps) => {
       {...rest}
     >
       <DatePickerPrimitive.PrevTrigger
-        as={Button}
-        variant="outline"
-        class="h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"
+        class={cn(
+          buttonVariants({
+            variant: "outline"
+          }),
+          "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"
+        )}
       >
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24">
           <path
@@ -69,9 +75,12 @@ export const DatePickerViewControl = (props: DatePickerViewControlProps) => {
       </DatePickerPrimitive.PrevTrigger>
       {local.children}
       <DatePickerPrimitive.NextTrigger
-        as={Button}
-        variant="outline"
-        class="h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"
+        class={cn(
+          buttonVariants({
+            variant: "outline"
+          }),
+          "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"
+        )}
       >
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24">
           <path
@@ -141,9 +150,8 @@ export const DatePickerTableCellTrigger = (props: DatePickerTableCellTriggerProp
 
   return (
     <DatePickerPrimitive.TableCellTrigger
-      as={Button}
-      variant="ghost"
       class={cn(
+        buttonVariants({ variant: "ghost" }),
         "h-8 w-full p-0 font-normal aria-disabled:cursor-not-allowed aria-disabled:text-muted-foreground aria-disabled:opacity-50 aria-disabled:hover:bg-transparent data-[selected]:bg-primary data-[selected]:text-primary-foreground data-[selected]:hover:bg-primary data-[selected]:hover:text-primary-foreground data-[selected]:focus:bg-primary data-[selected]:focus:text-primary-foreground aria-disabled:data-[in-range]:data-[outside-range]:opacity-30 [&[data-today]:not([data-selected])]:bg-accent [&[data-today]:not([data-selected])]:text-accent-foreground",
         local.class
       )}
@@ -157,9 +165,7 @@ export const DatePickerViewTrigger = (props: DatePickerViewTriggerProps) => {
 
   return (
     <DatePickerPrimitive.ViewTrigger
-      as={Button}
-      variant="ghost"
-      class={cn("h-7", local.class)}
+      class={cn(buttonVariants({ variant: "ghost" }), "h-7", local.class)}
       {...rest}
     />
   );
