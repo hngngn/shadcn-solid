@@ -1,3 +1,6 @@
 {
-  "src/**/*.{ts,tsx}": ["bun build:registry", "bun run check"]
+  "src/**/*.{ts,tsx}": [
+    "bun build:registry",
+    "bun check"
+  ]
 }

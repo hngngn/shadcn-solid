@@ -67,6 +67,9 @@
   },
   "private": true,
   "lint-staged": {
-    "src/**/*.{ts,tsx}": ["bun run check"]
+    "src/**/*.{ts,tsx}": [
+      "bun build:registry",
+      "bun check"
+    ]
   }
 }

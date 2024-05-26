@@ -191,7 +191,7 @@ export const CarouselPrevious = (props: VoidProps<ComponentProps<typeof Button>>
       variant={local.variant}
       size={local.size}
       class={cn(
-        "absolute  h-8 w-8 rounded-full touch-manipulation",
+        "absolute  h-8 w-8 touch-manipulation rounded-full",
         orientation === "horizontal"
           ? "-left-12 top-1/2 -translate-y-1/2"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -201,7 +201,7 @@ export const CarouselPrevious = (props: VoidProps<ComponentProps<typeof Button>>
       onClick={scrollPrev}
       {...rest}
     >
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-4">
         <path
           fill="none"
           stroke="currentColor"
@@ -229,7 +229,7 @@ export const CarouselNext = (props: VoidProps<ComponentProps<typeof Button>>) =>
       variant={local.variant}
       size={local.size}
       class={cn(
-        "absolute h-8 w-8 rounded-full touch-manipulation",
+        "absolute h-8 w-8 touch-manipulation rounded-full",
         orientation === "horizontal"
           ? "-right-12 top-1/2 -translate-y-1/2"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -239,7 +239,7 @@ export const CarouselNext = (props: VoidProps<ComponentProps<typeof Button>>) =>
       onClick={scrollNext}
       {...rest}
     >
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 h-4">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="size-4">
         <path
           fill="none"
           stroke="currentColor"
