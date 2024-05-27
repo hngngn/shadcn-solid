@@ -1,5 +1,6 @@
 import { readFile } from "node:fs/promises";
-import { resolve } from "node:path";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 
 type PackageJSON = {
   name: string;
@@ -7,8 +8,11 @@ type PackageJSON = {
   version: string;
 };
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 export const readPackageJSON = async () => {
-  const location = resolve(import.meta.dirname, "..", "package.json");
+  const location = resolve(__dirname, "..", "package.json");
 
   const data = await readFile(location);
 
