@@ -8,7 +8,7 @@ type PackageJSON = {
 };
 
 export const readPackageJSON = async () => {
-  const location = resolve(import.meta.dirname, "../package.json");
+  const location = resolve(import.meta.dirname, "..", "package.json");
 
   const data = await readFile(location);
 
