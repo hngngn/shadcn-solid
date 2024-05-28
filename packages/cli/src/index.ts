@@ -18,7 +18,7 @@ const run = async () => {
     .addCommand(initCommand)
     .addCommand(addCommand)
     .addCommand(diffCommand)
-    .parse(process.argv);
+    .parse();
 };
 
 run();
