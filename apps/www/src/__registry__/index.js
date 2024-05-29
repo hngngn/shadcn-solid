@@ -375,6 +375,13 @@ export const Index = {
       component: lazy(() => import("@/registry/tailwindcss/example/button-with-icon")),
       files: ["registry/tailwindcss/example/button-with-icon.tsx"],
     },
+    "calendar-demo": {
+      name: "calendar-demo",
+      type: "components:example",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/tailwindcss/example/calendar-demo")),
+      files: ["registry/tailwindcss/example/calendar-demo.tsx"],
+    },
     "button-loading": {
       name: "button-loading",
       type: "components:example",

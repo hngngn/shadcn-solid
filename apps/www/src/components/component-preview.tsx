@@ -67,10 +67,10 @@ export const ComponentPreview: ParentComponent<ComponentPreviewProps> = props =>
             <TabsIndicator class="bg-primary" />
           </TabsList>
         </div>
-        <TabsContent value="preview" class="relative rounded-md border has-[table]:border-none">
+        <TabsContent value="preview" class="relative rounded-md border has-[.is-table]:border-none">
           <div
             class={cn(
-              "preview flex min-h-[350px] w-full justify-center p-10 has-[table]:p-0",
+              "preview flex min-h-[350px] w-full justify-center p-10 has-[.is-table]:p-0",
               local.align === "center" && "items-center",
               local.align === "start" && "items-start",
               local.align === "end" && "items-end"

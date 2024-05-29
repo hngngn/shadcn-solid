@@ -308,6 +308,11 @@ const example = [
     files: ["example/button-with-icon.tsx"]
   },
   {
+    name: "calendar-demo",
+    type: "components:example",
+    files: ["example/calendar-demo.tsx"]
+  },
+  {
     name: "button-loading",
     type: "components:example",
     files: ["example/button-loading.tsx"]
