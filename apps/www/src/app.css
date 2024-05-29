@@ -89,3 +89,7 @@
   background-clip: content-box;
   @apply bg-accent
 }
+
+::-webkit-scrollbar-corner {
+  @apply bg-transparent
+}

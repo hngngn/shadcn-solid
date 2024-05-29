@@ -21,43 +21,9 @@ link:
 
 <TabsContent value="cli">
 
-<Steps>
-
-<Step>Run the following command:</Step>
-
 ```bash
 npx shadcn-solid@latest add collapsible
 ```
-
-<Step>Update `tailwind.config.cjs`</Step>
-
-Add the following animations to your `tailwind.config.cjs` file:
-
-```js title="tailwind.config.cjs" {5-18}
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  theme: {
-    extend: {
-      keyframes: {
-        "collapsible-down": {
-          from: { height: 0 },
-          to: { height: "var(--kb-collapsible-content-height)" }
-        },
-        "collapsible-up": {
-          from: { height: "var(--kb-collapsible-content-height)" },
-          to: { height: 0 }
-        }
-      },
-      animation: {
-        "collapsible-down": "collapsible-down 0.2s ease-out",
-        "collapsible-up": "collapsible-up 0.2s ease-out"
-      }
-    }
-  }
-};
-```
-
-</Steps>
 
 </TabsContent>
 
@@ -75,11 +41,9 @@ npm install @kobalte/core
 
 <ComponentSource name="collapsible" />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>Update config</Step>
 
-<Step>Update `tailwind.config.cjs`</Step>
-
-Add the following animations to your `tailwind.config.cjs` file:
+With Tailwind:
 
 ```js title="tailwind.config.cjs" {5-18}
 /** @type {import('tailwindcss').Config} */
@@ -104,6 +68,33 @@ module.exports = {
   }
 };
 ```
+
+With Uno:
+
+```js title="uno.config.ts" {5-16}
+export default defineConfig({
+  themes: {
+    animation: {
+      keyframes: {
+        "collapsible-down":
+          "{ from { height: 0 } to { height: var(--kb-collapsible-content-height) } }",
+        "collapsible-up":
+          "{ from { height: var(--kb-collapsible-content-height) } to { height: 0 } }"
+      },
+      timingFns: {
+        "collapsible-down": "ease-out",
+        "collapsible-up": "ease-out",
+      },
+      durations: {
+        "collapsible-down": "0.2s",
+        "collapsible-up": "0.2s",
+      }
+    }
+  }
+});
+```
+
+<Step>Update the import paths to match your project setup.</Step>
 
 </Steps>
 

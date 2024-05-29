@@ -21,43 +21,9 @@ link:
 
 <TabsContent value="cli">
 
-<Steps>
-
-<Step>Run the following command:</Step>
-
 ```bash
 npx shadcn-solid@latest add accordion
 ```
-
-<Step>Update `tailwind.config.js`</Step>
-
-Add the following animations to your `tailwind.config.js` file:
-
-```js title="tailwind.config.cjs" {5-18}
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  theme: {
-    extend: {
-      keyframes: {
-        "accordion-down": {
-          from: { height: 0 },
-          to: { height: "var(--kb-accordion-content-height)" }
-        },
-        "accordion-up": {
-          from: { height: "var(--kb-accordion-content-height)" },
-          to: { height: 0 }
-        }
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out"
-      }
-    }
-  }
-};
-```
-
-</Steps>
 
 </TabsContent>
 
@@ -75,11 +41,9 @@ npm install @kobalte/core
 
 <ComponentSource name="accordion" />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>Update config</Step>
 
-<Step>Update `tailwind.config.cjs`</Step>
-
-Add the following animations to your `tailwind.config.cjs` file:
+With Tailwind:
 
 ```js title="tailwind.config.cjs" {5-18}
 /** @type {import('tailwindcss').Config} */
@@ -104,6 +68,32 @@ module.exports = {
   }
 };
 ```
+
+With Uno:
+
+```js title="uno.config.ts" {5-16}
+export default defineConfig({
+  themes: {
+    animation: {
+      keyframes: {
+       "accordion-down":
+          "{ from { height: 0 } to { height: var(--kb-accordion-content-height) } }",
+        "accordion-up": "{ from { height: var(--kb-accordion-content-height) } to { height: 0 } }"
+      },
+      timingFns: {
+        "accordion-down": "ease-out",
+        "accordion-up": "ease-out"
+      },
+      durations: {
+        "accordion-down": "0.2s",
+        "accordion-up": "0.2s"
+      }
+    }
+  }
+});
+```
+
+<Step>Update the import paths to match your project setup.</Step>
 
 </Steps>
 
