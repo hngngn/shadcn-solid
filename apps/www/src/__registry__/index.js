@@ -130,6 +130,13 @@ export const Index = {
       component: lazy(() => import("@/registry/tailwindcss/ui/image")),
       files: ["registry/tailwindcss/ui/image.tsx"],
     },
+    "otp-field": {
+      name: "otp-field",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/tailwindcss/ui/otp-field")),
+      files: ["registry/tailwindcss/ui/otp-field.tsx"],
+    },
     "popover": {
       name: "popover",
       type: "components:ui",
@@ -563,6 +570,27 @@ export const Index = {
       registryDependencies: undefined,
       component: lazy(() => import("@/registry/tailwindcss/example/image-demo")),
       files: ["registry/tailwindcss/example/image-demo.tsx"],
+    },
+    "otp-field-demo": {
+      name: "otp-field-demo",
+      type: "components:example",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/tailwindcss/example/otp-field-demo")),
+      files: ["registry/tailwindcss/example/otp-field-demo.tsx"],
+    },
+    "otp-field-with-pattern-demo": {
+      name: "otp-field-with-pattern-demo",
+      type: "components:example",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/tailwindcss/example/otp-field-with-pattern-demo")),
+      files: ["registry/tailwindcss/example/otp-field-with-pattern-demo.tsx"],
+    },
+    "otp-field-with-controlled-demo": {
+      name: "otp-field-with-controlled-demo",
+      type: "components:example",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/tailwindcss/example/otp-field-with-controlled-demo")),
+      files: ["registry/tailwindcss/example/otp-field-with-controlled-demo.tsx"],
     },
     "popover-demo": {
       name: "popover-demo",

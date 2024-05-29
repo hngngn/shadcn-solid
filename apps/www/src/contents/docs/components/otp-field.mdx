@@ -1,0 +1,144 @@
+---
+title: OTP Field
+description: An accessible and customizable OTP Input component.
+component: true
+link:
+  doc: https://corvu.dev/docs/primitives/otp-field/
+  api: https://corvu.dev/docs/primitives/otp-field#api-reference
+---
+
+<ComponentPreview name="otp-field-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsIndicator class="bg-primary" />
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn-solid@latest add otp-field
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @corvu/otp-field
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="otp-field" />
+
+<Step>Update config</Step>
+
+With Tailwind:
+
+```js title="tailwind.config.cjs" {5-18}
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  theme: {
+    extend: {
+      keyframes: {
+        "accordion-down": {
+          from: { height: 0 },
+          to: { height: "var(--kb-accordion-content-height)" }
+        },
+        "accordion-up": {
+          from: { height: "var(--kb-accordion-content-height)" },
+          to: { height: 0 }
+        }
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out"
+      }
+    }
+  }
+};
+```
+
+With Uno:
+
+```js title="uno.config.ts" {4-15}
+export default defineConfig({
+  themes: {
+    animation: {
+      keyframes: {
+        "caret-blink": "{ 0%,70%,100% { opacity: 1 } 20%,50% { opacity: 0 } }"
+      },
+      timingFns: {
+        "caret-blink": "ease-out"
+      },
+      durations: {
+        "caret-blink": "1.25s"
+      },
+      counts: {
+        "caret-blink": "infinite"
+      }
+    }
+  }
+})
+```
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx
+import {
+  OTPField,
+  OTPFieldGroup,
+  OTPFieldInput,
+  OTPFieldSeparator,
+  OTPFieldSlot
+} from "@/components/ui/otp-field";
+```
+
+```tsx
+<OTPField maxLength={6}>
+  <OTPFieldInput />
+  <OTPFieldGroup>
+    <OTPFieldSlot index={0} />
+    <OTPFieldSlot index={1} />
+    <OTPFieldSlot index={2} />
+  </OTPFieldGroup>
+  <OTPFieldSeparator />
+  <OTPFieldGroup>
+    <OTPFieldSlot index={3} />
+    <OTPFieldSlot index={4} />
+    <OTPFieldSlot index={5} />
+  </OTPFieldGroup>
+</OTPField>
+```
+
+## Exmaples
+
+### Pattern
+
+Use the `pattern` prop to define a custom pattern for the OTP field.
+
+<ComponentPreview name="otp-field-with-pattern-demo" />
+
+### Controlled
+
+You can use the `value` and `onValueChange` props to control the input value.
+
+<ComponentPreview name="otp-field-with-controlled-demo" />

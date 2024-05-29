@@ -7,7 +7,7 @@
   "files": [
     {
       "name": "sonner.tsx",
-      "content": "import { useColorMode } from \"@kobalte/core/color-mode\";\r\nimport { Toaster as Sonner } from \"solid-sonner\";\r\n\r\nexport const Toaster = (props: Parameters<typeof Sonner>[0]) => {\r\n  const { colorMode } = useColorMode();\r\n\r\n  return (\r\n    <Sonner\r\n      theme={colorMode()}\r\n      class=\"toaster group\"\r\n      toastOptions={{\r\n        classes: {\r\n          toast:\r\n            \"group toast group-[.toaster]:(bg-background text-foreground border-border shadow-lg)\",\r\n          description: \"group-[.toast]:text-muted-foreground\",\r\n          actionButton: \"group-[.toast]:(bg-primary text-primary-foreground)\",\r\n          cancelButton: \"group-[.toast]:(bg-muted text-muted-foreground)\"\r\n        }\r\n      }}\r\n      {...props}\r\n    />\r\n  );\r\n};\r\n"
+      "content": "import { useColorMode } from \"@kobalte/core/color-mode\";\nimport { Toaster as Sonner } from \"solid-sonner\";\n\nexport const Toaster = (props: Parameters<typeof Sonner>[0]) => {\n  const { colorMode } = useColorMode();\n\n  return (\n    <Sonner\n      theme={colorMode()}\n      class=\"toaster group\"\n      toastOptions={{\n        classes: {\n          toast:\n            \"group toast group-[.toaster]:(bg-background text-foreground border-border shadow-lg)\",\n          description: \"group-[.toast]:text-muted-foreground\",\n          actionButton: \"group-[.toast]:(bg-primary text-primary-foreground)\",\n          cancelButton: \"group-[.toast]:(bg-muted text-muted-foreground)\"\n        }\n      }}\n      {...props}\n    />\n  );\n};\n"
     }
   ],
   "type": "components:ui"

@@ -145,8 +145,7 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Command",
           href: "/docs/components/command",
-          items: [],
-          label: "Updated"
+          items: []
         },
         {
           title: "Context Menu",
@@ -186,8 +185,13 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Image",
           href: "/docs/components/image",
+          items: []
+        },
+        {
+          title: "OTP Field",
+          href: "/docs/components/otp-field",
           items: [],
-          label: "Updated"
+          label: "New"
         },
         {
           title: "Pagination",
@@ -212,8 +216,7 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Resizable",
           href: "/docs/components/resizable",
-          items: [],
-          label: "Updated"
+          items: []
         },
         {
           title: "Select",
@@ -238,8 +241,7 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Sonner",
           href: "/docs/components/sonner",
-          items: [],
-          label: "New"
+          items: []
         },
         {
           title: "Switch",
@@ -259,14 +261,12 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Text Field",
           href: "/docs/components/textfield",
-          items: [],
-          label: "Updated"
+          items: []
         },
         {
           title: "Textarea",
           href: "/docs/components/textarea",
-          items: [],
-          label: "Updated"
+          items: []
         },
         {
           title: "Toast",
@@ -276,8 +276,7 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Toggle Group",
           href: "/docs/components/toggle-group",
-          items: [],
-          label: "New"
+          items: []
         },
         {
           title: "Toggle",

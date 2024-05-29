@@ -17,7 +17,8 @@
       "a11y": {
         "noSvgWithoutTitle": "off",
         "useValidAnchor": "off",
-        "useAltText": "off"
+        "useAltText": "off",
+        "useAriaPropsForRole": "off"
       },
       "style": {
         "noNonNullAssertion": "off"
@@ -42,5 +43,8 @@
       "quoteStyle": "double",
       "attributePosition": "auto"
     }
+  },
+  "files": {
+    "ignore": ["*.js", "*.cjs"]
   }
 }

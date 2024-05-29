@@ -186,6 +186,16 @@
     "type": "components:ui"
   },
   {
+    "name": "otp-field",
+    "dependencies": [
+      "@corvu/otp-field"
+    ],
+    "files": [
+      "ui/otp-field.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "popover",
     "dependencies": [
       "@kobalte/core"

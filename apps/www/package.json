@@ -7,13 +7,14 @@
     "start": "vinxi start",
     "check": "bun run format && biome check --apply-unsafe src && bun run lint --fix",
     "format": "prettier -w ./src/**/*.{ts,tsx}",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "build:registry": "tsx scripts/build-registry.ts",
     "build:contents": "tsx scripts/build-contents.ts"
   },
   "dependencies": {
     "@ark-ui/solid": "^3.0.0",
     "@corvu/drawer": "^0.2.0",
+    "@corvu/otp-field": "^0.1.0",
     "@corvu/resizable": "^0.2.0",
     "@faker-js/faker": "^8.4.1",
     "@kobalte/core": "^0.13.1",
@@ -67,6 +68,11 @@
   },
   "private": true,
   "lint-staged": {
-    "src/**/*.{ts,tsx}": ["bun build:registry", "bun check"]
+    "src/**/*.{ts,tsx}": [
+      "bun build:registry",
+      "bun run format",
+      "biome check --apply-unsafe --staged --no-errors-on-unmatched",
+      "bun run lint --fix"
+    ]
   }
 }

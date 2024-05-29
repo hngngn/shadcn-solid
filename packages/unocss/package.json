@@ -39,6 +39,9 @@
     "check": "biome check --apply-unsafe ui"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": ["bun run check"]
+    "src/**/*.{ts,tsx}": ["biome check --apply-unsafe --staged --no-errors-on-unmatched"]
+  },
+  "dependencies": {
+    "@corvu/otp-field": "^0.1.0"
   }
 }
