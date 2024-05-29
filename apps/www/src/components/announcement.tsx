@@ -10,7 +10,7 @@ export const Announcement = () => {
       ✨
       <Separator class="mx-2 data-[orientation=vertical]:h-4" orientation="vertical" />
       <span class="sm:hidden">New components and CLI updates</span>
-      <span class="hidden sm:inline">Toggle Group, Sonner and CLI updates</span>
+      <span class="hidden sm:inline">New Components and CLI updates</span>
       <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-4 w-4" viewBox="0 0 24 24">
         <path
           fill="none"
