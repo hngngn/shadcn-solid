@@ -9,7 +9,7 @@ import {
 const OTPFieldDemo = () => {
   return (
     <OTPField maxLength={6}>
-      <OTPFieldInput noScriptCSSFallback={null} />
+      <OTPFieldInput />
       <OTPFieldGroup>
         <OTPFieldSlot index={0} />
         <OTPFieldSlot index={1} />

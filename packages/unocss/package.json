@@ -42,6 +42,6 @@
     "src/**/*.{ts,tsx}": ["biome check --apply-unsafe --staged --no-errors-on-unmatched"]
   },
   "dependencies": {
-    "@corvu/otp-field": "^0.1.0"
+    "@corvu/otp-field": "^0.1.1"
   }
 }

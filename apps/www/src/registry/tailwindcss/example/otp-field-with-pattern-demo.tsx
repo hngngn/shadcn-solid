@@ -3,7 +3,7 @@ import { OTPField, OTPFieldGroup, OTPFieldInput, OTPFieldSlot } from "../ui/otp-
 const OTPFieldWithPatternDemo = () => {
   return (
     <OTPField maxLength={6}>
-      <OTPFieldInput noScriptCSSFallback={null} pattern="^[a-zA-Z0-9]*$" />
+      <OTPFieldInput pattern="^[a-zA-Z0-9]*$" />
       <OTPFieldGroup>
         <OTPFieldSlot index={0} />
         <OTPFieldSlot index={1} />

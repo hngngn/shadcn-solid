@@ -7,7 +7,7 @@ const OtpFieldWithControlledDemo = () => {
   return (
     <div class="flex flex-col items-center gap-2">
       <OTPField maxLength={6} value={value()} onValueChange={setValue}>
-        <OTPFieldInput noScriptCSSFallback={null} />
+        <OTPFieldInput />
         <OTPFieldGroup>
           <OTPFieldSlot index={0} />
           <OTPFieldSlot index={1} />
