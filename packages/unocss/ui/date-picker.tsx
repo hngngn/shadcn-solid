@@ -26,6 +26,7 @@ export const DatePickerClearTrigger = DatePickerPrimitive.ClearTrigger;
 export const DatePickerYearSelect = DatePickerPrimitive.YearSelect;
 export const DatePickerMonthSelect = DatePickerPrimitive.MonthSelect;
 export const DatePickerContext = DatePickerPrimitive.Context;
+export const DatePickerRootProvider = DatePickerPrimitive.RootProvider;
 
 export const DatePicker = (props: DatePickerRootProps) => {
   return (
@@ -137,7 +138,10 @@ export const DatePickerTableCell = (props: DatePickerTableCellProps) => {
   return (
     <DatePickerPrimitive.TableCell
       class={cn(
-        "group flex-1 p-0 text-center text-sm aria-selected:(bg-accent text-accent-foreground first-of-type:rounded-l-md last-of-type:rounded-r-md has-[[data-outside-range]]:bg-accent/50)",
+        "p-0 text-center text-sm",
+        "has-[[data-in-range]]:(bg-accent first-of-type:rounded-l-md last-of-type:rounded-r-md)",
+        "has-[[data-range-end]]:rounded-r-md has-[[data-range-start]]:rounded-l-md",
+        "has-[[data-outside-range][data-in-range]]:bg-accent/50",
         local.class
       )}
       {...rest}
@@ -152,7 +156,13 @@ export const DatePickerTableCellTrigger = (props: DatePickerTableCellTriggerProp
     <DatePickerPrimitive.TableCellTrigger
       class={cn(
         buttonVariants({ variant: "ghost" }),
-        "h-8 w-full p-0 font-normal aria-disabled:(cursor-not-allowed text-muted-foreground opacity-30 hover:bg-accent/50 hover:text-muted-foreground) data-[selected]:(bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground) [&[data-today]:not([data-selected])]:(bg-accent text-accent-foreground) [&[aria-disabled=true]:not([data-in-range][data-outside-range])]:(opacity-50 bg-inherit)",
+        "size-8 p-0 font-normal",
+        "data-[today]:(bg-accent text-accent-foreground)",
+        "[&:is([data-today][data-selected])]:(bg-primary text-primary-foreground)",
+        "data-[selected]:(bg-primary text-primary-foreground opacity-100 hover:bg-primary hover:text-primary-foreground)",
+        "data-[disabled]:(text-muted-foreground opacity-50)",
+        "data-[outside-range]:(text-muted-foreground opacity-50)",
+        "[&:is([data-outside-range][data-in-range])]:(bg-accent/50 text-muted-foreground opacity-30)",
         local.class
       )}
       {...rest}

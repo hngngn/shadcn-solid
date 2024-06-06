@@ -1,9 +1,12 @@
 {
   "name": "@repo-registry/unocss",
   "version": "0.0.1",
-  "files": ["ui"],
+  "files": [
+    "ui"
+  ],
   "devDependencies": {
-    "@ark-ui/solid": "^3.0.0",
+    "@corvu/drawer": "^0.2.0",
+    "@corvu/resizable": "^0.2.0",
     "@kobalte/core": "^0.13.1",
     "@unocss/reset": "^0.58.8",
     "class-variance-authority": "^0.7.0",
@@ -19,11 +22,10 @@
     "unocss-preset-animations": "^1.0.2",
     "vite": "^5.2.7",
     "vite-plugin-solid": "^2.10.2",
-    "@corvu/drawer": "^0.2.0",
-    "@corvu/resizable": "^0.2.0"
+    "@ark-ui/solid": "^3.2.1",
+    "@corvu/otp-field": "^0.1.1"
   },
   "peerDependencies": {
-    "@ark-ui/solid": "^2.2.0",
     "@kobalte/core": "^0.12.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
@@ -39,9 +41,8 @@
     "check": "biome check --apply-unsafe ui"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": ["biome check --apply-unsafe --staged --no-errors-on-unmatched"]
-  },
-  "dependencies": {
-    "@corvu/otp-field": "^0.1.1"
+    "src/**/*.{ts,tsx}": [
+      "biome check --apply-unsafe --staged --no-errors-on-unmatched"
+    ]
   }
 }

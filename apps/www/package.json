@@ -12,7 +12,7 @@
     "build:contents": "tsx scripts/build-contents.ts"
   },
   "dependencies": {
-    "@ark-ui/solid": "^3.0.0",
+    "@ark-ui/solid": "^3.2.1",
     "@corvu/drawer": "^0.2.0",
     "@corvu/otp-field": "^0.1.1",
     "@corvu/resizable": "^0.2.0",
@@ -22,7 +22,7 @@
     "@solid-primitives/storage": "^3.5.0",
     "@solidjs/meta": "^0.29.4",
     "@solidjs/router": "^0.13.3",
-    "@solidjs/start": "^1.0.0",
+    "@solidjs/start": "^1.0.1",
     "@tanstack/solid-table": "^8.15.3",
     "@vinxi/plugin-mdx": "^3.7.1",
     "class-variance-authority": "^0.7.0",

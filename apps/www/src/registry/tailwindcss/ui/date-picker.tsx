@@ -26,6 +26,7 @@ export const DatePickerClearTrigger = DatePickerPrimitive.ClearTrigger;
 export const DatePickerYearSelect = DatePickerPrimitive.YearSelect;
 export const DatePickerMonthSelect = DatePickerPrimitive.MonthSelect;
 export const DatePickerContext = DatePickerPrimitive.Context;
+export const DatePickerRootProvider = DatePickerPrimitive.RootProvider;
 
 export const DatePicker = (props: DatePickerRootProps) => {
   return (
@@ -137,7 +138,10 @@ export const DatePickerTableCell = (props: DatePickerTableCellProps) => {
   return (
     <DatePickerPrimitive.TableCell
       class={cn(
-        "flex-1 p-0 text-center text-sm aria-selected:bg-accent aria-selected:text-accent-foreground aria-selected:first-of-type:rounded-l-md aria-selected:last-of-type:rounded-r-md aria-selected:has-[[data-outside-range]]:bg-accent/50",
+        "p-0 text-center text-sm",
+        "has-[[data-in-range]]:bg-accent has-[[data-in-range]]:first-of-type:rounded-l-md has-[[data-in-range]]:last-of-type:rounded-r-md",
+        "has-[[data-range-end]]:rounded-r-md has-[[data-range-start]]:rounded-l-md",
+        "has-[[data-outside-range][data-in-range]]:bg-accent/50",
         local.class
       )}
       {...rest}
@@ -152,7 +156,13 @@ export const DatePickerTableCellTrigger = (props: DatePickerTableCellTriggerProp
     <DatePickerPrimitive.TableCellTrigger
       class={cn(
         buttonVariants({ variant: "ghost" }),
-        "h-8 w-full p-0 font-normal aria-disabled:cursor-not-allowed aria-disabled:text-muted-foreground aria-disabled:opacity-50 aria-disabled:hover:bg-transparent data-[selected]:bg-primary data-[selected]:text-primary-foreground data-[selected]:hover:bg-primary data-[selected]:hover:text-primary-foreground data-[selected]:focus:bg-primary data-[selected]:focus:text-primary-foreground aria-disabled:data-[in-range]:data-[outside-range]:opacity-30 [&[data-today]:not([data-selected])]:bg-accent [&[data-today]:not([data-selected])]:text-accent-foreground",
+        "size-8 p-0 font-normal data-[selected]:opacity-100",
+        "data-[today]:bg-accent data-[today]:text-accent-foreground",
+        "[&:is([data-today][data-selected])]:bg-primary [&:is([data-today][data-selected])]:text-primary-foreground",
+        "data-[selected]:bg-primary data-[selected]:text-primary-foreground data-[selected]:hover:bg-primary data-[selected]:hover:text-primary-foreground",
+        "data-[disabled]:text-muted-foreground data-[disabled]:opacity-50",
+        "data-[outside-range]:text-muted-foreground data-[outside-range]:opacity-50",
+        "[&:is([data-outside-range][data-in-range])]:bg-accent/50 [&:is([data-outside-range][data-in-range])]:text-muted-foreground [&:is([data-outside-range][data-in-range])]:opacity-30",
         local.class
       )}
       {...rest}

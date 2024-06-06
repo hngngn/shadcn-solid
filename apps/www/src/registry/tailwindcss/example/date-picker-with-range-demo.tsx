@@ -1,4 +1,4 @@
-import { For, createMemo, createSignal } from "solid-js";
+import { Index, createMemo, createSignal } from "solid-js";
 import {
   DatePicker,
   DatePickerContent,
@@ -55,60 +55,60 @@ const DatePickerDemo = () => {
                     <DatePickerTable>
                       <DatePickerTableHead>
                         <DatePickerTableRow>
-                          <For each={api().weekDays}>
+                          <Index each={api().weekDays}>
                             {weekDay => (
-                              <DatePickerTableHeader>{weekDay.short}</DatePickerTableHeader>
+                              <DatePickerTableHeader>{weekDay().short}</DatePickerTableHeader>
                             )}
-                          </For>
+                          </Index>
                         </DatePickerTableRow>
                       </DatePickerTableHead>
                       <DatePickerTableBody>
-                        <For each={api().weeks}>
+                        <Index each={api().weeks}>
                           {week => (
                             <DatePickerTableRow>
-                              <For each={week}>
+                              <Index each={week()}>
                                 {day => (
-                                  <DatePickerTableCell value={day}>
+                                  <DatePickerTableCell value={day()}>
                                     <DatePickerTableCellTrigger>
-                                      {day.day}
+                                      {day().day}
                                     </DatePickerTableCellTrigger>
                                   </DatePickerTableCell>
                                 )}
-                              </For>
+                              </Index>
                             </DatePickerTableRow>
                           )}
-                        </For>
+                        </Index>
                       </DatePickerTableBody>
                     </DatePickerTable>
                     <DatePickerTable>
                       <DatePickerTableHead>
                         <DatePickerTableRow>
-                          <For each={api().weekDays}>
+                          <Index each={api().weekDays}>
                             {weekDay => (
-                              <DatePickerTableHeader>{weekDay.short}</DatePickerTableHeader>
+                              <DatePickerTableHeader>{weekDay().short}</DatePickerTableHeader>
                             )}
-                          </For>
+                          </Index>
                         </DatePickerTableRow>
                       </DatePickerTableHead>
                       <DatePickerTableBody>
-                        <For each={offset().weeks}>
+                        <Index each={offset().weeks}>
                           {week => (
                             <DatePickerTableRow>
-                              <For each={week}>
+                              <Index each={week()}>
                                 {day => (
                                   <DatePickerTableCell
-                                    value={day}
+                                    value={day()}
                                     visibleRange={offset().visibleRange}
                                   >
                                     <DatePickerTableCellTrigger>
-                                      {day.day}
+                                      {day().day}
                                     </DatePickerTableCellTrigger>
                                   </DatePickerTableCell>
                                 )}
-                              </For>
+                              </Index>
                             </DatePickerTableRow>
                           )}
-                        </For>
+                        </Index>
                       </DatePickerTableBody>
                     </DatePickerTable>
                   </div>
@@ -128,7 +128,7 @@ const DatePickerDemo = () => {
                 </DatePickerViewControl>
                 <DatePickerTable>
                   <DatePickerTableBody>
-                    <For
+                    <Index
                       each={api().getMonthsGrid({
                         columns: 4,
                         format: "short"
@@ -136,18 +136,18 @@ const DatePickerDemo = () => {
                     >
                       {months => (
                         <DatePickerTableRow>
-                          <For each={months}>
+                          <Index each={months()}>
                             {month => (
-                              <DatePickerTableCell value={month.value}>
+                              <DatePickerTableCell value={month().value}>
                                 <DatePickerTableCellTrigger>
-                                  {month.label}
+                                  {month().label}
                                 </DatePickerTableCellTrigger>
                               </DatePickerTableCell>
                             )}
-                          </For>
+                          </Index>
                         </DatePickerTableRow>
                       )}
-                    </For>
+                    </Index>
                   </DatePickerTableBody>
                 </DatePickerTable>
               </>
@@ -165,25 +165,25 @@ const DatePickerDemo = () => {
                 </DatePickerViewControl>
                 <DatePickerTable>
                   <DatePickerTableBody>
-                    <For
+                    <Index
                       each={api().getYearsGrid({
                         columns: 4
                       })}
                     >
                       {years => (
                         <DatePickerTableRow>
-                          <For each={years}>
+                          <Index each={years()}>
                             {year => (
-                              <DatePickerTableCell value={year.value}>
+                              <DatePickerTableCell value={year().value}>
                                 <DatePickerTableCellTrigger>
-                                  {year.label}
+                                  {year().label}
                                 </DatePickerTableCellTrigger>
                               </DatePickerTableCell>
                             )}
-                          </For>
+                          </Index>
                         </DatePickerTableRow>
                       )}
-                    </For>
+                    </Index>
                   </DatePickerTableBody>
                 </DatePickerTable>
               </>
