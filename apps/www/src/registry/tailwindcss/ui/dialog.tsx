@@ -28,7 +28,7 @@ export const DialogOverlay = <T extends ValidComponent = "div">(
 };
 
 type DialogContentProps = ParentProps<
-  DialogPrimitive.DialogOverlayProps & {
+  DialogPrimitive.DialogContentProps & {
     class?: string;
   }
 >;
