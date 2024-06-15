@@ -186,6 +186,16 @@
     "type": "components:ui"
   },
   {
+    "name": "navigation-menu",
+    "dependencies": [
+      "@kobalte/core"
+    ],
+    "files": [
+      "ui/navigation-menu.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "otp-field",
     "dependencies": [
       "@corvu/otp-field"

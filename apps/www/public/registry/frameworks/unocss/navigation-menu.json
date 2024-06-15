@@ -1,0 +1,13 @@
+{
+  "name": "navigation-menu",
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "files": [
+    {
+      "name": "navigation-menu.tsx",
+      "content": ""
+    }
+  ],
+  "type": "components:ui"
+}

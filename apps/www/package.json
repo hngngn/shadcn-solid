@@ -17,7 +17,7 @@
     "@corvu/otp-field": "^0.1.1",
     "@corvu/resizable": "^0.2.0",
     "@faker-js/faker": "^8.4.1",
-    "@kobalte/core": "^0.13.1",
+    "@kobalte/core": "^0.13.3",
     "@mdx-js/mdx": "^2.3.0",
     "@solid-primitives/storage": "^3.5.0",
     "@solidjs/meta": "^0.29.4",

@@ -26,7 +26,7 @@
     "@corvu/otp-field": "^0.1.1"
   },
   "peerDependencies": {
-    "@kobalte/core": "^0.12.0",
+    "@kobalte/core": "^0.13.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "embla-carousel-autoplay": "8.0.0",

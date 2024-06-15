@@ -130,6 +130,13 @@ export const Index = {
       component: lazy(() => import("@/registry/tailwindcss/ui/image")),
       files: ["registry/tailwindcss/ui/image.tsx"],
     },
+    "navigation-menu": {
+      name: "navigation-menu",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/tailwindcss/ui/navigation-menu")),
+      files: ["registry/tailwindcss/ui/navigation-menu.tsx"],
+    },
     "otp-field": {
       name: "otp-field",
       type: "components:ui",
@@ -577,6 +584,13 @@ export const Index = {
       registryDependencies: undefined,
       component: lazy(() => import("@/registry/tailwindcss/example/image-demo")),
       files: ["registry/tailwindcss/example/image-demo.tsx"],
+    },
+    "navigation-menu-demo": {
+      name: "navigation-menu-demo",
+      type: "components:example",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/tailwindcss/example/navigation-menu-demo")),
+      files: ["registry/tailwindcss/example/navigation-menu-demo.tsx"],
     },
     "otp-field-demo": {
       name: "otp-field-demo",

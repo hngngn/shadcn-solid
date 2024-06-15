@@ -188,6 +188,12 @@ export const docsConfig: TDocsConfig = {
           items: []
         },
         {
+          title: "Navigation Menu",
+          href: "/docs/components/navigation-menu",
+          items: [],
+          label: "New"
+        },
+        {
           title: "OTP Field",
           href: "/docs/components/otp-field",
           items: [],
