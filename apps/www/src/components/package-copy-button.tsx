@@ -6,7 +6,8 @@ import {
   DropdownMenuTrigger
 } from "@/registry/tailwindcss/ui/dropdown-menu";
 import type { DropdownMenuTriggerProps } from "@kobalte/core/dropdown-menu";
-import { For, Show, type VoidComponent, createSignal } from "solid-js";
+import type { VoidComponent } from "solid-js";
+import { For, Show, createSignal } from "solid-js";
 
 type Props = {
   preRef: HTMLPreElement | undefined;
@@ -43,7 +44,7 @@ export const PackageCopyButton: VoidComponent<Props> = props => {
           innerText = innerText.replace("npx create-", "pnpm create ");
           break;
         case "bun":
-          innerText = innerText.replace("npx create-", "bunx --bun ");
+          innerText = innerText.replace("npx create-", "bunx ");
           break;
         default:
           break;
@@ -56,7 +57,7 @@ export const PackageCopyButton: VoidComponent<Props> = props => {
           innerText = innerText.replace("npx", "pnpm dlx");
           break;
         case "bun":
-          innerText = innerText.replace("npx", "bunx --bun");
+          innerText = innerText.replace("npx", "bunx");
           break;
         default:
           break;
