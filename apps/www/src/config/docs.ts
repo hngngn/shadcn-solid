@@ -188,6 +188,12 @@ export const docsConfig: TDocsConfig = {
           items: []
         },
         {
+          title: "Menubar",
+          href: "/docs/components/menubar",
+          items: [],
+          label: "New"
+        },
+        {
           title: "OTP Field",
           href: "/docs/components/otp-field",
           items: [],

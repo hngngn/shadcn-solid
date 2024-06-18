@@ -110,6 +110,12 @@ const ui = [
     files: ["ui/image.tsx"]
   },
   {
+    name: "menubar",
+    type: "components:ui",
+    dependencies: ["@kobalte/core"],
+    files: ["ui/menubar.tsx"]
+  },
+  {
     name: "otp-field",
     type: "components:ui",
     dependencies: ["@corvu/otp-field"],
@@ -451,6 +457,11 @@ const example = [
     name: "image-demo",
     type: "components:example",
     files: ["example/image-demo.tsx"]
+  },
+  {
+    name: "menubar-demo",
+    type: "components:example",
+    files: ["example/menubar-demo.tsx"]
   },
   {
     name: "otp-field-demo",

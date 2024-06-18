@@ -71,6 +71,9 @@ export const Contents: Record<string, Record<"component", Component<unknown>>> =
   "/docs/components/image": {
     component: lazy(() => import("@/contents/docs/components/image.mdx"))
   },
+  "/docs/components/menubar": {
+    component: lazy(() => import("@/contents/docs/components/menubar.mdx"))
+  },
   "/docs/components/otp-field": {
     component: lazy(() => import("@/contents/docs/components/otp-field.mdx"))
   },
