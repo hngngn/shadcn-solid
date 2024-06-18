@@ -1,18 +1,17 @@
 import { cn } from "@/libs/cn";
+import type {
+  CommandDialogProps,
+  CommandEmptyProps,
+  CommandGroupProps,
+  CommandInputProps,
+  CommandItemProps,
+  CommandListProps,
+  CommandRootProps
+} from "cmdk-solid";
+import { Command as CommandPrimitive } from "cmdk-solid";
 import type { ComponentProps, VoidProps } from "solid-js";
 import { splitProps } from "solid-js";
 import { Dialog, DialogContent } from "./dialog";
-
-import {
-  type CommandDialogProps,
-  type CommandEmptyProps,
-  type CommandGroupProps,
-  type CommandInputProps,
-  type CommandItemProps,
-  type CommandListProps,
-  Command as CommandPrimitive,
-  type CommandRootProps
-} from "cmdk-solid";
 
 export const Command = (props: CommandRootProps) => {
   const [local, rest] = splitProps(props, ["class"]);

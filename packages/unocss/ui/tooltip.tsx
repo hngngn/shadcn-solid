@@ -1,24 +1,25 @@
 import { cn } from "@/libs/cn";
 import type { PolymorphicProps } from "@kobalte/core/polymorphic";
-import * as TooltipPrimitive from "@kobalte/core/tooltip";
+import type { TooltipContentProps, TooltipRootProps } from "@kobalte/core/tooltip";
+import { Tooltip as TooltipPrimitive } from "@kobalte/core/tooltip";
 import { type ValidComponent, mergeProps, splitProps } from "solid-js";
 
 export const TooltipTrigger = TooltipPrimitive.Trigger;
 
-export const Tooltip = (props: TooltipPrimitive.TooltipRootProps) => {
-  const merge = mergeProps({ gutter: 4 }, props);
+export const Tooltip = (props: TooltipRootProps) => {
+  const merge = mergeProps<TooltipRootProps[]>({ gutter: 4 }, props);
 
-  return <TooltipPrimitive.Root {...merge} />;
+  return <TooltipPrimitive {...merge} />;
 };
 
-type TooltipContentProps = TooltipPrimitive.TooltipContentProps & {
+type tooltipContentProps<T extends ValidComponent = "div"> = TooltipContentProps<T> & {
   class?: string;
 };
 
 export const TooltipContent = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, TooltipContentProps>
+  props: PolymorphicProps<T, tooltipContentProps<T>>
 ) => {
-  const [local, rest] = splitProps(props as TooltipContentProps, ["class"]);
+  const [local, rest] = splitProps(props as tooltipContentProps, ["class"]);
 
   return (
     <TooltipPrimitive.Portal>

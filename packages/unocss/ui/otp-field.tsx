@@ -6,12 +6,12 @@ import { Show, splitProps } from "solid-js";
 
 export const OTPFieldInput = OTPFieldPrimitive.Input;
 
-type OTPFieldProps = RootProps & {
+type OTPFieldProps<T extends ValidComponent = "div"> = RootProps<T> & {
   class?: string;
 };
 
 export const OTPField = <T extends ValidComponent = "div">(
-  props: DynamicProps<T, OTPFieldProps>
+  props: DynamicProps<T, OTPFieldProps<T>>
 ) => {
   const [local, rest] = splitProps(props, ["class"]);
 

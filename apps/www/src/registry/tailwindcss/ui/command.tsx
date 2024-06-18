@@ -1,18 +1,17 @@
 import { cn } from "@/libs/cn";
+import type {
+  CommandDialogProps,
+  CommandEmptyProps,
+  CommandGroupProps,
+  CommandInputProps,
+  CommandItemProps,
+  CommandListProps,
+  CommandRootProps
+} from "cmdk-solid";
+import { Command as CommandPrimitive } from "cmdk-solid";
 import type { ComponentProps, VoidProps } from "solid-js";
 import { splitProps } from "solid-js";
 import { Dialog, DialogContent } from "./dialog";
-
-import {
-  type CommandDialogProps,
-  type CommandEmptyProps,
-  type CommandGroupProps,
-  type CommandInputProps,
-  type CommandItemProps,
-  type CommandListProps,
-  Command as CommandPrimitive,
-  type CommandRootProps
-} from "cmdk-solid";
 
 export const Command = (props: CommandRootProps) => {
   const [local, rest] = splitProps(props, ["class"]);
@@ -75,7 +74,7 @@ export const CommandItem = (props: CommandItemProps) => {
   return (
     <CommandPrimitive.Item
       class={cn(
-        "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-foreground aria-disabled:pointer-events-none aria-disabled:opacity-50",
+        "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none aria-disabled:pointer-events-none aria-disabled:opacity-50 aria-selected:bg-accent aria-selected:text-accent-foreground",
         local.class
       )}
       {...rest}

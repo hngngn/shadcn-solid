@@ -1,7 +1,6 @@
 import { cn } from "@/libs/cn";
 import type { CreateEmblaCarouselType } from "embla-carousel-solid";
 import createEmblaCarousel from "embla-carousel-solid";
-
 import type { Accessor, ComponentProps, ParentProps, VoidProps } from "solid-js";
 import {
   createContext,

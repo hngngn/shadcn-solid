@@ -1,5 +1,5 @@
 import { cn } from "@/libs/cn";
-import * as AlertPrimitive from "@kobalte/core/alert";
+import { Alert as AlertPrimitive, type AlertRootProps } from "@kobalte/core/alert";
 import type { PolymorphicProps } from "@kobalte/core/polymorphic";
 import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
@@ -22,16 +22,18 @@ export const alertVariants = cva(
   }
 );
 
-type AlertProps = AlertPrimitive.AlertRootProps &
+type alertProps<T extends ValidComponent = "div"> = AlertRootProps<T> &
   VariantProps<typeof alertVariants> & {
     class?: string;
   };
 
-export const Alert = <T extends ValidComponent = "div">(props: PolymorphicProps<T, AlertProps>) => {
-  const [local, rest] = splitProps(props as AlertProps, ["class", "variant"]);
+export const Alert = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, alertProps<T>>
+) => {
+  const [local, rest] = splitProps(props as alertProps, ["class", "variant"]);
 
   return (
-    <AlertPrimitive.Root
+    <AlertPrimitive
       class={cn(
         alertVariants({
           variant: props.variant
