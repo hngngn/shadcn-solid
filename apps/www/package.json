@@ -7,28 +7,29 @@
     "start": "vinxi start",
     "check": "bun run format && biome check --apply-unsafe src && bun run lint --fix",
     "format": "prettier -w ./src/**/*.{ts,tsx}",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "build:registry": "tsx scripts/build-registry.ts",
     "build:contents": "tsx scripts/build-contents.ts"
   },
   "dependencies": {
-    "@ark-ui/solid": "^3.0.0",
+    "@ark-ui/solid": "^3.2.1",
     "@corvu/drawer": "^0.2.0",
+    "@corvu/otp-field": "^0.1.1",
     "@corvu/resizable": "^0.2.0",
     "@faker-js/faker": "^8.4.1",
-    "@kobalte/core": "^0.13.1",
+    "@kobalte/core": "^0.13.3",
     "@mdx-js/mdx": "^2.3.0",
     "@solid-primitives/storage": "^3.5.0",
     "@solidjs/meta": "^0.29.4",
     "@solidjs/router": "^0.13.3",
-    "@solidjs/start": "^1.0.0",
+    "@solidjs/start": "^1.0.1",
     "@tanstack/solid-table": "^8.15.3",
     "@vinxi/plugin-mdx": "^3.7.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "cmdk-solid": "^1.0.1",
     "embla-carousel-autoplay": "8.0.0",
-    "embla-carousel-solid": "8.0.0",
+    "embla-carousel-solid": "8.1.5",
     "solid-js": "^1.8.17",
     "solid-mdx": "^0.0.7",
     "solid-sonner": "^0.2.6",
@@ -67,6 +68,11 @@
   },
   "private": true,
   "lint-staged": {
-    "src/**/*.{ts,tsx}": ["bun build:registry", "bun check"]
+    "src/**/*.{ts,tsx}": [
+      "bun build:registry",
+      "bun run format",
+      "biome check --apply-unsafe --staged --no-errors-on-unmatched",
+      "bun run lint --fix"
+    ]
   }
 }

@@ -1,11 +1,17 @@
 import { cn } from "@/libs/cn";
 import type { PolymorphicProps } from "@kobalte/core/polymorphic";
-import * as ToastPrimitive from "@kobalte/core/toast";
-import { mergeDefaultProps } from "@kobalte/utils";
+import type {
+  ToastDescriptionProps,
+  ToastListProps,
+  ToastRegionProps,
+  ToastRootProps,
+  ToastTitleProps
+} from "@kobalte/core/toast";
+import { Toast as ToastPrimitive } from "@kobalte/core/toast";
 import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
 import type { ComponentProps, ValidComponent, VoidComponent, VoidProps } from "solid-js";
-import { splitProps } from "solid-js";
+import { mergeProps, splitProps } from "solid-js";
 import { Portal } from "solid-js/web";
 
 export const toastVariants = cva(
@@ -24,30 +30,29 @@ export const toastVariants = cva(
   }
 );
 
-type ToastProps = ToastPrimitive.ToastRootProps &
+type toastProps<T extends ValidComponent = "li"> = ToastRootProps<T> &
   VariantProps<typeof toastVariants> & {
     class?: string;
   };
 
-export const Toast = <T extends ValidComponent = "li">(props: PolymorphicProps<T, ToastProps>) => {
-  const [local, rest] = splitProps(props as ToastProps, ["class", "variant"]);
+export const Toast = <T extends ValidComponent = "li">(
+  props: PolymorphicProps<T, toastProps<T>>
+) => {
+  const [local, rest] = splitProps(props as toastProps, ["class", "variant"]);
 
   return (
-    <ToastPrimitive.Root
-      class={cn(toastVariants({ variant: local.variant }), local.class)}
-      {...rest}
-    />
+    <ToastPrimitive class={cn(toastVariants({ variant: local.variant }), local.class)} {...rest} />
   );
 };
 
-type ToastTitleProps = ToastPrimitive.ToastTitleProps & {
+type toastTitleProps<T extends ValidComponent = "div"> = ToastTitleProps<T> & {
   class?: string;
 };
 
 export const ToastTitle = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, ToastTitleProps>
+  props: PolymorphicProps<T, toastTitleProps<T>>
 ) => {
-  const [local, rest] = splitProps(props as ToastTitleProps, ["class"]);
+  const [local, rest] = splitProps(props as toastTitleProps, ["class"]);
 
   return (
     <ToastPrimitive.Title
@@ -57,30 +62,30 @@ export const ToastTitle = <T extends ValidComponent = "div">(
   );
 };
 
-type ToastDescriptionProps = ToastPrimitive.ToastDescriptionProps & {
+type toastDescriptionProps<T extends ValidComponent = "div"> = ToastDescriptionProps<T> & {
   class?: string;
 };
 
 export const ToastDescription = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, ToastDescriptionProps>
+  props: PolymorphicProps<T, toastDescriptionProps<T>>
 ) => {
-  const [local, rest] = splitProps(props as ToastDescriptionProps, ["class"]);
+  const [local, rest] = splitProps(props as toastDescriptionProps, ["class"]);
 
   return <ToastPrimitive.Description class={cn("text-sm opacity-90", local.class)} {...rest} />;
 };
 
-type ToastRegionProps = ToastPrimitive.ToastRegionProps & {
+type toastRegionProps<T extends ValidComponent = "div"> = ToastRegionProps & {
   class?: string;
 };
 
 export const ToastRegion = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, ToastRegionProps>
+  props: PolymorphicProps<T, toastRegionProps<T>>
 ) => {
-  const merge = mergeDefaultProps(
+  const merge = mergeProps<toastRegionProps[]>(
     {
       swipeDirection: "down"
     },
-    props as ToastRegionProps
+    props
   );
 
   return (
@@ -90,16 +95,16 @@ export const ToastRegion = <T extends ValidComponent = "div">(
   );
 };
 
-type ToastListProps = VoidProps<
-  ToastPrimitive.ToastListProps & {
+type toastListProps<T extends ValidComponent = "ol"> = VoidProps<
+  ToastListProps<T> & {
     class?: string;
   }
 >;
 
 export const ToastList = <T extends ValidComponent = "ol">(
-  props: PolymorphicProps<T, ToastListProps>
+  props: PolymorphicProps<T, toastListProps<T>>
 ) => {
-  const [local, rest] = splitProps(props as ToastListProps, ["class"]);
+  const [local, rest] = splitProps(props as toastListProps, ["class"]);
 
   return (
     <ToastPrimitive.List

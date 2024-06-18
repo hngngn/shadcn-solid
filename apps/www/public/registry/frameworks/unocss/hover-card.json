@@ -1,12 +1,10 @@
 {
   "name": "hover-card",
-  "dependencies": [
-    "@kobalte/core"
-  ],
+  "dependencies": ["@kobalte/core"],
   "files": [
     {
       "name": "hover-card.tsx",
-      "content": "import { cn } from \"@/libs/cn\";\r\nimport * as HoverCardPrimitive from \"@kobalte/core/hover-card\";\r\nimport type { PolymorphicProps } from \"@kobalte/core/polymorphic\";\r\nimport { type ValidComponent, splitProps } from \"solid-js\";\r\n\r\nexport const HoverCard = HoverCardPrimitive.Root;\r\nexport const HoverCardTrigger = HoverCardPrimitive.Trigger;\r\n\r\ntype HoverCardContentProps = HoverCardPrimitive.HoverCardContentProps & {\r\n  class?: string;\r\n};\r\n\r\nexport const HoverCardContent = <T extends ValidComponent = \"div\">(\r\n  props: PolymorphicProps<T, HoverCardContentProps>\r\n) => {\r\n  const [local, rest] = splitProps(props as HoverCardContentProps, [\"class\"]);\r\n\r\n  return (\r\n    <HoverCardPrimitive.Portal>\r\n      <HoverCardPrimitive.Content\r\n        class={cn(\r\n          \"z-50 w-64 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none data-[expanded]:(animate-in fade-in-0 zoom-in-95) data-[closed]:(animate-out fade-out-0 zoom-out-95)\",\r\n          local.class\r\n        )}\r\n        {...rest}\r\n      />\r\n    </HoverCardPrimitive.Portal>\r\n  );\r\n};\r\n"
+      "content": "import { cn } from \"@/libs/cn\";\nimport type { HoverCardContentProps } from \"@kobalte/core/hover-card\";\nimport { HoverCard as HoverCardPrimitive } from \"@kobalte/core/hover-card\";\nimport type { PolymorphicProps } from \"@kobalte/core/polymorphic\";\nimport type { ValidComponent } from \"solid-js\";\nimport { splitProps } from \"solid-js\";\n\nexport const HoverCard = HoverCardPrimitive;\nexport const HoverCardTrigger = HoverCardPrimitive.Trigger;\n\ntype hoverCardContentProps<T extends ValidComponent = \"div\"> = HoverCardContentProps<T> & {\n  class?: string;\n};\n\nexport const HoverCardContent = <T extends ValidComponent = \"div\">(\n  props: PolymorphicProps<T, hoverCardContentProps<T>>\n) => {\n  const [local, rest] = splitProps(props as hoverCardContentProps, [\"class\"]);\n\n  return (\n    <HoverCardPrimitive.Portal>\n      <HoverCardPrimitive.Content\n        class={cn(\n          \"z-50 w-64 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none data-[expanded]:(animate-in fade-in-0 zoom-in-95) data-[closed]:(animate-out fade-out-0 zoom-out-95)\",\n          local.class\n        )}\n        {...rest}\n      />\n    </HoverCardPrimitive.Portal>\n  );\n};\n"
     }
   ],
   "type": "components:ui"

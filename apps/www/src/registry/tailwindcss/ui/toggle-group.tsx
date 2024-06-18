@@ -1,16 +1,10 @@
 import { cn } from "@/libs/cn";
 import type { PolymorphicProps } from "@kobalte/core/polymorphic";
-import * as ToggleGroupPrimitive from "@kobalte/core/toggle-group";
+import type { ToggleGroupItemProps, ToggleGroupRootProps } from "@kobalte/core/toggle-group";
+import { ToggleGroup as ToggleGroupPrimitive } from "@kobalte/core/toggle-group";
 import type { VariantProps } from "class-variance-authority";
-import {
-  type Accessor,
-  type ParentProps,
-  type ValidComponent,
-  createContext,
-  createMemo,
-  splitProps,
-  useContext
-} from "solid-js";
+import type { Accessor, ParentProps, ValidComponent } from "solid-js";
+import { createContext, createMemo, splitProps, useContext } from "solid-js";
 import { toggleVariants } from "./toggle";
 
 const ToggleGroupContext = createContext<Accessor<VariantProps<typeof toggleVariants>>>();
@@ -25,17 +19,17 @@ const useToggleGroup = () => {
   return context;
 };
 
-type ToggleGroupProps = ParentProps<
-  ToggleGroupPrimitive.ToggleGroupRootProps &
+type toggleGroupProps<T extends ValidComponent = "div"> = ParentProps<
+  ToggleGroupRootProps<T> &
     VariantProps<typeof toggleVariants> & {
       class?: string;
     }
 >;
 
 export const ToggleGroup = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, ToggleGroupProps>
+  props: PolymorphicProps<T, toggleGroupProps<T>>
 ) => {
-  const [local, rest] = splitProps(props as ToggleGroupProps, [
+  const [local, rest] = splitProps(props as toggleGroupProps, [
     "class",
     "children",
     "size",
@@ -48,23 +42,23 @@ export const ToggleGroup = <T extends ValidComponent = "div">(
   }));
 
   return (
-    <ToggleGroupPrimitive.Root
+    <ToggleGroupPrimitive
       class={cn("flex items-center justify-center gap-1", local.class)}
       {...rest}
     >
       <ToggleGroupContext.Provider value={value}>{local.children}</ToggleGroupContext.Provider>
-    </ToggleGroupPrimitive.Root>
+    </ToggleGroupPrimitive>
   );
 };
 
-type ToggleGroupItemProps = ToggleGroupPrimitive.ToggleGroupItemProps & {
+type toggleGroupItemProps<T extends ValidComponent = "button"> = ToggleGroupItemProps<T> & {
   class?: string;
 };
 
 export const ToggleGroupItem = <T extends ValidComponent = "button">(
-  props: PolymorphicProps<T, ToggleGroupItemProps>
+  props: PolymorphicProps<T, toggleGroupItemProps<T>>
 ) => {
-  const [local, rest] = splitProps(props as ToggleGroupItemProps, ["class"]);
+  const [local, rest] = splitProps(props as toggleGroupItemProps, ["class"]);
   const context = useToggleGroup();
 
   return (

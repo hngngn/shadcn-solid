@@ -1,15 +1,11 @@
 {
   "name": "textarea",
-  "dependencies": [
-    "@kobalte/core"
-  ],
-  "registryDependencies": [
-    "textfield"
-  ],
+  "dependencies": ["@kobalte/core"],
+  "registryDependencies": ["textfield"],
   "files": [
     {
       "name": "textarea.tsx",
-      "content": "import { cn } from \"@/libs/cn\";\r\nimport type { PolymorphicProps } from \"@kobalte/core/polymorphic\";\r\nimport * as TextFieldPrimitive from \"@kobalte/core/text-field\";\r\nimport type { ValidComponent, VoidProps } from \"solid-js\";\r\nimport { splitProps } from \"solid-js\";\r\n\r\ntype TextAreaProps = VoidProps<\r\n  TextFieldPrimitive.TextFieldTextAreaProps & {\r\n    class?: string;\r\n  }\r\n>;\r\n\r\nexport const TextArea = <T extends ValidComponent = \"textarea\">(\r\n  props: PolymorphicProps<T, TextAreaProps>\r\n) => {\r\n  const [local, rest] = splitProps(props as TextAreaProps, [\"class\"]);\r\n\r\n  return (\r\n    <TextFieldPrimitive.TextArea\r\n      class={cn(\r\n        \"flex min-h-[60px] w-full rounded-md border border-input bg-inherit px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:(outline-none ring-1.5 ring-ring) disabled:(cursor-not-allowed opacity-50) transition-shadow\",\r\n        local.class\r\n      )}\r\n      {...rest}\r\n    />\r\n  );\r\n};\r\n"
+      "content": "import { cn } from \"@/libs/cn\";\nimport type { PolymorphicProps } from \"@kobalte/core/polymorphic\";\nimport type { TextFieldTextAreaProps } from \"@kobalte/core/text-field\";\nimport { TextArea as TextFieldPrimitive } from \"@kobalte/core/text-field\";\nimport type { ValidComponent, VoidProps } from \"solid-js\";\nimport { splitProps } from \"solid-js\";\n\ntype textAreaProps<T extends ValidComponent = \"textarea\"> = VoidProps<\n  TextFieldTextAreaProps<T> & {\n    class?: string;\n  }\n>;\n\nexport const TextArea = <T extends ValidComponent = \"textarea\">(\n  props: PolymorphicProps<T, textAreaProps<T>>\n) => {\n  const [local, rest] = splitProps(props as textAreaProps, [\"class\"]);\n\n  return (\n    <TextFieldPrimitive\n      class={cn(\n        \"flex min-h-[60px] w-full rounded-md border border-input bg-inherit px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:(outline-none ring-1.5 ring-ring) disabled:(cursor-not-allowed opacity-50) transition-shadow\",\n        local.class\n      )}\n      {...rest}\n    />\n  );\n};\n"
     }
   ],
   "type": "components:ui"

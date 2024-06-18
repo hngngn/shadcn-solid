@@ -1,5 +1,6 @@
 import { cn } from "@/libs/cn";
-import * as ButtonPrimitive from "@kobalte/core/button";
+import type { ButtonRootProps } from "@kobalte/core/button";
+import { Button as ButtonPrimitive } from "@kobalte/core/button";
 import type { PolymorphicProps } from "@kobalte/core/polymorphic";
 import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
@@ -33,18 +34,18 @@ export const buttonVariants = cva(
   }
 );
 
-type ButtonProps = ButtonPrimitive.ButtonRootProps &
+type buttonProps<T extends ValidComponent = "button"> = ButtonRootProps<T> &
   VariantProps<typeof buttonVariants> & {
     class?: string;
   };
 
 export const Button = <T extends ValidComponent = "button">(
-  props: PolymorphicProps<T, ButtonProps>
+  props: PolymorphicProps<T, buttonProps<T>>
 ) => {
-  const [local, rest] = splitProps(props as ButtonProps, ["class", "variant", "size"]);
+  const [local, rest] = splitProps(props as buttonProps, ["class", "variant", "size"]);
 
   return (
-    <ButtonPrimitive.Root
+    <ButtonPrimitive
       class={cn(
         buttonVariants({
           size: local.size,

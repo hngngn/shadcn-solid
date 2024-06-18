@@ -36,12 +36,17 @@ module.exports = {
           from: { height: "var(--kb-collapsible-content-height)" },
           to: { height: 0 },
         },
+        "caret-blink": {
+          "0%,70%,100%": { opacity: "1" },
+          "20%,50%": { opacity: "0" }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "collapsible-down": "collapsible-down 0.2s ease-out",
         "collapsible-up": "collapsible-up 0.2s ease-out",
+        "caret-blink": "caret-blink 1.25s ease-out infinite"
       },
     },
   },
@@ -120,12 +125,17 @@ module.exports = {
           from: { height: "var(--kb-collapsible-content-height)" },
           to: { height: 0 },
         },
+        "caret-blink": {
+          "0%,70%,100%": { opacity: "1" },
+          "20%,50%": { opacity: "0" }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "collapsible-down": "collapsible-down 0.2s ease-out",
         "collapsible-up": "collapsible-up 0.2s ease-out",
+        "caret-blink": "caret-blink 1.25s ease-out infinite"
       },
     },
   },
@@ -164,19 +174,25 @@ export default defineConfig({
           "{ from { height: 0 } to { height: var(--kb-collapsible-content-height) } }",
         "collapsible-up":
           "{ from { height: var(--kb-collapsible-content-height) } to { height: 0 } }",
+        "caret-blink": "{ 0%,70%,100% { opacity: 1 } 20%,50% { opacity: 0 } }"
       },
       timingFns: {
         "accordion-down": "ease-out",
         "accordion-up": "ease-out",
         "collapsible-down": "ease-out",
         "collapsible-up": "ease-out",
+        "caret-blink": "ease-out"
       },
       durations: {
         "accordion-down": "0.2s",
         "accordion-up": "0.2s",
         "collapsible-down": "0.2s",
         "collapsible-up": "0.2s",
+        "caret-blink": "1.25s"
       },
+      counts: {
+        "caret-blink": "infinite"
+      }
     },
   },
 });
@@ -253,19 +269,25 @@ export default defineConfig({
           "{ from { height: 0 } to { height: var(--kb-collapsible-content-height) } }",
         "collapsible-up":
           "{ from { height: var(--kb-collapsible-content-height) } to { height: 0 } }",
+        "caret-blink": "{ 0%,70%,100% { opacity: 1 } 20%,50% { opacity: 0 } }"
       },
       timingFns: {
         "accordion-down": "ease-out",
         "accordion-up": "ease-out",
         "collapsible-down": "ease-out",
         "collapsible-up": "ease-out",
+        "caret-blink": "ease-out"
       },
       durations: {
         "accordion-down": "0.2s",
         "accordion-up": "0.2s",
         "collapsible-down": "0.2s",
         "collapsible-up": "0.2s",
+        "caret-blink": "1.25s"
       },
+      counts: {
+        "caret-blink": "infinite"
+      }
     },
   },
 });

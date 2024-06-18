@@ -110,6 +110,18 @@ const ui = [
     files: ["ui/image.tsx"]
   },
   {
+    name: "menubar",
+    type: "components:ui",
+    dependencies: ["@kobalte/core"],
+    files: ["ui/menubar.tsx"]
+  },
+  {
+    name: "otp-field",
+    type: "components:ui",
+    dependencies: ["@corvu/otp-field"],
+    files: ["ui/otp-field.tsx"]
+  },
+  {
     name: "popover",
     type: "components:ui",
     dependencies: ["@kobalte/core"],
@@ -302,6 +314,11 @@ const example = [
     files: ["example/button-with-icon.tsx"]
   },
   {
+    name: "calendar-demo",
+    type: "components:example",
+    files: ["example/calendar-demo.tsx"]
+  },
+  {
     name: "button-loading",
     type: "components:example",
     files: ["example/button-loading.tsx"]
@@ -440,6 +457,26 @@ const example = [
     name: "image-demo",
     type: "components:example",
     files: ["example/image-demo.tsx"]
+  },
+  {
+    name: "menubar-demo",
+    type: "components:example",
+    files: ["example/menubar-demo.tsx"]
+  },
+  {
+    name: "otp-field-demo",
+    type: "components:example",
+    files: ["example/otp-field-demo.tsx"]
+  },
+  {
+    name: "otp-field-with-pattern-demo",
+    type: "components:example",
+    files: ["example/otp-field-with-pattern-demo.tsx"]
+  },
+  {
+    name: "otp-field-with-controlled-demo",
+    type: "components:example",
+    files: ["example/otp-field-with-controlled-demo.tsx"]
   },
   {
     name: "popover-demo",

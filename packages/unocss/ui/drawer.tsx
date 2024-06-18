@@ -8,16 +8,16 @@ export const Drawer = DrawerPrimitive;
 export const DrawerTrigger = DrawerPrimitive.Trigger;
 export const DrawerClose = DrawerPrimitive.Close;
 
-type DrawerContentProps = ParentProps<
-  ContentProps & {
+type drawerContentProps<T extends ValidComponent = "div"> = ParentProps<
+  ContentProps<T> & {
     class?: string;
   }
 >;
 
 export const DrawerContent = <T extends ValidComponent = "div">(
-  props: DynamicProps<T, DrawerContentProps>
+  props: DynamicProps<T, drawerContentProps<T>>
 ) => {
-  const [local, rest] = splitProps(props as DrawerContentProps, ["class", "children"]);
+  const [local, rest] = splitProps(props as drawerContentProps, ["class", "children"]);
   const ctx = DrawerPrimitive.useContext();
 
   return (

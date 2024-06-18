@@ -1,37 +1,43 @@
 import { cn } from "@/libs/cn";
-import * as ImagePrimitive from "@kobalte/core/image";
+import type { ImageFallbackProps, ImageImgProps, ImageRootProps } from "@kobalte/core/image";
+import { Image as ImagePrimitive } from "@kobalte/core/image";
 import type { PolymorphicProps } from "@kobalte/core/polymorphic";
-import { type ValidComponent, splitProps } from "solid-js";
+import type { ValidComponent } from "solid-js";
+import { splitProps } from "solid-js";
 
-type ImageRootProps = ImagePrimitive.ImageRootProps & { class?: string };
+type imageRootProps<T extends ValidComponent = "span"> = ImageRootProps<T> & { class?: string };
 
 export const ImageRoot = <T extends ValidComponent = "span">(
-  props: PolymorphicProps<T, ImageRootProps>
+  props: PolymorphicProps<T, imageRootProps<T>>
 ) => {
-  const [local, rest] = splitProps(props as ImageRootProps, ["class"]);
+  const [local, rest] = splitProps(props as imageRootProps, ["class"]);
 
   return (
-    <ImagePrimitive.Root
+    <ImagePrimitive
       class={cn("relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full", local.class)}
       {...rest}
     />
   );
 };
 
-type ImageProps = ImagePrimitive.ImageImgProps & { class?: string };
+type imageProps<T extends ValidComponent = "img"> = ImageImgProps<T> & { class?: string };
 
-export const Image = <T extends ValidComponent = "img">(props: PolymorphicProps<T, ImageProps>) => {
-  const [local, rest] = splitProps(props as ImageProps, ["class"]);
+export const Image = <T extends ValidComponent = "img">(
+  props: PolymorphicProps<T, imageProps<T>>
+) => {
+  const [local, rest] = splitProps(props as imageProps, ["class"]);
 
   return <ImagePrimitive.Img class={cn("aspect-square h-full w-full", local.class)} {...rest} />;
 };
 
-type ImageFallbackProps = ImagePrimitive.ImageFallbackProps & { class?: string };
+type imageFallbackProps<T extends ValidComponent = "span"> = ImageFallbackProps<T> & {
+  class?: string;
+};
 
 export const ImageFallback = <T extends ValidComponent = "span">(
-  props: PolymorphicProps<T, ImageFallbackProps>
+  props: PolymorphicProps<T, imageFallbackProps<T>>
 ) => {
-  const [local, rest] = splitProps(props as ImageFallbackProps, ["class"]);
+  const [local, rest] = splitProps(props as imageFallbackProps, ["class"]);
 
   return (
     <ImagePrimitive.Fallback

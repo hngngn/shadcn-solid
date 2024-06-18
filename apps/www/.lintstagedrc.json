@@ -1,6 +1,8 @@
 {
   "src/**/*.{ts,tsx}": [
     "bun build:registry",
-    "bun check"
+    "bun run format",
+    "biome check --apply-unsafe --staged --no-errors-on-unmatched",
+    "bun run lint --fix"
   ]
 }
