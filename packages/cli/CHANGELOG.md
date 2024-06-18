@@ -1,5 +1,11 @@
 # shadcn-solid
 
+## 0.7.4
+
+### Patch Changes
+
+- [#86](https://github.com/hngngn/shadcn-solid/pull/86) [`b9bcbab`](https://github.com/hngngn/shadcn-solid/commit/b9bcbab47fee4306a4dda697083824d86526a2ff) Thanks [@hngngn](https://github.com/hngngn)! - update templates
+
 ## 0.7.3
 
 ### Patch Changes
