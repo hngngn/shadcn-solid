@@ -1,6 +1,8 @@
 {
   "name": "sheet",
-  "dependencies": ["@kobalte/core"],
+  "dependencies": [
+    "@kobalte/core"
+  ],
   "files": [
     {
       "name": "sheet.tsx",

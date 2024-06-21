@@ -1,6 +1,8 @@
 {
   "name": "hover-card",
-  "dependencies": ["@kobalte/core"],
+  "dependencies": [
+    "@kobalte/core"
+  ],
   "files": [
     {
       "name": "hover-card.tsx",

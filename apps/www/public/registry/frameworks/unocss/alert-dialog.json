@@ -1,7 +1,11 @@
 {
   "name": "alert-dialog",
-  "dependencies": ["@kobalte/core"],
-  "registryDependencies": ["button"],
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
   "files": [
     {
       "name": "alert-dialog.tsx",

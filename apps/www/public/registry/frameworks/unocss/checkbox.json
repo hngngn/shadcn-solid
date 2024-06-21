@@ -1,6 +1,8 @@
 {
   "name": "checkbox",
-  "dependencies": ["@kobalte/core"],
+  "dependencies": [
+    "@kobalte/core"
+  ],
   "files": [
     {
       "name": "checkbox.tsx",

@@ -24,22 +24,25 @@ export const TextFieldRoot = <T extends ValidComponent = "div">(
   return <TextFieldPrimitive class={cn("space-y-1", local.class)} {...rest} />;
 };
 
-const textfieldLabel = cva("text-sm data-[disabled]:(cursor-not-allowed opacity-70) font-medium", {
-  variants: {
-    label: {
-      true: "data-[invalid]:text-destructive"
+export const textfieldLabel = cva(
+  "text-sm data-[disabled]:(cursor-not-allowed opacity-70) font-medium",
+  {
+    variants: {
+      label: {
+        true: "data-[invalid]:text-destructive"
+      },
+      error: {
+        true: "text-destructive"
+      },
+      description: {
+        true: "font-normal text-muted-foreground"
+      }
     },
-    error: {
-      true: "text-destructive"
-    },
-    description: {
-      true: "font-normal text-muted-foreground"
+    defaultVariants: {
+      label: true
     }
-  },
-  defaultVariants: {
-    label: true
   }
-});
+);
 
 type textFieldLabelProps<T extends ValidComponent = "label"> = TextFieldLabelProps<T> & {
   class?: string;

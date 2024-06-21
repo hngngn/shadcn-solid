@@ -1,6 +1,8 @@
 {
   "name": "separator",
-  "dependencies": ["@kobalte/core"],
+  "dependencies": [
+    "@kobalte/core"
+  ],
   "files": [
     {
       "name": "separator.tsx",

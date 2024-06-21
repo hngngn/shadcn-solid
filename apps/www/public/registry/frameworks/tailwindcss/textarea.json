@@ -1,7 +1,11 @@
 {
   "name": "textarea",
-  "dependencies": ["@kobalte/core"],
-  "registryDependencies": ["textfield"],
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "registryDependencies": [
+    "textfield"
+  ],
   "files": [
     {
       "name": "textarea.tsx",

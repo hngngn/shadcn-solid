@@ -137,6 +137,13 @@ export const Index = {
       component: lazy(() => import("@/registry/tailwindcss/ui/menubar")),
       files: ["registry/tailwindcss/ui/menubar.tsx"],
     },
+    "number-field": {
+      name: "number-field",
+      type: "components:ui",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/tailwindcss/ui/number-field")),
+      files: ["registry/tailwindcss/ui/number-field.tsx"],
+    },
     "otp-field": {
       name: "otp-field",
       type: "components:ui",
@@ -591,6 +598,27 @@ export const Index = {
       registryDependencies: undefined,
       component: lazy(() => import("@/registry/tailwindcss/example/menubar-demo")),
       files: ["registry/tailwindcss/example/menubar-demo.tsx"],
+    },
+    "number-field-demo": {
+      name: "number-field-demo",
+      type: "components:example",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/tailwindcss/example/number-field-demo")),
+      files: ["registry/tailwindcss/example/number-field-demo.tsx"],
+    },
+    "number-field-disabled-demo": {
+      name: "number-field-disabled-demo",
+      type: "components:example",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/tailwindcss/example/number-field-disabled-demo")),
+      files: ["registry/tailwindcss/example/number-field-disabled-demo.tsx"],
+    },
+    "number-field-with-error-demo": {
+      name: "number-field-with-error-demo",
+      type: "components:example",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/tailwindcss/example/number-field-with-error-demo")),
+      files: ["registry/tailwindcss/example/number-field-with-error-demo.tsx"],
     },
     "otp-field-demo": {
       name: "otp-field-demo",

@@ -1,6 +1,8 @@
 {
   "name": "tooltip",
-  "dependencies": ["@kobalte/core"],
+  "dependencies": [
+    "@kobalte/core"
+  ],
   "files": [
     {
       "name": "tooltip.tsx",

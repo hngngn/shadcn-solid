@@ -1,6 +1,8 @@
 {
   "name": "switch",
-  "dependencies": ["@kobalte/core"],
+  "dependencies": [
+    "@kobalte/core"
+  ],
   "files": [
     {
       "name": "switch.tsx",

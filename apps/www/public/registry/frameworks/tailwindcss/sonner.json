@@ -1,6 +1,9 @@
 {
   "name": "sonner",
-  "dependencies": ["solid-sonner", "@kobalte/core"],
+  "dependencies": [
+    "solid-sonner",
+    "@kobalte/core"
+  ],
   "files": [
     {
       "name": "sonner.tsx",

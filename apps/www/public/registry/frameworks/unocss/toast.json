@@ -1,6 +1,8 @@
 {
   "name": "toast",
-  "dependencies": ["@kobalte/core"],
+  "dependencies": [
+    "@kobalte/core"
+  ],
   "files": [
     {
       "name": "toast.tsx",

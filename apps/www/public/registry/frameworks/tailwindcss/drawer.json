@@ -1,6 +1,8 @@
 {
   "name": "drawer",
-  "dependencies": ["@corvu/drawer"],
+  "dependencies": [
+    "@corvu/drawer"
+  ],
   "files": [
     {
       "name": "drawer.tsx",

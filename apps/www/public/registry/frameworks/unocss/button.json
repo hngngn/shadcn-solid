@@ -1,6 +1,8 @@
 {
   "name": "button",
-  "dependencies": ["@kobalte/core"],
+  "dependencies": [
+    "@kobalte/core"
+  ],
   "files": [
     {
       "name": "button.tsx",

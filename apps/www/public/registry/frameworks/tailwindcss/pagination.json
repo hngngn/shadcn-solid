@@ -1,7 +1,11 @@
 {
   "name": "pagination",
-  "dependencies": ["@kobalte/core"],
-  "registryDependencies": ["button"],
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
   "files": [
     {
       "name": "pagination.tsx",

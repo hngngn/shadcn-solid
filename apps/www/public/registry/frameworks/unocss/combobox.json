@@ -1,6 +1,8 @@
 {
   "name": "combobox",
-  "dependencies": ["@kobalte/core"],
+  "dependencies": [
+    "@kobalte/core"
+  ],
   "files": [
     {
       "name": "combobox.tsx",

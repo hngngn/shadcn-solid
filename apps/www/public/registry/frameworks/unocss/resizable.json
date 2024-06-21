@@ -1,6 +1,8 @@
 {
   "name": "resizable",
-  "dependencies": ["@corvu/resizable"],
+  "dependencies": [
+    "@corvu/resizable"
+  ],
   "files": [
     {
       "name": "resizable.tsx",

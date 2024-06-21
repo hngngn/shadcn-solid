@@ -1,6 +1,8 @@
 {
   "name": "toggle",
-  "dependencies": ["@kobalte/core"],
+  "dependencies": [
+    "@kobalte/core"
+  ],
   "files": [
     {
       "name": "toggle.tsx",

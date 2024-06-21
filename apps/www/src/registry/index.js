@@ -116,6 +116,12 @@ const ui = [
     files: ["ui/menubar.tsx"]
   },
   {
+    name: "number-field",
+    type: "components:ui",
+    dependencies: ["@kobalte/core"],
+    files: ["ui/number-field.tsx"]
+  },
+  {
     name: "otp-field",
     type: "components:ui",
     dependencies: ["@corvu/otp-field"],
@@ -462,6 +468,21 @@ const example = [
     name: "menubar-demo",
     type: "components:example",
     files: ["example/menubar-demo.tsx"]
+  },
+  {
+    name: "number-field-demo",
+    type: "components:example",
+    files: ["example/number-field-demo.tsx"]
+  },
+  {
+    name: "number-field-disabled-demo",
+    type: "components:example",
+    files: ["example/number-field-disabled-demo.tsx"]
+  },
+  {
+    name: "number-field-with-error-demo",
+    type: "components:example",
+    files: ["example/number-field-with-error-demo.tsx"]
   },
   {
     name: "otp-field-demo",

@@ -24,7 +24,7 @@ export const TextFieldRoot = <T extends ValidComponent = "div">(
   return <TextFieldPrimitive class={cn("space-y-1", local.class)} {...rest} />;
 };
 
-const textfieldLabel = cva(
+export const textfieldLabel = cva(
   "text-sm data-[disabled]:cursor-not-allowed data-[disabled]:opacity-70 font-medium",
   {
     variants: {
@@ -32,7 +32,7 @@ const textfieldLabel = cva(
         true: "data-[invalid]:text-destructive"
       },
       error: {
-        true: "text-destructive"
+        true: "text-destructive text-xs"
       },
       description: {
         true: "font-normal text-muted-foreground"
@@ -85,7 +85,7 @@ export const TextFieldDescription = <T extends ValidComponent = "div">(
 
   return (
     <TextFieldPrimitive.Description
-      class={cn(textfieldLabel({ description: true }), local.class)}
+      class={cn(textfieldLabel({ description: true, label: false }), local.class)}
       {...rest}
     />
   );

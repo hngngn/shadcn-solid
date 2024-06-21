@@ -1,7 +1,11 @@
 {
   "name": "carousel",
-  "dependencies": ["embla-carousel-solid"],
-  "registryDependencies": ["button"],
+  "dependencies": [
+    "embla-carousel-solid"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
   "files": [
     {
       "name": "carousel.tsx",

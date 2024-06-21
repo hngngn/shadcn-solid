@@ -194,6 +194,12 @@ export const docsConfig: TDocsConfig = {
           label: "New"
         },
         {
+          title: "Number Field",
+          href: "/docs/components/number-field",
+          items: [],
+          label: "New"
+        },
+        {
           title: "Navigation Menu",
           href: "/docs/components/navigation-menu",
           items: [],

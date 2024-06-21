@@ -1,6 +1,8 @@
 {
   "name": "tabs",
-  "dependencies": ["@kobalte/core"],
+  "dependencies": [
+    "@kobalte/core"
+  ],
   "files": [
     {
       "name": "tabs.tsx",

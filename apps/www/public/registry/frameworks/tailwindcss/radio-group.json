@@ -1,6 +1,8 @@
 {
   "name": "radio-group",
-  "dependencies": ["@kobalte/core"],
+  "dependencies": [
+    "@kobalte/core"
+  ],
   "files": [
     {
       "name": "radio-group.tsx",

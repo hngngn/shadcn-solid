@@ -1,6 +1,8 @@
 {
   "name": "menubar",
-  "dependencies": ["@kobalte/core"],
+  "dependencies": [
+    "@kobalte/core"
+  ],
   "files": [
     {
       "name": "menubar.tsx",

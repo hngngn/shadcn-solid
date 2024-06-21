@@ -1,6 +1,8 @@
 {
   "name": "alert",
-  "dependencies": ["@kobalte/core"],
+  "dependencies": [
+    "@kobalte/core"
+  ],
   "files": [
     {
       "name": "alert.tsx",

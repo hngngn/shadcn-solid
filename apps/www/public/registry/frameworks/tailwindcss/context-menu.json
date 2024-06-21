@@ -1,6 +1,8 @@
 {
   "name": "context-menu",
-  "dependencies": ["@kobalte/core"],
+  "dependencies": [
+    "@kobalte/core"
+  ],
   "files": [
     {
       "name": "context-menu.tsx",
