@@ -2,7 +2,6 @@ import { cn } from "@/libs/cn";
 import type {
   DialogContentProps,
   DialogDescriptionProps,
-  DialogOverlayProps,
   DialogTitleProps
 } from "@kobalte/core/dialog";
 import { Dialog as DialogPrimitive } from "@kobalte/core/dialog";
@@ -15,28 +14,8 @@ import { mergeProps, splitProps } from "solid-js";
 export const Sheet = DialogPrimitive;
 export const SheetTrigger = DialogPrimitive.Trigger;
 
-type sheetOverlayProps<T extends ValidComponent = "div"> = DialogOverlayProps<T> & {
-  class?: string;
-};
-
-export const SheetOverlay = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, sheetOverlayProps<T>>
-) => {
-  const [local, rest] = splitProps(props as sheetOverlayProps, ["class"]);
-
-  return (
-    <DialogPrimitive.Overlay
-      class={cn(
-        "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0",
-        local.class
-      )}
-      {...rest}
-    />
-  );
-};
-
 export const sheetVariants = cva(
-  "fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out data-[expanded]:animate-in data-[closed]:animate-out duration-200",
+  "fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out data-[expanded]:animate-in data-[closed]:animate-out data-[expanded]:duration-200 data-[closed]:duration-200",
   {
     variants: {
       side: {
@@ -69,7 +48,11 @@ export const SheetContent = <T extends ValidComponent = "div">(
 
   return (
     <DialogPrimitive.Portal>
-      <SheetOverlay />
+      <DialogPrimitive.Overlay
+        class={cn(
+          "fixed inset-0 z-50 bg-foreground/80 data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0"
+        )}
+      />
       <DialogPrimitive.Content
         class={sheetVariants({ side: local.side, class: local.class })}
         {...rest}

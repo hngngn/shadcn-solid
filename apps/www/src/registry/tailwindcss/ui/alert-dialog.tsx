@@ -29,20 +29,18 @@ export const AlertDialogContent = <T extends ValidComponent = "div">(
     <AlertDialogPrimitive.Portal>
       <AlertDialogPrimitive.Overlay
         class={cn(
-          "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0",
-          local.class
+          "fixed inset-0 z-50 bg-foreground/80 data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0"
         )}
       />
-      <div class="fixed inset-0 z-50 flex items-center justify-center">
-        <AlertDialogPrimitive.Content
-          class={cn(
-            "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0 data-[closed]:zoom-out-95 data-[expanded]:zoom-in-95 data-[closed]:slide-out-to-left-1/2 data-[closed]:slide-out-to-top-[48%] data-[expanded]:slide-in-from-left-1/2 data-[expanded]:slide-in-from-top-[48%] sm:rounded-lg md:w-full",
-            local.class
-          )}
-          {...rest}
-        />
+      <AlertDialogPrimitive.Content
+        class={cn(
+          "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg data-[closed]:duration-200 data-[expanded]:duration-200 data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0 data-[closed]:zoom-out-95 data-[expanded]:zoom-in-95 data-[closed]:slide-out-to-left-1/2 data-[closed]:slide-out-to-top-[48%] data-[expanded]:slide-in-from-left-1/2 data-[expanded]:slide-in-from-top-[48%] sm:rounded-lg md:w-full",
+          local.class
+        )}
+        {...rest}
+      >
         {local.children}
-      </div>
+      </AlertDialogPrimitive.Content>
     </AlertDialogPrimitive.Portal>
   );
 };
