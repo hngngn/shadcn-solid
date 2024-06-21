@@ -14,7 +14,7 @@ import {
   DatePickerTableRow,
   DatePickerView,
   DatePickerViewControl,
-  DatePickerViewTrigger,
+  DatePickerViewTrigger
 } from "../../ui/date-picker";
 
 const DatePickerDemo = () => {
@@ -24,7 +24,7 @@ const DatePickerDemo = () => {
       <DatePickerContent>
         <DatePickerView view="day">
           <DatePickerContext>
-            {(api) => (
+            {api => (
               <>
                 <DatePickerViewControl>
                   <DatePickerViewTrigger>
@@ -35,24 +35,20 @@ const DatePickerDemo = () => {
                   <DatePickerTableHead>
                     <DatePickerTableRow>
                       <Index each={api().weekDays}>
-                        {(weekDay) => (
-                          <DatePickerTableHeader>
-                            {weekDay().short}
-                          </DatePickerTableHeader>
+                        {weekDay => (
+                          <DatePickerTableHeader>{weekDay().short}</DatePickerTableHeader>
                         )}
                       </Index>
                     </DatePickerTableRow>
                   </DatePickerTableHead>
                   <DatePickerTableBody>
                     <Index each={api().weeks}>
-                      {(week) => (
+                      {week => (
                         <DatePickerTableRow>
                           <Index each={week()}>
-                            {(day) => (
+                            {day => (
                               <DatePickerTableCell value={day()}>
-                                <DatePickerTableCellTrigger>
-                                  {day().day}
-                                </DatePickerTableCellTrigger>
+                                <DatePickerTableCellTrigger>{day().day}</DatePickerTableCellTrigger>
                               </DatePickerTableCell>
                             )}
                           </Index>
@@ -65,12 +61,9 @@ const DatePickerDemo = () => {
             )}
           </DatePickerContext>
         </DatePickerView>
-        <DatePickerView
-          view="month"
-          class="w-[calc(var(--preference-width)-(0.75rem*2))]"
-        >
+        <DatePickerView view="month" class="w-[calc(var(--reference-width)-(0.75rem*2))]">
           <DatePickerContext>
-            {(api) => (
+            {api => (
               <>
                 <DatePickerViewControl>
                   <DatePickerViewTrigger>
@@ -82,13 +75,13 @@ const DatePickerDemo = () => {
                     <Index
                       each={api().getMonthsGrid({
                         columns: 4,
-                        format: "short",
+                        format: "short"
                       })}
                     >
-                      {(months) => (
+                      {months => (
                         <DatePickerTableRow>
                           <Index each={months()}>
-                            {(month) => (
+                            {month => (
                               <DatePickerTableCell value={month().value}>
                                 <DatePickerTableCellTrigger>
                                   {month().label}
@@ -105,12 +98,9 @@ const DatePickerDemo = () => {
             )}
           </DatePickerContext>
         </DatePickerView>
-        <DatePickerView
-          view="year"
-          class="w-[calc(var(--preference-width)-(0.75rem*2))]"
-        >
+        <DatePickerView view="year" class="w-[calc(var(--reference-width)-(0.75rem*2))]">
           <DatePickerContext>
-            {(api) => (
+            {api => (
               <>
                 <DatePickerViewControl>
                   <DatePickerViewTrigger>
@@ -121,13 +111,13 @@ const DatePickerDemo = () => {
                   <DatePickerTableBody>
                     <Index
                       each={api().getYearsGrid({
-                        columns: 4,
+                        columns: 4
                       })}
                     >
-                      {(years) => (
+                      {years => (
                         <DatePickerTableRow>
                           <Index each={years()}>
-                            {(year) => (
+                            {year => (
                               <DatePickerTableCell value={year().value}>
                                 <DatePickerTableCellTrigger>
                                   {year().label}

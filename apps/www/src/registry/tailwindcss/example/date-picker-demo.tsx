@@ -61,7 +61,7 @@ const DatePickerDemo = () => {
             )}
           </DatePickerContext>
         </DatePickerView>
-        <DatePickerView view="month" class="w-[calc(var(--preference-width)-(0.75rem*2))]">
+        <DatePickerView view="month" class="w-[calc(var(--reference-width)-(0.75rem*2))]">
           <DatePickerContext>
             {api => (
               <>
@@ -98,7 +98,7 @@ const DatePickerDemo = () => {
             )}
           </DatePickerContext>
         </DatePickerView>
-        <DatePickerView view="year" class="w-[calc(var(--preference-width)-(0.75rem*2))]">
+        <DatePickerView view="year" class="w-[calc(var(--reference-width)-(0.75rem*2))]">
           <DatePickerContext>
             {api => (
               <>

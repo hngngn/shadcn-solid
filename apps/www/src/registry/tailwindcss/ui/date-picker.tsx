@@ -31,11 +31,19 @@ export const DatePickerRootProvider = DatePickerPrimitive.RootProvider;
 export const DatePicker = (props: DatePickerRootProps) => {
   return (
     <DatePickerPrimitive.Root
-      format={e =>
-        new Intl.DateTimeFormat("en-US", {
+      format={e => {
+        const parsedDate = new Date(Date.parse(e.toString()));
+
+        const normalizedDate = new Date(
+          parsedDate.getUTCFullYear(),
+          parsedDate.getUTCMonth(),
+          parsedDate.getUTCDate()
+        );
+
+        return new Intl.DateTimeFormat("en-US", {
           dateStyle: "long"
-        }).format(new Date(e.toString()))
-      }
+        }).format(normalizedDate);
+      }}
       {...props}
     />
   );
@@ -138,7 +146,7 @@ export const DatePickerTableCell = (props: DatePickerTableCellProps) => {
   return (
     <DatePickerPrimitive.TableCell
       class={cn(
-        "p-0 text-center text-sm",
+        "flex-1 p-0 text-center text-sm",
         "has-[[data-in-range]]:bg-accent has-[[data-in-range]]:first-of-type:rounded-l-md has-[[data-in-range]]:last-of-type:rounded-r-md",
         "has-[[data-range-end]]:rounded-r-md has-[[data-range-start]]:rounded-l-md",
         "has-[[data-outside-range][data-in-range]]:bg-accent/50",
@@ -156,7 +164,7 @@ export const DatePickerTableCellTrigger = (props: DatePickerTableCellTriggerProp
     <DatePickerPrimitive.TableCellTrigger
       class={cn(
         buttonVariants({ variant: "ghost" }),
-        "size-8 p-0 font-normal data-[selected]:opacity-100",
+        "size-8 w-full p-0 font-normal data-[selected]:opacity-100",
         "data-[today]:bg-accent data-[today]:text-accent-foreground",
         "[&:is([data-today][data-selected])]:bg-primary [&:is([data-today][data-selected])]:text-primary-foreground",
         "data-[selected]:bg-primary data-[selected]:text-primary-foreground data-[selected]:hover:bg-primary data-[selected]:hover:text-primary-foreground",
