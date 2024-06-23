@@ -1,3 +1,3 @@
 {
-  "src/**/*.{ts,tsx}": ["bun run check"]
+  "src/**/*.{ts,tsx}": ["pnpm run check"]
 }
