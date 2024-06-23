@@ -124,7 +124,7 @@ export const MDXComponent = {
   TabsTrigger: (props: ComponentProps<typeof TabsTrigger>) => {
     return (
       <TabsTrigger
-        class="rounded-none bg-transparent px-4 pb-3.5 pt-2 font-semibold data-[selected]:shadow-none"
+        class="w-fit rounded-none bg-transparent px-4 pb-3.5 pt-2 font-semibold data-[selected]:shadow-none"
         {...props}
       />
     );

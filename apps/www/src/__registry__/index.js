@@ -753,6 +753,13 @@ export const Index = {
       component: lazy(() => import("@/registry/tailwindcss/example/tabs-demo")),
       files: ["registry/tailwindcss/example/tabs-demo.tsx"],
     },
+    "tabs-orientation-demo": {
+      name: "tabs-orientation-demo",
+      type: "components:example",
+      registryDependencies: undefined,
+      component: lazy(() => import("@/registry/tailwindcss/example/tabs-orientation-demo")),
+      files: ["registry/tailwindcss/example/tabs-orientation-demo.tsx"],
+    },
     "textarea-demo": {
       name: "textarea-demo",
       type: "components:example",

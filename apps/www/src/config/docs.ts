@@ -160,7 +160,8 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Date Picker",
           href: "/docs/components/date-picker",
-          items: []
+          items: [],
+          label: "Updated"
         },
         {
           title: "Dialog",
@@ -275,7 +276,8 @@ export const docsConfig: TDocsConfig = {
         {
           title: "Tabs",
           href: "/docs/components/tabs",
-          items: []
+          items: [],
+          label: "Updated"
         },
         {
           title: "Text Field",

@@ -580,6 +580,11 @@ const example = [
     files: ["example/tabs-demo.tsx"]
   },
   {
+    name: "tabs-orientation-demo",
+    type: "components:example",
+    files: ["example/tabs-orientation-demo.tsx"]
+  },
+  {
     name: "textarea-demo",
     type: "components:example",
     files: ["example/textarea-demo.tsx"]

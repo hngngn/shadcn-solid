@@ -51,20 +51,20 @@ export const ComponentPreview: ParentComponent<ComponentPreviewProps> = props =>
     <div class={cn("group relative my-4 flex flex-col space-y-2", local.class)} {...rest}>
       <Tabs defaultValue="preview">
         <div class="pb-3">
-          <TabsList class="w-full rounded-none bg-transparent p-0">
+          <TabsList class="w-full rounded-none border-b bg-transparent p-0">
             <TabsTrigger
               value="preview"
-              class="rounded-none bg-transparent px-4 pb-3.5 pt-2 font-semibold data-[selected]:shadow-none"
+              class="w-fit rounded-none bg-transparent px-4 pb-3.5 pt-2 font-semibold data-[selected]:shadow-none"
             >
               Preview
             </TabsTrigger>
             <TabsTrigger
               value="code"
-              class="rounded-none bg-transparent px-4 pb-3.5 pt-2 font-semibold data-[selected]:shadow-none"
+              class="w-fit rounded-none bg-transparent px-4 pb-3.5 pt-2 font-semibold data-[selected]:shadow-none"
             >
               Code
             </TabsTrigger>
-            <TabsIndicator class="bg-primary" />
+            <TabsIndicator variant="underline" />
           </TabsList>
         </div>
         <TabsContent value="preview" class="relative rounded-md border has-[.is-table]:border-none">

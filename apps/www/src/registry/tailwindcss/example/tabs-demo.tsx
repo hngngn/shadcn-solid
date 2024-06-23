@@ -1,14 +1,15 @@
 import { Button } from "../ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import { Tabs, TabsContent, TabsIndicator, TabsList, TabsTrigger } from "../ui/tabs";
 import { TextField, TextFieldLabel, TextFieldRoot } from "../ui/textfield";
 
 const TabsDemo = () => {
   return (
     <Tabs defaultValue="account" class="w-[400px]">
-      <TabsList class="grid w-full grid-cols-2">
+      <TabsList>
         <TabsTrigger value="account">Account</TabsTrigger>
         <TabsTrigger value="password">Password</TabsTrigger>
+        <TabsIndicator />
       </TabsList>
       <TabsContent value="account">
         <Card>

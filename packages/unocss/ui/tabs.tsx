@@ -8,6 +8,8 @@ import type {
   TabsTriggerProps
 } from "@kobalte/core/tabs";
 import { Tabs as TabsPrimitive } from "@kobalte/core/tabs";
+import type { VariantProps } from "class-variance-authority";
+import { cva } from "class-variance-authority";
 import type { ValidComponent, VoidProps } from "solid-js";
 import { splitProps } from "solid-js";
 
@@ -37,7 +39,7 @@ export const TabsList = <T extends ValidComponent = "div">(
   return (
     <TabsPrimitive.List
       class={cn(
-        "relative flex h-9 rounded-lg bg-muted p-1 text-muted-foreground data-[orientation=vertical]:(flex-col items-stretch border-r) data-[orientation=horizontal]:(items-center border-b)",
+        "relative flex rounded-lg bg-muted p-1 text-muted-foreground data-[orientation=vertical]:(flex-col items-stretch) data-[orientation=horizontal]:items-center w-full",
         local.class
       )}
       {...rest}
@@ -57,7 +59,7 @@ export const TabsContent = <T extends ValidComponent = "div">(
   return (
     <TabsPrimitive.Content
       class={cn(
-        "mt-2 ring-offset-background focus-visible:(outline-none ring-1.5 ring-ring ring-offset-2)",
+        "data-[orientation=vertical]:ml-2 data-[orientation=horizontal]:mt-2 transition-shadow duration-200 focus-visible:(ring-offset-background outline-none ring-1.5 ring-ring ring-offset-2)",
         local.class
       )}
       {...rest}
@@ -77,7 +79,7 @@ export const TabsTrigger = <T extends ValidComponent = "button">(
   return (
     <TabsPrimitive.Trigger
       class={cn(
-        "inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-shadow focus-visible:(outline-none ring-1.5 ring-ring ring-offset-2) disabled:(pointer-events-none opacity-50) data-[selected]:(bg-background text-foreground shadow) bg-inherit",
+        "w-full relative z-10 inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium transition-colors disabled:(pointer-events-none opacity-50) data-[selected]:text-foreground peer h-7 outline-none",
         local.class
       )}
       {...rest}
@@ -85,23 +87,38 @@ export const TabsTrigger = <T extends ValidComponent = "button">(
   );
 };
 
-type tabsIndicatorProps<T extends ValidComponent = "div"> = VoidProps<
-  TabsIndicatorProps<T> & {
-    class?: string;
+const tabsIndicatorVariants = cva(
+  "absolute transition-all transition-property-[box-shadow,transform] duration-200 outline-none",
+  {
+    variants: {
+      variant: {
+        block:
+          "data-[orientation=horizontal]:(bottom-1 left-0 h-[calc(100%-0.5rem)]) data-[orientation=vertical]:(right-1 top-0 w-[calc(100%-0.5rem)]) bg-background shadow rounded-md peer-focus-visible:(ring-1.5 ring-ring ring-offset-2 ring-offset-background outline-none)",
+        underline:
+          "data-[orientation=horizontal]:(-bottom-[1px] left-0 h-2px) data-[orientation=vertical]:(-right-[1px] top-0 w-2px) bg-primary"
+      }
+    },
+    defaultVariants: {
+      variant: "block"
+    }
   }
+);
+
+type tabsIndicatorProps<T extends ValidComponent = "div"> = VoidProps<
+  TabsIndicatorProps<T> &
+    VariantProps<typeof tabsIndicatorVariants> & {
+      class?: string;
+    }
 >;
 
 export const TabsIndicator = <T extends ValidComponent = "div">(
   props: PolymorphicProps<T, tabsIndicatorProps<T>>
 ) => {
-  const [local, rest] = splitProps(props as tabsIndicatorProps, ["class"]);
+  const [local, rest] = splitProps(props as tabsIndicatorProps, ["class", "variant"]);
 
   return (
     <TabsPrimitive.Indicator
-      class={cn(
-        "absolute transition-all duration-200 data-[orientation=horizontal]:(-bottom-[1px] h-[2px]) data-[orientation=vertical]:(-right-[1px] w-[2px])",
-        local.class
-      )}
+      class={cn(tabsIndicatorVariants({ variant: local.variant }), local.class)}
       {...rest}
     />
   );

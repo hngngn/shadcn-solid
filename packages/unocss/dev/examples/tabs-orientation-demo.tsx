@@ -10,10 +10,10 @@ import {
 import { Tabs, TabsContent, TabsIndicator, TabsList, TabsTrigger } from "../../ui/tabs";
 import { TextField, TextFieldLabel, TextFieldRoot } from "../../ui/textfield";
 
-const TabsDemo = () => {
+const TabsOrientationDemo = () => {
   return (
-    <Tabs defaultValue="account" class="w-[400px]">
-      <TabsList>
+    <Tabs defaultValue="account" class="w-[500px]" orientation="vertical">
+      <TabsList class="max-w-[200px]">
         <TabsTrigger value="account">Account</TabsTrigger>
         <TabsTrigger value="password">Password</TabsTrigger>
         <TabsIndicator />
@@ -68,4 +68,4 @@ const TabsDemo = () => {
   );
 };
 
-export default TabsDemo;
+export default TabsOrientationDemo;
