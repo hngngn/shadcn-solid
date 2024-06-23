@@ -10,7 +10,7 @@ If you need any help, feel free to reach out to [@hnggngnn](https://twitter.com/
 
 This repository is a monorepo.
 
-- We use [bun](https://bun.sh) and [`workspaces`](https://bun.sh/docs/install/workspaces) for development.
+- We use [pnpm](https://pnpm.io/) and [`workspaces`](https://pnpm.io/workspaces) for development.
 - We use [Turborepo](https://turbo.build/repo) as our build system.
 - We use [changesets](https://github.com/changesets/changesets) for managing releases.
 
@@ -67,25 +67,25 @@ git checkout -b my-new-branch
 ### Install dependencies
 
 ```bash
-bun install
+pnpm i
 ```
 
 ### Run a workspace
 
-You can use the `bun --cwd` command to start the development process for a workspace.
+You can use the `pnpm -F` command to start the development process for a workspace.
 
 #### Examples
 
 1. To run the `shadcn-solid.com` website:
 
 ```bash
-bun --cwd apps/www dev
+pnpm -F www dev
 ```
 
 2. To run the `shadcn-solid` package:
 
 ```bash
-bun --cwd packages/cli dev
+pnpm -F shadcn-solid dev
 ```
 
 ## Documentation
@@ -93,7 +93,7 @@ bun --cwd packages/cli dev
 The documentation for this project is located in the `www` workspace. You can run the documentation locally by running the following command:
 
 ```bash
-bun --cwd apps/www dev
+pnpm -F www dev
 ```
 
 Documentation is written using [MDX](https://mdxjs.com). You can find the documentation files in the `apps/www/src/contents/docs` directory.
@@ -101,7 +101,7 @@ Documentation is written using [MDX](https://mdxjs.com). You can find the docume
 When adding new documentation, please ensure that:
 
 1. You update path in `docs` config.
-2. You run `bun build:contents` to add the documentation.
+2. You run `pnpm build:contents` to add the documentation.
 
 ## Components
 
@@ -123,7 +123,7 @@ When adding or modifying components, please ensure that:
 
 1. You make the changes for every style.
 2. You update the documentation.
-3. You run `bun build:registry` to update the registry.
+3. You run `pnpm build:registry` to update the registry.
 
 ## Commit Convention
 
