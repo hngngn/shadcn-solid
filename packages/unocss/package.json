@@ -1,5 +1,5 @@
 {
-  "name": "@repo-registry/unocss",
+  "name": "unocss",
   "version": "0.0.1",
   "files": ["ui"],
   "devDependencies": {

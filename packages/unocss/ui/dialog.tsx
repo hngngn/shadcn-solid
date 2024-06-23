@@ -27,7 +27,7 @@ export const DialogContent = <T extends ValidComponent = "div">(
     <DialogPrimitive.Portal>
       <DialogPrimitive.Overlay
         class={cn(
-          "fixed inset-0 z-50 bg-foreground/80 data-[expanded]:(animate-in fade-in-0) data-[closed]:(animate-out fade-out-0)"
+          "fixed inset-0 z-50 bg-black/80 data-[expanded]:(animate-in fade-in-0) data-[closed]:(animate-out fade-out-0)"
         )}
         {...rest}
       />
