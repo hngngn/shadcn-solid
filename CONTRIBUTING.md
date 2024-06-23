@@ -79,13 +79,13 @@ You can use the `pnpm -F` command to start the development process for a workspa
 1. To run the `shadcn-solid.com` website:
 
 ```bash
-pnpm -F www dev
+pnpm dev -F www
 ```
 
 2. To run the `shadcn-solid` package:
 
 ```bash
-pnpm -F shadcn-solid dev
+pnpm dev -F shadcn-solid
 ```
 
 ## Documentation
@@ -93,7 +93,7 @@ pnpm -F shadcn-solid dev
 The documentation for this project is located in the `www` workspace. You can run the documentation locally by running the following command:
 
 ```bash
-pnpm -F www dev
+pnpm dev -F www
 ```
 
 Documentation is written using [MDX](https://mdxjs.com). You can find the documentation files in the `apps/www/src/contents/docs` directory.

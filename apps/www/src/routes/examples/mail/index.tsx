@@ -1,7 +1,13 @@
 import { cn } from "@/libs/cn";
 import { Resizable, ResizableHandle, ResizablePanel } from "@/registry/tailwindcss/ui/resizable";
 import { Separator } from "@/registry/tailwindcss/ui/separator";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/registry/tailwindcss/ui/tabs";
+import {
+  Tabs,
+  TabsContent,
+  TabsIndicator,
+  TabsList,
+  TabsTrigger
+} from "@/registry/tailwindcss/ui/tabs";
 import { TextField, TextFieldRoot } from "@/registry/tailwindcss/ui/textfield";
 import { cookieStorage, makePersisted } from "@solid-primitives/storage";
 import { createSignal } from "solid-js";
@@ -247,13 +253,14 @@ const Mail = () => {
             <Tabs defaultValue="all">
               <div class="flex items-center px-4 py-2">
                 <h1 class="text-xl font-bold">Inbox</h1>
-                <TabsList class="ml-auto">
+                <TabsList class="ml-auto w-fit">
                   <TabsTrigger value="all" class="text-zinc-600 dark:text-zinc-200">
                     All mail
                   </TabsTrigger>
                   <TabsTrigger value="unread" class="text-zinc-600 dark:text-zinc-200">
                     Unread
                   </TabsTrigger>
+                  <TabsIndicator />
                 </TabsList>
               </div>
               <Separator />
