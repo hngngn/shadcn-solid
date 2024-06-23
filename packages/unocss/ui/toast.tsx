@@ -15,7 +15,7 @@ import { mergeProps, splitProps } from "solid-js";
 import { Portal } from "solid-js/web";
 
 export const toastVariants = cva(
-  "group pointer-events-auto relative flex flex-col gap-3 w-full items-center justify-between overflow-hidden rounded-md border p-4 pr-6 shadow-lg transition-all data-[swipe=cancel]:translate-y-0 data-[swipe=end]:(translate-y-[var(--kb-toast-swipe-end-y)] animate-out) data-[swipe=move]:(translate-y-[--kb-toast-swipe-move-y transition-none) data-[opened]:(animate-in slide-in-from-top-full sm:slide-in-from-bottom-full) data-[closed]:(animate-out fade-out-80 slide-out-to-top-full sm:slide-out-to-bottom-full)",
+  "group pointer-events-auto relative flex flex-col gap-3 w-full items-center justify-between overflow-hidden rounded-md border p-4 pr-6 shadow-lg data-[swipe=cancel]:translate-y-0 data-[swipe=end]:(translate-y-[var(--kb-toast-swipe-end-y)] animate-out) data-[swipe=move]:(translate-y-[--kb-toast-swipe-move-y] transition-none) data-[opened]:(animate-in slide-in-from-top-full sm:slide-in-from-bottom-full) data-[closed]:(animate-out fade-out-80 slide-out-to-top-full sm:slide-out-to-bottom-full)",
   {
     variants: {
       variant: {
@@ -74,7 +74,7 @@ export const ToastDescription = <T extends ValidComponent = "div">(
   return <ToastPrimitive.Description class={cn("text-sm opacity-90", local.class)} {...rest} />;
 };
 
-type toastRegionProps<T extends ValidComponent = "div"> = ToastRegionProps & {
+type toastRegionProps<T extends ValidComponent = "div"> = ToastRegionProps<T> & {
   class?: string;
 };
 

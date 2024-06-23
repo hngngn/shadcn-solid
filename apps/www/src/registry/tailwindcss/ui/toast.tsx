@@ -74,7 +74,7 @@ export const ToastDescription = <T extends ValidComponent = "div">(
   return <ToastPrimitive.Description class={cn("text-sm opacity-90", local.class)} {...rest} />;
 };
 
-type toastRegionProps<T extends ValidComponent = "div"> = ToastRegionProps & {
+type toastRegionProps<T extends ValidComponent = "div"> = ToastRegionProps<T> & {
   class?: string;
 };
 
