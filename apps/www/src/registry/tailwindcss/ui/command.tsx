@@ -19,7 +19,7 @@ export const Command = (props: CommandRootProps) => {
   return (
     <CommandPrimitive
       class={cn(
-        "flex size-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground",
+        "flex size-full flex-col overflow-hidden bg-popover text-popover-foreground",
         local.class
       )}
       {...rest}
