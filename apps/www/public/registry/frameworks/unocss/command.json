@@ -1,7 +1,11 @@
 {
   "name": "command",
-  "dependencies": ["cmdk-solid"],
-  "registryDependencies": ["dialog"],
+  "dependencies": [
+    "cmdk-solid"
+  ],
+  "registryDependencies": [
+    "dialog"
+  ],
   "files": [
     {
       "name": "command.tsx",

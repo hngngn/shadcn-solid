@@ -12,7 +12,8 @@ component: true
 
 <TabsList>
   <TabsTrigger value="cli">CLI</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="manual-tw">Manual - TailwindCSS</TabsTrigger>
+  <TabsTrigger value="manual-uno">Manual - UnoCSS</TabsTrigger>
   <TabsIndicator variant="underline" />
 </TabsList>
 
@@ -24,13 +25,27 @@ npx shadcn-solid@latest add table
 
 </TabsContent>
 
-<TabsContent value="manual">
+<TabsContent value="manual-tw">
 
 <Steps>
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource name="table" />
+<ComponentSource name="table" css="tailwindcss" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+<TabsContent value="manual-uno">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="table" css="unocss" />
 
 <Step>Update the import paths to match your project setup.</Step>
 
