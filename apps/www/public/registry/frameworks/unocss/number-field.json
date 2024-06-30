@@ -1,6 +1,11 @@
 {
   "name": "number-field",
-  "dependencies": ["@kobalte/core"],
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "registryDependencies": [
+    "text-field"
+  ],
   "files": [
     {
       "name": "number-field.tsx",

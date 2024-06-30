@@ -32,7 +32,7 @@ export const textfieldLabel = cva(
         true: "data-[invalid]:text-destructive"
       },
       error: {
-        true: "text-destructive"
+        true: "text-destructive text-xs"
       },
       description: {
         true: "font-normal text-muted-foreground"

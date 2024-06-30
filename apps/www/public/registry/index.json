@@ -200,6 +200,9 @@
     "dependencies": [
       "@kobalte/core"
     ],
+    "registryDependencies": [
+      "text-field"
+    ],
     "files": [
       "ui/number-field.tsx"
     ],

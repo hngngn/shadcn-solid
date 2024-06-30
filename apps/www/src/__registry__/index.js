@@ -140,7 +140,7 @@ export const Index = {
     "number-field": {
       name: "number-field",
       type: "components:ui",
-      registryDependencies: undefined,
+      registryDependencies: ["text-field"],
       component: lazy(() => import("@/registry/tailwindcss/ui/number-field")),
       files: ["registry/tailwindcss/ui/number-field.tsx"],
     },
