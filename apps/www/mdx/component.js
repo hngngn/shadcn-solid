@@ -1,28 +1,29 @@
-import {readFileSync} from "fs";
-import {join} from "path";
-import {u} from "unist-builder";
-import {visit} from "unist-util-visit";
-import {Index} from "../src/__registry__";
-import {frameworks} from "../src/registry/framework";
+import { readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+import { u } from "unist-builder";
+import { visit } from "unist-util-visit";
+import { Index } from "../src/__registry__";
+import { frameworks } from "../src/registry/framework";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export const rehypeComponent = () => tree =>
   visit(tree, node => {
     if ("name" in node && node.name === "ComponentSource") {
       const name = getNodeAttributeByName(node, "name")?.value;
+      const css = getNodeAttributeByName(node, "css")?.value;
 
-      if (!name) {
+      if (!name || !css) {
         return null;
       }
 
       try {
-        for (const framework of frameworks) {
-          if (Index[framework.name] === undefined) {
-            break;
-          }
-          const component = Index[framework.name][name];
+        const component = Index[css][name];
           const src = component.files[0];
           // Read the source file.
-          const filePath = join(process.cwd(), `src/${src}`);
+          const filePath = css === "unocss" ? join(__dirname, `${src}`): join(__dirname, `src/${src}`);
           let source = readFileSync(filePath, "utf8");
 
           // Replace imports.
@@ -50,7 +51,6 @@ export const rehypeComponent = () => tree =>
               ]
             })
           );
-        }
       } catch (error) {
         console.error(error);
       }

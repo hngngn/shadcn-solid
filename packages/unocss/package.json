@@ -1,6 +1,9 @@
 {
   "name": "@repo/unocss",
   "version": "0.0.1",
+  "exports": {
+    "./ui/*": "./ui/*.tsx"
+  },
   "files": ["ui"],
   "devDependencies": {
     "@corvu/drawer": "^0.2.0",

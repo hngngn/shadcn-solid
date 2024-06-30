@@ -2,9 +2,9 @@ import { registry } from "@/registry";
 import { colorMapping, colors } from "@/registry/colors";
 import { frameworks } from "@/registry/framework";
 import { registrySchema } from "@/registry/schema";
-import fs from "fs";
 import template from "lodash.template";
-import { basename, join } from "path";
+import fs from "node:fs";
+import { basename, join } from "node:path";
 import { rimraf } from "rimraf";
 
 const REGISTRY_PATH = join(process.cwd(), "public/registry");
@@ -27,15 +27,19 @@ export const Index = {
 `;
 
 for (const framework of frameworks) {
-  if (framework.name === "unocss") {
-    break;
-  }
-
   index += `  "${framework.name}": {`;
 
   // Build style index.
   for (const item of result.data) {
-    const resolveFiles = item.files.map(file => `registry/${framework.name}/${file}`);
+    if (item.type === "components:example" && framework.name === "unocss") {
+      break;
+    }
+
+    const resolveFiles = item.files.map(file =>
+      framework.name === "unocss"
+        ? `../../packages/${framework.name}/${file}`
+        : `registry/${framework.name}/${file}`
+    );
 
     const type = item.type.split(":")[1];
     index += `
@@ -43,7 +47,7 @@ for (const framework of frameworks) {
       name: "${item.name}",
       type: "${item.type}",
       registryDependencies: ${JSON.stringify(item.registryDependencies)},
-      component: lazy(() => import("@/registry/${framework.name}/${type}/${item.name}")),
+      component: lazy(() => ${framework.name === "unocss" ? `import("@repo/${framework.name}/${type}/${item.name}"))` : `import("@/registry/${framework.name}/${type}/${item.name}"))`},
       files: [${resolveFiles.map(file => `"${file}"`)}],
     },`;
   }
@@ -158,7 +162,6 @@ for (const [color, value] of Object.entries(colors)) {
       rgbChannel: value.rgb.replace(/^rgb\((\d+),(\d+),(\d+)\)$/, "$1 $2 $3"),
       hslChannel: value.hsl.replace(/^hsl\(([\d.]+),([\d.]+%),([\d.]+%)\)$/, "$1 $2 $3")
     };
-    continue;
   }
 }
 
@@ -325,19 +328,19 @@ for (const baseColor of ["slate", "gray", "zinc", "neutral", "stone"]) {
     cssVars: {}
   };
   for (const [mode, values] of Object.entries(colorMapping)) {
-    base["inlineColors"][mode] = {};
-    base["cssVars"][mode] = {};
+    base.inlineColors[mode] = {};
+    base.cssVars[mode] = {};
     for (const [key, value] of Object.entries(values)) {
       if (typeof value === "string") {
         const resolvedColor = value.replace(/{{base}}-/g, `${baseColor}-`);
-        base["inlineColors"][mode][key] = resolvedColor;
+        base.inlineColors[mode][key] = resolvedColor;
 
         const [resolvedBase, scale] = resolvedColor.split("-");
         const color = scale
-          ? colorsData[resolvedBase].find((item: any) => item.scale === parseInt(scale))
+          ? colorsData[resolvedBase].find((item: any) => item.scale === Number.parseInt(scale))
           : colorsData[resolvedBase];
         if (color) {
-          base["cssVars"][mode][key] = color.hslChannel;
+          base.cssVars[mode][key] = color.hslChannel;
         }
       }
     }
@@ -350,14 +353,14 @@ for (const baseColor of ["slate", "gray", "zinc", "neutral", "stone"]) {
     }
     // Build css vars.
     if (framework.name === "unocss") {
-      delete base["inlineColorsTemplate"];
-      base["cssVarsTemplate"] = template(UNO_BASE_STYLES_WITH_VARIABLES)({
-        colors: base["cssVars"]
+      base.inlineColorsTemplate = undefined;
+      base.cssVarsTemplate = template(UNO_BASE_STYLES_WITH_VARIABLES)({
+        colors: base.cssVars
       });
     } else {
-      base["inlineColorsTemplate"] = template(TAILWIND_BASE_STYLES)({});
-      base["cssVarsTemplate"] = template(TAILWIND_BASE_STYLES_WITH_VARIABLES)({
-        colors: base["cssVars"]
+      base.inlineColorsTemplate = template(TAILWIND_BASE_STYLES)({});
+      base.cssVarsTemplate = template(TAILWIND_BASE_STYLES_WITH_VARIABLES)({
+        colors: base.cssVars
       });
     }
 

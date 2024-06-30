@@ -15,7 +15,8 @@ link:
 
 <TabsList>
   <TabsTrigger value="cli">CLI</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="manual-tw">Manual - TailwindCSS</TabsTrigger>
+  <TabsTrigger value="manual-uno">Manual - UnoCSS</TabsTrigger>
   <TabsIndicator variant="underline" />
 </TabsList>
 
@@ -27,7 +28,7 @@ npx shadcn-solid@latest add alert
 
 </TabsContent>
 
-<TabsContent value="manual">
+<TabsContent value="manual-tw">
 
 <Steps>
 
@@ -39,7 +40,27 @@ npm install @kobalte/core
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource name="alert" />
+<ComponentSource name="alert" css="tailwindcss" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+<TabsContent value="manual-uno">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install @kobalte/core
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="alert" css="unocss" />
 
 <Step>Update the import paths to match your project setup.</Step>
 

@@ -114,6 +114,9 @@ importers:
         specifier: ^3.22.4
         version: 3.23.8
     devDependencies:
+      '@repo/unocss':
+        specifier: workspace:*
+        version: link:../../packages/unocss
       '@types/lodash.template':
         specifier: ^4.5.3
         version: 4.5.3

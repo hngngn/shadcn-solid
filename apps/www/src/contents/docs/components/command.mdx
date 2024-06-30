@@ -14,7 +14,8 @@ link:
 
 <TabsList>
   <TabsTrigger value="cli">CLI</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="manual-tw">Manual - TailwindCSS</TabsTrigger>
+  <TabsTrigger value="manual-uno">Manual - UnoCSS</TabsTrigger>
   <TabsIndicator variant="underline" />
 </TabsList>
 <TabsContent value="cli">
@@ -25,7 +26,7 @@ npx shadcn-solid@latest add command
 
 </TabsContent>
 
-<TabsContent value="manual">
+<TabsContent value="manual-tw">
 
 <Steps>
 
@@ -37,7 +38,27 @@ npm install cmdk-solid
 
 <Step>Copy and paste the following code into your project.</Step>
 
-<ComponentSource name="command" />
+<ComponentSource name="command" css="tailwindcss" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+<TabsContent value="manual-uno">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install cmdk-solid
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="command" css="unocss" />
 
 <Step>Update the import paths to match your project setup.</Step>
 

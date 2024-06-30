@@ -64,7 +64,8 @@
     "tsx": "^4.7.1",
     "unist-builder": "^4.0.0",
     "unist-util-visit": "^5.0.0",
-    "yaml": "^2.3.4"
+    "yaml": "^2.3.4",
+    "@repo/unocss": "workspace:*"
   },
   "private": true,
   "lint-staged": {
