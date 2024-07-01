@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+	darkMode: ["class", '[data-kb-theme="dark"]'],
 	content: [
 		"./src/**/*.{astro,mdx,ts,tsx}",
 		"node_modules/@repo/tailwindcss/ui/*.tsx",
