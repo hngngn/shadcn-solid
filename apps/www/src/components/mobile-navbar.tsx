@@ -1,6 +1,5 @@
 import { docsConfig } from "@/config/docs";
 import { siteConfig } from "@/config/site";
-import { createDisclosureState } from "@kobalte/core";
 import type { DialogTriggerProps } from "@kobalte/core/dialog";
 import { Button } from "@repo/tailwindcss/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@repo/tailwindcss/ui/sheet";
@@ -9,10 +8,8 @@ import Logo from "./logo";
 import { Sidebar } from "./sidebar";
 
 const MobileNavbar = () => {
-	const { isOpen, setIsOpen, close } = createDisclosureState();
-
 	return (
-		<Sheet open={isOpen()} onOpenChange={setIsOpen}>
+		<Sheet>
 			<SheetTrigger
 				as={(props: DialogTriggerProps) => (
 					<Button

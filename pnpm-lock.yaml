@@ -207,6 +207,9 @@ importers:
       '@repo/tailwindcss':
         specifier: workspace:*
         version: link:../../packages/tailwindcss
+      '@solid-primitives/storage':
+        specifier: ^3.5.0
+        version: 3.7.1(solid-js@1.8.18)
       astro:
         specifier: ^4.11.3
         version: 4.11.3(@types/node@20.14.8)(terser@5.31.1)(typescript@5.5.2)
@@ -219,6 +222,9 @@ importers:
       solid-js:
         specifier: ^1.8.18
         version: 1.8.18
+      solid-wrap-balancer:
+        specifier: ^0.0.5
+        version: 0.0.5(solid-js@1.8.18)
       tailwind-merge:
         specifier: ^2.2.2
         version: 2.3.0
@@ -8905,6 +8911,11 @@ snapshots:
       '@solid-primitives/utils': 6.2.3(solid-js@1.8.17)
       solid-js: 1.8.17
 
+  '@solid-primitives/storage@3.7.1(solid-js@1.8.18)':
+    dependencies:
+      '@solid-primitives/utils': 6.2.3(solid-js@1.8.18)
+      solid-js: 1.8.18
+
   '@solid-primitives/trigger@1.0.11(solid-js@1.8.17)':
     dependencies:
       '@solid-primitives/utils': 6.2.3(solid-js@1.8.17)
@@ -14192,6 +14203,10 @@ snapshots:
   solid-wrap-balancer@0.0.5(solid-js@1.8.17):
     dependencies:
       solid-js: 1.8.17
+
+  solid-wrap-balancer@0.0.5(solid-js@1.8.18):
+    dependencies:
+      solid-js: 1.8.18
 
   sort-keys@5.0.0:
     dependencies:

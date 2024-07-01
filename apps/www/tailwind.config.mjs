@@ -8,6 +8,7 @@ export default {
 		extend: {
 			container: {
 				center: true,
+				padding: "2rem",
 			},
 			colors: {
 				border: "hsl(var(--border))",
