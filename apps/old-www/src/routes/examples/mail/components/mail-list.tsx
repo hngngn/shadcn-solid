@@ -36,7 +36,7 @@ export const timeAgo = (timestamp: Date) => {
 
 export const MailList = (props: Props) => {
   return (
-    <div class="flex flex-col gap-2 p-4 pt-0 h-[600px] overflow-auto">
+    <div class="flex h-[600px] flex-col gap-2 overflow-auto p-4 pt-0">
       <For each={props.type === "all" ? mails : mails.filter(v => !v.read)}>
         {item => (
           <button

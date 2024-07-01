@@ -29,7 +29,11 @@ export const Nav = (props: Props) => {
                 <A
                   href="#"
                   class={cn(
-                    buttonVariants({ variant: item.variant, size: "sm", class: "text-sm" }),
+                    buttonVariants({
+                      variant: item.variant,
+                      size: "sm",
+                      class: "text-sm"
+                    }),
                     item.variant === "default" &&
                       "dark:bg-muted dark:text-white dark:hover:bg-muted dark:hover:text-white",
                     "justify-start"
