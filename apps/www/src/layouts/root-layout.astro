@@ -1,0 +1,18 @@
+---
+import ThemeWrapper from "@/components/theme-wrapper";
+import "./main.css";
+
+const { pathname } = Astro.url;
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <ThemeWrapper client:only="solid" pathname={pathname}>
+            <slot />
+        </ThemeWrapper>
+    </body>
+</html>

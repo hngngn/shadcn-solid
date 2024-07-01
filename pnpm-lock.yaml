@@ -195,15 +195,39 @@ importers:
       '@astrojs/solid-js':
         specifier: ^4.4.0
         version: 4.4.0(solid-js@1.8.18)(vite@5.3.1(@types/node@20.14.8)(terser@5.31.1))
+      '@astrojs/tailwind':
+        specifier: ^5.1.0
+        version: 5.1.0(astro@4.11.3(@types/node@20.14.8)(terser@5.31.1)(typescript@5.5.2))(tailwindcss@3.4.4)
       '@astrojs/vercel':
         specifier: ^7.7.2
         version: 7.7.2(astro@4.11.3(@types/node@20.14.8)(terser@5.31.1)(typescript@5.5.2))
+      '@kobalte/core':
+        specifier: ^0.13.3
+        version: 0.13.3(solid-js@1.8.18)
+      '@repo/tailwindcss':
+        specifier: workspace:*
+        version: link:../../packages/tailwindcss
       astro:
         specifier: ^4.11.3
         version: 4.11.3(@types/node@20.14.8)(terser@5.31.1)(typescript@5.5.2)
+      class-variance-authority:
+        specifier: ^0.7.0
+        version: 0.7.0
+      clsx:
+        specifier: ^2.1.0
+        version: 2.1.1
       solid-js:
         specifier: ^1.8.18
         version: 1.8.18
+      tailwind-merge:
+        specifier: ^2.2.2
+        version: 2.3.0
+      tailwindcss:
+        specifier: ^3.4.4
+        version: 3.4.4
+      tailwindcss-animate:
+        specifier: ^1.0.7
+        version: 1.0.7(tailwindcss@3.4.4)
       typescript:
         specifier: ^5.2.2
         version: 5.5.2
@@ -249,9 +273,66 @@ importers:
         version: 20.14.8
       tsup:
         specifier: ^8.0.2
-        version: 8.1.0(postcss@8.4.38)(typescript@5.5.2)
+        version: 8.1.0(postcss@8.4.39)(typescript@5.5.2)
       typescript:
         specifier: ^5.0.0
+        version: 5.5.2
+
+  packages/tailwindcss:
+    devDependencies:
+      '@ark-ui/solid':
+        specifier: ^3.3.0
+        version: 3.3.0(@internationalized/date@3.5.4)(solid-js@1.8.18)
+      '@corvu/drawer':
+        specifier: ^0.2.1
+        version: 0.2.1(solid-js@1.8.18)
+      '@corvu/otp-field':
+        specifier: ^0.1.1
+        version: 0.1.1(solid-js@1.8.18)
+      '@corvu/resizable':
+        specifier: ^0.2.2
+        version: 0.2.2(solid-js@1.8.18)
+      '@kobalte/core':
+        specifier: ^0.13.3
+        version: 0.13.3(solid-js@1.8.18)
+      autoprefixer:
+        specifier: ^10.4.19
+        version: 10.4.19(postcss@8.4.39)
+      class-variance-authority:
+        specifier: ^0.7.0
+        version: 0.7.0
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      cmdk-solid:
+        specifier: ^1.0.1
+        version: 1.0.1(solid-js@1.8.18)
+      embla-carousel-autoplay:
+        specifier: 8.1.5
+        version: 8.1.5(embla-carousel@8.1.5)
+      embla-carousel-solid:
+        specifier: 8.1.5
+        version: 8.1.5(solid-js@1.8.18)
+      postcss:
+        specifier: ^8.4.39
+        version: 8.4.39
+      solid-js:
+        specifier: ^1.8.18
+        version: 1.8.18
+      solid-sonner:
+        specifier: ^0.2.8
+        version: 0.2.8(solid-js@1.8.18)
+      tailwind-merge:
+        specifier: ^2.3.0
+        version: 2.3.0
+      tailwindcss:
+        specifier: ^3.4.4
+        version: 3.4.4
+      tailwindcss-animate:
+        specifier: ^1.0.7
+        version: 1.0.7(tailwindcss@3.4.4)
+      typescript:
+        specifier: ^5.5.2
         version: 5.5.2
 
   packages/unocss:
@@ -303,10 +384,10 @@ importers:
         version: 2.3.0
       unocss:
         specifier: ^0.61.0
-        version: 0.61.0(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(terser@5.31.1))
+        version: 0.61.0(postcss@8.4.39)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(terser@5.31.1))
       unocss-preset-animations:
         specifier: ^1.0.2
-        version: 1.0.2(@unocss/preset-wind@0.61.0)(unocss@0.61.0(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(terser@5.31.1)))
+        version: 1.0.2(@unocss/preset-wind@0.61.0)(unocss@0.61.0(postcss@8.4.39)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(terser@5.31.1)))
       vite:
         specifier: ^5.2.7
         version: 5.3.1(@types/node@20.14.8)(terser@5.31.1)
@@ -378,6 +459,12 @@ packages:
     peerDependenciesMeta:
       solid-devtools:
         optional: true
+
+  '@astrojs/tailwind@5.1.0':
+    resolution: {integrity: sha512-BJoCDKuWhU9FT2qYg+fr6Nfb3qP4ShtyjXGHKA/4mHN94z7BGcmauQK23iy+YH5qWvTnhqkd6mQPQ1yTZTe9Ig==}
+    peerDependencies:
+      astro: ^3.0.0 || ^4.0.0
+      tailwindcss: ^3.0.24
 
   '@astrojs/telemetry@3.1.0':
     resolution: {integrity: sha512-/ca/+D8MIKEC8/A9cSaPUqQNZm+Es/ZinRv0ZAzvu2ios7POQSsVD+VOj7/hypWNsNM3T7RpfgNq7H2TU1KEHA==}
@@ -3318,6 +3405,11 @@ packages:
     peerDependencies:
       embla-carousel: 8.0.0
 
+  embla-carousel-autoplay@8.1.5:
+    resolution: {integrity: sha512-9pHIezRqiO9yism7wRFwmM1j/W9c9hBNX4hq3F4aTPbK84M0M57ryG8QUwhbsTGJbDoBBVTm//YEd0T6i/5YgA==}
+    peerDependencies:
+      embla-carousel: 8.1.5
+
   embla-carousel-reactive-utils@8.1.5:
     resolution: {integrity: sha512-76uZTrSaEGGta+qpiGkMFlLK0I7N04TdjZ2obrBhyggYIFDWlxk1CriIEmt2lisLNsa1IYXM85kr863JoCMSyg==}
     peerDependencies:
@@ -5281,6 +5373,10 @@ packages:
     resolution: {integrity: sha512-Wglpdk03BSfXkHoQa3b/oulrotAkwrlLDRSOb9D0bN86FdRyE9lppSp33aHNPgBa0JKCoB+drFLZkQoRRYae5A==}
     engines: {node: ^10 || ^12 || >=14}
 
+  postcss@8.4.39:
+    resolution: {integrity: sha512-0vzE+lAiG7hZl1/9I8yzKLx3aR9Xbof3fBHKunvMfOCYAtMhrsnccJY2iTURb9EZd5+pLuiNV9/c/GZJOHsgIw==}
+    engines: {node: ^10 || ^12 || >=14}
+
   preferred-pm@3.1.3:
     resolution: {integrity: sha512-MkXsENfftWSRpzCzImcp4FRsCc3y1opwB73CfCNWyzMqArju2CrlMHlqB7VexKiPEOjGMbttv1r9fSCn5S610w==}
     engines: {node: '>=10'}
@@ -6923,6 +7019,51 @@ snapshots:
     transitivePeerDependencies:
       - '@internationalized/date'
 
+  '@ark-ui/solid@3.3.0(@internationalized/date@3.5.4)(solid-js@1.8.18)':
+    dependencies:
+      '@ark-ui/anatomy': 3.3.1(@internationalized/date@3.5.4)
+      '@zag-js/accordion': 0.56.1
+      '@zag-js/avatar': 0.56.1
+      '@zag-js/carousel': 0.56.1
+      '@zag-js/checkbox': 0.56.1
+      '@zag-js/clipboard': 0.56.1
+      '@zag-js/collapsible': 0.56.1
+      '@zag-js/color-picker': 0.56.1
+      '@zag-js/combobox': 0.56.1
+      '@zag-js/date-picker': 0.56.1
+      '@zag-js/dialog': 0.56.1
+      '@zag-js/dom-query': 0.56.1
+      '@zag-js/editable': 0.56.1
+      '@zag-js/file-upload': 0.56.1
+      '@zag-js/file-utils': 0.56.1
+      '@zag-js/hover-card': 0.56.1
+      '@zag-js/i18n-utils': 0.56.1
+      '@zag-js/menu': 0.56.1
+      '@zag-js/number-input': 0.56.1
+      '@zag-js/pagination': 0.56.1
+      '@zag-js/pin-input': 0.56.1
+      '@zag-js/popover': 0.56.1
+      '@zag-js/presence': 0.56.1
+      '@zag-js/progress': 0.56.1
+      '@zag-js/qr-code': 0.56.1
+      '@zag-js/radio-group': 0.56.1
+      '@zag-js/rating-group': 0.56.1
+      '@zag-js/select': 0.56.1
+      '@zag-js/slider': 0.56.1
+      '@zag-js/solid': 0.56.1(solid-js@1.8.18)
+      '@zag-js/splitter': 0.56.1
+      '@zag-js/switch': 0.56.1
+      '@zag-js/tabs': 0.56.1
+      '@zag-js/tags-input': 0.56.1
+      '@zag-js/toast': 0.56.1
+      '@zag-js/toggle-group': 0.56.1
+      '@zag-js/tooltip': 0.56.1
+      '@zag-js/tree-view': 0.56.1
+      '@zag-js/types': 0.56.1
+      solid-js: 1.8.18
+    transitivePeerDependencies:
+      - '@internationalized/date'
+
   '@astrojs/check@0.5.10(prettier@3.3.2)(typescript@5.5.2)':
     dependencies:
       '@astrojs/language-server': 2.10.0(prettier@3.3.2)(typescript@5.5.2)
@@ -6997,6 +7138,16 @@ snapshots:
       - '@testing-library/jest-dom'
       - supports-color
       - vite
+
+  '@astrojs/tailwind@5.1.0(astro@4.11.3(@types/node@20.14.8)(terser@5.31.1)(typescript@5.5.2))(tailwindcss@3.4.4)':
+    dependencies:
+      astro: 4.11.3(@types/node@20.14.8)(terser@5.31.1)(typescript@5.5.2)
+      autoprefixer: 10.4.19(postcss@8.4.38)
+      postcss: 8.4.38
+      postcss-load-config: 4.0.2(postcss@8.4.38)
+      tailwindcss: 3.4.4
+    transitivePeerDependencies:
+      - ts-node
 
   '@astrojs/telemetry@3.1.0':
     dependencies:
@@ -7608,6 +7759,14 @@ snapshots:
       solid-presence: 0.1.7(solid-js@1.8.17)
       solid-prevent-scroll: 0.1.8(solid-js@1.8.17)
 
+  '@corvu/dialog@0.2.0(solid-js@1.8.18)':
+    dependencies:
+      '@corvu/utils': 0.3.1(solid-js@1.8.18)
+      solid-focus-trap: 0.1.7(solid-js@1.8.18)
+      solid-js: 1.8.18
+      solid-presence: 0.1.7(solid-js@1.8.18)
+      solid-prevent-scroll: 0.1.8(solid-js@1.8.18)
+
   '@corvu/drawer@0.2.1(solid-js@1.8.17)':
     dependencies:
       '@corvu/dialog': 0.2.0(solid-js@1.8.17)
@@ -7616,20 +7775,43 @@ snapshots:
       solid-js: 1.8.17
       solid-transition-size: 0.1.3(solid-js@1.8.17)
 
+  '@corvu/drawer@0.2.1(solid-js@1.8.18)':
+    dependencies:
+      '@corvu/dialog': 0.2.0(solid-js@1.8.18)
+      '@corvu/utils': 0.3.1(solid-js@1.8.18)
+      '@solid-primitives/memo': 1.3.8(solid-js@1.8.18)
+      solid-js: 1.8.18
+      solid-transition-size: 0.1.3(solid-js@1.8.18)
+
   '@corvu/otp-field@0.1.1(solid-js@1.8.17)':
     dependencies:
       '@corvu/utils': 0.3.1(solid-js@1.8.17)
       solid-js: 1.8.17
+
+  '@corvu/otp-field@0.1.1(solid-js@1.8.18)':
+    dependencies:
+      '@corvu/utils': 0.3.1(solid-js@1.8.18)
+      solid-js: 1.8.18
 
   '@corvu/resizable@0.2.2(solid-js@1.8.17)':
     dependencies:
       '@corvu/utils': 0.3.1(solid-js@1.8.17)
       solid-js: 1.8.17
 
+  '@corvu/resizable@0.2.2(solid-js@1.8.18)':
+    dependencies:
+      '@corvu/utils': 0.3.1(solid-js@1.8.18)
+      solid-js: 1.8.18
+
   '@corvu/utils@0.3.1(solid-js@1.8.17)':
     dependencies:
       '@floating-ui/dom': 1.6.5
       solid-js: 1.8.17
+
+  '@corvu/utils@0.3.1(solid-js@1.8.18)':
+    dependencies:
+      '@floating-ui/dom': 1.6.5
+      solid-js: 1.8.18
 
   '@deno/shim-deno-test@0.5.0': {}
 
@@ -8080,6 +8262,15 @@ snapshots:
       solid-js: 1.8.17
       solid-prevent-scroll: 0.1.8(solid-js@1.8.17)
 
+  '@kobalte/core@0.12.6(solid-js@1.8.18)':
+    dependencies:
+      '@floating-ui/dom': 1.6.5
+      '@internationalized/date': 3.5.4
+      '@internationalized/number': 3.5.3
+      '@kobalte/utils': 0.9.0(solid-js@1.8.18)
+      solid-js: 1.8.18
+      solid-prevent-scroll: 0.1.8(solid-js@1.8.18)
+
   '@kobalte/core@0.13.3(solid-js@1.8.17)':
     dependencies:
       '@floating-ui/dom': 1.6.5
@@ -8089,6 +8280,16 @@ snapshots:
       solid-js: 1.8.17
       solid-presence: 0.1.7(solid-js@1.8.17)
       solid-prevent-scroll: 0.1.8(solid-js@1.8.17)
+
+  '@kobalte/core@0.13.3(solid-js@1.8.18)':
+    dependencies:
+      '@floating-ui/dom': 1.6.5
+      '@internationalized/date': 3.5.4
+      '@internationalized/number': 3.5.3
+      '@kobalte/utils': 0.9.0(solid-js@1.8.18)
+      solid-js: 1.8.18
+      solid-presence: 0.1.7(solid-js@1.8.18)
+      solid-prevent-scroll: 0.1.8(solid-js@1.8.18)
 
   '@kobalte/utils@0.9.0(solid-js@1.8.17)':
     dependencies:
@@ -8100,6 +8301,17 @@ snapshots:
       '@solid-primitives/refs': 1.0.8(solid-js@1.8.17)
       '@solid-primitives/utils': 6.2.3(solid-js@1.8.17)
       solid-js: 1.8.17
+
+  '@kobalte/utils@0.9.0(solid-js@1.8.18)':
+    dependencies:
+      '@solid-primitives/event-listener': 2.3.3(solid-js@1.8.18)
+      '@solid-primitives/keyed': 1.2.2(solid-js@1.8.18)
+      '@solid-primitives/map': 0.4.11(solid-js@1.8.18)
+      '@solid-primitives/media': 2.2.9(solid-js@1.8.18)
+      '@solid-primitives/props': 3.1.11(solid-js@1.8.18)
+      '@solid-primitives/refs': 1.0.8(solid-js@1.8.18)
+      '@solid-primitives/utils': 6.2.3(solid-js@1.8.18)
+      solid-js: 1.8.18
 
   '@manypkg/find-root@1.1.0':
     dependencies:
@@ -8569,19 +8781,38 @@ snapshots:
       '@solid-primitives/memo': 1.3.8(solid-js@1.8.17)
       solid-js: 1.8.17
 
+  '@solid-primitives/deep@0.2.8(solid-js@1.8.18)':
+    dependencies:
+      '@solid-primitives/memo': 1.3.8(solid-js@1.8.18)
+      solid-js: 1.8.18
+
   '@solid-primitives/event-listener@2.3.3(solid-js@1.8.17)':
     dependencies:
       '@solid-primitives/utils': 6.2.3(solid-js@1.8.17)
       solid-js: 1.8.17
 
+  '@solid-primitives/event-listener@2.3.3(solid-js@1.8.18)':
+    dependencies:
+      '@solid-primitives/utils': 6.2.3(solid-js@1.8.18)
+      solid-js: 1.8.18
+
   '@solid-primitives/keyed@1.2.2(solid-js@1.8.17)':
     dependencies:
       solid-js: 1.8.17
+
+  '@solid-primitives/keyed@1.2.2(solid-js@1.8.18)':
+    dependencies:
+      solid-js: 1.8.18
 
   '@solid-primitives/map@0.4.11(solid-js@1.8.17)':
     dependencies:
       '@solid-primitives/trigger': 1.0.11(solid-js@1.8.17)
       solid-js: 1.8.17
+
+  '@solid-primitives/map@0.4.11(solid-js@1.8.18)':
+    dependencies:
+      '@solid-primitives/trigger': 1.0.11(solid-js@1.8.18)
+      solid-js: 1.8.18
 
   '@solid-primitives/media@2.2.9(solid-js@1.8.17)':
     dependencies:
@@ -8591,40 +8822,83 @@ snapshots:
       '@solid-primitives/utils': 6.2.3(solid-js@1.8.17)
       solid-js: 1.8.17
 
+  '@solid-primitives/media@2.2.9(solid-js@1.8.18)':
+    dependencies:
+      '@solid-primitives/event-listener': 2.3.3(solid-js@1.8.18)
+      '@solid-primitives/rootless': 1.4.5(solid-js@1.8.18)
+      '@solid-primitives/static-store': 0.0.8(solid-js@1.8.18)
+      '@solid-primitives/utils': 6.2.3(solid-js@1.8.18)
+      solid-js: 1.8.18
+
   '@solid-primitives/memo@1.3.8(solid-js@1.8.17)':
     dependencies:
       '@solid-primitives/scheduled': 1.4.3(solid-js@1.8.17)
       '@solid-primitives/utils': 6.2.3(solid-js@1.8.17)
       solid-js: 1.8.17
 
+  '@solid-primitives/memo@1.3.8(solid-js@1.8.18)':
+    dependencies:
+      '@solid-primitives/scheduled': 1.4.3(solid-js@1.8.18)
+      '@solid-primitives/utils': 6.2.3(solid-js@1.8.18)
+      solid-js: 1.8.18
+
   '@solid-primitives/mutation-observer@1.1.17(solid-js@1.8.17)':
     dependencies:
       '@solid-primitives/utils': 6.2.3(solid-js@1.8.17)
       solid-js: 1.8.17
+
+  '@solid-primitives/mutation-observer@1.1.17(solid-js@1.8.18)':
+    dependencies:
+      '@solid-primitives/utils': 6.2.3(solid-js@1.8.18)
+      solid-js: 1.8.18
 
   '@solid-primitives/props@3.1.11(solid-js@1.8.17)':
     dependencies:
       '@solid-primitives/utils': 6.2.3(solid-js@1.8.17)
       solid-js: 1.8.17
 
+  '@solid-primitives/props@3.1.11(solid-js@1.8.18)':
+    dependencies:
+      '@solid-primitives/utils': 6.2.3(solid-js@1.8.18)
+      solid-js: 1.8.18
+
   '@solid-primitives/refs@1.0.8(solid-js@1.8.17)':
     dependencies:
       '@solid-primitives/utils': 6.2.3(solid-js@1.8.17)
       solid-js: 1.8.17
+
+  '@solid-primitives/refs@1.0.8(solid-js@1.8.18)':
+    dependencies:
+      '@solid-primitives/utils': 6.2.3(solid-js@1.8.18)
+      solid-js: 1.8.18
 
   '@solid-primitives/rootless@1.4.5(solid-js@1.8.17)':
     dependencies:
       '@solid-primitives/utils': 6.2.3(solid-js@1.8.17)
       solid-js: 1.8.17
 
+  '@solid-primitives/rootless@1.4.5(solid-js@1.8.18)':
+    dependencies:
+      '@solid-primitives/utils': 6.2.3(solid-js@1.8.18)
+      solid-js: 1.8.18
+
   '@solid-primitives/scheduled@1.4.3(solid-js@1.8.17)':
     dependencies:
       solid-js: 1.8.17
+
+  '@solid-primitives/scheduled@1.4.3(solid-js@1.8.18)':
+    dependencies:
+      solid-js: 1.8.18
 
   '@solid-primitives/static-store@0.0.8(solid-js@1.8.17)':
     dependencies:
       '@solid-primitives/utils': 6.2.3(solid-js@1.8.17)
       solid-js: 1.8.17
+
+  '@solid-primitives/static-store@0.0.8(solid-js@1.8.18)':
+    dependencies:
+      '@solid-primitives/utils': 6.2.3(solid-js@1.8.18)
+      solid-js: 1.8.18
 
   '@solid-primitives/storage@3.7.1(solid-js@1.8.17)':
     dependencies:
@@ -8636,9 +8910,18 @@ snapshots:
       '@solid-primitives/utils': 6.2.3(solid-js@1.8.17)
       solid-js: 1.8.17
 
+  '@solid-primitives/trigger@1.0.11(solid-js@1.8.18)':
+    dependencies:
+      '@solid-primitives/utils': 6.2.3(solid-js@1.8.18)
+      solid-js: 1.8.18
+
   '@solid-primitives/utils@6.2.3(solid-js@1.8.17)':
     dependencies:
       solid-js: 1.8.17
+
+  '@solid-primitives/utils@6.2.3(solid-js@1.8.18)':
+    dependencies:
+      solid-js: 1.8.18
 
   '@solidjs/meta@0.29.4(solid-js@1.8.17)':
     dependencies:
@@ -8967,7 +9250,7 @@ snapshots:
       gzip-size: 6.0.0
       sirv: 2.0.4
 
-  '@unocss/postcss@0.61.0(postcss@8.4.38)':
+  '@unocss/postcss@0.61.0(postcss@8.4.39)':
     dependencies:
       '@unocss/config': 0.61.0
       '@unocss/core': 0.61.0
@@ -8975,7 +9258,7 @@ snapshots:
       css-tree: 2.3.1
       fast-glob: 3.3.2
       magic-string: 0.30.10
-      postcss: 8.4.38
+      postcss: 8.4.39
 
   '@unocss/preset-attributify@0.61.0':
     dependencies:
@@ -9597,6 +9880,13 @@ snapshots:
       '@zag-js/types': 0.56.1
       solid-js: 1.8.17
 
+  '@zag-js/solid@0.56.1(solid-js@1.8.18)':
+    dependencies:
+      '@zag-js/core': 0.56.1
+      '@zag-js/store': 0.56.1
+      '@zag-js/types': 0.56.1
+      solid-js: 1.8.18
+
   '@zag-js/splitter@0.56.1':
     dependencies:
       '@zag-js/anatomy': 0.56.1
@@ -9937,6 +10227,16 @@ snapshots:
       postcss: 8.4.38
       postcss-value-parser: 4.2.0
 
+  autoprefixer@10.4.19(postcss@8.4.39):
+    dependencies:
+      browserslist: 4.23.1
+      caniuse-lite: 1.0.30001636
+      fraction.js: 4.3.7
+      normalize-range: 0.1.2
+      picocolors: 1.0.1
+      postcss: 8.4.39
+      postcss-value-parser: 4.2.0
+
   available-typed-arrays@1.0.7:
     dependencies:
       possible-typed-array-names: 1.0.0
@@ -10185,6 +10485,14 @@ snapshots:
       '@solid-primitives/deep': 0.2.8(solid-js@1.8.17)
       '@solid-primitives/mutation-observer': 1.1.17(solid-js@1.8.17)
       solid-js: 1.8.17
+
+  cmdk-solid@1.0.1(solid-js@1.8.18):
+    dependencies:
+      '@kobalte/core': 0.12.6(solid-js@1.8.18)
+      '@kobalte/utils': 0.9.0(solid-js@1.8.18)
+      '@solid-primitives/deep': 0.2.8(solid-js@1.8.18)
+      '@solid-primitives/mutation-observer': 1.1.17(solid-js@1.8.18)
+      solid-js: 1.8.18
 
   code-block-writer@12.0.0: {}
 
@@ -10487,6 +10795,10 @@ snapshots:
     dependencies:
       embla-carousel: 8.1.5
 
+  embla-carousel-autoplay@8.1.5(embla-carousel@8.1.5):
+    dependencies:
+      embla-carousel: 8.1.5
+
   embla-carousel-reactive-utils@8.1.5(embla-carousel@8.1.5):
     dependencies:
       embla-carousel: 8.1.5
@@ -10496,6 +10808,12 @@ snapshots:
       embla-carousel: 8.1.5
       embla-carousel-reactive-utils: 8.1.5(embla-carousel@8.1.5)
       solid-js: 1.8.17
+
+  embla-carousel-solid@8.1.5(solid-js@1.8.18):
+    dependencies:
+      embla-carousel: 8.1.5
+      embla-carousel-reactive-utils: 8.1.5(embla-carousel@8.1.5)
+      solid-js: 1.8.18
 
   embla-carousel@8.1.5: {}
 
@@ -13148,6 +13466,13 @@ snapshots:
     optionalDependencies:
       postcss: 8.4.38
 
+  postcss-load-config@4.0.2(postcss@8.4.39):
+    dependencies:
+      lilconfig: 3.1.2
+      yaml: 2.4.5
+    optionalDependencies:
+      postcss: 8.4.39
+
   postcss-nested@6.0.1(postcss@8.4.38):
     dependencies:
       postcss: 8.4.38
@@ -13161,6 +13486,12 @@ snapshots:
   postcss-value-parser@4.2.0: {}
 
   postcss@8.4.38:
+    dependencies:
+      nanoid: 3.3.7
+      picocolors: 1.0.1
+      source-map-js: 1.2.0
+
+  postcss@8.4.39:
     dependencies:
       nanoid: 3.3.7
       picocolors: 1.0.1
@@ -13776,6 +14107,11 @@ snapshots:
       '@corvu/utils': 0.3.1(solid-js@1.8.17)
       solid-js: 1.8.17
 
+  solid-focus-trap@0.1.7(solid-js@1.8.18):
+    dependencies:
+      '@corvu/utils': 0.3.1(solid-js@1.8.18)
+      solid-js: 1.8.18
+
   solid-js@1.8.17:
     dependencies:
       csstype: 3.1.3
@@ -13798,10 +14134,20 @@ snapshots:
       '@corvu/utils': 0.3.1(solid-js@1.8.17)
       solid-js: 1.8.17
 
+  solid-presence@0.1.7(solid-js@1.8.18):
+    dependencies:
+      '@corvu/utils': 0.3.1(solid-js@1.8.18)
+      solid-js: 1.8.18
+
   solid-prevent-scroll@0.1.8(solid-js@1.8.17):
     dependencies:
       '@corvu/utils': 0.3.1(solid-js@1.8.17)
       solid-js: 1.8.17
+
+  solid-prevent-scroll@0.1.8(solid-js@1.8.18):
+    dependencies:
+      '@corvu/utils': 0.3.1(solid-js@1.8.18)
+      solid-js: 1.8.18
 
   solid-refresh@0.6.3(solid-js@1.8.17):
     dependencies:
@@ -13825,10 +14171,19 @@ snapshots:
     dependencies:
       solid-js: 1.8.17
 
+  solid-sonner@0.2.8(solid-js@1.8.18):
+    dependencies:
+      solid-js: 1.8.18
+
   solid-transition-size@0.1.3(solid-js@1.8.17):
     dependencies:
       '@corvu/utils': 0.3.1(solid-js@1.8.17)
       solid-js: 1.8.17
+
+  solid-transition-size@0.1.3(solid-js@1.8.18):
+    dependencies:
+      '@corvu/utils': 0.3.1(solid-js@1.8.18)
+      solid-js: 1.8.18
 
   solid-use@0.8.0(solid-js@1.8.17):
     dependencies:
@@ -14157,7 +14512,7 @@ snapshots:
 
   tslib@2.6.3: {}
 
-  tsup@8.1.0(postcss@8.4.38)(typescript@5.5.2):
+  tsup@8.1.0(postcss@8.4.39)(typescript@5.5.2):
     dependencies:
       bundle-require: 4.2.1(esbuild@0.21.5)
       cac: 6.7.14
@@ -14167,14 +14522,14 @@ snapshots:
       execa: 5.1.1
       globby: 11.1.0
       joycon: 3.1.1
-      postcss-load-config: 4.0.2(postcss@8.4.38)
+      postcss-load-config: 4.0.2(postcss@8.4.39)
       resolve-from: 5.0.0
       rollup: 4.18.0
       source-map: 0.8.0-beta.0
       sucrase: 3.35.0
       tree-kill: 1.2.2
     optionalDependencies:
-      postcss: 8.4.38
+      postcss: 8.4.39
       typescript: 5.5.2
     transitivePeerDependencies:
       - supports-color
@@ -14460,18 +14815,18 @@ snapshots:
 
   universalify@2.0.1: {}
 
-  unocss-preset-animations@1.0.2(@unocss/preset-wind@0.61.0)(unocss@0.61.0(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(terser@5.31.1))):
+  unocss-preset-animations@1.0.2(@unocss/preset-wind@0.61.0)(unocss@0.61.0(postcss@8.4.39)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(terser@5.31.1))):
     dependencies:
       '@unocss/preset-wind': 0.61.0
-      unocss: 0.61.0(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(terser@5.31.1))
+      unocss: 0.61.0(postcss@8.4.39)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(terser@5.31.1))
 
-  unocss@0.61.0(postcss@8.4.38)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(terser@5.31.1)):
+  unocss@0.61.0(postcss@8.4.39)(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(terser@5.31.1)):
     dependencies:
       '@unocss/astro': 0.61.0(rollup@4.18.0)(vite@5.3.1(@types/node@20.14.8)(terser@5.31.1))
       '@unocss/cli': 0.61.0(rollup@4.18.0)
       '@unocss/core': 0.61.0
       '@unocss/extractor-arbitrary-variants': 0.61.0
-      '@unocss/postcss': 0.61.0(postcss@8.4.38)
+      '@unocss/postcss': 0.61.0(postcss@8.4.39)
       '@unocss/preset-attributify': 0.61.0
       '@unocss/preset-icons': 0.61.0
       '@unocss/preset-mini': 0.61.0
@@ -14719,7 +15074,7 @@ snapshots:
   vite@5.3.1(@types/node@20.14.8)(terser@5.31.1):
     dependencies:
       esbuild: 0.21.5
-      postcss: 8.4.38
+      postcss: 8.4.39
       rollup: 4.18.0
     optionalDependencies:
       '@types/node': 20.14.8
