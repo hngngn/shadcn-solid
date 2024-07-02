@@ -22,7 +22,7 @@ const CopyButton = () => {
 		) as HTMLElement[];
 
 		const previewBlocks = Array.from(
-			document.querySelectorAll("div[data-preview-code]"),
+			document.querySelectorAll("div[data-raw-code]"),
 		) as HTMLElement[];
 
 		for (const previewBlock of previewBlocks) {
