@@ -26,7 +26,7 @@
         --radius: 0.5rem;
     }
 
-    [data-kb-theme="dark"] {
+    .dark {
         --background: 240 10% 3.9%;
         --foreground: 0 0% 98%;
         --card: 240 10% 3.9%;
@@ -68,4 +68,19 @@
         @apply absolute inline-flex h-9 w-9 items-center justify-center rounded-full border-4 border-background bg-muted text-center -indent-px font-mono text-base font-medium ml-[-50px] mt-[-4px];
         content: counter(step);
     }
+}
+
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 9999px;
+    border: 4px solid transparent;
+    background-clip: content-box;
+    @apply bg-accent
+}
+
+::-webkit-scrollbar-corner {
+    @apply bg-transparent
 }

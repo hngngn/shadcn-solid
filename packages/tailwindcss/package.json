@@ -20,8 +20,8 @@
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.1",
 		"cmdk-solid": "^1.0.1",
-		"embla-carousel-autoplay": "8.1.5",
-		"embla-carousel-solid": "8.1.5",
+		"embla-carousel-autoplay": "8.1.6",
+		"embla-carousel-solid": "8.1.6",
 		"postcss": "^8.4.39",
 		"solid-js": "^1.8.18",
 		"solid-sonner": "^0.2.8",
@@ -29,5 +29,10 @@
 		"tailwindcss": "^3.4.4",
 		"tailwindcss-animate": "^1.0.7",
 		"typescript": "^5.5.2"
+	},
+	"lint-staged": {
+		"ui/*.tsx": [
+			"biome check --write --unsafe --staged --no-errors-on-unmatched"
+		]
 	}
 }

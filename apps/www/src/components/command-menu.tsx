@@ -1,6 +1,5 @@
 import type { TNavItem } from "@/config/docs";
 import { docsConfig } from "@/config/docs";
-import { useColorMode } from "@kobalte/core";
 import { Button } from "@repo/tailwindcss/ui/button";
 import {
 	CommandDialog,
@@ -11,7 +10,14 @@ import {
 	CommandList,
 } from "@repo/tailwindcss/ui/command";
 import type { JSXElement } from "solid-js";
-import { For, createEffect, createSignal, onCleanup } from "solid-js";
+import {
+	For,
+	createEffect,
+	createMemo,
+	createSignal,
+	on,
+	onCleanup,
+} from "solid-js";
 
 type Option = TNavItem & { value: string; icon: JSXElement };
 
@@ -21,7 +27,31 @@ type List = {
 };
 
 const CommandMenu = () => {
-	const { setColorMode } = useColorMode();
+	const [theme, setThemeState] = createSignal<"light" | "dark" | "system">(
+		"light",
+	);
+
+	const isDarkMode = createMemo(() =>
+		document.documentElement.classList.contains("dark"),
+	);
+	const isDark = createMemo(
+		() =>
+			theme() === "dark" ||
+			(theme() === "system" &&
+				window.matchMedia("(prefers-color-scheme: dark)").matches),
+	);
+
+	createEffect(
+		on(isDarkMode, (isDarkMode) => {
+			setThemeState(isDarkMode ? "dark" : "light");
+		}),
+	);
+
+	createEffect(
+		on(isDark, (isDark) => {
+			document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+		}),
+	);
 
 	const data = () => {
 		const temp: List[] = [];
@@ -204,13 +234,13 @@ const CommandMenu = () => {
 											onSelect={() => {
 												switch (item.value) {
 													case "light":
-														setColorMode("light");
+														setThemeState("light");
 														break;
 													case "dark":
-														setColorMode("dark");
+														setThemeState("dark");
 														break;
 													case "system":
-														setColorMode("system");
+														setThemeState("system");
 														break;
 													default:
 														// @ts-expect-error

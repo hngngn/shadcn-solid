@@ -7,7 +7,7 @@ import {
 	SelectValue,
 } from "@repo/tailwindcss/ui/select";
 import { createSignal } from "solid-js";
-import { accounts, type Account } from "../mail/data";
+import { accounts, type Account } from "./data";
 
 type Props = {
 	isCollapsed: boolean;

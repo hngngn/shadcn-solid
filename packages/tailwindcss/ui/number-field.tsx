@@ -164,7 +164,7 @@ export const NumberFieldDecrementTrigger = <
 					stroke-width="2"
 					d="M5 12h14"
 				/>
-				<title>Decrease number</title>
+				<title>Decreasing number</title>
 			</svg>
 		</NumberFieldPrimitive.DecrementTrigger>
 	);

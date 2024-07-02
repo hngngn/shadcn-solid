@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-	darkMode: ["class", '[data-kb-theme="dark"]'],
+	darkMode: ["class"],
 	content: [
 		"./src/**/*.{astro,mdx,ts,tsx}",
 		"node_modules/@repo/tailwindcss/ui/*.tsx",
@@ -10,6 +10,9 @@ export default {
 			container: {
 				center: true,
 				padding: "2rem",
+				screens: {
+					"2xl": "1400px",
+				},
 			},
 			colors: {
 				border: "hsl(var(--border))",

@@ -1,44 +1,42 @@
 {
-  "name": "shadcn-solid",
-  "description": "Initialize and add components to your project",
-  "version": "0.7.4",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hngngn/shadcn-solid.git",
-    "directory": "packages/cli"
-  },
-  "bugs": {
-    "url": "https://github.com/hngngn/shadcn-solid/issues"
-  },
-  "homepage": "https://github.com/hngngn/shadcn-solid#readme",
-  "license": "MIT",
-  "exports": "./dist/index.js",
-  "bin": "./dist/index.js",
-  "files": [
-    "dist"
-  ],
-  "type": "module",
-  "scripts": {
-    "dev": "tsup src/index.ts --watch --format esm --clean",
-    "build": "tsup src/index.ts --minify --format esm --clean",
-    "check": "biome check --apply-unsafe src"
-  },
-  "dependencies": {
-    "@clack/prompts": "^0.7.0",
-    "commander": "^12.1.0",
-    "diff": "^5.2.0",
-    "execa": "^9.1.0",
-    "lodash.template": "^4.5.0",
-    "picocolors": "^1.0.1",
-    "ts-morph": "^18.0.0",
-    "tsconfig-paths": "^4.2.0",
-    "valibot": "^0.31.0-rc.0"
-  },
-  "devDependencies": {
-    "@types/diff": "^5.2.1",
-    "@types/lodash.template": "^4.5.3",
-    "@types/node": "^20.12.12",
-    "tsup": "^8.0.2",
-    "typescript": "^5.0.0"
-  }
+	"name": "shadcn-solid",
+	"description": "Initialize and add components to your project",
+	"version": "0.7.4",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/hngngn/shadcn-solid.git",
+		"directory": "packages/cli"
+	},
+	"bugs": {
+		"url": "https://github.com/hngngn/shadcn-solid/issues"
+	},
+	"homepage": "https://github.com/hngngn/shadcn-solid#readme",
+	"license": "MIT",
+	"exports": "./dist/index.js",
+	"bin": "./dist/index.js",
+	"files": ["dist"],
+	"type": "module",
+	"scripts": {
+		"dev": "tsup src/index.ts --watch --format esm --clean",
+		"build": "tsup src/index.ts --minify --format esm --clean",
+		"check": "biome check --write --unsafe src"
+	},
+	"dependencies": {
+		"@clack/prompts": "^0.7.0",
+		"commander": "^12.1.0",
+		"diff": "^5.2.0",
+		"execa": "^9.1.0",
+		"lodash.template": "^4.5.0",
+		"picocolors": "^1.0.1",
+		"ts-morph": "^18.0.0",
+		"tsconfig-paths": "^4.2.0",
+		"valibot": "^0.31.0-rc.0"
+	},
+	"devDependencies": {
+		"@types/diff": "^5.2.1",
+		"@types/lodash.template": "^4.5.3",
+		"@types/node": "^20.12.12",
+		"tsup": "^8.0.2",
+		"typescript": "^5.0.0"
+	}
 }

@@ -98,9 +98,7 @@ export const Carousel = (props: ComponentProps<"div"> & CarouselProps) => {
 	};
 
 	createEffect(() => {
-		if (!api() || !local.setApi) {
-			return;
-		}
+		if (!api() || !local.setApi) return;
 
 		local.setApi(api);
 	});
