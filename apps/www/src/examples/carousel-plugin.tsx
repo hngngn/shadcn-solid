@@ -14,7 +14,6 @@ const CarouselPlugin = () => {
 
 	return (
 		<Carousel
-			// @ts-expect-error
 			plugins={[autoPlayPlugin]}
 			class="w-full max-w-xs"
 			onMouseEnter={autoPlayPlugin.stop}
