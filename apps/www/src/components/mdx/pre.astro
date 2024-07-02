@@ -1,0 +1,10 @@
+---
+import CopyButton from "../copy-button";
+
+const props = Astro.props;
+---
+
+<pre
+    class="mb-4 mt-6 max-h-[650px] overflow-x-auto py-4 rounded-lg border !bg-zinc-900"
+    {...props}><slot /></pre>
+<CopyButton client:load />

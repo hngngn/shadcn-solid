@@ -4,1329 +4,653 @@ import { lazy } from "solid-js"
 
 export const Index = {
   "tailwindcss": {
-    "accordion": {
-      name: "accordion",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/accordion")),
-      files: ["registry/tailwindcss/ui/accordion.tsx"],
-    },
-    "alert": {
-      name: "alert",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/alert")),
-      files: ["registry/tailwindcss/ui/alert.tsx"],
-    },
-    "alert-dialog": {
-      name: "alert-dialog",
-      type: "components:ui",
-      registryDependencies: ["button"],
-      component: lazy(() => import("@/registry/tailwindcss/ui/alert-dialog")),
-      files: ["registry/tailwindcss/ui/alert-dialog.tsx"],
-    },
-    "badge": {
-      name: "badge",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/badge")),
-      files: ["registry/tailwindcss/ui/badge.tsx"],
-    },
-    "button": {
-      name: "button",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/button")),
-      files: ["registry/tailwindcss/ui/button.tsx"],
-    },
-    "card": {
-      name: "card",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/card")),
-      files: ["registry/tailwindcss/ui/card.tsx"],
-    },
-    "carousel": {
-      name: "carousel",
-      type: "components:ui",
-      registryDependencies: ["button"],
-      component: lazy(() => import("@/registry/tailwindcss/ui/carousel")),
-      files: ["registry/tailwindcss/ui/carousel.tsx"],
-    },
-    "checkbox": {
-      name: "checkbox",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/checkbox")),
-      files: ["registry/tailwindcss/ui/checkbox.tsx"],
-    },
-    "collapsible": {
-      name: "collapsible",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/collapsible")),
-      files: ["registry/tailwindcss/ui/collapsible.tsx"],
-    },
-    "combobox": {
-      name: "combobox",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/combobox")),
-      files: ["registry/tailwindcss/ui/combobox.tsx"],
-    },
-    "command": {
-      name: "command",
-      type: "components:ui",
-      registryDependencies: ["dialog"],
-      component: lazy(() => import("@/registry/tailwindcss/ui/command")),
-      files: ["registry/tailwindcss/ui/command.tsx"],
-    },
-    "context-menu": {
-      name: "context-menu",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/context-menu")),
-      files: ["registry/tailwindcss/ui/context-menu.tsx"],
-    },
-    "date-picker": {
-      name: "date-picker",
-      type: "components:ui",
-      registryDependencies: ["button"],
-      component: lazy(() => import("@/registry/tailwindcss/ui/date-picker")),
-      files: ["registry/tailwindcss/ui/date-picker.tsx"],
-    },
-    "dialog": {
-      name: "dialog",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/dialog")),
-      files: ["registry/tailwindcss/ui/dialog.tsx"],
-    },
-    "drawer": {
-      name: "drawer",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/drawer")),
-      files: ["registry/tailwindcss/ui/drawer.tsx"],
-    },
-    "dropdown-menu": {
-      name: "dropdown-menu",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/dropdown-menu")),
-      files: ["registry/tailwindcss/ui/dropdown-menu.tsx"],
-    },
-    "hover-card": {
-      name: "hover-card",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/hover-card")),
-      files: ["registry/tailwindcss/ui/hover-card.tsx"],
-    },
-    "image": {
-      name: "image",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/image")),
-      files: ["registry/tailwindcss/ui/image.tsx"],
-    },
-    "menubar": {
-      name: "menubar",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/menubar")),
-      files: ["registry/tailwindcss/ui/menubar.tsx"],
-    },
-    "number-field": {
-      name: "number-field",
-      type: "components:ui",
-      registryDependencies: ["text-field"],
-      component: lazy(() => import("@/registry/tailwindcss/ui/number-field")),
-      files: ["registry/tailwindcss/ui/number-field.tsx"],
-    },
-    "otp-field": {
-      name: "otp-field",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/otp-field")),
-      files: ["registry/tailwindcss/ui/otp-field.tsx"],
-    },
-    "popover": {
-      name: "popover",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/popover")),
-      files: ["registry/tailwindcss/ui/popover.tsx"],
-    },
-    "pagination": {
-      name: "pagination",
-      type: "components:ui",
-      registryDependencies: ["button"],
-      component: lazy(() => import("@/registry/tailwindcss/ui/pagination")),
-      files: ["registry/tailwindcss/ui/pagination.tsx"],
-    },
-    "progress": {
-      name: "progress",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/progress")),
-      files: ["registry/tailwindcss/ui/progress.tsx"],
-    },
-    "radio-group": {
-      name: "radio-group",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/radio-group")),
-      files: ["registry/tailwindcss/ui/radio-group.tsx"],
-    },
-    "resizable": {
-      name: "resizable",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/resizable")),
-      files: ["registry/tailwindcss/ui/resizable.tsx"],
-    },
-    "select": {
-      name: "select",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/select")),
-      files: ["registry/tailwindcss/ui/select.tsx"],
-    },
-    "separator": {
-      name: "separator",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/separator")),
-      files: ["registry/tailwindcss/ui/separator.tsx"],
-    },
-    "sheet": {
-      name: "sheet",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/sheet")),
-      files: ["registry/tailwindcss/ui/sheet.tsx"],
-    },
-    "skeleton": {
-      name: "skeleton",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/skeleton")),
-      files: ["registry/tailwindcss/ui/skeleton.tsx"],
-    },
-    "sonner": {
-      name: "sonner",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/sonner")),
-      files: ["registry/tailwindcss/ui/sonner.tsx"],
-    },
-    "switch": {
-      name: "switch",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/switch")),
-      files: ["registry/tailwindcss/ui/switch.tsx"],
-    },
-    "table": {
-      name: "table",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/table")),
-      files: ["registry/tailwindcss/ui/table.tsx"],
-    },
-    "tabs": {
-      name: "tabs",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/tabs")),
-      files: ["registry/tailwindcss/ui/tabs.tsx"],
-    },
-    "textfield": {
-      name: "textfield",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/textfield")),
-      files: ["registry/tailwindcss/ui/textfield.tsx"],
-    },
-    "textarea": {
-      name: "textarea",
-      type: "components:ui",
-      registryDependencies: ["textfield"],
-      component: lazy(() => import("@/registry/tailwindcss/ui/textarea")),
-      files: ["registry/tailwindcss/ui/textarea.tsx"],
-    },
-    "toast": {
-      name: "toast",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/toast")),
-      files: ["registry/tailwindcss/ui/toast.tsx"],
-    },
-    "toggle-group": {
-      name: "toggle-group",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/toggle-group")),
-      files: ["registry/tailwindcss/ui/toggle-group.tsx"],
-    },
-    "toggle": {
-      name: "toggle",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/toggle")),
-      files: ["registry/tailwindcss/ui/toggle.tsx"],
-    },
-    "tooltip": {
-      name: "tooltip",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/ui/tooltip")),
-      files: ["registry/tailwindcss/ui/tooltip.tsx"],
-    },
     "accordion-demo": {
       name: "accordion-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/accordion-demo")),
-      files: ["registry/tailwindcss/example/accordion-demo.tsx"],
+      component: lazy(() => import("../examples/accordion-demo"))
     },
     "alert-demo": {
       name: "alert-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/alert-demo")),
-      files: ["registry/tailwindcss/example/alert-demo.tsx"],
+      component: lazy(() => import("../examples/alert-demo"))
     },
     "alert-destructive": {
       name: "alert-destructive",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/alert-destructive")),
-      files: ["registry/tailwindcss/example/alert-destructive.tsx"],
+      component: lazy(() => import("../examples/alert-destructive"))
     },
     "alert-dialog-demo": {
       name: "alert-dialog-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/alert-dialog-demo")),
-      files: ["registry/tailwindcss/example/alert-dialog-demo.tsx"],
+      component: lazy(() => import("../examples/alert-dialog-demo"))
     },
     "button-demo": {
       name: "button-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/button-demo")),
-      files: ["registry/tailwindcss/example/button-demo.tsx"],
+      component: lazy(() => import("../examples/button-demo"))
     },
     "button-secondary": {
       name: "button-secondary",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/button-secondary")),
-      files: ["registry/tailwindcss/example/button-secondary.tsx"],
+      component: lazy(() => import("../examples/button-secondary"))
     },
     "button-destructive": {
       name: "button-destructive",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/button-destructive")),
-      files: ["registry/tailwindcss/example/button-destructive.tsx"],
+      component: lazy(() => import("../examples/button-destructive"))
     },
     "button-outline": {
       name: "button-outline",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/button-outline")),
-      files: ["registry/tailwindcss/example/button-outline.tsx"],
+      component: lazy(() => import("../examples/button-outline"))
     },
     "badge-demo": {
       name: "badge-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/badge-demo")),
-      files: ["registry/tailwindcss/example/badge-demo.tsx"],
+      component: lazy(() => import("../examples/badge-demo"))
     },
     "badge-secondary": {
       name: "badge-secondary",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/badge-secondary")),
-      files: ["registry/tailwindcss/example/badge-secondary.tsx"],
+      component: lazy(() => import("../examples/badge-secondary"))
     },
     "badge-destructive": {
       name: "badge-destructive",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/badge-destructive")),
-      files: ["registry/tailwindcss/example/badge-destructive.tsx"],
+      component: lazy(() => import("../examples/badge-destructive"))
     },
     "badge-outline": {
       name: "badge-outline",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/badge-outline")),
-      files: ["registry/tailwindcss/example/badge-outline.tsx"],
+      component: lazy(() => import("../examples/badge-outline"))
     },
     "button-ghost": {
       name: "button-ghost",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/button-ghost")),
-      files: ["registry/tailwindcss/example/button-ghost.tsx"],
+      component: lazy(() => import("../examples/button-ghost"))
     },
     "button-link": {
       name: "button-link",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/button-link")),
-      files: ["registry/tailwindcss/example/button-link.tsx"],
+      component: lazy(() => import("../examples/button-link"))
     },
     "button-with-icon": {
       name: "button-with-icon",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/button-with-icon")),
-      files: ["registry/tailwindcss/example/button-with-icon.tsx"],
+      component: lazy(() => import("../examples/button-with-icon"))
     },
     "calendar-demo": {
       name: "calendar-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/calendar-demo")),
-      files: ["registry/tailwindcss/example/calendar-demo.tsx"],
+      component: lazy(() => import("../examples/calendar-demo"))
     },
     "button-loading": {
       name: "button-loading",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/button-loading")),
-      files: ["registry/tailwindcss/example/button-loading.tsx"],
+      component: lazy(() => import("../examples/button-loading"))
     },
     "button-as-child": {
       name: "button-as-child",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/button-as-child")),
-      files: ["registry/tailwindcss/example/button-as-child.tsx"],
+      component: lazy(() => import("../examples/button-as-child"))
     },
     "card-demo": {
       name: "card-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/card-demo")),
-      files: ["registry/tailwindcss/example/card-demo.tsx"],
+      component: lazy(() => import("../examples/card-demo"))
     },
     "carousel-demo": {
       name: "carousel-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/carousel-demo")),
-      files: ["registry/tailwindcss/example/carousel-demo.tsx"],
+      component: lazy(() => import("../examples/carousel-demo"))
     },
     "carousel-size": {
       name: "carousel-size",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/carousel-size")),
-      files: ["registry/tailwindcss/example/carousel-size.tsx"],
+      component: lazy(() => import("../examples/carousel-size"))
     },
     "carousel-api-demo": {
       name: "carousel-api-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/carousel-api-demo")),
-      files: ["registry/tailwindcss/example/carousel-api-demo.tsx"],
+      component: lazy(() => import("../examples/carousel-api-demo"))
     },
     "carousel-orientation": {
       name: "carousel-orientation",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/carousel-orientation")),
-      files: ["registry/tailwindcss/example/carousel-orientation.tsx"],
+      component: lazy(() => import("../examples/carousel-orientation"))
     },
     "carousel-plugin": {
       name: "carousel-plugin",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/carousel-plugin")),
-      files: ["registry/tailwindcss/example/carousel-plugin.tsx"],
+      component: lazy(() => import("../examples/carousel-plugin"))
     },
     "carousel-spacing": {
       name: "carousel-spacing",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/carousel-spacing")),
-      files: ["registry/tailwindcss/example/carousel-spacing.tsx"],
+      component: lazy(() => import("../examples/carousel-spacing"))
     },
     "checkbox-demo": {
       name: "checkbox-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/checkbox-demo")),
-      files: ["registry/tailwindcss/example/checkbox-demo.tsx"],
+      component: lazy(() => import("../examples/checkbox-demo"))
     },
     "checkbox-disabled": {
       name: "checkbox-disabled",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/checkbox-disabled")),
-      files: ["registry/tailwindcss/example/checkbox-disabled.tsx"],
+      component: lazy(() => import("../examples/checkbox-disabled"))
     },
     "checkbox-with-text": {
       name: "checkbox-with-text",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/checkbox-with-text")),
-      files: ["registry/tailwindcss/example/checkbox-with-text.tsx"],
+      component: lazy(() => import("../examples/checkbox-with-text"))
     },
     "collapsible-demo": {
       name: "collapsible-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/collapsible-demo")),
-      files: ["registry/tailwindcss/example/collapsible-demo.tsx"],
+      component: lazy(() => import("../examples/collapsible-demo"))
     },
     "combobox-demo": {
       name: "combobox-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/combobox-demo")),
-      files: ["registry/tailwindcss/example/combobox-demo.tsx"],
+      component: lazy(() => import("../examples/combobox-demo"))
     },
     "command-demo": {
       name: "command-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/command-demo")),
-      files: ["registry/tailwindcss/example/command-demo.tsx"],
+      component: lazy(() => import("../examples/command-demo"))
     },
     "command-dialog": {
       name: "command-dialog",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/command-dialog")),
-      files: ["registry/tailwindcss/example/command-dialog.tsx"],
+      component: lazy(() => import("../examples/command-dialog"))
     },
     "context-menu-demo": {
       name: "context-menu-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/context-menu-demo")),
-      files: ["registry/tailwindcss/example/context-menu-demo.tsx"],
+      component: lazy(() => import("../examples/context-menu-demo"))
     },
     "data-table-demo": {
       name: "data-table-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/data-table-demo")),
-      files: ["registry/tailwindcss/example/data-table-demo.tsx"],
+      component: lazy(() => import("../examples/data-table-demo"))
     },
     "date-picker-demo": {
       name: "date-picker-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/date-picker-demo")),
-      files: ["registry/tailwindcss/example/date-picker-demo.tsx"],
+      component: lazy(() => import("../examples/date-picker-demo"))
     },
     "date-picker-with-range-demo": {
       name: "date-picker-with-range-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/date-picker-with-range-demo")),
-      files: ["registry/tailwindcss/example/date-picker-with-range-demo.tsx"],
+      component: lazy(() => import("../examples/date-picker-with-range-demo"))
     },
     "dialog-demo": {
       name: "dialog-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/dialog-demo")),
-      files: ["registry/tailwindcss/example/dialog-demo.tsx"],
+      component: lazy(() => import("../examples/dialog-demo"))
     },
     "drawer-demo": {
       name: "drawer-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/drawer-demo")),
-      files: ["registry/tailwindcss/example/drawer-demo.tsx"],
+      component: lazy(() => import("../examples/drawer-demo"))
     },
     "dropdown-menu-demo": {
       name: "dropdown-menu-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/dropdown-menu-demo")),
-      files: ["registry/tailwindcss/example/dropdown-menu-demo.tsx"],
+      component: lazy(() => import("../examples/dropdown-menu-demo"))
     },
     "dropdown-menu-checkboxes": {
       name: "dropdown-menu-checkboxes",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/dropdown-menu-checkboxes")),
-      files: ["registry/tailwindcss/example/dropdown-menu-checkboxes.tsx"],
+      component: lazy(() => import("../examples/dropdown-menu-checkboxes"))
     },
     "dropdown-menu-radio-group": {
       name: "dropdown-menu-radio-group",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/dropdown-menu-radio-group")),
-      files: ["registry/tailwindcss/example/dropdown-menu-radio-group.tsx"],
+      component: lazy(() => import("../examples/dropdown-menu-radio-group"))
     },
     "hover-card-demo": {
       name: "hover-card-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/hover-card-demo")),
-      files: ["registry/tailwindcss/example/hover-card-demo.tsx"],
-    },
-    "mode-toggle": {
-      name: "mode-toggle",
-      type: "components:example",
-      registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/mode-toggle")),
-      files: ["registry/tailwindcss/example/mode-toggle.tsx"],
+      component: lazy(() => import("../examples/hover-card-demo"))
     },
     "image-demo": {
       name: "image-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/image-demo")),
-      files: ["registry/tailwindcss/example/image-demo.tsx"],
+      component: lazy(() => import("../examples/image-demo"))
     },
     "menubar-demo": {
       name: "menubar-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/menubar-demo")),
-      files: ["registry/tailwindcss/example/menubar-demo.tsx"],
+      component: lazy(() => import("../examples/menubar-demo"))
     },
     "number-field-demo": {
       name: "number-field-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/number-field-demo")),
-      files: ["registry/tailwindcss/example/number-field-demo.tsx"],
+      component: lazy(() => import("../examples/number-field-demo"))
     },
     "number-field-disabled-demo": {
       name: "number-field-disabled-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/number-field-disabled-demo")),
-      files: ["registry/tailwindcss/example/number-field-disabled-demo.tsx"],
+      component: lazy(() => import("../examples/number-field-disabled-demo"))
     },
     "number-field-with-error-demo": {
       name: "number-field-with-error-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/number-field-with-error-demo")),
-      files: ["registry/tailwindcss/example/number-field-with-error-demo.tsx"],
+      component: lazy(() => import("../examples/number-field-with-error-demo"))
     },
     "otp-field-demo": {
       name: "otp-field-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/otp-field-demo")),
-      files: ["registry/tailwindcss/example/otp-field-demo.tsx"],
+      component: lazy(() => import("../examples/otp-field-demo"))
     },
     "otp-field-with-pattern-demo": {
       name: "otp-field-with-pattern-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/otp-field-with-pattern-demo")),
-      files: ["registry/tailwindcss/example/otp-field-with-pattern-demo.tsx"],
+      component: lazy(() => import("../examples/otp-field-with-pattern-demo"))
     },
     "otp-field-with-controlled-demo": {
       name: "otp-field-with-controlled-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/otp-field-with-controlled-demo")),
-      files: ["registry/tailwindcss/example/otp-field-with-controlled-demo.tsx"],
+      component: lazy(() => import("../examples/otp-field-with-controlled-demo"))
     },
     "popover-demo": {
       name: "popover-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/popover-demo")),
-      files: ["registry/tailwindcss/example/popover-demo.tsx"],
+      component: lazy(() => import("../examples/popover-demo"))
     },
     "pagination-demo": {
       name: "pagination-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/pagination-demo")),
-      files: ["registry/tailwindcss/example/pagination-demo.tsx"],
+      component: lazy(() => import("../examples/pagination-demo"))
     },
     "progress-demo": {
       name: "progress-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/progress-demo")),
-      files: ["registry/tailwindcss/example/progress-demo.tsx"],
+      component: lazy(() => import("../examples/progress-demo"))
     },
     "radio-group-demo": {
       name: "radio-group-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/radio-group-demo")),
-      files: ["registry/tailwindcss/example/radio-group-demo.tsx"],
+      component: lazy(() => import("../examples/radio-group-demo"))
     },
     "resizable-demo": {
       name: "resizable-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/resizable-demo")),
-      files: ["registry/tailwindcss/example/resizable-demo.tsx"],
+      component: lazy(() => import("../examples/resizable-demo"))
     },
     "resizable-vertical-demo": {
       name: "resizable-vertical-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/resizable-vertical-demo")),
-      files: ["registry/tailwindcss/example/resizable-vertical-demo.tsx"],
+      component: lazy(() => import("../examples/resizable-vertical-demo"))
     },
     "resizable-with-handle-demo": {
       name: "resizable-with-handle-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/resizable-with-handle-demo")),
-      files: ["registry/tailwindcss/example/resizable-with-handle-demo.tsx"],
+      component: lazy(() => import("../examples/resizable-with-handle-demo"))
     },
     "select-demo": {
       name: "select-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/select-demo")),
-      files: ["registry/tailwindcss/example/select-demo.tsx"],
+      component: lazy(() => import("../examples/select-demo"))
     },
     "separator-demo": {
       name: "separator-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/separator-demo")),
-      files: ["registry/tailwindcss/example/separator-demo.tsx"],
+      component: lazy(() => import("../examples/separator-demo"))
     },
     "sheet-demo": {
       name: "sheet-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/sheet-demo")),
-      files: ["registry/tailwindcss/example/sheet-demo.tsx"],
+      component: lazy(() => import("../examples/sheet-demo"))
     },
     "sheet-side": {
       name: "sheet-side",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/sheet-side")),
-      files: ["registry/tailwindcss/example/sheet-side.tsx"],
+      component: lazy(() => import("../examples/sheet-side"))
     },
     "skeleton-demo": {
       name: "skeleton-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/skeleton-demo")),
-      files: ["registry/tailwindcss/example/skeleton-demo.tsx"],
+      component: lazy(() => import("../examples/skeleton-demo"))
     },
     "sonner-demo": {
       name: "sonner-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/sonner-demo")),
-      files: ["registry/tailwindcss/example/sonner-demo.tsx"],
+      component: lazy(() => import("../examples/sonner-demo"))
     },
     "switch-demo": {
       name: "switch-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/switch-demo")),
-      files: ["registry/tailwindcss/example/switch-demo.tsx"],
+      component: lazy(() => import("../examples/switch-demo"))
     },
     "table-demo": {
       name: "table-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/table-demo")),
-      files: ["registry/tailwindcss/example/table-demo.tsx"],
+      component: lazy(() => import("../examples/table-demo"))
     },
     "tabs-demo": {
       name: "tabs-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/tabs-demo")),
-      files: ["registry/tailwindcss/example/tabs-demo.tsx"],
+      component: lazy(() => import("../examples/tabs-demo"))
     },
     "tabs-orientation-demo": {
       name: "tabs-orientation-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/tabs-orientation-demo")),
-      files: ["registry/tailwindcss/example/tabs-orientation-demo.tsx"],
+      component: lazy(() => import("../examples/tabs-orientation-demo"))
     },
     "textarea-demo": {
       name: "textarea-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/textarea-demo")),
-      files: ["registry/tailwindcss/example/textarea-demo.tsx"],
+      component: lazy(() => import("../examples/textarea-demo"))
     },
     "textarea-disabled": {
       name: "textarea-disabled",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/textarea-disabled")),
-      files: ["registry/tailwindcss/example/textarea-disabled.tsx"],
+      component: lazy(() => import("../examples/textarea-disabled"))
     },
     "textarea-with-button": {
       name: "textarea-with-button",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/textarea-with-button")),
-      files: ["registry/tailwindcss/example/textarea-with-button.tsx"],
+      component: lazy(() => import("../examples/textarea-with-button"))
     },
     "textarea-with-label": {
       name: "textarea-with-label",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/textarea-with-label")),
-      files: ["registry/tailwindcss/example/textarea-with-label.tsx"],
+      component: lazy(() => import("../examples/textarea-with-label"))
     },
     "textarea-with-text": {
       name: "textarea-with-text",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/textarea-with-text")),
-      files: ["registry/tailwindcss/example/textarea-with-text.tsx"],
+      component: lazy(() => import("../examples/textarea-with-text"))
     },
     "textfield-demo": {
       name: "textfield-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/textfield-demo")),
-      files: ["registry/tailwindcss/example/textfield-demo.tsx"],
+      component: lazy(() => import("../examples/textfield-demo"))
     },
     "textfield-disabled": {
       name: "textfield-disabled",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/textfield-disabled")),
-      files: ["registry/tailwindcss/example/textfield-disabled.tsx"],
+      component: lazy(() => import("../examples/textfield-disabled"))
     },
     "textfield-file": {
       name: "textfield-file",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/textfield-file")),
-      files: ["registry/tailwindcss/example/textfield-file.tsx"],
+      component: lazy(() => import("../examples/textfield-file"))
     },
     "textfield-with-button": {
       name: "textfield-with-button",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/textfield-with-button")),
-      files: ["registry/tailwindcss/example/textfield-with-button.tsx"],
+      component: lazy(() => import("../examples/textfield-with-button"))
     },
     "textfield-with-label": {
       name: "textfield-with-label",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/textfield-with-label")),
-      files: ["registry/tailwindcss/example/textfield-with-label.tsx"],
+      component: lazy(() => import("../examples/textfield-with-label"))
     },
     "textfield-with-text": {
       name: "textfield-with-text",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/textfield-with-text")),
-      files: ["registry/tailwindcss/example/textfield-with-text.tsx"],
+      component: lazy(() => import("../examples/textfield-with-text"))
     },
     "textfield-with-error": {
       name: "textfield-with-error",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/textfield-with-error")),
-      files: ["registry/tailwindcss/example/textfield-with-error.tsx"],
+      component: lazy(() => import("../examples/textfield-with-error"))
     },
     "toast-demo": {
       name: "toast-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/toast-demo")),
-      files: ["registry/tailwindcss/example/toast-demo.tsx"],
+      component: lazy(() => import("../examples/toast-demo"))
     },
     "toast-destructive": {
       name: "toast-destructive",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/toast-destructive")),
-      files: ["registry/tailwindcss/example/toast-destructive.tsx"],
+      component: lazy(() => import("../examples/toast-destructive"))
     },
     "toggle-group-demo": {
       name: "toggle-group-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/toggle-group-demo")),
-      files: ["registry/tailwindcss/example/toggle-group-demo.tsx"],
+      component: lazy(() => import("../examples/toggle-group-demo"))
     },
     "toggle-group-outline-demo": {
       name: "toggle-group-outline-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/toggle-group-outline-demo")),
-      files: ["registry/tailwindcss/example/toggle-group-outline-demo.tsx"],
+      component: lazy(() => import("../examples/toggle-group-outline-demo"))
     },
     "toggle-group-single-demo": {
       name: "toggle-group-single-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/toggle-group-single-demo")),
-      files: ["registry/tailwindcss/example/toggle-group-single-demo.tsx"],
+      component: lazy(() => import("../examples/toggle-group-single-demo"))
     },
     "toggle-group-small-demo": {
       name: "toggle-group-small-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/toggle-group-small-demo")),
-      files: ["registry/tailwindcss/example/toggle-group-small-demo.tsx"],
+      component: lazy(() => import("../examples/toggle-group-small-demo"))
     },
     "toggle-group-large-demo": {
       name: "toggle-group-large-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/toggle-group-large-demo")),
-      files: ["registry/tailwindcss/example/toggle-group-large-demo.tsx"],
+      component: lazy(() => import("../examples/toggle-group-large-demo"))
     },
     "toggle-group-disabled-demo": {
       name: "toggle-group-disabled-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/toggle-group-disabled-demo")),
-      files: ["registry/tailwindcss/example/toggle-group-disabled-demo.tsx"],
+      component: lazy(() => import("../examples/toggle-group-disabled-demo"))
     },
     "toggle-demo": {
       name: "toggle-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/toggle-demo")),
-      files: ["registry/tailwindcss/example/toggle-demo.tsx"],
+      component: lazy(() => import("../examples/toggle-demo"))
     },
     "toggle-disabled": {
       name: "toggle-disabled",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/toggle-disabled")),
-      files: ["registry/tailwindcss/example/toggle-disabled.tsx"],
+      component: lazy(() => import("../examples/toggle-disabled"))
     },
     "toggle-large": {
       name: "toggle-large",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/toggle-large")),
-      files: ["registry/tailwindcss/example/toggle-large.tsx"],
+      component: lazy(() => import("../examples/toggle-large"))
     },
     "toggle-outline": {
       name: "toggle-outline",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/toggle-outline")),
-      files: ["registry/tailwindcss/example/toggle-outline.tsx"],
+      component: lazy(() => import("../examples/toggle-outline"))
     },
     "toggle-small": {
       name: "toggle-small",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/toggle-small")),
-      files: ["registry/tailwindcss/example/toggle-small.tsx"],
+      component: lazy(() => import("../examples/toggle-small"))
     },
     "toggle-with-text": {
       name: "toggle-with-text",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/toggle-with-text")),
-      files: ["registry/tailwindcss/example/toggle-with-text.tsx"],
+      component: lazy(() => import("../examples/toggle-with-text"))
     },
     "tooltip-demo": {
       name: "tooltip-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/tooltip-demo")),
-      files: ["registry/tailwindcss/example/tooltip-demo.tsx"],
+      component: lazy(() => import("../examples/tooltip-demo"))
     },
     "typography-blockquote": {
       name: "typography-blockquote",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/typography-blockquote")),
-      files: ["registry/tailwindcss/example/typography-blockquote.tsx"],
+      component: lazy(() => import("../examples/typography-blockquote"))
     },
     "typography-demo": {
       name: "typography-demo",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/typography-demo")),
-      files: ["registry/tailwindcss/example/typography-demo.tsx"],
+      component: lazy(() => import("../examples/typography-demo"))
     },
     "typography-h1": {
       name: "typography-h1",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/typography-h1")),
-      files: ["registry/tailwindcss/example/typography-h1.tsx"],
+      component: lazy(() => import("../examples/typography-h1"))
     },
     "typography-h2": {
       name: "typography-h2",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/typography-h2")),
-      files: ["registry/tailwindcss/example/typography-h2.tsx"],
+      component: lazy(() => import("../examples/typography-h2"))
     },
     "typography-h3": {
       name: "typography-h3",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/typography-h3")),
-      files: ["registry/tailwindcss/example/typography-h3.tsx"],
+      component: lazy(() => import("../examples/typography-h3"))
     },
     "typography-h4": {
       name: "typography-h4",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/typography-h4")),
-      files: ["registry/tailwindcss/example/typography-h4.tsx"],
+      component: lazy(() => import("../examples/typography-h4"))
     },
     "typography-inline-code": {
       name: "typography-inline-code",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/typography-inline-code")),
-      files: ["registry/tailwindcss/example/typography-inline-code.tsx"],
+      component: lazy(() => import("../examples/typography-inline-code"))
     },
     "typography-large": {
       name: "typography-large",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/typography-large")),
-      files: ["registry/tailwindcss/example/typography-large.tsx"],
+      component: lazy(() => import("../examples/typography-large"))
     },
     "typography-lead": {
       name: "typography-lead",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/typography-lead")),
-      files: ["registry/tailwindcss/example/typography-lead.tsx"],
+      component: lazy(() => import("../examples/typography-lead"))
     },
     "typography-list": {
       name: "typography-list",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/typography-list")),
-      files: ["registry/tailwindcss/example/typography-list.tsx"],
+      component: lazy(() => import("../examples/typography-list"))
     },
     "typography-muted": {
       name: "typography-muted",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/typography-muted")),
-      files: ["registry/tailwindcss/example/typography-muted.tsx"],
+      component: lazy(() => import("../examples/typography-muted"))
     },
     "typography-p": {
       name: "typography-p",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/typography-p")),
-      files: ["registry/tailwindcss/example/typography-p.tsx"],
+      component: lazy(() => import("../examples/typography-p"))
     },
     "typography-small": {
       name: "typography-small",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/typography-small")),
-      files: ["registry/tailwindcss/example/typography-small.tsx"],
+      component: lazy(() => import("../examples/typography-small"))
     },
     "typography-table": {
       name: "typography-table",
       type: "components:example",
       registryDependencies: undefined,
-      component: lazy(() => import("@/registry/tailwindcss/example/typography-table")),
-      files: ["registry/tailwindcss/example/typography-table.tsx"],
-    },
-  },  "unocss": {
-    "accordion": {
-      name: "accordion",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/accordion")),
-      files: ["../../packages/unocss/ui/accordion.tsx"],
-    },
-    "alert": {
-      name: "alert",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/alert")),
-      files: ["../../packages/unocss/ui/alert.tsx"],
-    },
-    "alert-dialog": {
-      name: "alert-dialog",
-      type: "components:ui",
-      registryDependencies: ["button"],
-      component: lazy(() => import("@repo/unocss/ui/alert-dialog")),
-      files: ["../../packages/unocss/ui/alert-dialog.tsx"],
-    },
-    "badge": {
-      name: "badge",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/badge")),
-      files: ["../../packages/unocss/ui/badge.tsx"],
-    },
-    "button": {
-      name: "button",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/button")),
-      files: ["../../packages/unocss/ui/button.tsx"],
-    },
-    "card": {
-      name: "card",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/card")),
-      files: ["../../packages/unocss/ui/card.tsx"],
-    },
-    "carousel": {
-      name: "carousel",
-      type: "components:ui",
-      registryDependencies: ["button"],
-      component: lazy(() => import("@repo/unocss/ui/carousel")),
-      files: ["../../packages/unocss/ui/carousel.tsx"],
-    },
-    "checkbox": {
-      name: "checkbox",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/checkbox")),
-      files: ["../../packages/unocss/ui/checkbox.tsx"],
-    },
-    "collapsible": {
-      name: "collapsible",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/collapsible")),
-      files: ["../../packages/unocss/ui/collapsible.tsx"],
-    },
-    "combobox": {
-      name: "combobox",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/combobox")),
-      files: ["../../packages/unocss/ui/combobox.tsx"],
-    },
-    "command": {
-      name: "command",
-      type: "components:ui",
-      registryDependencies: ["dialog"],
-      component: lazy(() => import("@repo/unocss/ui/command")),
-      files: ["../../packages/unocss/ui/command.tsx"],
-    },
-    "context-menu": {
-      name: "context-menu",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/context-menu")),
-      files: ["../../packages/unocss/ui/context-menu.tsx"],
-    },
-    "date-picker": {
-      name: "date-picker",
-      type: "components:ui",
-      registryDependencies: ["button"],
-      component: lazy(() => import("@repo/unocss/ui/date-picker")),
-      files: ["../../packages/unocss/ui/date-picker.tsx"],
-    },
-    "dialog": {
-      name: "dialog",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/dialog")),
-      files: ["../../packages/unocss/ui/dialog.tsx"],
-    },
-    "drawer": {
-      name: "drawer",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/drawer")),
-      files: ["../../packages/unocss/ui/drawer.tsx"],
-    },
-    "dropdown-menu": {
-      name: "dropdown-menu",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/dropdown-menu")),
-      files: ["../../packages/unocss/ui/dropdown-menu.tsx"],
-    },
-    "hover-card": {
-      name: "hover-card",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/hover-card")),
-      files: ["../../packages/unocss/ui/hover-card.tsx"],
-    },
-    "image": {
-      name: "image",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/image")),
-      files: ["../../packages/unocss/ui/image.tsx"],
-    },
-    "menubar": {
-      name: "menubar",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/menubar")),
-      files: ["../../packages/unocss/ui/menubar.tsx"],
-    },
-    "number-field": {
-      name: "number-field",
-      type: "components:ui",
-      registryDependencies: ["text-field"],
-      component: lazy(() => import("@repo/unocss/ui/number-field")),
-      files: ["../../packages/unocss/ui/number-field.tsx"],
-    },
-    "otp-field": {
-      name: "otp-field",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/otp-field")),
-      files: ["../../packages/unocss/ui/otp-field.tsx"],
-    },
-    "popover": {
-      name: "popover",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/popover")),
-      files: ["../../packages/unocss/ui/popover.tsx"],
-    },
-    "pagination": {
-      name: "pagination",
-      type: "components:ui",
-      registryDependencies: ["button"],
-      component: lazy(() => import("@repo/unocss/ui/pagination")),
-      files: ["../../packages/unocss/ui/pagination.tsx"],
-    },
-    "progress": {
-      name: "progress",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/progress")),
-      files: ["../../packages/unocss/ui/progress.tsx"],
-    },
-    "radio-group": {
-      name: "radio-group",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/radio-group")),
-      files: ["../../packages/unocss/ui/radio-group.tsx"],
-    },
-    "resizable": {
-      name: "resizable",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/resizable")),
-      files: ["../../packages/unocss/ui/resizable.tsx"],
-    },
-    "select": {
-      name: "select",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/select")),
-      files: ["../../packages/unocss/ui/select.tsx"],
-    },
-    "separator": {
-      name: "separator",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/separator")),
-      files: ["../../packages/unocss/ui/separator.tsx"],
-    },
-    "sheet": {
-      name: "sheet",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/sheet")),
-      files: ["../../packages/unocss/ui/sheet.tsx"],
-    },
-    "skeleton": {
-      name: "skeleton",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/skeleton")),
-      files: ["../../packages/unocss/ui/skeleton.tsx"],
-    },
-    "sonner": {
-      name: "sonner",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/sonner")),
-      files: ["../../packages/unocss/ui/sonner.tsx"],
-    },
-    "switch": {
-      name: "switch",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/switch")),
-      files: ["../../packages/unocss/ui/switch.tsx"],
-    },
-    "table": {
-      name: "table",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/table")),
-      files: ["../../packages/unocss/ui/table.tsx"],
-    },
-    "tabs": {
-      name: "tabs",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/tabs")),
-      files: ["../../packages/unocss/ui/tabs.tsx"],
-    },
-    "textfield": {
-      name: "textfield",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/textfield")),
-      files: ["../../packages/unocss/ui/textfield.tsx"],
-    },
-    "textarea": {
-      name: "textarea",
-      type: "components:ui",
-      registryDependencies: ["textfield"],
-      component: lazy(() => import("@repo/unocss/ui/textarea")),
-      files: ["../../packages/unocss/ui/textarea.tsx"],
-    },
-    "toast": {
-      name: "toast",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/toast")),
-      files: ["../../packages/unocss/ui/toast.tsx"],
-    },
-    "toggle-group": {
-      name: "toggle-group",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/toggle-group")),
-      files: ["../../packages/unocss/ui/toggle-group.tsx"],
-    },
-    "toggle": {
-      name: "toggle",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/toggle")),
-      files: ["../../packages/unocss/ui/toggle.tsx"],
-    },
-    "tooltip": {
-      name: "tooltip",
-      type: "components:ui",
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/unocss/ui/tooltip")),
-      files: ["../../packages/unocss/ui/tooltip.tsx"],
+      component: lazy(() => import("../examples/typography-table"))
     },
   },
 }

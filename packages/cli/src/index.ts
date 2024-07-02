@@ -9,16 +9,16 @@ process.on("SIGINT", () => process.exit(0));
 process.on("SIGTERM", () => process.exit(0));
 
 const run = async () => {
-  const info = await readPackageJSON();
+	const info = await readPackageJSON();
 
-  new Command()
-    .name(info.name)
-    .description(info.description)
-    .version(info.version, "-v, --version")
-    .addCommand(initCommand)
-    .addCommand(addCommand)
-    .addCommand(diffCommand)
-    .parse();
+	new Command()
+		.name(info.name)
+		.description(info.description)
+		.version(info.version, "-v, --version")
+		.addCommand(initCommand)
+		.addCommand(addCommand)
+		.addCommand(diffCommand)
+		.parse();
 };
 
 run();

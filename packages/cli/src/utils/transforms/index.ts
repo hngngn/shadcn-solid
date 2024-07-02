@@ -9,38 +9,42 @@ import { transformImport } from "./import";
 import { transformPrefix } from "./prefix";
 
 type Option = {
-  filename: string;
-  raw: string;
-  config: Config;
-  color?: ColorSchema;
+	filename: string;
+	raw: string;
+	config: Config;
+	color?: ColorSchema;
 };
 
 export type Transformer<Output = SourceFile> = (
-  opts: Option & {
-    sourceFile: SourceFile;
-  }
+	opts: Option & {
+		sourceFile: SourceFile;
+	},
 ) => Promise<Output>;
 
-const transformers: Transformer[] = [transformImport, transformCSSVariable, transformPrefix];
+const transformers: Transformer[] = [
+	transformImport,
+	transformCSSVariable,
+	transformPrefix,
+];
 
 const project = new Project({
-  compilerOptions: {}
+	compilerOptions: {},
 });
 
 const createTempSourceFile = async (filename: string) => {
-  const dir = await mkdtemp(join(tmpdir(), "shadcn-"));
-  return join(dir, filename);
+	const dir = await mkdtemp(join(tmpdir(), "shadcn-"));
+	return join(dir, filename);
 };
 
 export const transform = async (opts: Option) => {
-  const tempFile = await createTempSourceFile(opts.filename);
-  const sourceFile = project.createSourceFile(tempFile, opts.raw, {
-    scriptKind: ScriptKind.TSX
-  });
+	const tempFile = await createTempSourceFile(opts.filename);
+	const sourceFile = project.createSourceFile(tempFile, opts.raw, {
+		scriptKind: ScriptKind.TSX,
+	});
 
-  for (const transformer of transformers) {
-    transformer({ sourceFile, ...opts });
-  }
+	for (const transformer of transformers) {
+		transformer({ sourceFile, ...opts });
+	}
 
-  return sourceFile.getFullText();
+	return sourceFile.getFullText();
 };
