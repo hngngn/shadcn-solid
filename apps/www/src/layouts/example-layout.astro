@@ -7,7 +7,10 @@ import { Balancer } from "solid-wrap-balancer";
 import RootLayout from "./root-layout.astro";
 ---
 
-<RootLayout>
+<RootLayout
+    title="Example - shadcn-solid"
+    url={siteConfig.url + Astro.url.pathname}
+>
     <div class="container relative">
         <section
             class="mx-auto flex max-w-[980px] flex-col items-center gap-2 py-8 md:py-12 md:pb-8 lg:py-24 lg:pb-20"

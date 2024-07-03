@@ -1,9 +1,10 @@
 ---
-import { getCollection } from "astro:content";
 import PageNavigation from "@/components/page-navigation.astro";
 import { Sidebar } from "@/components/sidebar";
 import Toc from "@/components/toc.astro";
+import { siteConfig } from "@/config/site";
 import { badgeVariants } from "@repo/tailwindcss/ui/badge";
+import { getCollection } from "astro:content";
 // @ts-expect-error
 import { Balancer } from "solid-wrap-balancer";
 import RootLayout from "./root-layout.astro";
@@ -21,7 +22,11 @@ const { headings } = await entry.render();
 const { pathname } = Astro.url;
 ---
 
-<RootLayout>
+<RootLayout
+    title={entry.data.title}
+    description={entry.data.description}
+    url={siteConfig.url + Astro.url.pathname}
+>
     <div class="border-b">
         <div
             class="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"

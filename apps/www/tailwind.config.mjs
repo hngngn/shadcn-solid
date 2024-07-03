@@ -1,3 +1,5 @@
+import { fontFamily } from "tailwindcss/defaultTheme";
+
 /** @type {import('tailwindcss').Config} */
 export default {
 	darkMode: ["class"],
@@ -82,6 +84,9 @@ export default {
 				"collapsible-down": "collapsible-down 0.2s ease-out",
 				"collapsible-up": "collapsible-up 0.2s ease-out",
 				"caret-blink": "caret-blink 1.25s ease-out infinite",
+			},
+			fontFamily: {
+				sans: ["Geist Sans Variable", ...fontFamily.sans],
 			},
 		},
 	},
