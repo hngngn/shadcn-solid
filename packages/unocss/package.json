@@ -31,10 +31,5 @@
 	"scripts": {
 		"dev": "vite serve dev",
 		"check": "biome check --write --unsafe ui"
-	},
-	"lint-staged": {
-		"ui/*.tsx": [
-			"biome check --write --unsafe--staged --no-errors-on-unmatched"
-		]
 	}
 }
