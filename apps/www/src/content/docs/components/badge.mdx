@@ -1,0 +1,89 @@
+---
+title: Badge
+description: Displays a badge or a component that looks like a badge.
+component: true
+---
+
+import ComponentInstallation from "@/components/component-installation";
+import ComponentPreview from "@/components/component-preview";
+import RawCode from "@/components/raw-code.tsx";
+import DemoCode from "@/examples/badge-demo?raw";
+import DemoCode3 from "@/examples/badge-destructive?raw";
+import DemoCode4 from "@/examples/badge-outline?raw";
+import DemoCode2 from "@/examples/badge-secondary?raw";
+import TwRawCode from "@repo/tailwindcss/ui/badge?raw";
+import UnoRawCode from "@repo/unocss/ui/badge?raw";
+
+<ComponentPreview name="badge-demo" code={DemoCode} client:only="solid" />
+
+## Installation
+
+<ComponentInstallation client:load>
+
+<Fragment slot="cli">
+```bash
+npx shadcn-solid@latest add badge
+```
+</Fragment>
+
+<Step slot="tw">
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={TwRawCode} client:load />
+
+</Step>
+
+<Step slot="uno">
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={UnoRawCode} client:load />
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import { Badge } from "@/components/ui/badge";
+```
+
+```tsx
+<Badge variant="outline">badge</Badge>
+```
+
+### Link
+
+You can use the `badgeVariants` helper to create a link that looks like a badge.
+
+```tsx
+import { badgeVariants } from "@/components/ui/badge";
+```
+
+```tsx
+<A class={badgeVariants({ variant: "outline" })}>Click here</A>
+```
+
+Alternatively, you can set the `asChild` parameter and nest the link component.
+
+```tsx
+<Badge asChild>
+  <As component={A} href="#">
+    Login
+  </As>
+</Badge>
+```
+
+## Examples
+
+### Secondary
+
+<ComponentPreview name="badge-secondary" code={DemoCode2} client:load />
+
+### Destructive
+
+<ComponentPreview name="badge-destructive" code={DemoCode3} client:load />
+
+### Outline
+
+<ComponentPreview name="badge-outline" code={DemoCode4} client:load />

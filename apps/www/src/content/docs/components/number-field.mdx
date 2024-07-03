@@ -1,0 +1,89 @@
+---
+title: Number Field
+description: A number input that allow users to input custom number entries with a keyboard.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/number-field
+  api: https://kobalte.dev/docs/core/components/number-field#api-reference
+---
+
+import ComponentInstallation from "@/components/component-installation";
+import ComponentPreview from "@/components/component-preview";
+import RawCode from "@/components/raw-code.tsx";
+import DemoCode from "@/examples/number-field-demo?raw";
+import DemoCode2 from "@/examples/number-field-disabled-demo?raw";
+import DemoCode3 from "@/examples/number-field-with-error-demo?raw";
+import TwRawCode from "@repo/tailwindcss/ui/number-field?raw";
+import UnoRawCode from "@repo/unocss/ui/number-field?raw";
+
+<ComponentPreview name="number-field-demo" code={DemoCode} client:only="solid" />
+
+## Installation
+
+<ComponentInstallation client:load>
+
+<Fragment slot="cli">
+```bash
+npx shadcn-solid@latest add number-field
+```
+</Fragment>
+
+<Step slot="tw">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={TwRawCode} client:load />
+
+</Step>
+
+<Step slot="uno">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={UnoRawCode} client:load />
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import {
+  NumberField,
+  NumberFieldDecrementTrigger,
+  NumberFieldDescription,
+  NumberFieldGroup,
+  NumberFieldIncrementTrigger,
+  NumberFieldInput,
+  NumberFieldLabel
+} from "@components/ui/number-field";
+```
+
+```tsx
+<NumberField>
+    <NumberFieldGroup>
+        <NumberFieldDecrementTrigger aria-label="Decrement" />
+        <NumberFieldInput />
+        <NumberFieldIncrementTrigger aria-label="Increment" />
+    </NumberFieldGroup>
+</NumberField>
+```
+
+## Example
+
+### Disabled
+
+<ComponentPreview name="number-field-disabled-demo" code={DemoCode2} client:only="solid" />
+
+### With Error
+
+<ComponentPreview name="number-field-with-error-demo"  code={DemoCode3} client:only="solid" />

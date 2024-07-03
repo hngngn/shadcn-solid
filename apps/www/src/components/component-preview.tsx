@@ -25,17 +25,11 @@ const ComponentPreview: ParentComponent<Props> = (props) => {
 		<div class="group relative my-4 flex flex-col space-y-2 [&_.preview>div]:sm:max-w-[70%]">
 			<Tabs defaultValue="preview">
 				<div class="pb-3">
-					<TabsList class="w-full rounded-none border-b bg-transparent p-0">
-						<TabsTrigger
-							value="preview"
-							class="w-fit rounded-none bg-transparent px-4 pb-3.5 pt-2 font-semibold data-[selected]:shadow-none"
-						>
+					<TabsList class="bg-transparent border-b rounded-none">
+						<TabsTrigger value="preview" class="w-fit">
 							Preview
 						</TabsTrigger>
-						<TabsTrigger
-							value="code"
-							class="w-fit rounded-none bg-transparent px-4 pb-3.5 pt-2 font-semibold data-[selected]:shadow-none"
-						>
+						<TabsTrigger value="code" class="w-fit">
 							Code
 						</TabsTrigger>
 						<TabsIndicator variant="underline" />

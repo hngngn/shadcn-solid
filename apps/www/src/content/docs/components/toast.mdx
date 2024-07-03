@@ -1,0 +1,83 @@
+---
+title: Toast
+description: A succinct message that is displayed temporarily.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/toast
+  api: https://kobalte.dev/docs/core/components/toast#api-reference
+---
+
+import ComponentInstallation from "@/components/component-installation";
+import ComponentPreview from "@/components/component-preview";
+import RawCode from "@/components/raw-code.tsx";
+import DemoCode from "@/examples/toast-demo?raw";
+import DemoCode2 from "@/examples/toast-destructive?raw";
+import TwRawCode from "@repo/tailwindcss/ui/toast?raw";
+import UnoRawCode from "@repo/unocss/ui/toast?raw";
+
+<ComponentPreview name="toast-demo" code={DemoCode} client:only="solid" />
+
+## Installation
+
+<ComponentInstallation client:load>
+
+<Fragment slot="cli">
+```bash
+npx shadcn-solid@latest add toast
+```
+</Fragment>
+
+<Step slot="tw">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={TwRawCode} client:load />
+
+</Step>
+
+<Step slot="uno">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={UnoRawCode} client:load />
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import { toaster } from "@kobalte/core";
+import {
+  Toast,
+  ToastContent,
+  ToastProgress,
+  ToastTitle
+} from "@/components/ui/toast";
+```
+
+```tsx
+toaster.show(props => (
+  <Toast toastId={props.toastId}>
+    <ToastContent>
+      <ToastTitle>Toast</ToastTitle>
+    </ToastContent>
+    <ToastProgress />
+  </Toast>
+))
+```
+
+## Examples
+
+### Destructive
+
+<ComponentPreview name="toast-destructive" code={DemoCode2} client:only="solid" />

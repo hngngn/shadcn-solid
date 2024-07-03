@@ -1,9 +1,12 @@
 import { docsConfig } from "@/config/docs";
 import { cn } from "@/libs/cn";
-import { store } from "@/store";
 import { For, Show } from "solid-js";
 
-export const Sidebar = () => {
+type Props = {
+	pathname: string;
+};
+
+export const Sidebar = (props: Props) => {
 	return (
 		<div class="w-full">
 			<For each={docsConfig.sidebarNav}>
@@ -46,7 +49,7 @@ export const Sidebar = () => {
 											class={cn(
 												"flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline",
 												item.disabled && "cursor-not-allowed opacity-60",
-												store.pathname === item.href
+												props.pathname === item.href
 													? "font-medium text-foreground"
 													: "text-muted-foreground",
 											)}

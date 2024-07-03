@@ -411,11 +411,6 @@ const example = [
 		files: ["examples/context-menu-demo.tsx"],
 	},
 	{
-		name: "data-table-demo",
-		type: "components:example",
-		files: ["examples/data-table-demo.tsx"],
-	},
-	{
 		name: "date-picker-demo",
 		type: "components:example",
 		files: ["examples/date-picker-demo.tsx"],

@@ -1,0 +1,75 @@
+---
+title: Checkbox
+description: A control that allows the user to toggle between checked and not checked.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/checkbox
+  api: https://kobalte.dev/docs/core/components/checkbox#api-reference
+---
+
+import ComponentInstallation from "@/components/component-installation";
+import ComponentPreview from "@/components/component-preview";
+import RawCode from "@/components/raw-code.tsx";
+import DemoCode from "@/examples/checkbox-demo?raw";
+import DemoCode3 from "@/examples/checkbox-disabled?raw";
+import DemoCode2 from "@/examples/checkbox-with-text?raw";
+import TwRawCode from "@repo/tailwindcss/ui/checkbox?raw";
+import UnoRawCode from "@repo/unocss/ui/checkbox?raw";
+
+<ComponentPreview name="checkbox-demo" code={DemoCode} client:only="solid" />
+
+## Installation
+
+<ComponentInstallation client:load>
+
+<Fragment slot="cli">
+```bash
+npx shadcn-solid@latest add checkbox
+```
+</Fragment>
+
+<Step slot="tw">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={TwRawCode} client:load />
+
+</Step>
+
+<Step slot="uno">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={UnoRawCode} client:load />
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import { Checkbox } from "@/components/ui/checkbox";
+```
+
+```tsx
+<Checkbox />
+```
+
+## Examples
+
+### With text
+
+<ComponentPreview name="checkbox-with-text" code={DemoCode2} client:only="solid" />
+
+### Disabled
+
+<ComponentPreview name="checkbox-disabled" code={DemoCode3} client:only="solid" />

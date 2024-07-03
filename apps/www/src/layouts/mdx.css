@@ -26,3 +26,13 @@
 [data-rehype-pretty-code-figure] {
   @apply relative;
 }
+
+[data-rehype-pretty-code-figure] code {
+  @apply grid min-w-full break-words rounded-none border-0 bg-transparent p-0;
+  counter-reset: line;
+  box-decoration-break: clone;
+}
+
+[data-rehype-pretty-code-figure] [data-highlighted-chars] {
+  @apply rounded-md bg-zinc-700/50 p-0.5;
+}

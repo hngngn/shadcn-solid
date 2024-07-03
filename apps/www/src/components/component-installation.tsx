@@ -16,44 +16,33 @@ type Props = {
 const ComponentInstallation = (props: Props) => {
 	return (
 		<Tabs defaultValue="cli" class="relative mt-6 w-full">
-			<TabsList class="w-full justify-start rounded-none border-b bg-transparent p-0">
-				<TabsTrigger
-					value="cli"
-					class="w-fit rounded-none bg-transparent px-4 pb-3.5 pt-2 font-semibold data-[selected]:shadow-none"
-				>
+			<TabsList class="bg-transparent border-b rounded-none">
+				<TabsTrigger value="cli" class="w-fit">
 					CLI
 				</TabsTrigger>
-				<TabsTrigger
-					value="manual-tailwindcss"
-					class="w-fit rounded-none bg-transparent px-4 pb-3.5 pt-2 font-semibold data-[selected]:shadow-none"
-				>
-					Manual - TailwindCSS
-				</TabsTrigger>
-				<TabsTrigger
-					value="manual-unocss"
-					class="w-fit rounded-none bg-transparent px-4 pb-3.5 pt-2 font-semibold data-[selected]:shadow-none"
-				>
-					Manual - UnoCSS
+				<TabsTrigger value="manual" class="w-fit">
+					Manual
 				</TabsTrigger>
 				<TabsIndicator variant="underline" />
 			</TabsList>
+			<TabsContent value="cli">{props.cli}</TabsContent>
 			<TabsContent
-				value="cli"
+				value="manual"
 				class="relative [&_h3.font-heading]:text-base [&_h3.font-heading]:font-semibold"
 			>
-				{props.cli}
-			</TabsContent>
-			<TabsContent
-				value="manual-tailwindcss"
-				class="relative [&_h3.font-heading]:text-base [&_h3.font-heading]:font-semibold"
-			>
-				{props.tw}
-			</TabsContent>
-			<TabsContent
-				value="manual-unocss"
-				class="relative [&_h3.font-heading]:text-base [&_h3.font-heading]:font-semibold"
-			>
-				{props.uno}
+				<Tabs defaultValue="tw">
+					<TabsList class="mt-6 w-fit">
+						<TabsTrigger value="tw" class="w-[110px]">
+							TailwindCSS
+						</TabsTrigger>
+						<TabsTrigger value="uno" class="w-[110px]">
+							UnoCSS
+						</TabsTrigger>
+						<TabsIndicator />
+					</TabsList>
+					<TabsContent value="tw">{props.tw}</TabsContent>
+					<TabsContent value="uno">{props.uno}</TabsContent>
+				</Tabs>
 			</TabsContent>
 		</Tabs>
 	);

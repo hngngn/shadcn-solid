@@ -7,7 +7,11 @@ import { For } from "solid-js";
 import Logo from "./logo";
 import { Sidebar } from "./sidebar";
 
-const MobileNavbar = () => {
+type Props = {
+	pathname: string;
+};
+
+const MobileNavbar = (props: Props) => {
 	return (
 		<Sheet>
 			<SheetTrigger
@@ -55,7 +59,7 @@ const MobileNavbar = () => {
 								)}
 							</For>
 						</div>
-						<Sidebar />
+						<Sidebar pathname={props.pathname} />
 					</div>
 				</div>
 			</SheetContent>

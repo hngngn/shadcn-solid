@@ -1,11 +1,14 @@
 import { docsConfig } from "@/config/docs";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/libs/cn";
-import { store } from "@/store";
 import { For } from "solid-js";
 import Logo from "./logo";
 
-const Navbar = () => {
+type Props = {
+	pathname: string;
+};
+
+const Navbar = (props: Props) => {
 	return (
 		<div class="mr-4 hidden md:flex">
 			<a href="/" class="mr-6 flex items-center space-x-2">
@@ -19,11 +22,11 @@ const Navbar = () => {
 							href={item.href}
 							class={cn(
 								"transition-colors hover:text-foreground/80",
-								store.pathname === item.href ||
+								props.pathname === item.href ||
 									(item.href === "/docs/components/accordion" &&
-										store.pathname.startsWith("/docs/components")) ||
+										props.pathname.startsWith("/docs/components")) ||
 									(item.href === "/examples/cards" &&
-										store.pathname.startsWith("/examples"))
+										props.pathname.startsWith("/examples"))
 									? "text-foreground"
 									: "opacity-60",
 							)}

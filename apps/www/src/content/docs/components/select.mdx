@@ -1,0 +1,77 @@
+---
+title: Select
+description: Displays a list of options for the user to pick from—triggered by a button.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/select
+  api: https://kobalte.dev/docs/core/components/select#api-reference
+---
+
+import ComponentInstallation from "@/components/component-installation";
+import ComponentPreview from "@/components/component-preview";
+import RawCode from "@/components/raw-code.tsx";
+import DemoCode from "@/examples/select-demo?raw";
+import TwRawCode from "@repo/tailwindcss/ui/select?raw";
+import UnoRawCode from "@repo/unocss/ui/select?raw";
+
+<ComponentPreview name="select-demo" code={DemoCode} client:only="solid" />
+
+## Installation
+
+<ComponentInstallation client:load>
+
+<Fragment slot="cli">
+```bash
+npx shadcn-solid@latest add select
+```
+</Fragment>
+
+<Step slot="tw">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={TwRawCode} client:load />
+
+</Step>
+
+<Step slot="uno">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={UnoRawCode} client:load />
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from "@/components/ui/select";
+```
+
+```tsx
+<Select
+  options={["Apple", "Banana", "Blueberry", "Grapes", "Pineapple"]}
+  itemComponent={props => <SelectItem item={props.item}>{props.item.rawValue}</SelectItem>}
+>
+  <SelectTrigger>
+    <SelectValue<string>>{state => state.selectedOption()}</SelectValue>
+  </SelectTrigger>
+  <SelectContent />
+</Select>
+```

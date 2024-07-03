@@ -1,0 +1,50 @@
+---
+title: Skeleton
+description: Use to show a placeholder while content is loading.
+component: true
+---
+
+import ComponentInstallation from "@/components/component-installation";
+import ComponentPreview from "@/components/component-preview";
+import RawCode from "@/components/raw-code.tsx";
+import DemoCode from "@/examples/skeleton-demo?raw";
+import TwRawCode from "@repo/tailwindcss/ui/skeleton?raw";
+import UnoRawCode from "@repo/unocss/ui/skeleton?raw";
+
+<ComponentPreview name="skeleton-demo" code={DemoCode} client:only="solid" />
+
+## Installation
+
+<ComponentInstallation client:load>
+
+<Fragment slot="cli">
+```bash
+npx shadcn-solid@latest add skeleton
+```
+</Fragment>
+
+<Step slot="tw">
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={TwRawCode} client:load />
+
+</Step>
+
+<Step slot="uno">
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={UnoRawCode} client:load />
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import { Skeleton } from "@/components/ui/skeleton";
+```
+
+```tsx
+<Skeleton class="w-100px h-20px rounded-full" />
+```

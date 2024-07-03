@@ -20,7 +20,7 @@ const RawCode: VoidComponent<{ code: string }> = (props) => {
 			fallback={
 				<div
 					data-raw-code
-					class="h-[350px] border rounded-md flex justify-center items-center bg-zinc-900 mt-6"
+					class="h-[350px] border rounded-md flex justify-center items-center bg-zinc-900 mt-6 text-white"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

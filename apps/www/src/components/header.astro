@@ -5,14 +5,16 @@ import CommandMenu from "./command-menu";
 import MobileNavbar from "./mobile-navbar";
 import ModeToggle from "./mode-toggle";
 import Navbar from "./navbar";
+
+const { pathname } = Astro.url;
 ---
 
 <header
 	class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
 >
 	<div class="container md:px-8 px-4 flex h-14 max-w-screen-2xl items-center">
-		<Navbar />
-		<MobileNavbar />
+		<Navbar pathname={pathname} />
+		<MobileNavbar pathname={pathname} client:only="solid" />
 		<div class="flex flex-1 items-center justify-end space-x-2">
 			<div class="w-full flex-1 md:w-auto md:flex-none">
 				<CommandMenu client:only="solid" />

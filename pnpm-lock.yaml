@@ -204,9 +204,6 @@ importers:
       '@astrojs/vercel':
         specifier: ^7.7.2
         version: 7.7.2(astro@4.11.3(@types/node@20.14.9)(terser@5.31.1)(typescript@5.5.2))
-      '@faker-js/faker':
-        specifier: ^8.4.1
-        version: 8.4.1
       '@kobalte/core':
         specifier: ^0.13.3
         version: 0.13.3(solid-js@1.8.18)
@@ -219,9 +216,6 @@ importers:
       '@solid-primitives/storage':
         specifier: ^3.5.0
         version: 3.7.1(solid-js@1.8.18)
-      '@tanstack/solid-table':
-        specifier: ^8.15.3
-        version: 8.17.3(solid-js@1.8.18)
       astro:
         specifier: ^4.11.3
         version: 4.11.3(@types/node@20.14.9)(terser@5.31.1)(typescript@5.5.2)
@@ -234,9 +228,6 @@ importers:
       embla-carousel-autoplay:
         specifier: ^8.1.6
         version: 8.1.6(embla-carousel@8.1.6)
-      embla-carousel-solid:
-        specifier: ^8.1.6
-        version: 8.1.6(solid-js@1.8.18)
       solid-js:
         specifier: ^1.8.18
         version: 1.8.18
@@ -9191,11 +9182,6 @@ snapshots:
     dependencies:
       '@tanstack/table-core': 8.17.3
       solid-js: 1.8.17
-
-  '@tanstack/solid-table@8.17.3(solid-js@1.8.18)':
-    dependencies:
-      '@tanstack/table-core': 8.17.3
-      solid-js: 1.8.18
 
   '@tanstack/table-core@8.17.3': {}
 

@@ -26,7 +26,10 @@ if (entry === undefined) {
                 class="fixed top-14 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 md:sticky md:block"
             >
                 <div class="relative h-full overflow-y-auto py-6 pr-6 lg:py-8">
-                    <Sidebar client:only="solid" />
+                    <Sidebar
+                        pathname={Astro.url.pathname}
+                        client:only="solid"
+                    />
                 </div>
             </aside>
             <main

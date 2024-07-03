@@ -1,0 +1,88 @@
+---
+title: Textarea
+description: A textarea that allow users to input custom text entries with a keyboard.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/text-field
+  api: https://kobalte.dev/docs/core/components/text-field#api-reference
+---
+
+import ComponentInstallation from "@/components/component-installation";
+import ComponentPreview from "@/components/component-preview";
+import RawCode from "@/components/raw-code.tsx";
+import DemoCode from "@/examples/textarea-demo?raw";
+import DemoCode2 from "@/examples/textarea-disabled?raw";
+import DemoCode5 from "@/examples/textarea-with-button?raw";
+import DemoCode3 from "@/examples/textarea-with-label?raw";
+import DemoCode4 from "@/examples/textarea-with-text?raw";
+import TwRawCode from "@repo/tailwindcss/ui/textarea?raw";
+import UnoRawCode from "@repo/unocss/ui/textarea?raw";
+
+<ComponentPreview name="textarea-demo" code={DemoCode} client:only="solid" />
+
+## Installation
+
+<ComponentInstallation client:load>
+
+<Fragment slot="cli">
+```bash
+npx shadcn-solid@latest add textarea
+```
+</Fragment>
+
+<Step slot="tw">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={TwRawCode} client:load />
+
+</Step>
+
+<Step slot="uno">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={UnoRawCode} client:load />
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import { TextArea } from "@/components/ui/textarea";
+import { TextFieldRoot } from "@/components/ui/textfield";
+```
+
+```tsx
+<TextFieldRoot>
+  <TextArea />
+</TextFieldRoot>
+```
+
+## Examples
+
+### Disabled
+
+<ComponentPreview name="textarea-disabled" code={DemoCode2} client:only="solid" />
+
+### With Label
+
+<ComponentPreview name="textarea-with-label" code={DemoCode3} client:only="solid" />
+
+### With Text
+
+<ComponentPreview name="textarea-with-text" code={DemoCode4} client:only="solid" />
+
+### With Button
+
+<ComponentPreview name="textarea-with-button" code={DemoCode5} client:only="solid" />

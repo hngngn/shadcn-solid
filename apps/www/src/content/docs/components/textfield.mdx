@@ -1,0 +1,97 @@
+---
+title: TextField
+description: A text input that allow users to input custom text entries with a keyboard.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/text-field
+  api: https://kobalte.dev/docs/core/components/text-field#api-reference
+---
+
+import ComponentInstallation from "@/components/component-installation";
+import ComponentPreview from "@/components/component-preview";
+import RawCode from "@/components/raw-code.tsx";
+import DemoCode from "@/examples/textfield-demo?raw";
+import DemoCode2 from "@/examples/textfield-disabled?raw";
+import DemoCode7 from "@/examples/textfield-file?raw";
+import DemoCode6 from "@/examples/textfield-with-button?raw";
+import DemoCode5 from "@/examples/textfield-with-error?raw";
+import DemoCode3 from "@/examples/textfield-with-label?raw";
+import DemoCode4 from "@/examples/textfield-with-text?raw";
+import TwRawCode from "@repo/tailwindcss/ui/textfield?raw";
+import UnoRawCode from "@repo/unocss/ui/textfield?raw";
+
+<ComponentPreview name="textfield-demo" code={DemoCode} client:only="solid" />
+
+## Installation
+
+<ComponentInstallation client:load>
+
+<Fragment slot="cli">
+```bash
+npx shadcn-solid@latest add textfield
+```
+</Fragment>
+
+<Step slot="tw">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={TwRawCode} client:load />
+
+</Step>
+
+<Step slot="uno">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={UnoRawCode} client:load />
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import { TextField, TextFieldRoot } from "@/components/ui/textfield";
+```
+
+```tsx
+<TextFieldRoot>
+  <TextField type="email" placeholder="Email" />
+</TextFieldRoot>
+```
+
+## Examples
+
+### Disabled
+
+<ComponentPreview name="textfield-disabled" code={DemoCode2} client:only="solid" />
+
+### With Label
+
+<ComponentPreview name="textfield-with-label" code={DemoCode3} client:only="solid" />
+
+### With Text
+
+<ComponentPreview name="textfield-with-text" code={DemoCode4} client:only="solid" />
+
+### With Error
+
+<ComponentPreview name="textfield-with-error" code={DemoCode5} client:only="solid" />
+
+### With Button
+
+<ComponentPreview name="textfield-with-button" code={DemoCode6} client:only="solid" />
+
+### File
+
+<ComponentPreview name="textfield-file" code={DemoCode7} client:only="solid" />

@@ -1,0 +1,68 @@
+---
+title: Hover Card
+description: For sighted users to preview content available behind a link.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/hover-card
+  api: https://kobalte.dev/docs/core/components/hover-card#api-reference
+---
+
+import ComponentInstallation from "@/components/component-installation";
+import ComponentPreview from "@/components/component-preview";
+import RawCode from "@/components/raw-code.tsx";
+import DemoCode from "@/examples/hover-card-demo?raw";
+import TwRawCode from "@repo/tailwindcss/ui/hover-card?raw";
+import UnoRawCode from "@repo/unocss/ui/hover-card?raw";
+
+<ComponentPreview name="hover-card-demo" code={DemoCode} client:only="solid" />
+
+## Installation
+
+<ComponentInstallation client:load>
+
+<Fragment slot="cli">
+```bash
+npx shadcn-solid@latest add hover-card
+```
+</Fragment>
+
+<Step slot="tw">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={TwRawCode} client:load />
+
+</Step>
+
+<Step slot="uno">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={UnoRawCode} client:load />
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
+```
+
+```tsx
+<HoverCard>
+  <HoverCardTrigger>Hover</HoverCardTrigger>
+  <HoverCardContent>
+    SolidJS - Simple and performant reactivity for building user interfaces.
+  </HoverCardContent>
+</HoverCard>
+```

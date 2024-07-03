@@ -1,0 +1,66 @@
+---
+title: Image
+description: An image element with an optional fallback for loading and error status.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/image
+  api: https://kobalte.dev/docs/core/components/image#api-reference
+---
+
+import ComponentInstallation from "@/components/component-installation";
+import ComponentPreview from "@/components/component-preview";
+import RawCode from "@/components/raw-code.tsx";
+import DemoCode from "@/examples/image-demo?raw";
+import TwRawCode from "@repo/tailwindcss/ui/image?raw";
+import UnoRawCode from "@repo/unocss/ui/image?raw";
+
+<ComponentPreview name="image-demo" code={DemoCode} client:only="solid" />
+
+## Installation
+
+<ComponentInstallation client:load>
+
+<Fragment slot="cli">
+```bash
+npx shadcn-solid@latest add image
+```
+</Fragment>
+
+<Step slot="tw">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={TwRawCode} client:load />
+
+</Step>
+
+<Step slot="uno">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={UnoRawCode} client:load />
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import { ImageRoot, ImageFallback, Image } from "@/components/ui/image";
+```
+
+```tsx
+<ImageRoot>
+  <Image src="https://github.com/hngngn.png" />
+  <ImageFallback>HN</ImageFallback>
+</ImageRoot>
+```

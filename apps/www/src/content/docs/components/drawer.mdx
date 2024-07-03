@@ -1,0 +1,83 @@
+---
+title: Drawer
+description: A draggable dialog that is attached to any side of the viewport.
+component: true
+link:
+  doc: https://corvu.dev/docs/primitives/drawer
+  api: https://corvu.dev/docs/primitives/drawer/#api-reference
+---
+
+import ComponentInstallation from "@/components/component-installation";
+import ComponentPreview from "@/components/component-preview";
+import RawCode from "@/components/raw-code.tsx";
+import DemoCode from "@/examples/drawer-demo?raw";
+import TwRawCode from "@repo/tailwindcss/ui/drawer?raw";
+import UnoRawCode from "@repo/unocss/ui/drawer?raw";
+
+<ComponentPreview name="drawer-demo" code={DemoCode} client:only="solid" />
+
+## Installation
+
+<ComponentInstallation client:load>
+
+<Fragment slot="cli">
+```bash
+npx shadcn-solid@latest add drawer
+```
+</Fragment>
+
+<Step slot="tw">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @corvu/drawer
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={TwRawCode} client:load />
+
+</Step>
+
+<Step slot="uno">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @corvu/drawer
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={UnoRawCode} client:load />
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerLabel,
+  DrawerTrigger
+} from "@/components/ui/drawer";
+```
+
+```tsx
+<Drawer>
+  <DrawerTrigger>Open</DrawerTrigger>
+  <DrawerContent>
+    <DialogHeader>
+      <DrawerLabel>Are you sure absolutely sure?</DrawerLabel>
+      <DialogDescription>
+        This action cannot be undone. This will permanently delete your account and remove your data
+        from our servers.
+      </DialogDescription>
+    </DialogHeader>
+  </DrawerContent>
+</Drawer>
+```
