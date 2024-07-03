@@ -1,0 +1,7 @@
+---
+const props = Astro.props;
+---
+
+<p class="break-words leading-7 [&:not(:first-child)]:mt-6" {...props}>
+    <slot />
+</p>

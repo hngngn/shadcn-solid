@@ -1,0 +1,88 @@
+---
+title: Alert Dialog
+description: A modal dialog that interrupts the user with important content and expects a response.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/alert-dialog
+  api: https://kobalte.dev/docs/core/components/alert-dialog#api-reference
+---
+
+import ComponentInstallation from "@/components/component-installation";
+import ComponentPreview from "@/components/component-preview";
+import RawCode from "@/components/raw-code.tsx";
+import DemoCode from "@/examples/alert-dialog-demo?raw";
+import TwRawCode from "@repo/tailwindcss/ui/alert-dialog?raw";
+import UnoRawCode from "@repo/unocss/ui/alert-dialog?raw";
+
+<ComponentPreview name="alert-dialog-demo" code={DemoCode} client:only="solid" />
+
+## Installation
+
+<ComponentInstallation client:load>
+
+<Fragment slot="cli">
+```bash
+npx shadcn-solid@latest add alert-dialog
+```
+</Fragment>
+
+<Step slot="tw">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={TwRawCode} client:load />
+
+</Step>
+
+<Step slot="uno">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={UnoRawCode} client:load />
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import {
+  AlertDialog,
+  AlertDialogClose,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+  AlertDialogAction
+} from "@/components/ui/alert-dialog";
+```
+
+```tsx
+<AlertDialog>
+  <AlertDialogTrigger>Open</AlertDialogTrigger>
+  <AlertDialogContent>
+    <AlertDialogHeader>
+      <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+      <AlertDialogDescription>
+        This action cannot be undone. This will permanently delete your account and remove your data
+        from our servers.
+      </AlertDialogDescription>
+    </AlertDialogHeader>
+    <AlertDialogFooter>
+      <AlertDialogCancel>Cancel</AlertDialogCancel>
+      <AlertDialogAction>Continue</AlertDialogAction>
+    </AlertDialogFooter>
+  </AlertDialogContent>
+</AlertDialog>
+```

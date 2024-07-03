@@ -1,38 +1,34 @@
 {
-  "name": "@repo/unocss",
-  "version": "0.0.1",
-  "exports": {
-    "./ui/*": "./ui/*.tsx"
-  },
-  "files": ["ui"],
-  "devDependencies": {
-    "@corvu/drawer": "^0.2.0",
-    "@corvu/resizable": "^0.2.0",
-    "@kobalte/core": "^0.13.3b",
-    "@unocss/reset": "^0.61.0",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.0",
-    "cmdk-solid": "^1.0.1",
-    "embla-carousel-autoplay": "8.0.0",
-    "embla-carousel-solid": "8.1.5",
-    "prettier": "^3.2.5",
-    "solid-js": "^1.8.16",
-    "solid-sonner": "^0.2.6",
-    "tailwind-merge": "^2.2.2",
-    "unocss": "^0.61.0",
-    "unocss-preset-animations": "^1.0.2",
-    "vite": "^5.2.7",
-    "vite-plugin-solid": "^2.10.2",
-    "@ark-ui/solid": "^3.2.1",
-    "@corvu/otp-field": "^0.1.1"
-  },
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "vite serve dev",
-    "check": "biome check --apply-unsafe ui"
-  },
-  "lint-staged": {
-    "src/**/*.{ts,tsx}": ["biome check --apply-unsafe --staged --no-errors-on-unmatched"]
-  }
+	"name": "@repo/unocss",
+	"version": "0.0.1",
+	"exports": {
+		"./ui/*": "./ui/*.tsx"
+	},
+	"files": ["ui"],
+	"devDependencies": {
+		"@ark-ui/solid": "^3.5.0",
+		"@corvu/drawer": "^0.2.1",
+		"@corvu/otp-field": "^0.1.1",
+		"@corvu/resizable": "^0.2.2",
+		"@kobalte/core": "^0.13.3",
+		"@unocss/reset": "^0.61.0",
+		"class-variance-authority": "^0.7.0",
+		"clsx": "^2.1.1",
+		"cmdk-solid": "^1.0.1",
+		"embla-carousel-autoplay": "8.1.6",
+		"embla-carousel-solid": "8.1.6",
+		"solid-js": "^1.8.18",
+		"solid-sonner": "^0.2.8",
+		"tailwind-merge": "^2.3.0",
+		"unocss": "^0.61.0",
+		"unocss-preset-animations": "^1.0.2",
+		"vite": "^5.3.3",
+		"vite-plugin-solid": "^2.10.2"
+	},
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vite serve dev",
+		"check": "biome check --write --unsafe ui"
+	}
 }

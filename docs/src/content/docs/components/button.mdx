@@ -1,0 +1,127 @@
+---
+title: Button
+description: Displays a button or a component that looks like a button.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/button
+  api: https://kobalte.dev/docs/core/components/button#api-reference
+---
+
+import ComponentInstallation from "@/components/component-installation";
+import ComponentPreview from "@/components/component-preview";
+import RawCode from "@/components/raw-code.tsx";
+import DemoCode9 from "@/examples/button-as-child?raw";
+import DemoCode from "@/examples/button-demo?raw";
+import DemoCode3 from "@/examples/button-destructive?raw";
+import DemoCode5 from "@/examples/button-ghost?raw";
+import DemoCode6 from "@/examples/button-link?raw";
+import DemoCode8 from "@/examples/button-loading?raw";
+import DemoCode4 from "@/examples/button-outline?raw";
+import DemoCode2 from "@/examples/button-secondary?raw";
+import DemoCode7 from "@/examples/button-with-icon?raw";
+import TwRawCode from "@repo/tailwindcss/ui/button?raw";
+import UnoRawCode from "@repo/unocss/ui/button?raw";
+
+<ComponentPreview name="button-demo" code={DemoCode} client:only="solid" />
+
+## Installation
+
+<ComponentInstallation client:load>
+
+<Fragment slot="cli">
+```bash
+npx shadcn-solid@latest add button
+```
+</Fragment>
+
+<Step slot="tw">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={TwRawCode} client:load />
+
+</Step>
+
+<Step slot="uno">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={UnoRawCode} client:load />
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import { Button } from "@/components/ui/button";
+```
+
+```tsx
+<Button variant="outline">Button</Button>
+```
+
+### Link
+
+You can use the `buttonVariants` helper to create a link that looks like a button.
+
+```tsx
+import { buttonVariants } from "@/components/ui/button";
+```
+
+```tsx
+<A class={buttonVariants({ variant: "outline" })}>Click here</A>
+```
+
+Alternatively, you can set the `asChild` parameter and nest the link component.
+
+```tsx
+<Button asChild>
+  <As component={A} href="#">
+    Login
+  </As>
+</Button>
+```
+
+## Examples
+
+### Secondary
+
+<ComponentPreview name="button-secondary" code={DemoCode2} client:only="solid" />
+
+### Destructive
+
+<ComponentPreview name="button-destructive" code={DemoCode3} client:only="solid"/>
+
+### Outline
+
+<ComponentPreview name="button-outline" code={DemoCode4} client:only="solid" />
+
+### Ghost
+
+<ComponentPreview name="button-ghost" code={DemoCode5} client:only="solid" />
+
+### Link
+
+<ComponentPreview name="button-link" code={DemoCode6} client:only="solid" />
+
+### With Icon
+
+<ComponentPreview name="button-with-icon" code={DemoCode7} client:only="solid" />
+
+### Loading
+
+<ComponentPreview name="button-loading" code={DemoCode8} client:only="solid" />
+
+### As
+
+<ComponentPreview name="button-as-child" code={DemoCode9} client:only="solid" />

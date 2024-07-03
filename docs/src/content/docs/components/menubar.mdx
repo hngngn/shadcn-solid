@@ -1,0 +1,85 @@
+---
+title: Menubar
+description: A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/menubar
+  api: https://kobalte.dev/docs/core/components/menubar#api-reference
+---
+
+import ComponentInstallation from "@/components/component-installation";
+import ComponentPreview from "@/components/component-preview";
+import RawCode from "@/components/raw-code.tsx";
+import DemoCode from "@/examples/menubar-demo?raw";
+import TwRawCode from "@repo/tailwindcss/ui/menubar?raw";
+import UnoRawCode from "@repo/unocss/ui/menubar?raw";
+
+<ComponentPreview name="menubar-demo" code={DemoCode} client:only="solid" />
+
+## Installation
+
+<ComponentInstallation client:load>
+
+<Fragment slot="cli">
+```bash
+npx shadcn-solid@latest add menubar
+```
+</Fragment>
+
+<Step slot="tw">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={TwRawCode} client:load />
+
+</Step>
+
+<Step slot="uno">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={UnoRawCode} client:load />
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarSeparator,
+  MenubarShortcut,
+  MenubarTrigger,
+} from "@/components/ui/menubar"
+```
+
+```tsx
+<Menubar>
+  <MenubarMenu>
+    <MenubarTrigger>File</MenubarTrigger>
+    <MenubarContent>
+      <MenubarItem>
+        New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+      </MenubarItem>
+      <MenubarItem>New Window</MenubarItem>
+      <MenubarSeparator />
+      <MenubarItem>Share</MenubarItem>
+      <MenubarSeparator />
+      <MenubarItem>Print</MenubarItem>
+    </MenubarContent>
+  </MenubarMenu>
+</Menubar>
+```

@@ -1,0 +1,90 @@
+---
+title: Toggle
+description: A two-state button that can be either on or off.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/toggle-button
+  api: https://kobalte.dev/docs/core/components/toggle-button#api-reference
+---
+
+import ComponentInstallation from "@/components/component-installation";
+import ComponentPreview from "@/components/component-preview";
+import RawCode from "@/components/raw-code.tsx";
+import DemoCode from "@/examples/toggle-demo?raw";
+import DemoCode6 from "@/examples/toggle-disabled?raw";
+import DemoCode5 from "@/examples/toggle-large?raw";
+import DemoCode2 from "@/examples/toggle-outline?raw";
+import DemoCode4 from "@/examples/toggle-small?raw";
+import DemoCode3 from "@/examples/toggle-with-text?raw";
+import TwRawCode from "@repo/tailwindcss/ui/toggle?raw";
+import UnoRawCode from "@repo/unocss/ui/toggle?raw";
+
+<ComponentPreview name="toggle-demo" code={DemoCode} client:only="solid" />
+
+## Installation
+
+<ComponentInstallation client:load>
+
+<Fragment slot="cli">
+```bash
+npx shadcn-solid@latest add toggle
+```
+</Fragment>
+
+<Step slot="tw">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={TwRawCode} client:load />
+
+</Step>
+
+<Step slot="uno">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={UnoRawCode} client:load />
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import { ToggleButton } from "@/components/ui/toggle";
+```
+
+```tsx
+<ToggleButton>Toggle</ToggleButton>
+```
+
+## Examples
+
+### Outline
+
+<ComponentPreview name="toggle-outline" code={DemoCode2} client:only="solid" />
+
+### With Text
+
+<ComponentPreview name="toggle-with-text" code={DemoCode3} client:only="solid" />
+
+### Small
+
+<ComponentPreview name="toggle-small" code={DemoCode4} client:only="solid" />
+
+### Large
+
+<ComponentPreview name="toggle-large" code={DemoCode5} client:only="solid" />
+
+### Disabled
+
+<ComponentPreview name="toggle-disabled" code={DemoCode6} client:only="solid" />

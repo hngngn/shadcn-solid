@@ -1,0 +1,83 @@
+---
+title: Resizable
+description: A component that divides your interface into resizable sections.
+component: true
+link:
+  doc: https://corvu.dev/docs/primitives/resizable
+  api: https://corvu.dev/docs/primitives/resizable#api-reference
+---
+
+import ComponentInstallation from "@/components/component-installation";
+import ComponentPreview from "@/components/component-preview";
+import RawCode from "@/components/raw-code.tsx";
+import DemoCode from "@/examples/resizable-demo?raw";
+import DemoCode2 from "@/examples/resizable-vertical-demo?raw";
+import DemoCode3 from "@/examples/resizable-with-handle-demo?raw";
+import TwRawCode from "@repo/tailwindcss/ui/resizable?raw";
+import UnoRawCode from "@repo/unocss/ui/resizable?raw";
+
+<ComponentPreview name="resizable-demo" code={DemoCode} client:only="solid" />
+
+## Installation
+
+<ComponentInstallation client:load>
+
+<Fragment slot="cli">
+```bash
+npx shadcn-solid@latest add resizable
+```
+</Fragment>
+
+<Step slot="tw">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @corvu/resizable
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={TwRawCode} client:load />
+
+</Step>
+
+<Step slot="uno">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @corvu/resizable
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={UnoRawCode} client:load />
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import { Resizable, ResizablePanel, ResizableHandle } from "@/components/ui/resizable";
+```
+
+```tsx
+<Resizable>
+  <ResizablePanel>A</ResizablePanel>
+  <ResizableHandle />
+  <ResizablePanel>B</ResizablePanel>
+</Resizable>
+```
+
+## Examples
+
+### Vertical
+
+Use the `orientation` prop to set the orientation of the resizable panels.
+
+<ComponentPreview name="resizable-vertical-demo" code={DemoCode2} client:only="solid" />
+
+### Handle
+
+You can set or hide the handle by using the `withHandle` prop on the `ResizableHandle` component.
+
+<ComponentPreview name="resizable-with-handle-demo" code={DemoCode3} client:only="solid" />

@@ -1,0 +1,66 @@
+---
+title: Radio Group
+description: A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/radio-group
+  api: https://kobalte.dev/docs/core/components/radio-group#api-reference
+---
+
+import ComponentInstallation from "@/components/component-installation";
+import ComponentPreview from "@/components/component-preview";
+import RawCode from "@/components/raw-code.tsx";
+import DemoCode from "@/examples/radio-group-demo?raw";
+import TwRawCode from "@repo/tailwindcss/ui/radio-group?raw";
+import UnoRawCode from "@repo/unocss/ui/radio-group?raw";
+
+<ComponentPreview name="radio-group-demo" code={DemoCode} client:only="solid" />
+
+## Installation
+
+<ComponentInstallation client:load>
+
+<Fragment slot="cli">
+```bash
+npx shadcn-solid@latest add radio-group
+```
+</Fragment>
+
+<Step slot="tw">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={TwRawCode} client:load />
+
+</Step>
+
+<Step slot="uno">
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+<RawCode code={UnoRawCode} client:load />
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+```
+
+```tsx
+<RadioGroup defaultValue="option-one">
+  <RadioGroupItem value="option-one" />
+  <RadioGroupItem value="option-two" />
+</RadioGroup>
+```

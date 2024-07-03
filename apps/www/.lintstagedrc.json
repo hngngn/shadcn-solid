@@ -1,8 +1,0 @@
-{
-  "src/**/*.{ts,tsx}": [
-    "pnpm build:registry",
-    "pnpm run format",
-    "biome check --apply-unsafe --staged --no-errors-on-unmatched",
-    "pnpm run lint --fix"
-  ]
-}
