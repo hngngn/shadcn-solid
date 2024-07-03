@@ -7,6 +7,7 @@ import blackout from "./public/theme/dark.json";
 
 // https://astro.build/config
 export default defineConfig({
+	trailingSlash: "never",
 	markdown: {
 		syntaxHighlight: false,
 		rehypePlugins: [[rehypePrettyCode, { theme: blackout }]],
