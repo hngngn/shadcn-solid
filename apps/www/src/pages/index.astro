@@ -1,10 +1,12 @@
 ---
 import Announcement from "@/components/announcement.astro";
+import Example from "@/components/example.astro";
 import { siteConfig } from "@/config/site";
 import RootLayout from "@/layouts/root-layout.astro";
 import { buttonVariants } from "@repo/tailwindcss/ui/button";
 // @ts-expect-error
 import { Balancer } from "solid-wrap-balancer";
+import MailUI from "./examples/_components/mail/ui";
 ---
 
 <RootLayout>
@@ -27,7 +29,9 @@ import { Balancer } from "solid-wrap-balancer";
 			<div
 				class="flex w-full items-center justify-center space-x-4 py-4 md:pb-10"
 			>
-				<a href="/docs" class={buttonVariants()}> Get Started </a>
+				<a href="/docs/introduction" class={buttonVariants()}>
+					Get Started
+				</a>
 				<a
 					target="_blank"
 					rel="noreferrer"
@@ -52,7 +56,7 @@ import { Balancer } from "solid-wrap-balancer";
 				</a>
 			</div>
 		</section>
-		<!-- <Example /> -->
+		<Example />
 		<section
 			class="overflow-hidden rounded-lg border bg-background shadow-md md:hidden md:shadow-xl"
 		>
@@ -75,7 +79,7 @@ import { Balancer } from "solid-wrap-balancer";
 			<div
 				class="overflow-hidden rounded-lg border bg-background shadow-lg"
 			>
-				<!-- <Mail /> -->
+				<MailUI client:only="solid" />
 			</div>
 		</section>
 	</div>
