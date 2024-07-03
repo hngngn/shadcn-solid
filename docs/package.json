@@ -11,7 +11,7 @@
 		"build:registry": "tsx ./scripts/registry.ts"
 	},
 	"dependencies": {
-		"@astrojs/check": "^0.5.8",
+		"@astrojs/check": "^0.7.0",
 		"@astrojs/mdx": "^3.1.2",
 		"@astrojs/sitemap": "^3.1.6",
 		"@astrojs/solid-js": "^4.4.0",
@@ -36,7 +36,7 @@
 	"devDependencies": {
 		"lodash.template": "^4.5.0",
 		"rehype-pretty-code": "^0.13.2",
-		"shiki": "^1.10.0",
-		"tsx": "^4.7.1"
+		"shiki": "^1.10.1",
+		"tsx": "^4.16.2"
 	}
 }

@@ -11,7 +11,7 @@
 		"check": "biome check --write --unsafe ui"
 	},
 	"devDependencies": {
-		"@ark-ui/solid": "^3.3.0",
+		"@ark-ui/solid": "^3.5.0",
 		"@corvu/drawer": "^0.2.1",
 		"@corvu/otp-field": "^0.1.1",
 		"@corvu/resizable": "^0.2.2",

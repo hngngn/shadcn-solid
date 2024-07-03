@@ -73,7 +73,7 @@ for (const framework of frameworks) {
 
 		const files = item.files?.map((file) => {
 			const content = readFileSync(
-				join(process.cwd(), "../../packages", framework.name, file),
+				join(process.cwd(), "../packages", framework.name, file),
 				"utf8",
 			);
 

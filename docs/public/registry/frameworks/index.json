@@ -1,10 +1,10 @@
 [
-	{
-		"name": "tailwindcss",
-		"label": "TailwindCSS"
-	},
-	{
-		"name": "unocss",
-		"label": "UnoCSS"
-	}
+  {
+    "name": "tailwindcss",
+    "label": "TailwindCSS"
+  },
+  {
+    "name": "unocss",
+    "label": "UnoCSS"
+  }
 ]

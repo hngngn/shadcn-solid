@@ -33,7 +33,7 @@ export const DrawerContent = <T extends ValidComponent = "div">(
 			<DrawerPrimitive.Overlay
 				class="fixed inset-0 z-50 data-[transitioning]:(transition-colors duration-200)"
 				style={{
-					"background-color": `rgb(0 0 0 / ${0.8 * ctx.openPercentage()})`,
+					"background-color": `hsl(var(--background) / ${0.8 * ctx.openPercentage()})`,
 				}}
 			/>
 			<DrawerPrimitive.Content

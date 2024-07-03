@@ -1,6 +1,6 @@
 {
 	"ui/*.tsx": [
 		"biome check --write --unsafe --staged --no-errors-on-unmatched",
-		"pnpm -F www build:registry"
+		"pnpm -F docs build:registry"
 	]
 }
