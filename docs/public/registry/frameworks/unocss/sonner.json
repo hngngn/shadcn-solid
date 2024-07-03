@@ -1,0 +1,11 @@
+{
+	"name": "sonner",
+	"dependencies": ["solid-sonner", "@kobalte/core"],
+	"files": [
+		{
+			"name": "sonner.tsx",
+			"content": "import { useColorMode } from \"@kobalte/core/color-mode\";\nimport { Toaster as Sonner } from \"solid-sonner\";\n\nexport const Toaster = (props: Parameters<typeof Sonner>[0]) => {\n\tconst { colorMode } = useColorMode();\n\n\treturn (\n\t\t<Sonner\n\t\t\ttheme={colorMode()}\n\t\t\tclass=\"toaster group\"\n\t\t\ttoastOptions={{\n\t\t\t\tclasses: {\n\t\t\t\t\ttoast:\n\t\t\t\t\t\t\"group toast group-[.toaster]:(bg-background text-foreground border-border shadow-lg)\",\n\t\t\t\t\tdescription: \"group-[.toast]:text-muted-foreground\",\n\t\t\t\t\tactionButton: \"group-[.toast]:(bg-primary text-primary-foreground)\",\n\t\t\t\t\tcancelButton: \"group-[.toast]:(bg-muted text-muted-foreground)\",\n\t\t\t\t},\n\t\t\t}}\n\t\t\t{...props}\n\t\t/>\n\t);\n};\n"
+		}
+	],
+	"type": "components:ui"
+}

@@ -7,5 +7,5 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["www", "old-www", "@repo/unocss"]
+  "ignore": ["docs", "@repo/unocss", "@repo/tailwindcss"]
 }
