@@ -1,7 +1,9 @@
 ---
-import { Sidebar } from "@/components/sidebar";
-import { badgeVariants } from "@repo/tailwindcss/ui/badge";
 import { getCollection } from "astro:content";
+import PageNavigation from "@/components/page-navigation.astro";
+import { Sidebar } from "@/components/sidebar";
+import Toc from "@/components/toc.astro";
+import { badgeVariants } from "@repo/tailwindcss/ui/badge";
 // @ts-expect-error
 import { Balancer } from "solid-wrap-balancer";
 import RootLayout from "./root-layout.astro";
@@ -15,6 +17,7 @@ export const getStaticPaths = async () => {
 };
 
 const { entry } = Astro.props;
+const { headings } = await entry.render();
 const { pathname } = Astro.url;
 ---
 
@@ -136,15 +139,13 @@ const { pathname } = Astro.url;
                     <div class="max-w-full pb-12 pt-8">
                         <slot />
                     </div>
-                    <!-- <Pager slug={props.location.pathname} /> -->
+                    <PageNavigation />
                 </div>
                 {
-                    entry.data.toc ? (
+                    entry.data.toc === undefined ? (
                         <div class="hidden text-sm xl:block">
                             <div class="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] overflow-hidden pt-6">
-                                {/* <TableOfContents
-                                    data={markdownData().headings}
-                                /> */}
+                                <Toc data={headings} />
                             </div>
                         </div>
                     ) : null
