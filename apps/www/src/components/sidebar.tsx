@@ -49,7 +49,9 @@ export const Sidebar = (props: Props) => {
 											class={cn(
 												"flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline",
 												item.disabled && "cursor-not-allowed opacity-60",
-												props.pathname === item.href
+												props.pathname === item.href ||
+													(props.pathname.includes("/docs/installation") &&
+														item.href === "/docs/installation")
 													? "font-medium text-foreground"
 													: "text-muted-foreground",
 											)}

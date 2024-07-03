@@ -22,7 +22,7 @@ export const docsConfig: TDocsConfig = {
 	mainNav: [
 		{
 			title: "Docs",
-			href: "/docs",
+			href: "/docs/introduction",
 		},
 		{
 			title: "Components",
@@ -39,7 +39,7 @@ export const docsConfig: TDocsConfig = {
 			items: [
 				{
 					title: "Introduction",
-					href: "/docs",
+					href: "/docs/introduction",
 					items: [],
 				},
 				{
@@ -65,11 +65,6 @@ export const docsConfig: TDocsConfig = {
 				{
 					title: "CLI",
 					href: "/docs/cli",
-					items: [],
-				},
-				{
-					title: "Typography",
-					href: "/docs/typography",
 					items: [],
 				},
 				{
