@@ -1,5 +1,5 @@
 <p align="center">
- <img align="center" src="https://raw.githubusercontent.com/hngngn/shadcn-solid/main/apps/www/public/android-chrome-192x192.png" height="96" />
+ <img align="center" src="https://raw.githubusercontent.com/hngngn/shadcn-solid/main/docs/public/android-chrome-192x192.png" height="96" />
  <h1 align="center">
   shadcn-solid
  </h1>
@@ -9,7 +9,7 @@
 
 Accessible and customizable components that you can copy and paste into your apps. Free. Open Source. **Use this to build your own component library**.
 
-![hero](apps/www/public/og.png)
+![hero](docs/public/og.png)
 
 ## Documentation
 

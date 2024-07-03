@@ -19,26 +19,24 @@ This repository is a monorepo.
 This repository is structured as follows:
 
 ```
-apps
-└── www
-    ├── src
-        ├── components
-        ├── contents
-        └── registry
-            ├── default
-                ├── example
-                └── ui
+docs
+├── src
+    ├── components
+    ├── content
 packages
 └── cli
+└── tailwindcss
+└── unocss
 ```
 
-| Path                      | Description                                 |
-| ------------------------- | ------------------------------------------- |
-| `apps/www/src`            | The SolidStart application for the website. |
-| `apps/www/src/components` | The Solid components for the website.       |
-| `apps/www/src/content`    | The content for the website.                |
-| `apps/www/src/registry`   | The registry for the components.            |
-| `packages/cli`            | The `shadcn-solid` package.                 |
+| Path                   | Description                                     |
+| ---------------------- | ----------------------------------------------- |
+| `docs/src`             | The Astro application for the website.          |
+| `docs/src/components`  | The Astro and Solid components for the website. |
+| `docs/src/content`     | The content for the website.                    |
+| `packages/cli`         | The `shadcn-solid` package.                     |
+| `packages/tailwindcss` | The local `tailwindcss ui` package.             |
+| `packages/unocss`      | The local `unocss ui` package.                  |
 
 ## Development
 
@@ -79,7 +77,7 @@ You can use the `pnpm -F` command to start the development process for a workspa
 1. To run the `shadcn-solid.com` website:
 
 ```bash
-pnpm dev -F www
+pnpm dev -F docs
 ```
 
 2. To run the `shadcn-solid` package:
@@ -93,35 +91,26 @@ pnpm dev -F shadcn-solid
 The documentation for this project is located in the `www` workspace. You can run the documentation locally by running the following command:
 
 ```bash
-pnpm dev -F www
+pnpm dev -F docs
 ```
 
-Documentation is written using [MDX](https://mdxjs.com). You can find the documentation files in the `apps/www/src/contents/docs` directory.
-
-When adding new documentation, please ensure that:
-
-1. You update path in `docs` config.
-2. You run `pnpm build:contents` to add the documentation.
+Documentation is written using [MDX](https://mdxjs.com). You can find the documentation files in the `docs/src/content/docs` directory.
 
 ## Components
 
-We use a registry system for developing components. You can find the source code for the components under `apps/www/src/registry`. The components are organized by styles.
+We use a package system for developing components. You can find the source code for the components under `packages/tailwindcss/ui` or `packages/unocss/ui`.
 
 ```bash
-apps
-└── www
-    ├── src
-        ├── components
-        ├── contents
-        └── registry
-            ├── default
-                ├── example
-                └── ui
+packages
+└── tailwindcss
+    └── ui
+└── unocss
+    └── ui
 ```
 
 When adding or modifying components, please ensure that:
 
-1. You make the changes for every style.
+1. You make the changes for both `tailwind` and `uno`.
 2. You update the documentation.
 3. You run `pnpm build:registry` to update the registry.
 
