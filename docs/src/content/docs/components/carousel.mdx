@@ -19,7 +19,7 @@ import DemoCode3 from "@/examples/carousel-spacing?raw";
 import TwRawCode from "@repo/tailwindcss/ui/carousel?raw";
 import UnoRawCode from "@repo/unocss/ui/carousel?raw";
 
-<ComponentPreview name="carousel-demo" code={DemoCode} client:only="solid" />
+<ComponentPreview name="carousel-demo" code={DemoCode} client:only="solid-js" />
 
 ## Installation
 
@@ -87,7 +87,7 @@ import {
 
 To set the size of the items, you can use the `basis` utility class on the `<CarouselItem />`.
 
-<ComponentPreview name="carousel-size" code={DemoCode2} client:only="solid" />
+<ComponentPreview name="carousel-size" code={DemoCode2} client:only="solid-js" />
 
 ```tsx title="Example" {4-6}
 // 33% of the carousel width.
@@ -115,7 +115,7 @@ To set the size of the items, you can use the `basis` utility class on the `<Car
 
 To set the spacing between the items, we use a `pl-[VALUE]` utility on the `<CarouselItem />` and a negative `-ml-[VALUE]` on the `<CarouselContent />`.
 
-<ComponentPreview name="carousel-spacing" code={DemoCode3} client:only="solid" />
+<ComponentPreview name="carousel-spacing" code={DemoCode3} client:only="solid-js" />
 
 ```tsx title="Example" /-ml-4/ /pl-4/
 <Carousel>
@@ -141,7 +141,7 @@ To set the spacing between the items, we use a `pl-[VALUE]` utility on the `<Car
 
 Use the `orientation` prop to set the orientation of the carousel.
 
-<ComponentPreview name="carousel-orientation" code={DemoCode4} client:only="solid" />
+<ComponentPreview name="carousel-orientation" code={DemoCode4} client:only="solid-js" />
 
 ```tsx/vertical | horizontal/
 <Carousel orientation="vertical | horizontal">
@@ -176,7 +176,7 @@ You can pass options to the carousel using the `opts` prop. See the [Embla Carou
 
 Use a state and the `setApi` props to get an instance of the carousel API.
 
-<ComponentPreview name="carousel-api-demo" code={DemoCode5} client:only="solid" />
+<ComponentPreview name="carousel-api-demo" code={DemoCode5} client:only="solid-js" />
 
 ```ts {1,4,22}
 import type { CarouselApi } from "@/components/ui/carousel"
@@ -269,6 +269,6 @@ export function Example() {
 }
 ```
 
-<ComponentPreview name="carousel-plugin" code={DemoCode6} client:only="solid" />
+<ComponentPreview name="carousel-plugin" code={DemoCode6} client:only="solid-js" />
 
 See the [Embla Carousel docs](https://www.embla-carousel.com/api/plugins/) for more information on using plugins.

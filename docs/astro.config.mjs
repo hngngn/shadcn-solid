@@ -9,6 +9,9 @@ import { siteConfig } from "./src/config/site";
 
 // https://astro.build/config
 export default defineConfig({
+	experimental: {
+		contentCollectionCache: true,
+	},
 	site: siteConfig.url,
 	trailingSlash: "never",
 	markdown: {
