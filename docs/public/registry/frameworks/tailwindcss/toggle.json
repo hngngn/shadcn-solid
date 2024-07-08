@@ -1,13 +1,11 @@
 {
-  "name": "toggle",
-  "dependencies": [
-    "@kobalte/core"
-  ],
-  "files": [
-    {
-      "name": "toggle.tsx",
-      "content": "import { cn } from \"@/libs/cn\";\nimport type { PolymorphicProps } from \"@kobalte/core/polymorphic\";\nimport type { ToggleButtonRootProps } from \"@kobalte/core/toggle-button\";\nimport { ToggleButton as ToggleButtonPrimitive } from \"@kobalte/core/toggle-button\";\nimport type { VariantProps } from \"class-variance-authority\";\nimport { cva } from \"class-variance-authority\";\nimport type { ValidComponent } from \"solid-js\";\nimport { splitProps } from \"solid-js\";\n\nexport const toggleVariants = cva(\n\t\"inline-flex items-center justify-center rounded-md text-sm font-medium transition-[box-shadow,color,background-color] hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-[1.5px] focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-accent data-[pressed]:text-accent-foreground\",\n\t{\n\t\tvariants: {\n\t\t\tvariant: {\n\t\t\t\tdefault: \"bg-transparent\",\n\t\t\t\toutline:\n\t\t\t\t\t\"border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground\",\n\t\t\t},\n\t\t\tsize: {\n\t\t\t\tdefault: \"h-9 px-3\",\n\t\t\t\tsm: \"h-8 px-2\",\n\t\t\t\tlg: \"h-10 px-3\",\n\t\t\t},\n\t\t},\n\t\tdefaultVariants: {\n\t\t\tvariant: \"default\",\n\t\t\tsize: \"default\",\n\t\t},\n\t},\n);\n\ntype toggleButtonProps<T extends ValidComponent = \"button\"> =\n\tToggleButtonRootProps<T> &\n\t\tVariantProps<typeof toggleVariants> & {\n\t\t\tclass?: string;\n\t\t};\n\nexport const ToggleButton = <T extends ValidComponent = \"button\">(\n\tprops: PolymorphicProps<T, toggleButtonProps<T>>,\n) => {\n\tconst [local, rest] = splitProps(props as toggleButtonProps, [\n\t\t\"class\",\n\t\t\"variant\",\n\t\t\"size\",\n\t]);\n\n\treturn (\n\t\t<ToggleButtonPrimitive\n\t\t\tclass={cn(\n\t\t\t\ttoggleVariants({ variant: local.variant, size: local.size }),\n\t\t\t\tlocal.class,\n\t\t\t)}\n\t\t\t{...rest}\n\t\t/>\n\t);\n};\n"
-    }
-  ],
-  "type": "components:ui"
+	"name": "toggle",
+	"dependencies": ["@kobalte/core"],
+	"files": [
+		{
+			"name": "toggle.tsx",
+			"content": "import { cn } from \"@/libs/cn\";\r\nimport type { PolymorphicProps } from \"@kobalte/core/polymorphic\";\r\nimport type { ToggleButtonRootProps } from \"@kobalte/core/toggle-button\";\r\nimport { ToggleButton as ToggleButtonPrimitive } from \"@kobalte/core/toggle-button\";\r\nimport type { VariantProps } from \"class-variance-authority\";\r\nimport { cva } from \"class-variance-authority\";\r\nimport type { ValidComponent } from \"solid-js\";\r\nimport { splitProps } from \"solid-js\";\r\n\r\nexport const toggleVariants = cva(\r\n\t\"inline-flex items-center justify-center rounded-md text-sm font-medium transition-[box-shadow,color,background-color] hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-[1.5px] focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-accent data-[pressed]:text-accent-foreground\",\r\n\t{\r\n\t\tvariants: {\r\n\t\t\tvariant: {\r\n\t\t\t\tdefault: \"bg-transparent\",\r\n\t\t\t\toutline:\r\n\t\t\t\t\t\"border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground\",\r\n\t\t\t},\r\n\t\t\tsize: {\r\n\t\t\t\tdefault: \"h-9 px-3\",\r\n\t\t\t\tsm: \"h-8 px-2\",\r\n\t\t\t\tlg: \"h-10 px-3\",\r\n\t\t\t},\r\n\t\t},\r\n\t\tdefaultVariants: {\r\n\t\t\tvariant: \"default\",\r\n\t\t\tsize: \"default\",\r\n\t\t},\r\n\t},\r\n);\r\n\r\ntype toggleButtonProps<T extends ValidComponent = \"button\"> =\r\n\tToggleButtonRootProps<T> &\r\n\t\tVariantProps<typeof toggleVariants> & {\r\n\t\t\tclass?: string;\r\n\t\t};\r\n\r\nexport const ToggleButton = <T extends ValidComponent = \"button\">(\r\n\tprops: PolymorphicProps<T, toggleButtonProps<T>>,\r\n) => {\r\n\tconst [local, rest] = splitProps(props as toggleButtonProps, [\r\n\t\t\"class\",\r\n\t\t\"variant\",\r\n\t\t\"size\",\r\n\t]);\r\n\r\n\treturn (\r\n\t\t<ToggleButtonPrimitive\r\n\t\t\tclass={cn(\r\n\t\t\t\ttoggleVariants({ variant: local.variant, size: local.size }),\r\n\t\t\t\tlocal.class,\r\n\t\t\t)}\r\n\t\t\t{...rest}\r\n\t\t/>\r\n\t);\r\n};\r\n"
+		}
+	],
+	"type": "components:ui"
 }
