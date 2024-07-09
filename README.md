@@ -13,7 +13,7 @@ Accessible and customizable components that you can copy and paste into your app
 
 ## Documentation
 
-Visit https://shadcn-solid.com/docs to view the documentation.
+Visit our [documentation](https://shadcn-solid.com/docs/introduction) to learn more.
 
 ## License
 
