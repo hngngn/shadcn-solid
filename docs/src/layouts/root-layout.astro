@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import Footer from "@/components/footer.astro";
 import Header from "@/components/header.astro";
 import ToastWrapper from "@/components/toast-wrapper";
@@ -99,6 +100,8 @@ const { title, description, url } = Astro.props;
                 font-display: swap;
             }
         </style>
+
+        <ViewTransitions />
     </head>
     <body>
         <div class="relative flex min-h-screen flex-col">
