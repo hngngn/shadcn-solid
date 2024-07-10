@@ -8,9 +8,9 @@ import "./main.css";
 import "./mdx.css";
 
 type Props = {
-	title?: string;
-	description?: string;
-	url?: string;
+    title?: string;
+    description?: string;
+    url?: string;
 };
 
 const { title, description, url } = Astro.props;
@@ -28,8 +28,11 @@ const { title, description, url } = Astro.props;
             ? "dark"
             : "light";
     };
-    const isDark = getThemePreference() === "dark";
-    document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+
+    const setColorMode = () => {
+        const isDark = getThemePreference() === "dark";
+        document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+    };
 
     if (typeof localStorage !== "undefined") {
         const observer = new MutationObserver(() => {
@@ -41,6 +44,10 @@ const { title, description, url } = Astro.props;
             attributeFilter: ["class"],
         });
     }
+
+    setColorMode();
+
+    document.addEventListener("astro:after-swap", setColorMode);
 </script>
 
 <html lang="en">
