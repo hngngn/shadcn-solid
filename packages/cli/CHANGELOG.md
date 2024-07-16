@@ -1,5 +1,11 @@
 # shadcn-solid
 
+## 0.7.5
+
+### Patch Changes
+
+- [#106](https://github.com/hngngn/shadcn-solid/pull/106) [`0ef73ca`](https://github.com/hngngn/shadcn-solid/commit/0ef73caf5694b71f481a122660ebfcafd8d1cfb4) Thanks [@hngngn](https://github.com/hngngn)! - fix(cli): ignore install process when there are no dependencies
+
 ## 0.7.4
 
 ### Patch Changes

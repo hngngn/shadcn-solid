@@ -191,7 +191,7 @@ const ui = [
 	{
 		name: "sonner",
 		type: "components:ui",
-		dependencies: ["solid-sonner", "@kobalte/core"],
+		dependencies: ["solid-sonner"],
 		files: ["ui/sonner.tsx"],
 	},
 	{

@@ -187,10 +187,12 @@ export const addCommand = new Command()
 			);
 			const pm = getPackageManager();
 
-			await execa(pm, ["add", ...Array.from(dependencies)], {
-				cwd,
-				env: { NODE_ENV: undefined },
-			});
+			if (Array.from(dependencies).length !== 0) {
+				await execa(pm, ["add", ...Array.from(dependencies)], {
+					cwd,
+					env: { NODE_ENV: undefined },
+				});
+			}
 
 			spinner.stop(
 				`${cl.cyan(

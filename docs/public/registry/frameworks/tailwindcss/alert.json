@@ -1,11 +1,13 @@
 {
-	"name": "alert",
-	"dependencies": ["@kobalte/core"],
-	"files": [
-		{
-			"name": "alert.tsx",
-			"content": "import { cn } from \"@/libs/cn\";\r\nimport type { AlertRootProps } from \"@kobalte/core/alert\";\r\nimport { Alert as AlertPrimitive } from \"@kobalte/core/alert\";\r\nimport type { PolymorphicProps } from \"@kobalte/core/polymorphic\";\r\nimport type { VariantProps } from \"class-variance-authority\";\r\nimport { cva } from \"class-variance-authority\";\r\nimport type { ComponentProps, ValidComponent } from \"solid-js\";\r\nimport { splitProps } from \"solid-js\";\r\n\r\nexport const alertVariants = cva(\r\n\t\"relative w-full rounded-lg border px-4 py-3 text-sm [&:has(svg)]:pl-11 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground\",\r\n\t{\r\n\t\tvariants: {\r\n\t\t\tvariant: {\r\n\t\t\t\tdefault: \"bg-background text-foreground\",\r\n\t\t\t\tdestructive:\r\n\t\t\t\t\t\"border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive\",\r\n\t\t\t},\r\n\t\t},\r\n\t\tdefaultVariants: {\r\n\t\t\tvariant: \"default\",\r\n\t\t},\r\n\t},\r\n);\r\n\r\ntype alertProps<T extends ValidComponent = \"div\"> = AlertRootProps<T> &\r\n\tVariantProps<typeof alertVariants> & {\r\n\t\tclass?: string;\r\n\t};\r\n\r\nexport const Alert = <T extends ValidComponent = \"div\">(\r\n\tprops: PolymorphicProps<T, alertProps<T>>,\r\n) => {\r\n\tconst [local, rest] = splitProps(props as alertProps, [\"class\", \"variant\"]);\r\n\r\n\treturn (\r\n\t\t<AlertPrimitive\r\n\t\t\tclass={cn(\r\n\t\t\t\talertVariants({\r\n\t\t\t\t\tvariant: props.variant,\r\n\t\t\t\t}),\r\n\t\t\t\tlocal.class,\r\n\t\t\t)}\r\n\t\t\t{...rest}\r\n\t\t/>\r\n\t);\r\n};\r\n\r\nexport const AlertTitle = (props: ComponentProps<\"div\">) => {\r\n\tconst [local, rest] = splitProps(props, [\"class\"]);\r\n\r\n\treturn (\r\n\t\t<div\r\n\t\t\tclass={cn(\"font-medium leading-5 tracking-tight\", local.class)}\r\n\t\t\t{...rest}\r\n\t\t/>\r\n\t);\r\n};\r\n\r\nexport const AlertDescription = (props: ComponentProps<\"div\">) => {\r\n\tconst [local, rest] = splitProps(props, [\"class\"]);\r\n\r\n\treturn (\r\n\t\t<div class={cn(\"text-sm [&_p]:leading-relaxed\", local.class)} {...rest} />\r\n\t);\r\n};\r\n"
-		}
-	],
-	"type": "components:ui"
+  "name": "alert",
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "files": [
+    {
+      "name": "alert.tsx",
+      "content": "import { cn } from \"@/libs/cn\";\nimport type { AlertRootProps } from \"@kobalte/core/alert\";\nimport { Alert as AlertPrimitive } from \"@kobalte/core/alert\";\nimport type { PolymorphicProps } from \"@kobalte/core/polymorphic\";\nimport type { VariantProps } from \"class-variance-authority\";\nimport { cva } from \"class-variance-authority\";\nimport type { ComponentProps, ValidComponent } from \"solid-js\";\nimport { splitProps } from \"solid-js\";\n\nexport const alertVariants = cva(\n\t\"relative w-full rounded-lg border px-4 py-3 text-sm [&:has(svg)]:pl-11 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground\",\n\t{\n\t\tvariants: {\n\t\t\tvariant: {\n\t\t\t\tdefault: \"bg-background text-foreground\",\n\t\t\t\tdestructive:\n\t\t\t\t\t\"border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive\",\n\t\t\t},\n\t\t},\n\t\tdefaultVariants: {\n\t\t\tvariant: \"default\",\n\t\t},\n\t},\n);\n\ntype alertProps<T extends ValidComponent = \"div\"> = AlertRootProps<T> &\n\tVariantProps<typeof alertVariants> & {\n\t\tclass?: string;\n\t};\n\nexport const Alert = <T extends ValidComponent = \"div\">(\n\tprops: PolymorphicProps<T, alertProps<T>>,\n) => {\n\tconst [local, rest] = splitProps(props as alertProps, [\"class\", \"variant\"]);\n\n\treturn (\n\t\t<AlertPrimitive\n\t\t\tclass={cn(\n\t\t\t\talertVariants({\n\t\t\t\t\tvariant: props.variant,\n\t\t\t\t}),\n\t\t\t\tlocal.class,\n\t\t\t)}\n\t\t\t{...rest}\n\t\t/>\n\t);\n};\n\nexport const AlertTitle = (props: ComponentProps<\"div\">) => {\n\tconst [local, rest] = splitProps(props, [\"class\"]);\n\n\treturn (\n\t\t<div\n\t\t\tclass={cn(\"font-medium leading-5 tracking-tight\", local.class)}\n\t\t\t{...rest}\n\t\t/>\n\t);\n};\n\nexport const AlertDescription = (props: ComponentProps<\"div\">) => {\n\tconst [local, rest] = splitProps(props, [\"class\"]);\n\n\treturn (\n\t\t<div class={cn(\"text-sm [&_p]:leading-relaxed\", local.class)} {...rest} />\n\t);\n};\n"
+    }
+  ],
+  "type": "components:ui"
 }

@@ -311,8 +311,7 @@
   {
     "name": "sonner",
     "dependencies": [
-      "solid-sonner",
-      "@kobalte/core"
+      "solid-sonner"
     ],
     "files": [
       "ui/sonner.tsx"
