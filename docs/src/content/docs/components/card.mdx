@@ -15,7 +15,7 @@ import UnoRawCode from "@repo/unocss/ui/card?raw";
 
 ## Installation
 
-<ComponentInstallation client:load>
+<ComponentInstallation client:only="solid-js">
 
 <Fragment slot="cli">
 ```bash
@@ -31,7 +31,7 @@ npm install @kobalte/core
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={TwRawCode} client:load />
+<RawCode code={TwRawCode} client:only="solid-js" />
 
 </Step>
 
@@ -43,7 +43,7 @@ npm install @kobalte/core
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={UnoRawCode} client:load />
+<RawCode code={UnoRawCode} client:only="solid-js" />
 
 </Step>
 

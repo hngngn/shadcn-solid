@@ -1,5 +1,6 @@
 import { codeToHtml } from "shiki";
-import { Show, type VoidComponent, createSignal, onMount } from "solid-js";
+import type { VoidComponent } from "solid-js";
+import { Show, createSignal, onMount } from "solid-js";
 import blackout from "../../public/theme/dark.json?raw";
 import CopyButton from "./copy-button";
 
@@ -42,7 +43,7 @@ const RawCode: VoidComponent<{ code: string }> = (props) => {
 		>
 			<div data-raw-code class="relative">
 				<div innerHTML={html()} />
-				<CopyButton />
+				<CopyButton rawString={props.code} withMeta={false} />
 			</div>
 		</Show>
 	);
