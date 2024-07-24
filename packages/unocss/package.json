@@ -4,19 +4,21 @@
 	"exports": {
 		"./ui/*": "./ui/*.tsx"
 	},
-	"files": ["ui"],
+	"files": [
+		"ui"
+	],
 	"devDependencies": {
 		"@ark-ui/solid": "^3.5.0",
-		"@corvu/drawer": "^0.2.1",
+		"@corvu/drawer": "^0.2.2",
 		"@corvu/otp-field": "^0.1.1",
-		"@corvu/resizable": "^0.2.2",
-		"@kobalte/core": "^0.13.3",
+		"@corvu/resizable": "^0.2.3",
+		"@kobalte/core": "^0.13.4",
 		"@unocss/reset": "^0.61.0",
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.1",
-		"cmdk-solid": "^1.0.1",
-		"embla-carousel-autoplay": "8.1.6",
-		"embla-carousel-solid": "8.1.6",
+		"cmdk-solid": "^1.1.0",
+		"embla-carousel-autoplay": "8.1.7",
+		"embla-carousel-solid": "8.1.7",
 		"solid-js": "^1.8.18",
 		"solid-sonner": "^0.2.8",
 		"tailwind-merge": "^2.3.0",
