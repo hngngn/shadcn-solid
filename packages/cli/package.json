@@ -39,6 +39,6 @@
 		"@types/lodash.template": "^4.5.3",
 		"@types/node": "^20.14.9",
 		"tsup": "^8.0.2",
-		"typescript": "^5.0.0"
+		"typescript": "^5.5.4"
 	}
 }
