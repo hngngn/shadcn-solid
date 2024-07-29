@@ -123,6 +123,12 @@ export const docsConfig: TDocsConfig = {
 					items: [],
 				},
 				{
+					title: "Chart",
+					href: "/docs/components/chart",
+					items: [],
+					label: "New",
+				},
+				{
 					title: "Checkbox",
 					href: "/docs/components/checkbox",
 					items: [],
@@ -151,7 +157,6 @@ export const docsConfig: TDocsConfig = {
 					title: "Date Picker",
 					href: "/docs/components/date-picker",
 					items: [],
-					label: "Updated",
 				},
 				{
 					title: "Dialog",
@@ -182,26 +187,22 @@ export const docsConfig: TDocsConfig = {
 					title: "Menubar",
 					href: "/docs/components/menubar",
 					items: [],
-					label: "New",
 				},
 				{
 					title: "Number Field",
 					href: "/docs/components/number-field",
 					items: [],
-					label: "New",
 				},
 				{
 					title: "Navigation Menu",
 					href: "/docs/components/navigation-menu",
 					items: [],
-					label: "Soon",
 					disabled: true,
 				},
 				{
 					title: "OTP Field",
 					href: "/docs/components/otp-field",
 					items: [],
-					label: "New",
 				},
 				{
 					title: "Pagination",
@@ -267,7 +268,6 @@ export const docsConfig: TDocsConfig = {
 					title: "Tabs",
 					href: "/docs/components/tabs",
 					items: [],
-					label: "Updated",
 				},
 				{
 					title: "Text Field",

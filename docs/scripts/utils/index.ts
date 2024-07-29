@@ -41,6 +41,12 @@ const ui = [
 		dependencies: ["embla-carousel-solid"],
 		files: ["ui/carousel.tsx"],
 	},
+	// {
+	// 	name: "chart",
+	// 	type: "components:ui",
+	// 	dependencies: ["chart.js"],
+	// 	files: ["ui/chart.tsx"],
+	// },
 	{
 		name: "checkbox",
 		type: "components:ui",
@@ -369,6 +375,11 @@ const example = [
 		name: "carousel-spacing",
 		type: "components:example",
 		files: ["examples/carousel-spacing.tsx"],
+	},
+	{
+		name: "chart-demo",
+		type: "components:example",
+		files: ["examples/chart-demo.tsx"],
 	},
 	{
 		name: "checkbox-demo",
