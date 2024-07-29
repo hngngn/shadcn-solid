@@ -154,12 +154,6 @@ export const Index = {
       registryDependencies: undefined,
       component: lazy(() => import("../examples/carousel-spacing"))
     },
-    "chart-demo": {
-      name: "chart-demo",
-      type: "components:example",
-      registryDependencies: undefined,
-      component: lazy(() => import("../examples/chart-demo"))
-    },
     "checkbox-demo": {
       name: "checkbox-demo",
       type: "components:example",
