@@ -16,7 +16,6 @@ import type {
 import { DatePicker as DatePickerPrimitive } from "@ark-ui/solid";
 import type { VoidProps } from "solid-js";
 import { splitProps } from "solid-js";
-import { Portal } from "solid-js/web";
 import { buttonVariants } from "./button";
 
 export const DatePickerLabel = DatePickerPrimitive.Label;
@@ -222,19 +221,17 @@ export const DatePickerContent = (props: DatePickerContentProps) => {
 	const [local, rest] = splitProps(props, ["class", "children"]);
 
 	return (
-		<Portal>
-			<DatePickerPrimitive.Positioner>
-				<DatePickerPrimitive.Content
-					class={cn(
-						"rounded-md border bg-popover p-3 text-popover-foreground shadow-md outline-none data-[state=open]:(animate-in fade-in-0 zoom-in-95) data-[state=closed]:(animate-out fade-out-0 zoom-out-95)",
-						local.class,
-					)}
-					{...rest}
-				>
-					{local.children}
-				</DatePickerPrimitive.Content>
-			</DatePickerPrimitive.Positioner>
-		</Portal>
+		<DatePickerPrimitive.Positioner>
+			<DatePickerPrimitive.Content
+				class={cn(
+					"rounded-md border bg-popover p-3 text-popover-foreground shadow-md outline-none data-[state=open]:(animate-in fade-in-0 zoom-in-95) data-[state=closed]:(animate-out fade-out-0 zoom-out-95) z-50",
+					local.class,
+				)}
+				{...rest}
+			>
+				{local.children}
+			</DatePickerPrimitive.Content>
+		</DatePickerPrimitive.Positioner>
 	);
 };
 
