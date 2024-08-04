@@ -93,7 +93,7 @@ export const TabsTrigger = <T extends ValidComponent = "button">(
 };
 
 const tabsIndicatorVariants = cva(
-	"absolute transition-all transition-property-[box-shadow,transform] duration-200 outline-none",
+	"absolute transition-all duration-200 outline-none",
 	{
 		variants: {
 			variant: {
