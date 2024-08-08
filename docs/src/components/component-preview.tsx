@@ -22,7 +22,7 @@ const ComponentPreview: ParentComponent<Props> = (props) => {
 	);
 
 	return (
-		<div class="group relative my-4 flex flex-col space-y-2 [&_.preview>div]:sm:max-w-[70%]">
+		<div class="group relative my-4 flex flex-col space-y-2 [&_.preview>div:not(:has(table))]:sm:max-w-[70%]">
 			<Tabs defaultValue="preview">
 				<div class="pb-3">
 					<TabsList class="bg-transparent border-b rounded-none">
@@ -37,9 +37,9 @@ const ComponentPreview: ParentComponent<Props> = (props) => {
 				</div>
 				<TabsContent
 					value="preview"
-					class="relative rounded-md border has-[.is-table]:border-none"
+					class="relative rounded-md border has-[table]:border-none"
 				>
-					<div class="preview flex min-h-[350px] w-full justify-center p-10 has-[.is-table]:p-0 items-center">
+					<div class="preview flex min-h-[350px] w-full justify-center p-10 items-center has-[table]:p-0">
 						<Show
 							when={Component()}
 							fallback={

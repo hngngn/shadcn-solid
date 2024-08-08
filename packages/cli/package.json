@@ -32,13 +32,13 @@
 		"picocolors": "^1.0.1",
 		"ts-morph": "^18.0.0",
 		"tsconfig-paths": "^4.2.0",
-		"valibot": "^0.31.0-rc.0"
+		"valibot": "^0.37.0"
 	},
 	"devDependencies": {
 		"@types/diff": "^5.2.1",
 		"@types/lodash.template": "^4.5.3",
-		"@types/node": "^20.14.9",
-		"tsup": "^8.0.2",
+		"@types/node": "^22.1.0",
+		"tsup": "^8.2.4",
 		"typescript": "^5.5.4"
 	}
 }

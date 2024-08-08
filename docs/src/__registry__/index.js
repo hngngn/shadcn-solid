@@ -202,6 +202,12 @@ export const Index = {
       registryDependencies: undefined,
       component: lazy(() => import("../examples/context-menu-demo"))
     },
+    "data-table-demo": {
+      name: "data-table-demo",
+      type: "components:example",
+      registryDependencies: undefined,
+      component: lazy(() => import("../examples/data-table-demo"))
+    },
     "date-picker-demo": {
       name: "date-picker-demo",
       type: "components:example",

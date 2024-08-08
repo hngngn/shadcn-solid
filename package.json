@@ -4,12 +4,12 @@
 		"@biomejs/biome": "^1.8.3",
 		"@changesets/changelog-github": "^0.5.0",
 		"@changesets/cli": "^2.27.7",
-		"@commitlint/cli": "^19.2.1",
+		"@commitlint/cli": "^19.4.0",
 		"@commitlint/config-conventional": "^19.1.0",
-		"husky": "^9.0.11",
-		"lint-staged": "^15.2.2",
-		"prettier": "^3.2.5",
-		"turbo": "^2.0.6"
+		"husky": "^9.1.4",
+		"lint-staged": "^15.2.8",
+		"prettier": "^3.3.3",
+		"turbo": "^2.0.12"
 	},
 	"private": true,
 	"scripts": {
