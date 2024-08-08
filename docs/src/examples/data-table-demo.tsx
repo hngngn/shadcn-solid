@@ -33,7 +33,6 @@ import type {
 	Column,
 	ColumnDef,
 	ColumnFiltersState,
-	PaginationState,
 	SortingState,
 	VisibilityState,
 } from "@tanstack/solid-table";
@@ -51,14 +50,10 @@ import {
 	Match,
 	Show,
 	Switch,
-	createEffect,
 	createMemo,
 	createSignal,
-	on,
-	onMount,
 	splitProps,
 } from "solid-js";
-import { z } from "zod";
 import { dataTable } from "./data-table-data";
 
 export type Task = {
@@ -414,12 +409,6 @@ const columns: ColumnDef<Task>[] = [
 		),
 	},
 ];
-
-const searchParamSchema = z.object({
-	page: z.coerce.number().default(1),
-	per_page: z.coerce.number().default(10),
-	sort: z.string().optional(),
-});
 
 const DataTableDemo = () => {
 	const data = createMemo(() => dataTable);
