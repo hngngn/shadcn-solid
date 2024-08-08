@@ -1,5 +1,3 @@
-import { createFilter } from "@kobalte/core";
-import type { ComboboxTriggerMode } from "@kobalte/core/combobox";
 import {
 	Combobox,
 	ComboboxContent,
@@ -7,27 +5,13 @@ import {
 	ComboboxItem,
 	ComboboxTrigger,
 } from "@repo/tailwindcss/ui/combobox";
-import { createSignal } from "solid-js";
 
 const ALL_OPTIONS = ["Next.js", "Astro", "Qwik", "SolidStart", "Nuxt.js"];
 
 const ComboboxDemo = () => {
-	const filter = createFilter({ sensitivity: "base" });
-	const [options, setOptions] = createSignal(ALL_OPTIONS);
-	const onOpenChange = (isOpen: boolean, triggerMode?: ComboboxTriggerMode) => {
-		if (isOpen && triggerMode === "manual") {
-			setOptions(ALL_OPTIONS);
-		}
-	};
-	const onInputChange = (value: string) => {
-		setOptions(ALL_OPTIONS.filter((option) => filter.contains(option, value)));
-	};
-
 	return (
 		<Combobox
-			options={options()}
-			onInputChange={onInputChange}
-			onOpenChange={onOpenChange}
+			options={ALL_OPTIONS}
 			placeholder="Search framework…"
 			itemComponent={(props) => (
 				<ComboboxItem item={props.item}>{props.item.rawValue}</ComboboxItem>

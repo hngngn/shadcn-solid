@@ -1,4 +1,5 @@
-import { codeToHtml } from "shiki";
+import { createHighlighterCore } from "shiki/core";
+import getWasm from "shiki/wasm";
 import type { VoidComponent } from "solid-js";
 import { Show, createSignal, onMount } from "solid-js";
 import blackout from "../../public/theme/dark.json?raw";
@@ -8,9 +9,15 @@ const RawCode: VoidComponent<{ code: string }> = (props) => {
 	const [html, setHTML] = createSignal<string>();
 
 	onMount(async () => {
-		const codeHTML = await codeToHtml(props.code.trim(), {
+		const highlighter = await createHighlighterCore({
+			themes: [JSON.parse(String(blackout))],
+			langs: [() => import("shiki/langs/tsx.mjs")],
+			loadWasm: getWasm,
+		});
+
+		const codeHTML = highlighter.codeToHtml(props.code.trim(), {
 			lang: "tsx",
-			theme: JSON.parse(String(blackout)),
+			theme: "blackout",
 		});
 		setHTML(codeHTML);
 	});
