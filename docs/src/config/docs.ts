@@ -136,6 +136,7 @@ export const docsConfig: TDocsConfig = {
 					title: "Combobox",
 					href: "/docs/components/combobox",
 					items: [],
+					label: "Updated",
 				},
 				{
 					title: "Command",
@@ -151,6 +152,7 @@ export const docsConfig: TDocsConfig = {
 					title: "Data Table",
 					href: "/docs/components/data-table",
 					items: [],
+					label: "Updated",
 				},
 				{
 					title: "Date Picker",
