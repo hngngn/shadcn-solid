@@ -1,4 +1,4 @@
-import { Button } from "@repo/tailwindcss/ui/button";
+import { Button } from "@repo/tailwindcss/default/button";
 import {
 	Card,
 	CardContent,
@@ -6,20 +6,20 @@ import {
 	CardFooter,
 	CardHeader,
 	CardTitle,
-} from "@repo/tailwindcss/ui/card";
+} from "@repo/tailwindcss/default/card";
 import {
 	Select,
 	SelectContent,
 	SelectItem,
 	SelectTrigger,
 	SelectValue,
-} from "@repo/tailwindcss/ui/select";
-import { TextArea } from "@repo/tailwindcss/ui/textarea";
+} from "@repo/tailwindcss/default/select";
+import { TextArea } from "@repo/tailwindcss/default/textarea";
 import {
 	TextField,
 	TextFieldLabel,
 	TextFieldRoot,
-} from "@repo/tailwindcss/ui/textfield";
+} from "@repo/tailwindcss/default/textfield";
 
 export const DemoReportAnIssue = () => {
 	return (

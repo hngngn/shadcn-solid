@@ -1,12 +1,22 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import solidJs from "@astrojs/solid-js";
 import tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
 import rehypePrettyCode from "rehype-pretty-code";
+import { u } from "unist-builder";
 import { visit } from "unist-util-visit";
 import blackout from "./public/theme/dark.json";
+import { frameworks } from "./scripts/utils/framework";
+import { styles } from "./scripts/utils/styles";
+import { Index } from "./src/__registry__";
 import { siteConfig } from "./src/config/site";
+
+const getNodeAttributeByName = (node, name) => {
+	return node.attributes?.find((attribute) => attribute.name === name);
+};
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,12 +27,64 @@ export default defineConfig({
 		rehypePlugins: [
 			() => (tree) => {
 				visit(tree, (node) => {
+					if (node.name === "ComponentPreview") {
+						const name = getNodeAttributeByName(node, "name")?.value;
+
+						if (!name) {
+							return null;
+						}
+
+						try {
+							for (const style of styles) {
+								for (const framework of frameworks) {
+									if (Index[style.name][framework.name] === undefined) {
+										break;
+									}
+									const component = Index[style.name][framework.name][name];
+									if (!component) {
+										continue;
+									}
+
+									const src = component.files[0];
+
+									const filePath = join(process.cwd(), src);
+									const source = readFileSync(filePath, "utf8");
+
+									node.children?.push(
+										u("element", {
+											tagName: "pre",
+											properties: {},
+											children: [
+												u("element", {
+													tagName: "code",
+													properties: {
+														className: ["language-tsx"],
+													},
+													children: [
+														{
+															type: "text",
+															value: source,
+														},
+													],
+												}),
+											],
+										}),
+									);
+								}
+							}
+						} catch (error) {
+							console.error(error);
+						}
+					}
+				});
+			},
+			() => (tree) => {
+				visit(tree, (node) => {
 					if (node.type === "element" && node.tagName === "pre") {
 						const [codeEl] = node.children;
 						if (codeEl.tagName !== "code") return;
 
 						node.__rawString__ = codeEl.children[0].value;
-						node.__src__ = node.properties.__src__;
 					}
 				});
 			},
@@ -43,7 +105,6 @@ export default defineConfig({
 						preElement.properties.withMeta =
 							node.children.at(0).tagName === "figcaption";
 						preElement.properties.rawString = node.__rawString__;
-						if (node.__src__) preElement.properties.src = node.__src__;
 					}
 				});
 			},

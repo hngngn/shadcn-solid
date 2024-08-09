@@ -10,13 +10,10 @@ link:
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
 import RawCode from "@/components/raw-code.tsx";
-import DemoCode from "@/examples/checkbox-demo?raw";
-import DemoCode3 from "@/examples/checkbox-disabled?raw";
-import DemoCode2 from "@/examples/checkbox-with-text?raw";
-import TwRawCode from "@repo/tailwindcss/ui/checkbox?raw";
-import UnoRawCode from "@repo/unocss/ui/checkbox?raw";
+import TwRawCode from "@repo/tailwindcss/default/checkbox?raw";
+import UnoRawCode from "@repo/unocss/default/checkbox?raw";
 
-<ComponentPreview name="checkbox-demo" code={DemoCode} client:only="solid-js" />
+<ComponentPreview name="checkbox-demo" client:only="solid-js" />
 
 ## Installation
 
@@ -68,8 +65,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 
 ### With text
 
-<ComponentPreview name="checkbox-with-text" code={DemoCode2} client:only="solid-js" />
+<ComponentPreview name="checkbox-with-text"  client:only="solid-js" />
 
 ### Disabled
 
-<ComponentPreview name="checkbox-disabled" code={DemoCode3} client:only="solid-js" />
+<ComponentPreview name="checkbox-disabled"  client:only="solid-js" />

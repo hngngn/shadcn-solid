@@ -3,17 +3,17 @@ import {
 	Resizable,
 	ResizableHandle,
 	ResizablePanel,
-} from "@repo/tailwindcss/ui/resizable";
-import { Separator } from "@repo/tailwindcss/ui/separator";
+} from "@repo/tailwindcss/default/resizable";
+import { Separator } from "@repo/tailwindcss/default/separator";
 import {
 	Tabs,
 	TabsContent,
 	TabsIndicator,
 	TabsList,
 	TabsTrigger,
-} from "@repo/tailwindcss/ui/tabs";
-import { TextField, TextFieldRoot } from "@repo/tailwindcss/ui/textfield";
-import { cookieStorage, makePersisted } from "@solid-primitives/storage";
+} from "@repo/tailwindcss/default/tabs";
+import { TextField, TextFieldRoot } from "@repo/tailwindcss/default/textfield";
+import { makePersisted } from "@solid-primitives/storage";
 import { createSignal } from "solid-js";
 import { AccountSwitcher } from "./account-switcher";
 import { MailDisplay } from "./mail-display";
@@ -23,10 +23,6 @@ import { Nav } from "./nav";
 const MailUI = () => {
 	const [sizes, setSizes] = makePersisted(createSignal<number[]>([]), {
 		name: "resizable-sizes",
-		storage: cookieStorage,
-		storageOptions: {
-			path: "/",
-		},
 	});
 
 	const [isCollapsed, setIsCollapsed] = createSignal(false);

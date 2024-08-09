@@ -1,4 +1,4 @@
-import { Button } from "@repo/tailwindcss/ui/button";
+import { Button } from "@repo/tailwindcss/default/button";
 import {
 	Card,
 	CardContent,
@@ -6,20 +6,23 @@ import {
 	CardFooter,
 	CardHeader,
 	CardTitle,
-} from "@repo/tailwindcss/ui/card";
-import { RadioGroup, RadioGroupItem } from "@repo/tailwindcss/ui/radio-group";
+} from "@repo/tailwindcss/default/card";
+import {
+	RadioGroup,
+	RadioGroupItem,
+} from "@repo/tailwindcss/default/radio-group";
 import {
 	Select,
 	SelectContent,
 	SelectItem,
 	SelectTrigger,
 	SelectValue,
-} from "@repo/tailwindcss/ui/select";
+} from "@repo/tailwindcss/default/select";
 import {
 	TextField,
 	TextFieldLabel,
 	TextFieldRoot,
-} from "@repo/tailwindcss/ui/textfield";
+} from "@repo/tailwindcss/default/textfield";
 
 export const DemoPaymentMethod = () => {
 	return (
@@ -56,7 +59,7 @@ export const DemoPaymentMethod = () => {
 						<RadioGroupItem value="paypal" id="paypal" class="peer sr-only" />
 						<label
 							class="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground
-						peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+				peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
 						>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"

@@ -1,8 +1,12 @@
 import { docsConfig } from "@/config/docs";
 import { siteConfig } from "@/config/site";
 import type { DialogTriggerProps } from "@kobalte/core/dialog";
-import { Button } from "@repo/tailwindcss/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@repo/tailwindcss/ui/sheet";
+import { Button } from "@repo/tailwindcss/default/button";
+import {
+	Sheet,
+	SheetContent,
+	SheetTrigger,
+} from "@repo/tailwindcss/default/sheet";
 import { For } from "solid-js";
 import Logo from "./logo";
 import { Sidebar } from "./sidebar";

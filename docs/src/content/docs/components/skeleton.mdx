@@ -7,11 +7,10 @@ component: true
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
 import RawCode from "@/components/raw-code.tsx";
-import DemoCode from "@/examples/skeleton-demo?raw";
-import TwRawCode from "@repo/tailwindcss/ui/skeleton?raw";
-import UnoRawCode from "@repo/unocss/ui/skeleton?raw";
+import TwRawCode from "@repo/tailwindcss/default/skeleton?raw";
+import UnoRawCode from "@repo/unocss/default/skeleton?raw";
 
-<ComponentPreview name="skeleton-demo" code={DemoCode} client:only="solid-js" />
+<ComponentPreview name="skeleton-demo" client:only="solid-js" />
 
 ## Installation
 

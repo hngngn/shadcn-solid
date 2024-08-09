@@ -2,11 +2,10 @@
 	"name": "@repo/unocss",
 	"version": "0.0.1",
 	"exports": {
-		"./ui/*": "./ui/*.tsx"
+		"./default/*": "./default/ui/*.tsx",
+		"./solid/*": "./solid/ui/*.tsx"
 	},
-	"files": [
-		"ui"
-	],
+	"files": ["default", "solid"],
 	"devDependencies": {
 		"@ark-ui/solid": "^3.6.2",
 		"@corvu/drawer": "^0.2.2",
@@ -31,6 +30,6 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite serve dev",
-		"check": "biome check --write --unsafe ui"
+		"check": "biome check --write --unsafe default solid"
 	}
 }

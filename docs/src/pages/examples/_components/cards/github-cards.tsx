@@ -1,12 +1,12 @@
 import type { DropdownMenuTriggerProps } from "@kobalte/core/dropdown-menu";
-import { Button } from "@repo/tailwindcss/ui/button";
+import { Button } from "@repo/tailwindcss/default/button";
 import {
 	Card,
 	CardContent,
 	CardDescription,
 	CardHeader,
 	CardTitle,
-} from "@repo/tailwindcss/ui/card";
+} from "@repo/tailwindcss/default/card";
 import {
 	DropdownMenu,
 	DropdownMenuCheckboxItem,
@@ -16,8 +16,8 @@ import {
 	DropdownMenuItem,
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
-} from "@repo/tailwindcss/ui/dropdown-menu";
-import { Separator } from "@repo/tailwindcss/ui/separator";
+} from "@repo/tailwindcss/default/dropdown-menu";
+import { Separator } from "@repo/tailwindcss/default/separator";
 
 export const DemoGithub = () => {
 	return (

@@ -1,11 +1,11 @@
 import type { DropdownMenuTriggerProps } from "@kobalte/core/dropdown-menu";
-import { Button } from "@repo/tailwindcss/ui/button";
+import { Button } from "@repo/tailwindcss/default/button";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
 	DropdownMenuTrigger,
-} from "@repo/tailwindcss/ui/dropdown-menu";
+} from "@repo/tailwindcss/default/dropdown-menu";
 import { createEffect, createSignal, on } from "solid-js";
 
 const ModeToggle = () => {

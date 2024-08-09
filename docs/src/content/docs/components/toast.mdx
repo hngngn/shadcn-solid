@@ -10,12 +10,10 @@ link:
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
 import RawCode from "@/components/raw-code.tsx";
-import DemoCode from "@/examples/toast-demo?raw";
-import DemoCode2 from "@/examples/toast-destructive?raw";
-import TwRawCode from "@repo/tailwindcss/ui/toast?raw";
-import UnoRawCode from "@repo/unocss/ui/toast?raw";
+import TwRawCode from "@repo/tailwindcss/default/toast?raw";
+import UnoRawCode from "@repo/unocss/default/toast?raw";
 
-<ComponentPreview name="toast-demo" code={DemoCode} client:only="solid-js" />
+<ComponentPreview name="toast-demo" client:only="solid-js" />
 
 ## Installation
 
@@ -106,4 +104,4 @@ export default App;
 
 ### Destructive
 
-<ComponentPreview name="toast-destructive" code={DemoCode2} client:only="solid-js" />
+<ComponentPreview name="toast-destructive"  client:only="solid-js" />

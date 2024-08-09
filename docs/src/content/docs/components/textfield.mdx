@@ -10,17 +10,10 @@ link:
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
 import RawCode from "@/components/raw-code.tsx";
-import DemoCode from "@/examples/textfield-demo?raw";
-import DemoCode2 from "@/examples/textfield-disabled?raw";
-import DemoCode7 from "@/examples/textfield-file?raw";
-import DemoCode6 from "@/examples/textfield-with-button?raw";
-import DemoCode5 from "@/examples/textfield-with-error?raw";
-import DemoCode3 from "@/examples/textfield-with-label?raw";
-import DemoCode4 from "@/examples/textfield-with-text?raw";
-import TwRawCode from "@repo/tailwindcss/ui/textfield?raw";
-import UnoRawCode from "@repo/unocss/ui/textfield?raw";
+import TwRawCode from "@repo/tailwindcss/default/textfield?raw";
+import UnoRawCode from "@repo/unocss/default/textfield?raw";
 
-<ComponentPreview name="textfield-demo" code={DemoCode} client:only="solid-js" />
+<ComponentPreview name="textfield-demo" client:only="solid-js" />
 
 ## Installation
 
@@ -74,24 +67,24 @@ import { TextField, TextFieldRoot } from "@/components/ui/textfield";
 
 ### Disabled
 
-<ComponentPreview name="textfield-disabled" code={DemoCode2} client:only="solid-js" />
+<ComponentPreview name="textfield-disabled"  client:only="solid-js" />
 
 ### With Label
 
-<ComponentPreview name="textfield-with-label" code={DemoCode3} client:only="solid-js" />
+<ComponentPreview name="textfield-with-label"  client:only="solid-js" />
 
 ### With Text
 
-<ComponentPreview name="textfield-with-text" code={DemoCode4} client:only="solid-js" />
+<ComponentPreview name="textfield-with-text"  client:only="solid-js" />
 
 ### With Error
 
-<ComponentPreview name="textfield-with-error" code={DemoCode5} client:only="solid-js" />
+<ComponentPreview name="textfield-with-error"  client:only="solid-js" />
 
 ### With Button
 
-<ComponentPreview name="textfield-with-button" code={DemoCode6} client:only="solid-js" />
+<ComponentPreview name="textfield-with-button"  client:only="solid-js" />
 
 ### File
 
-<ComponentPreview name="textfield-file" code={DemoCode7} client:only="solid-js" />
+<ComponentPreview name="textfield-file"  client:only="solid-js" />
