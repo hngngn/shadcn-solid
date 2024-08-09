@@ -21,6 +21,14 @@ type Props = {
 	name: string;
 };
 
+const Code: ParentComponent = (props) => {
+	const index = () => styles.findIndex((i) => i.name === uiStyle().name);
+	const Component = createMemo(
+		() => (props.children as HTMLElement).children[index()],
+	);
+	return <Component />;
+};
+
 const ComponentPreview: ParentComponent<Props> = (props) => {
 	const Component = createMemo(
 		() =>
@@ -28,9 +36,7 @@ const ComponentPreview: ParentComponent<Props> = (props) => {
 			Index[uiStyle().name][frameworks[0].name][props.name]
 				.component as JSX.Element,
 	);
-	const index = () => styles.findIndex((i) => i.name === uiStyle().name);
 	const resolve = children(() => props.children);
-	const Code = createMemo(() => (resolve() as HTMLElement).children[index()]);
 
 	return (
 		<div class="group relative my-4 flex flex-col space-y-2 [&_.preview>div:not(:has(table))]:sm:max-w-[70%]">
@@ -66,14 +72,27 @@ const ComponentPreview: ParentComponent<Props> = (props) => {
 								</p>
 							}
 						>
-							{Component()}
+							<Component />
 						</Show>
 					</div>
 				</TabsContent>
 				<TabsContent value="code">
 					<div class="flex flex-col space-y-4">
 						<div class="w-full rounded-md [&_pre]:!my-0 [&_pre]:!max-h-[350px] [&_pre]:overflow-auto relative [&>[data-raw-code]]:mt-0">
-							{Code()}
+							<Show
+								when={resolve()}
+								fallback={
+									<p class="text-sm text-muted-foreground">
+										Code for component{" "}
+										<code class="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm">
+											{props.name}
+										</code>{" "}
+										not found in registry.
+									</p>
+								}
+							>
+								<Code>{resolve()}</Code>
+							</Show>
 						</div>
 					</div>
 				</TabsContent>

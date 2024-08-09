@@ -6,7 +6,7 @@ import {
 	CommandItem,
 	CommandList,
 } from "@repo/tailwindcss/default/command";
-import { For, createEffect, createSignal, onCleanup } from "solid-js";
+import { For, Show, createEffect, createSignal, onCleanup } from "solid-js";
 import { commandData } from "./command-demo";
 
 const CommandDialogDemo = () => {
@@ -51,7 +51,8 @@ const CommandDialogDemo = () => {
 										<CommandItem disabled={item.disabled}>
 											{item.icon}
 											<span>{item.label}</span>
-											{item.shortcut}
+											{/* @ts-expect-error */}
+											<Show when={item.shortcut}>{item.shortcut()}</Show>
 										</CommandItem>
 									)}
 								</For>
