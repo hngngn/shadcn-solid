@@ -3,7 +3,7 @@ import {
 	DropdownMenuContent,
 	DropdownMenuItem,
 	DropdownMenuTrigger,
-} from "@repo/tailwindcss/ui/dropdown-menu";
+} from "@repo/tailwindcss/default/dropdown-menu";
 import { For, Show, type VoidComponent, createSignal } from "solid-js";
 
 type Props = {

@@ -10,12 +10,10 @@ link:
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
 import RawCode from "@/components/raw-code.tsx";
-import DemoCode from "@/examples/tabs-demo?raw";
-import DemoCode2 from "@/examples/tabs-orientation-demo?raw";
-import TwRawCode from "@repo/tailwindcss/ui/tabs?raw";
-import UnoRawCode from "@repo/unocss/ui/tabs?raw";
+import TwRawCode from "@repo/tailwindcss/default/tabs?raw";
+import UnoRawCode from "@repo/unocss/default/tabs?raw";
 
-<ComponentPreview name="tabs-demo" code={DemoCode} client:only="solid-js" />
+<ComponentPreview name="tabs-demo" client:only="solid-js" />
 
 ## Installation
 
@@ -74,4 +72,4 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 ### Orientation
 
-<ComponentPreview name="tabs-orientation-demo" code={DemoCode2} client:only="solid-js" />
+<ComponentPreview name="tabs-orientation-demo"  client:only="solid-js" />

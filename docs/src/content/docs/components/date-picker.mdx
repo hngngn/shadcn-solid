@@ -10,13 +10,10 @@ link:
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
 import RawCode from "@/components/raw-code.tsx";
-import DemoCode from "@/examples/date-picker-demo?raw";
-import DemoCode2 from "@/examples/date-picker-with-range-demo?raw";
-import DemoCode3 from "@/examples/calendar-demo?raw";
-import TwRawCode from "@repo/tailwindcss/ui/date-picker?raw";
-import UnoRawCode from "@repo/unocss/ui/date-picker?raw";
+import TwRawCode from "@repo/tailwindcss/default/date-picker?raw";
+import UnoRawCode from "@repo/unocss/default/date-picker?raw";
 
-<ComponentPreview name="date-picker-demo" code={DemoCode} client:only="solid-js" />
+<ComponentPreview name="date-picker-demo" client:only="solid-js" />
 
 ## Installation
 
@@ -190,8 +187,8 @@ import { Portal } from "solid-js/web";
 
 ### Date Range Picker
 
-<ComponentPreview name="date-picker-with-range-demo" code={DemoCode2} client:only="solid-js" />
+<ComponentPreview name="date-picker-with-range-demo"  client:only="solid-js" />
 
 ### Calendar
 
-<ComponentPreview name="calendar-demo" code={DemoCode3} client:only="solid-js" />
+<ComponentPreview name="calendar-demo"  client:only="solid-js" />

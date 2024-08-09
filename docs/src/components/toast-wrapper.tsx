@@ -1,5 +1,5 @@
-import { Toaster } from "@repo/tailwindcss/ui/sonner";
-import { ToastList, ToastRegion } from "@repo/tailwindcss/ui/toast";
+import { Toaster } from "@repo/tailwindcss/default/sonner";
+import { ToastList, ToastRegion } from "@repo/tailwindcss/default/toast";
 import { createEffect, createSignal, on } from "solid-js";
 
 const ToastWrapper = () => {

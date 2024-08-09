@@ -1,27 +1,31 @@
 import type { DropdownMenuTriggerProps } from "@kobalte/core/dropdown-menu";
 import type { TooltipTriggerProps } from "@kobalte/core/tooltip";
-import { Button } from "@repo/tailwindcss/ui/button";
+import { Button } from "@repo/tailwindcss/default/button";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
 	DropdownMenuTrigger,
-} from "@repo/tailwindcss/ui/dropdown-menu";
-import { Image, ImageFallback, ImageRoot } from "@repo/tailwindcss/ui/image";
-import { Separator } from "@repo/tailwindcss/ui/separator";
+} from "@repo/tailwindcss/default/dropdown-menu";
+import {
+	Image,
+	ImageFallback,
+	ImageRoot,
+} from "@repo/tailwindcss/default/image";
+import { Separator } from "@repo/tailwindcss/default/separator";
 import {
 	Switch,
 	SwitchControl,
 	SwitchLabel,
 	SwitchThumb,
-} from "@repo/tailwindcss/ui/switch";
-import { TextArea } from "@repo/tailwindcss/ui/textarea";
-import { TextFieldRoot } from "@repo/tailwindcss/ui/textfield";
+} from "@repo/tailwindcss/default/switch";
+import { TextArea } from "@repo/tailwindcss/default/textarea";
+import { TextFieldRoot } from "@repo/tailwindcss/default/textfield";
 import {
 	Tooltip,
 	TooltipContent,
 	TooltipTrigger,
-} from "@repo/tailwindcss/ui/tooltip";
+} from "@repo/tailwindcss/default/tooltip";
 import { Show, createMemo } from "solid-js";
 import { mails } from "./data";
 import { mail } from "./use-mail";

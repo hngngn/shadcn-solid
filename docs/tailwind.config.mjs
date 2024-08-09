@@ -5,7 +5,8 @@ export default {
 	darkMode: ["class"],
 	content: [
 		"./src/**/*.{astro,mdx,ts,tsx}",
-		"node_modules/@repo/tailwindcss/ui/*.tsx",
+		"node_modules/@repo/tailwindcss/default/ui/*.tsx",
+		"node_modules/@repo/tailwindcss/solid/ui/*.tsx",
 	],
 	theme: {
 		extend: {

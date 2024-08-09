@@ -4,7 +4,7 @@ import {
 	CardDescription,
 	CardHeader,
 	CardTitle,
-} from "@repo/tailwindcss/ui/card";
+} from "@repo/tailwindcss/default/card";
 
 export const DemoNotifications = () => {
 	return (

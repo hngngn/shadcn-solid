@@ -9,12 +9,10 @@ link:
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
 import RawCode from "@/components/raw-code.tsx";
-import DemoCode from "@/examples/command-demo?raw";
-import DemoCode2 from "@/examples/command-dialog?raw";
-import TwRawCode from "@repo/tailwindcss/ui/command?raw";
-import UnoRawCode from "@repo/unocss/ui/command?raw";
+import TwRawCode from "@repo/tailwindcss/default/command?raw";
+import UnoRawCode from "@repo/unocss/default/command?raw";
 
-<ComponentPreview name="command-demo" code={DemoCode} client:only="solid-js" />
+<ComponentPreview name="command-demo" client:only="solid-js" />
 
 ## Installation
 
@@ -92,7 +90,7 @@ import {
 
 ### Dialog
 
-<ComponentPreview name="command-dialog" code={DemoCode2} client:only="solid-js" />
+<ComponentPreview name="command-dialog"  client:only="solid-js" />
 
 To show the command menu in a dialog, use the `<CommandDialog />` component.
 

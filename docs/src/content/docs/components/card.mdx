@@ -7,11 +7,10 @@ component: true
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
 import RawCode from "@/components/raw-code.tsx";
-import DemoCode from "@/examples/card-demo?raw";
-import TwRawCode from "@repo/tailwindcss/ui/card?raw";
-import UnoRawCode from "@repo/unocss/ui/card?raw";
+import TwRawCode from "@repo/tailwindcss/default/card?raw";
+import UnoRawCode from "@repo/unocss/default/card?raw";
 
-<ComponentPreview name="card-demo" code={DemoCode} client:only="solid-js" />
+<ComponentPreview name="card-demo" client:only="solid-js" />
 
 ## Installation
 

@@ -1,9 +1,9 @@
-import { Button } from "@repo/tailwindcss/ui/button";
+import { Button } from "@repo/tailwindcss/default/button";
 import {
 	TextField,
 	TextFieldLabel,
 	TextFieldRoot,
-} from "@repo/tailwindcss/ui/textfield";
+} from "@repo/tailwindcss/default/textfield";
 import { createSignal } from "solid-js";
 
 export const UserAuthForm = () => {

@@ -1,10 +1,10 @@
 import { cn } from "@/libs/cn";
-import { buttonVariants } from "@repo/tailwindcss/ui/button";
+import { buttonVariants } from "@repo/tailwindcss/default/button";
 import {
 	Tooltip,
 	TooltipContent,
 	TooltipTrigger,
-} from "@repo/tailwindcss/ui/tooltip";
+} from "@repo/tailwindcss/default/tooltip";
 import { For, type JSX, Show } from "solid-js";
 
 type Props = {

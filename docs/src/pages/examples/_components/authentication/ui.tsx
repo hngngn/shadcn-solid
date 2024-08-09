@@ -1,5 +1,5 @@
 import { cn } from "@/libs/cn";
-import { buttonVariants } from "@repo/tailwindcss/ui/button";
+import { buttonVariants } from "@repo/tailwindcss/default/button";
 import { UserAuthForm } from "./user-auth-form";
 
 const AuthenticationUI = () => {

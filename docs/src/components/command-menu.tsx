@@ -1,6 +1,6 @@
 import type { TNavItem } from "@/config/docs";
 import { docsConfig } from "@/config/docs";
-import { Button } from "@repo/tailwindcss/ui/button";
+import { Button } from "@repo/tailwindcss/default/button";
 import {
 	CommandDialog,
 	CommandEmpty,
@@ -8,7 +8,7 @@ import {
 	CommandInput,
 	CommandItem,
 	CommandList,
-} from "@repo/tailwindcss/ui/command";
+} from "@repo/tailwindcss/default/command";
 import type { JSXElement } from "solid-js";
 import {
 	For,

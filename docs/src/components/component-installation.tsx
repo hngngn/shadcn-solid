@@ -4,7 +4,7 @@ import {
 	TabsIndicator,
 	TabsList,
 	TabsTrigger,
-} from "@repo/tailwindcss/ui/tabs";
+} from "@repo/tailwindcss/default/tabs";
 import type { JSX } from "solid-js";
 
 type Props = {

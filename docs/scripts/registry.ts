@@ -6,6 +6,7 @@ import { registry } from "./utils";
 import { colorMapping, colors } from "./utils/colors";
 import { frameworks } from "./utils/framework";
 import { registrySchema } from "./utils/schema";
+import { styles } from "./utils/styles";
 
 const REGISTRY_PATH = join(process.cwd(), "public/registry");
 
@@ -25,82 +26,104 @@ import { lazy } from "solid-js"
 export const Index = {
 `;
 
-for (const framework of frameworks) {
-	if (framework.name === "unocss") {
-		break;
-	}
-	index += `  "${framework.name}": {`;
+for (const style of styles) {
+	index += `  "${style.name}": {\n`;
 
-	// Build style index.
-	for (const item of result.data) {
-		if (item.type === "components:example") {
-			index += `
-    "${item.name}": {
-      name: "${item.name}",
-      type: "${item.type}",
-      registryDependencies: ${JSON.stringify(item.registryDependencies)},
-      component: ${`lazy(() => import("../examples/${item.name}"))`}
-    },`;
+	for (const framework of frameworks) {
+		index += `    "${framework.name}": {\n`;
+
+		// Build style index.
+		for (const item of result.data) {
+			if (item.type === "components:example") {
+				if (framework.name !== "unocss") {
+					index += `      "${item.name}": {
+        name: "${item.name}",
+        type: "${item.type}",
+        component: ${`lazy(() => import("../examples/${style.name}/${framework.name}/${item.name}"))`},
+        files: ["src/examples/${style.name}/${framework.name}/${item.name}.tsx"]
+      },\n`;
+				}
+				continue;
+			}
+			index += `      "${item.name}": {
+        name: "${item.name}",
+        type: "${item.type}",
+        files: ["../packages/${framework.name}/${style.name}/${item.files.map((i) => i)}"]
+      },\n`;
 		}
+		index += "    },\n";
 	}
-
-	index += `
-  },`;
+	index += "  },\n";
 }
 
-index += `
-}
-`;
+index += "};\n";
 
 // Write style index.
 writeFileSync(join(process.cwd(), "src/__registry__/index.js"), index);
 
 // ----------------------------------------------------------------------------
-// Build registry/frameworks/[framework]/[name].json.
+// Build registry/styles/[name]/[framework]/[name].json.
 // ----------------------------------------------------------------------------
-for (const framework of frameworks) {
-	const targetPath = join(REGISTRY_PATH, "frameworks", framework.name);
+for (const style of styles) {
+	for (const framework of frameworks) {
+		const targetPath = join(
+			REGISTRY_PATH,
+			"styles",
+			style.name,
+			framework.name,
+		);
 
-	// Create directory if it doesn't exist.
-	if (!existsSync(targetPath)) {
-		mkdirSync(targetPath, { recursive: true });
-	}
-
-	for (const item of result.data) {
-		if (item.type !== "components:ui") {
-			continue;
+		// Create directory if it doesn't exist.
+		if (!existsSync(targetPath)) {
+			mkdirSync(targetPath, { recursive: true });
 		}
 
-		const files = item.files?.map((file) => {
-			const content = readFileSync(
-				join(process.cwd(), "../packages", framework.name, file),
+		for (const item of result.data) {
+			if (item.type !== "components:ui") {
+				continue;
+			}
+
+			const files = item.files?.map((file) => {
+				const content = readFileSync(
+					join(process.cwd(), "../packages", framework.name, style.name, file),
+					"utf8",
+				);
+
+				return {
+					name: basename(file),
+					content,
+				};
+			});
+
+			const payload = {
+				...item,
+				files,
+			};
+
+			writeFileSync(
+				join(targetPath, `${item.name}.json`),
+				JSON.stringify(payload, null, 2),
 				"utf8",
 			);
-
-			return {
-				name: basename(file),
-				content,
-			};
-		});
-
-		const payload = {
-			...item,
-			files,
-		};
-
-		writeFileSync(
-			join(targetPath, `${item.name}.json`),
-			JSON.stringify(payload, null, 2),
-			"utf8",
-		);
+		}
 	}
 }
 
 // ----------------------------------------------------------------------------
 // Build registry/frameworks/index.json.
 // ----------------------------------------------------------------------------
-const stylesJson = JSON.stringify(frameworks, null, 2);
-writeFileSync(join(REGISTRY_PATH, "frameworks/index.json"), stylesJson, "utf8");
+const frameworksJson = JSON.stringify(frameworks, null, 2);
+writeFileSync(
+	join(REGISTRY_PATH, "frameworks/index.json"),
+	frameworksJson,
+	"utf8",
+);
+
+// ----------------------------------------------------------------------------
+// Build registry/styles/index.json.
+// ----------------------------------------------------------------------------
+const stylesJson = JSON.stringify(styles, null, 2);
+writeFileSync(join(REGISTRY_PATH, "styles/index.json"), stylesJson, "utf8");
 
 // ----------------------------------------------------------------------------
 // Build registry/index.json.

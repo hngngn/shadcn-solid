@@ -10,13 +10,10 @@ link:
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
 import RawCode from "@/components/raw-code.tsx";
-import DemoCode from "@/examples/otp-field-demo?raw";
-import DemoCode3 from "@/examples/otp-field-with-controlled-demo?raw";
-import DemoCode2 from "@/examples/otp-field-with-pattern-demo?raw";
-import TwRawCode from "@repo/tailwindcss/ui/otp-field?raw";
-import UnoRawCode from "@repo/unocss/ui/otp-field?raw";
+import TwRawCode from "@repo/tailwindcss/default/otp-field?raw";
+import UnoRawCode from "@repo/unocss/default/otp-field?raw";
 
-<ComponentPreview name="otp-field-demo" code={DemoCode} client:only="solid-js" />
+<ComponentPreview name="otp-field-demo" client:only="solid-js" />
 
 ## Installation
 
@@ -138,10 +135,10 @@ import {
 
 Use the `pattern` prop to define a custom pattern for the OTP field.
 
-<ComponentPreview name="otp-field-with-pattern-demo" code={DemoCode2} client:only="solid-js" />
+<ComponentPreview name="otp-field-with-pattern-demo"  client:only="solid-js" />
 
 ### Controlled
 
 You can use the `value` and `onValueChange` props to control the input value.
 
-<ComponentPreview name="otp-field-with-controlled-demo" code={DemoCode3} client:only="solid-js" />
+<ComponentPreview name="otp-field-with-controlled-demo"  client:only="solid-js" />

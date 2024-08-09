@@ -5,7 +5,7 @@ import {
 	SelectItem,
 	SelectTrigger,
 	SelectValue,
-} from "@repo/tailwindcss/ui/select";
+} from "@repo/tailwindcss/default/select";
 import { createSignal } from "solid-js";
 import { type Account, accounts } from "./data";
 
