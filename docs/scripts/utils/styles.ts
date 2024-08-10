@@ -8,3 +8,5 @@ export const styles = [
 		label: "Solid",
 	},
 ];
+
+export type Style = (typeof styles)[0];

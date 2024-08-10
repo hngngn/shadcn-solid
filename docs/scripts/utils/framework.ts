@@ -8,3 +8,5 @@ export const frameworks = [
 		label: "UnoCSS",
 	},
 ];
+
+export type FrameWork = (typeof frameworks)[0];

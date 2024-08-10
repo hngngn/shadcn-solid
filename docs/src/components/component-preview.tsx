@@ -7,36 +7,26 @@ import {
 	TabsTrigger,
 } from "@repo/tailwindcss/default/tabs";
 import { frameworks } from "scripts/utils/framework";
-import { styles } from "scripts/utils/styles";
-import {
-	type JSX,
-	type ParentComponent,
-	Show,
-	children,
-	createMemo,
-} from "solid-js";
-import StyleSwitcher, { uiStyle } from "./style-switcher";
+import { type JSX, Show, createMemo } from "solid-js";
+import { StyleProvider, useStyle } from "./style-provider";
+import StyleSwitcher from "./style-switcher";
 
 type Props = {
 	name: string;
+	styleDefault: HTMLElement;
+	styleSolid: HTMLElement;
 };
 
-const Code: ParentComponent = (props) => {
-	const index = () => styles.findIndex((i) => i.name === uiStyle().name);
-	const Component = createMemo(
-		() => (props.children as HTMLElement).children[index()],
-	);
-	return <Component />;
-};
-
-const ComponentPreview: ParentComponent<Props> = (props) => {
+const ComponentPreviewImpl = (props: Props) => {
+	const { style } = useStyle();
 	const Component = createMemo(
 		() =>
 			// @ts-expect-error
-			Index[uiStyle().name][frameworks[0].name][props.name]
+			Index[style().name][frameworks[0].name][props.name]
 				.component as JSX.Element,
 	);
-	const resolve = children(() => props.children);
+	// @ts-expect-error -- ts not happy with this
+	const Code = createMemo(() => props[`style${style().label}`]);
 
 	return (
 		<div class="group relative my-4 flex flex-col space-y-2 [&_.preview>div:not(:has(table))]:sm:max-w-[70%]">
@@ -72,7 +62,7 @@ const ComponentPreview: ParentComponent<Props> = (props) => {
 								</p>
 							}
 						>
-							<Component />
+							{Component()}
 						</Show>
 					</div>
 				</TabsContent>
@@ -80,7 +70,7 @@ const ComponentPreview: ParentComponent<Props> = (props) => {
 					<div class="flex flex-col space-y-4">
 						<div class="w-full rounded-md [&_pre]:!my-0 [&_pre]:!max-h-[350px] [&_pre]:overflow-auto relative [&>[data-raw-code]]:mt-0">
 							<Show
-								when={resolve()}
+								when={Code()}
 								fallback={
 									<p class="text-sm text-muted-foreground">
 										Code for component{" "}
@@ -91,13 +81,21 @@ const ComponentPreview: ParentComponent<Props> = (props) => {
 									</p>
 								}
 							>
-								<Code>{resolve()}</Code>
+								{Code()}
 							</Show>
 						</div>
 					</div>
 				</TabsContent>
 			</Tabs>
 		</div>
+	);
+};
+
+const ComponentPreview = (props: Props) => {
+	return (
+		<StyleProvider>
+			<ComponentPreviewImpl {...props} />
+		</StyleProvider>
 	);
 };
 

@@ -5,23 +5,18 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@repo/tailwindcss/default/select";
-import { makePersisted } from "@solid-primitives/storage";
 import { styles } from "scripts/utils/styles";
-import { createSignal } from "solid-js";
-
-export const [uiStyle, setUiStyle] = makePersisted(
-	createSignal<(typeof styles)[0]>(styles[0]),
-	{
-		name: "styles",
-	},
-);
+import { useStyle } from "./style-provider";
 
 const StyleSwitcher = () => {
+	const { style, setStyle } = useStyle();
+
 	return (
 		<Select
+			disallowEmptySelection
 			options={styles}
-			value={uiStyle()}
-			onChange={setUiStyle}
+			value={style()}
+			onChange={setStyle}
 			optionValue="name"
 			itemComponent={(props) => (
 				<SelectItem item={props.item} class="text-xs">

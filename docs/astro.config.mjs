@@ -27,6 +27,68 @@ export default defineConfig({
 		rehypePlugins: [
 			() => (tree) => {
 				visit(tree, (node) => {
+					if (node.name === "ComponentSource") {
+						const name = getNodeAttributeByName(node, "name")?.value;
+
+						if (!name) {
+							return null;
+						}
+
+						try {
+							for (const style of styles) {
+								for (const framework of frameworks) {
+									if (Index[style.name][framework.name] === undefined) {
+										break;
+									}
+									const component = Index[style.name][framework.name][name];
+									if (!component) {
+										continue;
+									}
+
+									const src = component.files[0];
+
+									const filePath = join(process.cwd(), src);
+									const source = readFileSync(filePath, "utf8");
+
+									node.children?.push(
+										u("mdxJsxFlowElement", {
+											name: "Fragment",
+											attributes: [
+												{
+													type: "mdxJsxAttribute",
+													name: "slot",
+													value: `style${style.label}${framework.label}`,
+												},
+											],
+											children: [
+												u("element", {
+													tagName: "pre",
+													properties: {},
+													children: [
+														u("element", {
+															tagName: "code",
+															properties: {
+																className: ["language-tsx"],
+															},
+															children: [
+																{
+																	type: "text",
+																	value: source,
+																},
+															],
+														}),
+													],
+												}),
+											],
+										}),
+									);
+								}
+							}
+						} catch (error) {
+							console.error(error);
+						}
+					}
+
 					if (node.name === "ComponentPreview") {
 						const name = getNodeAttributeByName(node, "name")?.value;
 
@@ -51,20 +113,32 @@ export default defineConfig({
 									const source = readFileSync(filePath, "utf8");
 
 									node.children?.push(
-										u("element", {
-											tagName: "pre",
-											properties: {},
+										u("mdxJsxFlowElement", {
+											name: "Fragment",
+											attributes: [
+												{
+													type: "mdxJsxAttribute",
+													name: "slot",
+													value: `style${style.label}`,
+												},
+											],
 											children: [
 												u("element", {
-													tagName: "code",
-													properties: {
-														className: ["language-tsx"],
-													},
+													tagName: "pre",
+													properties: {},
 													children: [
-														{
-															type: "text",
-															value: source,
-														},
+														u("element", {
+															tagName: "code",
+															properties: {
+																className: ["language-tsx"],
+															},
+															children: [
+																{
+																	type: "text",
+																	value: source,
+																},
+															],
+														}),
 													],
 												}),
 											],

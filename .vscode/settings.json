@@ -6,6 +6,6 @@
 	"editor.codeActionsOnSave": {
 		"quickfix.biome": "explicit",
 		"source.organizeImports.biome": "explicit",
-		"source.removeUnused.ts": "explicit"
+		"source.removeUnusedImports": "explicit"
 	}
 }

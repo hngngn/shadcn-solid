@@ -20,29 +20,26 @@ const ComponentInstallation = (props: Props) => {
 				<TabsTrigger value="cli" class="w-fit">
 					CLI
 				</TabsTrigger>
-				<TabsTrigger value="manual" class="w-fit">
-					Manual
+				<TabsTrigger value="tw" class="w-fit space-x-2">
+					TailwindCSS
+				</TabsTrigger>
+				<TabsTrigger value="uno" class="w-fit space-x-2">
+					UnoCSS
 				</TabsTrigger>
 				<TabsIndicator variant="underline" />
 			</TabsList>
 			<TabsContent value="cli">{props.cli}</TabsContent>
 			<TabsContent
-				value="manual"
+				value="tw"
 				class="relative [&_h3.font-heading]:text-base [&_h3.font-heading]:font-semibold"
 			>
-				<Tabs defaultValue="tw">
-					<TabsList class="mt-6 w-fit">
-						<TabsTrigger value="tw" class="w-[110px]">
-							TailwindCSS
-						</TabsTrigger>
-						<TabsTrigger value="uno" class="w-[110px]">
-							UnoCSS
-						</TabsTrigger>
-						<TabsIndicator />
-					</TabsList>
-					<TabsContent value="tw">{props.tw}</TabsContent>
-					<TabsContent value="uno">{props.uno}</TabsContent>
-				</Tabs>
+				{props.tw}
+			</TabsContent>
+			<TabsContent
+				value="uno"
+				class="relative [&_h3.font-heading]:text-base [&_h3.font-heading]:font-semibold"
+			>
+				{props.uno}
 			</TabsContent>
 		</Tabs>
 	);

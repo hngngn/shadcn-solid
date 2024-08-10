@@ -1,3 +1,5 @@
+// unocss/default
+
 import { cn } from "@/libs/cn";
 import type {
 	AccordionContentProps,
