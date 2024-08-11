@@ -111,9 +111,6 @@ importers:
       rehype-pretty-code:
         specifier: ^0.13.2
         version: 0.13.2(shiki@1.12.1)
-      shiki:
-        specifier: ^1.12.1
-        version: 1.12.1
       tsx:
         specifier: ^4.16.5
         version: 4.16.5
