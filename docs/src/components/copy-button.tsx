@@ -3,7 +3,8 @@ import { Show, createSignal } from "solid-js";
 
 type Props = {
 	rawString: string;
-	withMeta: boolean;
+	withMeta?: boolean;
+	class?: string;
 };
 
 const CopyButton = (props: Props) => {
@@ -12,7 +13,7 @@ const CopyButton = (props: Props) => {
 	const copyToClipboard = () => {
 		setIsCopied(true);
 		navigator.clipboard.writeText(props.rawString);
-		setTimeout(() => setIsCopied(false), 2000);
+		setTimeout(() => setIsCopied(false), 1000);
 	};
 
 	return (
@@ -20,6 +21,7 @@ const CopyButton = (props: Props) => {
 			type="button"
 			class={cn(
 				"p-1 rounded-md absolute top-4 right-4 text-white hover:bg-neutral-700/70 transition-colors",
+				props.class,
 				props.withMeta && "top-16",
 			)}
 			onClick={copyToClipboard}
@@ -29,7 +31,8 @@ const CopyButton = (props: Props) => {
 				fallback={
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
-						class="h-4 w-4"
+						width="1em"
+						height="1em"
 						viewBox="0 0 24 24"
 					>
 						<g
@@ -39,16 +42,17 @@ const CopyButton = (props: Props) => {
 							stroke-linejoin="round"
 							stroke-width="2"
 						>
-							<path d="M7 9.667A2.667 2.667 0 0 1 9.667 7h8.666A2.667 2.667 0 0 1 21 9.667v8.666A2.667 2.667 0 0 1 18.333 21H9.667A2.667 2.667 0 0 1 7 18.333z" />
-							<path d="M4.012 16.737A2.005 2.005 0 0 1 3 15V5c0-1.1.9-2 2-2h10c.75 0 1.158.385 1.5 1" />
+							<path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
+							<path d="M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2" />
 						</g>
-						<title>Copy</title>
+						<title>Copy to clipboard</title>
 					</svg>
 				}
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					class="h-4 w-4"
+					width="1em"
+					height="1em"
 					viewBox="0 0 24 24"
 				>
 					<g
@@ -58,10 +62,10 @@ const CopyButton = (props: Props) => {
 						stroke-linejoin="round"
 						stroke-width="2"
 					>
-						<path d="M7 9.667A2.667 2.667 0 0 1 9.667 7h8.666A2.667 2.667 0 0 1 21 9.667v8.666A2.667 2.667 0 0 1 18.333 21H9.667A2.667 2.667 0 0 1 7 18.333z" />
-						<path d="M4.012 16.737A2.005 2.005 0 0 1 3 15V5c0-1.1.9-2 2-2h10c.75 0 1.158.385 1.5 1M11 14l2 2l4-4" />
+						<path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
+						<path d="M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2m0 9l2 2l4-4" />
 					</g>
-					<title>Copied</title>
+					<title>Copied to clipboard</title>
 				</svg>
 			</Show>
 		</button>

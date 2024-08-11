@@ -4,6 +4,7 @@ import PageNavigation from "@/components/page-navigation.astro";
 import { Sidebar } from "@/components/sidebar";
 import Toc from "@/components/toc.astro";
 import { siteConfig } from "@/config/site";
+import { cn } from "@/libs/cn";
 import { badgeVariants } from "@repo/tailwindcss/default/badge";
 // @ts-expect-error
 import { Balancer } from "solid-wrap-balancer";
@@ -91,9 +92,12 @@ const { pathname } = Astro.url;
                                         href={entry.data.link.doc}
                                         target="_blank"
                                         rel="noreferrer"
-                                        class={badgeVariants({
-                                            variant: "secondary",
-                                        })}
+                                        class={cn(
+                                            badgeVariants({
+                                                variant: "outline",
+                                            }),
+                                            "bg-inherit hover:bg-accent transition-colors",
+                                        )}
                                     >
                                         Docs{" "}
                                         <svg
@@ -117,9 +121,12 @@ const { pathname } = Astro.url;
                                         href={entry.data.link.api}
                                         target="_blank"
                                         rel="noreferrer"
-                                        class={badgeVariants({
-                                            variant: "secondary",
-                                        })}
+                                        class={cn(
+                                            badgeVariants({
+                                                variant: "outline",
+                                            }),
+                                            "bg-inherit hover:bg-accent transition-colors",
+                                        )}
                                     >
                                         API Reference{" "}
                                         <svg

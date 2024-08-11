@@ -9,12 +9,14 @@ import {
 } from "@repo/tailwindcss/default/tabs";
 import { frameworks } from "scripts/utils/framework";
 import { type JSX, Show, createMemo } from "solid-js";
+import CopyButton from "./copy-button";
 import StyleSwitcher from "./style-switcher";
 
 type Props = {
 	name: string;
 	styleDefault: HTMLElement;
 	styleSolid: HTMLElement;
+	rawString: string;
 };
 
 const ComponentPreview = (props: Props) => {
@@ -45,8 +47,12 @@ const ComponentPreview = (props: Props) => {
 					value="preview"
 					class="relative rounded-md border has-[table]:border-none"
 				>
-					<div class="p-4">
+					<div class="p-4 relative">
 						<StyleSwitcher />
+						<CopyButton
+							rawString={props.rawString}
+							class="text-foreground hover:bg-accent shadow-sm border border-input"
+						/>
 					</div>
 					<div class="preview flex min-h-[350px] w-full justify-center p-10 items-center has-[table]:p-0">
 						<Show

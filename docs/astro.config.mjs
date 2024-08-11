@@ -112,6 +112,12 @@ export default defineConfig({
 									const filePath = join(process.cwd(), src);
 									const source = readFileSync(filePath, "utf8");
 
+									node.attributes?.push(
+										u("mdxJsxAttribute", {
+											name: "rawString",
+											value: source,
+										}),
+									);
 									node.children?.push(
 										u("mdxJsxFlowElement", {
 											name: "Fragment",
