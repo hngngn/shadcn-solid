@@ -6,9 +6,7 @@ component: true
 
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
-import RawCode from "@/components/raw-code.tsx";
-import TwRawCode from "@repo/tailwindcss/default/table?raw";
-import UnoRawCode from "@repo/unocss/default/table?raw";
+import ComponentSource from "@/components/component-source";
 
 <ComponentPreview name="table-demo" client:only="solid-js" />
 
@@ -25,14 +23,14 @@ npx shadcn-solid@latest add table
 <Step slot="tw">
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={TwRawCode} client:only="solid-js" />
+<ComponentSource name="table" client:only="solid-js" />
 
 </Step>
 
 <Step slot="uno">
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={UnoRawCode} client:only="solid-js" />
+<ComponentSource name="table" client:only="solid-js" />
 
 </Step>
 

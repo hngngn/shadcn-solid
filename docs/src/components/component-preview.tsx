@@ -1,4 +1,5 @@
 import { Index } from "@/__registry__";
+import { config } from "@/stores/config";
 import {
 	Tabs,
 	TabsContent,
@@ -8,7 +9,6 @@ import {
 } from "@repo/tailwindcss/default/tabs";
 import { frameworks } from "scripts/utils/framework";
 import { type JSX, Show, createMemo } from "solid-js";
-import { StyleProvider, useStyle } from "./style-provider";
 import StyleSwitcher from "./style-switcher";
 
 type Props = {
@@ -17,16 +17,15 @@ type Props = {
 	styleSolid: HTMLElement;
 };
 
-const ComponentPreviewImpl = (props: Props) => {
-	const { style } = useStyle();
+const ComponentPreview = (props: Props) => {
 	const Component = createMemo(
 		() =>
 			// @ts-expect-error
-			Index[style().name][frameworks[0].name][props.name]
+			Index[config.style.name][frameworks[0].name][props.name]
 				.component as JSX.Element,
 	);
 	// @ts-expect-error -- ts not happy with this
-	const Code = createMemo(() => props[`style${style().label}`]);
+	const Code = createMemo(() => props[`style${config.style.label}`]);
 
 	return (
 		<div class="group relative my-4 flex flex-col space-y-2 [&_.preview>div:not(:has(table))]:sm:max-w-[70%]">
@@ -88,14 +87,6 @@ const ComponentPreviewImpl = (props: Props) => {
 				</TabsContent>
 			</Tabs>
 		</div>
-	);
-};
-
-const ComponentPreview = (props: Props) => {
-	return (
-		<StyleProvider>
-			<ComponentPreviewImpl {...props} />
-		</StyleProvider>
 	);
 };
 

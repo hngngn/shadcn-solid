@@ -1,3 +1,4 @@
+import { setConfig } from "@/stores/config";
 import {
 	Tabs,
 	TabsContent,
@@ -5,7 +6,7 @@ import {
 	TabsList,
 	TabsTrigger,
 } from "@repo/tailwindcss/default/tabs";
-import type { JSX } from "solid-js";
+import { type JSX, createSignal } from "solid-js";
 
 type Props = {
 	cli?: JSX.Element;
@@ -14,8 +15,22 @@ type Props = {
 };
 
 const ComponentInstallation = (props: Props) => {
+	const [selected, setSelected] = createSignal("cli");
+
+	const handleOnChange = (e: string) => {
+		setSelected(e);
+		setConfig("framework", {
+			name: e === "tw" ? "tailwindcss" : "unocss",
+			label: e === "tw" ? "TailwindCSS" : "UnoCSS",
+		});
+	};
+
 	return (
-		<Tabs defaultValue="cli" class="relative mt-6 w-full">
+		<Tabs
+			value={selected()}
+			onChange={handleOnChange}
+			class="relative mt-6 w-full"
+		>
 			<TabsList class="bg-transparent border-b rounded-none">
 				<TabsTrigger value="cli" class="w-fit">
 					CLI

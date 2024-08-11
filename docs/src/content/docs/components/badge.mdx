@@ -6,9 +6,7 @@ component: true
 
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
-import RawCode from "@/components/raw-code.tsx";
-import TwRawCode from "@repo/tailwindcss/default/badge?raw";
-import UnoRawCode from "@repo/unocss/default/badge?raw";
+import ComponentSource from "@/components/component-source";
 
 <ComponentPreview name="badge-demo" client:only="solid-js" />
 
@@ -25,14 +23,14 @@ npx shadcn-solid@latest add badge
 <Step slot="tw">
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={TwRawCode} client:only="solid-js" />
+<ComponentSource name="badge" client:only="solid-js" />
 
 </Step>
 
 <Step slot="uno">
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={UnoRawCode} client:only="solid-js" />
+<ComponentSource name="badge" client:only="solid-js" />
 
 </Step>
 

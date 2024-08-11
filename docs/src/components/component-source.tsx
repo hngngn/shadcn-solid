@@ -1,4 +1,5 @@
 import { cn } from "@/libs/cn";
+import { config } from "@/stores/config";
 import type { CollapsibleTriggerProps } from "@kobalte/core/collapsible";
 import { Button } from "@repo/tailwindcss/default/button";
 import {
@@ -6,9 +7,7 @@ import {
 	CollapsibleContent,
 	CollapsibleTrigger,
 } from "@repo/tailwindcss/default/collapsible";
-import { frameworks } from "scripts/utils/framework";
 import { Show, createMemo, createSignal } from "solid-js";
-import { StyleProvider, useStyle } from "./style-provider";
 
 type Props = {
 	name: string;
@@ -19,15 +18,12 @@ type Props = {
 	styleSolidUnoCSS: HTMLElement;
 };
 
-const ComponentSourceImpl = (props: Props) => {
-	const { style } = useStyle();
+const ComponentSource = (props: Props) => {
 	const [isOpened, setIsOpened] = createSignal(false);
-	const framework = () =>
-		frameworks.filter((i) => i.name === props.framework).map((i) => i.label)[0];
 	const Code = createMemo(
 		() =>
 			// @ts-expect-error -- ts not happy with this
-			props[`style${style().label}${framework()}`],
+			props[`style${config.style.label}${config.framework.label}`],
 	);
 
 	return (
@@ -45,7 +41,7 @@ const ComponentSourceImpl = (props: Props) => {
 						)}
 					>
 						<Show
-							when={Code}
+							when={Code()}
 							fallback={
 								<p class="text-sm text-muted-foreground">
 									Code for component{" "}
@@ -56,7 +52,7 @@ const ComponentSourceImpl = (props: Props) => {
 								</p>
 							}
 						>
-							<Code />
+							{Code()}
 						</Show>
 					</div>
 				</CollapsibleContent>
@@ -78,14 +74,6 @@ const ComponentSourceImpl = (props: Props) => {
 				</div>
 			</div>
 		</Collapsible>
-	);
-};
-
-const ComponentSource = (props: Props) => {
-	return (
-		<StyleProvider>
-			<ComponentSourceImpl {...props} />
-		</StyleProvider>
 	);
 };
 

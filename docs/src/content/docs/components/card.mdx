@@ -6,9 +6,7 @@ component: true
 
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
-import RawCode from "@/components/raw-code.tsx";
-import TwRawCode from "@repo/tailwindcss/default/card?raw";
-import UnoRawCode from "@repo/unocss/default/card?raw";
+import ComponentSource from "@/components/component-source";
 
 <ComponentPreview name="card-demo" client:only="solid-js" />
 
@@ -30,7 +28,7 @@ npm install @kobalte/core
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={TwRawCode} client:only="solid-js" />
+<ComponentSource name="card" client:only="solid-js" />
 
 </Step>
 
@@ -42,7 +40,7 @@ npm install @kobalte/core
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={UnoRawCode} client:only="solid-js" />
+<ComponentSource name="card" client:only="solid-js" />
 
 </Step>
 
