@@ -14,7 +14,7 @@ const { pathname } = Astro.url;
 >
 	<div class="container md:px-8 px-4 flex h-14 max-w-screen-2xl items-center">
 		<Navbar pathname={pathname} />
-		<MobileNavbar pathname={pathname} client:only="solid-js" />
+		<MobileNavbar pathname={pathname} client:visible />
 		<div class="flex flex-1 items-center justify-end space-x-2">
 			<div class="w-full flex-1 md:w-auto md:flex-none">
 				<CommandMenu client:only="solid-js" />
@@ -46,6 +46,6 @@ const { pathname } = Astro.url;
 				</Button>
 			</div>
 		</div>
-		<ModeToggle client:only="solid-js" />
+		<ModeToggle client:load />
 	</div>
 </header>
