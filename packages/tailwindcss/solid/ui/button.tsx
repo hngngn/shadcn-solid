@@ -8,32 +8,66 @@ import type { ValidComponent } from "solid-js";
 import { splitProps } from "solid-js";
 
 export const buttonVariants = cva(
-	"inline-flex items-center justify-center rounded-md text-sm font-medium transition-[color,background-color,box-shadow] focus-visible:outline-none focus-visible:ring-[1.5px] focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+	"relative isolate inline-flex justify-center items-center font-medium text-sm rounded-lg py-2 px-6 outline-none appearance-none transition-[background-color,box-shadow,color,border-color,outline-color] duration-300 disabled:cursor-not-allowed",
 	{
 		variants: {
 			variant: {
-				default:
-					"bg-primary text-primary-foreground shadow hover:bg-primary/90",
+				default: [
+					"[--btn-text:theme(colors.blue.50)] [--btn-bg:theme(colors.blue.500)] hover:[--btn-bg:theme(colors.blue.600)] active:[--btn-bg:theme(colors.blue.700)]",
+					"disabled:[--btn-bg:theme(colors.blue.100)] dark:disabled:[--btn-bg:theme(colors.blue.950)] disabled:[--btn-text:theme(colors.blue.400)] dark:disabled:[--btn-text:theme(colors.blue.700)]",
+				],
 				destructive:
-					"bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
-				outline:
-					"border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
-				secondary:
-					"bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
-				ghost: "hover:bg-accent hover:text-accent-foreground",
-				link: "text-primary underline-offset-4 hover:underline",
+					"[--btn-text:theme(colors.red.50)] [--btn-bg:theme(colors.red.500)] hover:[--btn-bg:theme(colors.red.600)] active:[--btn-bg:theme(colors.red.700)] disabled:[--btn-bg:theme(colors.red.100)] dark:disabled:[--btn-bg:theme(colors.red.950)] disabled:[--btn-text:theme(colors.red.400)] dark:disabled:[--btn-text:theme(colors.red.700)]",
 			},
-			size: {
-				default: "h-9 px-4 py-2",
-				sm: "h-8 rounded-md px-3 text-xs",
-				lg: "h-10 rounded-md px-8",
-				icon: "h-9 w-9",
+			appearance: {
+				bezel: [
+					"border-none text-[--btn-text] bg-[--btn-bg] shadow-sm disabled:shadow-none focus-visible:outline focus-visible:outline-[--btn-bg]",
+					"before:absolute before:inset-0 before:-z-10 before:rounded-lg before:shadow-[inset_0_-1px_0_0_theme(colors.black/25%)] before:disabled:shadow-none",
+					"after:absolute after:inset-0 after:-z-10 after:rounded-lg after:shadow-[inset_0_2px_0_0_theme(colors.white/20%)] after:disabled:shadow-none",
+				],
+				flat: "text-[--btn-text] bg-[--btn-bg] shadow-sm disabled:shadow-none focus-visible:outline focus-visible:outline-[--btn-bg]",
+				outline:
+					"border border-[--btn-border] bg-[--btn-bg] text-[--btn-text] focus-visible:outline focus-visible:outline-[--btn-ring]",
+				plain:
+					"bg-inherit text-[--btn-text] focus-visible:outline focus-visible:outline-[--btn-bg]",
 			},
 		},
 		defaultVariants: {
 			variant: "default",
-			size: "default",
+			appearance: "bezel",
 		},
+		compoundVariants: [
+			{
+				appearance: "outline",
+				variant: "default",
+				class: [
+					"[--btn-text:theme(colors.primary.DEFAULT)] [--btn-border:theme(colors.border)] [--btn-ring:theme(colors.blue.500)] [--btn-bg:theme(colors.transparent)]",
+					"hover:[--btn-bg:theme(colors.zinc.50)] dark:hover:[--btn-bg:theme(colors.zinc.900)]",
+					"active:[--btn-bg:theme(colors.zinc.100)] dark:active:[--btn-bg:theme(colors.zinc.900/50%)]",
+				],
+			},
+			{
+				appearance: "outline",
+				variant: "destructive",
+				class: [
+					"[--btn-text:theme(colors.red.500)] [--btn-border:theme(colors.red.500)] [--btn-ring:theme(colors.red.500)] [--btn-bg:theme(colors.transparent)]",
+					"hover:[--btn-bg:theme(colors.red.100)] dark:hover:[--btn-bg:theme(colors.red.900)]",
+					"active:[--btn-bg:theme(colors.red.200)] dark:active:[--btn-bg:theme(colors.red.950)]",
+				],
+			},
+			{
+				appearance: "plain",
+				variant: "destructive",
+				class:
+					"[--btn-text:theme(colors.red.500)] hover:[--btn-text:theme(colors.red.600)] active:[--btn-text:theme(colors.red.700)]",
+			},
+			{
+				appearance: "plain",
+				variant: "default",
+				class:
+					"[--btn-text:theme(colors.primary.DEFAULT)] hover:[--btn-text:theme(colors.primary.DEFAULT/70%)] active:[--btn-text:theme(colors.primary.DEFAULT/60%)]",
+			},
+		],
 	},
 );
 
@@ -48,14 +82,14 @@ export const Button = <T extends ValidComponent = "button">(
 	const [local, rest] = splitProps(props as buttonProps, [
 		"class",
 		"variant",
-		"size",
+		"appearance",
 	]);
 
 	return (
 		<ButtonPrimitive
 			class={cn(
 				buttonVariants({
-					size: local.size,
+					appearance: local.appearance,
 					variant: local.variant,
 				}),
 				local.class,

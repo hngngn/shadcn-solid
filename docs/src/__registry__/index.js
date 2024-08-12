@@ -209,565 +209,565 @@ export const Index = {
         name: "accordion-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/accordion-demo")),
-        files: ["src/examples/default/tailwindcss/accordion-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/accordion-demo.tsx"] 
       },
       "alert-demo": {
         name: "alert-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/alert-demo")),
-        files: ["src/examples/default/tailwindcss/alert-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/alert-demo.tsx"] 
       },
       "alert-destructive": {
         name: "alert-destructive",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/alert-destructive")),
-        files: ["src/examples/default/tailwindcss/alert-destructive.tsx"]
+        files: ["src/examples/default/tailwindcss/alert-destructive.tsx"] 
       },
       "alert-dialog-demo": {
         name: "alert-dialog-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/alert-dialog-demo")),
-        files: ["src/examples/default/tailwindcss/alert-dialog-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/alert-dialog-demo.tsx"] 
       },
       "button-demo": {
         name: "button-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/button-demo")),
-        files: ["src/examples/default/tailwindcss/button-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/button-demo.tsx"] 
       },
       "button-secondary": {
         name: "button-secondary",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/button-secondary")),
-        files: ["src/examples/default/tailwindcss/button-secondary.tsx"]
+        files: ["src/examples/default/tailwindcss/button-secondary.tsx"] 
       },
       "button-destructive": {
         name: "button-destructive",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/button-destructive")),
-        files: ["src/examples/default/tailwindcss/button-destructive.tsx"]
+        files: ["src/examples/default/tailwindcss/button-destructive.tsx"] 
       },
       "button-outline": {
         name: "button-outline",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/button-outline")),
-        files: ["src/examples/default/tailwindcss/button-outline.tsx"]
+        files: ["src/examples/default/tailwindcss/button-outline.tsx"] 
       },
       "badge-demo": {
         name: "badge-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/badge-demo")),
-        files: ["src/examples/default/tailwindcss/badge-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/badge-demo.tsx"] 
       },
       "badge-secondary": {
         name: "badge-secondary",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/badge-secondary")),
-        files: ["src/examples/default/tailwindcss/badge-secondary.tsx"]
+        files: ["src/examples/default/tailwindcss/badge-secondary.tsx"] 
       },
       "badge-destructive": {
         name: "badge-destructive",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/badge-destructive")),
-        files: ["src/examples/default/tailwindcss/badge-destructive.tsx"]
+        files: ["src/examples/default/tailwindcss/badge-destructive.tsx"] 
       },
       "badge-outline": {
         name: "badge-outline",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/badge-outline")),
-        files: ["src/examples/default/tailwindcss/badge-outline.tsx"]
+        files: ["src/examples/default/tailwindcss/badge-outline.tsx"] 
       },
       "button-ghost": {
         name: "button-ghost",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/button-ghost")),
-        files: ["src/examples/default/tailwindcss/button-ghost.tsx"]
+        files: ["src/examples/default/tailwindcss/button-ghost.tsx"] 
       },
       "button-link": {
         name: "button-link",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/button-link")),
-        files: ["src/examples/default/tailwindcss/button-link.tsx"]
+        files: ["src/examples/default/tailwindcss/button-link.tsx"] 
       },
       "button-with-icon": {
         name: "button-with-icon",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/button-with-icon")),
-        files: ["src/examples/default/tailwindcss/button-with-icon.tsx"]
+        files: ["src/examples/default/tailwindcss/button-with-icon.tsx"] 
       },
       "calendar-demo": {
         name: "calendar-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/calendar-demo")),
-        files: ["src/examples/default/tailwindcss/calendar-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/calendar-demo.tsx"] 
       },
       "button-loading": {
         name: "button-loading",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/button-loading")),
-        files: ["src/examples/default/tailwindcss/button-loading.tsx"]
+        files: ["src/examples/default/tailwindcss/button-loading.tsx"] 
       },
       "button-as-child": {
         name: "button-as-child",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/button-as-child")),
-        files: ["src/examples/default/tailwindcss/button-as-child.tsx"]
+        files: ["src/examples/default/tailwindcss/button-as-child.tsx"] 
       },
       "card-demo": {
         name: "card-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/card-demo")),
-        files: ["src/examples/default/tailwindcss/card-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/card-demo.tsx"] 
       },
       "carousel-demo": {
         name: "carousel-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/carousel-demo")),
-        files: ["src/examples/default/tailwindcss/carousel-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/carousel-demo.tsx"] 
       },
       "carousel-size": {
         name: "carousel-size",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/carousel-size")),
-        files: ["src/examples/default/tailwindcss/carousel-size.tsx"]
+        files: ["src/examples/default/tailwindcss/carousel-size.tsx"] 
       },
       "carousel-api-demo": {
         name: "carousel-api-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/carousel-api-demo")),
-        files: ["src/examples/default/tailwindcss/carousel-api-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/carousel-api-demo.tsx"] 
       },
       "carousel-orientation": {
         name: "carousel-orientation",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/carousel-orientation")),
-        files: ["src/examples/default/tailwindcss/carousel-orientation.tsx"]
+        files: ["src/examples/default/tailwindcss/carousel-orientation.tsx"] 
       },
       "carousel-plugin": {
         name: "carousel-plugin",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/carousel-plugin")),
-        files: ["src/examples/default/tailwindcss/carousel-plugin.tsx"]
+        files: ["src/examples/default/tailwindcss/carousel-plugin.tsx"] 
       },
       "carousel-spacing": {
         name: "carousel-spacing",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/carousel-spacing")),
-        files: ["src/examples/default/tailwindcss/carousel-spacing.tsx"]
+        files: ["src/examples/default/tailwindcss/carousel-spacing.tsx"] 
       },
       "checkbox-demo": {
         name: "checkbox-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/checkbox-demo")),
-        files: ["src/examples/default/tailwindcss/checkbox-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/checkbox-demo.tsx"] 
       },
       "checkbox-disabled": {
         name: "checkbox-disabled",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/checkbox-disabled")),
-        files: ["src/examples/default/tailwindcss/checkbox-disabled.tsx"]
+        files: ["src/examples/default/tailwindcss/checkbox-disabled.tsx"] 
       },
       "checkbox-with-text": {
         name: "checkbox-with-text",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/checkbox-with-text")),
-        files: ["src/examples/default/tailwindcss/checkbox-with-text.tsx"]
+        files: ["src/examples/default/tailwindcss/checkbox-with-text.tsx"] 
       },
       "collapsible-demo": {
         name: "collapsible-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/collapsible-demo")),
-        files: ["src/examples/default/tailwindcss/collapsible-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/collapsible-demo.tsx"] 
       },
       "combobox-demo": {
         name: "combobox-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/combobox-demo")),
-        files: ["src/examples/default/tailwindcss/combobox-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/combobox-demo.tsx"] 
       },
       "command-demo": {
         name: "command-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/command-demo")),
-        files: ["src/examples/default/tailwindcss/command-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/command-demo.tsx"] 
       },
       "command-dialog": {
         name: "command-dialog",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/command-dialog")),
-        files: ["src/examples/default/tailwindcss/command-dialog.tsx"]
+        files: ["src/examples/default/tailwindcss/command-dialog.tsx"] 
       },
       "context-menu-demo": {
         name: "context-menu-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/context-menu-demo")),
-        files: ["src/examples/default/tailwindcss/context-menu-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/context-menu-demo.tsx"] 
       },
       "data-table-demo": {
         name: "data-table-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/data-table-demo")),
-        files: ["src/examples/default/tailwindcss/data-table-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/data-table-demo.tsx"] 
       },
       "date-picker-demo": {
         name: "date-picker-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/date-picker-demo")),
-        files: ["src/examples/default/tailwindcss/date-picker-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/date-picker-demo.tsx"] 
       },
       "date-picker-with-range-demo": {
         name: "date-picker-with-range-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/date-picker-with-range-demo")),
-        files: ["src/examples/default/tailwindcss/date-picker-with-range-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/date-picker-with-range-demo.tsx"] 
       },
       "dialog-demo": {
         name: "dialog-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/dialog-demo")),
-        files: ["src/examples/default/tailwindcss/dialog-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/dialog-demo.tsx"] 
       },
       "drawer-demo": {
         name: "drawer-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/drawer-demo")),
-        files: ["src/examples/default/tailwindcss/drawer-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/drawer-demo.tsx"] 
       },
       "dropdown-menu-demo": {
         name: "dropdown-menu-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/dropdown-menu-demo")),
-        files: ["src/examples/default/tailwindcss/dropdown-menu-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/dropdown-menu-demo.tsx"] 
       },
       "dropdown-menu-checkboxes": {
         name: "dropdown-menu-checkboxes",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/dropdown-menu-checkboxes")),
-        files: ["src/examples/default/tailwindcss/dropdown-menu-checkboxes.tsx"]
+        files: ["src/examples/default/tailwindcss/dropdown-menu-checkboxes.tsx"] 
       },
       "dropdown-menu-radio-group": {
         name: "dropdown-menu-radio-group",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/dropdown-menu-radio-group")),
-        files: ["src/examples/default/tailwindcss/dropdown-menu-radio-group.tsx"]
+        files: ["src/examples/default/tailwindcss/dropdown-menu-radio-group.tsx"] 
       },
       "hover-card-demo": {
         name: "hover-card-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/hover-card-demo")),
-        files: ["src/examples/default/tailwindcss/hover-card-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/hover-card-demo.tsx"] 
       },
       "image-demo": {
         name: "image-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/image-demo")),
-        files: ["src/examples/default/tailwindcss/image-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/image-demo.tsx"] 
       },
       "menubar-demo": {
         name: "menubar-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/menubar-demo")),
-        files: ["src/examples/default/tailwindcss/menubar-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/menubar-demo.tsx"] 
       },
       "number-field-demo": {
         name: "number-field-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/number-field-demo")),
-        files: ["src/examples/default/tailwindcss/number-field-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/number-field-demo.tsx"] 
       },
       "number-field-disabled-demo": {
         name: "number-field-disabled-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/number-field-disabled-demo")),
-        files: ["src/examples/default/tailwindcss/number-field-disabled-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/number-field-disabled-demo.tsx"] 
       },
       "number-field-with-error-demo": {
         name: "number-field-with-error-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/number-field-with-error-demo")),
-        files: ["src/examples/default/tailwindcss/number-field-with-error-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/number-field-with-error-demo.tsx"] 
       },
       "otp-field-demo": {
         name: "otp-field-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/otp-field-demo")),
-        files: ["src/examples/default/tailwindcss/otp-field-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/otp-field-demo.tsx"] 
       },
       "otp-field-with-pattern-demo": {
         name: "otp-field-with-pattern-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/otp-field-with-pattern-demo")),
-        files: ["src/examples/default/tailwindcss/otp-field-with-pattern-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/otp-field-with-pattern-demo.tsx"] 
       },
       "otp-field-with-controlled-demo": {
         name: "otp-field-with-controlled-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/otp-field-with-controlled-demo")),
-        files: ["src/examples/default/tailwindcss/otp-field-with-controlled-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/otp-field-with-controlled-demo.tsx"] 
       },
       "popover-demo": {
         name: "popover-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/popover-demo")),
-        files: ["src/examples/default/tailwindcss/popover-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/popover-demo.tsx"] 
       },
       "pagination-demo": {
         name: "pagination-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/pagination-demo")),
-        files: ["src/examples/default/tailwindcss/pagination-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/pagination-demo.tsx"] 
       },
       "progress-demo": {
         name: "progress-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/progress-demo")),
-        files: ["src/examples/default/tailwindcss/progress-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/progress-demo.tsx"] 
       },
       "radio-group-demo": {
         name: "radio-group-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/radio-group-demo")),
-        files: ["src/examples/default/tailwindcss/radio-group-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/radio-group-demo.tsx"] 
       },
       "resizable-demo": {
         name: "resizable-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/resizable-demo")),
-        files: ["src/examples/default/tailwindcss/resizable-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/resizable-demo.tsx"] 
       },
       "resizable-vertical-demo": {
         name: "resizable-vertical-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/resizable-vertical-demo")),
-        files: ["src/examples/default/tailwindcss/resizable-vertical-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/resizable-vertical-demo.tsx"] 
       },
       "resizable-with-handle-demo": {
         name: "resizable-with-handle-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/resizable-with-handle-demo")),
-        files: ["src/examples/default/tailwindcss/resizable-with-handle-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/resizable-with-handle-demo.tsx"] 
       },
       "select-demo": {
         name: "select-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/select-demo")),
-        files: ["src/examples/default/tailwindcss/select-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/select-demo.tsx"] 
       },
       "separator-demo": {
         name: "separator-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/separator-demo")),
-        files: ["src/examples/default/tailwindcss/separator-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/separator-demo.tsx"] 
       },
       "sheet-demo": {
         name: "sheet-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/sheet-demo")),
-        files: ["src/examples/default/tailwindcss/sheet-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/sheet-demo.tsx"] 
       },
       "sheet-side": {
         name: "sheet-side",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/sheet-side")),
-        files: ["src/examples/default/tailwindcss/sheet-side.tsx"]
+        files: ["src/examples/default/tailwindcss/sheet-side.tsx"] 
       },
       "skeleton-demo": {
         name: "skeleton-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/skeleton-demo")),
-        files: ["src/examples/default/tailwindcss/skeleton-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/skeleton-demo.tsx"] 
       },
       "sonner-demo": {
         name: "sonner-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/sonner-demo")),
-        files: ["src/examples/default/tailwindcss/sonner-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/sonner-demo.tsx"] 
       },
       "switch-demo": {
         name: "switch-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/switch-demo")),
-        files: ["src/examples/default/tailwindcss/switch-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/switch-demo.tsx"] 
       },
       "table-demo": {
         name: "table-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/table-demo")),
-        files: ["src/examples/default/tailwindcss/table-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/table-demo.tsx"] 
       },
       "tabs-demo": {
         name: "tabs-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/tabs-demo")),
-        files: ["src/examples/default/tailwindcss/tabs-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/tabs-demo.tsx"] 
       },
       "tabs-orientation-demo": {
         name: "tabs-orientation-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/tabs-orientation-demo")),
-        files: ["src/examples/default/tailwindcss/tabs-orientation-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/tabs-orientation-demo.tsx"] 
       },
       "textarea-demo": {
         name: "textarea-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/textarea-demo")),
-        files: ["src/examples/default/tailwindcss/textarea-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/textarea-demo.tsx"] 
       },
       "textarea-disabled": {
         name: "textarea-disabled",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/textarea-disabled")),
-        files: ["src/examples/default/tailwindcss/textarea-disabled.tsx"]
+        files: ["src/examples/default/tailwindcss/textarea-disabled.tsx"] 
       },
       "textarea-with-button": {
         name: "textarea-with-button",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/textarea-with-button")),
-        files: ["src/examples/default/tailwindcss/textarea-with-button.tsx"]
+        files: ["src/examples/default/tailwindcss/textarea-with-button.tsx"] 
       },
       "textarea-with-label": {
         name: "textarea-with-label",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/textarea-with-label")),
-        files: ["src/examples/default/tailwindcss/textarea-with-label.tsx"]
+        files: ["src/examples/default/tailwindcss/textarea-with-label.tsx"] 
       },
       "textarea-with-text": {
         name: "textarea-with-text",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/textarea-with-text")),
-        files: ["src/examples/default/tailwindcss/textarea-with-text.tsx"]
+        files: ["src/examples/default/tailwindcss/textarea-with-text.tsx"] 
       },
       "textfield-demo": {
         name: "textfield-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/textfield-demo")),
-        files: ["src/examples/default/tailwindcss/textfield-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/textfield-demo.tsx"] 
       },
       "textfield-disabled": {
         name: "textfield-disabled",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/textfield-disabled")),
-        files: ["src/examples/default/tailwindcss/textfield-disabled.tsx"]
+        files: ["src/examples/default/tailwindcss/textfield-disabled.tsx"] 
       },
       "textfield-file": {
         name: "textfield-file",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/textfield-file")),
-        files: ["src/examples/default/tailwindcss/textfield-file.tsx"]
+        files: ["src/examples/default/tailwindcss/textfield-file.tsx"] 
       },
       "textfield-with-button": {
         name: "textfield-with-button",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/textfield-with-button")),
-        files: ["src/examples/default/tailwindcss/textfield-with-button.tsx"]
+        files: ["src/examples/default/tailwindcss/textfield-with-button.tsx"] 
       },
       "textfield-with-label": {
         name: "textfield-with-label",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/textfield-with-label")),
-        files: ["src/examples/default/tailwindcss/textfield-with-label.tsx"]
+        files: ["src/examples/default/tailwindcss/textfield-with-label.tsx"] 
       },
       "textfield-with-text": {
         name: "textfield-with-text",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/textfield-with-text")),
-        files: ["src/examples/default/tailwindcss/textfield-with-text.tsx"]
+        files: ["src/examples/default/tailwindcss/textfield-with-text.tsx"] 
       },
       "textfield-with-error": {
         name: "textfield-with-error",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/textfield-with-error")),
-        files: ["src/examples/default/tailwindcss/textfield-with-error.tsx"]
+        files: ["src/examples/default/tailwindcss/textfield-with-error.tsx"] 
       },
       "toast-demo": {
         name: "toast-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/toast-demo")),
-        files: ["src/examples/default/tailwindcss/toast-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/toast-demo.tsx"] 
       },
       "toast-destructive": {
         name: "toast-destructive",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/toast-destructive")),
-        files: ["src/examples/default/tailwindcss/toast-destructive.tsx"]
+        files: ["src/examples/default/tailwindcss/toast-destructive.tsx"] 
       },
       "toggle-group-demo": {
         name: "toggle-group-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/toggle-group-demo")),
-        files: ["src/examples/default/tailwindcss/toggle-group-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/toggle-group-demo.tsx"] 
       },
       "toggle-group-outline-demo": {
         name: "toggle-group-outline-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/toggle-group-outline-demo")),
-        files: ["src/examples/default/tailwindcss/toggle-group-outline-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/toggle-group-outline-demo.tsx"] 
       },
       "toggle-group-single-demo": {
         name: "toggle-group-single-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/toggle-group-single-demo")),
-        files: ["src/examples/default/tailwindcss/toggle-group-single-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/toggle-group-single-demo.tsx"] 
       },
       "toggle-group-small-demo": {
         name: "toggle-group-small-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/toggle-group-small-demo")),
-        files: ["src/examples/default/tailwindcss/toggle-group-small-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/toggle-group-small-demo.tsx"] 
       },
       "toggle-group-large-demo": {
         name: "toggle-group-large-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/toggle-group-large-demo")),
-        files: ["src/examples/default/tailwindcss/toggle-group-large-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/toggle-group-large-demo.tsx"] 
       },
       "toggle-group-disabled-demo": {
         name: "toggle-group-disabled-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/toggle-group-disabled-demo")),
-        files: ["src/examples/default/tailwindcss/toggle-group-disabled-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/toggle-group-disabled-demo.tsx"] 
       },
       "toggle-demo": {
         name: "toggle-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/toggle-demo")),
-        files: ["src/examples/default/tailwindcss/toggle-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/toggle-demo.tsx"] 
       },
       "toggle-disabled": {
         name: "toggle-disabled",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/toggle-disabled")),
-        files: ["src/examples/default/tailwindcss/toggle-disabled.tsx"]
+        files: ["src/examples/default/tailwindcss/toggle-disabled.tsx"] 
       },
       "toggle-large": {
         name: "toggle-large",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/toggle-large")),
-        files: ["src/examples/default/tailwindcss/toggle-large.tsx"]
+        files: ["src/examples/default/tailwindcss/toggle-large.tsx"] 
       },
       "toggle-outline": {
         name: "toggle-outline",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/toggle-outline")),
-        files: ["src/examples/default/tailwindcss/toggle-outline.tsx"]
+        files: ["src/examples/default/tailwindcss/toggle-outline.tsx"] 
       },
       "toggle-small": {
         name: "toggle-small",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/toggle-small")),
-        files: ["src/examples/default/tailwindcss/toggle-small.tsx"]
+        files: ["src/examples/default/tailwindcss/toggle-small.tsx"] 
       },
       "toggle-with-text": {
         name: "toggle-with-text",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/toggle-with-text")),
-        files: ["src/examples/default/tailwindcss/toggle-with-text.tsx"]
+        files: ["src/examples/default/tailwindcss/toggle-with-text.tsx"] 
       },
       "tooltip-demo": {
         name: "tooltip-demo",
         type: "components:example",
         component: lazy(() => import("../examples/default/tailwindcss/tooltip-demo")),
-        files: ["src/examples/default/tailwindcss/tooltip-demo.tsx"]
+        files: ["src/examples/default/tailwindcss/tooltip-demo.tsx"] 
       },
     },
     "unocss": {
@@ -1179,565 +1179,565 @@ export const Index = {
         name: "accordion-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/accordion-demo")),
-        files: ["src/examples/solid/tailwindcss/accordion-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/accordion-demo.tsx"] 
       },
       "alert-demo": {
         name: "alert-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/alert-demo")),
-        files: ["src/examples/solid/tailwindcss/alert-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/alert-demo.tsx"] 
       },
       "alert-destructive": {
         name: "alert-destructive",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/alert-destructive")),
-        files: ["src/examples/solid/tailwindcss/alert-destructive.tsx"]
+        files: ["src/examples/solid/tailwindcss/alert-destructive.tsx"] 
       },
       "alert-dialog-demo": {
         name: "alert-dialog-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/alert-dialog-demo")),
-        files: ["src/examples/solid/tailwindcss/alert-dialog-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/alert-dialog-demo.tsx"] 
       },
       "button-demo": {
         name: "button-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/button-demo")),
-        files: ["src/examples/solid/tailwindcss/button-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/button-demo.tsx"] 
       },
       "button-secondary": {
         name: "button-secondary",
         type: "components:example",
-        component: lazy(() => import("../examples/solid/tailwindcss/button-secondary")),
-        files: ["src/examples/solid/tailwindcss/button-secondary.tsx"]
+        component: lazy(() => import("../components/not-found-component")),
+        files: [""] 
       },
       "button-destructive": {
         name: "button-destructive",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/button-destructive")),
-        files: ["src/examples/solid/tailwindcss/button-destructive.tsx"]
+        files: ["src/examples/solid/tailwindcss/button-destructive.tsx"] 
       },
       "button-outline": {
         name: "button-outline",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/button-outline")),
-        files: ["src/examples/solid/tailwindcss/button-outline.tsx"]
+        files: ["src/examples/solid/tailwindcss/button-outline.tsx"] 
       },
       "badge-demo": {
         name: "badge-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/badge-demo")),
-        files: ["src/examples/solid/tailwindcss/badge-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/badge-demo.tsx"] 
       },
       "badge-secondary": {
         name: "badge-secondary",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/badge-secondary")),
-        files: ["src/examples/solid/tailwindcss/badge-secondary.tsx"]
+        files: ["src/examples/solid/tailwindcss/badge-secondary.tsx"] 
       },
       "badge-destructive": {
         name: "badge-destructive",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/badge-destructive")),
-        files: ["src/examples/solid/tailwindcss/badge-destructive.tsx"]
+        files: ["src/examples/solid/tailwindcss/badge-destructive.tsx"] 
       },
       "badge-outline": {
         name: "badge-outline",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/badge-outline")),
-        files: ["src/examples/solid/tailwindcss/badge-outline.tsx"]
+        files: ["src/examples/solid/tailwindcss/badge-outline.tsx"] 
       },
       "button-ghost": {
         name: "button-ghost",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/button-ghost")),
-        files: ["src/examples/solid/tailwindcss/button-ghost.tsx"]
+        files: ["src/examples/solid/tailwindcss/button-ghost.tsx"] 
       },
       "button-link": {
         name: "button-link",
         type: "components:example",
-        component: lazy(() => import("../examples/solid/tailwindcss/button-link")),
-        files: ["src/examples/solid/tailwindcss/button-link.tsx"]
+        component: lazy(() => import("../components/not-found-component")),
+        files: [""] 
       },
       "button-with-icon": {
         name: "button-with-icon",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/button-with-icon")),
-        files: ["src/examples/solid/tailwindcss/button-with-icon.tsx"]
+        files: ["src/examples/solid/tailwindcss/button-with-icon.tsx"] 
       },
       "calendar-demo": {
         name: "calendar-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/calendar-demo")),
-        files: ["src/examples/solid/tailwindcss/calendar-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/calendar-demo.tsx"] 
       },
       "button-loading": {
         name: "button-loading",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/button-loading")),
-        files: ["src/examples/solid/tailwindcss/button-loading.tsx"]
+        files: ["src/examples/solid/tailwindcss/button-loading.tsx"] 
       },
       "button-as-child": {
         name: "button-as-child",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/button-as-child")),
-        files: ["src/examples/solid/tailwindcss/button-as-child.tsx"]
+        files: ["src/examples/solid/tailwindcss/button-as-child.tsx"] 
       },
       "card-demo": {
         name: "card-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/card-demo")),
-        files: ["src/examples/solid/tailwindcss/card-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/card-demo.tsx"] 
       },
       "carousel-demo": {
         name: "carousel-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/carousel-demo")),
-        files: ["src/examples/solid/tailwindcss/carousel-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/carousel-demo.tsx"] 
       },
       "carousel-size": {
         name: "carousel-size",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/carousel-size")),
-        files: ["src/examples/solid/tailwindcss/carousel-size.tsx"]
+        files: ["src/examples/solid/tailwindcss/carousel-size.tsx"] 
       },
       "carousel-api-demo": {
         name: "carousel-api-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/carousel-api-demo")),
-        files: ["src/examples/solid/tailwindcss/carousel-api-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/carousel-api-demo.tsx"] 
       },
       "carousel-orientation": {
         name: "carousel-orientation",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/carousel-orientation")),
-        files: ["src/examples/solid/tailwindcss/carousel-orientation.tsx"]
+        files: ["src/examples/solid/tailwindcss/carousel-orientation.tsx"] 
       },
       "carousel-plugin": {
         name: "carousel-plugin",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/carousel-plugin")),
-        files: ["src/examples/solid/tailwindcss/carousel-plugin.tsx"]
+        files: ["src/examples/solid/tailwindcss/carousel-plugin.tsx"] 
       },
       "carousel-spacing": {
         name: "carousel-spacing",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/carousel-spacing")),
-        files: ["src/examples/solid/tailwindcss/carousel-spacing.tsx"]
+        files: ["src/examples/solid/tailwindcss/carousel-spacing.tsx"] 
       },
       "checkbox-demo": {
         name: "checkbox-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/checkbox-demo")),
-        files: ["src/examples/solid/tailwindcss/checkbox-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/checkbox-demo.tsx"] 
       },
       "checkbox-disabled": {
         name: "checkbox-disabled",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/checkbox-disabled")),
-        files: ["src/examples/solid/tailwindcss/checkbox-disabled.tsx"]
+        files: ["src/examples/solid/tailwindcss/checkbox-disabled.tsx"] 
       },
       "checkbox-with-text": {
         name: "checkbox-with-text",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/checkbox-with-text")),
-        files: ["src/examples/solid/tailwindcss/checkbox-with-text.tsx"]
+        files: ["src/examples/solid/tailwindcss/checkbox-with-text.tsx"] 
       },
       "collapsible-demo": {
         name: "collapsible-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/collapsible-demo")),
-        files: ["src/examples/solid/tailwindcss/collapsible-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/collapsible-demo.tsx"] 
       },
       "combobox-demo": {
         name: "combobox-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/combobox-demo")),
-        files: ["src/examples/solid/tailwindcss/combobox-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/combobox-demo.tsx"] 
       },
       "command-demo": {
         name: "command-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/command-demo")),
-        files: ["src/examples/solid/tailwindcss/command-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/command-demo.tsx"] 
       },
       "command-dialog": {
         name: "command-dialog",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/command-dialog")),
-        files: ["src/examples/solid/tailwindcss/command-dialog.tsx"]
+        files: ["src/examples/solid/tailwindcss/command-dialog.tsx"] 
       },
       "context-menu-demo": {
         name: "context-menu-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/context-menu-demo")),
-        files: ["src/examples/solid/tailwindcss/context-menu-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/context-menu-demo.tsx"] 
       },
       "data-table-demo": {
         name: "data-table-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/data-table-demo")),
-        files: ["src/examples/solid/tailwindcss/data-table-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/data-table-demo.tsx"] 
       },
       "date-picker-demo": {
         name: "date-picker-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/date-picker-demo")),
-        files: ["src/examples/solid/tailwindcss/date-picker-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/date-picker-demo.tsx"] 
       },
       "date-picker-with-range-demo": {
         name: "date-picker-with-range-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/date-picker-with-range-demo")),
-        files: ["src/examples/solid/tailwindcss/date-picker-with-range-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/date-picker-with-range-demo.tsx"] 
       },
       "dialog-demo": {
         name: "dialog-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/dialog-demo")),
-        files: ["src/examples/solid/tailwindcss/dialog-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/dialog-demo.tsx"] 
       },
       "drawer-demo": {
         name: "drawer-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/drawer-demo")),
-        files: ["src/examples/solid/tailwindcss/drawer-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/drawer-demo.tsx"] 
       },
       "dropdown-menu-demo": {
         name: "dropdown-menu-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/dropdown-menu-demo")),
-        files: ["src/examples/solid/tailwindcss/dropdown-menu-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/dropdown-menu-demo.tsx"] 
       },
       "dropdown-menu-checkboxes": {
         name: "dropdown-menu-checkboxes",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/dropdown-menu-checkboxes")),
-        files: ["src/examples/solid/tailwindcss/dropdown-menu-checkboxes.tsx"]
+        files: ["src/examples/solid/tailwindcss/dropdown-menu-checkboxes.tsx"] 
       },
       "dropdown-menu-radio-group": {
         name: "dropdown-menu-radio-group",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/dropdown-menu-radio-group")),
-        files: ["src/examples/solid/tailwindcss/dropdown-menu-radio-group.tsx"]
+        files: ["src/examples/solid/tailwindcss/dropdown-menu-radio-group.tsx"] 
       },
       "hover-card-demo": {
         name: "hover-card-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/hover-card-demo")),
-        files: ["src/examples/solid/tailwindcss/hover-card-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/hover-card-demo.tsx"] 
       },
       "image-demo": {
         name: "image-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/image-demo")),
-        files: ["src/examples/solid/tailwindcss/image-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/image-demo.tsx"] 
       },
       "menubar-demo": {
         name: "menubar-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/menubar-demo")),
-        files: ["src/examples/solid/tailwindcss/menubar-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/menubar-demo.tsx"] 
       },
       "number-field-demo": {
         name: "number-field-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/number-field-demo")),
-        files: ["src/examples/solid/tailwindcss/number-field-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/number-field-demo.tsx"] 
       },
       "number-field-disabled-demo": {
         name: "number-field-disabled-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/number-field-disabled-demo")),
-        files: ["src/examples/solid/tailwindcss/number-field-disabled-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/number-field-disabled-demo.tsx"] 
       },
       "number-field-with-error-demo": {
         name: "number-field-with-error-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/number-field-with-error-demo")),
-        files: ["src/examples/solid/tailwindcss/number-field-with-error-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/number-field-with-error-demo.tsx"] 
       },
       "otp-field-demo": {
         name: "otp-field-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/otp-field-demo")),
-        files: ["src/examples/solid/tailwindcss/otp-field-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/otp-field-demo.tsx"] 
       },
       "otp-field-with-pattern-demo": {
         name: "otp-field-with-pattern-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/otp-field-with-pattern-demo")),
-        files: ["src/examples/solid/tailwindcss/otp-field-with-pattern-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/otp-field-with-pattern-demo.tsx"] 
       },
       "otp-field-with-controlled-demo": {
         name: "otp-field-with-controlled-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/otp-field-with-controlled-demo")),
-        files: ["src/examples/solid/tailwindcss/otp-field-with-controlled-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/otp-field-with-controlled-demo.tsx"] 
       },
       "popover-demo": {
         name: "popover-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/popover-demo")),
-        files: ["src/examples/solid/tailwindcss/popover-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/popover-demo.tsx"] 
       },
       "pagination-demo": {
         name: "pagination-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/pagination-demo")),
-        files: ["src/examples/solid/tailwindcss/pagination-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/pagination-demo.tsx"] 
       },
       "progress-demo": {
         name: "progress-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/progress-demo")),
-        files: ["src/examples/solid/tailwindcss/progress-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/progress-demo.tsx"] 
       },
       "radio-group-demo": {
         name: "radio-group-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/radio-group-demo")),
-        files: ["src/examples/solid/tailwindcss/radio-group-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/radio-group-demo.tsx"] 
       },
       "resizable-demo": {
         name: "resizable-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/resizable-demo")),
-        files: ["src/examples/solid/tailwindcss/resizable-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/resizable-demo.tsx"] 
       },
       "resizable-vertical-demo": {
         name: "resizable-vertical-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/resizable-vertical-demo")),
-        files: ["src/examples/solid/tailwindcss/resizable-vertical-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/resizable-vertical-demo.tsx"] 
       },
       "resizable-with-handle-demo": {
         name: "resizable-with-handle-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/resizable-with-handle-demo")),
-        files: ["src/examples/solid/tailwindcss/resizable-with-handle-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/resizable-with-handle-demo.tsx"] 
       },
       "select-demo": {
         name: "select-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/select-demo")),
-        files: ["src/examples/solid/tailwindcss/select-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/select-demo.tsx"] 
       },
       "separator-demo": {
         name: "separator-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/separator-demo")),
-        files: ["src/examples/solid/tailwindcss/separator-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/separator-demo.tsx"] 
       },
       "sheet-demo": {
         name: "sheet-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/sheet-demo")),
-        files: ["src/examples/solid/tailwindcss/sheet-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/sheet-demo.tsx"] 
       },
       "sheet-side": {
         name: "sheet-side",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/sheet-side")),
-        files: ["src/examples/solid/tailwindcss/sheet-side.tsx"]
+        files: ["src/examples/solid/tailwindcss/sheet-side.tsx"] 
       },
       "skeleton-demo": {
         name: "skeleton-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/skeleton-demo")),
-        files: ["src/examples/solid/tailwindcss/skeleton-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/skeleton-demo.tsx"] 
       },
       "sonner-demo": {
         name: "sonner-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/sonner-demo")),
-        files: ["src/examples/solid/tailwindcss/sonner-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/sonner-demo.tsx"] 
       },
       "switch-demo": {
         name: "switch-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/switch-demo")),
-        files: ["src/examples/solid/tailwindcss/switch-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/switch-demo.tsx"] 
       },
       "table-demo": {
         name: "table-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/table-demo")),
-        files: ["src/examples/solid/tailwindcss/table-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/table-demo.tsx"] 
       },
       "tabs-demo": {
         name: "tabs-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/tabs-demo")),
-        files: ["src/examples/solid/tailwindcss/tabs-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/tabs-demo.tsx"] 
       },
       "tabs-orientation-demo": {
         name: "tabs-orientation-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/tabs-orientation-demo")),
-        files: ["src/examples/solid/tailwindcss/tabs-orientation-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/tabs-orientation-demo.tsx"] 
       },
       "textarea-demo": {
         name: "textarea-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/textarea-demo")),
-        files: ["src/examples/solid/tailwindcss/textarea-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/textarea-demo.tsx"] 
       },
       "textarea-disabled": {
         name: "textarea-disabled",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/textarea-disabled")),
-        files: ["src/examples/solid/tailwindcss/textarea-disabled.tsx"]
+        files: ["src/examples/solid/tailwindcss/textarea-disabled.tsx"] 
       },
       "textarea-with-button": {
         name: "textarea-with-button",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/textarea-with-button")),
-        files: ["src/examples/solid/tailwindcss/textarea-with-button.tsx"]
+        files: ["src/examples/solid/tailwindcss/textarea-with-button.tsx"] 
       },
       "textarea-with-label": {
         name: "textarea-with-label",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/textarea-with-label")),
-        files: ["src/examples/solid/tailwindcss/textarea-with-label.tsx"]
+        files: ["src/examples/solid/tailwindcss/textarea-with-label.tsx"] 
       },
       "textarea-with-text": {
         name: "textarea-with-text",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/textarea-with-text")),
-        files: ["src/examples/solid/tailwindcss/textarea-with-text.tsx"]
+        files: ["src/examples/solid/tailwindcss/textarea-with-text.tsx"] 
       },
       "textfield-demo": {
         name: "textfield-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/textfield-demo")),
-        files: ["src/examples/solid/tailwindcss/textfield-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/textfield-demo.tsx"] 
       },
       "textfield-disabled": {
         name: "textfield-disabled",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/textfield-disabled")),
-        files: ["src/examples/solid/tailwindcss/textfield-disabled.tsx"]
+        files: ["src/examples/solid/tailwindcss/textfield-disabled.tsx"] 
       },
       "textfield-file": {
         name: "textfield-file",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/textfield-file")),
-        files: ["src/examples/solid/tailwindcss/textfield-file.tsx"]
+        files: ["src/examples/solid/tailwindcss/textfield-file.tsx"] 
       },
       "textfield-with-button": {
         name: "textfield-with-button",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/textfield-with-button")),
-        files: ["src/examples/solid/tailwindcss/textfield-with-button.tsx"]
+        files: ["src/examples/solid/tailwindcss/textfield-with-button.tsx"] 
       },
       "textfield-with-label": {
         name: "textfield-with-label",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/textfield-with-label")),
-        files: ["src/examples/solid/tailwindcss/textfield-with-label.tsx"]
+        files: ["src/examples/solid/tailwindcss/textfield-with-label.tsx"] 
       },
       "textfield-with-text": {
         name: "textfield-with-text",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/textfield-with-text")),
-        files: ["src/examples/solid/tailwindcss/textfield-with-text.tsx"]
+        files: ["src/examples/solid/tailwindcss/textfield-with-text.tsx"] 
       },
       "textfield-with-error": {
         name: "textfield-with-error",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/textfield-with-error")),
-        files: ["src/examples/solid/tailwindcss/textfield-with-error.tsx"]
+        files: ["src/examples/solid/tailwindcss/textfield-with-error.tsx"] 
       },
       "toast-demo": {
         name: "toast-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/toast-demo")),
-        files: ["src/examples/solid/tailwindcss/toast-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/toast-demo.tsx"] 
       },
       "toast-destructive": {
         name: "toast-destructive",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/toast-destructive")),
-        files: ["src/examples/solid/tailwindcss/toast-destructive.tsx"]
+        files: ["src/examples/solid/tailwindcss/toast-destructive.tsx"] 
       },
       "toggle-group-demo": {
         name: "toggle-group-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/toggle-group-demo")),
-        files: ["src/examples/solid/tailwindcss/toggle-group-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/toggle-group-demo.tsx"] 
       },
       "toggle-group-outline-demo": {
         name: "toggle-group-outline-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/toggle-group-outline-demo")),
-        files: ["src/examples/solid/tailwindcss/toggle-group-outline-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/toggle-group-outline-demo.tsx"] 
       },
       "toggle-group-single-demo": {
         name: "toggle-group-single-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/toggle-group-single-demo")),
-        files: ["src/examples/solid/tailwindcss/toggle-group-single-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/toggle-group-single-demo.tsx"] 
       },
       "toggle-group-small-demo": {
         name: "toggle-group-small-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/toggle-group-small-demo")),
-        files: ["src/examples/solid/tailwindcss/toggle-group-small-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/toggle-group-small-demo.tsx"] 
       },
       "toggle-group-large-demo": {
         name: "toggle-group-large-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/toggle-group-large-demo")),
-        files: ["src/examples/solid/tailwindcss/toggle-group-large-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/toggle-group-large-demo.tsx"] 
       },
       "toggle-group-disabled-demo": {
         name: "toggle-group-disabled-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/toggle-group-disabled-demo")),
-        files: ["src/examples/solid/tailwindcss/toggle-group-disabled-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/toggle-group-disabled-demo.tsx"] 
       },
       "toggle-demo": {
         name: "toggle-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/toggle-demo")),
-        files: ["src/examples/solid/tailwindcss/toggle-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/toggle-demo.tsx"] 
       },
       "toggle-disabled": {
         name: "toggle-disabled",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/toggle-disabled")),
-        files: ["src/examples/solid/tailwindcss/toggle-disabled.tsx"]
+        files: ["src/examples/solid/tailwindcss/toggle-disabled.tsx"] 
       },
       "toggle-large": {
         name: "toggle-large",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/toggle-large")),
-        files: ["src/examples/solid/tailwindcss/toggle-large.tsx"]
+        files: ["src/examples/solid/tailwindcss/toggle-large.tsx"] 
       },
       "toggle-outline": {
         name: "toggle-outline",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/toggle-outline")),
-        files: ["src/examples/solid/tailwindcss/toggle-outline.tsx"]
+        files: ["src/examples/solid/tailwindcss/toggle-outline.tsx"] 
       },
       "toggle-small": {
         name: "toggle-small",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/toggle-small")),
-        files: ["src/examples/solid/tailwindcss/toggle-small.tsx"]
+        files: ["src/examples/solid/tailwindcss/toggle-small.tsx"] 
       },
       "toggle-with-text": {
         name: "toggle-with-text",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/toggle-with-text")),
-        files: ["src/examples/solid/tailwindcss/toggle-with-text.tsx"]
+        files: ["src/examples/solid/tailwindcss/toggle-with-text.tsx"] 
       },
       "tooltip-demo": {
         name: "tooltip-demo",
         type: "components:example",
         component: lazy(() => import("../examples/solid/tailwindcss/tooltip-demo")),
-        files: ["src/examples/solid/tailwindcss/tooltip-demo.tsx"]
+        files: ["src/examples/solid/tailwindcss/tooltip-demo.tsx"] 
       },
     },
     "unocss": {

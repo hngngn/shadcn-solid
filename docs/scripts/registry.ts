@@ -16,6 +16,8 @@ if (!result.success) {
 	process.exit(1);
 }
 
+const solidStyleCut = ["button-secondary", "button-link"];
+
 // ----------------------------------------------------------------------------
 // Build __registry__/index.js.
 // ----------------------------------------------------------------------------
@@ -39,8 +41,8 @@ for (const style of styles) {
 					index += `      "${item.name}": {
         name: "${item.name}",
         type: "${item.type}",
-        component: ${`lazy(() => import("../examples/${style.name}/${framework.name}/${item.name}"))`},
-        files: ["src/examples/${style.name}/${framework.name}/${item.name}.tsx"]
+        component: ${`lazy(() => import("${style.name === "solid" && solidStyleCut.includes(item.name) ? "../components/not-found-component" : `../examples/${style.name}/${framework.name}/${item.name}`}"))`},
+        files: ["${style.name === "solid" && solidStyleCut.includes(item.name) ? "" : `src/examples/${style.name}/${framework.name}/${item.name}.tsx`}"] 
       },\n`;
 				}
 				continue;
