@@ -17,6 +17,7 @@ type Props = {
 	styleDefault: HTMLElement;
 	styleSolid: HTMLElement;
 	rawString: string;
+	hideBar?: boolean;
 };
 
 const ComponentPreview = (props: Props) => {
@@ -47,13 +48,15 @@ const ComponentPreview = (props: Props) => {
 					value="preview"
 					class="relative rounded-md border has-[table]:border-none"
 				>
-					<div class="p-4 relative">
-						<StyleSwitcher />
-						<CopyButton
-							rawString={props.rawString}
-							class="text-foreground hover:bg-accent shadow-sm border border-input"
-						/>
-					</div>
+					<Show when={!props.hideBar}>
+						<div class="p-4 relative">
+							<StyleSwitcher />
+							<CopyButton
+								rawString={props.rawString}
+								class="text-foreground hover:bg-accent shadow-sm border border-input"
+							/>
+						</div>
+					</Show>
 					<div class="preview flex min-h-[350px] w-full justify-center p-10 items-center has-[table]:p-0">
 						<Show
 							when={Component()}
