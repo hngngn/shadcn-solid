@@ -1,11 +1,13 @@
 {
-	"name": "progress",
-	"dependencies": ["@kobalte/core"],
-	"files": [
-		{
-			"name": "progress.tsx",
-			"content": "import { cn } from \"@/libs/cn\";\nimport type { PolymorphicProps } from \"@kobalte/core/polymorphic\";\nimport type { ProgressRootProps } from \"@kobalte/core/progress\";\nimport { Progress as ProgressPrimitive } from \"@kobalte/core/progress\";\nimport type { ParentProps, ValidComponent } from \"solid-js\";\nimport { splitProps } from \"solid-js\";\n\nexport const ProgressLabel = ProgressPrimitive.Label;\nexport const ProgressValueLabel = ProgressPrimitive.ValueLabel;\n\ntype progressProps<T extends ValidComponent = \"div\"> = ParentProps<\n\tProgressRootProps<T> & {\n\t\tclass?: string;\n\t}\n>;\n\nexport const Progress = <T extends ValidComponent = \"div\">(\n\tprops: PolymorphicProps<T, progressProps<T>>,\n) => {\n\tconst [local, rest] = splitProps(props as progressProps, [\n\t\t\"class\",\n\t\t\"children\",\n\t]);\n\n\treturn (\n\t\t<ProgressPrimitive\n\t\t\tclass={cn(\"flex w-full flex-col gap-2\", local.class)}\n\t\t\t{...rest}\n\t\t>\n\t\t\t{local.children}\n\t\t\t<ProgressPrimitive.Track class=\"h-2 overflow-hidden rounded-full bg-primary/20\">\n\t\t\t\t<ProgressPrimitive.Fill class=\"h-full w-[--kb-progress-fill-width] bg-primary transition-all duration-500 ease-linear data-[progress=complete]:bg-primary\" />\n\t\t\t</ProgressPrimitive.Track>\n\t\t</ProgressPrimitive>\n\t);\n};\n"
-		}
-	],
-	"type": "components:ui"
+  "name": "progress",
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "files": [
+    {
+      "name": "progress.tsx",
+      "content": "import { cn } from \"@/libs/cn\";\nimport type { PolymorphicProps } from \"@kobalte/core/polymorphic\";\nimport type { ProgressRootProps } from \"@kobalte/core/progress\";\nimport { Progress as ProgressPrimitive } from \"@kobalte/core/progress\";\nimport type { ParentProps, ValidComponent } from \"solid-js\";\nimport { splitProps } from \"solid-js\";\n\nexport const ProgressLabel = ProgressPrimitive.Label;\nexport const ProgressValueLabel = ProgressPrimitive.ValueLabel;\n\ntype progressProps<T extends ValidComponent = \"div\"> = ParentProps<\n\tProgressRootProps<T> & {\n\t\tclass?: string;\n\t}\n>;\n\nexport const Progress = <T extends ValidComponent = \"div\">(\n\tprops: PolymorphicProps<T, progressProps<T>>,\n) => {\n\tconst [local, rest] = splitProps(props as progressProps, [\n\t\t\"class\",\n\t\t\"children\",\n\t]);\n\n\treturn (\n\t\t<ProgressPrimitive\n\t\t\tclass={cn(\"flex w-full flex-col gap-2\", local.class)}\n\t\t\t{...rest}\n\t\t>\n\t\t\t{local.children}\n\t\t\t<ProgressPrimitive.Track class=\"h-2 overflow-hidden rounded-full bg-primary/20\">\n\t\t\t\t<ProgressPrimitive.Fill class=\"h-full w-[--kb-progress-fill-width] bg-primary transition-all duration-500 ease-linear data-[progress=complete]:bg-primary\" />\n\t\t\t</ProgressPrimitive.Track>\n\t\t</ProgressPrimitive>\n\t);\n};\n"
+    }
+  ],
+  "type": "components:ui"
 }

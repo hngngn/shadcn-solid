@@ -1,11 +1,13 @@
 {
-	"name": "collapsible",
-	"dependencies": ["@kobalte/core"],
-	"files": [
-		{
-			"name": "collapsible.tsx",
-			"content": "import { cn } from \"@/libs/cn\";\nimport type { CollapsibleContentProps } from \"@kobalte/core/collapsible\";\nimport { Collapsible as CollapsiblePrimitive } from \"@kobalte/core/collapsible\";\nimport type { PolymorphicProps } from \"@kobalte/core/polymorphic\";\nimport type { ValidComponent } from \"solid-js\";\nimport { splitProps } from \"solid-js\";\n\nexport const Collapsible = CollapsiblePrimitive;\n\nexport const CollapsibleTrigger = CollapsiblePrimitive.Trigger;\n\ntype collapsibleContentProps<T extends ValidComponent = \"div\"> =\n\tCollapsibleContentProps<T> & {\n\t\tclass?: string;\n\t};\n\nexport const CollapsibleContent = <T extends ValidComponent = \"div\">(\n\tprops: PolymorphicProps<T, collapsibleContentProps<T>>,\n) => {\n\tconst [local, rest] = splitProps(props as collapsibleContentProps, [\"class\"]);\n\n\treturn (\n\t\t<CollapsiblePrimitive.Content\n\t\t\tclass={cn(\n\t\t\t\t\"animate-collapsible-up data-[expanded]:animate-collapsible-down\",\n\t\t\t\tlocal.class,\n\t\t\t)}\n\t\t\t{...rest}\n\t\t/>\n\t);\n};\n"
-		}
-	],
-	"type": "components:ui"
+  "name": "collapsible",
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "files": [
+    {
+      "name": "collapsible.tsx",
+      "content": "import { cn } from \"@/libs/cn\";\nimport type { CollapsibleContentProps } from \"@kobalte/core/collapsible\";\nimport { Collapsible as CollapsiblePrimitive } from \"@kobalte/core/collapsible\";\nimport type { PolymorphicProps } from \"@kobalte/core/polymorphic\";\nimport type { ValidComponent } from \"solid-js\";\nimport { splitProps } from \"solid-js\";\n\nexport const Collapsible = CollapsiblePrimitive;\n\nexport const CollapsibleTrigger = CollapsiblePrimitive.Trigger;\n\ntype collapsibleContentProps<T extends ValidComponent = \"div\"> =\n\tCollapsibleContentProps<T> & {\n\t\tclass?: string;\n\t};\n\nexport const CollapsibleContent = <T extends ValidComponent = \"div\">(\n\tprops: PolymorphicProps<T, collapsibleContentProps<T>>,\n) => {\n\tconst [local, rest] = splitProps(props as collapsibleContentProps, [\"class\"]);\n\n\treturn (\n\t\t<CollapsiblePrimitive.Content\n\t\t\tclass={cn(\n\t\t\t\t\"animate-collapsible-up data-[expanded]:animate-collapsible-down\",\n\t\t\t\tlocal.class,\n\t\t\t)}\n\t\t\t{...rest}\n\t\t/>\n\t);\n};\n"
+    }
+  ],
+  "type": "components:ui"
 }

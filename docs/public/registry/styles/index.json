@@ -1,10 +1,10 @@
 [
-	{
-		"name": "default",
-		"label": "Default"
-	},
-	{
-		"name": "solid",
-		"label": "Solid"
-	}
+  {
+    "name": "default",
+    "label": "Default"
+  },
+  {
+    "name": "solid",
+    "label": "Solid"
+  }
 ]

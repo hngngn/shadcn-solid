@@ -8,7 +8,7 @@ import type { ValidComponent } from "solid-js";
 import { splitProps } from "solid-js";
 
 export const buttonVariants = cva(
-	"relative isolate inline-flex justify-center items-center font-medium text-sm rounded-lg py-2 px-6 outline-none appearance-none transition-[background-color,box-shadow,color,border-color,outline-color] duration-300 disabled:cursor-not-allowed",
+	"relative isolate inline-flex justify-center items-center font-medium text-sm rounded-lg py-2 px-6 outline-none appearance-none transition-[background-color,box-shadow,color,outline-color] duration-300 disabled:cursor-not-allowed",
 	{
 		variants: {
 			variant: {
@@ -27,7 +27,7 @@ export const buttonVariants = cva(
 				],
 				flat: "text-[--btn-text] bg-[--btn-bg] shadow-sm disabled:shadow-none focus-visible:outline focus-visible:outline-[--btn-bg]",
 				outline:
-					"border border-[--btn-border] bg-[--btn-bg] text-[--btn-text] focus-visible:outline focus-visible:outline-[--btn-ring]",
+					"ring-inset ring ring-[--btn-border] bg-[--btn-bg] text-[--btn-text] focus-visible:outline focus-visible:outline-[--btn-ring]",
 				plain:
 					"bg-inherit text-[--btn-text] focus-visible:outline focus-visible:outline-[--btn-bg]",
 			},

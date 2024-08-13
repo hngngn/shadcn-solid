@@ -1,11 +1,13 @@
 {
-	"name": "image",
-	"dependencies": ["@kobalte/core"],
-	"files": [
-		{
-			"name": "image.tsx",
-			"content": "import { cn } from \"@/libs/cn\";\nimport type {\n\tImageFallbackProps,\n\tImageImgProps,\n\tImageRootProps,\n} from \"@kobalte/core/image\";\nimport { Image as ImagePrimitive } from \"@kobalte/core/image\";\nimport type { PolymorphicProps } from \"@kobalte/core/polymorphic\";\nimport type { ValidComponent } from \"solid-js\";\nimport { splitProps } from \"solid-js\";\n\ntype imageRootProps<T extends ValidComponent = \"span\"> = ImageRootProps<T> & {\n\tclass?: string;\n};\n\nexport const ImageRoot = <T extends ValidComponent = \"span\">(\n\tprops: PolymorphicProps<T, imageRootProps<T>>,\n) => {\n\tconst [local, rest] = splitProps(props as imageRootProps, [\"class\"]);\n\n\treturn (\n\t\t<ImagePrimitive\n\t\t\tclass={cn(\n\t\t\t\t\"relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full\",\n\t\t\t\tlocal.class,\n\t\t\t)}\n\t\t\t{...rest}\n\t\t/>\n\t);\n};\n\ntype imageProps<T extends ValidComponent = \"img\"> = ImageImgProps<T> & {\n\tclass?: string;\n};\n\nexport const Image = <T extends ValidComponent = \"img\">(\n\tprops: PolymorphicProps<T, imageProps<T>>,\n) => {\n\tconst [local, rest] = splitProps(props as imageProps, [\"class\"]);\n\n\treturn (\n\t\t<ImagePrimitive.Img\n\t\t\tclass={cn(\"aspect-square h-full w-full\", local.class)}\n\t\t\t{...rest}\n\t\t/>\n\t);\n};\n\ntype imageFallbackProps<T extends ValidComponent = \"span\"> =\n\tImageFallbackProps<T> & {\n\t\tclass?: string;\n\t};\n\nexport const ImageFallback = <T extends ValidComponent = \"span\">(\n\tprops: PolymorphicProps<T, imageFallbackProps<T>>,\n) => {\n\tconst [local, rest] = splitProps(props as imageFallbackProps, [\"class\"]);\n\n\treturn (\n\t\t<ImagePrimitive.Fallback\n\t\t\tclass={cn(\n\t\t\t\t\"flex h-full w-full items-center justify-center rounded-full bg-muted\",\n\t\t\t\tlocal.class,\n\t\t\t)}\n\t\t\t{...rest}\n\t\t/>\n\t);\n};\n"
-		}
-	],
-	"type": "components:ui"
+  "name": "image",
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "files": [
+    {
+      "name": "image.tsx",
+      "content": "import { cn } from \"@/libs/cn\";\nimport type {\n\tImageFallbackProps,\n\tImageImgProps,\n\tImageRootProps,\n} from \"@kobalte/core/image\";\nimport { Image as ImagePrimitive } from \"@kobalte/core/image\";\nimport type { PolymorphicProps } from \"@kobalte/core/polymorphic\";\nimport type { ValidComponent } from \"solid-js\";\nimport { splitProps } from \"solid-js\";\n\ntype imageRootProps<T extends ValidComponent = \"span\"> = ImageRootProps<T> & {\n\tclass?: string;\n};\n\nexport const ImageRoot = <T extends ValidComponent = \"span\">(\n\tprops: PolymorphicProps<T, imageRootProps<T>>,\n) => {\n\tconst [local, rest] = splitProps(props as imageRootProps, [\"class\"]);\n\n\treturn (\n\t\t<ImagePrimitive\n\t\t\tclass={cn(\n\t\t\t\t\"relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full\",\n\t\t\t\tlocal.class,\n\t\t\t)}\n\t\t\t{...rest}\n\t\t/>\n\t);\n};\n\ntype imageProps<T extends ValidComponent = \"img\"> = ImageImgProps<T> & {\n\tclass?: string;\n};\n\nexport const Image = <T extends ValidComponent = \"img\">(\n\tprops: PolymorphicProps<T, imageProps<T>>,\n) => {\n\tconst [local, rest] = splitProps(props as imageProps, [\"class\"]);\n\n\treturn (\n\t\t<ImagePrimitive.Img\n\t\t\tclass={cn(\"aspect-square h-full w-full\", local.class)}\n\t\t\t{...rest}\n\t\t/>\n\t);\n};\n\ntype imageFallbackProps<T extends ValidComponent = \"span\"> =\n\tImageFallbackProps<T> & {\n\t\tclass?: string;\n\t};\n\nexport const ImageFallback = <T extends ValidComponent = \"span\">(\n\tprops: PolymorphicProps<T, imageFallbackProps<T>>,\n) => {\n\tconst [local, rest] = splitProps(props as imageFallbackProps, [\"class\"]);\n\n\treturn (\n\t\t<ImagePrimitive.Fallback\n\t\t\tclass={cn(\n\t\t\t\t\"flex h-full w-full items-center justify-center rounded-full bg-muted\",\n\t\t\t\tlocal.class,\n\t\t\t)}\n\t\t\t{...rest}\n\t\t/>\n\t);\n};\n"
+    }
+  ],
+  "type": "components:ui"
 }
