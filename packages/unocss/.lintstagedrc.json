@@ -1,5 +1,9 @@
 {
-	"ui/*.tsx": [
+	"default/ui/*.tsx": [
+		"biome check --write --unsafe --staged --no-errors-on-unmatched",
+		"pnpm -F docs build:registry"
+	],
+	"solid/ui/*.tsx": [
 		"biome check --write --unsafe --staged --no-errors-on-unmatched",
 		"pnpm -F docs build:registry"
 	]

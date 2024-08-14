@@ -8,31 +8,45 @@ import type { ValidComponent } from "solid-js";
 import { splitProps } from "solid-js";
 
 export const buttonVariants = cva(
-	"inline-flex items-center justify-center rounded-md text-sm font-medium transition-shadow focus-visible:(outline-none ring-1.5 ring-ring) disabled:(pointer-events-none opacity-50) bg-inherit",
+	"relative isolate inline-flex justify-center items-center font-medium text-sm rounded-lg py-2 px-6 outline-none appearance-none transition-[background-color,box-shadow,color,outline-color] duration-300 disabled:cursor-not-allowed focus-visible:(outline outline-[--btn-border])",
 	{
 		variants: {
 			variant: {
-				default:
-					"bg-primary text-primary-foreground shadow hover:bg-primary/90",
-				destructive:
-					"bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
-				outline:
-					"border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
-				secondary:
-					"bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
-				ghost: "hover:(bg-accent text-accent-foreground)",
-				link: "text-primary underline-offset-4 hover:underline",
+				default: [
+					"[--btn-text:theme(colors.blue.50)] [--btn-bg:theme(colors.blue.500)] hover:[--btn-bg:theme(colors.blue.600)] active:[--btn-bg:theme(colors.blue.700)] [--btn-border:theme(colors.blue.500)]",
+					"disabled:([--btn-bg:theme(colors.blue.100)] [--btn-text:theme(colors.blue.400)])",
+					"dark:disabled:([--btn-bg:theme(colors.blue.950)] [--btn-text:theme(colors.blue.700)])",
+				],
+				destructive: [
+					"[--btn-text:theme(colors.red.50)] [--btn-bg:theme(colors.red.500)] hover:[--btn-bg:theme(colors.red.600)] active:[--btn-bg:theme(colors.red.700)] [--btn-border:theme(colors.red.500)]",
+					"disabled:([--btn-bg:theme(colors.red.100)] [--btn-text:theme(colors.red.400)])",
+					"dark:disabled:([--btn-bg:theme(colors.red.950)] [--btn-text:theme(colors.red.700)])",
+				],
 			},
-			size: {
-				default: "h-9 px-4 py-2",
-				sm: "h-8 px-3 text-xs",
-				lg: "h-10 px-8",
-				icon: "h-9 w-9",
+			appearance: {
+				bezel: [
+					"border-none text-[--btn-text] bg-[--btn-bg] shadow-sm disabled:shadow-none",
+					"before:(content-empty absolute inset-0 -z-10 rounded-lg shadow-[inset_0_-1px_0_0] shadow-black/20 disabled:shadow-none)",
+					"after:(content-empty absolute inset-0 -z-10 rounded-lg shadow-[inset_0_2px_0_0] shadow-white/25 disabled:shadow-none)",
+				],
+				flat: "text-[--btn-text] bg-[--btn-bg] shadow-sm disabled:shadow-none",
+				outline: [
+					"ring-inset ring-1 ring-border [--btn-bg:theme(colors.transparent)] bg-[--btn-bg]",
+					"hover:[--btn-bg:theme(colors.zinc.50)] active:[--btn-bg:theme(colors.zinc.100)]",
+					"dark:(hover:[--btn-bg:theme(colors.zinc.900/80%)] active:[--btn-bg:theme(colors.zinc.900)] disabled:[--btn-bg:theme(colors.transparent)])",
+					"disabled:([--btn-bg:theme(colors.transparent)] text-zinc-500)",
+				],
+				plain: [
+					"[--btn-bg:theme(colors.transparent)] bg-[--btn-bg]",
+					"hover:[--btn-bg:theme(colors.zinc.50)] active:[--btn-bg:theme(colors.zinc.100)]",
+					"dark:(hover:[--btn-bg:theme(colors.zinc.900/80%)] active:[--btn-bg:theme(colors.zinc.900)] disabled:[--btn-bg:theme(colors.transparent)])",
+					"disabled:([--btn-bg:theme(colors.transparent)] text-zinc-500)",
+				],
 			},
 		},
 		defaultVariants: {
 			variant: "default",
-			size: "default",
+			appearance: "bezel",
 		},
 	},
 );
@@ -48,14 +62,14 @@ export const Button = <T extends ValidComponent = "button">(
 	const [local, rest] = splitProps(props as buttonProps, [
 		"class",
 		"variant",
-		"size",
+		"appearance",
 	]);
 
 	return (
 		<ButtonPrimitive
 			class={cn(
 				buttonVariants({
-					size: local.size,
+					appearance: local.appearance,
 					variant: local.variant,
 				}),
 				local.class,

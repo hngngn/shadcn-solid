@@ -9,7 +9,8 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"check": "biome check --write --unsafe default solid"
+		"check": "biome check --write --unsafe default solid",
+		"sb": "sb dev -p 6006"
 	},
 	"devDependencies": {
 		"@ark-ui/solid": "^3.6.2",
@@ -17,6 +18,11 @@
 		"@corvu/otp-field": "^0.1.2",
 		"@corvu/resizable": "^0.2.3",
 		"@kobalte/core": "^0.13.4",
+		"@storybook/addon-essentials": "^8.2.9",
+		"@storybook/addon-themes": "^8.2.9",
+		"@storybook/builder-vite": "^8.2.9",
+		"@storybook/docs-tools": "^8.2.9",
+		"@storybook/types": "^8.2.9",
 		"autoprefixer": "^10.4.20",
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.1",
@@ -26,9 +32,15 @@
 		"postcss": "^8.4.41",
 		"solid-js": "^1.8.19",
 		"solid-sonner": "^0.2.8",
+		"storybook": "^8.2.9",
+		"storybook-solidjs": "1.0.0-beta.2",
+		"storybook-solidjs-vite": "1.0.0-beta.2",
 		"tailwind-merge": "^2.4.0",
 		"tailwindcss": "^3.4.8",
 		"tailwindcss-animate": "^1.0.7",
-		"typescript": "^5.5.4"
+		"type-fest": "^4.24.0",
+		"typescript": "^5.5.4",
+		"vite": "^5.4.0",
+		"vite-plugin-solid": "^2.10.2"
 	}
 }

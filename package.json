@@ -15,11 +15,12 @@
 	"scripts": {
 		"build": "turbo build",
 		"dev": "turbo dev",
-		"lint": "turbo run lint",
-		"format": "turbo run format",
-		"check": "turbo run check",
+		"lint": "turbo lint",
+		"format": "turbo format",
+		"check": "turbo check",
 		"release": "changeset version",
-		"prepare": "husky"
+		"prepare": "husky",
+		"sb": "turbo sb"
 	},
 	"packageManager": "pnpm@9.4.0"
 }
