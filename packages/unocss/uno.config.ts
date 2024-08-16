@@ -1,13 +1,27 @@
 import {
 	defineConfig,
 	presetUno,
+	presetWebFonts,
 	transformerDirectives,
 	transformerVariantGroup,
 } from "unocss";
 import presetAnimations from "unocss-preset-animations";
 
 export default defineConfig({
-	presets: [presetUno(), presetAnimations()],
+	presets: [
+		presetUno(),
+		presetAnimations(),
+		presetWebFonts({
+			fonts: {
+				sans: {
+					name: "Inter",
+					italic: false,
+					provider: "bunny",
+					weights: [400, 500, 600, 700],
+				},
+			},
+		}),
+	],
 	transformers: [transformerVariantGroup(), transformerDirectives()],
 	theme: {
 		colors: {

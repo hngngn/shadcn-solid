@@ -17,6 +17,7 @@
 		"@corvu/drawer": "^0.2.2",
 		"@corvu/otp-field": "^0.1.2",
 		"@corvu/resizable": "^0.2.3",
+		"@fontsource-variable/inter": "^5.0.20",
 		"@kobalte/core": "^0.13.4",
 		"@storybook/addon-essentials": "^8.2.9",
 		"@storybook/addon-themes": "^8.2.9",

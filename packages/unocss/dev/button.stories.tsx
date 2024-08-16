@@ -1,8 +1,8 @@
-import type { ComponentProps } from "solid-js";
-import { Button } from "../solid/ui/button";
+import type { ComponentProps, ParentProps } from "solid-js";
+import { Button, type buttonProps } from "../solid/ui/button";
 import type { Meta, StoryObj } from "../types";
 
-type Story = StoryObj<Parameters<typeof Button>[0]>;
+type Story = StoryObj<ParentProps<buttonProps>>;
 
 export const Default: Story = {
 	args: {

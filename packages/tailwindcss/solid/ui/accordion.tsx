@@ -1,5 +1,3 @@
-// tailwindcss/solid
-
 import { cn } from "@/libs/cn";
 import type {
 	AccordionContentProps,
@@ -12,7 +10,7 @@ import { type ParentProps, type ValidComponent, splitProps } from "solid-js";
 
 export const Accordion = AccordionPrimitive;
 
-type accordionItemProps<T extends ValidComponent = "div"> =
+export type accordionItemProps<T extends ValidComponent = "div"> =
 	AccordionItemProps<T> & {
 		class?: string;
 	};
@@ -23,15 +21,19 @@ export const AccordionItem = <T extends ValidComponent = "div">(
 	const [local, rest] = splitProps(props as accordionItemProps, ["class"]);
 
 	return (
-		<AccordionPrimitive.Item class={cn("border-b", local.class)} {...rest} />
+		<AccordionPrimitive.Item
+			class={cn("border-b border-border", local.class)}
+			{...rest}
+		/>
 	);
 };
 
-type accordionTriggerProps<T extends ValidComponent = "button"> = ParentProps<
-	AccordionTriggerProps<T> & {
-		class?: string;
-	}
->;
+export type accordionTriggerProps<T extends ValidComponent = "button"> =
+	ParentProps<
+		AccordionTriggerProps<T> & {
+			class?: string;
+		}
+	>;
 
 export const AccordionTrigger = <T extends ValidComponent = "button">(
 	props: PolymorphicProps<T, accordionTriggerProps<T>>,
@@ -42,20 +44,21 @@ export const AccordionTrigger = <T extends ValidComponent = "button">(
 	]);
 
 	return (
-		<AccordionPrimitive.Header class="flex" as="div">
+		<AccordionPrimitive.Header class="flex">
 			<AccordionPrimitive.Trigger
 				class={cn(
-					"flex flex-1 items-center justify-between py-4 text-sm font-medium transition-shadow hover:underline focus-visible:outline-none focus-visible:ring-[1.5px] focus-visible:ring-ring [&[data-expanded]>svg]:rotate-180",
+					"flex flex-1 items-center justify-between py-3 text-sm font-medium border-none outline-none appearance-none transition-[outline-color,color] duration-300",
+					"text-muted-foreground data-[expanded]:text-foreground",
+					"focus-visible:text-foreground focus-visible:outline focus-visible:outline-[--at-outline] [--at-outline:theme(colors.blue.500)]",
+					"[&>svg]:size-4 [&>svg]:transition-[transform,color] [&>svg]:duration-300 [&>svg]:text-muted-foreground [&>svg]:focus-visible:text-foreground [&>svg]:disabled:opacity-60 [&>svg]:hover:text-foreground [&[data-expanded]>svg]:text-foreground [&[data-expanded]>svg]:rotate-180",
+					"[&:not(:disabled):hover]:text-foreground",
+					"disabled:opacity-60 disabled:cursor-not-allowed",
 					local.class,
 				)}
 				{...rest}
 			>
 				{local.children}
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 24 24"
-					class="h-4 w-4 text-muted-foreground transition-transform duration-200"
-				>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 					<path
 						fill="none"
 						stroke="currentColor"
@@ -71,11 +74,12 @@ export const AccordionTrigger = <T extends ValidComponent = "button">(
 	);
 };
 
-type accordionContentProps<T extends ValidComponent = "div"> = ParentProps<
-	AccordionContentProps<T> & {
-		class?: string;
-	}
->;
+export type accordionContentProps<T extends ValidComponent = "div"> =
+	ParentProps<
+		AccordionContentProps<T> & {
+			class?: string;
+		}
+	>;
 
 export const AccordionContent = <T extends ValidComponent = "div">(
 	props: PolymorphicProps<T, accordionContentProps<T>>,
@@ -93,7 +97,7 @@ export const AccordionContent = <T extends ValidComponent = "div">(
 			)}
 			{...rest}
 		>
-			<div class="pb-4 pt-0">{local.children}</div>
+			<div class="pb-3 pt-0">{local.children}</div>
 		</AccordionPrimitive.Content>
 	);
 };

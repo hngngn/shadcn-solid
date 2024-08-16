@@ -5,6 +5,7 @@ import {
 import type { SolidRenderer } from "storybook-solidjs";
 import type { Preview } from "../types";
 
+import "@fontsource-variable/inter";
 import "./style.css";
 
 export default {

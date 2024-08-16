@@ -4,21 +4,21 @@ import { Button as ButtonPrimitive } from "@kobalte/core/button";
 import type { PolymorphicProps } from "@kobalte/core/polymorphic";
 import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
-import type { ParentProps, ValidComponent } from "solid-js";
+import type { ValidComponent } from "solid-js";
 import { splitProps } from "solid-js";
 
 export const buttonVariants = cva(
-	"relative isolate inline-flex justify-center items-center font-medium text-sm rounded-lg py-2 px-6 outline-none appearance-none transition-[background-color,box-shadow,color,outline-color] duration-300 disabled:cursor-not-allowed focus-visible:outline focus-visible:outline-[--btn-border]",
+	"relative isolate inline-flex justify-center items-center font-medium text-sm rounded-lg py-2 px-6 outline-none appearance-none transition-[background-color,box-shadow,color,outline-color] duration-300 disabled:cursor-not-allowed focus-visible:outline focus-visible:outline-[--btn-outline]",
 	{
 		variants: {
 			variant: {
 				default: [
-					"[--btn-text:theme(colors.blue.50)] [--btn-bg:theme(colors.blue.500)] hover:[--btn-bg:theme(colors.blue.600)] active:[--btn-bg:theme(colors.blue.700)] [--btn-border:theme(colors.blue.500)]",
+					"[--btn-text:theme(colors.blue.50)] [--btn-bg:theme(colors.blue.500)] hover:[--btn-bg:theme(colors.blue.600)] active:[--btn-bg:theme(colors.blue.700)] [--btn-outline:theme(colors.blue.500)]",
 					"disabled:[--btn-bg:theme(colors.blue.100)] disabled:[--btn-text:theme(colors.blue.400)]",
 					"dark:disabled:[--btn-bg:theme(colors.blue.950)] dark:disabled:[--btn-text:theme(colors.blue.700)]",
 				],
 				destructive: [
-					"[--btn-text:theme(colors.red.50)] [--btn-bg:theme(colors.red.500)] hover:[--btn-bg:theme(colors.red.600)] active:[--btn-bg:theme(colors.red.700)] [--btn-border:theme(colors.red.500)]",
+					"[--btn-text:theme(colors.red.50)] [--btn-bg:theme(colors.red.500)] hover:[--btn-bg:theme(colors.red.600)] active:[--btn-bg:theme(colors.red.700)] [--btn-outline:theme(colors.red.500)]",
 					"disabled:[--btn-bg:theme(colors.red.100)] disabled:[--btn-text:theme(colors.red.400)]",
 					"dark:disabled:[--btn-bg:theme(colors.red.950)] dark:disabled:[--btn-text:theme(colors.red.700)]",
 				],
@@ -51,12 +51,11 @@ export const buttonVariants = cva(
 	},
 );
 
-type buttonProps<T extends ValidComponent = "button"> = ParentProps<
+export type buttonProps<T extends ValidComponent = "button"> =
 	ButtonRootProps<T> &
 		VariantProps<typeof buttonVariants> & {
 			class?: string;
-		}
->;
+		};
 
 export const Button = <T extends ValidComponent = "button">(
 	props: PolymorphicProps<T, buttonProps<T>>,
