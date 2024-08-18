@@ -30,14 +30,14 @@ export const AlertDialogContent = <T extends ValidComponent = "div">(
 
 	return (
 		<AlertDialogPrimitive.Portal>
-			<AlertDialogPrimitive.Overlay
-				class={cn(
-					"fixed inset-0 z-50 bg-background/80 data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0",
-				)}
-			/>
+			<AlertDialogPrimitive.Overlay class="fixed inset-0 z-50 bg-background/80 data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0" />
 			<AlertDialogPrimitive.Content
 				class={cn(
-					"fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg data-[closed]:duration-200 data-[expanded]:duration-200 data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0 data-[closed]:zoom-out-95 data-[expanded]:zoom-in-95 data-[closed]:slide-out-to-left-1/2 data-[closed]:slide-out-to-top-[48%] data-[expanded]:slide-in-from-left-1/2 data-[expanded]:slide-in-from-top-[48%] sm:rounded-lg md:w-full",
+					"[--adc-ring:theme(colors.zinc.200)] [--adc-bg:inherit]",
+					"dark:[--adc-ring:theme(colors.zinc.800)] dark:[--adc-bg:theme(colors.zinc.900/50%)]",
+					"fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg rounded-xl translate-x-[-50%] translate-y-[-50%] gap-4 ring-inset ring-1 ring-[--adc-ring] bg-[--adc-bg] p-6 shadow-lg",
+					"data-[expanded]:duration-300 data-[expanded]:animate-in data-[expanded]:fade-in-0 data-[expanded]:zoom-in-95 data-[expanded]:slide-in-from-left-1/2 data-[expanded]:slide-in-from-top-[48%]",
+					"data-[closed]:duration-300 data-[closed]:animate-out data-[closed]:fade-out-0 data-[closed]:zoom-out-95 data-[closed]:slide-out-to-left-1/2 data-[closed]:slide-out-to-top-[48%]",
 					local.class,
 				)}
 				{...rest}
@@ -54,7 +54,7 @@ export const AlertDialogHeader = (props: ComponentProps<"div">) => {
 	return (
 		<div
 			class={cn(
-				"flex flex-col space-y-2 text-center sm:text-left",
+				"flex flex-col space-y-1 text-center sm:text-left",
 				local.class,
 			)}
 			{...rest}
@@ -68,7 +68,7 @@ export const AlertDialogFooter = (props: ComponentProps<"div">) => {
 	return (
 		<div
 			class={cn(
-				"flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
+				"flex flex-col-reverse gap-y-2 sm:flex-row sm:justify-end sm:gap-x-2",
 				local.class,
 			)}
 			{...rest}
@@ -88,7 +88,7 @@ export const AlertDialogTitle = <T extends ValidComponent = "h2">(
 
 	return (
 		<AlertDialogPrimitive.Title
-			class={cn("text-lg font-semibold", local.class)}
+			class={cn("text-xl font-semibold", local.class)}
 			{...rest}
 		/>
 	);
@@ -128,9 +128,8 @@ export const AlertDialogClose = <T extends ValidComponent = "button">(
 		<AlertDialogPrimitive.CloseButton
 			class={cn(
 				buttonVariants({
-					variant: "outline",
+					appearance: "outline",
 				}),
-				"mt-2 md:mt-0",
 				local.class,
 			)}
 			{...rest}

@@ -33,7 +33,11 @@ export const AlertDialogContent = <T extends ValidComponent = "div">(
 			<AlertDialogPrimitive.Overlay class="fixed inset-0 z-50 bg-background/80 data-[expanded]:(animate-in fade-in-0) data-[closed]:(animate-out fade-out-0)" />
 			<AlertDialogPrimitive.Content
 				class={cn(
-					"fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[expanded]:(animate-in fade-in-0 zoom-in-95 slide-in-from-left-1/2 slide-in-from-top-48% duration-200) data-[closed]:(animate-out fade-out-0 zoom-out-95 slide-out-to-left-1/2 slide-out-to-top-48% duration-200) sm:rounded-lg md:w-full",
+					"[--adc-ring:theme(colors.zinc.200)] [--adc-bg:inherit]",
+					"dark:[--adc-ring:theme(colors.zinc.800)] dark:[--adc-bg:theme(colors.zinc.900/50%)]",
+					"rounded-xl fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 ring-inset ring-1 ring-[--adc-ring] bg-[--adc-bg] p-6 shadow-lg",
+					"data-[expanded]:(animate-in fade-in-0 zoom-in-95 slide-in-from-left-1/2 slide-in-from-top-48% animate-duration-300)",
+					"data-[closed]:(animate-out fade-out-0 zoom-out-95 slide-out-to-left-1/2 slide-out-to-top-48% animate-duration-300)",
 					local.class,
 				)}
 				{...rest}
@@ -64,7 +68,7 @@ export const AlertDialogFooter = (props: ComponentProps<"div">) => {
 	return (
 		<div
 			class={cn(
-				"flex flex-col-reverse sm:(flex-row justify-end space-x-2)",
+				"flex flex-col-reverse gap-y-2 sm:(flex-row justify-end gap-x-2)",
 				local.class,
 			)}
 			{...rest}
@@ -124,9 +128,8 @@ export const AlertDialogClose = <T extends ValidComponent = "button">(
 		<AlertDialogPrimitive.CloseButton
 			class={cn(
 				buttonVariants({
-					variant: "outline",
+					appearance: "outline",
 				}),
-				"mt-2 md:mt-0",
 				local.class,
 			)}
 			{...rest}
