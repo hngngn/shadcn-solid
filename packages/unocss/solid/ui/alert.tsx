@@ -18,14 +18,14 @@ export const alertVariants = cva(
 		variants: {
 			variant: {
 				default: [
-					"[--al-ring:theme(colors.zinc.200)] [--al-bg:inherit] [--al-text:inherit]",
-					"dark:([--al-ring:theme(colors.zinc.800)] [--al-bg:theme(colors.zinc.900/50%)])",
-					"ring-[--al-ring] bg-[--al-bg] text-[--al-text]",
+					"[--alert-ring:theme(colors.zinc.200)] [--alert-bg:inherit] [--alert-text:inherit]",
+					"dark:([--alert-ring:theme(colors.zinc.800)] [--alert-bg:theme(colors.zinc.900/50%)])",
+					"ring-[--alert-ring] bg-[--alert-bg] text-[--alert-text]",
 				],
 				destructive: [
-					"[--al-ring:theme(colors.red.400)] [--al-bg:theme(colors.red.100)] [--al-text:theme(colors.red.600)]",
-					"dark:([--al-ring:theme(colors.red.800)] [--al-bg:theme(colors.red.900/50%)] [--al-text:theme(colors.red.100)])",
-					"ring-[--al-ring] bg-[--al-bg] text-[--al-text]",
+					"[--alert-ring:theme(colors.red.400)] [--alert-bg:theme(colors.red.100)] [--alert-text:theme(colors.red.600)]",
+					"dark:([--alert-ring:theme(colors.red.800)] [--alert-bg:theme(colors.red.900/50%)] [--alert-text:theme(colors.red.100)])",
+					"ring-[--alert-ring] bg-[--alert-bg] text-[--alert-text]",
 				],
 			},
 		},

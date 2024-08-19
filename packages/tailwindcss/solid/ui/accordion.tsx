@@ -49,7 +49,7 @@ export const AccordionTrigger = <T extends ValidComponent = "button">(
 				class={cn(
 					"flex flex-1 items-center justify-between py-3 text-sm font-medium border-none outline-none appearance-none transition-[outline-color,color] duration-300",
 					"text-muted-foreground data-[expanded]:text-foreground",
-					"focus-visible:text-foreground focus-visible:outline focus-visible:outline-[--at-outline] [--at-outline:theme(colors.blue.500)]",
+					"focus-visible:text-foreground focus-visible:outline focus-visible:outline-[--accordion-trigger-outline] [--accordion-trigger-outline:theme(colors.blue.500)]",
 					"[&>svg]:size-4 [&>svg]:transition-[transform,color] [&>svg]:duration-300 [&>svg]:text-muted-foreground [&>svg]:focus-visible:text-foreground [&>svg]:disabled:opacity-60 [&>svg]:hover:text-foreground [&[data-expanded]>svg]:text-foreground [&[data-expanded]>svg]:rotate-180",
 					"[&:not(:disabled):hover]:text-foreground",
 					"disabled:opacity-60 disabled:cursor-not-allowed",

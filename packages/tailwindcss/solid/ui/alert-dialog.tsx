@@ -34,9 +34,9 @@ export const AlertDialogContent = <T extends ValidComponent = "div">(
 			<AlertDialogPrimitive.Overlay class="fixed inset-0 z-50 bg-background/80 data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0" />
 			<AlertDialogPrimitive.Content
 				class={cn(
-					"[--adc-ring:theme(colors.zinc.200)] [--adc-bg:inherit]",
-					"dark:[--adc-ring:theme(colors.zinc.800)] dark:[--adc-bg:theme(colors.zinc.900/50%)]",
-					"fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg rounded-xl translate-x-[-50%] translate-y-[-50%] gap-4 ring-inset ring-1 ring-[--adc-ring] bg-[--adc-bg] p-6 shadow-lg",
+					"[--alert-dialog-content-ring:theme(colors.zinc.200)] [--alert-dialog-content-bg:inherit]",
+					"dark:[--alert-dialog-content-ring:theme(colors.zinc.800)] dark:[--alert-dialog-content-bg:theme(colors.zinc.900/50%)]",
+					"fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg rounded-xl translate-x-[-50%] translate-y-[-50%] gap-4 ring-inset ring-1 ring-[--alert-dialog-content-ring] bg-[--alert-dialog-content-bg] p-6 shadow-lg",
 					"data-[expanded]:duration-300 data-[expanded]:animate-in data-[expanded]:fade-in-0 data-[expanded]:zoom-in-95 data-[expanded]:slide-in-from-left-1/2 data-[expanded]:slide-in-from-top-[48%]",
 					"data-[closed]:duration-300 data-[closed]:animate-out data-[closed]:fade-out-0 data-[closed]:zoom-out-95 data-[closed]:slide-out-to-left-1/2 data-[closed]:slide-out-to-top-[48%]",
 					local.class,
