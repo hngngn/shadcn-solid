@@ -1,5 +1,5 @@
 import { cn } from "@/libs/cn";
-import type { ComponentProps, ParentComponent } from "solid-js";
+import type { ComponentProps } from "solid-js";
 import { splitProps } from "solid-js";
 
 export const Card = (props: ComponentProps<"div">) => {
@@ -8,7 +8,9 @@ export const Card = (props: ComponentProps<"div">) => {
 	return (
 		<div
 			class={cn(
-				"rounded-xl border bg-card text-card-foreground shadow",
+				"[--card-ring:theme(colors.zinc.200)] [--card-bg:inherit]",
+				"dark:[--card-ring:theme(colors.zinc.800)] dark:[--card-bg:theme(colors.zinc.900/50%)]",
+				"rounded-xl ring-inset ring-1 ring-[--card-ring] bg-[--card-bg] w-fit shadow-sm",
 				local.class,
 			)}
 			{...rest}
@@ -24,20 +26,21 @@ export const CardHeader = (props: ComponentProps<"div">) => {
 	);
 };
 
-export const CardTitle: ParentComponent<ComponentProps<"h1">> = (props) => {
+export const CardTitle = (props: ComponentProps<"h1">) => {
 	const [local, rest] = splitProps(props, ["class"]);
 
 	return (
 		<h1
-			class={cn("font-semibold leading-none tracking-tight", local.class)}
+			class={cn(
+				"text-lg font-semibold leading-none tracking-tight",
+				local.class,
+			)}
 			{...rest}
 		/>
 	);
 };
 
-export const CardDescription: ParentComponent<ComponentProps<"h3">> = (
-	props,
-) => {
+export const CardDescription = (props: ComponentProps<"h3">) => {
 	const [local, rest] = splitProps(props, ["class"]);
 
 	return (
@@ -48,13 +51,11 @@ export const CardDescription: ParentComponent<ComponentProps<"h3">> = (
 export const CardContent = (props: ComponentProps<"div">) => {
 	const [local, rest] = splitProps(props, ["class"]);
 
-	return <div class={cn("p-6 pt-0", local.class)} {...rest} />;
+	return <div class={cn("p-6 pt-0 text-sm", local.class)} {...rest} />;
 };
 
 export const CardFooter = (props: ComponentProps<"div">) => {
 	const [local, rest] = splitProps(props, ["class"]);
 
-	return (
-		<div class={cn("flex items-center p-6 pt-0", local.class)} {...rest} />
-	);
+	return <div class={cn("p-6 pt-0", local.class)} {...rest} />;
 };
