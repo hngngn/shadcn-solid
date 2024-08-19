@@ -1,3 +1,4 @@
+import type { AlertDialogRootProps } from "@kobalte/core/alert-dialog";
 import type { ComponentProps, ParentProps } from "solid-js";
 import {
 	AlertDialog,
@@ -10,10 +11,9 @@ import {
 	AlertDialogTitle,
 	AlertDialogTrigger,
 } from "../solid/ui/alert-dialog";
-import type { buttonProps } from "../solid/ui/button";
 import type { Meta, StoryObj } from "../types";
 
-type Story = StoryObj<ParentProps<buttonProps>>;
+type Story = StoryObj<ParentProps<AlertDialogRootProps>>;
 
 export const Default: Story = {};
 

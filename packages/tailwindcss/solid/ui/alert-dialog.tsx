@@ -14,11 +14,12 @@ import { buttonVariants } from "./button";
 export const AlertDialog = AlertDialogPrimitive;
 export const AlertDialogTrigger = AlertDialogPrimitive.Trigger;
 
-type alertDialogContentProps<T extends ValidComponent = "div"> = ParentProps<
-	AlertDialogContentProps<T> & {
-		class?: string;
-	}
->;
+export type alertDialogContentProps<T extends ValidComponent = "div"> =
+	ParentProps<
+		AlertDialogContentProps<T> & {
+			class?: string;
+		}
+	>;
 
 export const AlertDialogContent = <T extends ValidComponent = "div">(
 	props: PolymorphicProps<T, alertDialogContentProps<T>>,
@@ -76,7 +77,7 @@ export const AlertDialogFooter = (props: ComponentProps<"div">) => {
 	);
 };
 
-type alertDialogTitleProps<T extends ValidComponent = "h2"> =
+export type alertDialogTitleProps<T extends ValidComponent = "h2"> =
 	AlertDialogTitleProps<T> & {
 		class?: string;
 	};
@@ -94,7 +95,7 @@ export const AlertDialogTitle = <T extends ValidComponent = "h2">(
 	);
 };
 
-type alertDialogDescriptionProps<T extends ValidComponent = "p"> =
+export type alertDialogDescriptionProps<T extends ValidComponent = "p"> =
 	AlertDialogDescriptionProps<T> & {
 		class?: string;
 	};
@@ -114,7 +115,7 @@ export const AlertDialogDescription = <T extends ValidComponent = "p">(
 	);
 };
 
-type alertDialogCloseProps<T extends ValidComponent = "button"> =
+export type alertDialogCloseProps<T extends ValidComponent = "button"> =
 	AlertDialogCloseButtonProps<T> & {
 		class?: string;
 	};
