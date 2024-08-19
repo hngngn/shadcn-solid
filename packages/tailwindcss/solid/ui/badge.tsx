@@ -4,17 +4,20 @@ import { cva } from "class-variance-authority";
 import { type ComponentProps, splitProps } from "solid-js";
 
 export const badgeVariants = cva(
-	"inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-shadow focus-visible:outline-none focus-visible:ring-[1.5px] focus-visible:ring-ring",
+	"inline-flex text-xs font-medium px-3 gap-x-2 py-1 rounded-xl cursor-default ring-inset ring-1 select-none transition-[box-shadow,color,background-color] duration-300",
 	{
 		variants: {
 			variant: {
-				default:
-					"border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80",
-				secondary:
-					"border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
-				destructive:
-					"border-transparent bg-destructive text-destructive-foreground shadow hover:bg-destructive/80",
-				outline: "text-foreground",
+				default: [
+					"[--badge-ring:theme(colors.blue.400)] [--badge-bg:theme(colors.blue.100)] [--badge-text:theme(colors.blue.600)] hover:[--badge-bg:theme(colors.blue.200)]",
+					"dark:[--badge-ring:theme(colors.blue.800)] dark:[--badge-bg:theme(colors.blue.900/50%)] dark:[--badge-text:theme(colors.blue.100)] dark:hover:[--badge-bg:theme(colors.blue.900/80%)]",
+					"ring-[--badge-ring] bg-[--badge-bg] text-[--badge-text]",
+				],
+				destructive: [
+					"[--badge-ring:theme(colors.red.400)] [--badge-bg:theme(colors.red.100)] [--badge-text:theme(colors.red.600)] hover:[--badge-bg:theme(colors.red.200)]",
+					"dark:[--badge-ring:theme(colors.red.800)] dark:[--badge-bg:theme(colors.red.900/50%)] dark:[--badge-text:theme(colors.red.100)] dark:hover:[--badge-bg:theme(colors.red.900/80%)]",
+					"ring-[--badge-ring] bg-[--badge-bg] text-[--badge-text]",
+				],
 			},
 		},
 		defaultVariants: {
@@ -23,9 +26,10 @@ export const badgeVariants = cva(
 	},
 );
 
-export const Badge = (
-	props: ComponentProps<"div"> & VariantProps<typeof badgeVariants>,
-) => {
+export type badgeProps = ComponentProps<"div"> &
+	VariantProps<typeof badgeVariants>;
+
+export const Badge = (props: badgeProps) => {
 	const [local, rest] = splitProps(props, ["class", "variant"]);
 
 	return (
