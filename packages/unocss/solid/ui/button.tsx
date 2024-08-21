@@ -8,7 +8,7 @@ import type { ValidComponent } from "solid-js";
 import { splitProps } from "solid-js";
 
 export const buttonVariants = cva(
-	"relative isolate inline-flex justify-center items-center font-medium text-sm rounded-lg py-2 px-6 outline-none appearance-none transition-[background-color,box-shadow,color,outline-color] duration-300 disabled:cursor-not-allowed focus-visible:(outline outline-[--button-border])",
+	"relative isolate inline-flex justify-center items-center font-medium text-sm rounded-lg py-2 px-6 outline-none appearance-none transition-[background-color,box-shadow,color,outline-color] duration-300 disabled:cursor-not-allowed focus-visible:(outline outline-[--button-border]) border-none",
 	{
 		variants: {
 			variant: {
@@ -25,13 +25,14 @@ export const buttonVariants = cva(
 			},
 			appearance: {
 				bezel: [
-					"border-none text-[--button-text] bg-[--button-bg] shadow-sm disabled:shadow-none",
+					"text-[--button-text] bg-[--button-bg] shadow-sm disabled:shadow-none",
 					"before:(content-empty absolute inset-0 -z-10 rounded-lg shadow-[inset_0_-1px_0_0] shadow-black/20 disabled:shadow-none)",
 					"after:(content-empty absolute inset-0 -z-10 rounded-lg shadow-[inset_0_2px_0_0] shadow-white/25 disabled:shadow-none)",
 				],
 				flat: "text-[--button-text] bg-[--button-bg] shadow-sm disabled:shadow-none",
 				outline: [
-					"ring-inset ring-1 ring-border [--button-bg:theme(colors.transparent)] bg-[--button-bg]",
+					"[--button-ring:theme(colors.zinc.200)] dark:[--button-ring:theme(colors.zinc.800)]",
+					"ring-inset ring-1 ring-[--button-ring] [--button-bg:theme(colors.transparent)] bg-[--button-bg]",
 					"hover:[--button-bg:theme(colors.zinc.50)] active:[--button-bg:theme(colors.zinc.100)]",
 					"dark:(hover:[--button-bg:theme(colors.zinc.900/80%)] active:[--button-bg:theme(colors.zinc.900)] disabled:[--button-bg:theme(colors.transparent)])",
 					"disabled:([--button-bg:theme(colors.transparent)] text-zinc-500)",

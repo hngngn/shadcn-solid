@@ -8,7 +8,7 @@ import type { ValidComponent } from "solid-js";
 import { splitProps } from "solid-js";
 
 export const buttonVariants = cva(
-	"relative isolate inline-flex justify-center items-center font-medium text-sm rounded-lg py-2 px-6 outline-none appearance-none transition-[background-color,box-shadow,color,outline-color] duration-300 disabled:cursor-not-allowed focus-visible:outline focus-visible:outline-[--button-outline]",
+	"relative isolate inline-flex justify-center items-center font-medium text-sm rounded-lg py-2 px-6 outline-none appearance-none transition-[background-color,box-shadow,color,outline-color] duration-300 disabled:cursor-not-allowed focus-visible:outline focus-visible:outline-[--button-outline] border-none",
 	{
 		variants: {
 			variant: {
@@ -25,13 +25,14 @@ export const buttonVariants = cva(
 			},
 			appearance: {
 				bezel: [
-					"border-none text-[--button-text] bg-[--button-bg] shadow-sm disabled:shadow-none",
+					"text-[--button-text] bg-[--button-bg] shadow-sm disabled:shadow-none",
 					"before:absolute before:inset-0 before:-z-10 before:rounded-lg before:shadow-[inset_0_-1px_0_0_theme(colors.black/25%)] before:disabled:shadow-none",
 					"after:absolute after:inset-0 after:-z-10 after:rounded-lg after:shadow-[inset_0_2px_0_0_theme(colors.white/20%)] after:disabled:shadow-none",
 				],
 				flat: "text-[--button-text] bg-[--button-bg] shadow-sm disabled:shadow-none",
 				outline: [
-					"ring-inset ring-1 ring-border [--button-bg:theme(colors.transparent)] bg-[--button-bg]",
+					"[--button-ring:theme(colors.zinc.200)] dark:[--button-ring:theme(colors.zinc.800)]",
+					"ring-inset ring-1 ring-[--button-ring] [--button-bg:theme(colors.transparent)] bg-[--button-bg]",
 					"hover:[--button-bg:theme(colors.zinc.50)] active:[--button-bg:theme(colors.zinc.100)]",
 					"dark:hover:[--button-bg:theme(colors.zinc.900/80%)] dark:active:[--button-bg:theme(colors.zinc.900)] dark:disabled:[--button-bg:theme(colors.transparent)]",
 					"disabled:[--button-bg:theme(colors.transparent)] disabled:text-zinc-500",
