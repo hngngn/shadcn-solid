@@ -9,7 +9,7 @@ export const Collapsible = CollapsiblePrimitive;
 
 export const CollapsibleTrigger = CollapsiblePrimitive.Trigger;
 
-type collapsibleContentProps<T extends ValidComponent = "div"> =
+export type collapsibleContentProps<T extends ValidComponent = "div"> =
 	CollapsibleContentProps<T> & {
 		class?: string;
 	};
@@ -22,7 +22,7 @@ export const CollapsibleContent = <T extends ValidComponent = "div">(
 	return (
 		<CollapsiblePrimitive.Content
 			class={cn(
-				"animate-collapsible-up data-[expanded]:animate-collapsible-down",
+				"data-[closed]:animate-out data-[closed]:fade-out data-[closed]:slide-out-to-top-1 data-[closed]:duration-300 data-[closed]:ease-out data-[expanded]:animate-in data-[expanded]:fade-in-10 data-[expanded]:slide-in-from-top-2 data-[expanded]:duration-300 data-[expanded]:ease-out",
 				local.class,
 			)}
 			{...rest}
