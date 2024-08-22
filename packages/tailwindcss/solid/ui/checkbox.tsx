@@ -8,6 +8,7 @@ import type {
 } from "@kobalte/core/checkbox";
 import { Checkbox as CheckboxPrimitive } from "@kobalte/core/checkbox";
 import type { PolymorphicProps } from "@kobalte/core/polymorphic";
+import { cva } from "class-variance-authority";
 import type { JSXElement, ValidComponent, VoidProps } from "solid-js";
 import { Match, Switch, splitProps } from "solid-js";
 
@@ -38,7 +39,10 @@ export const CheckboxLabel = <T extends ValidComponent = "label">(
 
 	return (
 		<CheckboxPrimitive.Label
-			class={cn("text-sm font-medium select-none", local.class)}
+			class={cn(
+				"text-sm font-medium select-none cursor-pointer data-[disabled]:cursor-not-allowed",
+				local.class,
+			)}
 			{...rest}
 		/>
 	);
@@ -70,7 +74,7 @@ export type checkboxErrorMessageProps<T extends ValidComponent = "div"> =
 	};
 
 export const CheckboxErrorMessage = <T extends ValidComponent = "div">(
-	props: PolymorphicProps<T, CheckboxErrorMessageProps<T>>,
+	props: PolymorphicProps<T, checkboxErrorMessageProps<T>>,
 ) => {
 	const [local, rest] = splitProps(props as checkboxErrorMessageProps, [
 		"class",
@@ -92,12 +96,76 @@ export type checkboxControlProps<T extends ValidComponent = "div"> = VoidProps<
 	}
 >;
 
+export const checkboxContentVariant = cva(
+	"size-4 shrink-0 rounded-sm transition-[box-shadow,border-color,background-color,color,opacity] duration-300 border cursor-pointer data-[disabled]:opacity-50 data-[disabled]:text-transparent data-[disabled]:cursor-not-allowed",
+	{
+		variants: {
+			valid: {
+				true: [
+					// main
+					"bg-zinc-100 border-zinc-200 text-white",
+					// main - dark
+					"dark:bg-zinc-900 dark:border-zinc-800",
+					// hover
+					"[&:is(:not([data-disabled]))]:hover:bg-zinc-200 [&:is(:not([data-disabled]))]:hover:border-zinc-300 [&:is(:not([data-disabled]))]:peer-hover:bg-zinc-200 [&:is(:not([data-disabled]))]:peer-hover:border-zinc-300",
+					// hover - dark
+					"dark:[&:is(:not([data-disabled]))]:hover:bg-zinc-800 dark:[&:is(:not([data-disabled]))]:hover:border-zinc-700 dark:[&:is(:not([data-disabled]))]:peer-hover:bg-zinc-800 dark:[&:is(:not([data-disabled]))]:peer-hover:border-zinc-700",
+					// checked
+					"[&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:bg-royal_blue-500 [&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:border-royal_blue-500 [&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:hover:bg-royal_blue-600 [&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:hover:border-royal_blue-600 [&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:peer-hover:bg-royal_blue-600 [&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:peer-hover:border-royal_blue-600",
+					// checked - dark
+					"dark:[&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:bg-royal_blue-500 dark:[&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:border-royal_blue-500 dark:[&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:hover:bg-royal_blue-600 dark:[&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:hover:border-royal_blue-600 dark:[&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:peer-hover:bg-royal_blue-600 dark:[&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:peer-hover:border-royal_blue-600",
+				],
+			},
+			invalid: {
+				true: [
+					// main
+					"data-[invalid]:bg-red-100 data-[invalid]:border-red-200",
+					// main - dark
+					"dark:data-[invalid]:bg-red-950 dark:data-[invalid]:border-red-800",
+					// hover
+					"[&:is(:not([data-disabled]))]:data-[invalid]:hover:bg-red-200 [&:is(:not([data-disabled]))]:data-[invalid]:hover:border-red-300 [&:is(:not([data-disabled]))]:data-[invalid]:peer-hover:bg-red-200 [&:is(:not([data-disabled]))]:data-[invalid]:peer-hover:border-red-300",
+					// hover - dark
+					"dark:[&:is(:not([data-disabled]))]:data-[invalid]:hover:bg-red-950 dark:[&:is(:not([data-disabled]))]:data-[invalid]:hover:border-red-700 dark:[&:is(:not([data-disabled]))]:data-[invalid]:peer-hover:bg-red-950 dark:[&:is(:not([data-disabled]))]:data-[invalid]:peer-hover:border-red-700",
+					// checked
+					"[&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:bg-red-500 [&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:border-red-500 [&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:hover:bg-red-600 [&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:hover:border-red-600 [&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:peer-hover:bg-red-600 [&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:peer-hover:border-red-600",
+					// checked - dark
+					"dark:[&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:bg-red-500 dark:[&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:border-red-500 dark:[&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:hover:bg-red-600 dark:[&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:hover:border-red-600 dark:[&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:peer-hover:bg-red-600 dark:[&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:peer-hover:border-red-600",
+				],
+			},
+			focus: {
+				true: [
+					// main
+					"peer-focus-visible:outline-none peer-focus-visible:ring-4 peer-focus-visible:ring-royal_blue-50 peer-focus-visible:border-royal_blue-500",
+					// dark
+					"dark:peer-focus-visible:ring-royal_blue-500/40",
+				],
+			},
+		},
+		compoundVariants: [
+			{
+				invalid: true,
+				focus: true,
+				class: [
+					// main
+					"data-[invalid]:peer-focus-visible:ring-red-200 data-[invalid]:peer-focus-visible:border-red-500",
+					// dark
+					"dark:data-[invalid]:peer-focus-visible:ring-red-500/40",
+				],
+			},
+		],
+		defaultVariants: {
+			focus: true,
+			invalid: true,
+			valid: true,
+		},
+	},
+);
+
 export const CheckboxControl = <T extends ValidComponent = "div">(
 	props: PolymorphicProps<T, checkboxControlProps<T>>,
 ) => {
 	const [local, rest] = splitProps(props as checkboxControlProps, [
 		"class",
-		"children",
 		"icon",
 		"indeterminate",
 	]);
@@ -106,21 +174,12 @@ export const CheckboxControl = <T extends ValidComponent = "div">(
 		<div class="flex items-start mt-[0.15rem]">
 			<CheckboxPrimitive.Input class="peer" />
 			<CheckboxPrimitive.Control
-				class={cn(
-					"[--checkbox-control-border:theme(colors.zinc.300)] [--checkbox-control-bg:theme(colors.zinc.50)] [--checkbox-control-text:theme(colors.white)]",
-					"peer-focus-visible:outline-none peer-focus-visible:ring-4 peer-focus-visible:ring-blue-200 peer-focus-visible:[--checkbox-control-border:theme(colors.blue.500)]",
-					"peer-hover:[--checkbox-control-bg:theme(colors.zinc.200)] hover:[--checkbox-control-bg:theme(colors.zinc.200)]",
-					"has-[[data-checked],[data-indeterminate]]:[--checkbox-control-bg:theme(colors.blue.500)] has-[[data-checked],[data-indeterminate]]:peer-hover:[--checkbox-control-bg:theme(colors.blue.500)] has-[[data-checked],[data-indeterminate]]:hover:[--checkbox-control-bg:theme(colors.blue.500)] has-[[data-checked],[data-indeterminate]]:border-[--checkbox-control-bg]",
-					"data-[invalid]:[--checkbox-control-bg:theme(colors.red.100)] data-[invalid]:[--checkbox-control-border:theme(colors.red.400)] data-[invalid]:peer-hover:[--checkbox-control-bg:theme(colors.red.300)] data-[invalid]:hover:[--checkbox-control-bg:theme(colors.red.300)] data-[invalid]:peer-focus-visible:ring-red-200 data-[invalid]:peer-focus-visible:[--checkbox-control-border:theme(colors.red.500)]",
-					"has-[[data-checked][data-invalid]]:[--checkbox-control-bg:theme(colors.red.500)] has-[[data-checked][data-invalid]]:peer-hover:[--checkbox-control-bg:theme(colors.red.500)] has-[[data-checked][data-invalid]]:hover:[--checkbox-control-bg:theme(colors.red.500)]",
-					"size-4 shrink-0 rounded-sm transition-[box-shadow,border-color,background-color,color] duration-300 border border-[--checkbox-control-border] bg-[--checkbox-control-bg] text-[--checkbox-control-text]",
-					local.class,
-				)}
+				class={cn(checkboxContentVariant(), local.class)}
 				{...rest}
 			>
 				<CheckboxPrimitive.Indicator
 					class="flex items-center justify-center size-full [&>svg]:animate-in [&>svg]:zoom-in [&>svg]:fade-in-0 [&>svg]:duration-300"
-					data-checked
+					forceMount={local.indeterminate}
 				>
 					<Switch>
 						<Match when={!local.icon && !local.indeterminate}>

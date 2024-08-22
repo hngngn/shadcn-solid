@@ -26,6 +26,7 @@ export const Default: Story = {
 		validationState: "valid",
 		icon: 1,
 		indeterminate: false,
+		disabled: false,
 	},
 };
 
