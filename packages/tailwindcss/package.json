@@ -5,7 +5,10 @@
 		"./default/*": "./default/ui/*.tsx",
 		"./solid/*": "./solid/ui/*.tsx"
 	},
-	"files": ["default", "solid"],
+	"files": [
+		"default",
+		"solid"
+	],
 	"private": true,
 	"type": "module",
 	"scripts": {
@@ -13,12 +16,12 @@
 		"sb": "sb dev -p 6006"
 	},
 	"devDependencies": {
-		"@ark-ui/solid": "^3.6.2",
+		"@ark-ui/solid": "^3.9.0",
 		"@corvu/drawer": "^0.2.2",
 		"@corvu/otp-field": "^0.1.2",
 		"@corvu/resizable": "^0.2.3",
 		"@fontsource-variable/inter": "^5.0.20",
-		"@kobalte/core": "^0.13.4",
+		"@kobalte/core": "^0.13.6",
 		"@storybook/addon-essentials": "^8.2.9",
 		"@storybook/addon-themes": "^8.2.9",
 		"@storybook/builder-vite": "^8.2.9",
@@ -28,20 +31,20 @@
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.1",
 		"cmdk-solid": "^1.1.0",
-		"embla-carousel-autoplay": "8.1.8",
-		"embla-carousel-solid": "8.1.8",
+		"embla-carousel-autoplay": "8.2.0",
+		"embla-carousel-solid": "8.2.0",
 		"postcss": "^8.4.41",
-		"solid-js": "^1.8.19",
+		"solid-js": "^1.8.22",
 		"solid-sonner": "^0.2.8",
 		"storybook": "^8.2.9",
 		"storybook-solidjs": "1.0.0-beta.2",
 		"storybook-solidjs-vite": "1.0.0-beta.2",
-		"tailwind-merge": "^2.4.0",
-		"tailwindcss": "^3.4.8",
+		"tailwind-merge": "^2.5.2",
+		"tailwindcss": "^3.4.10",
 		"tailwindcss-animate": "^1.0.7",
-		"type-fest": "^4.24.0",
+		"type-fest": "^4.26.0",
 		"typescript": "^5.5.4",
-		"vite": "^5.4.0",
+		"vite": "^5.4.2",
 		"vite-plugin-solid": "^2.10.2"
 	}
 }
