@@ -111,9 +111,9 @@ export const checkboxContentVariant = cva(
 					// hover - dark
 					"dark:is-[:not([data-disabled])]:(hover:(bg-zinc-800 border-zinc-700) peer-hover:(bg-zinc-800 border-zinc-700))",
 					// checked
-					"[&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:(bg-royal_blue-500 border-royal_blue-500 hover:(bg-royal_blue-600 border-royal_blue-600) peer-hover:(bg-royal_blue-600 border-royal_blue-600))",
+					"[&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:(bg-blue-600 border-blue-600 hover:(bg-blue-700 border-blue-700) peer-hover:(bg-blue-700 border-blue-700))",
 					// checked - dark
-					"dark:[&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:(bg-royal_blue-500 border-royal_blue-500 hover:(bg-royal_blue-600 border-royal_blue-600) peer-hover:(bg-royal_blue-600 border-royal_blue-600))",
+					"dark:[&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:(bg-blue-600 border-blue-600 hover:(bg-blue-700 border-blue-700) peer-hover:(bg-blue-700 border-blue-700))",
 				],
 			},
 			invalid: {
@@ -129,15 +129,15 @@ export const checkboxContentVariant = cva(
 					// checked
 					"[&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:(bg-red-500 border-red-500 hover:(bg-red-600 border-red-600) peer-hover:(bg-red-600 border-red-600))",
 					// checked - dark
-					"dark:[&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:(bg-red-500 border-red-500 hover:(bg-red-600 border-red-600) peer-hover:(bg-red-600 border-red-600))",
+					"dark:[&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:(bg-red-600 border-red-600 hover:(bg-red-700 border-red-700) peer-hover:(bg-red-700 border-red-700))",
 				],
 			},
 			focus: {
 				true: [
 					// main
-					"peer-focus-visible:(outline-none ring-4 ring-royal_blue-50 border-royal_blue-500)",
+					"peer-focus-visible:(outline-none ring-4 ring-blue-200 border-blue-500)",
 					// dark
-					"dark:peer-focus-visible:ring-royal_blue-500/40",
+					"dark:peer-focus-visible:ring-blue-500/40",
 				],
 			},
 		},

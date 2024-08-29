@@ -8,40 +8,40 @@ import type { ValidComponent } from "solid-js";
 import { splitProps } from "solid-js";
 
 export const buttonVariants = cva(
-	"relative isolate inline-flex justify-center items-center font-medium text-sm rounded-lg py-2 px-6 outline-none appearance-none transition-[background-color,box-shadow,color,outline-color] duration-300 disabled:cursor-not-allowed focus-visible:(outline outline-[--button-border]) border-none",
+	"relative isolate inline-flex justify-center items-center font-medium text-sm rounded-lg py-2 px-6 outline-none appearance-none border-none transition-[background-color,box-shadow,color,outline-color] duration-300 disabled:cursor-not-allowed",
 	{
 		variants: {
 			variant: {
 				default: [
-					"[--button-text:theme(colors.blue.50)] [--button-bg:theme(colors.blue.500)] hover:[--button-bg:theme(colors.blue.600)] active:[--button-bg:theme(colors.blue.700)] [--button-border:theme(colors.blue.500)]",
-					"disabled:([--button-bg:theme(colors.blue.100)] [--button-text:theme(colors.blue.400)])",
-					"dark:disabled:([--button-bg:theme(colors.blue.950)] [--button-text:theme(colors.blue.700)])",
+					"text-white bg-blue-500 hover:bg-blue-600 active:bg-blue-700 focus-visible:outline-blue-500",
+					"disabled:(bg-blue-100 text-blue-400)",
+					"dark:disabled:(bg-blue-950 text-blue-700)",
 				],
 				destructive: [
-					"[--button-text:theme(colors.red.50)] [--button-bg:theme(colors.red.500)] hover:[--button-bg:theme(colors.red.600)] active:[--button-bg:theme(colors.red.700)] [--button-border:theme(colors.red.500)]",
-					"disabled:([--button-bg:theme(colors.red.100)] [--button-text:theme(colors.red.400)])",
-					"dark:disabled:([--button-bg:theme(colors.red.950)] [--button-text:theme(colors.red.700)])",
+					"text-white bg-red-500 hover:bg-red-600 active:bg-red-700 focus-visible:outline-red-500",
+					"disabled:(bg-red-100 text-red-400)",
+					"dark:disabled:(bg-red-950 text-red-700)",
 				],
 			},
 			appearance: {
 				bezel: [
-					"text-[--button-text] bg-[--button-bg] shadow-sm disabled:shadow-none",
-					"before:(content-empty absolute inset-0 -z-10 rounded-lg shadow-[inset_0_-1px_0_0] shadow-black/20 disabled:shadow-none)",
-					"after:(content-empty absolute inset-0 -z-10 rounded-lg shadow-[inset_0_2px_0_0] shadow-white/25 disabled:shadow-none)",
+					"shadow-sm disabled:shadow-none",
+					"[&:before,&:after]:(content-empty absolute inset-0 -z-10 rounded-lg disabled:shadow-none)",
+					"before:(shadow-[inset_0_-1px_0_0] shadow-black/20)",
+					"after:(shadow-[inset_0_2px_0_0] shadow-white/25)",
 				],
-				flat: "text-[--button-text] bg-[--button-bg] shadow-sm disabled:shadow-none",
+				flat: "shadow-sm disabled:shadow-none",
 				outline: [
-					"[--button-ring:theme(colors.zinc.200)] dark:[--button-ring:theme(colors.zinc.800)]",
-					"ring-inset ring-1 ring-[--button-ring] [--button-bg:theme(colors.transparent)] bg-[--button-bg]",
-					"hover:[--button-bg:theme(colors.zinc.50)] active:[--button-bg:theme(colors.zinc.100)]",
-					"dark:(hover:[--button-bg:theme(colors.zinc.900/80%)] active:[--button-bg:theme(colors.zinc.900)] disabled:[--button-bg:theme(colors.transparent)])",
-					"disabled:([--button-bg:theme(colors.transparent)] text-zinc-500)",
+					"text-zinc-950 ring-inset ring-1 ring-zinc-200 bg-transparent",
+					"hover:bg-zinc-50 active:bg-zinc-100",
+					"dark:(ring-zinc-800 text-white hover:bg-zinc-900/80 active:bg-zinc-900)",
+					"disabled:(bg-transparent text-zinc-500 dark:(bg-transparent text-zinc-500))",
 				],
 				plain: [
-					"[--button-bg:theme(colors.transparent)] bg-[--button-bg]",
-					"hover:[--button-bg:theme(colors.zinc.50)] active:[--button-bg:theme(colors.zinc.100)]",
-					"dark:(hover:[--button-bg:theme(colors.zinc.900/80%)] active:[--button-bg:theme(colors.zinc.900)] disabled:[--button-bg:theme(colors.transparent)])",
-					"disabled:([--button-bg:theme(colors.transparent)] text-zinc-500)",
+					"text-zinc-950 bg-transparent",
+					"hover:bg-zinc-50 active:bg-zinc-100",
+					"dark:(ring-zinc-800 text-white hover:bg-zinc-900/80 active:bg-zinc-900)",
+					"disabled:(bg-transparent text-zinc-500 dark:(bg-transparent text-zinc-500))",
 				],
 			},
 		},

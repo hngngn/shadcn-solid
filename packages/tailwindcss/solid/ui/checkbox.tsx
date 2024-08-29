@@ -111,9 +111,9 @@ export const checkboxContentVariant = cva(
 					// hover - dark
 					"dark:[&:is(:not([data-disabled]))]:hover:bg-zinc-800 dark:[&:is(:not([data-disabled]))]:hover:border-zinc-700 dark:[&:is(:not([data-disabled]))]:peer-hover:bg-zinc-800 dark:[&:is(:not([data-disabled]))]:peer-hover:border-zinc-700",
 					// checked
-					"[&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:bg-royal_blue-500 [&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:border-royal_blue-500 [&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:hover:bg-royal_blue-600 [&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:hover:border-royal_blue-600 [&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:peer-hover:bg-royal_blue-600 [&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:peer-hover:border-royal_blue-600",
+					"[&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:bg-blue-600 [&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:border-blue-600 [&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:hover:bg-blue-700 [&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:hover:border-blue-700 [&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:peer-hover:bg-blue-700 [&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:peer-hover:border-blue-700",
 					// checked - dark
-					"dark:[&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:bg-royal_blue-500 dark:[&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:border-royal_blue-500 dark:[&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:hover:bg-royal_blue-600 dark:[&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:hover:border-royal_blue-600 dark:[&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:peer-hover:bg-royal_blue-600 dark:[&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:peer-hover:border-royal_blue-600",
+					"dark:[&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:bg-blue-600 dark:[&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:border-blue-600 dark:[&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:hover:bg-blue-700 dark:[&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:hover:border-blue-700 dark:[&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:peer-hover:bg-blue-700 dark:[&:is([data-checked],[data-indeterminate]):not([data-invalid],[data-disabled])]:peer-hover:border-blue-700",
 				],
 			},
 			invalid: {
@@ -129,15 +129,15 @@ export const checkboxContentVariant = cva(
 					// checked
 					"[&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:bg-red-500 [&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:border-red-500 [&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:hover:bg-red-600 [&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:hover:border-red-600 [&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:peer-hover:bg-red-600 [&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:peer-hover:border-red-600",
 					// checked - dark
-					"dark:[&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:bg-red-500 dark:[&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:border-red-500 dark:[&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:hover:bg-red-600 dark:[&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:hover:border-red-600 dark:[&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:peer-hover:bg-red-600 dark:[&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:peer-hover:border-red-600",
+					"dark:[&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:bg-red-600 dark:[&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:border-red-600 dark:[&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:hover:bg-red-700 dark:[&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:hover:border-red-700 dark:[&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:peer-hover:bg-red-700 dark:[&:is([data-invalid][data-checked],[data-invalid][data-indeterminate]):not([data-disabled])]:peer-hover:border-red-700",
 				],
 			},
 			focus: {
 				true: [
 					// main
-					"peer-focus-visible:outline-none peer-focus-visible:ring-4 peer-focus-visible:ring-royal_blue-50 peer-focus-visible:border-royal_blue-500",
+					"peer-focus-visible:outline-none peer-focus-visible:ring-4 peer-focus-visible:ring-blue-200 peer-focus-visible:border-blue-500",
 					// dark
-					"dark:peer-focus-visible:ring-royal_blue-500/40",
+					"dark:peer-focus-visible:ring-blue-500/40",
 				],
 			},
 		},
