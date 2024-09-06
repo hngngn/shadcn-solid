@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a15a5e37-dbb3-426c-a2b4-d68cdb9512a6" name="Changes" comment="docs: update `Checkbox` usage&#10;&#10;chore: update deps">
+    <list default="true" id="a15a5e37-dbb3-426c-a2b4-d68cdb9512a6" name="Changes" comment="docs: update path aliases for manual installation (#115)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/src/content/docs/installation/manual.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/src/content/docs/installation/manual.mdx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/src/pages/examples/_components/mail/ui.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/src/pages/examples/_components/mail/ui.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +33,9 @@
     &quot;accountId&quot;: &quot;1dd16128-0748-41c5-bad0-2146e8f2d062&quot;
   }
 }</component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 8
@@ -49,7 +52,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "pnpm",
-    "settings.editor.selected.configurable": "editor.preferences.inline.completion",
+    "settings.editor.selected.configurable": "actions.on.save",
     "ts.external.directory.path": "C:\\Users\\hngngn\\Desktop\\shadcn-solid\\packages\\cli\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -72,7 +75,7 @@
       <workItem from="1725513717323" duration="126000" />
       <workItem from="1725600438626" duration="1013000" />
       <workItem from="1725601469455" duration="326000" />
-      <workItem from="1725601806307" duration="346000" />
+      <workItem from="1725601806307" duration="1284000" />
     </task>
     <task id="LOCAL-00001" summary="docs: update `Checkbox` usage&#10;&#10;chore: update deps">
       <option name="closed" value="true" />
@@ -82,7 +85,23 @@
       <option name="project" value="LOCAL" />
       <updated>1725601653031</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="docs: update path aliases for manual installation">
+      <option name="closed" value="true" />
+      <created>1725602205801</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1725602205801</updated>
+    </task>
+    <task id="LOCAL-00003" summary="docs: update path aliases for manual installation (#115)">
+      <option name="closed" value="true" />
+      <created>1725602238493</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1725602238493</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -90,6 +109,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="docs: update `Checkbox` usage&#10;&#10;chore: update deps" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs: update `Checkbox` usage&#10;&#10;chore: update deps" />
+    <MESSAGE value="docs: update path aliases for manual installation" />
+    <MESSAGE value="docs: update path aliases for manual installation (#115)" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs: update path aliases for manual installation (#115)" />
   </component>
 </project>

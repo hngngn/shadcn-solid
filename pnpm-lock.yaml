@@ -63,8 +63,8 @@ importers:
         specifier: workspace:*
         version: link:../packages/unocss
       '@solid-primitives/storage':
-        specifier: ^4.2.0
-        version: 4.2.0(solid-js@1.8.22)
+        specifier: ^3.8.0
+        version: 3.8.0(solid-js@1.8.22)
       '@tanstack/solid-table':
         specifier: ^8.20.5
         version: 8.20.5(solid-js@1.8.22)
@@ -1720,8 +1720,8 @@ packages:
     peerDependencies:
       solid-js: ^1.6.12
 
-  '@solid-primitives/storage@4.2.0':
-    resolution: {integrity: sha512-UoTtfa6CQ7B3SoEa8xwPt576bzkTJpevNYcfFfJbCArSh7ESXOAFKkYobLutNSiPI2NunpZDIfydMm+0jufyDw==}
+  '@solid-primitives/storage@3.8.0':
+    resolution: {integrity: sha512-FNzsl60/zrMA2blDIjh2i6k2fnKECn870UssaKg5y9+wrXTJlce8vv0CxC3Mw7uHZnnPnDQGNyuBqeJ5mRZkOA==}
     peerDependencies:
       '@tauri-apps/plugin-store': '*'
       solid-js: ^1.6.12
@@ -6387,7 +6387,7 @@ snapshots:
       '@solid-primitives/utils': 6.2.3(solid-js@1.8.22)
       solid-js: 1.8.22
 
-  '@solid-primitives/storage@4.2.0(solid-js@1.8.22)':
+  '@solid-primitives/storage@3.8.0(solid-js@1.8.22)':
     dependencies:
       '@solid-primitives/utils': 6.2.3(solid-js@1.8.22)
       solid-js: 1.8.22

@@ -19,7 +19,7 @@
 		"@kobalte/core": "^0.13.6",
 		"@repo/tailwindcss": "workspace:*",
 		"@repo/unocss": "workspace:*",
-		"@solid-primitives/storage": "^4.2.0",
+		"@solid-primitives/storage": "^3.8.0",
 		"@tanstack/solid-table": "^8.20.5",
 		"astro": "^4.15.3",
 		"class-variance-authority": "^0.7.0",
