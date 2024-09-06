@@ -670,7 +670,7 @@ const DataTableDemo = () => {
 						<p class="whitespace-nowrap text-sm font-medium">Rows per page</p>
 						<Select
 							value={table.getState().pagination.pageSize}
-							onChange={(value) => table.setPageSize(value)}
+							onChange={(value) => value && table.setPageSize(value)}
 							options={[10, 20, 30, 40, 50]}
 							itemComponent={(props) => (
 								<SelectItem item={props.item}>{props.item.rawValue}</SelectItem>
