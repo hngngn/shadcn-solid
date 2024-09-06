@@ -1,15 +1,15 @@
 {
-	"name": "shadcn-solid",
+	"name": "root",
 	"devDependencies": {
 		"@biomejs/biome": "^1.8.3",
 		"@changesets/changelog-github": "^0.5.0",
-		"@changesets/cli": "^2.27.7",
-		"@commitlint/cli": "^19.4.0",
-		"@commitlint/config-conventional": "^19.1.0",
-		"husky": "^9.1.4",
-		"lint-staged": "^15.2.8",
+		"@changesets/cli": "^2.27.8",
+		"@commitlint/cli": "^19.4.1",
+		"@commitlint/config-conventional": "^19.4.1",
+		"husky": "^9.1.5",
+		"lint-staged": "^15.2.10",
 		"prettier": "^3.3.3",
-		"turbo": "^2.0.12"
+		"turbo": "^2.1.1"
 	},
 	"private": true,
 	"scripts": {
