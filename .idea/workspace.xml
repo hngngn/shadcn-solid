@@ -4,19 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a15a5e37-dbb3-426c-a2b4-d68cdb9512a6" name="Changes" comment="" />
+    <list default="true" id="a15a5e37-dbb3-426c-a2b4-d68cdb9512a6" name="Changes" comment="docs: update `Checkbox` usage&#10;&#10;chore: update deps">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/src/content/docs/installation/manual.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/src/content/docs/installation/manual.mdx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 8
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;hngngn&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/hngngn/shadcn-solid.git&quot;,
+    &quot;accountId&quot;: &quot;1dd16128-0748-41c5-bad0-2146e8f2d062&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2lgSsgEwG7zNz8XHWAhkyRrlFoK" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -25,10 +45,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "pnpm",
-    "settings.editor.selected.configurable": "com.github.continuedev.continueintellijextension.services.ContinueExtensionConfigurable",
+    "settings.editor.selected.configurable": "editor.preferences.inline.completion",
     "ts.external.directory.path": "C:\\Users\\hngngn\\Desktop\\shadcn-solid\\packages\\cli\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -50,10 +71,25 @@
       <updated>1725513713996</updated>
       <workItem from="1725513717323" duration="126000" />
       <workItem from="1725600438626" duration="1013000" />
+      <workItem from="1725601469455" duration="326000" />
+      <workItem from="1725601806307" duration="346000" />
     </task>
+    <task id="LOCAL-00001" summary="docs: update `Checkbox` usage&#10;&#10;chore: update deps">
+      <option name="closed" value="true" />
+      <created>1725601653031</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1725601653031</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="docs: update `Checkbox` usage&#10;&#10;chore: update deps" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs: update `Checkbox` usage&#10;&#10;chore: update deps" />
   </component>
 </project>
