@@ -4,9 +4,105 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a15a5e37-dbb3-426c-a2b4-d68cdb9512a6" name="Changes" comment="docs: update path aliases for manual installation (#115)">
+    <list default="true" id="a15a5e37-dbb3-426c-a2b4-d68cdb9512a6" name="Changes" comment="fix(docs): resolve ts error">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/src/pages/examples/_components/mail/ui.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/src/pages/examples/_components/mail/ui.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/colors/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/colors/index.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/colors/tailwindcss/gray.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/colors/tailwindcss/gray.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/colors/tailwindcss/neutral.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/colors/tailwindcss/neutral.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/colors/tailwindcss/slate.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/colors/tailwindcss/slate.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/colors/tailwindcss/stone.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/colors/tailwindcss/stone.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/colors/tailwindcss/zinc.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/colors/tailwindcss/zinc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/colors/unocss/gray.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/colors/unocss/gray.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/colors/unocss/neutral.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/colors/unocss/neutral.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/colors/unocss/slate.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/colors/unocss/slate.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/colors/unocss/stone.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/colors/unocss/stone.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/colors/unocss/zinc.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/colors/unocss/zinc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/index.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/accordion.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/accordion.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/alert-dialog.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/alert-dialog.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/alert.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/alert.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/badge.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/badge.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/button.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/button.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/card.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/card.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/carousel.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/carousel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/checkbox.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/checkbox.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/collapsible.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/collapsible.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/combobox.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/combobox.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/command.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/command.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/context-menu.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/context-menu.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/date-picker.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/date-picker.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/dialog.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/dialog.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/drawer.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/drawer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/dropdown-menu.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/dropdown-menu.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/hover-card.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/hover-card.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/image.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/image.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/menubar.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/menubar.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/number-field.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/number-field.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/otp-field.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/otp-field.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/pagination.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/pagination.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/popover.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/popover.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/progress.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/progress.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/radio-group.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/radio-group.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/resizable.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/resizable.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/select.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/select.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/separator.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/separator.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/sheet.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/sheet.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/skeleton.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/skeleton.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/sonner.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/sonner.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/switch.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/switch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/table.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/table.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/tabs.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/tabs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/textarea.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/textarea.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/textfield.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/textfield.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/toast.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/toast.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/toggle-group.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/toggle-group.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/toggle.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/toggle.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/tooltip.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/tailwindcss/tooltip.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/accordion.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/accordion.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/alert-dialog.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/alert-dialog.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/alert.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/alert.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/badge.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/badge.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/button.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/button.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/card.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/card.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/carousel.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/carousel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/checkbox.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/checkbox.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/collapsible.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/collapsible.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/combobox.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/combobox.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/command.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/command.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/context-menu.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/context-menu.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/date-picker.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/date-picker.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/dialog.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/dialog.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/drawer.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/drawer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/dropdown-menu.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/dropdown-menu.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/hover-card.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/hover-card.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/image.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/image.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/menubar.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/menubar.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/number-field.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/number-field.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/otp-field.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/otp-field.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/pagination.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/pagination.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/popover.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/popover.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/progress.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/progress.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/radio-group.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/radio-group.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/resizable.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/resizable.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/select.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/select.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/separator.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/separator.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/sheet.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/sheet.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/skeleton.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/skeleton.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/sonner.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/sonner.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/switch.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/switch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/table.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/table.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/tabs.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/tabs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/textarea.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/textarea.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/textfield.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/textfield.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/toast.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/toast.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/toggle-group.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/toggle-group.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/toggle.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/toggle.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/tooltip.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/frameworks/unocss/tooltip.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/registry/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/registry/index.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/scripts/utils/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/scripts/utils/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/src/__registry__/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/src/__registry__/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/src/config/docs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/src/config/docs.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/unocss/dev/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/unocss/dev/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,11 +132,20 @@
   <component name="OptimizeOnSaveOptions">
     <option name="myRunOnSave" value="true" />
   </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/docs/package.json" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2lgSsgEwG7zNz8XHWAhkyRrlFoK" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -75,7 +180,10 @@
       <workItem from="1725513717323" duration="126000" />
       <workItem from="1725600438626" duration="1013000" />
       <workItem from="1725601469455" duration="326000" />
-      <workItem from="1725601806307" duration="1284000" />
+      <workItem from="1725601806307" duration="5152000" />
+      <workItem from="1725607147395" duration="4000" />
+      <workItem from="1725607179143" duration="4000" />
+      <workItem from="1725607531327" duration="302000" />
     </task>
     <task id="LOCAL-00001" summary="docs: update `Checkbox` usage&#10;&#10;chore: update deps">
       <option name="closed" value="true" />
@@ -101,7 +209,23 @@
       <option name="project" value="LOCAL" />
       <updated>1725602238493</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix(docs): revert `@solid-primitives/storage` version">
+      <option name="closed" value="true" />
+      <created>1725603417240</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1725603417240</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fix(docs): resolve ts error">
+      <option name="closed" value="true" />
+      <created>1725603805172</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1725603805172</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +235,8 @@
     <MESSAGE value="docs: update `Checkbox` usage&#10;&#10;chore: update deps" />
     <MESSAGE value="docs: update path aliases for manual installation" />
     <MESSAGE value="docs: update path aliases for manual installation (#115)" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs: update path aliases for manual installation (#115)" />
+    <MESSAGE value="fix(docs): revert `@solid-primitives/storage` version" />
+    <MESSAGE value="fix(docs): resolve ts error" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(docs): resolve ts error" />
   </component>
 </project>

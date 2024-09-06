@@ -116,6 +116,12 @@ const ui = [
 		files: ["ui/menubar.tsx"],
 	},
 	{
+		name: "navigation-menu",
+		type: "components:ui",
+		dependencies: ["@kobalte/core"],
+		files: ["ui/navigation-menu.tsx"],
+	},
+	{
 		name: "number-field",
 		type: "components:ui",
 		dependencies: ["@kobalte/core"],
@@ -464,6 +470,11 @@ const example = [
 		name: "menubar-demo",
 		type: "components:example",
 		files: ["examples/menubar-demo.tsx"],
+	},
+	{
+		name: "navigation-menu-demo",
+		type: "components:example",
+		files: ["examples/navigation-menu-demo.tsx"],
 	},
 	{
 		name: "number-field-demo",

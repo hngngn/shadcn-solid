@@ -268,6 +268,12 @@ export const Index = {
       registryDependencies: undefined,
       component: lazy(() => import("../examples/menubar-demo"))
     },
+    "navigation-menu-demo": {
+      name: "navigation-menu-demo",
+      type: "components:example",
+      registryDependencies: undefined,
+      component: lazy(() => import("../examples/navigation-menu-demo"))
+    },
     "number-field-demo": {
       name: "number-field-demo",
       type: "components:example",

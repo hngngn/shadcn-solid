@@ -136,7 +136,6 @@ export const docsConfig: TDocsConfig = {
 					title: "Combobox",
 					href: "/docs/components/combobox",
 					items: [],
-					label: "Updated",
 				},
 				{
 					title: "Command",
@@ -152,13 +151,11 @@ export const docsConfig: TDocsConfig = {
 					title: "Data Table",
 					href: "/docs/components/data-table",
 					items: [],
-					label: "Updated",
 				},
 				{
 					title: "Date Picker",
 					href: "/docs/components/date-picker",
 					items: [],
-					label: "Updated",
 				},
 				{
 					title: "Dialog",
@@ -189,26 +186,22 @@ export const docsConfig: TDocsConfig = {
 					title: "Menubar",
 					href: "/docs/components/menubar",
 					items: [],
+				},
+				{
+					title: "Navigation Menu",
+					href: "/docs/components/navigation-menu",
+					items: [],
 					label: "New",
 				},
 				{
 					title: "Number Field",
 					href: "/docs/components/number-field",
 					items: [],
-					label: "New",
-				},
-				{
-					title: "Navigation Menu",
-					href: "/docs/components/navigation-menu",
-					items: [],
-					label: "Soon",
-					disabled: true,
 				},
 				{
 					title: "OTP Field",
 					href: "/docs/components/otp-field",
 					items: [],
-					label: "New",
 				},
 				{
 					title: "Pagination",
@@ -274,7 +267,6 @@ export const docsConfig: TDocsConfig = {
 					title: "Tabs",
 					href: "/docs/components/tabs",
 					items: [],
-					label: "Updated",
 				},
 				{
 					title: "Text Field",
