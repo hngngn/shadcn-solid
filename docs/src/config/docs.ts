@@ -156,6 +156,7 @@ export const docsConfig: TDocsConfig = {
 					title: "Date Picker",
 					href: "/docs/components/date-picker",
 					items: [],
+					label: "Updated",
 				},
 				{
 					title: "Dialog",

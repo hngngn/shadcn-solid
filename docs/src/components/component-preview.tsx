@@ -37,24 +37,22 @@ const ComponentPreview: ParentComponent<Props> = (props) => {
 				</div>
 				<TabsContent
 					value="preview"
-					class="relative rounded-md border has-[table]:border-none"
+					class="relative rounded-md preview flex min-h-[350px] w-full justify-center p-10 items-center border has-[table:not([data-scope=date-picker])]:border-none has-[table:not([data-scope=date-picker])]:p-0"
 				>
-					<div class="preview flex min-h-[350px] w-full justify-center p-10 items-center has-[table]:p-0">
-						<Show
-							when={Component()}
-							fallback={
-								<p class="text-sm text-muted-foreground">
-									Component{" "}
-									<code class="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm">
-										{props.name}
-									</code>{" "}
-									not found in registry.
-								</p>
-							}
-						>
-							{Component()}
-						</Show>
-					</div>
+					<Show
+						when={Component()}
+						fallback={
+							<p class="text-sm text-muted-foreground">
+								Component{" "}
+								<code class="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm">
+									{props.name}
+								</code>{" "}
+								not found in registry.
+							</p>
+						}
+					>
+						{Component()}
+					</Show>
 				</TabsContent>
 				<TabsContent value="code">
 					<div class="flex flex-col space-y-4">

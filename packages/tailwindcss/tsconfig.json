@@ -1,20 +1,18 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "jsx": "preserve",
-    "jsxImportSource": "solid-js",
-    "allowJs": true,
-    "strict": true,
-    "noEmit": true,
-    "isolatedModules": true,
-    "paths": {
-      "@/libs/*": [
-        "./libs/*"
-      ]
-    }
-  }
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"jsx": "preserve",
+		"jsxImportSource": "solid-js",
+		"allowJs": true,
+		"strict": true,
+		"noEmit": true,
+		"isolatedModules": true,
+		"paths": {
+			"@/libs/*": ["./libs/*"]
+		}
+	}
 }

@@ -1,5 +1,6 @@
 import {
 	DatePicker,
+	DatePickerContent,
 	DatePickerContext,
 	DatePickerRangeText,
 	DatePickerTable,
@@ -17,11 +18,11 @@ import { For } from "solid-js";
 
 const CalendarDemo = () => {
 	return (
-		<DatePicker open closeOnSelect={false}>
-			<div class="rounded-md border bg-popover p-3 text-popover-foreground">
+		<DatePicker open>
+			<DatePickerContent>
 				<DatePickerView view="day">
 					<DatePickerContext>
-						{(api) => (
+						{(context) => (
 							<>
 								<DatePickerViewControl>
 									<DatePickerViewTrigger>
@@ -31,7 +32,7 @@ const CalendarDemo = () => {
 								<DatePickerTable>
 									<DatePickerTableHead>
 										<DatePickerTableRow>
-											<For each={api().weekDays}>
+											<For each={context().weekDays}>
 												{(weekDay) => (
 													<DatePickerTableHeader>
 														{weekDay.short}
@@ -41,7 +42,7 @@ const CalendarDemo = () => {
 										</DatePickerTableRow>
 									</DatePickerTableHead>
 									<DatePickerTableBody>
-										<For each={api().weeks}>
+										<For each={context().weeks}>
 											{(week) => (
 												<DatePickerTableRow>
 													<For each={week}>
@@ -62,12 +63,9 @@ const CalendarDemo = () => {
 						)}
 					</DatePickerContext>
 				</DatePickerView>
-				<DatePickerView
-					view="month"
-					class="w-[calc(var(--preference-width)-(0.75rem*2))]"
-				>
+				<DatePickerView view="month">
 					<DatePickerContext>
-						{(api) => (
+						{(context) => (
 							<>
 								<DatePickerViewControl>
 									<DatePickerViewTrigger>
@@ -77,7 +75,7 @@ const CalendarDemo = () => {
 								<DatePickerTable>
 									<DatePickerTableBody>
 										<For
-											each={api().getMonthsGrid({
+											each={context().getMonthsGrid({
 												columns: 4,
 												format: "short",
 											})}
@@ -102,12 +100,9 @@ const CalendarDemo = () => {
 						)}
 					</DatePickerContext>
 				</DatePickerView>
-				<DatePickerView
-					view="year"
-					class="w-[calc(var(--preference-width)-(0.75rem*2))]"
-				>
+				<DatePickerView view="year">
 					<DatePickerContext>
-						{(api) => (
+						{(context) => (
 							<>
 								<DatePickerViewControl>
 									<DatePickerViewTrigger>
@@ -117,7 +112,7 @@ const CalendarDemo = () => {
 								<DatePickerTable>
 									<DatePickerTableBody>
 										<For
-											each={api().getYearsGrid({
+											each={context().getYearsGrid({
 												columns: 4,
 											})}
 										>
@@ -141,7 +136,7 @@ const CalendarDemo = () => {
 						)}
 					</DatePickerContext>
 				</DatePickerView>
-			</div>
+			</DatePickerContent>
 		</DatePicker>
 	);
 };

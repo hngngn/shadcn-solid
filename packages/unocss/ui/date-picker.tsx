@@ -1,6 +1,7 @@
 import { cn } from "@/libs/cn";
 import type {
 	DatePickerContentProps,
+	DatePickerControlProps,
 	DatePickerInputProps,
 	DatePickerRangeTextProps,
 	DatePickerRootProps,
@@ -9,11 +10,12 @@ import type {
 	DatePickerTableHeaderProps,
 	DatePickerTableProps,
 	DatePickerTableRowProps,
+	DatePickerTriggerProps,
 	DatePickerViewControlProps,
 	DatePickerViewProps,
 	DatePickerViewTriggerProps,
-} from "@ark-ui/solid";
-import { DatePicker as DatePickerPrimitive } from "@ark-ui/solid";
+} from "@ark-ui/solid/date-picker";
+import { DatePicker as DatePickerPrimitive } from "@ark-ui/solid/date-picker";
 import type { VoidProps } from "solid-js";
 import { splitProps } from "solid-js";
 import { buttonVariants } from "./button";
@@ -26,6 +28,7 @@ export const DatePickerYearSelect = DatePickerPrimitive.YearSelect;
 export const DatePickerMonthSelect = DatePickerPrimitive.MonthSelect;
 export const DatePickerContext = DatePickerPrimitive.Context;
 export const DatePickerRootProvider = DatePickerPrimitive.RootProvider;
+export const DatePickerPositioner = DatePickerPrimitive.Positioner;
 
 export const DatePicker = (props: DatePickerRootProps) => {
 	return (
@@ -52,7 +55,13 @@ export const DatePickerView = (props: DatePickerViewProps) => {
 	const [local, rest] = splitProps(props, ["class"]);
 
 	return (
-		<DatePickerPrimitive.View class={cn("space-y-4", local.class)} {...rest} />
+		<DatePickerPrimitive.View
+			class={cn(
+				"space-y-4 min-w-[calc(var(--reference-width)-(0.75rem*2))]",
+				local.class,
+			)}
+			{...rest}
+		/>
 	);
 };
 
@@ -221,17 +230,29 @@ export const DatePickerContent = (props: DatePickerContentProps) => {
 	const [local, rest] = splitProps(props, ["class", "children"]);
 
 	return (
-		<DatePickerPrimitive.Positioner>
-			<DatePickerPrimitive.Content
-				class={cn(
-					"rounded-md border bg-popover p-3 text-popover-foreground shadow-md outline-none data-[state=open]:(animate-in fade-in-0 zoom-in-95) data-[state=closed]:(animate-out fade-out-0 zoom-out-95) z-50",
-					local.class,
-				)}
-				{...rest}
-			>
-				{local.children}
-			</DatePickerPrimitive.Content>
-		</DatePickerPrimitive.Positioner>
+		<DatePickerPrimitive.Content
+			class={cn(
+				"rounded-md border bg-popover p-3 text-popover-foreground shadow-md outline-none data-[state=open]:(animate-in fade-in-0 zoom-in-95) data-[state=closed]:(animate-out fade-out-0 zoom-out-95) z-50",
+				local.class,
+			)}
+			{...rest}
+		>
+			{local.children}
+		</DatePickerPrimitive.Content>
+	);
+};
+
+export const DatePickerControl = (props: DatePickerControlProps) => {
+	const [local, rest] = splitProps(props, ["class"]);
+
+	return (
+		<DatePickerPrimitive.Control
+			class={cn(
+				"inline-flex items-center gap-x-1 [&>input:first-of-type]:rounded-s-md",
+				local.class,
+			)}
+			{...rest}
+		/>
 	);
 };
 
@@ -239,31 +260,41 @@ export const DatePickerInput = (props: DatePickerInputProps) => {
 	const [local, rest] = splitProps(props, ["class"]);
 
 	return (
-		<DatePickerPrimitive.Control class="flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:(outline-none ring-1.5 ring-ring) disabled:(cursor-not-allowed opacity-50)">
-			<DatePickerPrimitive.Input
-				class={cn(
-					"w-full appearance-none bg-transparent outline-none",
-					local.class,
-				)}
-				{...rest}
-			/>
-			<DatePickerPrimitive.Trigger class="bg-inherit focus-visible:(outline-none ring-1.5 ring-ring) transition-shadow">
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					class="mx-1 h-4 w-4"
-					viewBox="0 0 24 24"
+		<DatePickerPrimitive.Input
+			class={cn(
+				"w-full h-9 border border-border bg-background px-3 py-1 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:(outline-none ring-[1.5px] ring-ring) disabled:(cursor-not-allowed opacity-50) transition-shadow",
+				local.class,
+			)}
+			{...rest}
+		/>
+	);
+};
+
+export const DatePickerTrigger = (props: DatePickerTriggerProps) => {
+	const [local, rest] = splitProps(props, ["class"]);
+
+	return (
+		<DatePickerPrimitive.Trigger
+			class={cn(
+				"transition transition-property-[box-shadow,background-color] focus-visible:(outline-none ring-[1.5px] ring-ring) flex items-center justify-center min-w-9 min-h-9 rounded-e-md border border-border bg-background [&>svg]:size-4 hover:bg-accent/50 disabled:(cursor-not-allowed opacity-50)",
+				local.class,
+			)}
+			{...rest}
+		>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+				<g
+					fill="none"
+					stroke="currentColor"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
 				>
-					<path
-						fill="none"
-						stroke="currentColor"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						stroke-width="2"
-						d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm12-4v4M8 3v4m-4 4h16m-9 4h1m0 0v3"
-					/>
-					<title>Calendar</title>
-				</svg>
-			</DatePickerPrimitive.Trigger>
-		</DatePickerPrimitive.Control>
+					<path d="M8 2v4m8-4v4" />
+					<rect width="18" height="18" x="3" y="4" rx="2" />
+					<path d="M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01" />
+				</g>
+				<title>Calendar</title>
+			</svg>
+		</DatePickerPrimitive.Trigger>
 	);
 };
