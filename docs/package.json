@@ -35,6 +35,7 @@
 		"zod": "^3.22.4"
 	},
 	"devDependencies": {
+		"@ark-ui/solid": "^4.3.0",
 		"lodash.template": "^4.5.0",
 		"rehype-pretty-code": "^0.14.0",
 		"shiki": "^1.22.2",

@@ -12,8 +12,8 @@ import type {
 	DatePickerViewControlProps,
 	DatePickerViewProps,
 	DatePickerViewTriggerProps,
-} from "@ark-ui/solid";
-import { DatePicker as DatePickerPrimitive } from "@ark-ui/solid";
+} from "@ark-ui/solid/date-picker";
+import { DatePicker as DatePickerPrimitive } from "@ark-ui/solid/date-picker";
 import type { VoidProps } from "solid-js";
 import { splitProps } from "solid-js";
 import { buttonVariants } from "./button";

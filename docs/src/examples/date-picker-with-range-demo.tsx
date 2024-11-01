@@ -1,3 +1,4 @@
+import type { DateValue } from "@ark-ui/solid/date-picker";
 import {
 	DatePicker,
 	DatePickerContent,
@@ -19,7 +20,7 @@ import { Index, createMemo, createSignal } from "solid-js";
 import { Portal } from "solid-js/web";
 
 const DatePickerDemo = () => {
-	const [date, setDate] = createSignal<string[]>([]);
+	const [date, setDate] = createSignal<DateValue[]>([]);
 
 	return (
 		<DatePicker
@@ -31,12 +32,12 @@ const DatePickerDemo = () => {
 					.map((e) =>
 						new Intl.DateTimeFormat("en-US", {
 							dateStyle: "long",
-						}).format(new Date(e)),
+						}).format(new Date(e.toString())),
 					)
 					.join(" - ")
 			}
 			value={date()}
-			onValueChange={(e) => setDate(e.valueAsString)}
+			onValueChange={(e) => setDate(e.value)}
 		>
 			<DatePickerInput placeholder="Pick a date" />
 			<Portal>
