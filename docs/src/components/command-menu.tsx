@@ -207,7 +207,7 @@ const CommandMenu = () => {
 		<>
 			<Button
 				variant="outline"
-				class="relative h-8 w-full justify-start rounded-[0.5rem] bg-background text-sm font-normal text-muted-foreground shadow-none sm:pr-12 md:w-40 lg:w-64"
+				class="relative h-8 w-full justify-start rounded-[0.5rem] bg-muted/50 text-sm font-normal text-muted-foreground shadow-none sm:pr-12 md:w-40 lg:w-64"
 				onClick={() => setOpen(true)}
 			>
 				<span class="hidden lg:inline-flex">Search documentation...</span>

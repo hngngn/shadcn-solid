@@ -9,12 +9,13 @@ link:
 
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
-import RawCode from "@/components/raw-code.tsx";
-import DemoCode from "@/examples/select-demo?raw";
-import TwRawCode from "@repo/tailwindcss/ui/select?raw";
-import UnoRawCode from "@repo/unocss/ui/select?raw";
 
-<ComponentPreview name="select-demo" code={DemoCode} client:only="solid-js" />
+<ComponentPreview name="select-demo" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/select-demo.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ## Installation
 
@@ -34,7 +35,8 @@ npm install @kobalte/core
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={TwRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/../packages/tailwindcss/ui/select.tsx
+```
 
 </Step>
 
@@ -46,7 +48,8 @@ npm install @kobalte/core
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={UnoRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/../packages/unocss/ui/select.tsx
+```
 
 </Step>
 

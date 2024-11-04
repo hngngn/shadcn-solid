@@ -4,8 +4,8 @@ import solidJs from "@astrojs/solid-js";
 import tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
 import rehypePrettyCode from "rehype-pretty-code";
+import { codeImport } from "remark-code-import";
 import { visit } from "unist-util-visit";
-import blackout from "./public/theme/dark.json";
 import { siteConfig } from "./src/config/site";
 
 // https://astro.build/config
@@ -14,6 +14,14 @@ export default defineConfig({
 	trailingSlash: "never",
 	markdown: {
 		syntaxHighlight: false,
+		remarkPlugins: [
+			[
+				codeImport,
+				{
+					allowImportingFromOutside: true
+				}
+			]
+		],
 		rehypePlugins: [
 			() => (tree) => {
 				visit(tree, (node) => {
@@ -29,7 +37,7 @@ export default defineConfig({
 			[
 				rehypePrettyCode,
 				{
-					theme: blackout,
+					theme: "vesper",
 				},
 			],
 			() => (tree) => {

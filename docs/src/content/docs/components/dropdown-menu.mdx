@@ -9,14 +9,13 @@ link:
 
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
-import RawCode from "@/components/raw-code.tsx";
-import DemoCode3 from "@/examples/dropdown-menu-checkboxes?raw";
-import DemoCode from "@/examples/dropdown-menu-demo?raw";
-import DemoCode2 from "@/examples/dropdown-menu-radio-group?raw";
-import TwRawCode from "@repo/tailwindcss/ui/dropdown-menu?raw";
-import UnoRawCode from "@repo/unocss/ui/dropdown-menu?raw";
 
-<ComponentPreview name="dropdown-menu-demo" code={DemoCode} client:only="solid-js" />
+<ComponentPreview name="dropdown-menu-demo" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/dropdown-menu-demo.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ## Installation
 
@@ -36,7 +35,8 @@ npm install @kobalte/core
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={TwRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/../packages/tailwindcss/ui/dropdown-menu.tsx
+```
 
 </Step>
 
@@ -48,7 +48,8 @@ npm install @kobalte/core
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={UnoRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/../packages/unocss/ui/dropdown-menu.tsx
+```
 
 </Step>
 
@@ -85,8 +86,18 @@ import {
 
 ### Checkboxes
 
-<ComponentPreview name="dropdown-menu-checkboxes" code={DemoCode3} client:only="solid-js" />
+<ComponentPreview name="dropdown-menu-checkboxes" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/dropdown-menu-checkboxes.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ### Radio Group
 
-<ComponentPreview name="dropdown-menu-radio-group" code={DemoCode2} client:only="solid-js" />
+<ComponentPreview name="dropdown-menu-radio-group" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/dropdown-menu-radio-group.tsx
+```
+</Fragment>
+</ComponentPreview>

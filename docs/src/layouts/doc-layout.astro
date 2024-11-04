@@ -10,11 +10,11 @@ import { Balancer } from "solid-wrap-balancer";
 import RootLayout from "./root-layout.astro";
 
 export const getStaticPaths = async () => {
-	const docsEntries = await getCollection("docs");
-	return docsEntries.map((entry) => ({
-		params: { slug: entry.slug },
-		props: { entry },
-	}));
+    const docsEntries = await getCollection("docs");
+    return docsEntries.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
 };
 
 const { entry } = Astro.props;
@@ -92,7 +92,8 @@ const { pathname } = Astro.url;
                                         target="_blank"
                                         rel="noreferrer"
                                         class={badgeVariants({
-                                            variant: "secondary",
+                                            variant: "outline",
+                                            class: "bg-muted/60",
                                         })}
                                     >
                                         Docs{" "}
@@ -118,7 +119,8 @@ const { pathname } = Astro.url;
                                         target="_blank"
                                         rel="noreferrer"
                                         class={badgeVariants({
-                                            variant: "secondary",
+                                            variant: "outline",
+                                            class: "bg-muted/60",
                                         })}
                                     >
                                         API Reference{" "}

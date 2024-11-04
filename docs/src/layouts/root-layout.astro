@@ -8,9 +8,9 @@ import "./main.css";
 import "./mdx.css";
 
 type Props = {
-    title?: string;
-    description?: string;
-    url?: string;
+	title?: string;
+	description?: string;
+	url?: string;
 };
 
 const { title, description, url } = Astro.props;
@@ -112,12 +112,14 @@ const { title, description, url } = Astro.props;
     </head>
     <body>
         <div class="relative flex min-h-screen flex-col">
-            <Header />
-            <div class="flex-1">
-                <slot />
+            <div class="mx-auto w-full border-border/40 dark:border-border min-[1800px]:max-w-[1536px] min-[1800px]:border-x">
+                <Header />
+                <div class="flex-1">
+                    <slot />
+                </div>
+                <Footer />
+                <ToastWrapper client:only="solid-js" />
             </div>
-            <Footer />
-            <ToastWrapper client:only="solid-js" />
         </div>
     </body>
 </html>
