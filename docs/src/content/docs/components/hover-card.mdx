@@ -9,9 +9,13 @@ link:
 
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
-import DemoCode from "@/examples/hover-card-demo?raw";
 
-<ComponentPreview name="hover-card-demo" code={DemoCode} client:only="solid-js" />
+<ComponentPreview name="hover-card-demo" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/hover-card-demo.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ## Installation
 
