@@ -10,7 +10,13 @@ import { type ValidComponent, mergeProps, splitProps } from "solid-js";
 export const TooltipTrigger = TooltipPrimitive.Trigger;
 
 export const Tooltip = (props: TooltipRootProps) => {
-	const merge = mergeProps<TooltipRootProps[]>({ gutter: 4 }, props);
+	const merge = mergeProps<TooltipRootProps[]>(
+		{
+			gutter: 4,
+			flip: false,
+		},
+		props,
+	);
 
 	return <TooltipPrimitive {...merge} />;
 };

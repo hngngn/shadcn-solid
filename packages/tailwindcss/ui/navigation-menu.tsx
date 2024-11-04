@@ -49,6 +49,7 @@ export const NavigationMenu = <T extends ValidComponent = "ul">(
 				return props.withArrow ? props.gutter : 6;
 			},
 			withArrow: false,
+			flip: false,
 		},
 		props,
 	);

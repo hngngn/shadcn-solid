@@ -70,7 +70,7 @@ const NavigationMenuDemo = () => {
 				<NavigationMenuTrigger class="transition-[box-shadow,background-color] focus-visible:outline-none focus-visible:ring-[1.5px] focus-visible:ring-ring data-[expanded]:bg-accent">
 					Learn
 				</NavigationMenuTrigger>
-				<NavigationMenuContent class="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] [&>li:first-of-type]:row-span-3">
+				<NavigationMenuContent class="grid gap-3 p-4 w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] [&>li:first-of-type]:row-span-3">
 					<NavigationMenuLink
 						href="/"
 						class="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none transition-shadow duration-200 hover:shadow-md focus-visible:shadow-md focus-visible:ring-[1.5px] focus-visible:ring-ring"

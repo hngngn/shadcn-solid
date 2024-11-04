@@ -41,7 +41,14 @@ export const Menubar = <T extends ValidComponent = "div">(
 };
 
 export const MenubarMenu = (props: MenubarMenuProps) => {
-	const merge = mergeProps<MenubarMenuProps[]>({ gutter: 8, shift: -4 }, props);
+	const merge = mergeProps<MenubarMenuProps[]>(
+		{
+			gutter: 8,
+			shift: -4,
+			flip: false,
+		},
+		props,
+	);
 
 	return <MenubarPrimitive.Menu {...merge} />;
 };

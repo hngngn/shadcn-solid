@@ -21,7 +21,13 @@ export const DropdownMenuSub = DropdownMenuPrimitive.Sub;
 export const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup;
 
 export const DropdownMenu = (props: DropdownMenuRootProps) => {
-	const merge = mergeProps<DropdownMenuRootProps[]>({ gutter: 4 }, props);
+	const merge = mergeProps<DropdownMenuRootProps[]>(
+		{
+			gutter: 4,
+			flip: false,
+		},
+		props,
+	);
 
 	return <DropdownMenuPrimitive {...merge} />;
 };
