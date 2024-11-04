@@ -9,20 +9,13 @@ link:
 
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
-import RawCode from "@/components/raw-code.tsx";
-import DemoCode9 from "@/examples/button-as-child?raw";
-import DemoCode from "@/examples/button-demo?raw";
-import DemoCode3 from "@/examples/button-destructive?raw";
-import DemoCode5 from "@/examples/button-ghost?raw";
-import DemoCode6 from "@/examples/button-link?raw";
-import DemoCode8 from "@/examples/button-loading?raw";
-import DemoCode4 from "@/examples/button-outline?raw";
-import DemoCode2 from "@/examples/button-secondary?raw";
-import DemoCode7 from "@/examples/button-with-icon?raw";
-import TwRawCode from "@repo/tailwindcss/ui/button?raw";
-import UnoRawCode from "@repo/unocss/ui/button?raw";
 
-<ComponentPreview name="button-demo" code={DemoCode} client:only="solid-js" />
+<ComponentPreview name="button-demo" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/button-demo.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ## Installation
 
@@ -42,7 +35,8 @@ npm install @kobalte/core
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={TwRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/node_modules/@repo/tailwindcss/ui/button.tsx
+```
 
 </Step>
 
@@ -54,7 +48,8 @@ npm install @kobalte/core
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={UnoRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/node_modules/@repo/unocss/ui/button.tsx
+```
 
 </Step>
 
@@ -96,32 +91,72 @@ Alternatively, you can set the `asChild` parameter and nest the link component.
 
 ### Secondary
 
-<ComponentPreview name="button-secondary" code={DemoCode2} client:only="solid-js" />
+<ComponentPreview name="button-secondary" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/button-secondary.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ### Destructive
 
-<ComponentPreview name="button-destructive" code={DemoCode3} client:only="solid-js"/>
+<ComponentPreview name="button-destructive" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/button-destructive.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ### Outline
 
-<ComponentPreview name="button-outline" code={DemoCode4} client:only="solid-js" />
+<ComponentPreview name="button-outline" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/button-outline.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ### Ghost
 
-<ComponentPreview name="button-ghost" code={DemoCode5} client:only="solid-js" />
+<ComponentPreview name="button-ghost" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/button-ghost.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ### Link
 
-<ComponentPreview name="button-link" code={DemoCode6} client:only="solid-js" />
+<ComponentPreview name="button-link" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/button-link.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ### With Icon
 
-<ComponentPreview name="button-with-icon" code={DemoCode7} client:only="solid-js" />
+<ComponentPreview name="button-with-icon" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/button-with-icon.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ### Loading
 
-<ComponentPreview name="button-loading" code={DemoCode8} client:only="solid-js" />
+<ComponentPreview name="button-loading" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/button-loading.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ### As
 
-<ComponentPreview name="button-as-child" code={DemoCode9} client:only="solid-js" />
+<ComponentPreview name="button-as-child" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/button-as-child.tsx
+```
+</Fragment>
+</ComponentPreview>

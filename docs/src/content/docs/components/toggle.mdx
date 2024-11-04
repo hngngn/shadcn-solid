@@ -9,17 +9,13 @@ link:
 
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
-import RawCode from "@/components/raw-code.tsx";
-import DemoCode from "@/examples/toggle-demo?raw";
-import DemoCode6 from "@/examples/toggle-disabled?raw";
-import DemoCode5 from "@/examples/toggle-large?raw";
-import DemoCode2 from "@/examples/toggle-outline?raw";
-import DemoCode4 from "@/examples/toggle-small?raw";
-import DemoCode3 from "@/examples/toggle-with-text?raw";
-import TwRawCode from "@repo/tailwindcss/ui/toggle?raw";
-import UnoRawCode from "@repo/unocss/ui/toggle?raw";
 
-<ComponentPreview name="toggle-demo" code={DemoCode} client:only="solid-js" />
+<ComponentPreview name="toggle-demo" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/toggle-demo.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ## Installation
 
@@ -39,7 +35,8 @@ npm install @kobalte/core
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={TwRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/node_modules/@repo/tailwindcss/ui/toggle.tsx
+```
 
 </Step>
 
@@ -51,7 +48,8 @@ npm install @kobalte/core
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={UnoRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/node_modules/@repo/unocss/ui/toggle.tsx
+```
 
 </Step>
 
@@ -71,20 +69,45 @@ import { ToggleButton } from "@/components/ui/toggle";
 
 ### Outline
 
-<ComponentPreview name="toggle-outline" code={DemoCode2} client:only="solid-js" />
+<ComponentPreview name="toggle-outline" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/toggle-outline.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ### With Text
 
-<ComponentPreview name="toggle-with-text" code={DemoCode3} client:only="solid-js" />
+<ComponentPreview name="toggle-with-text" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/toggle-with-text.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ### Small
 
-<ComponentPreview name="toggle-small" code={DemoCode4} client:only="solid-js" />
+<ComponentPreview name="toggle-small" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/toggle-small.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ### Large
 
-<ComponentPreview name="toggle-large" code={DemoCode5} client:only="solid-js" />
+<ComponentPreview name="toggle-large" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/toggle-large.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ### Disabled
 
-<ComponentPreview name="toggle-disabled" code={DemoCode6} client:only="solid-js" />
+<ComponentPreview name="toggle-disabled" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/toggle-disabled.tsx
+```
+</Fragment>
+</ComponentPreview>

@@ -9,14 +9,13 @@ link:
 
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
-import RawCode from "@/components/raw-code.tsx";
-import DemoCode from "@/examples/otp-field-demo?raw";
-import DemoCode3 from "@/examples/otp-field-with-controlled-demo?raw";
-import DemoCode2 from "@/examples/otp-field-with-pattern-demo?raw";
-import TwRawCode from "@repo/tailwindcss/ui/otp-field?raw";
-import UnoRawCode from "@repo/unocss/ui/otp-field?raw";
 
-<ComponentPreview name="otp-field-demo" code={DemoCode} client:only="solid-js" />
+<ComponentPreview name="otp-field-demo" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/otp-field-demo.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ## Installation
 
@@ -36,11 +35,12 @@ npm install @corvu/otp-field
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={TwRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/node_modules/@repo/tailwindcss/ui/otp-field.tsx
+```
 
 <StepItem>Update config:</StepItem>
 
-```cjs title="tailwind.config.cjs" {5-18}
+```js title="tailwind.config.cjs" {5-18}
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   theme: {
@@ -74,7 +74,8 @@ npm install @corvu/otp-field
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={UnoRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/node_modules/@repo/unocss/ui/otp-field.tsx
+```
 
 <StepItem>Update config:</StepItem>
 
@@ -138,10 +139,20 @@ import {
 
 Use the `pattern` prop to define a custom pattern for the OTP field.
 
-<ComponentPreview name="otp-field-with-pattern-demo" code={DemoCode2} client:only="solid-js" />
+<ComponentPreview name="otp-field-with-pattern-demo" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/otp-field-with-pattern-demo.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ### Controlled
 
 You can use the `value` and `onValueChange` props to control the input value.
 
-<ComponentPreview name="otp-field-with-controlled-demo" code={DemoCode3} client:only="solid-js" />
+<ComponentPreview name="otp-field-with-controlled-demo" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/otp-field-ưith-controlled-demo.tsx
+```
+</Fragment>
+</ComponentPreview>

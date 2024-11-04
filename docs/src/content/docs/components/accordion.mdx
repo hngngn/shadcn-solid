@@ -9,12 +9,13 @@ link:
 
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
-import RawCode from "@/components/raw-code.tsx";
-import DemoCode from "@/examples/accordion-demo?raw";
-import TwRawCode from "@repo/tailwindcss/ui/accordion?raw";
-import UnoRawCode from "@repo/unocss/ui/accordion?raw";
 
-<ComponentPreview name="accordion-demo" code={DemoCode} client:only="solid-js" />
+<ComponentPreview name="accordion-demo" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/accordion-demo.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ## Installation
 
@@ -34,11 +35,12 @@ npm install @kobalte/core
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={TwRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/node_modules/@repo/tailwindcss/ui/accordion.tsx
+```
 
 <StepItem>Update config:</StepItem>
 
-```cjs title="tailwind.config.cjs" {5-18}
+```js title="tailwind.config.cjs" {5-18}
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   theme: {
@@ -72,7 +74,8 @@ npm install @kobalte/core
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={UnoRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/node_modules/@repo/unocss/ui/accordion.tsx
+```
 
 <StepItem>Update config:</StepItem>
 

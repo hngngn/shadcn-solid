@@ -9,12 +9,13 @@ link:
 
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
-import RawCode from "@/components/raw-code.tsx";
-import DemoCode from "@/examples/collapsible-demo?raw";
-import TwRawCode from "@repo/tailwindcss/ui/collapsible?raw";
-import UnoRawCode from "@repo/unocss/ui/collapsible?raw";
 
-<ComponentPreview name="collapsible-demo" code={DemoCode} client:only="solid-js" />
+<ComponentPreview name="collapsible-demo" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/Collapsible-demo.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ## Installation
 
@@ -34,7 +35,8 @@ npm install @kobalte/core
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={TwRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/node_modules/@repo/tailwindcss/ui/collapsible.tsx
+```
 
 <StepItem>Update config:</StepItem>
 
@@ -72,7 +74,8 @@ npm install @kobalte/core
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={UnoRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/node_modules/@repo/unocss/ui/collapsible.tsx
+```
 
 <StepItem>Update config:</StepItem>
 

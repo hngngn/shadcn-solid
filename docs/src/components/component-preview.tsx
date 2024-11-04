@@ -8,11 +8,10 @@ import {
 } from "@repo/tailwindcss/ui/tabs";
 import { frameworks } from "scripts/utils/framework";
 import { type JSX, type ParentComponent, Show, createMemo } from "solid-js";
-import RawCode from "./raw-code";
 
 type Props = {
 	name: string;
-	code: string;
+	code: JSX.Element;
 };
 
 const ComponentPreview: ParentComponent<Props> = (props) => {
@@ -57,7 +56,7 @@ const ComponentPreview: ParentComponent<Props> = (props) => {
 				<TabsContent value="code">
 					<div class="flex flex-col space-y-4">
 						<div class="w-full rounded-md [&_pre]:!my-0 [&_pre]:!max-h-[350px] [&_pre]:overflow-auto relative [&>[data-raw-code]]:mt-0">
-							<RawCode code={props.code} />
+							{props.code}
 						</div>
 					</div>
 				</TabsContent>

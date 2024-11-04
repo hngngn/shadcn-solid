@@ -9,17 +9,13 @@ link:
 
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
-import RawCode from "@/components/raw-code.tsx";
-import DemoCode from "@/examples/toggle-group-demo?raw";
-import DemoCode6 from "@/examples/toggle-group-disabled-demo?raw";
-import DemoCode5 from "@/examples/toggle-group-large-demo?raw";
-import DemoCode2 from "@/examples/toggle-group-outline-demo?raw";
-import DemoCode3 from "@/examples/toggle-group-single-demo?raw";
-import DemoCode4 from "@/examples/toggle-group-small-demo?raw";
-import TwRawCode from "@repo/tailwindcss/ui/toggle-group?raw";
-import UnoRawCode from "@repo/unocss/ui/toggle-group?raw";
 
-<ComponentPreview name="toggle-group-demo" code={DemoCode} client:only="solid-js" />
+<ComponentPreview name="toggle-group-demo" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/toggle-group-demo.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ## Installation
 
@@ -39,7 +35,8 @@ npm install @kobalte/core
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={TwRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/node_modules/@repo/tailwindcss/ui/toggle-group.tsx
+```
 
 </Step>
 
@@ -51,7 +48,8 @@ npm install @kobalte/core
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={UnoRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/node_modules/@repo/unocss/ui/toggle-group.tsx
+```
 
 </Step>
 
@@ -75,20 +73,45 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
 ### Outline
 
-<ComponentPreview name="toggle-group-outline-demo" code={DemoCode2} client:only="solid-js" />
+<ComponentPreview name="toggle-group-outline-demo" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/toggle-group-outline-demo.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ### Single
 
-<ComponentPreview name="toggle-group-single-demo" code={DemoCode3} client:only="solid-js" />
+<ComponentPreview name="toggle-group-single-demo" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/toggle-group-single-demo.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ### Small
 
-<ComponentPreview name="toggle-group-small-demo" code={DemoCode4} client:only="solid-js" />
+<ComponentPreview name="toggle-group-small-demo" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/toggle-group-small-demo.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ### Large
 
-<ComponentPreview name="toggle-group-large-demo" code={DemoCode5} client:only="solid-js" />
+<ComponentPreview name="toggle-group-large-demo" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/toggle-group-large-demo.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ### Disabled
 
-<ComponentPreview name="toggle-group-disabled-demo" code={DemoCode6} client:only="solid-js" />
+<ComponentPreview name="toggle-group-disabled-demo" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/toggle-group-disabled-demo.tsx
+```
+</Fragment>
+</ComponentPreview>

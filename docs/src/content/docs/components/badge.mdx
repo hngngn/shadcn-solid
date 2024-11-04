@@ -6,15 +6,13 @@ component: true
 
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
-import RawCode from "@/components/raw-code.tsx";
-import DemoCode from "@/examples/badge-demo?raw";
-import DemoCode3 from "@/examples/badge-destructive?raw";
-import DemoCode4 from "@/examples/badge-outline?raw";
-import DemoCode2 from "@/examples/badge-secondary?raw";
-import TwRawCode from "@repo/tailwindcss/ui/badge?raw";
-import UnoRawCode from "@repo/unocss/ui/badge?raw";
 
-<ComponentPreview name="badge-demo" code={DemoCode} client:only="solid-js" />
+<ComponentPreview name="badge-demo" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/badge-demo.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ## Installation
 
@@ -29,14 +27,16 @@ npx shadcn-solid@latest add badge
 <Step slot="tw">
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={TwRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/node_modules/@repo/tailwindcss/ui/badge.tsx
+```
 
 </Step>
 
 <Step slot="uno">
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={UnoRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/node_modules/@repo/unocss/ui/badge.tsx
+```
 
 </Step>
 
@@ -78,12 +78,27 @@ Alternatively, you can set the `asChild` parameter and nest the link component.
 
 ### Secondary
 
-<ComponentPreview name="badge-secondary" code={DemoCode2} client:load />
+<ComponentPreview name="badge-secondary" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/badge-secondary.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ### Destructive
 
-<ComponentPreview name="badge-destructive" code={DemoCode3} client:load />
+<ComponentPreview name="badge-destructive" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/badge-destructive.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ### Outline
 
-<ComponentPreview name="badge-outline" code={DemoCode4} client:load />
+<ComponentPreview name="badge-outline" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/badge-outline.tsx
+```
+</Fragment>
+</ComponentPreview>

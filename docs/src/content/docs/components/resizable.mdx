@@ -9,14 +9,13 @@ link:
 
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
-import RawCode from "@/components/raw-code.tsx";
-import DemoCode from "@/examples/resizable-demo?raw";
-import DemoCode2 from "@/examples/resizable-vertical-demo?raw";
-import DemoCode3 from "@/examples/resizable-with-handle-demo?raw";
-import TwRawCode from "@repo/tailwindcss/ui/resizable?raw";
-import UnoRawCode from "@repo/unocss/ui/resizable?raw";
 
-<ComponentPreview name="resizable-demo" code={DemoCode} client:only="solid-js" />
+<ComponentPreview name="resizable-demo" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/resizable-demo.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ## Installation
 
@@ -36,7 +35,8 @@ npm install @corvu/resizable
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={TwRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/node_modules/@repo/tailwindcss/ui/resizable.tsx
+```
 
 </Step>
 
@@ -48,7 +48,8 @@ npm install @corvu/resizable
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={UnoRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/node_modules/@repo/unocss/ui/resizable.tsx
+```
 
 </Step>
 
@@ -74,10 +75,20 @@ import { Resizable, ResizablePanel, ResizableHandle } from "@/components/ui/resi
 
 Use the `orientation` prop to set the orientation of the resizable panels.
 
-<ComponentPreview name="resizable-vertical-demo" code={DemoCode2} client:only="solid-js" />
+<ComponentPreview name="resizable-vertical-demo" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/resizable-vertical-demo.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ### Handle
 
 You can set or hide the handle by using the `withHandle` prop on the `ResizableHandle` component.
 
-<ComponentPreview name="resizable-with-handle-demo" code={DemoCode3} client:only="solid-js" />
+<ComponentPreview name="resizable-with-handle-demo" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/resizable-with-handle-demo.tsx
+```
+</Fragment>
+</ComponentPreview>

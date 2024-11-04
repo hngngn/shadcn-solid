@@ -6,12 +6,13 @@ component: true
 
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
-import RawCode from "@/components/raw-code.tsx";
-import DemoCode from "@/examples/card-demo?raw";
-import TwRawCode from "@repo/tailwindcss/ui/card?raw";
-import UnoRawCode from "@repo/unocss/ui/card?raw";
 
-<ComponentPreview name="card-demo" code={DemoCode} client:only="solid-js" />
+<ComponentPreview name="card-demo" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/card-demo.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ## Installation
 
@@ -31,7 +32,8 @@ npm install @kobalte/core
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={TwRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/node_modules/@repo/tailwindcss/ui/card.tsx
+```
 
 </Step>
 
@@ -43,7 +45,8 @@ npm install @kobalte/core
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={UnoRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/node_modules/@repo/unocss/ui/card.tsx
+```
 
 </Step>
 

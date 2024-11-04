@@ -8,13 +8,13 @@ link:
 
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
-import RawCode from "@/components/raw-code.tsx";
-import DemoCode from "@/examples/command-demo?raw";
-import DemoCode2 from "@/examples/command-dialog?raw";
-import TwRawCode from "@repo/tailwindcss/ui/command?raw";
-import UnoRawCode from "@repo/unocss/ui/command?raw";
 
-<ComponentPreview name="command-demo" code={DemoCode} client:only="solid-js" />
+<ComponentPreview name="command-demo" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/command-demo.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ## Installation
 
@@ -34,7 +34,8 @@ npm install cmdk-solid
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={TwRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/node_modules/@repo/tailwindcss/ui/command.tsx
+```
 
 </Step>
 
@@ -46,7 +47,8 @@ npm install cmdk-solid
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={UnoRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/node_modules/@repo/unocss/ui/command.tsx
+```
 
 </Step>
 
@@ -92,7 +94,12 @@ import {
 
 ### Dialog
 
-<ComponentPreview name="command-dialog" code={DemoCode2} client:only="solid-js" />
+<ComponentPreview name="command-dialog" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/command-dialog.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 To show the command menu in a dialog, use the `<CommandDialog />` component.
 

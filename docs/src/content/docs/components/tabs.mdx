@@ -9,13 +9,13 @@ link:
 
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
-import RawCode from "@/components/raw-code.tsx";
-import DemoCode from "@/examples/tabs-demo?raw";
-import DemoCode2 from "@/examples/tabs-orientation-demo?raw";
-import TwRawCode from "@repo/tailwindcss/ui/tabs?raw";
-import UnoRawCode from "@repo/unocss/ui/tabs?raw";
 
-<ComponentPreview name="tabs-demo" code={DemoCode} client:only="solid-js" />
+<ComponentPreview name="tabs-demo" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/tabs-demo.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ## Installation
 
@@ -35,7 +35,8 @@ npm install @kobalte/core
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={TwRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/node_modules/@repo/tailwindcss/ui/tabs.tsx
+```
 
 </Step>
 
@@ -47,7 +48,8 @@ npm install @kobalte/core
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={UnoRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/node_modules/@repo/unocss/ui/tabs.tsx
+```
 
 </Step>
 
@@ -74,4 +76,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 ### Orientation
 
-<ComponentPreview name="tabs-orientation-demo" code={DemoCode2} client:only="solid-js" />
+<ComponentPreview name="tabs-orientation-demo" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/tabs-orientation-demo.tsx
+```
+</Fragment>
+</ComponentPreview>

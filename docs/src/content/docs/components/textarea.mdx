@@ -9,16 +9,13 @@ link:
 
 import ComponentInstallation from "@/components/component-installation";
 import ComponentPreview from "@/components/component-preview";
-import RawCode from "@/components/raw-code.tsx";
-import DemoCode from "@/examples/textarea-demo?raw";
-import DemoCode2 from "@/examples/textarea-disabled?raw";
-import DemoCode5 from "@/examples/textarea-with-button?raw";
-import DemoCode3 from "@/examples/textarea-with-label?raw";
-import DemoCode4 from "@/examples/textarea-with-text?raw";
-import TwRawCode from "@repo/tailwindcss/ui/textarea?raw";
-import UnoRawCode from "@repo/unocss/ui/textarea?raw";
 
-<ComponentPreview name="textarea-demo" code={DemoCode} client:only="solid-js" />
+<ComponentPreview name="textarea-demo" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/textarea-demo.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ## Installation
 
@@ -38,7 +35,8 @@ npm install @kobalte/core
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={TwRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/node_modules/@repo/tailwindcss/ui/textarea.tsx
+```
 
 </Step>
 
@@ -50,7 +48,8 @@ npm install @kobalte/core
 ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
-<RawCode code={UnoRawCode} client:only="solid-js" />
+```tsx file=<rootDir>/node_modules/@repo/unocss/ui/textarea.tsx
+```
 
 </Step>
 
@@ -73,16 +72,36 @@ import { TextFieldRoot } from "@/components/ui/textfield";
 
 ### Disabled
 
-<ComponentPreview name="textarea-disabled" code={DemoCode2} client:only="solid-js" />
+<ComponentPreview name="textarea-disabled" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/textarea-disabled.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ### With Label
 
-<ComponentPreview name="textarea-with-label" code={DemoCode3} client:only="solid-js" />
+<ComponentPreview name="textarea-with-label" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/textarea-with-label.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ### With Text
 
-<ComponentPreview name="textarea-with-text" code={DemoCode4} client:only="solid-js" />
+<ComponentPreview name="textarea-with-text" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/textarea-with-text.tsx
+```
+</Fragment>
+</ComponentPreview>
 
 ### With Button
 
-<ComponentPreview name="textarea-with-button" code={DemoCode5} client:only="solid-js" />
+<ComponentPreview name="textarea-with-button" client:only="solid-js">
+<Fragment slot="code">
+```tsx file=<rootDir>/src/examples/textarea-with-button.tsx
+```
+</Fragment>
+</ComponentPreview>
