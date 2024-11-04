@@ -14,7 +14,14 @@ export default defineConfig({
 	trailingSlash: "never",
 	markdown: {
 		syntaxHighlight: false,
-		remarkPlugins: [codeImport],
+		remarkPlugins: [
+			[
+				codeImport,
+				{
+					allowImportingFromOutside: true
+				}
+			]
+		],
 		rehypePlugins: [
 			() => (tree) => {
 				visit(tree, (node) => {
