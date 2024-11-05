@@ -1,20 +1,21 @@
 ---
-import { getCollection } from "astro:content";
+import { getEntry, render } from "astro:content";
 import { components } from "@/components/mdx/index.astro";
 import DocLayout from "@/layouts/doc-layout.astro";
 
-export const getStaticPaths = async () => {
-	const docsEntries = await getCollection("docs");
-	return docsEntries.map((entry) => ({
-		params: { slug: entry.slug },
-		props: { entry },
-	}));
-};
+const { slug } = Astro.params;
+if (slug === undefined) {
+	return Astro.redirect("/404");
+}
 
-const { entry } = Astro.props;
-const { Content } = await entry.render();
+const docs = await getEntry("docs", slug);
+if (docs === undefined) {
+	return Astro.redirect("/404");
+}
+
+const { Content, headings } = await render(docs);
 ---
 
-<DocLayout entry={entry}>
-    <Content components={components} />
+<DocLayout docs={docs} headings={headings}>
+  <Content components={components} />
 </DocLayout>
