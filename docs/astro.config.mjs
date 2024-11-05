@@ -2,6 +2,7 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import solidJs from "@astrojs/solid-js";
 import tailwind from "@astrojs/tailwind";
+import vercel from "@astrojs/vercel";
 import { defineConfig } from "astro/config";
 import rehypePrettyCode from "rehype-pretty-code";
 import { codeImport } from "remark-code-import";
@@ -18,9 +19,9 @@ export default defineConfig({
 			[
 				codeImport,
 				{
-					allowImportingFromOutside: true
-				}
-			]
+					allowImportingFromOutside: true,
+				},
+			],
 		],
 		rehypePlugins: [
 			() => (tree) => {
@@ -110,6 +111,7 @@ export default defineConfig({
 			},
 		],
 	},
+
 	integrations: [
 		solidJs(),
 		tailwind({
@@ -131,4 +133,6 @@ export default defineConfig({
 			},
 		}),
 	],
+	output: "server",
+	adapter: vercel(),
 });
