@@ -276,7 +276,7 @@ importers:
         version: 0.63.6(postcss@8.4.47)(rollup@4.24.3)(typescript@5.6.3)(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0))
       unocss-preset-animations:
         specifier: ^1.1.0
-        version: 1.1.0(@unocss/preset-wind@0.63.6)(unocss@0.63.6(postcss@8.4.47)(rollup@4.24.3)(typescript@5.6.3)(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0)))
+        version: 1.1.0(@unocss/preset-wind@0.64.0)(unocss@0.63.6(postcss@8.4.47)(rollup@4.24.3)(typescript@5.6.3)(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0)))
       vite:
         specifier: ^5.4.10
         version: 5.4.10(@types/node@22.8.6)(terser@5.36.0)
@@ -286,6 +286,9 @@ importers:
 
   website-wip:
     dependencies:
+      '@repo/tailwindcss':
+        specifier: workspace:*
+        version: link:../packages/tailwindcss
       '@solidjs/meta':
         specifier: ^0.29.4
         version: 0.29.4(solid-js@1.9.3)
@@ -298,9 +301,28 @@ importers:
       solid-js:
         specifier: ^1.9.2
         version: 1.9.3
+      solid-mdx:
+        specifier: ^0.0.7
+        version: 0.0.7(solid-js@1.9.3)(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0))
       vinxi:
         specifier: ^0.4.3
         version: 0.4.3(@types/node@22.8.6)(ioredis@5.4.1)(terser@5.36.0)(typescript@5.6.3)
+    devDependencies:
+      '@repo/unocss':
+        specifier: workspace:*
+        version: link:../packages/unocss
+      autoprefixer:
+        specifier: ^10.4.20
+        version: 10.4.20(postcss@8.4.47)
+      postcss:
+        specifier: ^8.4.47
+        version: 8.4.47
+      tailwindcss:
+        specifier: ^3.4.14
+        version: 3.4.14
+      velite:
+        specifier: ^0.2.1
+        version: 0.2.1(acorn@8.14.0)
 
 packages:
 
@@ -2411,8 +2433,14 @@ packages:
   '@unocss/core@0.63.6':
     resolution: {integrity: sha512-Q4QPgJ271Up89+vIqqOKgtdCKkFpHqvHN8W1LUlKPqtYnOvVYaOIVNAZowaIdEhPuc83yLc6Tg2+7riK18QKEw==}
 
+  '@unocss/core@0.64.0':
+    resolution: {integrity: sha512-Qb8wWPYNlTagCdJGzULew+e3NMM8Bd7fr38lDLgrMj+njop+wzkSe1ZZOyMMH9yHSq/Rznn5eCjnyzyHwxGslQ==}
+
   '@unocss/extractor-arbitrary-variants@0.63.6':
     resolution: {integrity: sha512-HJX0oAa9uzwKYoU8CoJdP1gxjuqFmOLxyZmITjStAmZNZpIxlz2wz4VrHmqml2dkvx/mifGGGc/GxZpQ36D12Q==}
+
+  '@unocss/extractor-arbitrary-variants@0.64.0':
+    resolution: {integrity: sha512-oVB8l8zM+x0MQJTkraRcsrfJnWEwyPVgMgtzmNUm//HqV+xTrjZCNtOqHFNIZdj/+w0gkErGQLxzRwyPjlHq4g==}
 
   '@unocss/inspector@0.63.6':
     resolution: {integrity: sha512-DQDJnhtzdHIQXD2vCdj5ytFnHfQCWJGPmrHJHXxzkTYn8nIovV1roVl1ITLxkDIIYK9bdYneg2imQN5JCZhHmQ==}
@@ -2432,6 +2460,9 @@ packages:
   '@unocss/preset-mini@0.63.6':
     resolution: {integrity: sha512-pZDZbSuxabHSwPIy3zCgQ4MNdVCSHvOvZecreH+v96R1oOhquiwU8WiSbkxvZiKiLQJd7JUVW87E1pAzr5ZGGQ==}
 
+  '@unocss/preset-mini@0.64.0':
+    resolution: {integrity: sha512-bc7zanalVQUrETJ06eyS7y/lhceRlY8kBG/lRCV/dYmKl4Ho/s57LrpZH0G63OcO6IfWIjwoZHVC8/RHAqnYvQ==}
+
   '@unocss/preset-tagify@0.63.6':
     resolution: {integrity: sha512-3lKhk4MW3RqJBwIvBXHj0H0/kHkFlKtCIBQFiBcCJh8TXOID8IZ0iVjuGwdlk63VTizI/wnsNDOVpj6YcjRRlw==}
 
@@ -2447,11 +2478,18 @@ packages:
   '@unocss/preset-wind@0.63.6':
     resolution: {integrity: sha512-W3oZ2TXSqStNE+X++kcspRTF2Szu2ej6NW5Kiyy6WQn/+ZD77AF4VtvzHtzFVZ2QKpEIovGBpU5tywooHbB7hw==}
 
+  '@unocss/preset-wind@0.64.0':
+    resolution: {integrity: sha512-cJbZI4etFrIIQoC1VhRqyEZU5fUaYqOH3uIt5lM3osxBdAvHds7SPjLRbdR612US7JbuPeFhMMRnA1EYoo39sQ==}
+
   '@unocss/reset@0.63.6':
     resolution: {integrity: sha512-gq73RSZj54MOloqrivkoMPXCqNG2WpIyBT1AYlF76uKxEEbUD41E8uBUhLSKs7gFgF01yQJLRaIuyN1yw09pbQ==}
 
   '@unocss/rule-utils@0.63.6':
     resolution: {integrity: sha512-moeDEq5d9mB8gSYeoqHMkXWWekaFFdhg7QCuwwCbxCc+NPMOgGkmfAoafz+y2tdvK7pEuT191RWOiHQ0MkA5oQ==}
+    engines: {node: '>=14'}
+
+  '@unocss/rule-utils@0.64.0':
+    resolution: {integrity: sha512-R5b/uspq6XsmpEqhxSzOOePHsS+pdxya+0pkQw7m6thsUxNDL7kVDpBiz2iNX5lnwagvhyhUWYu85a8XmZ8ymw==}
     engines: {node: '>=14'}
 
   '@unocss/transformer-attributify-jsx@0.63.6':
@@ -5473,6 +5511,12 @@ packages:
   solid-js@1.9.3:
     resolution: {integrity: sha512-5ba3taPoZGt9GY3YlsCB24kCg0Lv/rie/HTD4kG6h4daZZz7+yK02xn8Vx8dLYBc9i6Ps5JwAbEiqjmKaLB3Ag==}
 
+  solid-mdx@0.0.7:
+    resolution: {integrity: sha512-dYKGOu5ZiaX3sfEMZYtfyXm30u33kF+T/pr67CMeyHzENDkWD3st4XEJ12Akp0J0PG9jzyHe5sAAKEXSnEcDEw==}
+    peerDependencies:
+      solid-js: ^1.2.6
+      vite: '*'
+
   solid-presence@0.1.7:
     resolution: {integrity: sha512-786JcN2PFCSKKOIQ7Zg0GZuy2vmtF8b78WZDbOIzzVOCcZF/ovZTCZOY11lUYiKqPCXxeLxh8kBLoFF1X42i9w==}
     peerDependencies:
@@ -6077,6 +6121,11 @@ packages:
 
   validate-html-nesting@1.2.2:
     resolution: {integrity: sha512-hGdgQozCsQJMyfK5urgFcWEqsSSrK63Awe0t/IMR0bZ0QMtnuaiHzThW81guu3qx9abLi99NEuiaN6P9gVYsNg==}
+
+  velite@0.2.1:
+    resolution: {integrity: sha512-yhugij87X4v63c7Y4pODvDLrLc0HFU7v8BfNzPeqEnJRKxGbV6+EESNcOQehHt91crGfJVepfCvoH52Si2+zTQ==}
+    engines: {node: ^18.17.0 || >=20.3.0}
+    hasBin: true
 
   vfile-location@5.0.3:
     resolution: {integrity: sha512-5yXvWDEgqeiYiBe1lbxYF7UMAIm/IcopxMHrMQDq3nvKcjPKIhZklUKL+AE7J7uApI4kwe2snsK+eI6UTj9EHg==}
@@ -8512,9 +8561,15 @@ snapshots:
 
   '@unocss/core@0.63.6': {}
 
+  '@unocss/core@0.64.0': {}
+
   '@unocss/extractor-arbitrary-variants@0.63.6':
     dependencies:
       '@unocss/core': 0.63.6
+
+  '@unocss/extractor-arbitrary-variants@0.64.0':
+    dependencies:
+      '@unocss/core': 0.64.0
 
   '@unocss/inspector@0.63.6(typescript@5.6.3)':
     dependencies:
@@ -8555,6 +8610,12 @@ snapshots:
       '@unocss/extractor-arbitrary-variants': 0.63.6
       '@unocss/rule-utils': 0.63.6
 
+  '@unocss/preset-mini@0.64.0':
+    dependencies:
+      '@unocss/core': 0.64.0
+      '@unocss/extractor-arbitrary-variants': 0.64.0
+      '@unocss/rule-utils': 0.64.0
+
   '@unocss/preset-tagify@0.63.6':
     dependencies:
       '@unocss/core': 0.63.6
@@ -8582,11 +8643,22 @@ snapshots:
       '@unocss/preset-mini': 0.63.6
       '@unocss/rule-utils': 0.63.6
 
+  '@unocss/preset-wind@0.64.0':
+    dependencies:
+      '@unocss/core': 0.64.0
+      '@unocss/preset-mini': 0.64.0
+      '@unocss/rule-utils': 0.64.0
+
   '@unocss/reset@0.63.6': {}
 
   '@unocss/rule-utils@0.63.6':
     dependencies:
       '@unocss/core': 0.63.6
+      magic-string: 0.30.12
+
+  '@unocss/rule-utils@0.64.0':
+    dependencies:
+      '@unocss/core': 0.64.0
       magic-string: 0.30.12
 
   '@unocss/transformer-attributify-jsx@0.63.6':
@@ -9777,7 +9849,6 @@ snapshots:
     dependencies:
       color-name: 1.1.4
       simple-swizzle: 0.2.2
-    optional: true
 
   color-support@1.1.3: {}
 
@@ -9785,7 +9856,6 @@ snapshots:
     dependencies:
       color-convert: 2.0.1
       color-string: 1.9.1
-    optional: true
 
   colorette@1.4.0: {}
 
@@ -10828,8 +10898,7 @@ snapshots:
 
   is-arrayish@0.2.1: {}
 
-  is-arrayish@0.3.2:
-    optional: true
+  is-arrayish@0.3.2: {}
 
   is-binary-path@2.1.0:
     dependencies:
@@ -12566,7 +12635,6 @@ snapshots:
       '@img/sharp-wasm32': 0.33.5
       '@img/sharp-win32-ia32': 0.33.5
       '@img/sharp-win32-x64': 0.33.5
-    optional: true
 
   shebang-command@1.2.0:
     dependencies:
@@ -12602,7 +12670,6 @@ snapshots:
   simple-swizzle@0.2.2:
     dependencies:
       is-arrayish: 0.3.2
-    optional: true
 
   sirv@2.0.4:
     dependencies:
@@ -12645,6 +12712,11 @@ snapshots:
       csstype: 3.1.3
       seroval: 1.1.1
       seroval-plugins: 1.1.1(seroval@1.1.1)
+
+  solid-mdx@0.0.7(solid-js@1.9.3)(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0)):
+    dependencies:
+      solid-js: 1.9.3
+      vite: 5.4.10(@types/node@22.8.6)(terser@5.36.0)
 
   solid-presence@0.1.7(solid-js@1.9.3):
     dependencies:
@@ -13176,9 +13248,9 @@ snapshots:
 
   universalify@2.0.1: {}
 
-  unocss-preset-animations@1.1.0(@unocss/preset-wind@0.63.6)(unocss@0.63.6(postcss@8.4.47)(rollup@4.24.3)(typescript@5.6.3)(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0))):
+  unocss-preset-animations@1.1.0(@unocss/preset-wind@0.64.0)(unocss@0.63.6(postcss@8.4.47)(rollup@4.24.3)(typescript@5.6.3)(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0))):
     dependencies:
-      '@unocss/preset-wind': 0.63.6
+      '@unocss/preset-wind': 0.64.0
       unocss: 0.63.6(postcss@8.4.47)(rollup@4.24.3)(typescript@5.6.3)(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0))
 
   unocss@0.63.6(postcss@8.4.47)(rollup@4.24.3)(typescript@5.6.3)(vite@5.4.10(@types/node@22.8.6)(terser@5.36.0)):
@@ -13288,6 +13360,16 @@ snapshots:
       typescript: 5.6.3
 
   validate-html-nesting@1.2.2: {}
+
+  velite@0.2.1(acorn@8.14.0):
+    dependencies:
+      '@mdx-js/mdx': 3.1.0(acorn@8.14.0)
+      esbuild: 0.24.0
+      sharp: 0.33.5
+      terser: 5.36.0
+    transitivePeerDependencies:
+      - acorn
+      - supports-color
 
   vfile-location@5.0.3:
     dependencies:
