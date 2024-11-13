@@ -9,6 +9,7 @@
 		"source.removeUnusedImports": "explicit"
 	},
 	"[astro]": {
-		"editor.defaultFormatter": "astro-build.astro-vscode"
-	}
+		"editor.defaultFormatter": "astro-build.astro-vscode",
+	},
+	"astro.content-intellisense": true
 }

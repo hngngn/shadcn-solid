@@ -212,8 +212,21 @@ const CommandMenu = () => {
 			>
 				<span class="hidden lg:inline-flex">Search documentation...</span>
 				<span class="inline-flex lg:hidden">Search...</span>
-				<kbd class="pointer-events-none absolute right-[0.3rem] top-[0.3rem] hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
-					<span class="text-xs">⌘</span>K
+				<kbd class="pointer-events-none absolute right-[0.3rem] top-[0.3rem] hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-xs font-medium opacity-100 sm:flex">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="size-3.5"
+						viewBox="0 0 32 32"
+					>
+						<path
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							d="M19 19v4a4 4 0 1 0 4-4zm0 0v-6m0 6h-6m6-6V9a4 4 0 1 1 4 4zm0 0h-6m-4 0h-.007m0 0A4 4 0 1 1 13 9v4m-4.007 0H13m0 0v6m0 0v4a4 4 0 1 1-4-4z"
+						/>
+						<title>Command</title>
+					</svg>
+					<span>K</span>
 				</kbd>
 			</Button>
 			<CommandDialog

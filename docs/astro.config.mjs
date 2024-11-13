@@ -2,7 +2,7 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import solidJs from "@astrojs/solid-js";
 import tailwind from "@astrojs/tailwind";
-import vercel from "@astrojs/vercel";
+import vercel from "@astrojs/vercel/serverless";
 import { defineConfig } from "astro/config";
 import rehypePrettyCode from "rehype-pretty-code";
 import { codeImport } from "remark-code-import";
@@ -135,4 +135,8 @@ export default defineConfig({
 	],
 	output: "server",
 	adapter: vercel(),
+	experimental: {
+		contentLayer: true,
+		contentIntellisense: true,
+	},
 });
