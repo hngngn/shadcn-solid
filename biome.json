@@ -9,10 +9,16 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true
+			"recommended": true,
+			"style": {
+				"noNonNullAssertion": "warn"
+			}
 		}
 	},
 	"files": {
-		"ignore": ["*.js", "*.cjs"]
+		"ignore": [
+			"*.js",
+			"*.cjs"
+		]
 	}
 }
