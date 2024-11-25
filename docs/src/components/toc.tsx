@@ -1,7 +1,7 @@
 import { cn } from "@/libs/cn";
 import { createIntersectionObserver } from "@solid-primitives/intersection-observer";
 import { useLocation } from "@solidjs/router";
-import { For } from "solid-js";
+import { For, createEffect, createSignal } from "solid-js";
 
 type Heading = { depth: number; slug: string; text: string };
 
@@ -49,8 +49,13 @@ const TocItem = (props: TocItemProps) => {
 };
 
 export const Toc = (props: TocProps) => {
-	const targets = () =>
-		document.querySelectorAll("h2, h3") as unknown as Element[];
+	const [targets, setTargets] = createSignal<Element[]>([]);
+
+	createEffect(() => {
+		for (const item of props.data) {
+			setTargets((p) => [...p, document.getElementById(item.slug) as Element]);
+		}
+	});
 
 	createIntersectionObserver(
 		targets,
