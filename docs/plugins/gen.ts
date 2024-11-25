@@ -96,16 +96,18 @@ const processFiles = async () => {
 	);
 };
 
-export const docsGen = (): Plugin => ({
-	name: "docs-gen",
-	async buildStart() {
-		await processFiles();
-	},
-	configureServer(server) {
-		server.watcher.on("change", async (filePath) => {
-			if (filePath.endsWith(".mdx")) {
-				await processFiles();
-			}
-		});
-	},
-});
+export default function docsGen(): Plugin {
+	return {
+		name: "docs-gen",
+		async buildStart() {
+			await processFiles();
+		},
+		configureServer(server) {
+			server.watcher.on("change", async (filePath) => {
+				if (filePath.endsWith(".mdx")) {
+					await processFiles();
+				}
+			});
+		},
+	};
+}

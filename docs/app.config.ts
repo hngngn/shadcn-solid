@@ -7,7 +7,7 @@ import { type Options, rehypePrettyCode } from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import { codeImport } from "remark-code-import";
 import remarkFrontmatter from "remark-frontmatter";
-import { docsGen } from "./plugins/gen";
+import docsGen from "./plugins/gen";
 
 const { default: mdx } = pkg;
 
