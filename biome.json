@@ -12,13 +12,11 @@
 			"recommended": true,
 			"style": {
 				"noNonNullAssertion": "warn"
+			},
+			"suspicious": {
+				"noExplicitAny": "warn"
 			}
-		}
-	},
-	"files": {
-		"ignore": [
-			"*.js",
-			"*.cjs"
-		]
+		},
+		"ignore": ["*.js"]
 	}
 }

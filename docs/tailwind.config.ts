@@ -1,8 +1,9 @@
 import { fontFamily } from "tailwindcss/defaultTheme";
 import type { Config } from "tailwindcss/types/config";
+import tailwindPreset from "../packages/tailwindcss/tailwind.config.js";
 
 export default {
-	darkMode: ["class"],
+	darkMode: ["class", '[data-kb-theme="dark"]'],
 	content: ["./src/**/*.{mdx,ts,tsx}", "../packages/tailwindcss/ui/**.tsx"],
 	theme: {
 		extend: {
@@ -18,5 +19,5 @@ export default {
 			},
 		},
 	},
-	presets: [require("../packages/tailwindcss/tailwind.config.js")],
+	presets: [tailwindPreset],
 } satisfies Config;

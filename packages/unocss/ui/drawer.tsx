@@ -31,19 +31,19 @@ export const DrawerContent = <T extends ValidComponent = "div">(
 	return (
 		<DrawerPrimitive.Portal>
 			<DrawerPrimitive.Overlay
-				class="fixed inset-0 z-50 data-[transitioning]:(transition-colors duration-200)"
+				class="fixed inset-0 z-50 data-[transitioning]:(transition-colors duration-500 ease-[cubic-bezier(0.32,0.72,0,1)])"
 				style={{
-					"background-color": `hsl(var(--background) / ${0.8 * ctx.openPercentage()})`,
+					"background-color": `rgb(0 0 0 / ${0.8 * ctx.openPercentage()})`,
 				}}
 			/>
 			<DrawerPrimitive.Content
 				class={cn(
-					"fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-xl border bg-background after:(absolute inset-x-0 top-full h-[50%] bg-inherit) data-[transitioning]:(transition-transform duration-200) md:select-none",
+					"fixed inset-x-0 bottom-0 z-50 flex h-auto flex-col rounded-t-lg border-t border-border bg-background pt-4 after:(absolute inset-x-0 top-[calc(100%-1px)] h-1/2 bg-inherit) data-[transitioning]:(transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]) md:select-none",
 					local.class,
 				)}
 				{...rest}
 			>
-				<div class="mx-auto mt-4 h-2 w-[100px] rounded-full bg-muted" />
+				<div class="h-1 w-10 rounded-full bg-muted shrink-0 self-center" />
 				{local.children}
 			</DrawerPrimitive.Content>
 		</DrawerPrimitive.Portal>

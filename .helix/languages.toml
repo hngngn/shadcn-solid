@@ -11,6 +11,8 @@ languages = { typescriptreact = [
   { formatCommand = "pnpm biome check --write -unsafe --stdin-file-path=${INPUT}", formatStdin = true },
 ], typescript = [
   { formatCommand = "pnpm biome check --write -unsafe --stdin-file-path=${INPUT}", formatStdin = true },
+], javascript = [
+  { formatCommand = "pnpm biome check --write -unsafe --stdin-file-path=${INPUT}", formatStdin = true },
 ] }
 
 [[language]]
