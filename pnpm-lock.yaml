@@ -84,6 +84,9 @@ importers:
       '@repo/tailwindcss':
         specifier: workspace:*
         version: link:../packages/tailwindcss
+      '@types/lodash.template':
+        specifier: ^4.5.3
+        version: 4.5.3
       '@typescript-eslint/parser':
         specifier: ^8.15.0
         version: 8.15.0(eslint@9.15.0(jiti@2.4.0))(typescript@5.7.2)
@@ -102,6 +105,9 @@ importers:
       eslint-plugin-solid:
         specifier: ^0.14.4
         version: 0.14.4(eslint@9.15.0(jiti@2.4.0))(typescript@5.7.2)
+      lodash.template:
+        specifier: ^4.5.0
+        version: 4.5.0
       postcss:
         specifier: ^8.4.49
         version: 8.4.49
@@ -111,24 +117,39 @@ importers:
       rehype-slug:
         specifier: ^6.0.0
         version: 6.0.0
+      rehype-stringify:
+        specifier: ^10.0.1
+        version: 10.0.1
       remark-code-import:
         specifier: ^1.2.0
         version: 1.2.0
       remark-frontmatter:
         specifier: ^5.0.0
         version: 5.0.0
+      remark-parse:
+        specifier: ^11.0.0
+        version: 11.0.0
+      remark-rehype:
+        specifier: ^11.1.1
+        version: 11.1.1
       tailwindcss:
         specifier: ^3.4.15
         version: 3.4.15
       to-vfile:
         specifier: ^8.0.0
         version: 8.0.0
+      tsx:
+        specifier: ^4.19.2
+        version: 4.19.2
       typescript-eslint:
         specifier: ^8.15.0
         version: 8.15.0(eslint@9.15.0(jiti@2.4.0))(typescript@5.7.2)
-      unist-util-visit:
-        specifier: ^5.0.0
-        version: 5.0.0
+      unified:
+        specifier: ^11.0.5
+        version: 11.0.5
+      valibot:
+        specifier: 1.0.0-beta.8
+        version: 1.0.0-beta.8(typescript@5.7.2)
       vfile-matter:
         specifier: ^5.0.0
         version: 5.0.0
@@ -6356,6 +6377,14 @@ packages:
 
   valibot@0.37.0:
     resolution: {integrity: sha512-FQz52I8RXgFgOHym3XHYSREbNtkgSjF9prvMFH1nBsRyfL6SfCzoT1GuSDTlbsuPubM7/6Kbw0ZMQb8A+V+VsQ==}
+    peerDependencies:
+      typescript: '>=5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
+  valibot@1.0.0-beta.8:
+    resolution: {integrity: sha512-OPAwJZtowb0j91b+bd77+ny7D1VVzsCzD7Jl9waLUlMprTsfI9Y3HHbW3hAQD7wKDKHsmGEesuiYWaYvcZL2wg==}
     peerDependencies:
       typescript: '>=5'
     peerDependenciesMeta:
@@ -13888,6 +13917,10 @@ snapshots:
   valibot@0.37.0(typescript@5.6.3):
     optionalDependencies:
       typescript: 5.6.3
+
+  valibot@1.0.0-beta.8(typescript@5.7.2):
+    optionalDependencies:
+      typescript: 5.7.2
 
   validate-html-nesting@1.2.2: {}
 

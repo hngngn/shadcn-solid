@@ -1,8 +1,8 @@
 import { siteConfig } from "@/config/site";
 import { Button } from "@repo/tailwindcss/ui/button";
 import { clientOnly } from "@solidjs/start";
+import ModeToggle from "../examples/mode-toggle";
 import { MobileNavbar } from "./mobile-navbar";
-import ModeToggle from "./mode-toggle";
 import { Navbar } from "./navbar";
 
 const CommandMenu = clientOnly(() => import("./command-menu"));

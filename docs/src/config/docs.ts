@@ -2,7 +2,6 @@ export type TNavItem = {
 	title: string;
 	href?: string;
 	disabled?: boolean;
-	label?: string;
 };
 
 export type TSidebarNavItem = TNavItem & {
@@ -171,7 +170,6 @@ export const docsConfig: TDocsConfig = {
 					title: "Date Picker",
 					href: "/docs/components/date-picker",
 					items: [],
-					label: "Updated",
 				},
 				{
 					title: "Dialog",
@@ -207,7 +205,6 @@ export const docsConfig: TDocsConfig = {
 					title: "Navigation Menu",
 					href: "/docs/components/navigation-menu",
 					items: [],
-					label: "New",
 				},
 				{
 					title: "Number Field",

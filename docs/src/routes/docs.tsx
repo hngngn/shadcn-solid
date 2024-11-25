@@ -3,6 +3,7 @@ import { mdxComponents } from "@/components/mdx-components";
 import { PageNavigation } from "@/components/page-navigation";
 import { Sidebar } from "@/components/sidebar";
 import { Toc } from "@/components/toc";
+import { badgeVariants } from "@repo/tailwindcss/ui/badge";
 import type { RouteSectionProps } from "@solidjs/router";
 import { Show } from "solid-js";
 // @ts-expect-error
@@ -56,7 +57,7 @@ const DocsLayout = (props: RouteSectionProps) => {
 								</p>
 							</Show>
 						</div>
-						{/* <Show when={data().frontmatter.link}>
+						<Show when={data().frontmatter.link}>
 							<div class="flex items-center space-x-2 pt-4">
 								<Show when={data().frontmatter.link?.doc}>
 									<a
@@ -116,7 +117,7 @@ const DocsLayout = (props: RouteSectionProps) => {
 									</a>
 								</Show>
 							</div>
-						</Show> */}
+						</Show>
 						<div class="max-w-full pb-12 pt-8">
 							<MDXProvider components={mdxComponents}>
 								{props.children}
