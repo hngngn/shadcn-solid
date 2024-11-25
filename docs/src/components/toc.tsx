@@ -16,12 +16,14 @@ type TocItemProps = {
 const TocItem = (props: TocItemProps) => {
 	const location = useLocation();
 
-	const handleClick = () => {
+	const handleClick = (event: Event) => {
+		event.preventDefault();
+
 		const element = document.getElementById(props.data.slug);
 
 		if (element) {
 			const elementPosition = element.getBoundingClientRect().top;
-			const offsetPosition = elementPosition + window.scrollY - 0;
+			const offsetPosition = elementPosition + window.scrollY - 70;
 
 			window.scrollTo({
 				top: offsetPosition,
@@ -50,28 +52,34 @@ export const Toc = (props: TocProps) => {
 	const targets = () =>
 		document.querySelectorAll("h2, h3") as unknown as Element[];
 
-	createIntersectionObserver(targets, (entries) => {
-		let firstIntersectingEntry = null;
+	createIntersectionObserver(
+		targets,
+		(entries) => {
+			let firstIntersectingEntry = null;
 
-		for (const entry of entries) {
-			if (entry.isIntersecting) {
-				firstIntersectingEntry = entry;
-				break;
+			for (const entry of entries) {
+				if (entry.isIntersecting) {
+					firstIntersectingEntry = entry;
+					break;
+				}
 			}
-		}
 
-		if (firstIntersectingEntry) {
-			const headingFragment = `#${firstIntersectingEntry.target.id}`;
-			const tocItem = document.querySelector(
-				`a[href="${window.location.pathname + headingFragment}"]`,
-			);
-			const previouslyActivatedItem =
-				document.querySelector(".active-toc-item");
+			if (firstIntersectingEntry) {
+				const headingFragment = `#${firstIntersectingEntry.target.id}`;
+				const tocItem = document.querySelector(
+					`a[href="${window.location.pathname + headingFragment}"]`,
+				);
+				const previouslyActivatedItem =
+					document.querySelector(".active-toc-item");
 
-			previouslyActivatedItem?.classList.remove("active-toc-item");
-			tocItem?.classList.add("active-toc-item");
-		}
-	});
+				previouslyActivatedItem?.classList.remove("active-toc-item");
+				tocItem?.classList.add("active-toc-item");
+			}
+		},
+		{
+			threshold: 0.01,
+		},
+	);
 
 	return (
 		<aside class="space-y-2">

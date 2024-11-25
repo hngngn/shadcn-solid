@@ -4,7 +4,9 @@ import { fileURLToPath } from "node:url";
 import { defineConfig } from "@solidjs/start/config";
 //@ts-expect-error
 import pkg from "@vinxi/plugin-mdx";
+import { type Options, rehypePrettyCode } from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
+import { codeImport } from "remark-code-import";
 import remarkFrontmatter from "remark-frontmatter";
 import { readSync } from "to-vfile";
 import { matter } from "vfile-matter";
@@ -99,6 +101,8 @@ export default defineConfig({
 				},
 				configureServer(server) {
 					server.watcher.on("change", (filePath) => {
+						console.log(filePath);
+
 						if (filePath.includes("/src/routes/docs")) {
 							processFiles();
 						}
@@ -109,8 +113,25 @@ export default defineConfig({
 				jsx: true,
 				jsxImportSource: "solid-js",
 				providerImportSource: "@/components/mdx",
-				remarkPlugins: [remarkFrontmatter],
-				rehypePlugins: [rehypeSlug],
+				remarkPlugins: [
+					remarkFrontmatter,
+					[
+						codeImport,
+						{
+							allowImportingFromOutside: true,
+						} satisfies Parameters<typeof codeImport>[0],
+					],
+				],
+				rehypePlugins: [
+					rehypeSlug,
+					[
+						rehypePrettyCode,
+						{
+							theme: "vesper",
+							keepBackground: false,
+						} satisfies Options,
+					],
+				],
 			}),
 		],
 		resolve: {

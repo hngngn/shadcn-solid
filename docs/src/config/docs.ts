@@ -1,9 +1,9 @@
-export interface TNavItem {
+export type TNavItem = {
 	title: string;
 	href?: string;
 	disabled?: boolean;
 	label?: string;
-}
+};
 
 export type TSidebarNavItem = TNavItem & {
 	items: TSidebarNavItem[];
@@ -13,10 +13,10 @@ export type TNavItemWithChildren = TNavItem & {
 	items: TNavItemWithChildren[];
 };
 
-export interface TDocsConfig {
+export type TDocsConfig = {
 	mainNav: TNavItem[];
 	sidebarNav: TSidebarNavItem[];
-}
+};
 
 export const docsConfig: TDocsConfig = {
 	mainNav: [
@@ -40,11 +40,6 @@ export const docsConfig: TDocsConfig = {
 				{
 					title: "Introduction",
 					href: "/docs/introduction",
-					items: [],
-				},
-				{
-					title: "Installation",
-					href: "/docs/installation",
 					items: [],
 				},
 				{
@@ -80,6 +75,26 @@ export const docsConfig: TDocsConfig = {
 				{
 					title: "About",
 					href: "/docs/about",
+					items: [],
+				},
+			],
+		},
+		{
+			title: "Installation",
+			items: [
+				{
+					title: "Solid Start",
+					href: "/docs/installation/solid-start",
+					items: [],
+				},
+				{
+					title: "Astro",
+					href: "/docs/installation/astro",
+					items: [],
+				},
+				{
+					title: "Manual",
+					href: "/docs/installation/manual",
 					items: [],
 				},
 			],

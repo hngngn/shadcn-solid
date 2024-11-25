@@ -1,6 +1,13 @@
+import { clientOnly } from "@solidjs/start";
+import type { ComponentProps } from "solid-js";
 import type { MDXComponents } from "./mdx";
 
-export const mdxComponents: Partial<MDXComponents> = {
+const ComponentPreview = clientOnly(() => import("./component-preview"));
+const ComponentInstallation = clientOnly(
+	() => import("./component-installation"),
+);
+
+export const mdxComponents: Partial<MDXComponents> | Record<string, unknown> = {
 	a: (props) => (
 		<a class="font-medium underline underline-offset-4" {...props} />
 	),
@@ -49,4 +56,26 @@ export const mdxComponents: Partial<MDXComponents> = {
 		<p class="break-words leading-7 [&:not(:first-child)]:mt-6" {...props} />
 	),
 	ul: (props) => <ul class="my-6 ml-6 list-disc" {...props} />,
+	pre: (props) => {
+		return (
+			<pre
+				class="mb-4 mt-6 max-h-[650px] overflow-x-auto py-4 rounded-lg border bg-[#101010] text-white"
+				{...props}
+			/>
+		);
+	},
+	Step: (props: ComponentProps<"div">) => (
+		<div
+			class="[&>h3]:step steps mb-12 ml-4 border-l pl-8 [counter-reset:step]"
+			{...props}
+		/>
+	),
+	StepItem: (props: ComponentProps<"h3">) => (
+		<h3
+			class="font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight"
+			{...props}
+		/>
+	),
+	ComponentPreview,
+	ComponentInstallation,
 };

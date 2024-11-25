@@ -1,0 +1,261 @@
+---
+title: Changelog
+description: Latest updates and announcements.
+toc: false
+---
+
+## Sep 2024 - New Components
+
+### Navigation Menu
+
+A collection of links for navigating websites.
+
+<ComponentPreview name="navigation-menu-demo">
+```tsx file=<rootDir>/src/examples/navigation-menu-demo.tsx
+```
+</ComponentPreview>
+
+## Jun 2024 - New components
+
+### Number Field
+
+A number input that allow users to input custom number entries with a keyboard.
+
+<ComponentPreview name="number-field-demo">
+```tsx file=<rootDir>/src/examples/number-field-demo.tsx
+```
+</ComponentPreview>
+
+### OTP Field
+
+A fully featured OTP input component. Support all default keybindings and is accessible, Android and iOS copy, paste, cut and [many more](https://corvu.dev/docs/primitives/otp-field/#features). Built on top of `@corvu/otp-field`. An awesome work from [Jasmin](https://x.com/giyo_moon/).
+
+<ComponentPreview name="otp-field-demo">
+```tsx file=<rootDir>/src/examples/otp-field-demo.tsx
+```
+</ComponentPreview>
+
+### Menubar
+
+A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.
+
+<ComponentPreview name="menubar-demo">
+```tsx file=<rootDir>/src/examples/menubar-demo.tsx
+```
+</ComponentPreview>
+
+### Calendar
+
+New `Calendar` demo.
+
+<ComponentPreview name="calendar-demo">
+```tsx file=<rootDir>/src/examples/calendar-demo.tsx
+```
+</ComponentPreview>
+
+## May 2024 - CLI and components update
+
+### CLI Updates
+
+#### `diff`
+
+Track upstream component updates with `diff`.
+
+Run the `diff` command to get a list of components that have updates available:
+
+```bash
+npx shadcn-solid diff
+```
+
+```bash
+┌   shadcn-solid
+│
+◇  The following components have updates avaiable
+│
+●  alert - path\to\my-ap\components\ui\alert.tsx
+│
+●  card - path\to\my-ap\components\ui\card.tsx
+│
+└  Run diff <component> to see the changes
+```
+
+Then run `diff [component]` to see the changes:
+
+```bash
+npx shadcn-solid diff alert
+```
+
+```tsx
+const alertVariants = cva(
+- "relative w-full rounded-lg border",
++ "relative w-full pl-12 rounded-lg border"
+)
+```
+
+#### `add`
+
+Adding multiple components or using --all is significantly faster
+
+### Schema update
+
+The `components.json` schema has been updated
+
+```json title="New schema" {5-9,12-15}
+{
+  "$schema": "https://shadcn-solid.com/schema.json",
+  "tailwind": {
+    "config": "tailwind.config.cjs",
+    "css": {
+      "path": "src/app.css",
+      "variable": true
+    },
+    "color": "slate",
+    "prefix": ""
+  },
+  "alias": {
+    "component": "@/components",
+    "cn": "@/libs/cn"
+  }
+}
+```
+
+### Component updates
+
+We've added new components to shadcn-solid.
+
+- [**Toggle Group**](#toggle-group) - A set of two-state buttons that can be toggled on (pressed) or off (not pressed).
+- [**Sonner**](#sonner) - An opinionated toast component for Solid.
+
+### Toggle Group
+
+<ComponentPreview name="toggle-group-demo">
+```tsx file=<rootDir>/src/examples/toggle-group-demo.tsx
+```
+</ComponentPreview>
+
+### Sonner
+
+<ComponentPreview name="sonner-demo">
+```tsx file=<rootDir>/src/examples/sonner-demo.tsx
+```
+</ComponentPreview>
+
+Transitioned two existing components, [**Splitter**](components/resizable) and [**Command**](components/command), to utilize the new Resizable from [corvu](https://corvu.dev) and the solid port of [cmdk](https://cmdk-solid.vercel.app), respectively.
+
+## April 2024 - UnoCSS.
+
+We're excited to announce support for UnoCSS, an instant atomic CSS engine.
+
+### Framework selection
+
+You can select your preferred CSS framework during project setup using the `init` command:
+
+```bash
+◆  Which CSS framework would you like to use?
+│  ○ TailwindCSS
+│  ● UnoCSS
+```
+
+### Component installation
+
+A new `--all` option has been added to the `add` command. This enhancement simplifies installing all available components in one go.
+
+## March 2024 - Drawer.
+
+- [**Drawer**](#drawer) - A draggable dialog that is attached to any side of the viewport.
+
+### Drawer
+
+Built on top of [Drawer](https://corvu.dev/docs/primitives/drawer) component from [Corvu](https://corvu.dev).
+
+<ComponentPreview name="drawer-demo" />
+
+## March 2024 - Updated docs, UI, and fixed bugs.
+
+- Update style for [**Date Picker**](components/date-picker).
+- Updated documentation for [**Toggle**](components/toggle) and [**Toast**](components/toast).
+- Fixed focus issue with [**Checkbox**](components/checkbox).
+- Resolved duplication problem occurring with [**Toast**](components/toast).
+- Corrected styling for [**Tabs**](components/tabs).
+
+## February 2024 - New components, CLI and more
+
+We've added new components to shadcn-solid and made a improvements to the CLI.
+
+Here's a quick overview of what's new:
+
+- [**Carousel**](#carousel) - A carousel component with motion, swipe gestures and keyboard support.
+- [**Pagination**](#pagination) - A pagination component allows the user to select a specific page from a range of pages.
+- [**Command**](#command) - A Composable command menu component.
+- [**Date Picker**](#date-picker) - A component that allows users to select a date from a calendar.
+- [**CLI updates**](#cli-updates) - Support for custom **Tailwind prefix**, remove `style` and more.
+
+### Date Picker
+
+<ComponentPreview name="date-picker-demo">
+```tsx file=<rootDir>/src/examples/date-picker-demo.tsx
+```
+</ComponentPreview>
+
+### Command
+
+<ComponentPreview name="command-demo">
+```tsx file=<rootDir>/src/examples/command-demo.tsx
+```
+</ComponentPreview>
+
+### Carousel
+
+We've added a fully featured carousel component with motion, swipe gestures and keyboard support. Built on top of [Embla Carousel](https://www.embla-carousel.com).
+
+It has support for infinite looping, autoplay, vertical orientation, and more.
+
+<ComponentPreview name="carousel-demo">
+```tsx file=<rootDir>/src/examples/carousel-demo.tsx
+```
+</ComponentPreview>
+
+### Pagination
+
+We've added a pagination component with page navigation, previous and next buttons. Simple and flexible.
+
+<ComponentPreview name="pagination-demo">
+```tsx file=<rootDir>/src/examples/pagination-demo.tsx
+```
+</ComponentPreview>
+
+### CLI updates
+
+- Icon library
+
+  We're removed the icon library and using SVG for more flexibility.
+
+- Remove `style` property
+
+  In this update, the `style` property has been removed, but there's a possibility of its return if additional styling features are introduced in future updates.
+
+- Support **custom ui dir**
+
+  You can use this config to customize the installation directory for your `ui` components.
+
+  ```json title="components.json"
+  {
+    "aliases": {
+      "ui": "@/ui"
+    }
+  }
+  ```
+
+- Support custom **Tailwind prefix**
+
+  You can now configure a custom Tailwind prefix and the cli will automatically prefix your utility classes when adding components.
+
+  A drop-in for your existing design system with no conflict. 🔥
+
+  ```tsx /tw-/
+  <AlertDialog class="tw-grid tw-gap-4 tw-border tw-bg-background tw-shadow-lg" />
+  ```
+
+  It works with `cn`, `cva` and CSS variables.
+
+That's it. Happy Lunar New Year.

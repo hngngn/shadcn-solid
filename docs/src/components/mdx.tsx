@@ -1,6 +1,6 @@
 // https://github.com/nksaraf/solid-mdx
 
-import type { Component, JSX, ParentProps } from "solid-js";
+import type { JSX, ParentProps } from "solid-js";
 import {
 	createComponent,
 	createContext,
@@ -200,10 +200,8 @@ export type MDXComponents = {
 };
 
 type MDXProps = ParentProps<{
-	components?: MDXComponents | Record<string, Component>;
+	components?: MDXComponents | Record<string, unknown>;
 }>;
-
-export type MDXComponent = (props: MDXProps) => JSX.Element;
 
 export const MDXContext = createContext<MDXComponents>(
 	[...HTMLElements, ...SVGElements].reduce((acc, el) => {
@@ -222,7 +220,7 @@ export const MDXContext = createContext<MDXComponents>(
 	}, {} as MDXComponents),
 );
 
-export const MDXProvider: MDXComponent = (props) => {
+export const MDXProvider = (props: MDXProps) => {
 	const context = useContext(MDXContext);
 	const [local, other] = splitProps(props, ["children"]);
 	const value = createMemo(() => ({ ...context, ...other.components }));

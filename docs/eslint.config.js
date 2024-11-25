@@ -36,6 +36,8 @@ export default tseslint.config(
 			"@typescript-eslint/consistent-type-definitions": ["error", "type"],
 			"@typescript-eslint/no-confusing-void-expression": "off",
 			"@typescript-eslint/ban-ts-comment": "off",
+			"@typescript-eslint/no-unsafe-return": "off",
+			"@typescript-eslint/restrict-plus-operands": "off",
 		},
 	},
 );

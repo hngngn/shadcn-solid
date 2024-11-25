@@ -1,5 +1,4 @@
 import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
 import { Metadata } from "@/components/metadata";
 import { ColorModeProvider, ColorModeScript } from "@kobalte/core";
 import { ToastList, ToastRegion } from "@repo/tailwindcss/ui/toast";
@@ -11,6 +10,7 @@ import { Suspense } from "solid-js";
 
 import "./app.css";
 import "./mdx.css";
+import { Header } from "./components/header";
 
 const Toaster = clientOnly(
 	// @ts-expect-error
