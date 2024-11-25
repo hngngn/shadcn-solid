@@ -13,6 +13,7 @@ import "./app.css";
 import "./mdx.css";
 
 const Toaster = clientOnly(
+	// @ts-expect-error
 	async () => (await import("@repo/tailwindcss/ui/sonner")).Toaster,
 );
 

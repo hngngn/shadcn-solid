@@ -1,26 +1,17 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": [
-    "**/.env.*local"
-  ],
-  "tasks": {
-    "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "outputs": [
-        ".next/**",
-        "!.next/cache/**"
-      ]
-    },
-    "check": {
-      "dependsOn": [
-        "^check"
-      ]
-    },
-    "dev": {
-      "cache": false,
-      "persistent": true
-    }
-  }
+	"$schema": "https://turbo.build/schema.json",
+	"globalDependencies": ["**/.env.*local"],
+	"tasks": {
+		"build": {
+			"dependsOn": ["^build"],
+			"outputs": [".vercel/output/**", ".vinxi/**"]
+		},
+		"check": {
+			"dependsOn": ["^check"]
+		},
+		"dev": {
+			"cache": false,
+			"persistent": true
+		}
+	}
 }
