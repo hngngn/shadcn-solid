@@ -7,7 +7,6 @@ import {
 	NavigationMenuLink,
 	NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { siteConfig } from "@/config/site";
 import type { ParentProps } from "solid-js";
 import { For } from "solid-js";
 
@@ -76,14 +75,16 @@ const NavigationMenuDemo = () => {
 						class="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none transition-shadow duration-200 hover:shadow-md focus-visible:shadow-md focus-visible:ring-[1.5px] focus-visible:ring-ring"
 					>
 						<NavigationMenuItemLabel class="mb-2 mt-4 text-lg font-medium">
-							{siteConfig.title}
+							shadcn-solid
 						</NavigationMenuItemLabel>
 						<NavigationMenuDescription class="text-sm leading-tight text-muted-foreground">
-							{siteConfig.description}
+							Beautifully designed components built with your choice of UI and
+							CSS frameworks
 						</NavigationMenuDescription>
 					</NavigationMenuLink>
 					<ListItem href="/docs" title="Introduction">
-						{siteConfig.description}.
+						Beautifully designed components built with your choice of UI and CSS
+						frameworks
 					</ListItem>
 					<ListItem href="/docs/installation" title="Installation">
 						How to install dependencies and structure your app.
