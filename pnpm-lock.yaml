@@ -147,6 +147,9 @@ importers:
       unified:
         specifier: ^11.0.5
         version: 11.0.5
+      unist-util-visit:
+        specifier: ^5.0.0
+        version: 5.0.0
       valibot:
         specifier: 1.0.0-beta.8
         version: 1.0.0-beta.8(typescript@5.7.2)

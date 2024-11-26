@@ -1,6 +1,8 @@
 import { clientOnly } from "@solidjs/start";
-import type { ComponentProps } from "solid-js";
+import { type ComponentProps, Show, splitProps } from "solid-js";
+import { CopyButton } from "./copy-button";
 import type { MDXComponents } from "./mdx";
+import PackageManagerCopyButton from "./package-manager-copy-button";
 
 const ComponentPreview = clientOnly(() => import("./component-preview"));
 const ComponentInstallation = clientOnly(
@@ -56,12 +58,49 @@ export const mdxComponents: Partial<MDXComponents> | Record<string, unknown> = {
 		<p class="break-words leading-7 [&:not(:first-child)]:mt-6" {...props} />
 	),
 	ul: (props) => <ul class="my-6 ml-6 list-disc" {...props} />,
-	pre: (props) => {
+	pre: (
+		props: ComponentProps<"pre"> & {
+			rawString: string;
+			npmCommand: string;
+			yarnCommand: string;
+			pnpmCommand: string;
+			bunCommand: string;
+			withMeta: boolean;
+		},
+	) => {
+		const [local, rest] = splitProps(props, [
+			"rawString",
+			"npmCommand",
+			"yarnCommand",
+			"pnpmCommand",
+			"bunCommand",
+			"withMeta",
+		]);
 		return (
-			<pre
-				class="mb-4 mt-6 max-h-[650px] overflow-x-auto py-4 rounded-lg border bg-[#101010] text-white"
-				{...props}
-			/>
+			<>
+				<pre
+					class="mb-4 mt-6 max-h-[650px] overflow-x-auto py-4 rounded-lg border bg-[#101010] text-white"
+					{...rest}
+				/>
+				<Show when={local.rawString && !local.npmCommand}>
+					<CopyButton rawString={local.rawString} withMeta={local.withMeta} />
+				</Show>
+				<Show
+					when={
+						local.npmCommand &&
+						local.yarnCommand &&
+						local.pnpmCommand &&
+						local.bunCommand
+					}
+				>
+					<PackageManagerCopyButton
+						npmCommand={local.npmCommand}
+						yarnCommand={local.yarnCommand}
+						pnpmCommand={local.pnpmCommand}
+						bunCommand={local.bunCommand}
+					/>
+				</Show>
+			</>
 		);
 	},
 	Step: (props: ComponentProps<"div">) => (
