@@ -256,12 +256,6 @@ export const Index = {
       registryDependencies: undefined,
       component: lazy(() => import("@repo/tailwindcss/examples/hover-card-demo"))
     },
-    "image-demo": {
-      name: "image-demo",
-      type: "components:example", 
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/tailwindcss/examples/image-demo"))
-    },
     "menubar-demo": {
       name: "menubar-demo",
       type: "components:example", 
