@@ -1,7 +1,7 @@
-import { docsConfig } from "@/config/docs";
-import { cn } from "@/libs/cn";
 import { useLocation } from "@solidjs/router";
 import { For, Show } from "solid-js";
+import { docsConfig } from "~/config/docs";
+import { cn } from "~/libs/cn";
 
 export const Sidebar = () => {
 	const location = useLocation();

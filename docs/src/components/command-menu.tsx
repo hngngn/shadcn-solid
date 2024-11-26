@@ -1,5 +1,3 @@
-import type { TNavItem } from "@/config/docs";
-import { docsConfig } from "@/config/docs";
 import { Button } from "@repo/tailwindcss/ui/button";
 import {
 	CommandDialog,
@@ -18,6 +16,8 @@ import {
 	on,
 	onCleanup,
 } from "solid-js";
+import type { TNavItem } from "~/config/docs";
+import { docsConfig } from "~/config/docs";
 
 type Option = TNavItem & { value: string; icon: JSXElement };
 

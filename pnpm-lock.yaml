@@ -53,21 +53,12 @@ importers:
       '@solidjs/start':
         specifier: ^1.0.10
         version: 1.0.10(solid-js@1.9.3)(vinxi@0.4.3(@types/node@22.9.3)(ioredis@5.4.1)(terser@5.36.0)(typescript@5.7.2))(vite@5.4.11(@types/node@22.9.3)(terser@5.36.0))
-      '@tanstack/solid-table':
-        specifier: ^8.20.5
-        version: 8.20.5(solid-js@1.9.3)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
-      embla-carousel-autoplay:
-        specifier: ^8.5.1
-        version: 8.5.1(embla-carousel@8.5.1)
       solid-js:
         specifier: ^1.9.2
         version: 1.9.3
-      solid-sonner:
-        specifier: ^0.2.8
-        version: 0.2.8(solid-js@1.9.3)
       solid-wrap-balancer:
         specifier: ^0.0.5
         version: 0.0.5(solid-js@1.9.3)
@@ -311,6 +302,9 @@ importers:
       '@kobalte/core':
         specifier: ^0.13.7
         version: 0.13.7(solid-js@1.9.3)
+      '@tanstack/solid-table':
+        specifier: ^8.20.5
+        version: 8.20.5(solid-js@1.9.3)
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.49)

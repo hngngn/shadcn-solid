@@ -39,7 +39,7 @@ for (const framework of frameworks) {
       name: "${item.name}",
       type: "${item.type}", 
       registryDependencies: ${JSON.stringify(item.registryDependencies)},
-      component: lazy(() => import("../examples/${item.name}"))
+      component: lazy(() => import("@repo/tailwindcss/examples/${item.name}"))
     },`;
 		}
 	}

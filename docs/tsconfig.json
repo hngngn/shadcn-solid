@@ -13,8 +13,9 @@
 		"types": ["vinxi/types/client"],
 		"isolatedModules": true,
 		"paths": {
-			"@/*": ["./src/*"],
-			"#content": ["./.content"]
+			"~/*": ["./src/*"],
+			"#content": ["./.content/*"]
+			// "@/components/ui/*": ["../packages/tailwindcss/ui/*"]
 		}
 	}
 }

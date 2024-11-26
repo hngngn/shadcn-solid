@@ -1,5 +1,5 @@
-import { siteConfig } from "@/config/site";
 import { Link, Meta, Style, Title } from "@solidjs/meta";
+import { siteConfig } from "~/config/site";
 
 export const Metadata = () => {
 	return (

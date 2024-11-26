@@ -1,13 +1,13 @@
-import { MDXProvider } from "@/components/mdx";
-import { mdxComponents } from "@/components/mdx-components";
-import { PageNavigation } from "@/components/page-navigation";
-import { Sidebar } from "@/components/sidebar";
-import { Toc } from "@/components/toc";
 import { badgeVariants } from "@repo/tailwindcss/ui/badge";
 import type { RouteSectionProps } from "@solidjs/router";
 import { Show } from "solid-js";
 // @ts-expect-error
 import { Balancer } from "solid-wrap-balancer";
+import { MDXProvider } from "~/components/mdx";
+import { mdxComponents } from "~/components/mdx-components";
+import { PageNavigation } from "~/components/page-navigation";
+import { Sidebar } from "~/components/sidebar";
+import { Toc } from "~/components/toc";
 import { allDocs } from "#content";
 
 const DocsLayout = (props: RouteSectionProps) => {

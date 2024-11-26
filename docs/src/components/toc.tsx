@@ -1,7 +1,7 @@
-import { cn } from "@/libs/cn";
 import { createIntersectionObserver } from "@solid-primitives/intersection-observer";
 import { useLocation } from "@solidjs/router";
 import { For, createEffect, createSignal } from "solid-js";
+import { cn } from "~/libs/cn";
 
 type Heading = { depth: number; slug: string; text: string };
 

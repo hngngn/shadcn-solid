@@ -14,11 +14,8 @@
 		"@solidjs/meta": "^0.29.4",
 		"@solidjs/router": "^0.15.0",
 		"@solidjs/start": "^1.0.10",
-		"@tanstack/solid-table": "^8.20.5",
 		"clsx": "^2.1.1",
-		"embla-carousel-autoplay": "^8.5.1",
 		"solid-js": "^1.9.2",
-		"solid-sonner": "^0.2.8",
 		"solid-wrap-balancer": "^0.0.5",
 		"tailwind-merge": "^2.5.5",
 		"vinxi": "^0.4.3"

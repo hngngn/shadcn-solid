@@ -2,9 +2,13 @@
 	"name": "@repo/tailwindcss",
 	"version": "0.0.1",
 	"exports": {
-		"./ui/*": "./ui/*.tsx"
+		"./ui/*": "./ui/*.tsx",
+		"./examples/*": "./examples/*.tsx"
 	},
-	"files": ["ui"],
+	"files": [
+		"ui",
+		"examples"
+	],
 	"private": true,
 	"type": "module",
 	"scripts": {
@@ -16,6 +20,7 @@
 		"@corvu/otp-field": "^0.1.4",
 		"@corvu/resizable": "^0.2.3",
 		"@kobalte/core": "^0.13.7",
+		"@tanstack/solid-table": "^8.20.5",
 		"autoprefixer": "^10.4.20",
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.1",

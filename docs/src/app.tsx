@@ -1,5 +1,3 @@
-import { Footer } from "@/components/footer";
-import { Metadata } from "@/components/metadata";
 import { ColorModeProvider, ColorModeScript } from "@kobalte/core";
 import { ToastList, ToastRegion } from "@repo/tailwindcss/ui/toast";
 import { MetaProvider } from "@solidjs/meta";
@@ -7,6 +5,8 @@ import { Router } from "@solidjs/router";
 import { clientOnly } from "@solidjs/start";
 import { FileRoutes } from "@solidjs/start/router";
 import { Suspense } from "solid-js";
+import { Footer } from "~/components/footer";
+import { Metadata } from "~/components/metadata";
 
 import "./app.css";
 import "./mdx.css";
