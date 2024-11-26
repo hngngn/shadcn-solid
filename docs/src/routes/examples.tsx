@@ -1,24 +1,18 @@
 import { buttonVariants } from "@repo/tailwindcss/ui/button";
-import { clientOnly } from "@solidjs/start";
-import { Announcement } from "~/components/announcement";
+import type { RouteSectionProps } from "@solidjs/router";
 import Example from "~/components/example";
 import { siteConfig } from "~/config/site";
 
-const MailUI = clientOnly(
-	() => import("~/routes/examples/_components/mail/ui"),
-);
-
-const Home = () => {
+const ExamplesLayout = (props: RouteSectionProps) => {
 	return (
 		<div class="container relative">
 			<section class="mx-auto flex flex-col items-start gap-2 px-4 py-8 md:py-12 md:pb-8 lg:py-12 lg:pb-10">
-				<Announcement />
 				<h1 class="text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1]">
-					Build your component library
+					Check out some examples
 				</h1>
 				<p class="max-w-2xl text-balance text-lg font-light text-foreground">
-					Beautifully designed components that you can copy and paste into your
-					apps. Accessible. Customizable. Open Source.
+					Some examples built using the components. Use this as a guide to build
+					your own.
 				</p>
 				<div class="flex w-full items-center justify-start gap-2 py-2">
 					<a href="/docs/introduction" class={buttonVariants({ size: "sm" })}>
@@ -48,30 +42,14 @@ const Home = () => {
 					</a>
 				</div>
 			</section>
-			<Example />
-			<section class="overflow-hidden rounded-lg border bg-background shadow-md md:hidden md:shadow-xl">
-				<img
-					src="/examples/mail-dark.png"
-					width={1280}
-					height={727}
-					alt="Mail"
-					class="hidden dark:block"
-				/>
-				<img
-					src="/examples/mail-light.png"
-					width={1280}
-					height={727}
-					alt="Mail"
-					class="block dark:hidden"
-				/>
-			</section>
-			<section class="hidden md:block">
-				<div class="overflow-hidden rounded-lg border bg-background shadow-lg">
-					<MailUI />
+			<section>
+				<Example />
+				<div class="overflow-hidden rounded-[0.5rem] border bg-background shadow-md md:shadow-xl">
+					{props.children}
 				</div>
 			</section>
 		</div>
 	);
 };
 
-export default Home;
+export default ExamplesLayout;

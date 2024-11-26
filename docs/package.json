@@ -11,6 +11,7 @@
 	"dependencies": {
 		"@kobalte/core": "^0.13.7",
 		"@solid-primitives/intersection-observer": "^2.1.6",
+		"@solid-primitives/storage": "^4.2.1",
 		"@solidjs/meta": "^0.29.4",
 		"@solidjs/router": "^0.15.0",
 		"@solidjs/start": "^1.0.10",

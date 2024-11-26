@@ -3,5 +3,8 @@
 	"extends": ["../biome.json"],
 	"formatter": {
 		"ignore": ["./src/__registry__/index.js"]
+	},
+	"linter": {
+		"ignore": ["./src/routes/examples/_components/**/*.tsx"]
 	}
 }
