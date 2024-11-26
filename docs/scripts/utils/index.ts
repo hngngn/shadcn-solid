@@ -104,12 +104,6 @@ const ui = [
 		files: ["ui/hover-card.tsx"],
 	},
 	{
-		name: "image",
-		type: "components:ui",
-		dependencies: ["@kobalte/core"],
-		files: ["ui/image.tsx"],
-	},
-	{
 		name: "menubar",
 		type: "components:ui",
 		dependencies: ["@kobalte/core"],
@@ -460,11 +454,6 @@ const example = [
 		name: "hover-card-demo",
 		type: "components:example",
 		files: ["examples/hover-card-demo.tsx"],
-	},
-	{
-		name: "image-demo",
-		type: "components:example",
-		files: ["examples/image-demo.tsx"],
 	},
 	{
 		name: "menubar-demo",

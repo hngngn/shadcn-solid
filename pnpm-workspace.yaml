@@ -1,4 +1,3 @@
 packages:
   - docs
-  - docs-old
   - packages/*

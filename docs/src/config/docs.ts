@@ -192,11 +192,6 @@ export const docsConfig: TDocsConfig = {
 					items: [],
 				},
 				{
-					title: "Image",
-					href: "/docs/components/image",
-					items: [],
-				},
-				{
 					title: "Menubar",
 					href: "/docs/components/menubar",
 					items: [],
