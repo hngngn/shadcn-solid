@@ -4,7 +4,11 @@ import tailwindPreset from "../packages/tailwindcss/tailwind.config.js";
 
 export default {
 	darkMode: ["class", '[data-kb-theme="dark"]'],
-	content: ["./src/**/*.{mdx,ts,tsx}", "../packages/tailwindcss/ui/**.tsx"],
+	content: [
+		"./src/**/*.{mdx,ts,tsx}",
+		"../packages/tailwindcss/ui/**.tsx",
+		"../packages/tailwindcss/examples/**.tsx",
+	],
 	theme: {
 		extend: {
 			container: {
