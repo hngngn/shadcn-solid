@@ -1,0 +1,106 @@
+---
+title: Textarea
+description: A textarea that allow users to input custom text entries with a keyboard.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/text-field
+  api: https://kobalte.dev/docs/core/components/text-field#api-reference
+---
+
+
+
+<ComponentPreview name="textarea-demo" >
+
+```tsx file=<rootDir>/../packages/tailwindcss/examples/textarea-demo.tsx
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation >
+
+
+```bash
+npx shadcn-solid@latest add textarea
+```
+
+
+<Step >
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+```tsx file=<rootDir>/../packages/tailwindcss/ui/textarea.tsx
+```
+
+</Step>
+
+<Step >
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+```tsx file=<rootDir>/../packages/unocss/ui/textarea.tsx
+```
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import { TextArea } from "@/components/ui/textarea";
+import { TextFieldRoot } from "@/components/ui/textfield";
+```
+
+```tsx
+<TextFieldRoot>
+  <TextArea />
+</TextFieldRoot>
+```
+
+## Examples
+
+### Disabled
+
+<ComponentPreview name="textarea-disabled" >
+
+```tsx file=<rootDir>/../packages/tailwindcss/examples/textarea-disabled.tsx
+```
+
+</ComponentPreview>
+
+### With Label
+
+<ComponentPreview name="textarea-with-label" >
+
+```tsx file=<rootDir>/../packages/tailwindcss/examples/textarea-with-label.tsx
+```
+
+</ComponentPreview>
+
+### With Text
+
+<ComponentPreview name="textarea-with-text" >
+
+```tsx file=<rootDir>/../packages/tailwindcss/examples/textarea-with-text.tsx
+```
+
+</ComponentPreview>
+
+### With Button
+
+<ComponentPreview name="textarea-with-button" >
+
+```tsx file=<rootDir>/../packages/tailwindcss/examples/textarea-with-button.tsx
+```
+
+</ComponentPreview>

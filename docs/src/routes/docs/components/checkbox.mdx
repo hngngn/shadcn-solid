@@ -1,0 +1,87 @@
+---
+title: Checkbox
+description: A control that allows the user to toggle between checked and not checked.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/checkbox
+  api: https://kobalte.dev/docs/core/components/checkbox#api-reference
+---
+
+
+
+<ComponentPreview name="checkbox-demo" >
+
+```tsx file=<rootDir>/../packages/tailwindcss/examples/checkbox-demo.tsx
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation >
+
+
+```bash
+npx shadcn-solid@latest add checkbox
+```
+
+
+<Step >
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+```tsx file=<rootDir>/../packages/tailwindcss/ui/checkbox.tsx
+```
+
+</Step>
+
+<Step >
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+```tsx file=<rootDir>/../packages/unocss/ui/checkbox.tsx
+```
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import { Checkbox, CheckboxControl } from "@/components/ui/checkbox";
+```
+
+```tsx
+<Checkbox>
+    <CheckboxControl />
+</Checkbox>
+```
+
+## Examples
+
+### With text
+
+<ComponentPreview name="checkbox-with-text" >
+
+```tsx file=<rootDir>/../packages/tailwindcss/examples/checkbox-with-text.tsx
+```
+
+</ComponentPreview>
+
+### Disabled
+
+<ComponentPreview name="checkbox-disabled" >
+
+```tsx file=<rootDir>/../packages/tailwindcss/examples/checkbox-disabled.tsx
+```
+
+</ComponentPreview>

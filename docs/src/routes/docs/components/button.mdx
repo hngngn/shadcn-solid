@@ -1,0 +1,161 @@
+---
+title: Button
+description: Displays a button or a component that looks like a button.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/button
+  api: https://kobalte.dev/docs/core/components/button#api-reference
+---
+
+
+
+<ComponentPreview name="button-demo" >
+
+```tsx file=<rootDir>/../packages/tailwindcss/examples/button-demo.tsx
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation >
+
+
+```bash
+npx shadcn-solid@latest add button
+```
+
+
+<Step >
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+```tsx file=<rootDir>/../packages/tailwindcss/ui/button.tsx
+```
+
+</Step>
+
+<Step >
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+```tsx file=<rootDir>/../packages/unocss/ui/button.tsx
+```
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import { Button } from "@/components/ui/button";
+```
+
+```tsx
+<Button variant="outline">Button</Button>
+```
+
+### Link
+
+You can use the `buttonVariants` helper to create a link that looks like a button.
+
+```tsx
+import { buttonVariants } from "@/components/ui/button";
+```
+
+```tsx
+<A class={buttonVariants({ variant: "outline" })}>Click here</A>
+```
+
+Alternatively, you can set the `asChild` parameter and nest the link component.
+
+```tsx
+<Button asChild>
+  <As component={A} href="#">
+    Login
+  </As>
+</Button>
+```
+
+## Examples
+
+### Secondary
+
+<ComponentPreview name="button-secondary" >
+
+```tsx file=<rootDir>/../packages/tailwindcss/examples/button-secondary.tsx
+```
+
+</ComponentPreview>
+
+### Destructive
+
+<ComponentPreview name="button-destructive" >
+
+```tsx file=<rootDir>/../packages/tailwindcss/examples/button-destructive.tsx
+```
+
+</ComponentPreview>
+
+### Outline
+
+<ComponentPreview name="button-outline" >
+
+```tsx file=<rootDir>/../packages/tailwindcss/examples/button-outline.tsx
+```
+
+</ComponentPreview>
+
+### Ghost
+
+<ComponentPreview name="button-ghost" >
+
+```tsx file=<rootDir>/../packages/tailwindcss/examples/button-ghost.tsx
+```
+
+</ComponentPreview>
+
+### Link
+
+<ComponentPreview name="button-link" >
+
+```tsx file=<rootDir>/../packages/tailwindcss/examples/button-link.tsx
+```
+
+</ComponentPreview>
+
+### With Icon
+
+<ComponentPreview name="button-with-icon" >
+
+```tsx file=<rootDir>/../packages/tailwindcss/examples/button-with-icon.tsx
+```
+
+</ComponentPreview>
+
+### Loading
+
+<ComponentPreview name="button-loading" >
+
+```tsx file=<rootDir>/../packages/tailwindcss/examples/button-loading.tsx
+```
+
+</ComponentPreview>
+
+### As
+
+<ComponentPreview name="button-as-child" >
+
+```tsx file=<rootDir>/../packages/tailwindcss/examples/button-as-child.tsx
+```
+
+</ComponentPreview>

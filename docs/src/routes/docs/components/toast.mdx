@@ -1,0 +1,115 @@
+---
+title: Toast
+description: A succinct message that is displayed temporarily.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/toast
+  api: https://kobalte.dev/docs/core/components/toast#api-reference
+---
+
+
+
+<ComponentPreview name="toast-demo" >
+
+```tsx file=<rootDir>/../packages/tailwindcss/examples/toast-demo.tsx
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation >
+
+
+```bash
+npx shadcn-solid@latest add toast
+```
+
+
+<Step >
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+```tsx file=<rootDir>/../packages/tailwindcss/ui/toast.tsx
+```
+
+</Step>
+
+<Step >
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+```tsx file=<rootDir>/../packages/unocss/ui/toast.tsx
+```
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import { toaster } from "@kobalte/core";
+import {
+  Toast,
+  ToastContent,
+  ToastProgress,
+  ToastTitle
+} from "@/components/ui/toast";
+```
+
+```tsx
+toaster.show(props => (
+  <Toast toastId={props.toastId}>
+    <ToastContent>
+      <ToastTitle>Toast</ToastTitle>
+    </ToastContent>
+    <ToastProgress />
+  </Toast>
+))
+```
+
+```tsx title="src/main.tsx" {1,11-13}
+import { ToastRegion, ToastList } from "@/components/ui/toast"
+ 
+const App = () => {
+  return (
+    <Router
+      root={props => (
+          <Suspense>
+            <ColorModeScript />
+            <ColorModeProvider>
+              {props.children}
+              <ToastRegion>
+                <ToastList />
+              </ToastRegion>
+            </ColorModeProvider>
+          </Suspense>
+      )}
+    >
+      <FileRoutes />
+    </Router>
+  );
+};
+ 
+export default App;
+```
+
+## Examples
+
+### Destructive
+
+<ComponentPreview name="toast-destructive" >
+
+```tsx file=<rootDir>/../packages/tailwindcss/examples/toast-destructive.tsx
+```
+
+</ComponentPreview>
