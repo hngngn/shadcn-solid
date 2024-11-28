@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { toast } from "solid-sonner";
+import { toast } from "somoto";
 
 const SonnerDemo = () => {
 	return (

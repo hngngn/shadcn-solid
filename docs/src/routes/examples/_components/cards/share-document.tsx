@@ -1,3 +1,4 @@
+import { Image } from "@kobalte/core/image";
 import { Button } from "@repo/tailwindcss/ui/button";
 import {
 	Card,
@@ -6,7 +7,6 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@repo/tailwindcss/ui/card";
-import { Image, ImageFallback, ImageRoot } from "@repo/tailwindcss/ui/image";
 import {
 	Select,
 	SelectContent,
@@ -46,10 +46,16 @@ export const DemoShareDocument = () => {
 					<div class="grid gap-6">
 						<div class="flex items-center justify-between space-x-4">
 							<div class="flex items-center space-x-4">
-								<ImageRoot>
-									<Image src="/avatars/03.png" alt="Olivia Martin" />
-									<ImageFallback>OM</ImageFallback>
-								</ImageRoot>
+								<Image class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full">
+									<Image.Img
+										src="/avatars/03.png"
+										alt="Olivia Martin"
+										class="size-full aspect-square"
+									/>
+									<Image.Fallback class="flex h-full w-full items-center justify-center rounded-full bg-muted">
+										OM
+									</Image.Fallback>
+								</Image>
 								<div>
 									<p class="text-sm font-medium leading-none">Olivia Martin</p>
 									<p class="text-sm text-muted-foreground">m@example.com</p>
@@ -74,10 +80,16 @@ export const DemoShareDocument = () => {
 						</div>
 						<div class="flex items-center justify-between space-x-4">
 							<div class="flex items-center space-x-4">
-								<ImageRoot>
-									<Image src="/avatars/03.png" alt="Isabella Nguye" />
-									<ImageFallback>IN</ImageFallback>
-								</ImageRoot>
+								<Image class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full">
+									<Image.Img
+										src="/avatars/03.png"
+										alt="Isabella Nguyen"
+										class="size-full aspect-square"
+									/>
+									<Image.Fallback class="flex h-full w-full items-center justify-center rounded-full bg-muted">
+										IN
+									</Image.Fallback>
+								</Image>
 								<div>
 									<p class="text-sm font-medium leading-none">
 										Isabella Nguyen
@@ -104,10 +116,16 @@ export const DemoShareDocument = () => {
 						</div>
 						<div class="flex items-center justify-between space-x-4">
 							<div class="flex items-center space-x-4">
-								<ImageRoot>
-									<Image src="/avatars/01.png" alt="Sofia Davis" />
-									<ImageFallback>SD</ImageFallback>
-								</ImageRoot>
+								<Image class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full">
+									<Image.Img
+										src="/avatars/01.png"
+										alt="Sofia Davis"
+										class="size-full aspect-square"
+									/>
+									<Image.Fallback class="flex h-full w-full items-center justify-center rounded-full bg-muted">
+										SD
+									</Image.Fallback>
+								</Image>
 								<div>
 									<p class="text-sm font-medium leading-none">Sofia Davis</p>
 									<p class="text-sm text-muted-foreground">p@example.com</p>

@@ -1,21 +1,16 @@
 import { ColorModeProvider, ColorModeScript } from "@kobalte/core";
+import { Toaster } from "@repo/tailwindcss/ui/sonner";
 import { ToastList, ToastRegion } from "@repo/tailwindcss/ui/toast";
 import { MetaProvider } from "@solidjs/meta";
 import { Router } from "@solidjs/router";
-import { clientOnly } from "@solidjs/start";
 import { FileRoutes } from "@solidjs/start/router";
 import { Suspense } from "solid-js";
 import { Footer } from "~/components/footer";
 import { Metadata } from "~/components/metadata";
+import { Header } from "./components/header";
 
 import "./app.css";
 import "./mdx.css";
-import { Header } from "./components/header";
-
-const Toaster = clientOnly(
-	// @ts-expect-error
-	async () => (await import("@repo/tailwindcss/ui/sonner")).Toaster,
-);
 
 export default function App() {
 	return (

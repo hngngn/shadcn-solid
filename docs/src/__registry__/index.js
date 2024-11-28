@@ -232,6 +232,12 @@ export const Index = {
       registryDependencies: undefined,
       component: lazy(() => import("@repo/tailwindcss/examples/drawer-demo"))
     },
+    "drawer-side-demo": {
+      name: "drawer-side-demo",
+      type: "components:example", 
+      registryDependencies: undefined,
+      component: lazy(() => import("@repo/tailwindcss/examples/drawer-side-demo"))
+    },
     "dropdown-menu-demo": {
       name: "dropdown-menu-demo",
       type: "components:example", 
@@ -363,18 +369,6 @@ export const Index = {
       type: "components:example", 
       registryDependencies: undefined,
       component: lazy(() => import("@repo/tailwindcss/examples/separator-demo"))
-    },
-    "sheet-demo": {
-      name: "sheet-demo",
-      type: "components:example", 
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/tailwindcss/examples/sheet-demo"))
-    },
-    "sheet-side": {
-      name: "sheet-side",
-      type: "components:example", 
-      registryDependencies: undefined,
-      component: lazy(() => import("@repo/tailwindcss/examples/sheet-side"))
     },
     "skeleton-demo": {
       name: "skeleton-demo",

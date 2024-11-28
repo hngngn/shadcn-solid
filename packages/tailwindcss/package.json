@@ -5,10 +5,7 @@
 		"./ui/*": "./ui/*.tsx",
 		"./examples/*": "./examples/*.tsx"
 	},
-	"files": [
-		"ui",
-		"examples"
-	],
+	"files": ["ui", "examples"],
 	"private": true,
 	"type": "module",
 	"scripts": {
@@ -22,14 +19,14 @@
 		"@kobalte/core": "^0.13.7",
 		"@tanstack/solid-table": "^8.20.5",
 		"autoprefixer": "^10.4.20",
-		"class-variance-authority": "^0.7.0",
+		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"cmdk-solid": "^1.1.0",
 		"embla-carousel-autoplay": "8.5.1",
 		"embla-carousel-solid": "8.5.1",
 		"postcss": "^8.4.49",
 		"solid-js": "^1.9.3",
-		"solid-sonner": "^0.2.8",
+		"somoto": "^0.0.2",
 		"tailwind-merge": "^2.5.5",
 		"tailwindcss": "^3.4.15",
 		"tailwindcss-animate": "^1.0.7",

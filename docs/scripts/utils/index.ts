@@ -172,12 +172,6 @@ const ui = [
 		files: ["ui/separator.tsx"],
 	},
 	{
-		name: "sheet",
-		type: "components:ui",
-		dependencies: ["@kobalte/core"],
-		files: ["ui/sheet.tsx"],
-	},
-	{
 		name: "skeleton",
 		type: "components:ui",
 		files: ["ui/skeleton.tsx"],
@@ -185,7 +179,7 @@ const ui = [
 	{
 		name: "sonner",
 		type: "components:ui",
-		dependencies: ["solid-sonner"],
+		dependencies: ["somoto"],
 		files: ["ui/sonner.tsx"],
 	},
 	{
@@ -436,6 +430,11 @@ const example = [
 		files: ["examples/drawer-demo.tsx"],
 	},
 	{
+		name: "drawer-side-demo",
+		type: "components:example",
+		files: ["examples/drawer-side-demo.tsx"],
+	},
+	{
 		name: "dropdown-menu-demo",
 		type: "components:example",
 		files: ["examples/dropdown-menu-demo.tsx"],
@@ -544,16 +543,6 @@ const example = [
 		name: "separator-demo",
 		type: "components:example",
 		files: ["examples/separator-demo.tsx"],
-	},
-	{
-		name: "sheet-demo",
-		type: "components:example",
-		files: ["examples/sheet-demo.tsx"],
-	},
-	{
-		name: "sheet-side",
-		type: "components:example",
-		files: ["examples/sheet-side.tsx"],
 	},
 	{
 		name: "skeleton-demo",

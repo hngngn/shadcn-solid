@@ -12,7 +12,8 @@
 		"noEmit": true,
 		"isolatedModules": true,
 		"paths": {
-			"@/libs/*": ["./libs/*"]
+			"@/libs/*": ["./libs/*"],
+			"@/components/ui/*": ["./ui/*"]
 		}
 	}
 }

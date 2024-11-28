@@ -1,4 +1,5 @@
 import type { DropdownMenuTriggerProps } from "@kobalte/core/dropdown-menu";
+import { Image } from "@kobalte/core/image";
 import type { TooltipTriggerProps } from "@kobalte/core/tooltip";
 import { Button } from "@repo/tailwindcss/ui/button";
 import {
@@ -7,7 +8,6 @@ import {
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from "@repo/tailwindcss/ui/dropdown-menu";
-import { Image, ImageFallback, ImageRoot } from "@repo/tailwindcss/ui/image";
 import { Separator } from "@repo/tailwindcss/ui/separator";
 import {
 	Switch,
@@ -201,15 +201,15 @@ export const MailDisplay = () => {
 				<div class="flex flex-1 flex-col">
 					<div class="flex items-start p-4">
 						<div class="flex items-start gap-4 text-sm">
-							<ImageRoot>
-								<Image alt={data()?.name} />
-								<ImageFallback>
+							<Image class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full">
+								<Image.Img alt={data()?.name} />
+								<Image.Fallback class="flex h-full w-full items-center justify-center rounded-full bg-muted">
 									{data()
 										?.name.split(" ")
 										.map((chunk) => chunk[0])
 										.join("")}
-								</ImageFallback>
-							</ImageRoot>
+								</Image.Fallback>
+							</Image>
 							<div class="grid gap-1">
 								<div class="font-semibold">{data()?.name}</div>
 								<div class="line-clamp-1 text-xs">{data()?.subject}</div>
@@ -223,7 +223,6 @@ export const MailDisplay = () => {
 								{new Intl.DateTimeFormat("en-US", {
 									dateStyle: "medium",
 									timeStyle: "short",
-									// biome-ignore lint/style/noNonNullAssertion: <explanation>
 								}).format(new Date(data()!.date))}
 							</div>
 						)}

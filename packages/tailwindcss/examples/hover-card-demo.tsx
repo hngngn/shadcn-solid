@@ -4,8 +4,8 @@ import {
 	HoverCardContent,
 	HoverCardTrigger,
 } from "@/components/ui/hover-card";
-import { Image, ImageFallback, ImageRoot } from "@/components/ui/image";
 import type { HoverCardTriggerProps } from "@kobalte/core/hover-card";
+import { Image } from "@kobalte/core/image";
 
 const HoverCardDemo = () => {
 	return (
@@ -19,10 +19,18 @@ const HoverCardDemo = () => {
 			/>
 			<HoverCardContent class="w-80">
 				<div class="flex justify-between space-x-4">
-					<ImageRoot fallbackDelay={400}>
-						<Image src="https://github.com/solidjs.png" />
-						<ImageFallback>SJ</ImageFallback>
-					</ImageRoot>
+					<Image
+						fallbackDelay={400}
+						class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full"
+					>
+						<Image.Img
+							src="https://github.com/solidjs.png"
+							class="size-full aspect-square"
+						/>
+						<Image.Fallback class="flex h-full w-full items-center justify-center rounded-full bg-muted">
+							SJ
+						</Image.Fallback>
+					</Image>
 					<div class="space-y-1">
 						<h4 class="text-sm font-semibold">@solid_js</h4>
 						<p class="text-sm">

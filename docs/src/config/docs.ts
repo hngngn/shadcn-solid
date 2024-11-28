@@ -2,6 +2,7 @@ export type TNavItem = {
 	title: string;
 	href?: string;
 	disabled?: boolean;
+	label?: string;
 };
 
 export type TSidebarNavItem = TNavItem & {
@@ -180,6 +181,7 @@ export const docsConfig: TDocsConfig = {
 					title: "Drawer",
 					href: "/docs/components/drawer",
 					items: [],
+					label: "Updated",
 				},
 				{
 					title: "Dropdown Menu",
@@ -247,11 +249,6 @@ export const docsConfig: TDocsConfig = {
 					items: [],
 				},
 				{
-					title: "Sheet",
-					href: "/docs/components/sheet",
-					items: [],
-				},
-				{
 					title: "Skeleton",
 					href: "/docs/components/skeleton",
 					items: [],
@@ -260,6 +257,7 @@ export const docsConfig: TDocsConfig = {
 					title: "Sonner",
 					href: "/docs/components/sonner",
 					items: [],
+					label: "Updated",
 				},
 				{
 					title: "Switch",
