@@ -1,0 +1,91 @@
+---
+title: Combobox
+description: Combines a text input with a listbox, allowing users to filter a list of options to items matching a query.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/combobox
+  api: https://kobalte.dev/docs/core/components/combobox#api-reference
+---
+
+
+
+<ComponentPreview name="combobox-demo" >
+
+```tsx file=<rootDir>/../packages/tailwindcss/examples/combobox-demo.tsx
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation >
+
+
+```bash
+npx shadcn-solid@latest add combobox
+```
+
+
+<Step >
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+```tsx file=<rootDir>/../packages/tailwindcss/ui/combobox.tsx
+```
+
+</Step>
+
+<Step >
+
+<StepItem>Install the following dependencies:</StepItem>
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+```tsx file=<rootDir>/../packages/unocss/ui/combobox.tsx
+```
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import {
+  Combobox,
+  ComboboxItem,
+  ComboboxTrigger,
+  ComboboxContent
+} from "@/components/ui/combobox";
+import { createFilter } from "@kobalte/core";
+import { createSignal } from "solid-js";
+```
+
+```tsx
+const ALL_OPTIONS = ["Apple", "Banana", "Blueberry", "Grapes", "Pineapple"];
+
+const filter = createFilter({ sensitivity: "base" });
+const [options, setOptions] = createSignal(ALL_OPTIONS);
+const onInputChange = (value: string) => {
+  setOptions(ALL_OPTIONS.filter(option => filter.contains(option, value)));
+};
+```
+
+```tsx
+<Combobox
+  options={options()}
+  onInputChange={onInputChange}
+  itemComponent={props => <ComboboxItem item={props.item}>{props.item.rawValue}</ComboboxItem>}
+>
+  <ComboboxTrigger>
+    <ComboboxInput />
+  </ComboboxTrigger>
+  <ComboboxContent />
+</Combobox>
+```

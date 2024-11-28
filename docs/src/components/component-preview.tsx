@@ -1,4 +1,3 @@
-import { Index } from "@/__registry__";
 import {
 	Tabs,
 	TabsContent,
@@ -6,18 +5,17 @@ import {
 	TabsList,
 	TabsTrigger,
 } from "@repo/tailwindcss/ui/tabs";
-import { frameworks } from "scripts/utils/framework";
-import { type JSX, type ParentComponent, Show, createMemo } from "solid-js";
+import { type ParentProps, Show, createMemo } from "solid-js";
+import { Index } from "~/__registry__";
 
 type Props = {
 	name: string;
-	code: JSX.Element;
 };
 
-const ComponentPreview: ParentComponent<Props> = (props) => {
+const ComponentPreview = (props: ParentProps<Props>) => {
 	const Component = createMemo(
 		// @ts-expect-error
-		() => Index[frameworks[0].name][props.name].component as JSX.Element,
+		() => Index.tailwindcss[props.name].component as JSX.Element,
 	);
 
 	return (
@@ -56,7 +54,7 @@ const ComponentPreview: ParentComponent<Props> = (props) => {
 				<TabsContent value="code">
 					<div class="flex flex-col space-y-4">
 						<div class="w-full rounded-md [&_pre]:!my-0 [&_pre]:!max-h-[350px] [&_pre]:overflow-auto relative [&>[data-raw-code]]:mt-0">
-							{props.code}
+							{props.children}
 						</div>
 					</div>
 				</TabsContent>

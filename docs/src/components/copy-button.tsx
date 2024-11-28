@@ -1,17 +1,17 @@
-import { cn } from "@/libs/cn";
 import { Show, createSignal } from "solid-js";
+import { cn } from "~/libs/cn";
 
 type Props = {
 	rawString: string;
 	withMeta: boolean;
 };
 
-const CopyButton = (props: Props) => {
+export const CopyButton = (props: Props) => {
 	const [isCopied, setIsCopied] = createSignal(false);
 
-	const copyToClipboard = () => {
+	const copyToClipboard = async () => {
 		setIsCopied(true);
-		navigator.clipboard.writeText(props.rawString);
+		await navigator.clipboard.writeText(props.rawString);
 		setTimeout(() => setIsCopied(false), 2000);
 	};
 
@@ -67,5 +67,3 @@ const CopyButton = (props: Props) => {
 		</button>
 	);
 };
-
-export default CopyButton;

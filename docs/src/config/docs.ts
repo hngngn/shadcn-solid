@@ -43,11 +43,6 @@ export const docsConfig: TDocsConfig = {
 					items: [],
 				},
 				{
-					title: "Installation",
-					href: "/docs/installation",
-					items: [],
-				},
-				{
 					title: "components.json",
 					href: "/docs/components-json",
 					items: [],
@@ -80,6 +75,26 @@ export const docsConfig: TDocsConfig = {
 				{
 					title: "About",
 					href: "/docs/about",
+					items: [],
+				},
+			],
+		},
+		{
+			title: "Installation",
+			items: [
+				{
+					title: "Solid Start",
+					href: "/docs/installation/solid-start",
+					items: [],
+				},
+				{
+					title: "Astro",
+					href: "/docs/installation/astro",
+					items: [],
+				},
+				{
+					title: "Manual",
+					href: "/docs/installation/manual",
 					items: [],
 				},
 			],
@@ -156,7 +171,6 @@ export const docsConfig: TDocsConfig = {
 					title: "Date Picker",
 					href: "/docs/components/date-picker",
 					items: [],
-					label: "Updated",
 				},
 				{
 					title: "Dialog",
@@ -167,6 +181,7 @@ export const docsConfig: TDocsConfig = {
 					title: "Drawer",
 					href: "/docs/components/drawer",
 					items: [],
+					label: "Updated",
 				},
 				{
 					title: "Dropdown Menu",
@@ -179,11 +194,6 @@ export const docsConfig: TDocsConfig = {
 					items: [],
 				},
 				{
-					title: "Image",
-					href: "/docs/components/image",
-					items: [],
-				},
-				{
 					title: "Menubar",
 					href: "/docs/components/menubar",
 					items: [],
@@ -192,7 +202,6 @@ export const docsConfig: TDocsConfig = {
 					title: "Navigation Menu",
 					href: "/docs/components/navigation-menu",
 					items: [],
-					label: "New",
 				},
 				{
 					title: "Number Field",
@@ -240,11 +249,6 @@ export const docsConfig: TDocsConfig = {
 					items: [],
 				},
 				{
-					title: "Sheet",
-					href: "/docs/components/sheet",
-					items: [],
-				},
-				{
 					title: "Skeleton",
 					href: "/docs/components/skeleton",
 					items: [],
@@ -253,6 +257,7 @@ export const docsConfig: TDocsConfig = {
 					title: "Sonner",
 					href: "/docs/components/sonner",
 					items: [],
+					label: "Updated",
 				},
 				{
 					title: "Switch",

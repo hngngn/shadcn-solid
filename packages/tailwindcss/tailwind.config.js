@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./ui/*.tsx"],
-  theme: {
+	content: ["./ui/*.tsx"],
+	theme: {
 		extend: {
 			colors: {
 				border: "hsl(var(--border))",
@@ -75,5 +75,4 @@ export default {
 		},
 	},
 	plugins: [require("tailwindcss-animate")],
-}
-
+};

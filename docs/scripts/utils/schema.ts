@@ -1,15 +1,17 @@
-import { z } from "zod";
+import * as v from "valibot";
 
-export const registrySchema = z.array(
-	z.object({
-		name: z.string(),
-		dependencies: z.array(z.string()).optional(),
-		registryDependencies: z.array(z.string()).optional(),
-		files: z.array(z.string()),
-		type: z.enum([
-			"components:ui",
-			"components:component",
-			"components:example",
-		]),
+export enum Type {
+	"components:ui" = "components:ui",
+	"components:component" = "components:component",
+	"components:example" = "components:example",
+}
+
+export const registrySchema = v.array(
+	v.object({
+		name: v.string(),
+		dependencies: v.optional(v.array(v.string())),
+		registryDependencies: v.optional(v.array(v.string())),
+		files: v.array(v.string()),
+		type: v.enum(Type),
 	}),
 );
