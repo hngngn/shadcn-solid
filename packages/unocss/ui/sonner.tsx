@@ -1,16 +1,21 @@
-import { Toaster as Sonner } from "solid-sonner";
+import { Toaster as Sonner } from "somoto";
 
 export const Toaster = (props: Parameters<typeof Sonner>[0]) => {
 	return (
 		<Sonner
-			class="toaster group"
 			toastOptions={{
-				classes: {
+				classNames: {
 					toast:
-						"group toast group-[.toaster]:(bg-background text-foreground border-border shadow-lg)",
-					description: "group-[.toast]:text-muted-foreground",
-					actionButton: "group-[.toast]:(bg-primary text-primary-foreground)",
-					cancelButton: "group-[.toast]:(bg-muted text-muted-foreground)",
+						"group toast bg-background text-foreground border-border shadow-lg",
+					description: "text-muted-foreground",
+				},
+				actionButtonStyle: {
+					"--normal-bg": "hsl(var(--primary-foreground))",
+					"--normal-text": "hsl(var(--primary))",
+				},
+				cancelButtonStyle: {
+					"--normal-bg": "hsl(var(--muted-foreground))",
+					"--normal-text": "hsl(var(--muted))",
 				},
 			}}
 			{...props}

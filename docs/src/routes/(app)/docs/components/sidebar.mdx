@@ -1,0 +1,197 @@
+---
+title: Sidebar
+description: A composable, themeable and customizable sidebar component.
+component: true
+---
+
+<figure className="flex flex-col gap-4">
+  <ComponentPreview
+    name="sidebar-07"
+    block
+  />
+  <figcaption className="text-center text-sm text-gray-500">
+    A sidebar that collapses to icons.
+  </figcaption>
+</figure>
+
+Sidebars are one of the most complex components to build. They are central
+to any application and often contain a lot of moving parts.
+
+I don't like building sidebars. So I built 30+ of them. All kinds of
+configurations. Then I extracted the core components into `sidebar.tsx`.
+
+We now have a solid foundation to build on top of. Composable. Themeable.
+Customizable.
+
+[Browse the Blocks Library](/blocks).
+
+## Installation
+
+<ComponentInstallation >
+
+
+<Step >
+
+<StepItem>Run the following command to install `sidebar.tsx`</StepItem>
+```bash
+npx shadcn-solid@latest add sidebar
+```
+
+<StepItem>Add the following colors to your CSS file</StepItem>
+
+The command above should install the colors for you. If not, copy and paste the following in your CSS file.
+
+We'll go over the colors later in the [theming section](/docs/components/sidebar#theming).
+
+```css title="src/app.css"
+@layer base {
+  :root {
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  [data-kb-theme="dark"] {
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+```
+
+</Step>
+
+
+<Step >
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+```tsx file=<rootDir>/../packages/tailwindcss/ui/sidebar.tsx
+```
+
+<StepItem>Update the import paths to match your project setup.</StepItem>
+
+<StepItem>Add the following colors to your CSS file</StepItem>
+
+We'll go over the colors later in the [theming section](/docs/components/sidebar#theming).
+
+```css title="src/app.css"
+@layer base {
+  :root {
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  [data-kb-theme="dark"] {
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+```
+
+<StepItem>Add the Sidebar tailwind config into `tailwind.config.ts`</StepItem>
+
+Add the following object in the `theme.extend.colors` section of your `tailwind.config.ts` file
+this config enable sidebar related style utilities like bg-sidebar
+
+```ts title="tailwind.config.ts"
+// ...
+sidebar: {
+  DEFAULT: 'hsl(var(--sidebar-background))',
+  foreground: 'hsl(var(--sidebar-foreground))',
+  primary: 'hsl(var(--sidebar-primary))',
+  'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+  accent: 'hsl(var(--sidebar-accent))',
+  'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+  border: 'hsl(var(--sidebar-border))',
+  ring: 'hsl(var(--sidebar-ring))',
+},
+// ...
+```
+
+</Step>
+
+<Step >
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+```tsx file=<rootDir>/../packages/unocss/ui/sidebar.tsx
+```
+
+<StepItem>Update the import paths to match your project setup.</StepItem>
+
+<StepItem>Add the following colors to your CSS file</StepItem>
+
+We'll go over the colors later in the [theming section](/docs/components/sidebar#theming).
+
+```css title="src/app.css"
+:root {
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+}
+
+[data-kb-theme="dark"] {
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+}
+```
+
+<StepItem>Add the Sidebar uno config into `uno.config.ts`</StepItem>
+
+Add the following object in the `theme.colors` section of your `uno.config.ts` file
+this config enable sidebar related style utilities like bg-sidebar
+
+```ts title="uno.config.ts"
+// ...
+sidebar: {
+  DEFAULT: "hsl(var(--sidebar-background))",
+  foreground: "hsl(var(--sidebar-foreground))",
+  primary: {
+    DEFAULT: "hsl(var(--sidebar-primary))",
+    foreground: "hsl(var(--sidebar-primary-foreground))",
+  },
+  accent: {
+    DEFAULT: "hsl(var(--sidebar-accent))",
+    foreground: "hsl(var(--sidebar-accent-foreground))",
+  },
+  border: "hsl(var(--sidebar-border))",
+  ring: "hsl(var(--sidebar-ring))",
+},
+// ...
+```
+
+</Step>
+
+</ComponentInstallation>

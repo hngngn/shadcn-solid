@@ -29,7 +29,7 @@ const PackageManagerCopyButton: VoidComponent<Props> = (props) => {
 					<title>Npm command</title>
 				</svg>
 			),
-			value: props.npmCommand,
+			value: () => props.npmCommand,
 		},
 		{
 			title: "yarn",
@@ -45,7 +45,7 @@ const PackageManagerCopyButton: VoidComponent<Props> = (props) => {
 					<title>Yarn command</title>
 				</svg>
 			),
-			value: props.yarnCommand,
+			value: () => props.yarnCommand,
 		},
 		{
 			title: "pnpm",
@@ -61,7 +61,7 @@ const PackageManagerCopyButton: VoidComponent<Props> = (props) => {
 					<title>Pnpm command</title>
 				</svg>
 			),
-			value: props.pnpmCommand,
+			value: () => props.pnpmCommand,
 		},
 		{
 			title: "bun",
@@ -80,15 +80,15 @@ const PackageManagerCopyButton: VoidComponent<Props> = (props) => {
 					<title>Bun command</title>
 				</svg>
 			),
-			value: props.bunCommand,
+			value: () => props.bunCommand,
 		},
 	];
 
 	const [isCopied, setIsCopied] = createSignal(false);
 
-	const copyToClipboard = (value: string) => {
+	const copyToClipboard = async (value: string) => {
 		setIsCopied(true);
-		navigator.clipboard.writeText(value);
+		await navigator.clipboard.writeText(value);
 		setTimeout(() => setIsCopied(false), 2000);
 	};
 
@@ -141,7 +141,7 @@ const PackageManagerCopyButton: VoidComponent<Props> = (props) => {
 					{(item) => (
 						<DropdownMenuItem
 							class="flex items-center gap-[0.5rem]"
-							onClick={() => copyToClipboard(item.value)}
+							onClick={() => copyToClipboard(item.value())}
 						>
 							{item.icon}
 							{item.title}
