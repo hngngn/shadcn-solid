@@ -133,6 +133,8 @@ export default defineConfig({
 				"#content": resolve(__dirname, "./.content"),
 				"@/components/ui": resolve(__dirname, "../packages/tailwindcss/ui"),
 				"@/libs": resolve(__dirname, "../packages/tailwindcss/libs"),
+				"@/hooks": resolve(__dirname, "../packages/tailwindcss/hooks"),
+				"@/blocks": resolve(__dirname, "../packages/tailwindcss/blocks"),
 			},
 		},
 	},

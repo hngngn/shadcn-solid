@@ -2,9 +2,13 @@
 	"name": "@repo/unocss",
 	"version": "0.0.1",
 	"exports": {
-		"./ui/*": "./ui/*.tsx"
+		"./ui/*": "./ui/*.tsx",
+		"./examples/*": "./examples/*.tsx",
+		"./blocks/*": "./blocks/*.tsx",
+		"./libs/*": "./libs/*.tsx",
+		"./hooks/*": "./hooks/*.tsx"
 	},
-	"files": ["ui"],
+	"files": ["ui", "examples", "hooks", "libs", "blocks"],
 	"devDependencies": {
 		"@ark-ui/solid": "^4.5.1",
 		"@corvu/drawer": "^0.2.2",
@@ -14,7 +18,7 @@
 		"@solidjs/router": "^0.15.0",
 		"@solidjs/start": "^1.0.10",
 		"@tanstack/solid-table": "^8.20.5",
-		"@unocss/reset": "^0.64.1",
+		"@unocss/reset": "^0.65.1",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"cmdk-solid": "^1.1.0",
@@ -23,9 +27,9 @@
 		"solid-js": "^1.9.3",
 		"somoto": "^0.0.2",
 		"tailwind-merge": "^2.5.5",
-		"unocss": "^0.64.1",
+		"unocss": "^0.65.1",
 		"unocss-preset-animations": "^1.1.0",
-		"vinxi": "^0.4.3"
+		"vinxi": "^0.5.1"
 	},
 	"private": true,
 	"type": "module",

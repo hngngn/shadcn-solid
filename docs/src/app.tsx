@@ -5,9 +5,7 @@ import { MetaProvider } from "@solidjs/meta";
 import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
 import { Suspense } from "solid-js";
-import { Footer } from "~/components/footer";
 import { Metadata } from "~/components/metadata";
-import { Header } from "./components/header";
 
 import "./app.css";
 import "./mdx.css";
@@ -20,19 +18,11 @@ export default function App() {
 					<Metadata />
 					<ColorModeScript />
 					<ColorModeProvider>
-						<Suspense>
-							<div class="relative flex min-h-screen flex-col">
-								<div class="mx-auto w-full border-border/40 dark:border-border min-[1800px]:max-w-[1536px] min-[1800px]:border-x">
-									<Header />
-									<div class="flex-1">{props.children}</div>
-									<Footer />
-									<ToastRegion>
-										<ToastList />
-									</ToastRegion>
-									<Toaster />
-								</div>
-							</div>
-						</Suspense>
+						<Suspense>{props.children}</Suspense>
+						<ToastRegion>
+							<ToastList />
+						</ToastRegion>
+						<Toaster />
 					</ColorModeProvider>
 				</MetaProvider>
 			)}

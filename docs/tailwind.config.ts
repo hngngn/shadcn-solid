@@ -6,8 +6,9 @@ export default {
 	darkMode: ["class", '[data-kb-theme="dark"]'],
 	content: [
 		"./src/**/*.{mdx,ts,tsx}",
-		"../packages/tailwindcss/ui/**.tsx",
-		"../packages/tailwindcss/examples/**.tsx",
+		"../packages/tailwindcss/ui/*.tsx",
+		"../packages/tailwindcss/examples/*.tsx",
+		"../packages/tailwindcss/blocks/**/*.tsx",
 	],
 	theme: {
 		extend: {

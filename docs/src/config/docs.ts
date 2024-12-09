@@ -29,8 +29,8 @@ export const docsConfig: TDocsConfig = {
 			href: "/docs/components/accordion",
 		},
 		{
-			title: "Examples",
-			href: "/examples/mail",
+			title: "Blocks",
+			href: "/blocks",
 		},
 	],
 	sidebarNav: [
@@ -102,6 +102,12 @@ export const docsConfig: TDocsConfig = {
 		{
 			title: "Components",
 			items: [
+				{
+					title: "Sidebar",
+					href: "/docs/components/sidebar",
+					items: [],
+					label: "New",
+				},
 				{
 					title: "Accordion",
 					href: "/docs/components/accordion",

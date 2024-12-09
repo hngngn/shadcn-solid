@@ -22,7 +22,7 @@ export const CollapsibleContent = <T extends ValidComponent = "div">(
 	return (
 		<CollapsiblePrimitive.Content
 			class={cn(
-				"animate-collapsible-up data-[expanded]:animate-collapsible-down",
+				"overflow-hidden animate-collapsible-up data-[expanded]:animate-collapsible-down",
 				local.class,
 			)}
 			{...rest}

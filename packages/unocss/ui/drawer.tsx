@@ -35,27 +35,27 @@ export const DrawerContent = <T extends ValidComponent = "div">(
 			<DrawerPrimitive.Overlay
 				class="fixed inset-0 z-50 data-[transitioning]:(transition-[background-color] duration-500 ease-[cubic-bezier(0.32,0.72,0,1)])"
 				style={{
-					"background-color": `rgb(0 0 0 / ${0.5 * ctx.openPercentage()})`,
+					"background-color": `rgb(0 0 0 / ${0.6 * ctx.openPercentage()})`,
 				}}
 			/>
 			<DrawerPrimitive.Content
 				class={cn(
-					"fixed z-50 flex h-auto border-border bg-background data-[transitioning]:(transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]) md:select-none after:(absolute h-1/2 bg-inherit)",
+					"fixed z-50 flex h-auto border-border bg-background data-[transitioning]:(transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]) md:select-none after:(absolute bg-inherit)",
 					ctx.side() === "right" && [
 						"inset-y-0 right-0 rounded-l-lg border-l pl-4",
-						"after:(inset-y-0 left-[calc(100%-1px)])",
+						"after:(inset-y-0 left-[calc(100%-1px)] after:w-1/2)",
 					],
 					ctx.side() === "bottom" && [
 						"inset-x-0 bottom-0 rounded-t-lg border-t pt-4 flex-col",
-						"after:(inset-x-0 top-[calc(100%-1px)])",
+						"after:(inset-x-0 top-[calc(100%-1px)] after:h-1/2)",
 					],
 					ctx.side() === "left" && [
 						"inset-y-0 left-0 rounded-r-lg border-r pr-4 flex-row-reverse",
-						"after:(inset-y-0 right-[calc(100%-1px)])",
+						"after:(inset-y-0 right-[calc(100%-1px)] after:w-1/2)",
 					],
 					ctx.side() === "top" && [
 						"inset-x-0 top-0 rounded-b-lg border-b pb-4 flex-col-reverse",
-						"after:(inset-x-0 bottom-[calc(100%-1px)])",
+						"after:(inset-x-0 bottom-[calc(100%-1px)] after:h-1/2)",
 					],
 					local.class,
 				)}

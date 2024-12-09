@@ -13,7 +13,9 @@
 		"isolatedModules": true,
 		"paths": {
 			"@/libs/*": ["./libs/*"],
-			"@/components/ui/*": ["./ui/*"]
+			"@/components/ui/*": ["./ui/*"],
+			"@/hooks/*": ["./hooks/*"],
+			"@/blocks/*": ["./blocks/*"]
 		}
 	}
 }

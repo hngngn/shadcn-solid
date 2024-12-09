@@ -73,7 +73,7 @@ const traverseDirectory = async (
 const processFiles = async () => {
 	const docs: Doc[] = [];
 	const outputFile = resolve(".content/index.js");
-	const docsDir = resolve("src/routes/docs");
+	const docsDir = resolve("src/routes/(app)/docs");
 
 	if (!existsSync(".content")) {
 		mkdirSync(".content", { recursive: true });

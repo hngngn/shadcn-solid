@@ -14,6 +14,8 @@ export default defineConfig({
 			alias: {
 				"@/components/ui": resolve(__dirname, "./ui"),
 				"@/libs": resolve(__dirname, "./libs"),
+				"@/blocks": resolve(__dirname, "./blocks"),
+				"@/hooks": resolve(__dirname, "./hooks"),
 			},
 		},
 	},

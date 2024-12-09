@@ -21,7 +21,12 @@ const ComponentInstallation = (props: ParentProps) => {
 				</TabsTrigger>
 				<TabsIndicator variant="underline" />
 			</TabsList>
-			<TabsContent value="cli">{childrens[0]}</TabsContent>
+			<TabsContent
+				class="relative [&_h3.font-heading]:text-base [&_h3.font-heading]:font-semibold"
+				value="cli"
+			>
+				{childrens[0]}
+			</TabsContent>
 			<TabsContent
 				value="manual"
 				class="relative [&_h3.font-heading]:text-base [&_h3.font-heading]:font-semibold"

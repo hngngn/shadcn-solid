@@ -14,7 +14,8 @@
 		"isolatedModules": true,
 		"paths": {
 			"~/*": ["./src/*"],
-			"#content": ["./.content"]
+			"#content": ["./.content"],
+			"@/components/ui/*": ["../packages/tailwindcss/ui/*"]
 		}
 	}
 }

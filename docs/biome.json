@@ -5,6 +5,6 @@
 		"ignore": ["./src/__registry__/index.js"]
 	},
 	"linter": {
-		"ignore": ["./src/routes/examples/_components/**/*.tsx"]
+		"ignore": ["./src/routes/(app)/examples/_components/**/*.tsx"]
 	}
 }
