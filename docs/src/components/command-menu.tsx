@@ -1,5 +1,6 @@
-import { useColorMode } from "@kobalte/core";
-import { Button } from "@repo/tailwindcss/ui/button";
+import type { TNavItem } from "@/config/docs";
+import { docsConfig } from "@/config/docs";
+import { Button } from "@/registry/tailwindcss/ui/button";
 import {
 	CommandDialog,
 	CommandEmpty,
@@ -7,12 +8,11 @@ import {
 	CommandInput,
 	CommandItem,
 	CommandList,
-} from "@repo/tailwindcss/ui/command";
+} from "@/registry/tailwindcss/ui/command";
+import { useColorMode } from "@kobalte/core";
 import { useNavigate } from "@solidjs/router";
 import type { JSXElement } from "solid-js";
 import { For, createEffect, createSignal, onCleanup } from "solid-js";
-import type { TNavItem } from "~/config/docs";
-import { docsConfig } from "~/config/docs";
 
 type Option = TNavItem & { value: string; icon: JSXElement };
 

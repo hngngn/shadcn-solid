@@ -22,7 +22,7 @@ export default defineConfig({
 			mdx.withImports({})({
 				jsx: true,
 				jsxImportSource: "solid-js",
-				providerImportSource: "~/components/mdx",
+				providerImportSource: "@/components/mdx",
 				remarkPlugins: [
 					remarkFrontmatter,
 					[
@@ -131,10 +131,7 @@ export default defineConfig({
 		resolve: {
 			alias: {
 				"#content": resolve(__dirname, "./.content"),
-				"@/components/ui": resolve(__dirname, "../packages/tailwindcss/ui"),
-				"@/libs": resolve(__dirname, "../packages/tailwindcss/libs"),
-				"@/hooks": resolve(__dirname, "../packages/tailwindcss/hooks"),
-				"@/blocks": resolve(__dirname, "../packages/tailwindcss/blocks"),
+				"@": resolve(__dirname, "./src"),
 			},
 		},
 	},

@@ -1,20 +1,20 @@
+import { cn } from "@/registry/tailwindcss/libs/cn";
 import {
 	Resizable,
 	ResizableHandle,
 	ResizablePanel,
-} from "@repo/tailwindcss/ui/resizable";
-import { Separator } from "@repo/tailwindcss/ui/separator";
+} from "@/registry/tailwindcss/ui/resizable";
+import { Separator } from "@/registry/tailwindcss/ui/separator";
 import {
 	Tabs,
 	TabsContent,
 	TabsIndicator,
 	TabsList,
 	TabsTrigger,
-} from "@repo/tailwindcss/ui/tabs";
-import { TextField, TextFieldRoot } from "@repo/tailwindcss/ui/textfield";
+} from "@/registry/tailwindcss/ui/tabs";
+import { TextField, TextFieldRoot } from "@/registry/tailwindcss/ui/textfield";
 import { cookieStorage, makePersisted } from "@solid-primitives/storage";
 import { createSignal } from "solid-js";
-import { cn } from "~/libs/cn";
 import { AccountSwitcher } from "./account-switcher";
 import { MailDisplay } from "./mail-display";
 import { MailList } from "./mail-list";

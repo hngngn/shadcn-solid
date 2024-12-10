@@ -1,5 +1,5 @@
-import { cn } from "@/libs/cn";
-import { Badge } from "@repo/tailwindcss/ui/badge";
+import { cn } from "@/registry/tailwindcss/libs/cn";
+import { Badge } from "@/registry/tailwindcss/ui/badge";
 import { For } from "solid-js";
 import { mails } from "./data";
 import { mail, setMail } from "./use-mail";

@@ -36,3 +36,17 @@
 [data-rehype-pretty-code-figure] [data-highlighted-chars] {
 	@apply rounded-md bg-zinc-700/50 p-0.5;
 }
+
+[data-rehype-pretty-code-figure] [data-line-numbers] .line {
+	@apply px-2;
+}
+
+[data-rehype-pretty-code-figure] [data-line-numbers] > .line::before {
+	@apply text-zinc-50/40 text-xs;
+	counter-increment: line;
+	content: counter(line);
+	display: inline-block;
+	width: 1.8rem;
+	margin-right: 1.4rem;
+	text-align: right;
+}

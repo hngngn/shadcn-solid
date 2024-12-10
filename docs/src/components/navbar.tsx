@@ -1,8 +1,8 @@
+import { docsConfig } from "@/config/docs";
+import { siteConfig } from "@/config/site";
+import { cn } from "@/registry/tailwindcss/libs/cn";
 import { useLocation } from "@solidjs/router";
 import { For } from "solid-js";
-import { docsConfig } from "~/config/docs";
-import { siteConfig } from "~/config/site";
-import { cn } from "~/libs/cn";
 import { Logo } from "./logo";
 
 export const Navbar = () => {

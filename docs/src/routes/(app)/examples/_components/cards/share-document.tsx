@@ -1,25 +1,25 @@
-import { Image } from "@kobalte/core/image";
-import { Button } from "@repo/tailwindcss/ui/button";
+import { Button } from "@/registry/tailwindcss/ui/button";
 import {
 	Card,
 	CardContent,
 	CardDescription,
 	CardHeader,
 	CardTitle,
-} from "@repo/tailwindcss/ui/card";
+} from "@/registry/tailwindcss/ui/card";
 import {
 	Select,
 	SelectContent,
 	SelectItem,
 	SelectTrigger,
 	SelectValue,
-} from "@repo/tailwindcss/ui/select";
-import { Separator } from "@repo/tailwindcss/ui/separator";
+} from "@/registry/tailwindcss/ui/select";
+import { Separator } from "@/registry/tailwindcss/ui/separator";
 import {
 	TextField,
 	TextFieldLabel,
 	TextFieldRoot,
-} from "@repo/tailwindcss/ui/textfield";
+} from "@/registry/tailwindcss/ui/textfield";
+import { Image } from "@kobalte/core/image";
 
 export const DemoShareDocument = () => {
 	return (

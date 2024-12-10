@@ -1,6 +1,6 @@
+import { cn } from "@/registry/tailwindcss/libs/cn";
 import { useLocation } from "@solidjs/router";
 import { For } from "solid-js";
-import { cn } from "~/libs/cn";
 
 const examples = [
 	{

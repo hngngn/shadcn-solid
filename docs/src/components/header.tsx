@@ -1,7 +1,7 @@
-import ModeToggle from "@repo/tailwindcss/examples/mode-toggle";
-import { Button } from "@repo/tailwindcss/ui/button";
+import { siteConfig } from "@/config/site";
+import ModeToggle from "@/registry/tailwindcss/examples/mode-toggle";
+import { Button } from "@/registry/tailwindcss/ui/button";
 import { clientOnly } from "@solidjs/start";
-import { siteConfig } from "~/config/site";
 import { MobileNavbar } from "./mobile-navbar";
 import { Navbar } from "./navbar";
 

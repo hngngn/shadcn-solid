@@ -4,7 +4,7 @@ import {
 	TabsIndicator,
 	TabsList,
 	TabsTrigger,
-} from "@repo/tailwindcss/ui/tabs";
+} from "@/registry/tailwindcss/ui/tabs";
 import { type ParentProps, children } from "solid-js";
 
 const ComponentInstallation = (props: ParentProps) => {

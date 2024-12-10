@@ -73,7 +73,7 @@ export const Carousel = (props: ComponentProps<"div"> & CarouselProps) => {
 			...local.opts,
 			axis: local.orientation === "horizontal" ? "x" : "y",
 		}),
-		() => (local.plugins === undefined ? [] : local.plugins),
+		() => local.plugins ?? [],
 	);
 	const [canScrollPrev, setCanScrollPrev] = createSignal(false);
 	const [canScrollNext, setCanScrollNext] = createSignal(false);
@@ -123,7 +123,7 @@ export const Carousel = (props: ComponentProps<"div"> & CarouselProps) => {
 				api,
 				opts: local.opts,
 				orientation:
-					local.orientation ||
+					local.orientation ??
 					(local.opts?.axis === "y" ? "vertical" : "horizontal"),
 				scrollPrev,
 				scrollNext,
@@ -137,6 +137,7 @@ export const Carousel = (props: ComponentProps<"div"> & CarouselProps) => {
 			<div
 				onKeyDown={handleKeyDown}
 				class={cn("relative", local.class)}
+				// biome-ignore lint/a11y/useSemanticElements:
 				role="region"
 				aria-roledescription="carousel"
 				{...rest}

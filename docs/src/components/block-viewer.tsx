@@ -1,37 +1,83 @@
-import { Button } from "@/components/ui/button";
+import type {
+	FileTree,
+	createFileTreeForRegistryItemFiles,
+} from "@/libs/registry";
+import type {
+	registryEntrySchema,
+	registryItemFileSchema,
+} from "@/registry/schema";
+import { Button } from "@/registry/tailwindcss/ui/button";
+import {
+	Collapsible,
+	CollapsibleContent,
+	CollapsibleTrigger,
+} from "@/registry/tailwindcss/ui/collapsible";
 import {
 	Resizable,
 	ResizableHandle,
 	ResizablePanel,
-} from "@/components/ui/resizable";
-import { Separator } from "@/components/ui/separator";
+} from "@/registry/tailwindcss/ui/resizable";
+import { Separator } from "@/registry/tailwindcss/ui/separator";
+import {
+	Sidebar,
+	SidebarGroup,
+	SidebarGroupContent,
+	SidebarGroupLabel,
+	SidebarMenu,
+	SidebarMenuButton,
+	SidebarMenuItem,
+	SidebarMenuSub,
+	SidebarProvider,
+} from "@/registry/tailwindcss/ui/sidebar";
 import {
 	Tabs,
 	TabsIndicator,
 	TabsList,
 	TabsTrigger,
-} from "@/components/ui/tabs";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+} from "@/registry/tailwindcss/ui/tabs";
+import {
+	ToggleGroup,
+	ToggleGroupItem,
+} from "@/registry/tailwindcss/ui/toggle-group";
+import type { CollapsibleTriggerProps } from "@kobalte/core/collapsible";
 import {
 	type Accessor,
+	For,
 	type ParentProps,
 	type Setter,
 	Show,
 	createContext,
+	createMemo,
 	createSignal,
 	useContext,
 } from "solid-js";
 import type * as v from "valibot";
-import type { createFileTreeForRegistryItemFiles } from "~/libs/registry";
-import type { registryEntrySchema } from "../../scripts/utils/schema";
+
+type BlockViewerProps = {
+	item: v.InferInput<typeof registryEntrySchema>;
+	tree: ReturnType<typeof createFileTreeForRegistryItemFiles> | null;
+	highlightedFiles:
+		| (v.InferInput<typeof registryItemFileSchema> & {
+				highlightedContent: string;
+		  })[]
+		| null;
+};
 
 type BlockViewerContext = {
-	item: v.InferInput<typeof registryEntrySchema>;
+	item: Accessor<v.InferInput<typeof registryEntrySchema>>;
 	view: Accessor<"code" | "preview">;
 	setView: Setter<"code" | "preview">;
 	sizes: Accessor<number[]>;
 	setSizes: Setter<number[]>;
-	tree: ReturnType<typeof createFileTreeForRegistryItemFiles> | null;
+	activeFile: Accessor<string | null>;
+	setActiveFile: Setter<string | null>;
+	tree: Accessor<ReturnType<typeof createFileTreeForRegistryItemFiles> | null>;
+	highlightedFiles: Accessor<
+		| (v.InferInput<typeof registryItemFileSchema> & {
+				highlightedContent: string;
+		  })[]
+		| null
+	>;
 };
 
 const BlockViewerContext = createContext<BlockViewerContext>();
@@ -48,23 +94,24 @@ const useBlockViewer = () => {
 	return context;
 };
 
-const BlockViewerProvider = (
-	props: ParentProps<Pick<BlockViewerContext, "item" | "tree">>,
-) => {
+const BlockViewerProvider = (props: ParentProps<BlockViewerProps>) => {
 	const [view, setView] = createSignal<"code" | "preview">("preview");
 	const [sizes, setSizes] = createSignal([1, 0]);
+	const [activeFile, setActiveFile] = createSignal<string | null>(
+		// eslint-disable-next-line solid/reactivity
+		props.highlightedFiles?.[0].target ?? null,
+	);
 
 	const value: BlockViewerContext = {
-		get item() {
-			return props.item;
-		},
-		get tree() {
-			return props.tree;
-		},
+		item: () => props.item,
+		tree: () => props.tree,
 		view,
 		setView,
 		sizes,
 		setSizes,
+		activeFile,
+		setActiveFile,
+		highlightedFiles: () => props.highlightedFiles,
 	};
 
 	return (
@@ -89,7 +136,7 @@ const BlockViewerToolbar = () => {
 
 	const copyToClipboard = async () => {
 		setIsCopied(true);
-		await navigator.clipboard.writeText(`npx shadcn@latest add ${item.name}`);
+		await navigator.clipboard.writeText(`npx shadcn@latest add ${item().name}`);
 		setTimeout(() => setIsCopied(false), 2000);
 	};
 
@@ -107,11 +154,7 @@ const BlockViewerToolbar = () => {
 					>
 						Preview
 					</TabsTrigger>
-					<TabsTrigger
-						value="code"
-						class="h-[1.45rem] rounded-sm px-2 text-xs"
-						disabled
-					>
+					<TabsTrigger value="code" class="h-[1.45rem] rounded-sm px-2 text-xs">
 						Code
 					</TabsTrigger>
 					<TabsIndicator />
@@ -119,10 +162,10 @@ const BlockViewerToolbar = () => {
 			</Tabs>
 			<Separator orientation="vertical" class="mx-2 hidden h-4 lg:flex" />
 			<a
-				href={`#${item.name}`}
+				href={`#${item().name}`}
 				class="text-sm font-medium underline-offset-2 hover:underline"
 			>
-				{item.description}
+				{item().description}
 			</a>
 			<div class="ml-auto flex items-center gap-2">
 				<Button
@@ -165,7 +208,9 @@ const BlockViewerToolbar = () => {
 							/>
 						</svg>
 					</Show>
-					<span class="hidden lg:inline">npx shadcn-solid add {item.name}</span>
+					<span class="hidden lg:inline">
+						npx shadcn-solid add {item().name}
+					</span>
 				</Button>
 				<Separator orientation="vertical" class="mx-2 hidden h-4 md:flex" />
 				<div class="hidden h-7 items-center gap-1.5 rounded-md border p-[2px] shadow-none lg:flex">
@@ -245,7 +290,7 @@ const BlockViewerToolbar = () => {
 							class="h-[22px] w-[22px] rounded-sm p-0"
 							as="a"
 							title="Open in New Tab"
-							href={`/blocks/${item.name}`}
+							href={`/blocks/${item().name}`}
 							target="_blank"
 						>
 							<span class="sr-only">Open in New Tab</span>
@@ -282,30 +327,279 @@ const BlockViewerView = () => {
 			<div class="grid w-full gap-4">
 				<Resizable sizes={sizes()} onSizesChange={setSizes}>
 					<ResizablePanel
+						initialSize={1}
 						minSize={0.3}
 						class="relative aspect-[4/2.5] rounded-xl border bg-background md:aspect-auto overflow-hidden"
 					>
 						<iframe
-							src={`/blocks/${item.name}`}
-							height={item.meta?.iframeHeight ?? 450}
+							src={`/blocks/${item().name}`}
+							height={item().meta?.iframeHeight ?? 450}
 							class="w-full bg-background"
-							title={item.name}
+							title={item().name}
 						/>
 					</ResizablePanel>
 					<ResizableHandle class="hidden w-3 bg-transparent p-0 after:absolute after:right-0 after:top-1/2 after:h-8 after:w-[6px] after:-translate-y-1/2 after:translate-x-[-1px] after:rounded-full after:bg-border after:transition-all after:hover:h-10 md:block" />
-					<ResizablePanel />
+					<ResizablePanel initialSize={0} minSize={0} />
 				</Resizable>
 			</div>
 		</div>
 	);
 };
 
-const BlockViewer = (props: Pick<BlockViewerContext, "item" | "tree">) => {
+const BlockViewerCode = () => {
+	const { activeFile, highlightedFiles } = useBlockViewer();
+
+	const file = createMemo(() => {
+		return highlightedFiles()?.find((file) => file.target === activeFile());
+	});
+
+	return (
+		<Show when={file()}>
+			<div class="mr-[14px] flex h-[--height] overflow-hidden rounded-xl bg-zinc-950 text-white group-data-[view=preview]/block-view-wrapper:hidden">
+				<div class="w-[280px]">
+					<BlockViewerFileTree />
+				</div>
+				<div class="flex min-w-0 flex-1 flex-col">
+					<div class="flex h-12 items-center gap-2 border-b border-zinc-700 bg-zinc-900 px-4 text-sm font-medium">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="size-4"
+							viewBox="0 0 24 24"
+						>
+							<g
+								fill="none"
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+							>
+								<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+								<path d="M14 2v4a2 2 0 0 0 2 2h4" />
+							</g>
+						</svg>
+						{file()!.target}
+						<div class="ml-auto flex items-center gap-2">
+							<BlockCopyCodeButton />
+						</div>
+					</div>
+					<div
+						data-rehype-pretty-code-figure
+						// eslint-disable-next-line solid/no-innerhtml
+						innerHTML={file()?.highlightedContent ?? ""}
+						class="relative flex-1 overflow-hidden after:absolute after:inset-y-0 after:left-0 after:w-10 after:bg-zinc-950 [&_.line:before]:sticky [&_.line:before]:left-2 [&_.line:before]:z-10 [&_.line:before]:translate-y-[-1px] [&_.line:before]:pr-1 [&_pre]:h-[--height] [&_pre]:overflow-auto [&_pre]:!bg-transparent [&_pre]:pb-12 [&_pre]:pt-4 [&_pre]:font-mono [&_pre]:text-sm [&_pre]:leading-relaxed"
+					/>
+				</div>
+			</div>
+		</Show>
+	);
+};
+
+const BlockViewerFileTree = () => {
+	const { tree } = useBlockViewer();
+
+	return (
+		<Show when={tree}>
+			<SidebarProvider class="flex !min-h-full flex-col">
+				<Sidebar
+					collapsible="none"
+					class="w-full flex-1 border-r border-zinc-700 bg-zinc-900 text-white"
+				>
+					<SidebarGroupLabel class="h-12 rounded-none border-b border-zinc-700 px-4 text-sm text-white">
+						Files
+					</SidebarGroupLabel>
+					<SidebarGroup class="p-0">
+						<SidebarGroupContent>
+							<SidebarMenu class="gap-1.5">
+								<For each={tree()}>
+									{(file) => <Tree item={file} index={1} />}
+								</For>
+							</SidebarMenu>
+						</SidebarGroupContent>
+					</SidebarGroup>
+				</Sidebar>
+			</SidebarProvider>
+		</Show>
+	);
+};
+
+const Tree = (props: { item: FileTree; index: number }) => {
+	const { activeFile, setActiveFile } = useBlockViewer();
+
+	return (
+		<Show
+			when={props.item.children}
+			fallback={
+				<SidebarMenuItem>
+					<SidebarMenuButton
+						isActive={props.item.path === activeFile()}
+						onClick={() => props.item.path && setActiveFile(props.item.path)}
+						class="whitespace-nowrap rounded-none pl-[--index] hover:bg-zinc-700 hover:text-white focus:bg-zinc-700 focus:text-white focus-visible:bg-zinc-700 focus-visible:text-white active:bg-zinc-700 active:text-white data-[active=true]:bg-zinc-700 data-[active=true]:text-white"
+						data-index={props.index}
+						style={{
+							"--index": `${props.index * (props.index === 2 ? 1.2 : 1.3)}rem`,
+						}}
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="size-4 invisible"
+							viewBox="0 0 24 24"
+						>
+							<path
+								fill="none"
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="m9 18l6-6l-6-6"
+							/>
+						</svg>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="size-4"
+							viewBox="0 0 24 24"
+						>
+							<g
+								fill="none"
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+							>
+								<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+								<path d="M14 2v4a2 2 0 0 0 2 2h4" />
+							</g>
+						</svg>
+						{props.item.name}
+					</SidebarMenuButton>
+				</SidebarMenuItem>
+			}
+		>
+			<SidebarMenuItem>
+				<Collapsible
+					class="group/collapsible [&[data-state=open]>button>svg:first-child]:rotate-90"
+					defaultOpen
+				>
+					<CollapsibleTrigger
+						as={(triggerProps: CollapsibleTriggerProps) => (
+							// @ts-expect-error
+							<SidebarMenuButton
+								{...triggerProps}
+								class="whitespace-nowrap rounded-none pl-[--index] hover:bg-zinc-700 hover:text-white focus-visible:bg-zinc-700 focus-visible:text-white active:bg-zinc-700 active:text-white data-[active=true]:bg-zinc-700 data-[active=true]:text-white data-[state=open]:hover:bg-zinc-700 data-[state=open]:hover:text-white"
+								style={{
+									"--index": `${props.index * (props.index === 1 ? 1 : 1.2)}rem`,
+								}}
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									class="size-4 transition-transform"
+									viewBox="0 0 24 24"
+								>
+									<path
+										fill="none"
+										stroke="currentColor"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="m9 18l6-6l-6-6"
+									/>
+								</svg>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									class="size-4"
+									viewBox="0 0 24 24"
+								>
+									<path
+										fill="none"
+										stroke="currentColor"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"
+									/>
+								</svg>
+								{props.item.name}
+							</SidebarMenuButton>
+						)}
+					/>
+					<CollapsibleContent>
+						<SidebarMenuSub class="m-0 w-full border-none p-0">
+							<For each={props.item.children}>
+								{(subItem) => <Tree item={subItem} index={props.index + 1} />}
+							</For>
+						</SidebarMenuSub>
+					</CollapsibleContent>
+				</Collapsible>
+			</SidebarMenuItem>
+		</Show>
+	);
+};
+
+const BlockCopyCodeButton = () => {
+	const { activeFile, item } = useBlockViewer();
+	const [isCopied, setIsCopied] = createSignal(false);
+
+	const copyToClipboard = async (content: string) => {
+		setIsCopied(true);
+		await navigator.clipboard.writeText(content);
+		setTimeout(() => setIsCopied(false), 2000);
+	};
+
+	const file = createMemo(() => {
+		return item().files?.find((file) => file.target === activeFile());
+	});
+
+	const content = () => file()?.content;
+
+	return (
+		<Show when={content()}>
+			<Button
+				onClick={() => copyToClipboard(content()!)}
+				class="h-7 w-7 shrink-0 rounded-lg p-0 hover:bg-zinc-700 hover:text-white focus:bg-zinc-700 focus:text-white focus-visible:bg-zinc-700 focus-visible:text-white active:bg-zinc-700 active:text-white data-[active=true]:bg-zinc-700 data-[active=true]:text-white [&>svg]:size-3.5"
+				variant="ghost"
+			>
+				<Show
+					when={isCopied()}
+					fallback={
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+							<g
+								fill="none"
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+							>
+								<path d="M7 9.667A2.667 2.667 0 0 1 9.667 7h8.666A2.667 2.667 0 0 1 21 9.667v8.666A2.667 2.667 0 0 1 18.333 21H9.667A2.667 2.667 0 0 1 7 18.333z" />
+								<path d="M4.012 16.737A2.005 2.005 0 0 1 3 15V5c0-1.1.9-2 2-2h10c.75 0 1.158.385 1.5 1" />
+							</g>
+							<title>Copy</title>
+						</svg>
+					}
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+						<g
+							fill="none"
+							stroke="currentColor"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+						>
+							<path d="M7 9.667A2.667 2.667 0 0 1 9.667 7h8.666A2.667 2.667 0 0 1 21 9.667v8.666A2.667 2.667 0 0 1 18.333 21H9.667A2.667 2.667 0 0 1 7 18.333z" />
+							<path d="M4.012 16.737A2.005 2.005 0 0 1 3 15V5c0-1.1.9-2 2-2h10c.75 0 1.158.385 1.5 1M11 14l2 2l4-4" />
+						</g>
+						<title>Copied</title>
+					</svg>
+				</Show>
+			</Button>
+		</Show>
+	);
+};
+
+const BlockViewer = (props: BlockViewerProps) => {
 	return (
 		<BlockViewerProvider {...props}>
 			<BlockViewerToolbar />
 			<BlockViewerView />
-			{/*<BlockViewerCode />*/}
+			<BlockViewerCode />
 		</BlockViewerProvider>
 	);
 };

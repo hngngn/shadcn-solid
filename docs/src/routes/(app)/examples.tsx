@@ -1,7 +1,7 @@
-import { buttonVariants } from "@repo/tailwindcss/ui/button";
+import Example from "@/components/example";
+import { siteConfig } from "@/config/site";
+import { buttonVariants } from "@/registry/tailwindcss/ui/button";
 import type { RouteSectionProps } from "@solidjs/router";
-import Example from "~/components/example";
-import { siteConfig } from "~/config/site";
 
 const ExamplesLayout = (props: RouteSectionProps) => {
 	return (

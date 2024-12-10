@@ -1,4 +1,4 @@
-import { Button } from "@repo/tailwindcss/ui/button";
+import { Button } from "@/registry/tailwindcss/ui/button";
 import {
 	Card,
 	CardContent,
@@ -6,20 +6,23 @@ import {
 	CardFooter,
 	CardHeader,
 	CardTitle,
-} from "@repo/tailwindcss/ui/card";
-import { RadioGroup, RadioGroupItem } from "@repo/tailwindcss/ui/radio-group";
+} from "@/registry/tailwindcss/ui/card";
+import {
+	RadioGroup,
+	RadioGroupItem,
+} from "@/registry/tailwindcss/ui/radio-group";
 import {
 	Select,
 	SelectContent,
 	SelectItem,
 	SelectTrigger,
 	SelectValue,
-} from "@repo/tailwindcss/ui/select";
+} from "@/registry/tailwindcss/ui/select";
 import {
 	TextField,
 	TextFieldLabel,
 	TextFieldRoot,
-} from "@repo/tailwindcss/ui/textfield";
+} from "@/registry/tailwindcss/ui/textfield";
 
 export const DemoPaymentMethod = () => {
 	return (

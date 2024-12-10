@@ -1,27 +1,27 @@
-import type { DropdownMenuTriggerProps } from "@kobalte/core/dropdown-menu";
-import { Image } from "@kobalte/core/image";
-import type { TooltipTriggerProps } from "@kobalte/core/tooltip";
-import { Button } from "@repo/tailwindcss/ui/button";
+import { Button } from "@/registry/tailwindcss/ui/button";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
 	DropdownMenuTrigger,
-} from "@repo/tailwindcss/ui/dropdown-menu";
-import { Separator } from "@repo/tailwindcss/ui/separator";
+} from "@/registry/tailwindcss/ui/dropdown-menu";
+import { Separator } from "@/registry/tailwindcss/ui/separator";
 import {
 	Switch,
 	SwitchControl,
 	SwitchLabel,
 	SwitchThumb,
-} from "@repo/tailwindcss/ui/switch";
-import { TextArea } from "@repo/tailwindcss/ui/textarea";
-import { TextFieldRoot } from "@repo/tailwindcss/ui/textfield";
+} from "@/registry/tailwindcss/ui/switch";
+import { TextArea } from "@/registry/tailwindcss/ui/textarea";
+import { TextFieldRoot } from "@/registry/tailwindcss/ui/textfield";
 import {
 	Tooltip,
 	TooltipContent,
 	TooltipTrigger,
-} from "@repo/tailwindcss/ui/tooltip";
+} from "@/registry/tailwindcss/ui/tooltip";
+import type { DropdownMenuTriggerProps } from "@kobalte/core/dropdown-menu";
+import { Image } from "@kobalte/core/image";
+import type { TooltipTriggerProps } from "@kobalte/core/tooltip";
 import { Show, createMemo } from "solid-js";
 import { mails } from "./data";
 import { mail } from "./use-mail";

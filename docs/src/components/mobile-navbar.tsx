@@ -1,12 +1,12 @@
-import { Button } from "@repo/tailwindcss/ui/button";
+import { docsConfig } from "@/config/docs";
+import { Button } from "@/registry/tailwindcss/ui/button";
 import {
 	Drawer,
 	DrawerContent,
 	DrawerTrigger,
-} from "@repo/tailwindcss/ui/drawer";
+} from "@/registry/tailwindcss/ui/drawer";
 import { useBeforeLeave } from "@solidjs/router";
 import { For } from "solid-js";
-import { docsConfig } from "~/config/docs";
 import { Sidebar } from "./sidebar";
 
 export const MobileNavbar = () => {

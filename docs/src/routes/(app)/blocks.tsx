@@ -1,9 +1,9 @@
-import { buttonVariants } from "@/components/ui/button";
+import { Announcement } from "@/components/announcement";
+import BlockDisplay from "@/components/block-display";
+import { getAllBlockIds } from "@/libs/blocks";
+import { buttonVariants } from "@/registry/tailwindcss/ui/button";
 import { type RouteDefinition, createAsync } from "@solidjs/router";
 import { For } from "solid-js";
-import { Announcement } from "~/components/announcement";
-import BlockDisplay from "~/components/block-display";
-import { getAllBlockIds } from "~/libs/blocks";
 
 export const route = {
 	preload: () => getAllBlockIds(),

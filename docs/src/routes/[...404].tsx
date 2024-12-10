@@ -1,4 +1,4 @@
-import { Button } from "@repo/tailwindcss/ui/button";
+import { Button } from "@/registry/tailwindcss/ui/button";
 
 const NotFound = () => {
 	return (

@@ -8,9 +8,6 @@
 		"source.organizeImports.biome": "explicit",
 		"source.removeUnusedImports": "explicit"
 	},
-	"[astro]": {
-		"editor.defaultFormatter": "astro-build.astro-vscode",
-	},
 	"astro.content-intellisense": true,
 	"eslint.useFlatConfig": true
 }

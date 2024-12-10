@@ -1,10 +1,11 @@
+import { Index } from "@/__registry__";
 import {
 	Tabs,
 	TabsContent,
 	TabsIndicator,
 	TabsList,
 	TabsTrigger,
-} from "@repo/tailwindcss/ui/tabs";
+} from "@/registry/tailwindcss/ui/tabs";
 import {
 	type JSX,
 	type ParentProps,
@@ -12,7 +13,6 @@ import {
 	createMemo,
 	mergeProps,
 } from "solid-js";
-import { Index } from "~/__registry__";
 
 type Props = {
 	name: string;

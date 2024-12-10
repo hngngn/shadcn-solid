@@ -1,6 +1,6 @@
+import { Index } from "@/__registry__";
 import { Navigate, type RouteSectionProps } from "@solidjs/router";
 import { type JSX, Show, createMemo } from "solid-js";
-import { Index } from "~/__registry__";
 
 const BlockFullView = (props: RouteSectionProps) => {
 	const Component = createMemo(

@@ -1,11 +1,11 @@
-import { Button } from "@repo/tailwindcss/ui/button";
-import { useLocation } from "@solidjs/router";
-import { Show } from "solid-js";
 import {
 	type TNavItem,
 	type TNavItemWithChildren,
 	docsConfig,
-} from "~/config/docs";
+} from "@/config/docs";
+import { Button } from "@/registry/tailwindcss/ui/button";
+import { useLocation } from "@solidjs/router";
+import { Show } from "solid-js";
 
 export const PageNavigation = () => {
 	const location = useLocation();

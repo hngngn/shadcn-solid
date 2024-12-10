@@ -1,16 +1,16 @@
+"use server";
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 
 import fs from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
-import { Project, ScriptKind, type SourceFile, SyntaxKind } from "ts-morph";
-import * as v from "valibot";
-import { Index } from "~/__registry__";
-import { fixImport } from "../../scripts/import";
+import { Index } from "@/__registry__";
 import {
 	registryEntrySchema,
 	type registryItemFileSchema,
-} from "../../scripts/utils/schema";
+} from "@/registry/schema";
+import { Project, ScriptKind, type SourceFile, SyntaxKind } from "ts-morph";
+import * as v from "valibot";
 
 const memoizedIndex: typeof Index = Object.fromEntries(
 	Object.entries(Index).map(([style, items]) => [style, { ...items }]),
@@ -23,6 +23,34 @@ const createTempSourceFile = async (filename: string) => {
 
 const removeVariable = (sourceFile: SourceFile, name: string) => {
 	sourceFile.getVariableDeclaration(name)?.remove();
+};
+
+const fixImport = (content: string) => {
+	const regex = /@\/(.+?)\/((?:.*?\/)?(?:components|ui|hooks|lib))\/([\w-]+)/g;
+
+	const replacement = (
+		match: string,
+		path: string,
+		type: string,
+		component: string,
+	) => {
+		if (type.endsWith("components")) {
+			return `@/components/${component}`;
+		}
+		if (type.endsWith("ui")) {
+			return `@/components/ui/${component}`;
+		}
+		if (type.endsWith("hooks")) {
+			return `@/hooks/${component}`;
+		}
+		if (type.endsWith("lib")) {
+			return `@/lib/${component}`;
+		}
+
+		return match;
+	};
+
+	return content.replace(regex, replacement);
 };
 
 const getFileContent = async (filePath: string) => {
@@ -92,25 +120,26 @@ const getFileTarget = (file: v.InferInput<typeof registryItemFileSchema>) => {
 	let target = file.target;
 
 	if (!target || target === "") {
-		const fileName = file.path.split("/").pop();
+		const fileName = file.path.split("\\").pop();
+
 		if (
 			file.type === "registry:block" ||
 			file.type === "registry:component" ||
 			file.type === "registry:example"
 		) {
-			target = `components/${fileName}`;
+			target = `src/components/${fileName}`;
 		}
 
 		if (file.type === "registry:ui") {
-			target = `components/ui/${fileName}`;
+			target = `src/components/ui/${fileName}`;
 		}
 
 		if (file.type === "registry:hook") {
-			target = `hooks/${fileName}`;
+			target = `src/hooks/${fileName}`;
 		}
 
 		if (file.type === "registry:libs") {
-			target = `libs/${fileName}`;
+			target = `src/libs/${fileName}`;
 		}
 	}
 

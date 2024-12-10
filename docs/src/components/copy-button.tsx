@@ -1,5 +1,5 @@
+import { cn } from "@/registry/tailwindcss/libs/cn";
 import { Show, createSignal } from "solid-js";
-import { cn } from "~/libs/cn";
 
 type Props = {
 	rawString: string;

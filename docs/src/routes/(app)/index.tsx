@@ -1,11 +1,11 @@
-import { buttonVariants } from "@repo/tailwindcss/ui/button";
+import { Announcement } from "@/components/announcement";
+import Example from "@/components/example";
+import { siteConfig } from "@/config/site";
+import { buttonVariants } from "@/registry/tailwindcss/ui/button";
 import { clientOnly } from "@solidjs/start";
-import { Announcement } from "~/components/announcement";
-import Example from "~/components/example";
-import { siteConfig } from "~/config/site";
 
 const MailUI = clientOnly(
-	() => import("~/routes/(app)/examples/_components/mail/ui"),
+	() => import("@/routes/(app)/examples/_components/mail/ui"),
 );
 
 const Home = () => {

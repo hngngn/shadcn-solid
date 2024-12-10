@@ -2,29 +2,14 @@ import { existsSync, mkdirSync } from "node:fs";
 import fs from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
+import { registry } from "@/registry";
+import { frameworks } from "@/registry/frameworks";
+import { type Registry, registrySchema } from "@/registry/schema";
 import { rimraf } from "rimraf";
 import { Project, ScriptKind, SyntaxKind } from "ts-morph";
 import * as v from "valibot";
-import { fixImport } from "./import";
-import { registry } from "./utils";
-import { frameworks } from "./utils/frameworks";
-import {
-	type Registry,
-	type registryItemTypeSchema,
-	registrySchema,
-} from "./utils/schema";
 
 const REGISTRY_PATH = path.join(process.cwd(), "public/registry");
-
-const REGISTRY_INDEX_WHITELIST: v.InferInput<typeof registryItemTypeSchema>[] =
-	[
-		"registry:ui",
-		"registry:libs",
-		"registry:hook",
-		"registry:theme",
-		"registry:block",
-		"registry:example",
-	];
 
 const project = new Project({
 	compilerOptions: {},
@@ -61,7 +46,7 @@ export const Index: Record<string, any> = {
 			if (item.type === "registry:example" || item.type === "registry:block") {
 				const resolveFiles = item.files?.map(
 					(file) =>
-						`../packages/${framework.name}/${
+						`src/registry/${framework.name}/${
 							typeof file === "string" ? file : file.path
 						}`,
 				);
@@ -72,13 +57,15 @@ export const Index: Record<string, any> = {
 				const type = item.type.split(":")[1];
 				let sourceFilename = "";
 
-				const chunks: any = [];
+				let componentPath = `@/registry/${framework.name}/${type}/${item.name}`;
+
 				if (item.type === "registry:block") {
 					const file = resolveFiles[0];
 					const filename = path.basename(file);
+
 					let raw: string;
 					try {
-						raw = fixImport(await fs.readFile(file, "utf8"));
+						raw = await fs.readFile(file, "utf8");
 					} catch {
 						continue;
 					}
@@ -147,8 +134,6 @@ export const Index: Record<string, any> = {
 					await fs.writeFile(sourcePath, sourceFile.getText());
 				}
 
-				let componentPath = `@repo/${framework.name}/${type}/${item.name}`;
-
 				if (item.files) {
 					const files = item.files.map((file) =>
 						typeof file === "string"
@@ -156,50 +141,33 @@ export const Index: Record<string, any> = {
 							: file,
 					);
 					if (files.length) {
-						componentPath = `@repo/${framework.name}/${files[0].path.slice(0, -4)}`;
+						componentPath = `@/registry/${framework.name}/${files[0].path.slice(0, -4)}`;
 					}
 				}
 
-				index += `
+				index += ` 
 		"${item.name}": {
-		name: "${item.name}",
-		description: "${item.description ?? ""}",
-		type: "${item.type}",
-		registryDependencies: ${JSON.stringify(item.registryDependencies)},
-		files: [${item.files?.map((file) => {
-			const filePath = `../packages/${framework.name}/${
-				typeof file === "string" ? file : file.path
+			name: "${item.name}",
+			description: "${item.description ?? ""}",
+			type: "${item.type}",
+			registryDependencies: ${JSON.stringify(item.registryDependencies)},
+			files: [${item.files?.map((file) => {
+				const filePath = `src/registry/${framework.name}/${
+					typeof file === "string" ? file : file.path
+				}`;
+				const resolvedFilePath = path.resolve(filePath);
+				return typeof file === "string"
+					? `"${resolvedFilePath}"`
+					: `{
+				path: "${filePath}",
+				type: "${file.type}",
+				target: "${file.target ?? ""}"
 			}`;
-			const resolvedFilePath = path.resolve(filePath);
-			return typeof file === "string"
-				? `"${resolvedFilePath}"`
-				: `{
-			path: "${filePath}",
-			type: "${file.type}",
-			target: "${file.target ?? ""}"
-		}`;
-		})}],
-		component: clientOnly(() => import("${componentPath}"), { lazy: true }),
-		source: "${sourceFilename}",
-		category: "${item.category ?? ""}",
-		subcategory: "${item.subcategory ?? ""}",
-		chunks: [${chunks.map(
-			(chunk: {
-				name: any;
-				description: any;
-				component: any;
-				file: any;
-				container: { className: any };
-			}) => `{
-			name: "${chunk.name}",
-			description: "${chunk.description ?? "No description"}",
-			component: ${chunk.component}
-			file: "${chunk.file}",
-			container: {
-			className: "${chunk.container.className}"
-			}
-		}`,
-		)}]
+			})}],
+			component: clientOnly(() => import("${componentPath}"), { lazy: true }),
+			source: "${sourceFilename}",
+			category: "${item.category ?? ""}",
+			subcategory: "${item.subcategory ?? ""}"
 		},`;
 			}
 		}

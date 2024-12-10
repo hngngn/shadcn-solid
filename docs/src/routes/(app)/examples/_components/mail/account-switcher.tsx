@@ -1,11 +1,11 @@
-import { cn } from "@/libs/cn";
+import { cn } from "@/registry/tailwindcss/libs/cn";
 import {
 	Select,
 	SelectContent,
 	SelectItem,
 	SelectTrigger,
 	SelectValue,
-} from "@repo/tailwindcss/ui/select";
+} from "@/registry/tailwindcss/ui/select";
 import { createSignal } from "solid-js";
 import { type Account, accounts } from "./data";
 

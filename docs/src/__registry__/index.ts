@@ -12,19 +12,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/accordion-demo.tsx",
+					path: "src/registry/tailwindcss/examples/accordion-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/accordion-demo"),
+				() => import("@/registry/tailwindcss/examples/accordion-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"alert-demo": {
 			name: "alert-demo",
@@ -33,19 +32,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/alert-demo.tsx",
+					path: "src/registry/tailwindcss/examples/alert-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/alert-demo"),
+				() => import("@/registry/tailwindcss/examples/alert-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"alert-destructive": {
 			name: "alert-destructive",
@@ -54,19 +52,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/alert-destructive.tsx",
+					path: "src/registry/tailwindcss/examples/alert-destructive.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/alert-destructive"),
+				() => import("@/registry/tailwindcss/examples/alert-destructive"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"alert-dialog-demo": {
 			name: "alert-dialog-demo",
@@ -75,19 +72,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/alert-dialog-demo.tsx",
+					path: "src/registry/tailwindcss/examples/alert-dialog-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/alert-dialog-demo"),
+				() => import("@/registry/tailwindcss/examples/alert-dialog-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"button-demo": {
 			name: "button-demo",
@@ -96,19 +92,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/button-demo.tsx",
+					path: "src/registry/tailwindcss/examples/button-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/button-demo"),
+				() => import("@/registry/tailwindcss/examples/button-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"button-secondary": {
 			name: "button-secondary",
@@ -117,19 +112,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/button-secondary.tsx",
+					path: "src/registry/tailwindcss/examples/button-secondary.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/button-secondary"),
+				() => import("@/registry/tailwindcss/examples/button-secondary"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"button-destructive": {
 			name: "button-destructive",
@@ -138,19 +132,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/button-destructive.tsx",
+					path: "src/registry/tailwindcss/examples/button-destructive.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/button-destructive"),
+				() => import("@/registry/tailwindcss/examples/button-destructive"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"button-outline": {
 			name: "button-outline",
@@ -159,19 +152,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/button-outline.tsx",
+					path: "src/registry/tailwindcss/examples/button-outline.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/button-outline"),
+				() => import("@/registry/tailwindcss/examples/button-outline"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"button-ghost": {
 			name: "button-ghost",
@@ -180,19 +172,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/button-ghost.tsx",
+					path: "src/registry/tailwindcss/examples/button-ghost.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/button-ghost"),
+				() => import("@/registry/tailwindcss/examples/button-ghost"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"button-link": {
 			name: "button-link",
@@ -201,19 +192,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/button-link.tsx",
+					path: "src/registry/tailwindcss/examples/button-link.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/button-link"),
+				() => import("@/registry/tailwindcss/examples/button-link"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"button-with-icon": {
 			name: "button-with-icon",
@@ -222,19 +212,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/button-with-icon.tsx",
+					path: "src/registry/tailwindcss/examples/button-with-icon.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/button-with-icon"),
+				() => import("@/registry/tailwindcss/examples/button-with-icon"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"button-loading": {
 			name: "button-loading",
@@ -243,19 +232,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/button-loading.tsx",
+					path: "src/registry/tailwindcss/examples/button-loading.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/button-loading"),
+				() => import("@/registry/tailwindcss/examples/button-loading"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"button-as-child": {
 			name: "button-as-child",
@@ -264,19 +252,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/button-as-child.tsx",
+					path: "src/registry/tailwindcss/examples/button-as-child.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/button-as-child"),
+				() => import("@/registry/tailwindcss/examples/button-as-child"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"badge-demo": {
 			name: "badge-demo",
@@ -285,19 +272,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/badge-demo.tsx",
+					path: "src/registry/tailwindcss/examples/badge-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/badge-demo"),
+				() => import("@/registry/tailwindcss/examples/badge-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"badge-secondary": {
 			name: "badge-secondary",
@@ -306,19 +292,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/badge-secondary.tsx",
+					path: "src/registry/tailwindcss/examples/badge-secondary.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/badge-secondary"),
+				() => import("@/registry/tailwindcss/examples/badge-secondary"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"badge-destructive": {
 			name: "badge-destructive",
@@ -327,19 +312,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/badge-destructive.tsx",
+					path: "src/registry/tailwindcss/examples/badge-destructive.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/badge-destructive"),
+				() => import("@/registry/tailwindcss/examples/badge-destructive"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"badge-outline": {
 			name: "badge-outline",
@@ -348,19 +332,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/badge-outline.tsx",
+					path: "src/registry/tailwindcss/examples/badge-outline.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/badge-outline"),
+				() => import("@/registry/tailwindcss/examples/badge-outline"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"calendar-demo": {
 			name: "calendar-demo",
@@ -369,19 +352,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/calendar-demo.tsx",
+					path: "src/registry/tailwindcss/examples/calendar-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/calendar-demo"),
+				() => import("@/registry/tailwindcss/examples/calendar-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"card-demo": {
 			name: "card-demo",
@@ -390,19 +372,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/card-demo.tsx",
+					path: "src/registry/tailwindcss/examples/card-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/card-demo"),
+				() => import("@/registry/tailwindcss/examples/card-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"carousel-demo": {
 			name: "carousel-demo",
@@ -411,19 +392,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/carousel-demo.tsx",
+					path: "src/registry/tailwindcss/examples/carousel-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/carousel-demo"),
+				() => import("@/registry/tailwindcss/examples/carousel-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"carousel-size": {
 			name: "carousel-size",
@@ -432,19 +412,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/carousel-size.tsx",
+					path: "src/registry/tailwindcss/examples/carousel-size.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/carousel-size"),
+				() => import("@/registry/tailwindcss/examples/carousel-size"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"carousel-api-demo": {
 			name: "carousel-api-demo",
@@ -453,19 +432,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/carousel-api-demo.tsx",
+					path: "src/registry/tailwindcss/examples/carousel-api-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/carousel-api-demo"),
+				() => import("@/registry/tailwindcss/examples/carousel-api-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"carousel-orientation": {
 			name: "carousel-orientation",
@@ -474,19 +452,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/carousel-orientation.tsx",
+					path: "src/registry/tailwindcss/examples/carousel-orientation.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/carousel-orientation"),
+				() => import("@/registry/tailwindcss/examples/carousel-orientation"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"carousel-plugin": {
 			name: "carousel-plugin",
@@ -495,19 +472,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/carousel-plugin.tsx",
+					path: "src/registry/tailwindcss/examples/carousel-plugin.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/carousel-plugin"),
+				() => import("@/registry/tailwindcss/examples/carousel-plugin"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"carousel-spacing": {
 			name: "carousel-spacing",
@@ -516,19 +492,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/carousel-spacing.tsx",
+					path: "src/registry/tailwindcss/examples/carousel-spacing.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/carousel-spacing"),
+				() => import("@/registry/tailwindcss/examples/carousel-spacing"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"checkbox-demo": {
 			name: "checkbox-demo",
@@ -537,19 +512,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/checkbox-demo.tsx",
+					path: "src/registry/tailwindcss/examples/checkbox-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/checkbox-demo"),
+				() => import("@/registry/tailwindcss/examples/checkbox-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"checkbox-disabled": {
 			name: "checkbox-disabled",
@@ -558,19 +532,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/checkbox-disabled.tsx",
+					path: "src/registry/tailwindcss/examples/checkbox-disabled.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/checkbox-disabled"),
+				() => import("@/registry/tailwindcss/examples/checkbox-disabled"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"checkbox-with-text": {
 			name: "checkbox-with-text",
@@ -579,19 +552,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/checkbox-with-text.tsx",
+					path: "src/registry/tailwindcss/examples/checkbox-with-text.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/checkbox-with-text"),
+				() => import("@/registry/tailwindcss/examples/checkbox-with-text"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"collapsible-demo": {
 			name: "collapsible-demo",
@@ -600,19 +572,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/collapsible-demo.tsx",
+					path: "src/registry/tailwindcss/examples/collapsible-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/collapsible-demo"),
+				() => import("@/registry/tailwindcss/examples/collapsible-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"combobox-demo": {
 			name: "combobox-demo",
@@ -621,19 +592,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/combobox-demo.tsx",
+					path: "src/registry/tailwindcss/examples/combobox-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/combobox-demo"),
+				() => import("@/registry/tailwindcss/examples/combobox-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"command-demo": {
 			name: "command-demo",
@@ -642,19 +612,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/command-demo.tsx",
+					path: "src/registry/tailwindcss/examples/command-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/command-demo"),
+				() => import("@/registry/tailwindcss/examples/command-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"command-dialog": {
 			name: "command-dialog",
@@ -663,19 +632,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/command-dialog.tsx",
+					path: "src/registry/tailwindcss/examples/command-dialog.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/command-dialog"),
+				() => import("@/registry/tailwindcss/examples/command-dialog"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"context-menu-demo": {
 			name: "context-menu-demo",
@@ -684,19 +652,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/context-menu-demo.tsx",
+					path: "src/registry/tailwindcss/examples/context-menu-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/context-menu-demo"),
+				() => import("@/registry/tailwindcss/examples/context-menu-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"data-table-demo": {
 			name: "data-table-demo",
@@ -705,19 +672,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/data-table-demo.tsx",
+					path: "src/registry/tailwindcss/examples/data-table-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/data-table-demo"),
+				() => import("@/registry/tailwindcss/examples/data-table-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"date-picker-demo": {
 			name: "date-picker-demo",
@@ -726,19 +692,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/date-picker-demo.tsx",
+					path: "src/registry/tailwindcss/examples/date-picker-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/date-picker-demo"),
+				() => import("@/registry/tailwindcss/examples/date-picker-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"date-picker-with-range-demo": {
 			name: "date-picker-with-range-demo",
@@ -747,19 +712,19 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/date-picker-with-range-demo.tsx",
+					path: "src/registry/tailwindcss/examples/date-picker-with-range-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/date-picker-with-range-demo"),
+				() =>
+					import("@/registry/tailwindcss/examples/date-picker-with-range-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"dialog-demo": {
 			name: "dialog-demo",
@@ -768,19 +733,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/dialog-demo.tsx",
+					path: "src/registry/tailwindcss/examples/dialog-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/dialog-demo"),
+				() => import("@/registry/tailwindcss/examples/dialog-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"drawer-demo": {
 			name: "drawer-demo",
@@ -789,19 +753,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/drawer-demo.tsx",
+					path: "src/registry/tailwindcss/examples/drawer-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/drawer-demo"),
+				() => import("@/registry/tailwindcss/examples/drawer-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"drawer-side-demo": {
 			name: "drawer-side-demo",
@@ -810,19 +773,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/drawer-side-demo.tsx",
+					path: "src/registry/tailwindcss/examples/drawer-side-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/drawer-side-demo"),
+				() => import("@/registry/tailwindcss/examples/drawer-side-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"dropdown-menu-demo": {
 			name: "dropdown-menu-demo",
@@ -831,19 +793,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/dropdown-menu-demo.tsx",
+					path: "src/registry/tailwindcss/examples/dropdown-menu-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/dropdown-menu-demo"),
+				() => import("@/registry/tailwindcss/examples/dropdown-menu-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"dropdown-menu-checkboxes": {
 			name: "dropdown-menu-checkboxes",
@@ -852,19 +813,19 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/dropdown-menu-checkboxes.tsx",
+					path: "src/registry/tailwindcss/examples/dropdown-menu-checkboxes.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/dropdown-menu-checkboxes"),
+				() =>
+					import("@/registry/tailwindcss/examples/dropdown-menu-checkboxes"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"dropdown-menu-radio-group": {
 			name: "dropdown-menu-radio-group",
@@ -873,19 +834,19 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/dropdown-menu-radio-group.tsx",
+					path: "src/registry/tailwindcss/examples/dropdown-menu-radio-group.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/dropdown-menu-radio-group"),
+				() =>
+					import("@/registry/tailwindcss/examples/dropdown-menu-radio-group"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"hover-card-demo": {
 			name: "hover-card-demo",
@@ -894,19 +855,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/hover-card-demo.tsx",
+					path: "src/registry/tailwindcss/examples/hover-card-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/hover-card-demo"),
+				() => import("@/registry/tailwindcss/examples/hover-card-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"menubar-demo": {
 			name: "menubar-demo",
@@ -915,19 +875,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/menubar-demo.tsx",
+					path: "src/registry/tailwindcss/examples/menubar-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/menubar-demo"),
+				() => import("@/registry/tailwindcss/examples/menubar-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"mode-toggle": {
 			name: "mode-toggle",
@@ -936,19 +895,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/mode-toggle.tsx",
+					path: "src/registry/tailwindcss/examples/mode-toggle.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/mode-toggle"),
+				() => import("@/registry/tailwindcss/examples/mode-toggle"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"navigation-menu-demo": {
 			name: "navigation-menu-demo",
@@ -957,19 +915,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/navigation-menu-demo.tsx",
+					path: "src/registry/tailwindcss/examples/navigation-menu-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/navigation-menu-demo"),
+				() => import("@/registry/tailwindcss/examples/navigation-menu-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"number-field-demo": {
 			name: "number-field-demo",
@@ -978,19 +935,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/number-field-demo.tsx",
+					path: "src/registry/tailwindcss/examples/number-field-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/number-field-demo"),
+				() => import("@/registry/tailwindcss/examples/number-field-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"number-field-disabled-demo": {
 			name: "number-field-disabled-demo",
@@ -999,19 +955,19 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/number-field-disabled-demo.tsx",
+					path: "src/registry/tailwindcss/examples/number-field-disabled-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/number-field-disabled-demo"),
+				() =>
+					import("@/registry/tailwindcss/examples/number-field-disabled-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"number-field-with-error-demo": {
 			name: "number-field-with-error-demo",
@@ -1020,19 +976,21 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/number-field-with-error-demo.tsx",
+					path: "src/registry/tailwindcss/examples/number-field-with-error-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/number-field-with-error-demo"),
+				() =>
+					import(
+						"@/registry/tailwindcss/examples/number-field-with-error-demo"
+					),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"otp-field-demo": {
 			name: "otp-field-demo",
@@ -1041,19 +999,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/otp-field-demo.tsx",
+					path: "src/registry/tailwindcss/examples/otp-field-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/otp-field-demo"),
+				() => import("@/registry/tailwindcss/examples/otp-field-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"otp-field-with-pattern-demo": {
 			name: "otp-field-with-pattern-demo",
@@ -1062,19 +1019,19 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/otp-field-with-pattern-demo.tsx",
+					path: "src/registry/tailwindcss/examples/otp-field-with-pattern-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/otp-field-with-pattern-demo"),
+				() =>
+					import("@/registry/tailwindcss/examples/otp-field-with-pattern-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"otp-field-with-controlled-demo": {
 			name: "otp-field-with-controlled-demo",
@@ -1083,20 +1040,21 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/otp-field-with-controlled-demo.tsx",
+					path: "src/registry/tailwindcss/examples/otp-field-with-controlled-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
 				() =>
-					import("@repo/tailwindcss/examples/otp-field-with-controlled-demo"),
+					import(
+						"@/registry/tailwindcss/examples/otp-field-with-controlled-demo"
+					),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"popover-demo": {
 			name: "popover-demo",
@@ -1105,19 +1063,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/popover-demo.tsx",
+					path: "src/registry/tailwindcss/examples/popover-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/popover-demo"),
+				() => import("@/registry/tailwindcss/examples/popover-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"pagination-demo": {
 			name: "pagination-demo",
@@ -1126,19 +1083,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/pagination-demo.tsx",
+					path: "src/registry/tailwindcss/examples/pagination-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/pagination-demo"),
+				() => import("@/registry/tailwindcss/examples/pagination-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"progress-demo": {
 			name: "progress-demo",
@@ -1147,19 +1103,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/progress-demo.tsx",
+					path: "src/registry/tailwindcss/examples/progress-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/progress-demo"),
+				() => import("@/registry/tailwindcss/examples/progress-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"radio-group-demo": {
 			name: "radio-group-demo",
@@ -1168,19 +1123,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/radio-group-demo.tsx",
+					path: "src/registry/tailwindcss/examples/radio-group-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/radio-group-demo"),
+				() => import("@/registry/tailwindcss/examples/radio-group-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"resizable-demo": {
 			name: "resizable-demo",
@@ -1189,19 +1143,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/resizable-demo.tsx",
+					path: "src/registry/tailwindcss/examples/resizable-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/resizable-demo"),
+				() => import("@/registry/tailwindcss/examples/resizable-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"resizable-vertical-demo": {
 			name: "resizable-vertical-demo",
@@ -1210,19 +1163,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/resizable-vertical-demo.tsx",
+					path: "src/registry/tailwindcss/examples/resizable-vertical-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/resizable-vertical-demo"),
+				() => import("@/registry/tailwindcss/examples/resizable-vertical-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"resizable-with-handle-demo": {
 			name: "resizable-with-handle-demo",
@@ -1231,19 +1183,19 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/resizable-with-handle-demo.tsx",
+					path: "src/registry/tailwindcss/examples/resizable-with-handle-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/resizable-with-handle-demo"),
+				() =>
+					import("@/registry/tailwindcss/examples/resizable-with-handle-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"select-demo": {
 			name: "select-demo",
@@ -1252,19 +1204,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/select-demo.tsx",
+					path: "src/registry/tailwindcss/examples/select-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/select-demo"),
+				() => import("@/registry/tailwindcss/examples/select-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"separator-demo": {
 			name: "separator-demo",
@@ -1273,19 +1224,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/separator-demo.tsx",
+					path: "src/registry/tailwindcss/examples/separator-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/separator-demo"),
+				() => import("@/registry/tailwindcss/examples/separator-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"skeleton-demo": {
 			name: "skeleton-demo",
@@ -1294,19 +1244,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/skeleton-demo.tsx",
+					path: "src/registry/tailwindcss/examples/skeleton-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/skeleton-demo"),
+				() => import("@/registry/tailwindcss/examples/skeleton-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"sonner-demo": {
 			name: "sonner-demo",
@@ -1315,19 +1264,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/sonner-demo.tsx",
+					path: "src/registry/tailwindcss/examples/sonner-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/sonner-demo"),
+				() => import("@/registry/tailwindcss/examples/sonner-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"switch-demo": {
 			name: "switch-demo",
@@ -1336,19 +1284,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/switch-demo.tsx",
+					path: "src/registry/tailwindcss/examples/switch-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/switch-demo"),
+				() => import("@/registry/tailwindcss/examples/switch-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"table-demo": {
 			name: "table-demo",
@@ -1357,19 +1304,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/table-demo.tsx",
+					path: "src/registry/tailwindcss/examples/table-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/table-demo"),
+				() => import("@/registry/tailwindcss/examples/table-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"tabs-demo": {
 			name: "tabs-demo",
@@ -1378,19 +1324,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/tabs-demo.tsx",
+					path: "src/registry/tailwindcss/examples/tabs-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/tabs-demo"),
+				() => import("@/registry/tailwindcss/examples/tabs-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"tabs-orientation-demo": {
 			name: "tabs-orientation-demo",
@@ -1399,19 +1344,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/tabs-orientation-demo.tsx",
+					path: "src/registry/tailwindcss/examples/tabs-orientation-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/tabs-orientation-demo"),
+				() => import("@/registry/tailwindcss/examples/tabs-orientation-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"textarea-demo": {
 			name: "textarea-demo",
@@ -1420,19 +1364,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/textarea-demo.tsx",
+					path: "src/registry/tailwindcss/examples/textarea-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/textarea-demo"),
+				() => import("@/registry/tailwindcss/examples/textarea-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"textarea-disabled": {
 			name: "textarea-disabled",
@@ -1441,19 +1384,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/textarea-disabled.tsx",
+					path: "src/registry/tailwindcss/examples/textarea-disabled.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/textarea-disabled"),
+				() => import("@/registry/tailwindcss/examples/textarea-disabled"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"textarea-with-button": {
 			name: "textarea-with-button",
@@ -1462,19 +1404,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/textarea-with-button.tsx",
+					path: "src/registry/tailwindcss/examples/textarea-with-button.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/textarea-with-button"),
+				() => import("@/registry/tailwindcss/examples/textarea-with-button"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"textarea-with-label": {
 			name: "textarea-with-label",
@@ -1483,19 +1424,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/textarea-with-label.tsx",
+					path: "src/registry/tailwindcss/examples/textarea-with-label.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/textarea-with-label"),
+				() => import("@/registry/tailwindcss/examples/textarea-with-label"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"textarea-with-text": {
 			name: "textarea-with-text",
@@ -1504,19 +1444,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/textarea-with-text.tsx",
+					path: "src/registry/tailwindcss/examples/textarea-with-text.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/textarea-with-text"),
+				() => import("@/registry/tailwindcss/examples/textarea-with-text"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"textfield-demo": {
 			name: "textfield-demo",
@@ -1525,19 +1464,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/textfield-demo.tsx",
+					path: "src/registry/tailwindcss/examples/textfield-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/textfield-demo"),
+				() => import("@/registry/tailwindcss/examples/textfield-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"textfield-disabled": {
 			name: "textfield-disabled",
@@ -1546,19 +1484,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/textfield-disabled.tsx",
+					path: "src/registry/tailwindcss/examples/textfield-disabled.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/textfield-disabled"),
+				() => import("@/registry/tailwindcss/examples/textfield-disabled"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"textfield-file": {
 			name: "textfield-file",
@@ -1567,19 +1504,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/textfield-file.tsx",
+					path: "src/registry/tailwindcss/examples/textfield-file.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/textfield-file"),
+				() => import("@/registry/tailwindcss/examples/textfield-file"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"textfield-with-button": {
 			name: "textfield-with-button",
@@ -1588,19 +1524,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/textfield-with-button.tsx",
+					path: "src/registry/tailwindcss/examples/textfield-with-button.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/textfield-with-button"),
+				() => import("@/registry/tailwindcss/examples/textfield-with-button"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"textfield-with-label": {
 			name: "textfield-with-label",
@@ -1609,19 +1544,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/textfield-with-label.tsx",
+					path: "src/registry/tailwindcss/examples/textfield-with-label.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/textfield-with-label"),
+				() => import("@/registry/tailwindcss/examples/textfield-with-label"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"textfield-with-text": {
 			name: "textfield-with-text",
@@ -1630,19 +1564,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/textfield-with-text.tsx",
+					path: "src/registry/tailwindcss/examples/textfield-with-text.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/textfield-with-text"),
+				() => import("@/registry/tailwindcss/examples/textfield-with-text"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"textfield-with-error": {
 			name: "textfield-with-error",
@@ -1651,19 +1584,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/textfield-with-error.tsx",
+					path: "src/registry/tailwindcss/examples/textfield-with-error.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/textfield-with-error"),
+				() => import("@/registry/tailwindcss/examples/textfield-with-error"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"toast-demo": {
 			name: "toast-demo",
@@ -1672,19 +1604,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/toast-demo.tsx",
+					path: "src/registry/tailwindcss/examples/toast-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/toast-demo"),
+				() => import("@/registry/tailwindcss/examples/toast-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"toast-destructive": {
 			name: "toast-destructive",
@@ -1693,19 +1624,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/toast-destructive.tsx",
+					path: "src/registry/tailwindcss/examples/toast-destructive.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/toast-destructive"),
+				() => import("@/registry/tailwindcss/examples/toast-destructive"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"toggle-group-demo": {
 			name: "toggle-group-demo",
@@ -1714,19 +1644,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/toggle-group-demo.tsx",
+					path: "src/registry/tailwindcss/examples/toggle-group-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/toggle-group-demo"),
+				() => import("@/registry/tailwindcss/examples/toggle-group-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"toggle-group-outline-demo": {
 			name: "toggle-group-outline-demo",
@@ -1735,19 +1664,19 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/toggle-group-outline-demo.tsx",
+					path: "src/registry/tailwindcss/examples/toggle-group-outline-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/toggle-group-outline-demo"),
+				() =>
+					import("@/registry/tailwindcss/examples/toggle-group-outline-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"toggle-group-single-demo": {
 			name: "toggle-group-single-demo",
@@ -1756,19 +1685,19 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/toggle-group-single-demo.tsx",
+					path: "src/registry/tailwindcss/examples/toggle-group-single-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/toggle-group-single-demo"),
+				() =>
+					import("@/registry/tailwindcss/examples/toggle-group-single-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"toggle-group-small-demo": {
 			name: "toggle-group-small-demo",
@@ -1777,19 +1706,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/toggle-group-small-demo.tsx",
+					path: "src/registry/tailwindcss/examples/toggle-group-small-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/toggle-group-small-demo"),
+				() => import("@/registry/tailwindcss/examples/toggle-group-small-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"toggle-group-large-demo": {
 			name: "toggle-group-large-demo",
@@ -1798,19 +1726,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/toggle-group-large-demo.tsx",
+					path: "src/registry/tailwindcss/examples/toggle-group-large-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/toggle-group-large-demo"),
+				() => import("@/registry/tailwindcss/examples/toggle-group-large-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"toggle-group-disabled-demo": {
 			name: "toggle-group-disabled-demo",
@@ -1819,19 +1746,19 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/toggle-group-disabled-demo.tsx",
+					path: "src/registry/tailwindcss/examples/toggle-group-disabled-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/toggle-group-disabled-demo"),
+				() =>
+					import("@/registry/tailwindcss/examples/toggle-group-disabled-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"toggle-demo": {
 			name: "toggle-demo",
@@ -1840,19 +1767,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/toggle-demo.tsx",
+					path: "src/registry/tailwindcss/examples/toggle-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/toggle-demo"),
+				() => import("@/registry/tailwindcss/examples/toggle-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"toggle-disabled": {
 			name: "toggle-disabled",
@@ -1861,19 +1787,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/toggle-disabled.tsx",
+					path: "src/registry/tailwindcss/examples/toggle-disabled.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/toggle-disabled"),
+				() => import("@/registry/tailwindcss/examples/toggle-disabled"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"toggle-large": {
 			name: "toggle-large",
@@ -1882,19 +1807,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/toggle-large.tsx",
+					path: "src/registry/tailwindcss/examples/toggle-large.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/toggle-large"),
+				() => import("@/registry/tailwindcss/examples/toggle-large"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"toggle-outline": {
 			name: "toggle-outline",
@@ -1903,19 +1827,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/toggle-outline.tsx",
+					path: "src/registry/tailwindcss/examples/toggle-outline.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/toggle-outline"),
+				() => import("@/registry/tailwindcss/examples/toggle-outline"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"toggle-small": {
 			name: "toggle-small",
@@ -1924,19 +1847,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/toggle-small.tsx",
+					path: "src/registry/tailwindcss/examples/toggle-small.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/toggle-small"),
+				() => import("@/registry/tailwindcss/examples/toggle-small"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"toggle-with-text": {
 			name: "toggle-with-text",
@@ -1945,19 +1867,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/toggle-with-text.tsx",
+					path: "src/registry/tailwindcss/examples/toggle-with-text.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/toggle-with-text"),
+				() => import("@/registry/tailwindcss/examples/toggle-with-text"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"tooltip-demo": {
 			name: "tooltip-demo",
@@ -1966,19 +1887,18 @@ export const Index: Record<string, any> = {
 			registryDependencies: undefined,
 			files: [
 				{
-					path: "../packages/tailwindcss/examples/tooltip-demo.tsx",
+					path: "src/registry/tailwindcss/examples/tooltip-demo.tsx",
 					type: "registry:example",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/examples/tooltip-demo"),
+				() => import("@/registry/tailwindcss/examples/tooltip-demo"),
 				{ lazy: true },
 			),
 			source: "",
 			category: "",
 			subcategory: "",
-			chunks: [],
 		},
 		"sidebar-07": {
 			name: "sidebar-07",
@@ -1989,47 +1909,47 @@ export const Index: Record<string, any> = {
 				"separator",
 				"collapsible",
 				"dropdown-menu",
+				"drawer",
 			],
 			files: [
 				{
-					path: "../packages/tailwindcss/blocks/sidebar-07/index.tsx",
+					path: "src/registry/tailwindcss/blocks/sidebar-07/index.tsx",
 					type: "registry:page",
-					target: "app/dashboard.tsx",
+					target: "src/routes/dashboard.tsx",
 				},
 				{
-					path: "../packages/tailwindcss/blocks/sidebar-07/components/app-sidebar.tsx",
+					path: "src/registry/tailwindcss/blocks/sidebar-07/components/app-sidebar.tsx",
 					type: "registry:component",
 					target: "",
 				},
 				{
-					path: "../packages/tailwindcss/blocks/sidebar-07/components/nav-main.tsx",
+					path: "src/registry/tailwindcss/blocks/sidebar-07/components/nav-main.tsx",
 					type: "registry:component",
 					target: "",
 				},
 				{
-					path: "../packages/tailwindcss/blocks/sidebar-07/components/nav-projects.tsx",
+					path: "src/registry/tailwindcss/blocks/sidebar-07/components/nav-projects.tsx",
 					type: "registry:component",
 					target: "",
 				},
 				{
-					path: "../packages/tailwindcss/blocks/sidebar-07/components/nav-user.tsx",
+					path: "src/registry/tailwindcss/blocks/sidebar-07/components/nav-user.tsx",
 					type: "registry:component",
 					target: "",
 				},
 				{
-					path: "../packages/tailwindcss/blocks/sidebar-07/components/team-switcher.tsx",
+					path: "src/registry/tailwindcss/blocks/sidebar-07/components/team-switcher.tsx",
 					type: "registry:component",
 					target: "",
 				},
 			],
 			component: clientOnly(
-				() => import("@repo/tailwindcss/blocks/sidebar-07/index"),
+				() => import("@/registry/tailwindcss/blocks/sidebar-07/index"),
 				{ lazy: true },
 			),
 			source: "src/__registry__/tailwindcss/blocks/sidebar-07/index.tsx",
 			category: "Application",
 			subcategory: "Sidebars",
-			chunks: [],
 		},
 	},
 };

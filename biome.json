@@ -21,5 +21,10 @@
 			}
 		},
 		"ignore": ["*.js"]
+	},
+	"css": {
+		"formatter": {
+			"enabled": true
+		}
 	}
 }
