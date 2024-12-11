@@ -1,0 +1,47 @@
+"use server";
+
+import type * as v from "valibot";
+
+import { getAllBlockIds } from "@/libs/blocks";
+import { highlightCode } from "@/libs/highlight-code";
+import {
+	createFileTreeForRegistryItemFiles,
+	getRegistryItem,
+} from "@/libs/registry";
+import type { registryItemFileSchema } from "@/registry/schema";
+import { query } from "@solidjs/router";
+
+export const getCachedRegistryItem = query((name: string) => {
+	return getRegistryItem(name);
+}, "registry-item");
+
+export const getCachedFileTree = query(
+	// eslint-disable-next-line @typescript-eslint/require-await
+	async (files: { path: string; target?: string }[] | undefined) => {
+		if (!files) {
+			return null;
+		}
+
+		return createFileTreeForRegistryItemFiles(files);
+	},
+	"file-tree",
+);
+
+export const getCachedHighlightedFiles = query(
+	async (files: v.InferInput<typeof registryItemFileSchema>[] | undefined) => {
+		if (!files) {
+			return null;
+		}
+		return await Promise.all(
+			files.map(async (file) => ({
+				...file,
+				highlightedContent: await highlightCode(file.content ?? ""),
+			})),
+		);
+	},
+	"highlighted-file",
+);
+
+export const getCacheAllBlockIDs = query(async () => {
+	return await getAllBlockIds();
+}, "blocks-id");

@@ -1,9 +1,10 @@
-"use server";
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 
 import fs from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import { Index } from "@/__registry__";
 import {
 	registryEntrySchema,
@@ -11,6 +12,9 @@ import {
 } from "@/registry/schema";
 import { Project, ScriptKind, type SourceFile, SyntaxKind } from "ts-morph";
 import * as v from "valibot";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const memoizedIndex: typeof Index = Object.fromEntries(
 	Object.entries(Index).map(([style, items]) => [style, { ...items }]),
@@ -54,7 +58,10 @@ const fixImport = (content: string) => {
 };
 
 const getFileContent = async (filePath: string) => {
-	const raw = await fs.readFile(filePath, "utf-8");
+	const raw = await fs.readFile(
+		resolve(__dirname, "../../", filePath),
+		"utf-8",
+	);
 
 	const project = new Project({
 		compilerOptions: {},
@@ -94,7 +101,10 @@ const extractVariable = (sourceFile: SourceFile, name: string) => {
 };
 
 const getFileMeta = async (filePath: string) => {
-	const raw = await fs.readFile(filePath, "utf-8");
+	const raw = await fs.readFile(
+		resolve(__dirname, "../../", filePath),
+		"utf-8",
+	);
 
 	const project = new Project({
 		compilerOptions: {},

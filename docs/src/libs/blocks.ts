@@ -1,5 +1,3 @@
-"use server";
-
 import { Index } from "@/__registry__";
 import { registryEntrySchema } from "@/registry/schema";
 import * as v from "valibot";
