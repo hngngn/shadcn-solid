@@ -9,10 +9,22 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true
-		}
+			"recommended": true,
+			"style": {
+				"noNonNullAssertion": "off"
+			},
+			"suspicious": {
+				"noExplicitAny": "off"
+			},
+			"a11y": {
+				"noSvgWithoutTitle": "off"
+			}
+		},
+		"ignore": ["*.js"]
 	},
-	"files": {
-		"ignore": ["*.js", "*.cjs"]
+	"css": {
+		"formatter": {
+			"enabled": true
+		}
 	}
 }
