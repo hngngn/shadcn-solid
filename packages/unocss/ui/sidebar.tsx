@@ -14,7 +14,6 @@ import {
 	type ComponentProps,
 	type JSX,
 	Match,
-	type Setter,
 	Show,
 	Switch,
 	type ValidComponent,
@@ -48,7 +47,7 @@ const SIDEBAR_KEYBOARD_SHORTCUT = "b";
 type SidebarContext = {
 	state: Accessor<"expanded" | "collapsed">;
 	open: Accessor<boolean>;
-	setOpen: (value: Accessor<boolean> | Setter<boolean>) => void;
+	setOpen: (value: boolean) => void;
 	openMobile: Accessor<boolean>;
 	setOpenMobile: (open: boolean) => void;
 	isMobile: Accessor<boolean>;
@@ -70,15 +69,15 @@ export const useSideBar = () => {
 };
 
 type sidebarProviderProps = ComponentProps<"div"> & {
-	defaultOpen?: Accessor<boolean>;
-	open?: Accessor<boolean>;
+	defaultOpen?: boolean;
+	open?: boolean;
 	onOpenChange?: (open: boolean) => void;
 };
 
 export const SidebarProvider = (props: sidebarProviderProps) => {
 	const merge = mergeProps(
 		{
-			defaultOpen: () => true,
+			defaultOpen: true,
 		} as sidebarProviderProps,
 		props,
 	);
@@ -96,10 +95,9 @@ export const SidebarProvider = (props: sidebarProviderProps) => {
 
 	// This is the internal state of the sidebar.
 	// We use open and onOpenChange for control from outside the component.
-	// @ts-expect-error - defaultOpen is defined
-	const [_open, _setOpen] = createSignal(local.defaultOpen());
-	const open = () => local.open?.() ?? _open();
-	const setOpen = (value: Accessor<boolean> | Setter<boolean>) => {
+	const [_open, _setOpen] = createSignal(local.defaultOpen!);
+	const open = () => local.open ?? _open();
+	const setOpen = (value: boolean | ((value: boolean) => boolean)) => {
 		const openState = typeof value === "function" ? value(open()) : value;
 		if (local.onOpenChange) {
 			local.onOpenChange(openState);

@@ -5,10 +5,7 @@ component: true
 ---
 
 <figure className="flex flex-col gap-4">
-  <ComponentPreview
-    name="sidebar-07"
-    block
-  />
+  <ComponentPreview name="sidebar-07" block />
   <figcaption className="text-center text-sm text-gray-500">
     A sidebar that collapses to icons.
   </figcaption>
@@ -29,48 +26,12 @@ Customizable.
 
 <ComponentInstallation >
 
-
 <Step >
 
 <StepItem>Run the following command to install `sidebar.tsx`</StepItem>
-```bash
-npx shadcn-solid@latest add sidebar
-```
-
-<StepItem>Add the following colors to your CSS file</StepItem>
-
-The command above should install the colors for you. If not, copy and paste the following in your CSS file.
-
-We'll go over the colors later in the [theming section](/docs/components/sidebar#theming).
-
-```css title="src/app.css"
-@layer base {
-  :root {
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  [data-kb-theme="dark"] {
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
-```
+```bash npx shadcn-solid@latest add sidebar ```
 
 </Step>
-
 
 <Step >
 
@@ -146,25 +107,25 @@ We'll go over the colors later in the [theming section](/docs/components/sidebar
 
 ```css title="src/app.css"
 :root {
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+  --sidebar-background: 0 0% 98%;
+  --sidebar-foreground: 240 5.3% 26.1%;
+  --sidebar-primary: 240 5.9% 10%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 240 4.8% 95.9%;
+  --sidebar-accent-foreground: 240 5.9% 10%;
+  --sidebar-border: 220 13% 91%;
+  --sidebar-ring: 217.2 91.2% 59.8%;
 }
 
 [data-kb-theme="dark"] {
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+  --sidebar-background: 240 5.9% 10%;
+  --sidebar-foreground: 240 4.8% 95.9%;
+  --sidebar-primary: 224.3 76.3% 48%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 240 3.7% 15.9%;
+  --sidebar-accent-foreground: 240 4.8% 95.9%;
+  --sidebar-border: 240 3.7% 15.9%;
+  --sidebar-ring: 217.2 91.2% 59.8%;
 }
 ```
 
@@ -195,3 +156,533 @@ sidebar: {
 </Step>
 
 </ComponentInstallation>
+
+## Structure
+
+A `Sidebar` component is composed of the following parts:
+
+- `SidebarProvider` - Handles collapsible state.
+- `Sidebar` - The sidebar container.
+- `SidebarHeader` and `SidebarFooter` - Sticky at the top and bottom of the sidebar.
+- `SidebarContent` - Scrollable content.
+- `SidebarGroup` - Section within the `SidebarContent`.
+- `SidebarTrigger` - Trigger for the `Sidebar`.
+
+<img
+  src="/images/sidebar-structure.png"
+  width="716"
+  height="420"
+  alt="Sidebar Structure"
+  class="border dark:hidden rounded-lg overflow-hidden mt-6 w-full"
+/>
+
+<img
+  src="/images/sidebar-structure-dark.png"
+  width="716"
+  height="420"
+  alt="Sidebar Structure"
+  class="border hidden dark:block rounded-lg overflow-hidden mt-6 w-full"
+/>
+
+## Usage
+
+```tsx title="src/routes/index.tsx"
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/app-sidebar";
+import type { RouteSectionProps } from "@solidjs/router";
+
+const Page = (props: RouteSectionProps) => {
+  return (
+    <SidebarProvider>
+      <AppSidebar />
+      <main>
+        <SidebarTrigger />
+        {props.children}
+      </main>
+    </SidebarProvider>
+  );
+};
+
+export default Page;
+```
+
+```tsx title="src/components/app-sidebar.tsx"
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarGroup,
+  SidebarHeader,
+} from "@/components/ui/sidebar";
+
+export const AppSidebar = () => {
+  return (
+    <Sidebar>
+      <SidebarHeader />
+      <SidebarContent>
+        <SidebarGroup />
+        <SidebarGroup />
+      </SidebarContent>
+      <SidebarFooter />
+    </Sidebar>
+  );
+};
+```
+
+## Your First Sidebar
+
+Let's start with the most basic sidebar. A collapsible sidebar with a menu.
+
+<Step>
+
+<StepItem>
+  Add a `SidebarProvider` and `SidebarTrigger` at the root of your application.
+</StepItem>
+
+```tsx title="src/routes/index.tsx"
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/app-sidebar";
+import type { RouteSectionProps } from "@solidjs/router";
+
+const Page = (props: RouteSectionProps) => {
+  return (
+    <SidebarProvider>
+      <AppSidebar />
+      <main>
+        <SidebarTrigger />
+        {props.children}
+      </main>
+    </SidebarProvider>
+  );
+};
+
+export default Page;
+```
+
+<StepItem>
+  Create a new sidebar component at `components/app-sidebar.tsx`.
+</StepItem>
+
+```tsx title="src/components/app-sidebar.tsx"
+import { Sidebar, SidebarContent } from "@/components/ui/sidebar";
+
+const AppSidebar = () => {
+  return (
+    <Sidebar>
+      <SidebarContent />
+    </Sidebar>
+  );
+};
+
+export default AppSidebar;
+```
+
+<StepItem>Now, let's add a `SidebarMenu` to the sidebar.</StepItem>
+
+We'll use the `SidebarMenu` component in a `SidebarGroup`.
+
+```tsx title="src/components/app-sidebar.tsx"
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+} from "@/components/ui/sidebar";
+
+// Menu items.
+const items = [
+  {
+    title: "Home",
+    url: "#",
+    icon: () => (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="size-4"
+        viewBox="0 0 24 24"
+      >
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+        >
+          <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+          <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+        </g>
+      </svg>
+    ),
+  },
+  {
+    title: "Inbox",
+    url: "#",
+    icon: () => (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="size-4"
+        viewBox="0 0 24 24"
+      >
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+        >
+          <path d="M22 12h-6l-2 3h-4l-2-3H2" />
+          <path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11" />
+        </g>
+      </svg>
+    ),
+  },
+  {
+    title: "Calendar",
+    url: "#",
+    icon: () => (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="size-4"
+        viewBox="0 0 24 24"
+      >
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+        >
+          <path d="M8 2v4m8-4v4" />
+          <rect width="18" height="18" x="3" y="4" rx="2" />
+          <path d="M3 10h18" />
+        </g>
+      </svg>
+    ),
+  },
+  {
+    title: "Search",
+    url: "#",
+    icon: () => (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="size-4"
+        viewBox="0 0 24 24"
+      >
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+        >
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21l-4.3-4.3" />
+        </g>
+      </svg>
+    ),
+  },
+  {
+    title: "Settings",
+    url: "#",
+    icon: () => (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="size-4"
+        viewBox="0 0 24 24"
+      >
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+        >
+          <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2" />
+          <circle cx="12" cy="12" r="3" />
+        </g>
+      </svg>
+    ),
+  },
+];
+
+const AppSidebar = () => {
+  return (
+    <Sidebar>
+      <SidebarContent>
+        <SidebarGroup>
+          <SidebarGroupLabel>Application</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {items.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton asChild>
+                    <a href={item.url}>
+                      <item.icon />
+                      <span>{item.title}</span>
+                    </a>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+      </SidebarContent>
+    </Sidebar>
+  );
+};
+
+export default AppSidebar;
+```
+
+<StepItem>You've created your first sidebar.</StepItem>
+
+<figure class="flex flex-col gap-4">
+  <ComponentPreview name="demo-sidebar" block />
+  <figcaption class="text-center text-sm text-gray-500">
+    Your first sidebar.
+  </figcaption>
+</figure>
+
+</Step>
+
+## Components
+
+The components in `sidebar.tsx` are built to be composable i.e you build your sidebar by putting the provided components together. They also compose well with other shadcn/ui components such as `DropdownMenu`, `Collapsible` or `Dialog` etc.
+
+**If you need to change the code in `sidebar.tsx`, you are encouraged to do so. The code is yours. Use `sidebar.tsx` as a starting point and build your own.**
+
+In the next sections, we'll go over each component and how to use them.
+
+## SidebarProvider
+
+The `SidebarProvider` component is used to provide the sidebar context to the `Sidebar` component. You should always wrap your application in a `SidebarProvider` component.
+
+### Props
+
+| Name           | Type                      | Description                                  |
+| -------------- | ------------------------- | -------------------------------------------- |
+| `defaultOpen`  | `boolean`                 | Default open state of the sidebar.           |
+| `open`         | `boolean`                 | Open state of the sidebar (controlled).      |
+| `onOpenChange` | `(open: boolean) => void` | Sets open state of the sidebar (controlled). |
+
+### Width
+
+If you have a single sidebar in your application, you can use the `SIDEBAR_WIDTH` and `SIDEBAR_WIDTH_MOBILE` variables in `sidebar.tsx` to set the width of the sidebar.
+
+```tsx title="src/components/ui/sidebar.tsx"
+const SIDEBAR_WIDTH = "16rem";
+const SIDEBAR_WIDTH_MOBILE = "18rem";
+```
+
+For multiple sidebars in your application, you can use the `style` prop to set the width of the sidebar.
+
+To set the width of the sidebar, you can use the `--sidebar-width` and `--sidebar-width-mobile` CSS variables in the `style` prop.
+
+```tsx title="src/components/ui/sidebar.tsx"
+<SidebarProvider
+  style={{
+    "--sidebar-width": "20rem",
+    "--sidebar-width-mobile": "20rem",
+  }}
+>
+  <Sidebar />
+</SidebarProvider>
+```
+
+This will handle the width of the sidebar but also the layout spacing.
+
+### Keyboard Shortcut
+
+The `SIDEBAR_KEYBOARD_SHORTCUT` variable is used to set the keyboard shortcut used to open and close the sidebar.
+
+To trigger the sidebar, you use the `cmd+b` keyboard shortcut on Mac and `ctrl+b` on Windows.
+
+You can change the keyboard shortcut by updating the `SIDEBAR_KEYBOARD_SHORTCUT` variable.
+
+```tsx title="components/ui/sidebar.tsx"
+const SIDEBAR_KEYBOARD_SHORTCUT = "b";
+```
+
+## Sidebar
+
+The main `Sidebar` component used to render a collapsible sidebar.
+
+```tsx showLineNumbers
+import { Sidebar } from "@/components/ui/sidebar";
+
+const AppSidebar = () => {
+  return <Sidebar />;
+};
+
+export default AppSidebar;
+```
+
+### Props
+
+| Property      | Type                              | Description                       |
+| ------------- | --------------------------------- | --------------------------------- |
+| `side`        | `left` or `right`                 | The side of the sidebar.          |
+| `variant`     | `sidebar`, `floating`, or `inset` | The variant of the sidebar.       |
+| `collapsible` | `offcanvas`, `icon`, or `none`    | Collapsible state of the sidebar. |
+
+### side
+
+Use the `side` prop to change the side of the sidebar.
+
+Available options are `left` and `right`.
+
+```tsx
+import { Sidebar } from "@/components/ui/sidebar";
+
+const AppSidebar = () => {
+  return <Sidebar side="left | right" />;
+};
+
+export default AppSidebar;
+```
+
+### variant
+
+Use the `variant` prop to change the variant of the sidebar.
+
+Available options are `sidebar`, `floating` and `inset`.
+
+```tsx showLineNumbers
+import { Sidebar } from "@/components/ui/sidebar";
+
+const AppSidebar = () => {
+  return <Sidebar variant="sidebar | floating | inset" />;
+};
+
+export default AppSidebar;
+```
+
+<Alert class="bg-[#101010]">
+  <AlertDescription>
+    **Note:** If you use the `inset` variant, remember to wrap your main content
+    in a `SidebarInset` component.
+  </AlertDescription>
+</Alert>
+
+```tsx
+<SidebarProvider>
+  <Sidebar variant="inset" />
+  <SidebarInset>
+    <main>{props.children}</main>
+  </SidebarInset>
+</SidebarProvider>
+```
+
+### collapsible
+
+Use the `collapsible` prop to make the sidebar collapsible.
+
+Available options are `offcanvas`, `icon` and `none`.
+
+```tsx
+import { Sidebar } from "@/components/ui/sidebar";
+
+const AppSidebar = () => {
+  return <Sidebar collapsible="offcanvas | icon | none" />;
+};
+
+export default AppSidebar;
+```
+
+| Prop        | Description                                                  |
+| ----------- | ------------------------------------------------------------ |
+| `offcanvas` | A collapsible sidebar that slides in from the left or right. |
+| `icon`      | A sidebar that collapses to icons.                           |
+| `none`      | A non-collapsible sidebar.                                   |
+
+## useSidebar
+
+The `useSidebar` hook is used to control the sidebar.
+
+```tsx
+import { useSidebar } from "@/components/ui/sidebar";
+
+const AppSidebar = () => {
+  const {
+    state,
+    open,
+    setOpen,
+    openMobile,
+    setOpenMobile,
+    isMobile,
+    toggleSidebar,
+  } = useSidebar();
+};
+
+export default AppSidebar;
+```
+
+| Property        | Type                                                    | Description                                   |
+| --------------- | ------------------------------------------------------- | --------------------------------------------- |
+| `state`         | `Accessor<"expanded" \| "collapsed">`                   | The current state of the sidebar.             |
+| `open`          | `Accessor<boolean>`                                     | Whether the sidebar is open.                  |
+| `setOpen`       | `(value: Accessor<boolean> \| Setter<boolean>) => void` | Sets the open state of the sidebar.           |
+| `openMobile`    | `Accessor<boolean>`                                     | Whether the sidebar is open on mobile.        |
+| `setOpenMobile` | `(open: boolean) => void`                               | Sets the open state of the sidebar on mobile. |
+| `isMobile`      | `Accessor<boolean>`                                     | Whether the sidebar is on mobile.             |
+| `toggleSidebar` | `() => void`                                            | Toggles the sidebar. Desktop and mobile.      |
+
+## Theming
+
+We use the following CSS variables to theme the sidebar.
+
+```css
+@layer base {
+  :root {
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 0 0% 98%;
+    --sidebar-primary-foreground: 240 5.9% 10%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+```
+
+**We intentionally use different variables for the sidebar and the rest of the application** to make it easy to have a sidebar that is styled differently from the rest of the application. Think a sidebar with a darker shade from the main application.
+
+## Styling
+
+Here are some tips for styling the sidebar based on different states.
+
+- **Styling an element based on the sidebar collapsible state.** The following will hide the `SidebarGroup` when the sidebar is in `icon` mode.
+
+```tsx
+<Sidebar collapsible="icon">
+  <SidebarContent>
+    <SidebarGroup class="group-data-[collapsible=icon]:hidden" />
+  </SidebarContent>
+</Sidebar>
+```
+
+- **Styling a menu action based on the menu button active state.** The following will force the menu action to be visible when the menu button is active.
+
+```tsx
+<SidebarMenuItem>
+  <SidebarMenuButton />
+  <SidebarMenuAction class="peer-data-[active=true]/menu-button:opacity-100" />
+</SidebarMenuItem>
+```
+
+You can find more tips on using states for styling in this [Twitter thread](https://x.com/shadcn/status/1842329158879420864).

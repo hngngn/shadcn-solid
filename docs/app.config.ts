@@ -7,6 +7,7 @@ import { type Options, rehypePrettyCode } from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import { codeImport } from "remark-code-import";
 import remarkFrontmatter from "remark-frontmatter";
+import remarkGFM from "remark-gfm";
 import { visit } from "unist-util-visit";
 import docsGen from "./plugins/gen";
 
@@ -24,6 +25,7 @@ export default defineConfig({
 				jsxImportSource: "solid-js",
 				providerImportSource: "@/components/mdx",
 				remarkPlugins: [
+					remarkGFM,
 					remarkFrontmatter,
 					[
 						codeImport,

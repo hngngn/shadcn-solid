@@ -1,3 +1,5 @@
+import { cn } from "@/registry/tailwindcss/libs/cn";
+import { Alert, AlertDescription } from "@/registry/tailwindcss/ui/alert";
 import { clientOnly } from "@solidjs/start";
 import { type ComponentProps, Show, splitProps } from "solid-js";
 import { CopyButton } from "./copy-button";
@@ -115,6 +117,40 @@ export const mdxComponents: Partial<MDXComponents> | Record<string, unknown> = {
 			{...props}
 		/>
 	),
+	table: (props) => (
+		<div class="my-6 w-full overflow-y-auto">
+			<table
+				class={cn(
+					"relative w-full overflow-hidden border-none text-sm",
+					props.class,
+				)}
+				{...props}
+			/>
+		</div>
+	),
+	tr: (props) => (
+		<tr class={cn("last:border-b-none m-0 border-b", props.class)} {...props} />
+	),
+	th: (props) => (
+		<th
+			class={cn(
+				"px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right",
+				props.class,
+			)}
+			{...props}
+		/>
+	),
+	td: (props) => (
+		<td
+			class={cn(
+				"px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right",
+				props.class,
+			)}
+			{...props}
+		/>
+	),
 	ComponentPreview,
 	ComponentInstallation,
+	Alert,
+	AlertDescription,
 };

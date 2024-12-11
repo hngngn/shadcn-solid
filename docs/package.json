@@ -51,6 +51,7 @@
 		"rehype-stringify": "^10.0.1",
 		"remark-code-import": "^1.2.0",
 		"remark-frontmatter": "^5.0.0",
+		"remark-gfm": "^4.0.0",
 		"remark-parse": "^11.0.0",
 		"remark-rehype": "^11.1.1",
 		"rimraf": "^6.0.1",

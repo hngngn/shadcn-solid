@@ -50,3 +50,7 @@
 	margin-right: 1.4rem;
 	text-align: right;
 }
+
+.steps > h3 {
+	@apply mt-8 mb-4 text-base font-semibold;
+}

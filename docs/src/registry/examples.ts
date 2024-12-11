@@ -942,11 +942,11 @@ export const examples: Registry = [
 		],
 	},
 	{
-		name: "sidebar-demo",
+		name: "demo-sidebar",
 		type: "registry:block",
 		files: [
 			{
-				path: "blocks/sidebar-demo.tsx",
+				path: "blocks/demo-sidebar.tsx",
 				type: "registry:block",
 			},
 		],
