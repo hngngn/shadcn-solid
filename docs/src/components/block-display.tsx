@@ -5,7 +5,7 @@ import { createAsync } from "@solidjs/router";
 import { clientOnly } from "@solidjs/start";
 import { Show, createMemo } from "solid-js";
 
-const BlockViewer = clientOnly(() => import("./block-viewer"));
+const BlockViewer = clientOnly(() => import("./block-viewer"), { lazy: true });
 
 const BlockDisplay = (props: { name: string }) => {
 	const item = createMemo<RegistryEntry>(() => Index.tailwindcss[props.name]);

@@ -49,6 +49,7 @@ const ComponentPreview = (props: ParentProps<Props>) => {
 							src={`/blocks/${props.name}`}
 							class="size-full"
 							title={props.name}
+							loading="lazy"
 						/>
 					</div>
 				</div>

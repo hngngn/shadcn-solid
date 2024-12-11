@@ -336,6 +336,7 @@ const BlockViewerView = () => {
 							height={item().meta?.iframeHeight ?? 450}
 							class="w-full bg-background"
 							title={item().name}
+							loading="lazy"
 						/>
 					</ResizablePanel>
 					<ResizableHandle class="hidden w-3 bg-transparent p-0 after:absolute after:right-0 after:top-1/2 after:h-8 after:w-[6px] after:-translate-y-1/2 after:translate-x-[-1px] after:rounded-full after:bg-border after:transition-all after:hover:h-10 md:block" />

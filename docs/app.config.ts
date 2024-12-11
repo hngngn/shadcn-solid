@@ -144,7 +144,5 @@ export default defineConfig({
 				target: "esnext",
 			},
 		},
-		preset: "vercel",
 	},
-	ssr: true,
 });

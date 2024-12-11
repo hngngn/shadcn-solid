@@ -2,7 +2,6 @@
 
 import type * as v from "valibot";
 
-import { getAllBlockIds } from "@/libs/blocks";
 import { highlightCode } from "@/libs/highlight-code";
 import { createFileTreeForRegistryItemFiles } from "@/libs/registry";
 import type { registryItemFileSchema } from "@/registry/schema";
@@ -34,7 +33,3 @@ export const getCachedHighlightedFiles = query(
 	},
 	"highlighted-file",
 );
-
-export const getCacheAllBlockIDs = query(async () => {
-	return await getAllBlockIds();
-}, "blocks-id");
