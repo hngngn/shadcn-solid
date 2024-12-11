@@ -4,16 +4,9 @@ import type * as v from "valibot";
 
 import { getAllBlockIds } from "@/libs/blocks";
 import { highlightCode } from "@/libs/highlight-code";
-import {
-	createFileTreeForRegistryItemFiles,
-	getRegistryItem,
-} from "@/libs/registry";
+import { createFileTreeForRegistryItemFiles } from "@/libs/registry";
 import type { registryItemFileSchema } from "@/registry/schema";
 import { query } from "@solidjs/router";
-
-export const getCachedRegistryItem = query((name: string) => {
-	return getRegistryItem(name);
-}, "registry-item");
 
 export const getCachedFileTree = query(
 	// eslint-disable-next-line @typescript-eslint/require-await

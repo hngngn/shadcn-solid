@@ -15,6 +15,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/accordion-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -24,6 +25,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"alert-demo": {
 			name: "alert-demo",
@@ -35,6 +37,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/alert-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -44,6 +47,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"alert-destructive": {
 			name: "alert-destructive",
@@ -55,6 +59,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/alert-destructive.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -64,6 +69,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"alert-dialog-demo": {
 			name: "alert-dialog-demo",
@@ -75,6 +81,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/alert-dialog-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -84,6 +91,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"button-demo": {
 			name: "button-demo",
@@ -95,6 +103,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/button-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -104,6 +113,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"button-secondary": {
 			name: "button-secondary",
@@ -115,6 +125,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/button-secondary.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -124,6 +135,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"button-destructive": {
 			name: "button-destructive",
@@ -135,6 +147,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/button-destructive.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -144,6 +157,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"button-outline": {
 			name: "button-outline",
@@ -155,6 +169,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/button-outline.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -164,6 +179,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"button-ghost": {
 			name: "button-ghost",
@@ -175,6 +191,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/button-ghost.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -184,6 +201,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"button-link": {
 			name: "button-link",
@@ -195,6 +213,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/button-link.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -204,6 +223,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"button-with-icon": {
 			name: "button-with-icon",
@@ -215,6 +235,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/button-with-icon.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -224,6 +245,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"button-loading": {
 			name: "button-loading",
@@ -235,6 +257,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/button-loading.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -244,6 +267,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"button-as-child": {
 			name: "button-as-child",
@@ -255,6 +279,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/button-as-child.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -264,6 +289,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"badge-demo": {
 			name: "badge-demo",
@@ -275,6 +301,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/badge-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -284,6 +311,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"badge-secondary": {
 			name: "badge-secondary",
@@ -295,6 +323,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/badge-secondary.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -304,6 +333,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"badge-destructive": {
 			name: "badge-destructive",
@@ -315,6 +345,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/badge-destructive.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -324,6 +355,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"badge-outline": {
 			name: "badge-outline",
@@ -335,6 +367,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/badge-outline.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -344,6 +377,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"calendar-demo": {
 			name: "calendar-demo",
@@ -355,6 +389,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/calendar-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -364,6 +399,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"card-demo": {
 			name: "card-demo",
@@ -375,6 +411,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/card-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -384,6 +421,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"carousel-demo": {
 			name: "carousel-demo",
@@ -395,6 +433,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/carousel-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -404,6 +443,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"carousel-size": {
 			name: "carousel-size",
@@ -415,6 +455,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/carousel-size.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -424,6 +465,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"carousel-api-demo": {
 			name: "carousel-api-demo",
@@ -435,6 +477,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/carousel-api-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -444,6 +487,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"carousel-orientation": {
 			name: "carousel-orientation",
@@ -455,6 +499,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/carousel-orientation.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -464,6 +509,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"carousel-plugin": {
 			name: "carousel-plugin",
@@ -475,6 +521,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/carousel-plugin.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -484,6 +531,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"carousel-spacing": {
 			name: "carousel-spacing",
@@ -495,6 +543,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/carousel-spacing.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -504,6 +553,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"checkbox-demo": {
 			name: "checkbox-demo",
@@ -515,6 +565,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/checkbox-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -524,6 +575,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"checkbox-disabled": {
 			name: "checkbox-disabled",
@@ -535,6 +587,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/checkbox-disabled.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -544,6 +597,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"checkbox-with-text": {
 			name: "checkbox-with-text",
@@ -555,6 +609,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/checkbox-with-text.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -564,6 +619,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"collapsible-demo": {
 			name: "collapsible-demo",
@@ -575,6 +631,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/collapsible-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -584,6 +641,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"combobox-demo": {
 			name: "combobox-demo",
@@ -595,6 +653,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/combobox-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -604,6 +663,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"command-demo": {
 			name: "command-demo",
@@ -615,6 +675,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/command-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -624,6 +685,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"command-dialog": {
 			name: "command-dialog",
@@ -635,6 +697,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/command-dialog.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -644,6 +707,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"context-menu-demo": {
 			name: "context-menu-demo",
@@ -655,6 +719,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/context-menu-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -664,6 +729,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"data-table-demo": {
 			name: "data-table-demo",
@@ -675,6 +741,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/data-table-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -684,6 +751,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"date-picker-demo": {
 			name: "date-picker-demo",
@@ -695,6 +763,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/date-picker-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -704,6 +773,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"date-picker-with-range-demo": {
 			name: "date-picker-with-range-demo",
@@ -715,6 +785,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/date-picker-with-range-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -725,6 +796,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"dialog-demo": {
 			name: "dialog-demo",
@@ -736,6 +808,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/dialog-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -745,6 +818,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"drawer-demo": {
 			name: "drawer-demo",
@@ -756,6 +830,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/drawer-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -765,6 +840,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"drawer-side-demo": {
 			name: "drawer-side-demo",
@@ -776,6 +852,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/drawer-side-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -785,6 +862,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"dropdown-menu-demo": {
 			name: "dropdown-menu-demo",
@@ -796,6 +874,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/dropdown-menu-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -805,6 +884,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"dropdown-menu-checkboxes": {
 			name: "dropdown-menu-checkboxes",
@@ -816,6 +896,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/dropdown-menu-checkboxes.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -826,6 +907,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"dropdown-menu-radio-group": {
 			name: "dropdown-menu-radio-group",
@@ -837,6 +919,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/dropdown-menu-radio-group.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -847,6 +930,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"hover-card-demo": {
 			name: "hover-card-demo",
@@ -858,6 +942,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/hover-card-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -867,6 +952,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"menubar-demo": {
 			name: "menubar-demo",
@@ -878,6 +964,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/menubar-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -887,6 +974,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"mode-toggle": {
 			name: "mode-toggle",
@@ -898,6 +986,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/mode-toggle.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -907,6 +996,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"navigation-menu-demo": {
 			name: "navigation-menu-demo",
@@ -918,6 +1008,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/navigation-menu-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -927,6 +1018,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"number-field-demo": {
 			name: "number-field-demo",
@@ -938,6 +1030,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/number-field-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -947,6 +1040,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"number-field-disabled-demo": {
 			name: "number-field-disabled-demo",
@@ -958,6 +1052,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/number-field-disabled-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -968,6 +1063,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"number-field-with-error-demo": {
 			name: "number-field-with-error-demo",
@@ -979,6 +1075,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/number-field-with-error-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -991,6 +1088,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"otp-field-demo": {
 			name: "otp-field-demo",
@@ -1002,6 +1100,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/otp-field-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1011,6 +1110,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"otp-field-with-pattern-demo": {
 			name: "otp-field-with-pattern-demo",
@@ -1022,6 +1122,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/otp-field-with-pattern-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1032,6 +1133,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"otp-field-with-controlled-demo": {
 			name: "otp-field-with-controlled-demo",
@@ -1043,6 +1145,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/otp-field-with-controlled-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1055,6 +1158,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"popover-demo": {
 			name: "popover-demo",
@@ -1066,6 +1170,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/popover-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1075,6 +1180,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"pagination-demo": {
 			name: "pagination-demo",
@@ -1086,6 +1192,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/pagination-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1095,6 +1202,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"progress-demo": {
 			name: "progress-demo",
@@ -1106,6 +1214,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/progress-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1115,6 +1224,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"radio-group-demo": {
 			name: "radio-group-demo",
@@ -1126,6 +1236,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/radio-group-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1135,6 +1246,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"resizable-demo": {
 			name: "resizable-demo",
@@ -1146,6 +1258,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/resizable-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1155,6 +1268,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"resizable-vertical-demo": {
 			name: "resizable-vertical-demo",
@@ -1166,6 +1280,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/resizable-vertical-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1175,6 +1290,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"resizable-with-handle-demo": {
 			name: "resizable-with-handle-demo",
@@ -1186,6 +1302,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/resizable-with-handle-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1196,6 +1313,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"select-demo": {
 			name: "select-demo",
@@ -1207,6 +1325,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/select-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1216,6 +1335,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"separator-demo": {
 			name: "separator-demo",
@@ -1227,6 +1347,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/separator-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1236,6 +1357,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"skeleton-demo": {
 			name: "skeleton-demo",
@@ -1247,6 +1369,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/skeleton-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1256,6 +1379,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"sonner-demo": {
 			name: "sonner-demo",
@@ -1267,6 +1391,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/sonner-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1276,6 +1401,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"switch-demo": {
 			name: "switch-demo",
@@ -1287,6 +1413,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/switch-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1296,6 +1423,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"table-demo": {
 			name: "table-demo",
@@ -1307,6 +1435,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/table-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1316,6 +1445,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"tabs-demo": {
 			name: "tabs-demo",
@@ -1327,6 +1457,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/tabs-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1336,6 +1467,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"tabs-orientation-demo": {
 			name: "tabs-orientation-demo",
@@ -1347,6 +1479,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/tabs-orientation-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1356,6 +1489,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"textarea-demo": {
 			name: "textarea-demo",
@@ -1367,6 +1501,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/textarea-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1376,6 +1511,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"textarea-disabled": {
 			name: "textarea-disabled",
@@ -1387,6 +1523,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/textarea-disabled.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1396,6 +1533,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"textarea-with-button": {
 			name: "textarea-with-button",
@@ -1407,6 +1545,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/textarea-with-button.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1416,6 +1555,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"textarea-with-label": {
 			name: "textarea-with-label",
@@ -1427,6 +1567,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/textarea-with-label.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1436,6 +1577,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"textarea-with-text": {
 			name: "textarea-with-text",
@@ -1447,6 +1589,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/textarea-with-text.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1456,6 +1599,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"textfield-demo": {
 			name: "textfield-demo",
@@ -1467,6 +1611,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/textfield-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1476,6 +1621,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"textfield-disabled": {
 			name: "textfield-disabled",
@@ -1487,6 +1633,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/textfield-disabled.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1496,6 +1643,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"textfield-file": {
 			name: "textfield-file",
@@ -1507,6 +1655,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/textfield-file.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1516,6 +1665,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"textfield-with-button": {
 			name: "textfield-with-button",
@@ -1527,6 +1677,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/textfield-with-button.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1536,6 +1687,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"textfield-with-label": {
 			name: "textfield-with-label",
@@ -1547,6 +1699,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/textfield-with-label.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1556,6 +1709,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"textfield-with-text": {
 			name: "textfield-with-text",
@@ -1567,6 +1721,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/textfield-with-text.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1576,6 +1731,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"textfield-with-error": {
 			name: "textfield-with-error",
@@ -1587,6 +1743,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/textfield-with-error.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1596,6 +1753,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"toast-demo": {
 			name: "toast-demo",
@@ -1607,6 +1765,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/toast-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1616,6 +1775,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"toast-destructive": {
 			name: "toast-destructive",
@@ -1627,6 +1787,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/toast-destructive.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1636,6 +1797,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"toggle-group-demo": {
 			name: "toggle-group-demo",
@@ -1647,6 +1809,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/toggle-group-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1656,6 +1819,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"toggle-group-outline-demo": {
 			name: "toggle-group-outline-demo",
@@ -1667,6 +1831,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/toggle-group-outline-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1677,6 +1842,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"toggle-group-single-demo": {
 			name: "toggle-group-single-demo",
@@ -1688,6 +1854,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/toggle-group-single-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1698,6 +1865,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"toggle-group-small-demo": {
 			name: "toggle-group-small-demo",
@@ -1709,6 +1877,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/toggle-group-small-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1718,6 +1887,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"toggle-group-large-demo": {
 			name: "toggle-group-large-demo",
@@ -1729,6 +1899,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/toggle-group-large-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1738,6 +1909,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"toggle-group-disabled-demo": {
 			name: "toggle-group-disabled-demo",
@@ -1749,6 +1921,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/toggle-group-disabled-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1759,6 +1932,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"toggle-demo": {
 			name: "toggle-demo",
@@ -1770,6 +1944,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/toggle-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1779,6 +1954,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"toggle-disabled": {
 			name: "toggle-disabled",
@@ -1790,6 +1966,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/toggle-disabled.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1799,6 +1976,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"toggle-large": {
 			name: "toggle-large",
@@ -1810,6 +1988,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/toggle-large.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1819,6 +1998,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"toggle-outline": {
 			name: "toggle-outline",
@@ -1830,6 +2010,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/toggle-outline.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1839,6 +2020,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"toggle-small": {
 			name: "toggle-small",
@@ -1850,6 +2032,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/toggle-small.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1859,6 +2042,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"toggle-with-text": {
 			name: "toggle-with-text",
@@ -1870,6 +2054,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/toggle-with-text.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1879,6 +2064,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"tooltip-demo": {
 			name: "tooltip-demo",
@@ -1890,6 +2076,7 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/examples/tooltip-demo.tsx",
 					type: "registry:example",
 					target: "",
+					content: "",
 				},
 			],
 			component: clientOnly(
@@ -1899,6 +2086,7 @@ export const Index: Record<string, any> = {
 			source: "",
 			category: "",
 			subcategory: "",
+			meta: undefined,
 		},
 		"sidebar-07": {
 			name: "sidebar-07",
@@ -1916,31 +2104,43 @@ export const Index: Record<string, any> = {
 					path: "src/registry/tailwindcss/blocks/sidebar-07/index.tsx",
 					type: "registry:page",
 					target: "src/routes/dashboard.tsx",
+					content:
+						'import AppSidebar from "@/components/app-sidebar";\nimport { Separator } from "@/components/ui/separator";\nimport {\n\tSidebarInset,\n\tSidebarProvider,\n\tSidebarTrigger,\n} from "@/components/ui/sidebar";\nconst Page = () => {\n\treturn (\n\t\t<SidebarProvider>\n\t\t\t<AppSidebar />\n\t\t\t<SidebarInset>\n\t\t\t\t<header class="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">\n\t\t\t\t\t<div class="flex items-center gap-2 px-4">\n\t\t\t\t\t\t<SidebarTrigger class="-ml-1" />\n\t\t\t\t\t\t<Separator orientation="vertical" class="mr-2 h-4" />\n\t\t\t\t\t</div>\n\t\t\t\t</header>\n\t\t\t\t<div class="flex flex-1 flex-col gap-4 p-4 pt-0">\n\t\t\t\t\t<div class="grid auto-rows-min gap-4 md:grid-cols-3">\n\t\t\t\t\t\t<div class="aspect-video rounded-xl bg-muted/50" />\n\t\t\t\t\t\t<div class="aspect-video rounded-xl bg-muted/50" />\n\t\t\t\t\t\t<div class="aspect-video rounded-xl bg-muted/50" />\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />\n\t\t\t\t</div>\n\t\t\t</SidebarInset>\n\t\t</SidebarProvider>\n\t);\n};\n\nexport default Page;\n',
 				},
 				{
 					path: "src/registry/tailwindcss/blocks/sidebar-07/components/app-sidebar.tsx",
 					type: "registry:component",
-					target: "",
+					target: "src/components/app-sidebar.tsx",
+					content:
+						'import NavMain from "@/components/nav-main";\nimport NavProjects from "@/components/nav-projects";\nimport NavUser from "@/components/nav-user";\nimport TeamSwitcher from "@/components/team-switcher";\nimport {\n\tSidebar,\n\tSidebarContent,\n\tSidebarFooter,\n\tSidebarHeader,\n\tSidebarRail,\n} from "@/components/ui/sidebar";\nimport type { ComponentProps } from "solid-js";\n\n// This is sample data.\nconst data = {\n\tuser: {\n\t\tname: "shadcn",\n\t\temail: "m@example.com",\n\t\tavatar: "https://ui.shadcn.com/avatars/shadcn.jpg",\n\t},\n\tteams: [\n\t\t{\n\t\t\tname: "Acme Inc",\n\t\t\tlogo: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\t\t\tclass="size-4 shrink-0"\n\t\t\t\t\tviewBox="0 0 24 24"\n\t\t\t\t>\n\t\t\t\t\t<g\n\t\t\t\t\t\tfill="none"\n\t\t\t\t\t\tstroke="currentColor"\n\t\t\t\t\t\tstroke-linecap="round"\n\t\t\t\t\t\tstroke-linejoin="round"\n\t\t\t\t\t\tstroke-width="2"\n\t\t\t\t\t>\n\t\t\t\t\t\t<path d="M7 2h10M5 6h14" />\n\t\t\t\t\t\t<rect width="18" height="12" x="3" y="10" rx="2" />\n\t\t\t\t\t</g>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t\tplan: "Enterprise",\n\t\t},\n\t\t{\n\t\t\tname: "Acme Corp.",\n\t\t\tlogo: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\t\t\tclass="size-4 shrink-0"\n\t\t\t\t\tviewBox="0 0 24 24"\n\t\t\t\t>\n\t\t\t\t\t<path\n\t\t\t\t\t\tfill="none"\n\t\t\t\t\t\tstroke="currentColor"\n\t\t\t\t\t\tstroke-linecap="round"\n\t\t\t\t\t\tstroke-linejoin="round"\n\t\t\t\t\t\tstroke-width="2"\n\t\t\t\t\t\td="M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2"\n\t\t\t\t\t/>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t\tplan: "Startup",\n\t\t},\n\t\t{\n\t\t\tname: "Evil Corp.",\n\t\t\tlogo: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\t\t\tclass="size-4 shrink-0"\n\t\t\t\t\tviewBox="0 0 24 24"\n\t\t\t\t>\n\t\t\t\t\t<path\n\t\t\t\t\t\tfill="none"\n\t\t\t\t\t\tstroke="currentColor"\n\t\t\t\t\t\tstroke-linecap="round"\n\t\t\t\t\t\tstroke-linejoin="round"\n\t\t\t\t\t\tstroke-width="2"\n\t\t\t\t\t\td="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"\n\t\t\t\t\t/>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t\tplan: "Free",\n\t\t},\n\t],\n\tnavMain: [\n\t\t{\n\t\t\ttitle: "Playground",\n\t\t\turl: "#",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\t\t\tclass="size-4"\n\t\t\t\t\tviewBox="0 0 24 24"\n\t\t\t\t>\n\t\t\t\t\t<g\n\t\t\t\t\t\tfill="none"\n\t\t\t\t\t\tstroke="currentColor"\n\t\t\t\t\t\tstroke-linecap="round"\n\t\t\t\t\t\tstroke-linejoin="round"\n\t\t\t\t\t\tstroke-width="2"\n\t\t\t\t\t>\n\t\t\t\t\t\t<path d="m7 11l2-2l-2-2m4 6h4" />\n\t\t\t\t\t\t<rect width="18" height="18" x="3" y="3" rx="2" ry="2" />\n\t\t\t\t\t</g>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t\tisActive: true,\n\t\t\titems: [\n\t\t\t\t{\n\t\t\t\t\ttitle: "History",\n\t\t\t\t\turl: "#",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: "Starred",\n\t\t\t\t\turl: "#",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: "Settings",\n\t\t\t\t\turl: "#",\n\t\t\t\t},\n\t\t\t],\n\t\t},\n\t\t{\n\t\t\ttitle: "Models",\n\t\t\turl: "#",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\t\t\tclass="size-4"\n\t\t\t\t\tviewBox="0 0 24 24"\n\t\t\t\t>\n\t\t\t\t\t<g\n\t\t\t\t\t\tfill="none"\n\t\t\t\t\t\tstroke="currentColor"\n\t\t\t\t\t\tstroke-linecap="round"\n\t\t\t\t\t\tstroke-linejoin="round"\n\t\t\t\t\t\tstroke-width="2"\n\t\t\t\t\t>\n\t\t\t\t\t\t<path d="M12 8V4H8" />\n\t\t\t\t\t\t<rect width="16" height="12" x="4" y="8" rx="2" />\n\t\t\t\t\t\t<path d="M2 14h2m16 0h2m-7-1v2m-6-2v2" />\n\t\t\t\t\t</g>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t\titems: [\n\t\t\t\t{\n\t\t\t\t\ttitle: "Genesis",\n\t\t\t\t\turl: "#",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: "Explorer",\n\t\t\t\t\turl: "#",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: "Quantum",\n\t\t\t\t\turl: "#",\n\t\t\t\t},\n\t\t\t],\n\t\t},\n\t\t{\n\t\t\ttitle: "Documentation",\n\t\t\turl: "#",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\t\t\tclass="size-4"\n\t\t\t\t\tviewBox="0 0 24 24"\n\t\t\t\t>\n\t\t\t\t\t<path\n\t\t\t\t\t\tfill="none"\n\t\t\t\t\t\tstroke="currentColor"\n\t\t\t\t\t\tstroke-linecap="round"\n\t\t\t\t\t\tstroke-linejoin="round"\n\t\t\t\t\t\tstroke-width="2"\n\t\t\t\t\t\td="M12 7v14m-9-3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4a4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3a3 3 0 0 0-3-3z"\n\t\t\t\t\t/>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t\titems: [\n\t\t\t\t{\n\t\t\t\t\ttitle: "Introduction",\n\t\t\t\t\turl: "#",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: "Get Started",\n\t\t\t\t\turl: "#",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: "Tutorials",\n\t\t\t\t\turl: "#",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: "Changelog",\n\t\t\t\t\turl: "#",\n\t\t\t\t},\n\t\t\t],\n\t\t},\n\t\t{\n\t\t\ttitle: "Settings",\n\t\t\turl: "#",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\t\t\tclass="size-4"\n\t\t\t\t\tviewBox="0 0 24 24"\n\t\t\t\t>\n\t\t\t\t\t<g\n\t\t\t\t\t\tfill="none"\n\t\t\t\t\t\tstroke="currentColor"\n\t\t\t\t\t\tstroke-linecap="round"\n\t\t\t\t\t\tstroke-linejoin="round"\n\t\t\t\t\t\tstroke-width="2"\n\t\t\t\t\t>\n\t\t\t\t\t\t<path d="M20 7h-9m3 10H5" />\n\t\t\t\t\t\t<circle cx="17" cy="17" r="3" />\n\t\t\t\t\t\t<circle cx="7" cy="7" r="3" />\n\t\t\t\t\t</g>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t\titems: [\n\t\t\t\t{\n\t\t\t\t\ttitle: "General",\n\t\t\t\t\turl: "#",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: "Team",\n\t\t\t\t\turl: "#",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: "Billing",\n\t\t\t\t\turl: "#",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: "Limits",\n\t\t\t\t\turl: "#",\n\t\t\t\t},\n\t\t\t],\n\t\t},\n\t],\n\tprojects: [\n\t\t{\n\t\t\tname: "Design Engineering",\n\t\t\turl: "#",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\t\t\tclass="size-4"\n\t\t\t\t\tviewBox="0 0 24 24"\n\t\t\t\t>\n\t\t\t\t\t<path\n\t\t\t\t\t\tfill="none"\n\t\t\t\t\t\tstroke="currentColor"\n\t\t\t\t\t\tstroke-linecap="round"\n\t\t\t\t\t\tstroke-linejoin="round"\n\t\t\t\t\t\tstroke-width="2"\n\t\t\t\t\t\td="M22 6H2m20 12H2M6 2v20M18 2v20"\n\t\t\t\t\t/>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t},\n\t\t{\n\t\t\tname: "Sales & Marketing",\n\t\t\turl: "#",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\t\t\tclass="size-4"\n\t\t\t\t\tviewBox="0 0 24 24"\n\t\t\t\t>\n\t\t\t\t\t<g\n\t\t\t\t\t\tfill="none"\n\t\t\t\t\t\tstroke="currentColor"\n\t\t\t\t\t\tstroke-linecap="round"\n\t\t\t\t\t\tstroke-linejoin="round"\n\t\t\t\t\t\tstroke-width="2"\n\t\t\t\t\t>\n\t\t\t\t\t\t<path d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z" />\n\t\t\t\t\t\t<path d="M21.21 15.89A10 10 0 1 1 8 2.83" />\n\t\t\t\t\t</g>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t},\n\t\t{\n\t\t\tname: "Travel",\n\t\t\turl: "#",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\t\t\tclass="size-4"\n\t\t\t\t\tviewBox="0 0 24 24"\n\t\t\t\t>\n\t\t\t\t\t<path\n\t\t\t\t\t\tfill="none"\n\t\t\t\t\t\tstroke="currentColor"\n\t\t\t\t\t\tstroke-linecap="round"\n\t\t\t\t\t\tstroke-linejoin="round"\n\t\t\t\t\t\tstroke-width="2"\n\t\t\t\t\t\td="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0zm.894.211v15M9 3.236v15"\n\t\t\t\t\t/>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t},\n\t],\n};\n\nconst AppSidebar = (props: ComponentProps<typeof Sidebar>) => {\n\treturn (\n\t\t<Sidebar collapsible="icon" {...props}>\n\t\t\t<SidebarHeader>\n\t\t\t\t<TeamSwitcher teams={data.teams} />\n\t\t\t</SidebarHeader>\n\t\t\t<SidebarContent>\n\t\t\t\t<NavMain items={data.navMain} />\n\t\t\t\t<NavProjects projects={data.projects} />\n\t\t\t</SidebarContent>\n\t\t\t<SidebarFooter>\n\t\t\t\t<NavUser user={data.user} />{" "}\n\t\t\t</SidebarFooter>\n\t\t\t<SidebarRail />\n\t\t</Sidebar>\n\t);\n};\n\nexport default AppSidebar;\n',
 				},
 				{
 					path: "src/registry/tailwindcss/blocks/sidebar-07/components/nav-main.tsx",
 					type: "registry:component",
-					target: "",
+					target: "src/components/nav-main.tsx",
+					content:
+						'import {\n\tCollapsible,\n\tCollapsibleContent,\n\tCollapsibleTrigger,\n} from "@/components/ui/collapsible";\nimport {\n\tSidebarGroup,\n\tSidebarGroupLabel,\n\tSidebarMenu,\n\tSidebarMenuButton,\n\tSidebarMenuItem,\n\tSidebarMenuSub,\n\tSidebarMenuSubButton,\n\tSidebarMenuSubItem,\n} from "@/components/ui/sidebar";\nimport type {\n\tCollapsibleRootProps,\n\tCollapsibleTriggerProps,\n} from "@kobalte/core/collapsible";\nimport { type Accessor, For, type JSX, Show } from "solid-js";\n\nconst NavMain = (props: {\n\titems: {\n\t\ttitle: string;\n\t\turl: string;\n\t\ticon?: Accessor<JSX.Element>;\n\t\tisActive?: boolean;\n\t\titems?: {\n\t\t\ttitle: string;\n\t\t\turl: string;\n\t\t}[];\n\t}[];\n}) => {\n\treturn (\n\t\t<SidebarGroup>\n\t\t\t<SidebarGroupLabel>Platform</SidebarGroupLabel>\n\t\t\t<SidebarMenu>\n\t\t\t\t<For each={props.items}>\n\t\t\t\t\t{(item) => (\n\t\t\t\t\t\t<Collapsible\n\t\t\t\t\t\t\tdefaultOpen={item.isActive}\n\t\t\t\t\t\t\tas={(props: CollapsibleRootProps) => (\n\t\t\t\t\t\t\t\t<SidebarMenuItem {...props}>\n\t\t\t\t\t\t\t\t\t<CollapsibleTrigger\n\t\t\t\t\t\t\t\t\t\tas={(props: CollapsibleTriggerProps) => (\n\t\t\t\t\t\t\t\t\t\t\t// @ts-expect-error\n\t\t\t\t\t\t\t\t\t\t\t<SidebarMenuButton\n\t\t\t\t\t\t\t\t\t\t\t\t{...props}\n\t\t\t\t\t\t\t\t\t\t\t\ttooltip={item.title}\n\t\t\t\t\t\t\t\t\t\t\t\tclass="[&>svg:last-of-type]:data-[expanded]:rotate-90"\n\t\t\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t\t\t<Show when={item.icon!()}>{item.icon!()}</Show>\n\t\t\t\t\t\t\t\t\t\t\t\t<span>{item.title}</span>\n\t\t\t\t\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\t\t\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\t\t\t\t\t\t\t\t\t\t\tclass="ml-auto transition-transform duration-200"\n\t\t\t\t\t\t\t\t\t\t\t\t\tviewBox="0 0 24 24"\n\t\t\t\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tfill="none"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tstroke="currentColor"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tstroke-linecap="round"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tstroke-linejoin="round"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tstroke-width="2"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\td="m9 18l6-6l-6-6"\n\t\t\t\t\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\t\t\t\t</SidebarMenuButton>\n\t\t\t\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t\t<CollapsibleContent>\n\t\t\t\t\t\t\t\t\t\t<SidebarMenuSub>\n\t\t\t\t\t\t\t\t\t\t\t<For each={item.items}>\n\t\t\t\t\t\t\t\t\t\t\t\t{(subItem) => (\n\t\t\t\t\t\t\t\t\t\t\t\t\t<SidebarMenuSubItem>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<SidebarMenuSubButton as="a" href={subItem.url}>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span>{subItem.title}</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</SidebarMenuSubButton>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</SidebarMenuSubItem>\n\t\t\t\t\t\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t\t\t\t\t\t</For>\n\t\t\t\t\t\t\t\t\t\t</SidebarMenuSub>\n\t\t\t\t\t\t\t\t\t</CollapsibleContent>\n\t\t\t\t\t\t\t\t</SidebarMenuItem>\n\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t/>\n\t\t\t\t\t)}\n\t\t\t\t</For>\n\t\t\t</SidebarMenu>\n\t\t</SidebarGroup>\n\t);\n};\n\nexport default NavMain;\n',
 				},
 				{
 					path: "src/registry/tailwindcss/blocks/sidebar-07/components/nav-projects.tsx",
 					type: "registry:component",
-					target: "",
+					target: "src/components/nav-projects.tsx",
+					content:
+						'import {\n\tDropdownMenu,\n\tDropdownMenuContent,\n\tDropdownMenuItem,\n\tDropdownMenuSeparator,\n\tDropdownMenuTrigger,\n} from "@/components/ui/dropdown-menu";\nimport {\n\tSidebarGroup,\n\tSidebarGroupLabel,\n\tSidebarMenu,\n\tSidebarMenuAction,\n\tSidebarMenuButton,\n\tSidebarMenuItem,\n\tuseSideBar,\n} from "@/components/ui/sidebar";\nimport type { DropdownMenuTriggerProps } from "@kobalte/core/dropdown-menu";\nimport { type Accessor, For, type JSX } from "solid-js";\n\nconst NavProjects = (props: {\n\tprojects: {\n\t\tname: string;\n\t\turl: string;\n\t\ticon: Accessor<JSX.Element>;\n\t}[];\n}) => {\n\tconst { isMobile } = useSideBar();\n\n\treturn (\n\t\t<SidebarGroup class="group-data-[collapsible=icon]:hidden">\n\t\t\t<SidebarGroupLabel>Projects</SidebarGroupLabel>\n\t\t\t<SidebarMenu>\n\t\t\t\t<For each={props.projects}>\n\t\t\t\t\t{(item) => (\n\t\t\t\t\t\t<SidebarMenuItem>\n\t\t\t\t\t\t\t<SidebarMenuButton as="a" href={item.url}>\n\t\t\t\t\t\t\t\t<item.icon />\n\t\t\t\t\t\t\t\t<span>{item.name}</span>\n\t\t\t\t\t\t\t</SidebarMenuButton>\n\t\t\t\t\t\t\t<DropdownMenu\n\t\t\t\t\t\t\t\tplacement={isMobile() ? "bottom-end" : "right-start"}\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t<DropdownMenuTrigger\n\t\t\t\t\t\t\t\t\tas={(props: DropdownMenuTriggerProps) => (\n\t\t\t\t\t\t\t\t\t\t// @ts-expect-error\n\t\t\t\t\t\t\t\t\t\t<SidebarMenuAction showOnHover {...props}>\n\t\t\t\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\t\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\t\t\t\t\t\t\t\t\t\tclass="size-4"\n\t\t\t\t\t\t\t\t\t\t\t\tviewBox="0 0 24 24"\n\t\t\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t\t\t<g\n\t\t\t\t\t\t\t\t\t\t\t\t\tfill="none"\n\t\t\t\t\t\t\t\t\t\t\t\t\tstroke="currentColor"\n\t\t\t\t\t\t\t\t\t\t\t\t\tstroke-linecap="round"\n\t\t\t\t\t\t\t\t\t\t\t\t\tstroke-linejoin="round"\n\t\t\t\t\t\t\t\t\t\t\t\t\tstroke-width="2"\n\t\t\t\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<circle cx="12" cy="12" r="1" />\n\t\t\t\t\t\t\t\t\t\t\t\t\t<circle cx="19" cy="12" r="1" />\n\t\t\t\t\t\t\t\t\t\t\t\t\t<circle cx="5" cy="12" r="1" />\n\t\t\t\t\t\t\t\t\t\t\t\t</g>\n\t\t\t\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\t\t\t\t<span class="sr-only">More</span>\n\t\t\t\t\t\t\t\t\t\t</SidebarMenuAction>\n\t\t\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t<DropdownMenuContent class="w-48 rounded-lg">\n\t\t\t\t\t\t\t\t\t<DropdownMenuItem>\n\t\t\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\t\t\t\t\t\t\t\t\tclass="text-muted-foreground size-4"\n\t\t\t\t\t\t\t\t\t\t\tviewBox="0 0 24 24"\n\t\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\t\t\t\tfill="none"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke="currentColor"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-linecap="round"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-linejoin="round"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-width="2"\n\t\t\t\t\t\t\t\t\t\t\t\td="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"\n\t\t\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\t\t\t<span>View Project</span>\n\t\t\t\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t\t\t\t\t<DropdownMenuItem>\n\t\t\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\t\t\t\t\t\t\t\t\tclass="text-muted-foreground size-4"\n\t\t\t\t\t\t\t\t\t\t\tviewBox="0 0 24 24"\n\t\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t\t<g\n\t\t\t\t\t\t\t\t\t\t\t\tfill="none"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke="currentColor"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-linecap="round"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-linejoin="round"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-width="2"\n\t\t\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t\t\t<path d="m15 17l5-5l-5-5" />\n\t\t\t\t\t\t\t\t\t\t\t\t<path d="M4 18v-2a4 4 0 0 1 4-4h12" />\n\t\t\t\t\t\t\t\t\t\t\t</g>\n\t\t\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\t\t\t<span>Share Project</span>\n\t\t\t\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t\t\t\t\t<DropdownMenuSeparator />\n\t\t\t\t\t\t\t\t\t<DropdownMenuItem>\n\t\t\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\t\t\t\t\t\t\t\t\tclass="text-muted-foreground size-4"\n\t\t\t\t\t\t\t\t\t\t\tviewBox="0 0 24 24"\n\t\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\t\t\t\tfill="none"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke="currentColor"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-linecap="round"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-linejoin="round"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-width="2"\n\t\t\t\t\t\t\t\t\t\t\t\td="M3 6h18m-2 0v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6m3 0V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2m-6 5v6m4-6v6"\n\t\t\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\t\t\t<span>Delete Project</span>\n\t\t\t\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t\t\t\t</DropdownMenuContent>\n\t\t\t\t\t\t\t</DropdownMenu>\n\t\t\t\t\t\t</SidebarMenuItem>\n\t\t\t\t\t)}\n\t\t\t\t</For>\n\t\t\t\t<SidebarMenuItem>\n\t\t\t\t\t<SidebarMenuButton class="text-sidebar-foreground/70">\n\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\t\t\t\t\tclass="text-sidebar-foreground/70 size-4"\n\t\t\t\t\t\t\tviewBox="0 0 24 24"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\t<g\n\t\t\t\t\t\t\t\tfill="none"\n\t\t\t\t\t\t\t\tstroke="currentColor"\n\t\t\t\t\t\t\t\tstroke-linecap="round"\n\t\t\t\t\t\t\t\tstroke-linejoin="round"\n\t\t\t\t\t\t\t\tstroke-width="2"\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t<circle cx="12" cy="12" r="1" />\n\t\t\t\t\t\t\t\t<circle cx="19" cy="12" r="1" />\n\t\t\t\t\t\t\t\t<circle cx="5" cy="12" r="1" />\n\t\t\t\t\t\t\t</g>\n\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t<span>More</span>\n\t\t\t\t\t</SidebarMenuButton>\n\t\t\t\t</SidebarMenuItem>\n\t\t\t</SidebarMenu>\n\t\t</SidebarGroup>\n\t);\n};\n\nexport default NavProjects;\n',
 				},
 				{
 					path: "src/registry/tailwindcss/blocks/sidebar-07/components/nav-user.tsx",
 					type: "registry:component",
-					target: "",
+					target: "src/components/nav-user.tsx",
+					content:
+						'import {\n\tDropdownMenu,\n\tDropdownMenuContent,\n\tDropdownMenuGroup,\n\tDropdownMenuGroupLabel,\n\tDropdownMenuItem,\n\tDropdownMenuSeparator,\n\tDropdownMenuTrigger,\n} from "@/components/ui/dropdown-menu";\nimport {\n\tSidebarMenu,\n\tSidebarMenuButton,\n\tSidebarMenuItem,\n\tuseSideBar,\n} from "@/components/ui/sidebar";\nimport type { DropdownMenuTriggerProps } from "@kobalte/core/dropdown-menu";\nimport { Image } from "@kobalte/core/image";\n\nconst NavUser = (props: {\n\tuser: {\n\t\tname: string;\n\t\temail: string;\n\t\tavatar: string;\n\t};\n}) => {\n\tconst { isMobile } = useSideBar();\n\n\treturn (\n\t\t<SidebarMenu>\n\t\t\t<SidebarMenuItem>\n\t\t\t\t<DropdownMenu placement={isMobile() ? "bottom-end" : "right-end"}>\n\t\t\t\t\t<DropdownMenuTrigger\n\t\t\t\t\t\tas={(triggerProps: DropdownMenuTriggerProps) => (\n\t\t\t\t\t\t\t// @ts-expect-error\n\t\t\t\t\t\t\t<SidebarMenuButton\n\t\t\t\t\t\t\t\t{...triggerProps}\n\t\t\t\t\t\t\t\tsize="lg"\n\t\t\t\t\t\t\t\tclass="data-[expanded]:bg-sidebar-accent data-[expanded]:text-sidebar-accent-foreground"\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t<Image class="relative flex shrink-0 overflow-hidden h-8 w-8 rounded-lg">\n\t\t\t\t\t\t\t\t\t<Image.Img\n\t\t\t\t\t\t\t\t\t\tclass="aspect-square h-full w-full"\n\t\t\t\t\t\t\t\t\t\tsrc={props.user.avatar}\n\t\t\t\t\t\t\t\t\t\talt={props.user.name}\n\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t\t<Image.Fallback class="flex h-full w-full items-center justify-center bg-muted rounded-lg">\n\t\t\t\t\t\t\t\t\t\tCN\n\t\t\t\t\t\t\t\t\t</Image.Fallback>\n\t\t\t\t\t\t\t\t</Image>\n\t\t\t\t\t\t\t\t<div class="grid flex-1 text-left text-sm leading-tight">\n\t\t\t\t\t\t\t\t\t<span class="truncate font-semibold">{props.user.name}</span>\n\t\t\t\t\t\t\t\t\t<span class="truncate text-xs">{props.user.email}</span>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\t\t\t\t\t\t\tclass="ml-auto size-4"\n\t\t\t\t\t\t\t\t\tviewBox="0 0 24 24"\n\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\t\tfill="none"\n\t\t\t\t\t\t\t\t\t\tstroke="currentColor"\n\t\t\t\t\t\t\t\t\t\tstroke-linecap="round"\n\t\t\t\t\t\t\t\t\t\tstroke-linejoin="round"\n\t\t\t\t\t\t\t\t\t\tstroke-width="2"\n\t\t\t\t\t\t\t\t\t\td="m7 15l5 5l5-5M7 9l5-5l5 5"\n\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t</SidebarMenuButton>\n\t\t\t\t\t\t)}\n\t\t\t\t\t/>\n\t\t\t\t\t<DropdownMenuContent class="w-[--kb-popper-anchor-width] min-w-56 rounded-lg">\n\t\t\t\t\t\t<DropdownMenuGroup>\n\t\t\t\t\t\t\t<DropdownMenuGroupLabel class="p-0 font-normal">\n\t\t\t\t\t\t\t\t<div class="flex items-center gap-2 px-1 py-1.5 text-left text-sm">\n\t\t\t\t\t\t\t\t\t<Image class="relative flex shrink-0 overflow-hidden h-8 w-8 rounded-lg">\n\t\t\t\t\t\t\t\t\t\t<Image.Img\n\t\t\t\t\t\t\t\t\t\t\tclass="aspect-square h-full w-full"\n\t\t\t\t\t\t\t\t\t\t\tsrc={props.user.avatar}\n\t\t\t\t\t\t\t\t\t\t\talt={props.user.name}\n\t\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t\t\t<Image.Fallback class="flex h-full w-full items-center justify-center bg-muted rounded-lg">\n\t\t\t\t\t\t\t\t\t\t\tCN\n\t\t\t\t\t\t\t\t\t\t</Image.Fallback>\n\t\t\t\t\t\t\t\t\t</Image>\n\t\t\t\t\t\t\t\t\t<div class="grid flex-1 text-left text-sm leading-tight">\n\t\t\t\t\t\t\t\t\t\t<span class="truncate font-semibold">\n\t\t\t\t\t\t\t\t\t\t\t{props.user.name}\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t\t<span class="truncate text-xs">{props.user.email}</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</DropdownMenuGroupLabel>\n\t\t\t\t\t\t</DropdownMenuGroup>\n\t\t\t\t\t\t<DropdownMenuSeparator />\n\t\t\t\t\t\t<DropdownMenuGroup>\n\t\t\t\t\t\t\t<DropdownMenuItem>\n\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\t\t\t\t\t\t\tclass="size-4"\n\t\t\t\t\t\t\t\t\tviewBox="0 0 24 24"\n\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\t\tfill="none"\n\t\t\t\t\t\t\t\t\t\tstroke="currentColor"\n\t\t\t\t\t\t\t\t\t\tstroke-linecap="round"\n\t\t\t\t\t\t\t\t\t\tstroke-linejoin="round"\n\t\t\t\t\t\t\t\t\t\tstroke-width="2"\n\t\t\t\t\t\t\t\t\t\td="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0zM20 3v4m2-2h-4M4 17v2m1-1H3"\n\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\tUpgrade to Pro\n\t\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t\t</DropdownMenuGroup>\n\t\t\t\t\t\t<DropdownMenuSeparator />\n\t\t\t\t\t\t<DropdownMenuGroup>\n\t\t\t\t\t\t\t<DropdownMenuItem>\n\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\t\t\t\t\t\t\tclass="size-4"\n\t\t\t\t\t\t\t\t\tviewBox="0 0 24 24"\n\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t<g\n\t\t\t\t\t\t\t\t\t\tfill="none"\n\t\t\t\t\t\t\t\t\t\tstroke="currentColor"\n\t\t\t\t\t\t\t\t\t\tstroke-linecap="round"\n\t\t\t\t\t\t\t\t\t\tstroke-linejoin="round"\n\t\t\t\t\t\t\t\t\t\tstroke-width="2"\n\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t<path d="M3.85 8.62a4 4 0 0 1 4.78-4.77a4 4 0 0 1 6.74 0a4 4 0 0 1 4.78 4.78a4 4 0 0 1 0 6.74a4 4 0 0 1-4.77 4.78a4 4 0 0 1-6.75 0a4 4 0 0 1-4.78-4.77a4 4 0 0 1 0-6.76" />\n\t\t\t\t\t\t\t\t\t\t<path d="m9 12l2 2l4-4" />\n\t\t\t\t\t\t\t\t\t</g>\n\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\tAccount\n\t\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t\t\t<DropdownMenuItem>\n\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\t\t\t\t\t\t\tclass="size-4"\n\t\t\t\t\t\t\t\t\tviewBox="0 0 24 24"\n\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t<g\n\t\t\t\t\t\t\t\t\t\tfill="none"\n\t\t\t\t\t\t\t\t\t\tstroke="currentColor"\n\t\t\t\t\t\t\t\t\t\tstroke-linecap="round"\n\t\t\t\t\t\t\t\t\t\tstroke-linejoin="round"\n\t\t\t\t\t\t\t\t\t\tstroke-width="2"\n\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t<rect width="20" height="14" x="2" y="5" rx="2" />\n\t\t\t\t\t\t\t\t\t\t<path d="M2 10h20" />\n\t\t\t\t\t\t\t\t\t</g>\n\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\tBilling\n\t\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t\t\t<DropdownMenuItem>\n\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\t\t\t\t\t\t\tclass="size-4"\n\t\t\t\t\t\t\t\t\tviewBox="0 0 24 24"\n\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\t\tfill="none"\n\t\t\t\t\t\t\t\t\t\tstroke="currentColor"\n\t\t\t\t\t\t\t\t\t\tstroke-linecap="round"\n\t\t\t\t\t\t\t\t\t\tstroke-linejoin="round"\n\t\t\t\t\t\t\t\t\t\tstroke-width="2"\n\t\t\t\t\t\t\t\t\t\td="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9m4.3 13a1.94 1.94 0 0 0 3.4 0"\n\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\tNotifications\n\t\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t\t</DropdownMenuGroup>\n\t\t\t\t\t\t<DropdownMenuSeparator />\n\t\t\t\t\t\t<DropdownMenuItem>\n\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\t\t\t\t\t\tclass="size-4"\n\t\t\t\t\t\t\t\tviewBox="0 0 24 24"\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\tfill="none"\n\t\t\t\t\t\t\t\t\tstroke="currentColor"\n\t\t\t\t\t\t\t\t\tstroke-linecap="round"\n\t\t\t\t\t\t\t\t\tstroke-linejoin="round"\n\t\t\t\t\t\t\t\t\tstroke-width="2"\n\t\t\t\t\t\t\t\t\td="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4m7 14l5-5l-5-5m5 5H9"\n\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\tLog out\n\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t</DropdownMenuContent>\n\t\t\t\t</DropdownMenu>\n\t\t\t</SidebarMenuItem>\n\t\t</SidebarMenu>\n\t);\n};\n\nexport default NavUser;\n',
 				},
 				{
 					path: "src/registry/tailwindcss/blocks/sidebar-07/components/team-switcher.tsx",
 					type: "registry:component",
-					target: "",
+					target: "src/components/team-switcher.tsx",
+					content:
+						'import {\n\tDropdownMenu,\n\tDropdownMenuContent,\n\tDropdownMenuGroup,\n\tDropdownMenuGroupLabel,\n\tDropdownMenuItem,\n\tDropdownMenuSeparator,\n\tDropdownMenuShortcut,\n\tDropdownMenuTrigger,\n} from "@/components/ui/dropdown-menu";\nimport {\n\tSidebarMenu,\n\tSidebarMenuButton,\n\tSidebarMenuItem,\n\tuseSideBar,\n} from "@/components/ui/sidebar";\nimport type { DropdownMenuTriggerProps } from "@kobalte/core/dropdown-menu";\nimport { type Accessor, For, type JSX, createSignal } from "solid-js";\n\nconst TeamSwitcher = (props: {\n\tteams: {\n\t\tname: string;\n\t\tlogo: Accessor<JSX.Element>;\n\t\tplan: string;\n\t}[];\n}) => {\n\tconst [activeTeam, setActiveTeam] = createSignal(props.teams[0]);\n\tconst { isMobile } = useSideBar();\n\n\treturn (\n\t\t<SidebarMenu>\n\t\t\t<SidebarMenuItem>\n\t\t\t\t<DropdownMenu\n\t\t\t\t\tplacement={isMobile() ? "bottom-end" : "right-start"}\n\t\t\t\t\tsameWidth\n\t\t\t\t>\n\t\t\t\t\t<DropdownMenuTrigger\n\t\t\t\t\t\tas={(props: DropdownMenuTriggerProps) => (\n\t\t\t\t\t\t\t// @ts-expect-error\n\t\t\t\t\t\t\t<SidebarMenuButton\n\t\t\t\t\t\t\t\t{...props}\n\t\t\t\t\t\t\t\tsize="lg"\n\t\t\t\t\t\t\t\tclass="data-[expanded]:bg-sidebar-accent data-[expanded]:text-sidebar-accent-foreground"\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t<div class="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">\n\t\t\t\t\t\t\t\t\t{activeTeam().logo()}\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class="grid flex-1 text-left text-sm leading-tight">\n\t\t\t\t\t\t\t\t\t<span class="truncate font-semibold">\n\t\t\t\t\t\t\t\t\t\t{activeTeam().name}\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t<span class="truncate text-xs">{activeTeam().plan}</span>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\t\t\t\t\t\t\tclass="ml-auto size-4"\n\t\t\t\t\t\t\t\t\tviewBox="0 0 24 24"\n\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\t\tfill="none"\n\t\t\t\t\t\t\t\t\t\tstroke="currentColor"\n\t\t\t\t\t\t\t\t\t\tstroke-linecap="round"\n\t\t\t\t\t\t\t\t\t\tstroke-linejoin="round"\n\t\t\t\t\t\t\t\t\t\tstroke-width="2"\n\t\t\t\t\t\t\t\t\t\td="m7 15l5 5l5-5M7 9l5-5l5 5"\n\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t</SidebarMenuButton>\n\t\t\t\t\t\t)}\n\t\t\t\t\t/>\n\t\t\t\t\t<DropdownMenuContent class="w-[--kb-popper-anchor-width] min-w-56 rounded-lg">\n\t\t\t\t\t\t<DropdownMenuGroup>\n\t\t\t\t\t\t\t<DropdownMenuGroupLabel class="text-xs text-muted-foreground">\n\t\t\t\t\t\t\t\tTeams\n\t\t\t\t\t\t\t</DropdownMenuGroupLabel>\n\t\t\t\t\t\t\t<For each={props.teams}>\n\t\t\t\t\t\t\t\t{(team, index) => (\n\t\t\t\t\t\t\t\t\t<DropdownMenuItem\n\t\t\t\t\t\t\t\t\t\tonClick={() => setActiveTeam(team)}\n\t\t\t\t\t\t\t\t\t\tclass="gap-2 p-2"\n\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t<div class="flex size-6 items-center justify-center rounded-sm border">\n\t\t\t\t\t\t\t\t\t\t\t{team.logo()}\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t{team.name}\n\t\t\t\t\t\t\t\t\t\t<DropdownMenuShortcut>⌘{index() + 1}</DropdownMenuShortcut>\n\t\t\t\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t\t</For>\n\t\t\t\t\t\t</DropdownMenuGroup>\n\t\t\t\t\t\t<DropdownMenuSeparator />\n\t\t\t\t\t\t<DropdownMenuItem class="gap-2 p-2">\n\t\t\t\t\t\t\t<div class="flex size-6 items-center justify-center rounded-md border bg-background">\n\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\txmlns="http://www.w3.org/2000/svg"\n\t\t\t\t\t\t\t\t\tclass="size-4"\n\t\t\t\t\t\t\t\t\tviewBox="0 0 24 24"\n\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\t\tfill="none"\n\t\t\t\t\t\t\t\t\t\tstroke="currentColor"\n\t\t\t\t\t\t\t\t\t\tstroke-linecap="round"\n\t\t\t\t\t\t\t\t\t\tstroke-linejoin="round"\n\t\t\t\t\t\t\t\t\t\tstroke-width="2"\n\t\t\t\t\t\t\t\t\t\td="M5 12h14m-7-7v14"\n\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class="font-medium text-muted-foreground">Add team</div>\n\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t</DropdownMenuContent>\n\t\t\t\t</DropdownMenu>\n\t\t\t</SidebarMenuItem>\n\t\t</SidebarMenu>\n\t);\n};\n\nexport default TeamSwitcher;\n',
 				},
 			],
 			component: clientOnly(
@@ -1950,6 +2150,11 @@ export const Index: Record<string, any> = {
 			source: "src/__registry__/tailwindcss/blocks/sidebar-07/index.tsx",
 			category: "Application",
 			subcategory: "Sidebars",
+			meta: {
+				iframeHeight: "800px",
+				containerClassName: null,
+				description: "A sidebar that collapses to icons.",
+			},
 		},
 	},
 };

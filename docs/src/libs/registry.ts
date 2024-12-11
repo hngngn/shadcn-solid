@@ -1,10 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 
-import fs from "node:fs/promises";
+import fs from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
-import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
 import { Index } from "@/__registry__";
 import {
 	registryEntrySchema,
@@ -13,15 +11,12 @@ import {
 import { Project, ScriptKind, type SourceFile, SyntaxKind } from "ts-morph";
 import * as v from "valibot";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
 const memoizedIndex: typeof Index = Object.fromEntries(
 	Object.entries(Index).map(([style, items]) => [style, { ...items }]),
 );
 
-const createTempSourceFile = async (filename: string) => {
-	const dir = await fs.mkdtemp(path.join(tmpdir(), "shadcn-"));
+const createTempSourceFile = (filename: string) => {
+	const dir = fs.mkdtempSync(path.join(tmpdir(), "shadcn-"));
 	return path.join(dir, filename);
 };
 
@@ -57,17 +52,14 @@ const fixImport = (content: string) => {
 	return content.replace(regex, replacement);
 };
 
-const getFileContent = async (filePath: string) => {
-	const raw = await fs.readFile(
-		resolve(__dirname, "../../", filePath),
-		"utf-8",
-	);
+export const getFileContent = (filePath: string) => {
+	const raw = fs.readFileSync(filePath, "utf-8");
 
 	const project = new Project({
 		compilerOptions: {},
 	});
 
-	const tempFile = await createTempSourceFile(filePath);
+	const tempFile = createTempSourceFile(filePath);
 	const sourceFile = project.createSourceFile(tempFile, raw, {
 		scriptKind: ScriptKind.TSX,
 	});
@@ -82,7 +74,7 @@ const getFileContent = async (filePath: string) => {
 	// Fix imports.
 	code = fixImport(code);
 
-	return code;
+	return JSON.stringify(code, null, 4);
 };
 
 const extractVariable = (sourceFile: SourceFile, name: string) => {
@@ -100,17 +92,14 @@ const extractVariable = (sourceFile: SourceFile, name: string) => {
 	return value;
 };
 
-const getFileMeta = async (filePath: string) => {
-	const raw = await fs.readFile(
-		resolve(__dirname, "../../", filePath),
-		"utf-8",
-	);
+export const getFileMeta = (filePath: string) => {
+	const raw = fs.readFileSync(filePath, "utf-8");
 
 	const project = new Project({
 		compilerOptions: {},
 	});
 
-	const tempFile = await createTempSourceFile(filePath);
+	const tempFile = createTempSourceFile(filePath);
 	const sourceFile = project.createSourceFile(tempFile, raw, {
 		scriptKind: ScriptKind.TSX,
 	});
@@ -156,7 +145,7 @@ const getFileTarget = (file: v.InferInput<typeof registryItemFileSchema>) => {
 	return target;
 };
 
-const fixFilePaths = (
+export const fixFilePaths = (
 	files: v.InferInput<typeof registryEntrySchema>["files"],
 ) => {
 	if (!files) {
@@ -176,7 +165,7 @@ const fixFilePaths = (
 	});
 };
 
-export const getRegistryItem = async (name: string) => {
+export const getRegistryItem = (name: string) => {
 	const item = memoizedIndex.tailwindcss[name];
 
 	if (!item) {
@@ -197,7 +186,7 @@ export const getRegistryItem = async (name: string) => {
 
 	let files: typeof result.output.files = [];
 	for (const file of item.files) {
-		const content = await getFileContent(file.path);
+		const content = getFileContent(file.path);
 		const relativePath = path.relative(process.cwd(), file.path);
 
 		files.push({
@@ -209,7 +198,7 @@ export const getRegistryItem = async (name: string) => {
 
 	// Get meta.
 	// Assume the first file is the main file.
-	const meta = await getFileMeta(files[0].path);
+	const meta = getFileMeta(files[0].path);
 
 	// Fix file paths.
 	files = fixFilePaths(files);
