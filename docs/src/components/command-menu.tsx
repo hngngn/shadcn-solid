@@ -1,6 +1,6 @@
 import type { TNavItem } from "@/config/docs";
 import { docsConfig } from "@/config/docs";
-import { Button } from "@repo/tailwindcss/ui/button";
+import { Button } from "@/registry/tailwindcss/ui/button";
 import {
 	CommandDialog,
 	CommandEmpty,
@@ -8,16 +8,11 @@ import {
 	CommandInput,
 	CommandItem,
 	CommandList,
-} from "@repo/tailwindcss/ui/command";
+} from "@/registry/tailwindcss/ui/command";
+import { useColorMode } from "@kobalte/core";
+import { useNavigate } from "@solidjs/router";
 import type { JSXElement } from "solid-js";
-import {
-	For,
-	createEffect,
-	createMemo,
-	createSignal,
-	on,
-	onCleanup,
-} from "solid-js";
+import { For, createEffect, createSignal, onCleanup } from "solid-js";
 
 type Option = TNavItem & { value: string; icon: JSXElement };
 
@@ -27,31 +22,8 @@ type List = {
 };
 
 const CommandMenu = () => {
-	const [theme, setThemeState] = createSignal<"light" | "dark" | "system">(
-		"light",
-	);
-
-	const isDarkMode = createMemo(() =>
-		document.documentElement.classList.contains("dark"),
-	);
-	const isDark = createMemo(
-		() =>
-			theme() === "dark" ||
-			(theme() === "system" &&
-				window.matchMedia("(prefers-color-scheme: dark)").matches),
-	);
-
-	createEffect(
-		on(isDarkMode, (isDarkMode) => {
-			setThemeState(isDarkMode ? "dark" : "light");
-		}),
-	);
-
-	createEffect(
-		on(isDark, (isDark) => {
-			document.documentElement.classList[isDark ? "add" : "remove"]("dark");
-		}),
-	);
+	const navigate = useNavigate();
+	const { setColorMode } = useColorMode();
 
 	const data = () => {
 		const temp: List[] = [];
@@ -247,17 +219,17 @@ const CommandMenu = () => {
 											onSelect={() => {
 												switch (item.value) {
 													case "light":
-														setThemeState("light");
+														setColorMode("light");
 														break;
 													case "dark":
-														setThemeState("dark");
+														setColorMode("dark");
 														break;
 													case "system":
-														setThemeState("system");
+														setColorMode("system");
 														break;
 													default:
 														// @ts-expect-error
-														window.location.href = item.href;
+														navigate(item.href);
 														break;
 												}
 												setOpen(false);

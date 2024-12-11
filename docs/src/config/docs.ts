@@ -29,8 +29,8 @@ export const docsConfig: TDocsConfig = {
 			href: "/docs/components/accordion",
 		},
 		{
-			title: "Examples",
-			href: "/examples/mail",
+			title: "Blocks",
+			href: "/blocks",
 		},
 	],
 	sidebarNav: [
@@ -40,11 +40,6 @@ export const docsConfig: TDocsConfig = {
 				{
 					title: "Introduction",
 					href: "/docs/introduction",
-					items: [],
-				},
-				{
-					title: "Installation",
-					href: "/docs/installation",
 					items: [],
 				},
 				{
@@ -85,8 +80,34 @@ export const docsConfig: TDocsConfig = {
 			],
 		},
 		{
+			title: "Installation",
+			items: [
+				{
+					title: "Solid Start",
+					href: "/docs/installation/solid-start",
+					items: [],
+				},
+				{
+					title: "Astro",
+					href: "/docs/installation/astro",
+					items: [],
+				},
+				{
+					title: "Manual",
+					href: "/docs/installation/manual",
+					items: [],
+				},
+			],
+		},
+		{
 			title: "Components",
 			items: [
+				{
+					title: "Sidebar",
+					href: "/docs/components/sidebar",
+					items: [],
+					label: "New",
+				},
 				{
 					title: "Accordion",
 					href: "/docs/components/accordion",
@@ -156,7 +177,6 @@ export const docsConfig: TDocsConfig = {
 					title: "Date Picker",
 					href: "/docs/components/date-picker",
 					items: [],
-					label: "Updated",
 				},
 				{
 					title: "Dialog",
@@ -167,6 +187,7 @@ export const docsConfig: TDocsConfig = {
 					title: "Drawer",
 					href: "/docs/components/drawer",
 					items: [],
+					label: "Updated",
 				},
 				{
 					title: "Dropdown Menu",
@@ -179,11 +200,6 @@ export const docsConfig: TDocsConfig = {
 					items: [],
 				},
 				{
-					title: "Image",
-					href: "/docs/components/image",
-					items: [],
-				},
-				{
 					title: "Menubar",
 					href: "/docs/components/menubar",
 					items: [],
@@ -192,7 +208,6 @@ export const docsConfig: TDocsConfig = {
 					title: "Navigation Menu",
 					href: "/docs/components/navigation-menu",
 					items: [],
-					label: "New",
 				},
 				{
 					title: "Number Field",
@@ -240,11 +255,6 @@ export const docsConfig: TDocsConfig = {
 					items: [],
 				},
 				{
-					title: "Sheet",
-					href: "/docs/components/sheet",
-					items: [],
-				},
-				{
 					title: "Skeleton",
 					href: "/docs/components/skeleton",
 					items: [],
@@ -253,6 +263,7 @@ export const docsConfig: TDocsConfig = {
 					title: "Sonner",
 					href: "/docs/components/sonner",
 					items: [],
+					label: "Updated",
 				},
 				{
 					title: "Switch",

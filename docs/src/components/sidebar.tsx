@@ -1,17 +1,16 @@
 import { docsConfig } from "@/config/docs";
-import { cn } from "@/libs/cn";
+import { cn } from "@/registry/tailwindcss/libs/cn";
+import { useLocation } from "@solidjs/router";
 import { For, Show } from "solid-js";
 
-type Props = {
-	pathname: string;
-};
+export const Sidebar = () => {
+	const location = useLocation();
 
-export const Sidebar = (props: Props) => {
 	return (
 		<div class="w-full">
 			<For each={docsConfig.sidebarNav}>
 				{(item) => (
-					<div class="pb-4">
+					<div class="pb-6">
 						<h4 class="mb-1 rounded-md px-2 py-1 text-sm font-semibold">
 							{item.title}
 						</h4>
@@ -49,8 +48,8 @@ export const Sidebar = (props: Props) => {
 											class={cn(
 												"flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline",
 												item.disabled && "cursor-not-allowed opacity-60",
-												props.pathname === item.href ||
-													(props.pathname.includes("/docs/installation") &&
+												location.pathname === item.href ||
+													(location.pathname.includes("/docs/installation") &&
 														item.href === "/docs/installation")
 													? "font-medium text-foreground"
 													: "text-muted-foreground",
