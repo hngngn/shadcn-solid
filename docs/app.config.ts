@@ -124,6 +124,19 @@ export default defineConfig({
 							}
 						});
 					},
+					() => (tree: any) => {
+						visit(tree, "text", (node) => {
+							if (node.value.includes("@/registry")) {
+								node.value = node.value
+									.replace(/@\/registry\/tailwindcss\/hooks\//g, "@/hooks/")
+									.replace(/@\/registry\/tailwindcss\/libs\//g, "@/libs/")
+									.replace(
+										/@\/registry\/tailwindcss\/ui\//g,
+										"@/components/ui/",
+									);
+							}
+						});
+					},
 				],
 			}),
 			docsGen(),
