@@ -465,13 +465,13 @@ Add filter to the title. See the [filtering docs](https://tanstack.com/table/v8/
 
 ### Update `<DataTable>`
 
-```tsx title="src/routes/_components/data-table.tsx" {4,6,10,14,17-19,25-32}
+```tsx title="src/routes/_components/data-table.tsx" {4,6,10,14-15,17-19,25-32}
 //...
 import {
   //...
   getFilteredRowModel
 } from "@tanstack/solid-table";
-import { TextField, TextFieldInput } from "~/components/ui/textfield";
+import { TextFieldRoot, TextField } from "~/components/ui/textfield";
 
 export const DataTable = <TData, TValue>(props: Props<TData, TValue>) => {
   //...
@@ -480,6 +480,7 @@ export const DataTable = <TData, TValue>(props: Props<TData, TValue>) => {
   const table = createSolidTable({
     //...
     getFilteredRowModel: getFilteredRowModel(),
+    onColumnFiltersChange: setColumnFilters,
     state: {
       //...
       get columnFilters() {
@@ -490,14 +491,14 @@ export const DataTable = <TData, TValue>(props: Props<TData, TValue>) => {
 
   <div>
     <div class="flex items-center py-4">
-      <TextField>
-        <TextFieldInput
+      <TextFieldRoot>
+        <TextField
           placeholder="Filter title..."
           value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
           onInput={event => table.getColumn("title")?.setFilterValue(event.currentTarget.value)}
           class="max-w-sm"
         />
-      </TextField>
+      </TextFieldRoot>
     </div>
     <div class="rounded-md border">...</div>
   </div>;
@@ -510,7 +511,7 @@ Adding column visibility using visibility API.
 
 ### Update `<DataTable>`
 
-```tsx title="src/routes/_components/data-table.tsx" {2-8,13,17,20-22,29-48}
+```tsx title="src/routes/_components/data-table.tsx" {2-9,13,17,20-22,30-54}
 //...
 import { As } from "@kobalte/core";
 import { Button } from "~/components/ui/button";
@@ -520,6 +521,7 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
+import type { DropdownMenuTriggerProps } from "@kobalte/core/dropdown-menu";
 
 export const DataTable = <TData, TValue>(props: Props<TData, TValue>) => {
   //...
@@ -540,11 +542,16 @@ export const DataTable = <TData, TValue>(props: Props<TData, TValue>) => {
     <div class="flex items-center py-4">
       //...
       <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <As component={Button} variant="outline" class="ml-auto">
-            Columns
-          </As>
-        </DropdownMenuTrigger>
+        <DropdownMenuTrigger as={(props: DropdownMenuTriggerProps) => (
+            <Button
+              {...props}
+              variant="outline"
+              class="ml-auto"
+            >
+              Columns
+            </Button>
+          )}
+        />
         <DropdownMenuContent>
           <For each={table.getAllColumns().filter(column => column.getCanHide())}>
             {item => (
