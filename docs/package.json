@@ -22,7 +22,7 @@
 		"@repo/unocss": "workspace:*",
 		"@solid-primitives/storage": "^4.2.1",
 		"@tanstack/solid-table": "^8.20.5",
-		"astro": "4.16.11",
+		"astro": "4.16.18",
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.0",
 		"embla-carousel-autoplay": "^8.3.1",
