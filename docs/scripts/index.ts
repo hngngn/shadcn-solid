@@ -2,12 +2,11 @@ import { existsSync, mkdirSync } from "node:fs";
 import fs from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
-import { getFileMeta } from "@/libs/registry";
 import { registry } from "@/registry";
 import { frameworks } from "@/registry/frameworks";
 import { type Registry, registrySchema } from "@/registry/schema";
 import { rimraf } from "rimraf";
-import { Project, ScriptKind, type SourceFile, SyntaxKind } from "ts-morph";
+import { Project, ScriptKind } from "ts-morph";
 import * as v from "valibot";
 
 const REGISTRY_PATH = path.join(process.cwd(), "public/registry");
@@ -20,10 +19,6 @@ function createTempSourceFile(filename: string) {
 	const dir = fs.mkdtempSync(path.join(tmpdir(), "shadcn-"));
 	return path.join(dir, filename);
 }
-
-const removeVariable = (sourceFile: SourceFile, name: string) => {
-	sourceFile.getVariableDeclaration(name)?.remove();
-};
 
 const fixImport = (content: string) => {
 	const regex = /@\/(.+?)\/((?:.*?\/)?(?:components|ui|hooks|lib))\/([\w-]+)/g;
@@ -64,11 +59,6 @@ const getFileContent = (filePath: string) => {
 	const sourceFile = project.createSourceFile(tempFile, raw, {
 		scriptKind: ScriptKind.TSX,
 	});
-
-	// Remove meta variables.
-	removeVariable(sourceFile, "iframeHeight");
-	removeVariable(sourceFile, "containerClassName");
-	removeVariable(sourceFile, "description");
 
 	let code = sourceFile.getFullText();
 
@@ -117,8 +107,6 @@ export const Index: Record<string, any> = {
 
 				let componentPath = `@/registry/${framework.name}/${type}/${item.name}`;
 
-				let meta: typeof item.meta;
-
 				if (item.type === "registry:block") {
 					const file = resolveFiles[0];
 					const filename = path.basename(file);
@@ -134,14 +122,6 @@ export const Index: Record<string, any> = {
 					const sourceFile = project.createSourceFile(tempFile, raw, {
 						scriptKind: ScriptKind.TSX,
 					});
-
-					const description = sourceFile
-						.getVariableDeclaration("description")
-						?.getInitializerOrThrow()
-						.asKindOrThrow(SyntaxKind.StringLiteral)
-						.getLiteralValue();
-
-					item.description = description ?? "";
 
 					// Find all imports.
 					const imports = new Map<
@@ -183,15 +163,6 @@ export const Index: Record<string, any> = {
 						if (files.length) {
 							sourceFilename = `src/__registry__/${framework.name}/${files[0].path}`;
 						}
-
-						// Get meta.
-						// Assume the first file is the main file.
-						const filePath = `src/registry/${framework.name}/${
-							typeof item.files[0] === "string"
-								? item.files[0]
-								: item.files[0].path
-						}`;
-						meta = getFileMeta(filePath);
 					}
 
 					const sourcePath = path.join(process.cwd(), sourceFilename);
@@ -239,8 +210,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("${componentPath}"), { lazy: true }),
 			source: "${sourceFilename}",
 			category: "${item.category ?? ""}",
-			subcategory: "${item.subcategory ?? ""}",
-			meta: ${JSON.stringify(meta)}
+			subcategory: "${item.subcategory ?? ""}"
 		},`;
 			}
 		}

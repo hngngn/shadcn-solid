@@ -1,14 +1,10 @@
-import AppSidebar from "@/registry/tailwindcss/blocks/sidebar-07/components/app-sidebar";
+import AppSidebar from "@/registry/tailwindcss/blocks/sidebar-01/components/app-sidebar";
 import { Separator } from "@/registry/tailwindcss/ui/separator";
 import {
 	SidebarInset,
 	SidebarProvider,
 	SidebarTrigger,
 } from "@/registry/tailwindcss/ui/sidebar";
-
-export const iframeHeight = "800px";
-
-export const description = "A sidebar that collapses to icons.";
 
 const Page = () => {
 	return (

@@ -19,8 +19,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/accordion-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"alert-demo": {
 			name: "alert-demo",
@@ -36,8 +35,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/alert-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"alert-destructive": {
 			name: "alert-destructive",
@@ -53,8 +51,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/alert-destructive"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"alert-dialog-demo": {
 			name: "alert-dialog-demo",
@@ -70,8 +67,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/alert-dialog-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"button-demo": {
 			name: "button-demo",
@@ -87,8 +83,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/button-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"button-secondary": {
 			name: "button-secondary",
@@ -104,8 +99,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/button-secondary"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"button-destructive": {
 			name: "button-destructive",
@@ -121,8 +115,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/button-destructive"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"button-outline": {
 			name: "button-outline",
@@ -138,8 +131,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/button-outline"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"button-ghost": {
 			name: "button-ghost",
@@ -155,8 +147,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/button-ghost"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"button-link": {
 			name: "button-link",
@@ -172,8 +163,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/button-link"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"button-with-icon": {
 			name: "button-with-icon",
@@ -189,8 +179,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/button-with-icon"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"button-loading": {
 			name: "button-loading",
@@ -206,8 +195,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/button-loading"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"button-as-child": {
 			name: "button-as-child",
@@ -223,8 +211,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/button-as-child"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"badge-demo": {
 			name: "badge-demo",
@@ -240,8 +227,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/badge-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"badge-secondary": {
 			name: "badge-secondary",
@@ -257,8 +243,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/badge-secondary"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"badge-destructive": {
 			name: "badge-destructive",
@@ -274,8 +259,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/badge-destructive"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"badge-outline": {
 			name: "badge-outline",
@@ -291,8 +275,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/badge-outline"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"calendar-demo": {
 			name: "calendar-demo",
@@ -308,8 +291,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/calendar-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"card-demo": {
 			name: "card-demo",
@@ -325,8 +307,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/card-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"carousel-demo": {
 			name: "carousel-demo",
@@ -342,8 +323,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/carousel-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"carousel-size": {
 			name: "carousel-size",
@@ -359,8 +339,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/carousel-size"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"carousel-api-demo": {
 			name: "carousel-api-demo",
@@ -376,8 +355,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/carousel-api-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"carousel-orientation": {
 			name: "carousel-orientation",
@@ -393,8 +371,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/carousel-orientation"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"carousel-plugin": {
 			name: "carousel-plugin",
@@ -410,8 +387,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/carousel-plugin"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"carousel-spacing": {
 			name: "carousel-spacing",
@@ -427,8 +403,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/carousel-spacing"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"checkbox-demo": {
 			name: "checkbox-demo",
@@ -444,8 +419,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/checkbox-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"checkbox-disabled": {
 			name: "checkbox-disabled",
@@ -461,8 +435,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/checkbox-disabled"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"checkbox-with-text": {
 			name: "checkbox-with-text",
@@ -478,8 +451,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/checkbox-with-text"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"collapsible-demo": {
 			name: "collapsible-demo",
@@ -495,8 +467,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/collapsible-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"combobox-demo": {
 			name: "combobox-demo",
@@ -512,8 +483,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/combobox-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"command-demo": {
 			name: "command-demo",
@@ -529,8 +499,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/command-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"command-dialog": {
 			name: "command-dialog",
@@ -546,8 +515,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/command-dialog"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"context-menu-demo": {
 			name: "context-menu-demo",
@@ -563,8 +531,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/context-menu-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"data-table-demo": {
 			name: "data-table-demo",
@@ -580,8 +547,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/data-table-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"date-picker-demo": {
 			name: "date-picker-demo",
@@ -597,8 +563,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/date-picker-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"date-picker-with-range-demo": {
 			name: "date-picker-with-range-demo",
@@ -614,8 +579,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/date-picker-with-range-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"dialog-demo": {
 			name: "dialog-demo",
@@ -631,8 +595,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/dialog-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"drawer-demo": {
 			name: "drawer-demo",
@@ -648,8 +611,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/drawer-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"drawer-side-demo": {
 			name: "drawer-side-demo",
@@ -665,8 +627,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/drawer-side-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"dropdown-menu-demo": {
 			name: "dropdown-menu-demo",
@@ -682,8 +643,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/dropdown-menu-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"dropdown-menu-checkboxes": {
 			name: "dropdown-menu-checkboxes",
@@ -699,8 +659,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/dropdown-menu-checkboxes"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"dropdown-menu-radio-group": {
 			name: "dropdown-menu-radio-group",
@@ -716,8 +675,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/dropdown-menu-radio-group"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"hover-card-demo": {
 			name: "hover-card-demo",
@@ -733,8 +691,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/hover-card-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"menubar-demo": {
 			name: "menubar-demo",
@@ -750,8 +707,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/menubar-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"mode-toggle": {
 			name: "mode-toggle",
@@ -767,8 +723,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/mode-toggle"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"navigation-menu-demo": {
 			name: "navigation-menu-demo",
@@ -784,8 +739,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/navigation-menu-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"number-field-demo": {
 			name: "number-field-demo",
@@ -801,8 +755,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/number-field-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"number-field-disabled-demo": {
 			name: "number-field-disabled-demo",
@@ -818,8 +771,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/number-field-disabled-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"number-field-with-error-demo": {
 			name: "number-field-with-error-demo",
@@ -835,8 +787,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/number-field-with-error-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"otp-field-demo": {
 			name: "otp-field-demo",
@@ -852,8 +803,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/otp-field-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"otp-field-with-pattern-demo": {
 			name: "otp-field-with-pattern-demo",
@@ -869,8 +819,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/otp-field-with-pattern-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"otp-field-with-controlled-demo": {
 			name: "otp-field-with-controlled-demo",
@@ -886,8 +835,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/otp-field-with-controlled-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"popover-demo": {
 			name: "popover-demo",
@@ -903,8 +851,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/popover-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"pagination-demo": {
 			name: "pagination-demo",
@@ -920,8 +867,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/pagination-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"progress-demo": {
 			name: "progress-demo",
@@ -937,8 +883,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/progress-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"radio-group-demo": {
 			name: "radio-group-demo",
@@ -954,8 +899,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/radio-group-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"resizable-demo": {
 			name: "resizable-demo",
@@ -971,8 +915,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/resizable-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"resizable-vertical-demo": {
 			name: "resizable-vertical-demo",
@@ -988,8 +931,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/resizable-vertical-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"resizable-with-handle-demo": {
 			name: "resizable-with-handle-demo",
@@ -1005,8 +947,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/resizable-with-handle-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"select-demo": {
 			name: "select-demo",
@@ -1022,8 +963,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/select-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"separator-demo": {
 			name: "separator-demo",
@@ -1039,8 +979,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/separator-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"skeleton-demo": {
 			name: "skeleton-demo",
@@ -1056,8 +995,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/skeleton-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"sonner-demo": {
 			name: "sonner-demo",
@@ -1073,8 +1011,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/sonner-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"switch-demo": {
 			name: "switch-demo",
@@ -1090,8 +1027,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/switch-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"table-demo": {
 			name: "table-demo",
@@ -1107,8 +1043,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/table-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"tabs-demo": {
 			name: "tabs-demo",
@@ -1124,8 +1059,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/tabs-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"tabs-orientation-demo": {
 			name: "tabs-orientation-demo",
@@ -1141,8 +1075,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/tabs-orientation-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"textarea-demo": {
 			name: "textarea-demo",
@@ -1158,8 +1091,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/textarea-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"textarea-disabled": {
 			name: "textarea-disabled",
@@ -1175,8 +1107,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/textarea-disabled"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"textarea-with-button": {
 			name: "textarea-with-button",
@@ -1192,8 +1123,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/textarea-with-button"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"textarea-with-label": {
 			name: "textarea-with-label",
@@ -1209,8 +1139,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/textarea-with-label"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"textarea-with-text": {
 			name: "textarea-with-text",
@@ -1226,8 +1155,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/textarea-with-text"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"textfield-demo": {
 			name: "textfield-demo",
@@ -1243,8 +1171,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/textfield-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"textfield-disabled": {
 			name: "textfield-disabled",
@@ -1260,8 +1187,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/textfield-disabled"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"textfield-file": {
 			name: "textfield-file",
@@ -1277,8 +1203,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/textfield-file"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"textfield-with-button": {
 			name: "textfield-with-button",
@@ -1294,8 +1219,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/textfield-with-button"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"textfield-with-label": {
 			name: "textfield-with-label",
@@ -1311,8 +1235,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/textfield-with-label"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"textfield-with-text": {
 			name: "textfield-with-text",
@@ -1328,8 +1251,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/textfield-with-text"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"textfield-with-error": {
 			name: "textfield-with-error",
@@ -1345,8 +1267,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/textfield-with-error"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"toast-demo": {
 			name: "toast-demo",
@@ -1362,8 +1283,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/toast-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"toast-destructive": {
 			name: "toast-destructive",
@@ -1379,8 +1299,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/toast-destructive"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"toggle-group-demo": {
 			name: "toggle-group-demo",
@@ -1396,8 +1315,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/toggle-group-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"toggle-group-outline-demo": {
 			name: "toggle-group-outline-demo",
@@ -1413,8 +1331,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/toggle-group-outline-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"toggle-group-single-demo": {
 			name: "toggle-group-single-demo",
@@ -1430,8 +1347,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/toggle-group-single-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"toggle-group-small-demo": {
 			name: "toggle-group-small-demo",
@@ -1447,8 +1363,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/toggle-group-small-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"toggle-group-large-demo": {
 			name: "toggle-group-large-demo",
@@ -1464,8 +1379,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/toggle-group-large-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"toggle-group-disabled-demo": {
 			name: "toggle-group-disabled-demo",
@@ -1481,8 +1395,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/toggle-group-disabled-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"toggle-demo": {
 			name: "toggle-demo",
@@ -1498,8 +1411,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/toggle-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"toggle-disabled": {
 			name: "toggle-disabled",
@@ -1515,8 +1427,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/toggle-disabled"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"toggle-large": {
 			name: "toggle-large",
@@ -1532,8 +1443,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/toggle-large"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"toggle-outline": {
 			name: "toggle-outline",
@@ -1549,8 +1459,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/toggle-outline"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"toggle-small": {
 			name: "toggle-small",
@@ -1566,8 +1475,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/toggle-small"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"toggle-with-text": {
 			name: "toggle-with-text",
@@ -1583,8 +1491,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/toggle-with-text"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"tooltip-demo": {
 			name: "tooltip-demo",
@@ -1600,8 +1507,7 @@ export const Index: Record<string, any> = {
 			component: clientOnly(() => import("@/registry/tailwindcss/examples/tooltip-demo"), { lazy: true }),
 			source: "",
 			category: "",
-			subcategory: "",
-			meta: undefined
+			subcategory: ""
 		}, 
 		"demo-sidebar": {
 			name: "demo-sidebar",
@@ -1612,55 +1518,115 @@ export const Index: Record<string, any> = {
 				path: "src/registry/tailwindcss/blocks/demo-sidebar.tsx",
 				type: "registry:block",
 				target: "",
-				content: "import { For } from \"solid-js\";\r\nimport {\r\n\tSidebar,\r\n\tSidebarContent,\r\n\tSidebarGroup,\r\n\tSidebarGroupContent,\r\n\tSidebarGroupLabel,\r\n\tSidebarInset,\r\n\tSidebarMenu,\r\n\tSidebarMenuButton,\r\n\tSidebarMenuItem,\r\n\tSidebarProvider,\r\n\tSidebarTrigger,\r\n} from \"../ui/sidebar\";\r\n\r\nconst items = [\r\n\t{\r\n\t\ttitle: \"Home\",\r\n\t\turl: \"#\",\r\n\t\ticon: () => (\r\n\t\t\t<svg\r\n\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\r\n\t\t\t\tclass=\"size-4\"\r\n\t\t\t\tviewBox=\"0 0 24 24\"\r\n\t\t\t>\r\n\t\t\t\t<g\r\n\t\t\t\t\tfill=\"none\"\r\n\t\t\t\t\tstroke=\"currentColor\"\r\n\t\t\t\t\tstroke-linecap=\"round\"\r\n\t\t\t\t\tstroke-linejoin=\"round\"\r\n\t\t\t\t\tstroke-width=\"2\"\r\n\t\t\t\t>\r\n\t\t\t\t\t<path d=\"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8\" />\r\n\t\t\t\t\t<path d=\"M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\" />\r\n\t\t\t\t</g>\r\n\t\t\t</svg>\r\n\t\t),\r\n\t},\r\n\t{\r\n\t\ttitle: \"Inbox\",\r\n\t\turl: \"#\",\r\n\t\ticon: () => (\r\n\t\t\t<svg\r\n\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\r\n\t\t\t\tclass=\"size-4\"\r\n\t\t\t\tviewBox=\"0 0 24 24\"\r\n\t\t\t>\r\n\t\t\t\t<g\r\n\t\t\t\t\tfill=\"none\"\r\n\t\t\t\t\tstroke=\"currentColor\"\r\n\t\t\t\t\tstroke-linecap=\"round\"\r\n\t\t\t\t\tstroke-linejoin=\"round\"\r\n\t\t\t\t\tstroke-width=\"2\"\r\n\t\t\t\t>\r\n\t\t\t\t\t<path d=\"M22 12h-6l-2 3h-4l-2-3H2\" />\r\n\t\t\t\t\t<path d=\"M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11\" />\r\n\t\t\t\t</g>\r\n\t\t\t</svg>\r\n\t\t),\r\n\t},\r\n\t{\r\n\t\ttitle: \"Calendar\",\r\n\t\turl: \"#\",\r\n\t\ticon: () => (\r\n\t\t\t<svg\r\n\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\r\n\t\t\t\tclass=\"size-4\"\r\n\t\t\t\tviewBox=\"0 0 24 24\"\r\n\t\t\t>\r\n\t\t\t\t<g\r\n\t\t\t\t\tfill=\"none\"\r\n\t\t\t\t\tstroke=\"currentColor\"\r\n\t\t\t\t\tstroke-linecap=\"round\"\r\n\t\t\t\t\tstroke-linejoin=\"round\"\r\n\t\t\t\t\tstroke-width=\"2\"\r\n\t\t\t\t>\r\n\t\t\t\t\t<path d=\"M8 2v4m8-4v4\" />\r\n\t\t\t\t\t<rect width=\"18\" height=\"18\" x=\"3\" y=\"4\" rx=\"2\" />\r\n\t\t\t\t\t<path d=\"M3 10h18\" />\r\n\t\t\t\t</g>\r\n\t\t\t</svg>\r\n\t\t),\r\n\t},\r\n\t{\r\n\t\ttitle: \"Search\",\r\n\t\turl: \"#\",\r\n\t\ticon: () => (\r\n\t\t\t<svg\r\n\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\r\n\t\t\t\tclass=\"size-4\"\r\n\t\t\t\tviewBox=\"0 0 24 24\"\r\n\t\t\t>\r\n\t\t\t\t<g\r\n\t\t\t\t\tfill=\"none\"\r\n\t\t\t\t\tstroke=\"currentColor\"\r\n\t\t\t\t\tstroke-linecap=\"round\"\r\n\t\t\t\t\tstroke-linejoin=\"round\"\r\n\t\t\t\t\tstroke-width=\"2\"\r\n\t\t\t\t>\r\n\t\t\t\t\t<circle cx=\"11\" cy=\"11\" r=\"8\" />\r\n\t\t\t\t\t<path d=\"m21 21l-4.3-4.3\" />\r\n\t\t\t\t</g>\r\n\t\t\t</svg>\r\n\t\t),\r\n\t},\r\n\t{\r\n\t\ttitle: \"Settings\",\r\n\t\turl: \"#\",\r\n\t\ticon: () => (\r\n\t\t\t<svg\r\n\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\r\n\t\t\t\tclass=\"size-4\"\r\n\t\t\t\tviewBox=\"0 0 24 24\"\r\n\t\t\t>\r\n\t\t\t\t<g\r\n\t\t\t\t\tfill=\"none\"\r\n\t\t\t\t\tstroke=\"currentColor\"\r\n\t\t\t\t\tstroke-linecap=\"round\"\r\n\t\t\t\t\tstroke-linejoin=\"round\"\r\n\t\t\t\t\tstroke-width=\"2\"\r\n\t\t\t\t>\r\n\t\t\t\t\t<path d=\"M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2\" />\r\n\t\t\t\t\t<circle cx=\"12\" cy=\"12\" r=\"3\" />\r\n\t\t\t\t</g>\r\n\t\t\t</svg>\r\n\t\t),\r\n\t},\r\n];\r\n\r\nconst AppSidebar = () => {\r\n\treturn (\r\n\t\t<SidebarProvider>\r\n\t\t\t<Sidebar>\r\n\t\t\t\t<SidebarContent>\r\n\t\t\t\t\t<SidebarGroup>\r\n\t\t\t\t\t\t<SidebarGroupLabel>Application</SidebarGroupLabel>\r\n\t\t\t\t\t\t<SidebarGroupContent>\r\n\t\t\t\t\t\t\t<SidebarMenu>\r\n\t\t\t\t\t\t\t\t<For each={items}>\r\n\t\t\t\t\t\t\t\t\t{(item) => (\r\n\t\t\t\t\t\t\t\t\t\t<SidebarMenuItem>\r\n\t\t\t\t\t\t\t\t\t\t\t<SidebarMenuButton as=\"a\" href={item.url}>\r\n\t\t\t\t\t\t\t\t\t\t\t\t<item.icon />\r\n\t\t\t\t\t\t\t\t\t\t\t\t<span>{item.title}</span>\r\n\t\t\t\t\t\t\t\t\t\t\t</SidebarMenuButton>\r\n\t\t\t\t\t\t\t\t\t\t</SidebarMenuItem>\r\n\t\t\t\t\t\t\t\t\t)}\r\n\t\t\t\t\t\t\t\t</For>\r\n\t\t\t\t\t\t\t</SidebarMenu>\r\n\t\t\t\t\t\t</SidebarGroupContent>\r\n\t\t\t\t\t</SidebarGroup>\r\n\t\t\t\t</SidebarContent>\r\n\t\t\t</Sidebar>\r\n\t\t\t<SidebarInset>\r\n\t\t\t\t<header class=\"flex items-center justify-between px-4 h-12\">\r\n\t\t\t\t\t<SidebarTrigger />\r\n\t\t\t\t</header>\r\n\t\t\t</SidebarInset>\r\n\t\t</SidebarProvider>\r\n\t);\r\n};\r\n\r\nexport default AppSidebar;\r\n"
+				content: "import { For } from \"solid-js\";\nimport {\n\tSidebar,\n\tSidebarContent,\n\tSidebarGroup,\n\tSidebarGroupContent,\n\tSidebarGroupLabel,\n\tSidebarInset,\n\tSidebarMenu,\n\tSidebarMenuButton,\n\tSidebarMenuItem,\n\tSidebarProvider,\n\tSidebarTrigger,\n} from \"../ui/sidebar\";\n\nconst items = [\n\t{\n\t\ttitle: \"Home\",\n\t\turl: \"#\",\n\t\ticon: () => (\n\t\t\t<svg\n\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\tclass=\"size-4\"\n\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t>\n\t\t\t\t<g\n\t\t\t\t\tfill=\"none\"\n\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t>\n\t\t\t\t\t<path d=\"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8\" />\n\t\t\t\t\t<path d=\"M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\" />\n\t\t\t\t</g>\n\t\t\t</svg>\n\t\t),\n\t},\n\t{\n\t\ttitle: \"Inbox\",\n\t\turl: \"#\",\n\t\ticon: () => (\n\t\t\t<svg\n\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\tclass=\"size-4\"\n\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t>\n\t\t\t\t<g\n\t\t\t\t\tfill=\"none\"\n\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t>\n\t\t\t\t\t<path d=\"M22 12h-6l-2 3h-4l-2-3H2\" />\n\t\t\t\t\t<path d=\"M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11\" />\n\t\t\t\t</g>\n\t\t\t</svg>\n\t\t),\n\t},\n\t{\n\t\ttitle: \"Calendar\",\n\t\turl: \"#\",\n\t\ticon: () => (\n\t\t\t<svg\n\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\tclass=\"size-4\"\n\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t>\n\t\t\t\t<g\n\t\t\t\t\tfill=\"none\"\n\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t>\n\t\t\t\t\t<path d=\"M8 2v4m8-4v4\" />\n\t\t\t\t\t<rect width=\"18\" height=\"18\" x=\"3\" y=\"4\" rx=\"2\" />\n\t\t\t\t\t<path d=\"M3 10h18\" />\n\t\t\t\t</g>\n\t\t\t</svg>\n\t\t),\n\t},\n\t{\n\t\ttitle: \"Search\",\n\t\turl: \"#\",\n\t\ticon: () => (\n\t\t\t<svg\n\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\tclass=\"size-4\"\n\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t>\n\t\t\t\t<g\n\t\t\t\t\tfill=\"none\"\n\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t>\n\t\t\t\t\t<circle cx=\"11\" cy=\"11\" r=\"8\" />\n\t\t\t\t\t<path d=\"m21 21l-4.3-4.3\" />\n\t\t\t\t</g>\n\t\t\t</svg>\n\t\t),\n\t},\n\t{\n\t\ttitle: \"Settings\",\n\t\turl: \"#\",\n\t\ticon: () => (\n\t\t\t<svg\n\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\tclass=\"size-4\"\n\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t>\n\t\t\t\t<g\n\t\t\t\t\tfill=\"none\"\n\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t>\n\t\t\t\t\t<path d=\"M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2\" />\n\t\t\t\t\t<circle cx=\"12\" cy=\"12\" r=\"3\" />\n\t\t\t\t</g>\n\t\t\t</svg>\n\t\t),\n\t},\n];\n\nconst AppSidebar = () => {\n\treturn (\n\t\t<SidebarProvider>\n\t\t\t<Sidebar>\n\t\t\t\t<SidebarContent>\n\t\t\t\t\t<SidebarGroup>\n\t\t\t\t\t\t<SidebarGroupLabel>Application</SidebarGroupLabel>\n\t\t\t\t\t\t<SidebarGroupContent>\n\t\t\t\t\t\t\t<SidebarMenu>\n\t\t\t\t\t\t\t\t<For each={items}>\n\t\t\t\t\t\t\t\t\t{(item) => (\n\t\t\t\t\t\t\t\t\t\t<SidebarMenuItem>\n\t\t\t\t\t\t\t\t\t\t\t<SidebarMenuButton as=\"a\" href={item.url}>\n\t\t\t\t\t\t\t\t\t\t\t\t<item.icon />\n\t\t\t\t\t\t\t\t\t\t\t\t<span>{item.title}</span>\n\t\t\t\t\t\t\t\t\t\t\t</SidebarMenuButton>\n\t\t\t\t\t\t\t\t\t\t</SidebarMenuItem>\n\t\t\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t\t\t</For>\n\t\t\t\t\t\t\t</SidebarMenu>\n\t\t\t\t\t\t</SidebarGroupContent>\n\t\t\t\t\t</SidebarGroup>\n\t\t\t\t</SidebarContent>\n\t\t\t</Sidebar>\n\t\t\t<SidebarInset>\n\t\t\t\t<header class=\"flex items-center justify-between px-4 h-12\">\n\t\t\t\t\t<SidebarTrigger />\n\t\t\t\t</header>\n\t\t\t</SidebarInset>\n\t\t</SidebarProvider>\n\t);\n};\n\nexport default AppSidebar;\n"
 			}],
 			component: clientOnly(() => import("@/registry/tailwindcss/blocks/demo-sidebar"), { lazy: true }),
 			source: "src/__registry__/tailwindcss/blocks/demo-sidebar.tsx",
 			category: "",
-			subcategory: "",
-			meta: {"iframeHeight":null,"containerClassName":null,"description":null}
+			subcategory: ""
 		}, 
-		"sidebar-07": {
-			name: "sidebar-07",
+		"sidebar-01": {
+			name: "sidebar-01",
 			description: "A sidebar that collapses to icons.",
 			type: "registry:block",
-			registryDependencies: ["sidebar","separator","collapsible","dropdown-menu","drawer"],
+			registryDependencies: ["sidebar","separator","collapsible","dropdown-menu"],
 			files: [{
-				path: "src/registry/tailwindcss/blocks/sidebar-07/index.tsx",
+				path: "src/registry/tailwindcss/blocks/sidebar-01/index.tsx",
 				type: "registry:page",
 				target: "src/routes/dashboard.tsx",
-				content: "import AppSidebar from \"@/components/app-sidebar\";\nimport { Separator } from \"@/components/ui/separator\";\nimport {\n\tSidebarInset,\n\tSidebarProvider,\n\tSidebarTrigger,\n} from \"@/components/ui/sidebar\";\nconst Page = () => {\n\treturn (\n\t\t<SidebarProvider>\n\t\t\t<AppSidebar />\n\t\t\t<SidebarInset>\n\t\t\t\t<header class=\"flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12\">\n\t\t\t\t\t<div class=\"flex items-center gap-2 px-4\">\n\t\t\t\t\t\t<SidebarTrigger class=\"-ml-1\" />\n\t\t\t\t\t\t<Separator orientation=\"vertical\" class=\"mr-2 h-4\" />\n\t\t\t\t\t</div>\n\t\t\t\t</header>\n\t\t\t\t<div class=\"flex flex-1 flex-col gap-4 p-4 pt-0\">\n\t\t\t\t\t<div class=\"grid auto-rows-min gap-4 md:grid-cols-3\">\n\t\t\t\t\t\t<div class=\"aspect-video rounded-xl bg-muted/50\" />\n\t\t\t\t\t\t<div class=\"aspect-video rounded-xl bg-muted/50\" />\n\t\t\t\t\t\t<div class=\"aspect-video rounded-xl bg-muted/50\" />\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min\" />\n\t\t\t\t</div>\n\t\t\t</SidebarInset>\n\t\t</SidebarProvider>\n\t);\n};\n\nexport default Page;\n"
+				content: "import AppSidebar from \"@/components/app-sidebar\";\nimport { Separator } from \"@/components/ui/separator\";\nimport {\n\tSidebarInset,\n\tSidebarProvider,\n\tSidebarTrigger,\n} from \"@/components/ui/sidebar\";\n\nconst Page = () => {\n\treturn (\n\t\t<SidebarProvider>\n\t\t\t<AppSidebar />\n\t\t\t<SidebarInset>\n\t\t\t\t<header class=\"flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12\">\n\t\t\t\t\t<div class=\"flex items-center gap-2 px-4\">\n\t\t\t\t\t\t<SidebarTrigger class=\"-ml-1\" />\n\t\t\t\t\t\t<Separator orientation=\"vertical\" class=\"mr-2 h-4\" />\n\t\t\t\t\t</div>\n\t\t\t\t</header>\n\t\t\t\t<div class=\"flex flex-1 flex-col gap-4 p-4 pt-0\">\n\t\t\t\t\t<div class=\"grid auto-rows-min gap-4 md:grid-cols-3\">\n\t\t\t\t\t\t<div class=\"aspect-video rounded-xl bg-muted/50\" />\n\t\t\t\t\t\t<div class=\"aspect-video rounded-xl bg-muted/50\" />\n\t\t\t\t\t\t<div class=\"aspect-video rounded-xl bg-muted/50\" />\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min\" />\n\t\t\t\t</div>\n\t\t\t</SidebarInset>\n\t\t</SidebarProvider>\n\t);\n};\n\nexport default Page;\n"
 			},{
-				path: "src/registry/tailwindcss/blocks/sidebar-07/components/app-sidebar.tsx",
+				path: "src/registry/tailwindcss/blocks/sidebar-01/components/app-sidebar.tsx",
 				type: "registry:component",
 				target: "src/components/app-sidebar.tsx",
-				content: "import NavMain from \"@/components/nav-main\";\nimport NavProjects from \"@/components/nav-projects\";\nimport NavUser from \"@/components/nav-user\";\nimport TeamSwitcher from \"@/components/team-switcher\";\nimport {\n\tSidebar,\n\tSidebarContent,\n\tSidebarFooter,\n\tSidebarHeader,\n\tSidebarRail,\n} from \"@/components/ui/sidebar\";\nimport type { ComponentProps } from \"solid-js\";\n\n// This is sample data.\nconst data = {\n\tuser: {\n\t\tname: \"shadcn\",\n\t\temail: \"m@example.com\",\n\t\tavatar: \"https://ui.shadcn.com/avatars/shadcn.jpg\",\n\t},\n\tteams: [\n\t\t{\n\t\t\tname: \"Acme Inc\",\n\t\t\tlogo: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4 shrink-0\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<g\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t>\n\t\t\t\t\t\t<path d=\"M7 2h10M5 6h14\" />\n\t\t\t\t\t\t<rect width=\"18\" height=\"12\" x=\"3\" y=\"10\" rx=\"2\" />\n\t\t\t\t\t</g>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t\tplan: \"Enterprise\",\n\t\t},\n\t\t{\n\t\t\tname: \"Acme Corp.\",\n\t\t\tlogo: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4 shrink-0\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<path\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\td=\"M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2\"\n\t\t\t\t\t/>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t\tplan: \"Startup\",\n\t\t},\n\t\t{\n\t\t\tname: \"Evil Corp.\",\n\t\t\tlogo: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4 shrink-0\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<path\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\td=\"M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3\"\n\t\t\t\t\t/>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t\tplan: \"Free\",\n\t\t},\n\t],\n\tnavMain: [\n\t\t{\n\t\t\ttitle: \"Playground\",\n\t\t\turl: \"#\",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<g\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t>\n\t\t\t\t\t\t<path d=\"m7 11l2-2l-2-2m4 6h4\" />\n\t\t\t\t\t\t<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" ry=\"2\" />\n\t\t\t\t\t</g>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t\tisActive: true,\n\t\t\titems: [\n\t\t\t\t{\n\t\t\t\t\ttitle: \"History\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Starred\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Settings\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t],\n\t\t},\n\t\t{\n\t\t\ttitle: \"Models\",\n\t\t\turl: \"#\",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<g\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t>\n\t\t\t\t\t\t<path d=\"M12 8V4H8\" />\n\t\t\t\t\t\t<rect width=\"16\" height=\"12\" x=\"4\" y=\"8\" rx=\"2\" />\n\t\t\t\t\t\t<path d=\"M2 14h2m16 0h2m-7-1v2m-6-2v2\" />\n\t\t\t\t\t</g>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t\titems: [\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Genesis\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Explorer\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Quantum\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t],\n\t\t},\n\t\t{\n\t\t\ttitle: \"Documentation\",\n\t\t\turl: \"#\",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<path\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\td=\"M12 7v14m-9-3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4a4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3a3 3 0 0 0-3-3z\"\n\t\t\t\t\t/>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t\titems: [\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Introduction\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Get Started\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Tutorials\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Changelog\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t],\n\t\t},\n\t\t{\n\t\t\ttitle: \"Settings\",\n\t\t\turl: \"#\",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<g\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t>\n\t\t\t\t\t\t<path d=\"M20 7h-9m3 10H5\" />\n\t\t\t\t\t\t<circle cx=\"17\" cy=\"17\" r=\"3\" />\n\t\t\t\t\t\t<circle cx=\"7\" cy=\"7\" r=\"3\" />\n\t\t\t\t\t</g>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t\titems: [\n\t\t\t\t{\n\t\t\t\t\ttitle: \"General\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Team\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Billing\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Limits\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t],\n\t\t},\n\t],\n\tprojects: [\n\t\t{\n\t\t\tname: \"Design Engineering\",\n\t\t\turl: \"#\",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<path\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\td=\"M22 6H2m20 12H2M6 2v20M18 2v20\"\n\t\t\t\t\t/>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t},\n\t\t{\n\t\t\tname: \"Sales & Marketing\",\n\t\t\turl: \"#\",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<g\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t>\n\t\t\t\t\t\t<path d=\"M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z\" />\n\t\t\t\t\t\t<path d=\"M21.21 15.89A10 10 0 1 1 8 2.83\" />\n\t\t\t\t\t</g>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t},\n\t\t{\n\t\t\tname: \"Travel\",\n\t\t\turl: \"#\",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<path\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\td=\"M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0zm.894.211v15M9 3.236v15\"\n\t\t\t\t\t/>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t},\n\t],\n};\n\nconst AppSidebar = (props: ComponentProps<typeof Sidebar>) => {\n\treturn (\n\t\t<Sidebar collapsible=\"icon\" {...props}>\n\t\t\t<SidebarHeader>\n\t\t\t\t<TeamSwitcher teams={data.teams} />\n\t\t\t</SidebarHeader>\n\t\t\t<SidebarContent>\n\t\t\t\t<NavMain items={data.navMain} />\n\t\t\t\t<NavProjects projects={data.projects} />\n\t\t\t</SidebarContent>\n\t\t\t<SidebarFooter>\n\t\t\t\t<NavUser user={data.user} />{\" \"}\n\t\t\t</SidebarFooter>\n\t\t\t<SidebarRail />\n\t\t</Sidebar>\n\t);\n};\n\nexport default AppSidebar;\n"
+				content: "import NavMain from \"@/components/nav-main\";\nimport NavProjects from \"@/components/nav-projects\";\nimport NavUser from \"@/components/nav-user\";\nimport TeamSwitcher from \"@/components/team-switcher\";\nimport {\n\tSidebar,\n\tSidebarContent,\n\tSidebarFooter,\n\tSidebarHeader,\n\tSidebarRail,\n} from \"@/components/ui/sidebar\";\nimport type { ComponentProps } from \"solid-js\";\n\n// This is sample data.\nconst data = {\n\tuser: {\n\t\tname: \"shadcn\",\n\t\temail: \"m@example.com\",\n\t\tavatar: \"https://ui.shadcn.com/avatars/shadcn.jpg\",\n\t},\n\tteams: [\n\t\t{\n\t\t\tname: \"Acme Inc\",\n\t\t\tlogo: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4 shrink-0\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<g\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t>\n\t\t\t\t\t\t<path d=\"M7 2h10M5 6h14\" />\n\t\t\t\t\t\t<rect width=\"18\" height=\"12\" x=\"3\" y=\"10\" rx=\"2\" />\n\t\t\t\t\t</g>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t\tplan: \"Enterprise\",\n\t\t},\n\t\t{\n\t\t\tname: \"Acme Corp.\",\n\t\t\tlogo: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4 shrink-0\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<path\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\td=\"M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2\"\n\t\t\t\t\t/>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t\tplan: \"Startup\",\n\t\t},\n\t\t{\n\t\t\tname: \"Evil Corp.\",\n\t\t\tlogo: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4 shrink-0\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<path\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\td=\"M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3\"\n\t\t\t\t\t/>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t\tplan: \"Free\",\n\t\t},\n\t],\n\tnavMain: [\n\t\t{\n\t\t\ttitle: \"Playground\",\n\t\t\turl: \"#\",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<g\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t>\n\t\t\t\t\t\t<path d=\"m7 11l2-2l-2-2m4 6h4\" />\n\t\t\t\t\t\t<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" ry=\"2\" />\n\t\t\t\t\t</g>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t\tisActive: true,\n\t\t\titems: [\n\t\t\t\t{\n\t\t\t\t\ttitle: \"History\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Starred\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Settings\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t],\n\t\t},\n\t\t{\n\t\t\ttitle: \"Models\",\n\t\t\turl: \"#\",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<g\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t>\n\t\t\t\t\t\t<path d=\"M12 8V4H8\" />\n\t\t\t\t\t\t<rect width=\"16\" height=\"12\" x=\"4\" y=\"8\" rx=\"2\" />\n\t\t\t\t\t\t<path d=\"M2 14h2m16 0h2m-7-1v2m-6-2v2\" />\n\t\t\t\t\t</g>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t\titems: [\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Genesis\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Explorer\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Quantum\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t],\n\t\t},\n\t\t{\n\t\t\ttitle: \"Documentation\",\n\t\t\turl: \"#\",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<path\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\td=\"M12 7v14m-9-3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4a4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3a3 3 0 0 0-3-3z\"\n\t\t\t\t\t/>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t\titems: [\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Introduction\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Get Started\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Tutorials\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Changelog\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t],\n\t\t},\n\t\t{\n\t\t\ttitle: \"Settings\",\n\t\t\turl: \"#\",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<g\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t>\n\t\t\t\t\t\t<path d=\"M20 7h-9m3 10H5\" />\n\t\t\t\t\t\t<circle cx=\"17\" cy=\"17\" r=\"3\" />\n\t\t\t\t\t\t<circle cx=\"7\" cy=\"7\" r=\"3\" />\n\t\t\t\t\t</g>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t\titems: [\n\t\t\t\t{\n\t\t\t\t\ttitle: \"General\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Team\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Billing\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Limits\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t],\n\t\t},\n\t],\n\tprojects: [\n\t\t{\n\t\t\tname: \"Design Engineering\",\n\t\t\turl: \"#\",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<path\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\td=\"M22 6H2m20 12H2M6 2v20M18 2v20\"\n\t\t\t\t\t/>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t},\n\t\t{\n\t\t\tname: \"Sales & Marketing\",\n\t\t\turl: \"#\",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<g\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t>\n\t\t\t\t\t\t<path d=\"M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z\" />\n\t\t\t\t\t\t<path d=\"M21.21 15.89A10 10 0 1 1 8 2.83\" />\n\t\t\t\t\t</g>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t},\n\t\t{\n\t\t\tname: \"Travel\",\n\t\t\turl: \"#\",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<path\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\td=\"M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0zm.894.211v15M9 3.236v15\"\n\t\t\t\t\t/>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t},\n\t],\n};\n\nconst AppSidebar = (props: ComponentProps<typeof Sidebar>) => {\n\treturn (\n\t\t<Sidebar collapsible=\"icon\" {...props}>\n\t\t\t<SidebarHeader>\n\t\t\t\t<TeamSwitcher teams={data.teams} />\n\t\t\t</SidebarHeader>\n\t\t\t<SidebarContent>\n\t\t\t\t<NavMain items={data.navMain} />\n\t\t\t\t<NavProjects projects={data.projects} />\n\t\t\t</SidebarContent>\n\t\t\t<SidebarFooter>\n\t\t\t\t<NavUser user={data.user} />\n\t\t\t</SidebarFooter>\n\t\t\t<SidebarRail />\n\t\t</Sidebar>\n\t);\n};\n\nexport default AppSidebar;\n"
 			},{
-				path: "src/registry/tailwindcss/blocks/sidebar-07/components/nav-main.tsx",
+				path: "src/registry/tailwindcss/blocks/sidebar-01/components/nav-main.tsx",
 				type: "registry:component",
 				target: "src/components/nav-main.tsx",
 				content: "import {\n\tCollapsible,\n\tCollapsibleContent,\n\tCollapsibleTrigger,\n} from \"@/components/ui/collapsible\";\nimport {\n\tSidebarGroup,\n\tSidebarGroupLabel,\n\tSidebarMenu,\n\tSidebarMenuButton,\n\tSidebarMenuItem,\n\tSidebarMenuSub,\n\tSidebarMenuSubButton,\n\tSidebarMenuSubItem,\n} from \"@/components/ui/sidebar\";\nimport type {\n\tCollapsibleRootProps,\n\tCollapsibleTriggerProps,\n} from \"@kobalte/core/collapsible\";\nimport { type Accessor, For, type JSX, Show } from \"solid-js\";\n\nconst NavMain = (props: {\n\titems: {\n\t\ttitle: string;\n\t\turl: string;\n\t\ticon?: Accessor<JSX.Element>;\n\t\tisActive?: boolean;\n\t\titems?: {\n\t\t\ttitle: string;\n\t\t\turl: string;\n\t\t}[];\n\t}[];\n}) => {\n\treturn (\n\t\t<SidebarGroup>\n\t\t\t<SidebarGroupLabel>Platform</SidebarGroupLabel>\n\t\t\t<SidebarMenu>\n\t\t\t\t<For each={props.items}>\n\t\t\t\t\t{(item) => (\n\t\t\t\t\t\t<Collapsible\n\t\t\t\t\t\t\tdefaultOpen={item.isActive}\n\t\t\t\t\t\t\tas={(props: CollapsibleRootProps) => (\n\t\t\t\t\t\t\t\t<SidebarMenuItem {...props}>\n\t\t\t\t\t\t\t\t\t<CollapsibleTrigger\n\t\t\t\t\t\t\t\t\t\tas={(props: CollapsibleTriggerProps) => (\n\t\t\t\t\t\t\t\t\t\t\t// @ts-expect-error\n\t\t\t\t\t\t\t\t\t\t\t<SidebarMenuButton\n\t\t\t\t\t\t\t\t\t\t\t\t{...props}\n\t\t\t\t\t\t\t\t\t\t\t\ttooltip={item.title}\n\t\t\t\t\t\t\t\t\t\t\t\tclass=\"[&>svg:last-of-type]:data-[expanded]:rotate-90\"\n\t\t\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t\t\t<Show when={item.icon!()}>{item.icon!()}</Show>\n\t\t\t\t\t\t\t\t\t\t\t\t<span>{item.title}</span>\n\t\t\t\t\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\t\t\t\t\t\tclass=\"ml-auto transition-transform duration-200\"\n\t\t\t\t\t\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\td=\"m9 18l6-6l-6-6\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\t\t\t\t</SidebarMenuButton>\n\t\t\t\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t\t<CollapsibleContent>\n\t\t\t\t\t\t\t\t\t\t<SidebarMenuSub>\n\t\t\t\t\t\t\t\t\t\t\t<For each={item.items}>\n\t\t\t\t\t\t\t\t\t\t\t\t{(subItem) => (\n\t\t\t\t\t\t\t\t\t\t\t\t\t<SidebarMenuSubItem>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<SidebarMenuSubButton as=\"a\" href={subItem.url}>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span>{subItem.title}</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</SidebarMenuSubButton>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</SidebarMenuSubItem>\n\t\t\t\t\t\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t\t\t\t\t\t</For>\n\t\t\t\t\t\t\t\t\t\t</SidebarMenuSub>\n\t\t\t\t\t\t\t\t\t</CollapsibleContent>\n\t\t\t\t\t\t\t\t</SidebarMenuItem>\n\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t/>\n\t\t\t\t\t)}\n\t\t\t\t</For>\n\t\t\t</SidebarMenu>\n\t\t</SidebarGroup>\n\t);\n};\n\nexport default NavMain;\n"
 			},{
-				path: "src/registry/tailwindcss/blocks/sidebar-07/components/nav-projects.tsx",
+				path: "src/registry/tailwindcss/blocks/sidebar-01/components/nav-projects.tsx",
 				type: "registry:component",
 				target: "src/components/nav-projects.tsx",
 				content: "import {\n\tDropdownMenu,\n\tDropdownMenuContent,\n\tDropdownMenuItem,\n\tDropdownMenuSeparator,\n\tDropdownMenuTrigger,\n} from \"@/components/ui/dropdown-menu\";\nimport {\n\tSidebarGroup,\n\tSidebarGroupLabel,\n\tSidebarMenu,\n\tSidebarMenuAction,\n\tSidebarMenuButton,\n\tSidebarMenuItem,\n\tuseSideBar,\n} from \"@/components/ui/sidebar\";\nimport type { DropdownMenuTriggerProps } from \"@kobalte/core/dropdown-menu\";\nimport { type Accessor, For, type JSX } from \"solid-js\";\n\nconst NavProjects = (props: {\n\tprojects: {\n\t\tname: string;\n\t\turl: string;\n\t\ticon: Accessor<JSX.Element>;\n\t}[];\n}) => {\n\tconst { isMobile } = useSideBar();\n\n\treturn (\n\t\t<SidebarGroup class=\"group-data-[collapsible=icon]:hidden\">\n\t\t\t<SidebarGroupLabel>Projects</SidebarGroupLabel>\n\t\t\t<SidebarMenu>\n\t\t\t\t<For each={props.projects}>\n\t\t\t\t\t{(item) => (\n\t\t\t\t\t\t<SidebarMenuItem>\n\t\t\t\t\t\t\t<SidebarMenuButton as=\"a\" href={item.url}>\n\t\t\t\t\t\t\t\t<item.icon />\n\t\t\t\t\t\t\t\t<span>{item.name}</span>\n\t\t\t\t\t\t\t</SidebarMenuButton>\n\t\t\t\t\t\t\t<DropdownMenu\n\t\t\t\t\t\t\t\tplacement={isMobile() ? \"bottom-end\" : \"right-start\"}\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t<DropdownMenuTrigger\n\t\t\t\t\t\t\t\t\tas={(props: DropdownMenuTriggerProps) => (\n\t\t\t\t\t\t\t\t\t\t// @ts-expect-error\n\t\t\t\t\t\t\t\t\t\t<SidebarMenuAction showOnHover {...props}>\n\t\t\t\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t\t\t<g\n\t\t\t\t\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<circle cx=\"12\" cy=\"12\" r=\"1\" />\n\t\t\t\t\t\t\t\t\t\t\t\t\t<circle cx=\"19\" cy=\"12\" r=\"1\" />\n\t\t\t\t\t\t\t\t\t\t\t\t\t<circle cx=\"5\" cy=\"12\" r=\"1\" />\n\t\t\t\t\t\t\t\t\t\t\t\t</g>\n\t\t\t\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"sr-only\">More</span>\n\t\t\t\t\t\t\t\t\t\t</SidebarMenuAction>\n\t\t\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t<DropdownMenuContent class=\"w-48 rounded-lg\">\n\t\t\t\t\t\t\t\t\t<DropdownMenuItem>\n\t\t\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\t\t\t\tclass=\"text-muted-foreground size-4\"\n\t\t\t\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t\t\t\t\td=\"M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z\"\n\t\t\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\t\t\t<span>View Project</span>\n\t\t\t\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t\t\t\t\t<DropdownMenuItem>\n\t\t\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\t\t\t\tclass=\"text-muted-foreground size-4\"\n\t\t\t\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t\t<g\n\t\t\t\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t\t\t<path d=\"m15 17l5-5l-5-5\" />\n\t\t\t\t\t\t\t\t\t\t\t\t<path d=\"M4 18v-2a4 4 0 0 1 4-4h12\" />\n\t\t\t\t\t\t\t\t\t\t\t</g>\n\t\t\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\t\t\t<span>Share Project</span>\n\t\t\t\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t\t\t\t\t<DropdownMenuSeparator />\n\t\t\t\t\t\t\t\t\t<DropdownMenuItem>\n\t\t\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\t\t\t\tclass=\"text-muted-foreground size-4\"\n\t\t\t\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t\t\t\t\td=\"M3 6h18m-2 0v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6m3 0V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2m-6 5v6m4-6v6\"\n\t\t\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\t\t\t<span>Delete Project</span>\n\t\t\t\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t\t\t\t</DropdownMenuContent>\n\t\t\t\t\t\t\t</DropdownMenu>\n\t\t\t\t\t\t</SidebarMenuItem>\n\t\t\t\t\t)}\n\t\t\t\t</For>\n\t\t\t\t<SidebarMenuItem>\n\t\t\t\t\t<SidebarMenuButton class=\"text-sidebar-foreground/70\">\n\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\tclass=\"text-sidebar-foreground/70 size-4\"\n\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\t<g\n\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t<circle cx=\"12\" cy=\"12\" r=\"1\" />\n\t\t\t\t\t\t\t\t<circle cx=\"19\" cy=\"12\" r=\"1\" />\n\t\t\t\t\t\t\t\t<circle cx=\"5\" cy=\"12\" r=\"1\" />\n\t\t\t\t\t\t\t</g>\n\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t<span>More</span>\n\t\t\t\t\t</SidebarMenuButton>\n\t\t\t\t</SidebarMenuItem>\n\t\t\t</SidebarMenu>\n\t\t</SidebarGroup>\n\t);\n};\n\nexport default NavProjects;\n"
 			},{
-				path: "src/registry/tailwindcss/blocks/sidebar-07/components/nav-user.tsx",
+				path: "src/registry/tailwindcss/blocks/sidebar-01/components/nav-user.tsx",
 				type: "registry:component",
 				target: "src/components/nav-user.tsx",
 				content: "import {\n\tDropdownMenu,\n\tDropdownMenuContent,\n\tDropdownMenuGroup,\n\tDropdownMenuGroupLabel,\n\tDropdownMenuItem,\n\tDropdownMenuSeparator,\n\tDropdownMenuTrigger,\n} from \"@/components/ui/dropdown-menu\";\nimport {\n\tSidebarMenu,\n\tSidebarMenuButton,\n\tSidebarMenuItem,\n\tuseSideBar,\n} from \"@/components/ui/sidebar\";\nimport type { DropdownMenuTriggerProps } from \"@kobalte/core/dropdown-menu\";\nimport { Image } from \"@kobalte/core/image\";\n\nconst NavUser = (props: {\n\tuser: {\n\t\tname: string;\n\t\temail: string;\n\t\tavatar: string;\n\t};\n}) => {\n\tconst { isMobile } = useSideBar();\n\n\treturn (\n\t\t<SidebarMenu>\n\t\t\t<SidebarMenuItem>\n\t\t\t\t<DropdownMenu placement={isMobile() ? \"bottom-end\" : \"right-end\"}>\n\t\t\t\t\t<DropdownMenuTrigger\n\t\t\t\t\t\tas={(triggerProps: DropdownMenuTriggerProps) => (\n\t\t\t\t\t\t\t// @ts-expect-error\n\t\t\t\t\t\t\t<SidebarMenuButton\n\t\t\t\t\t\t\t\t{...triggerProps}\n\t\t\t\t\t\t\t\tsize=\"lg\"\n\t\t\t\t\t\t\t\tclass=\"data-[expanded]:bg-sidebar-accent data-[expanded]:text-sidebar-accent-foreground\"\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t<Image class=\"relative flex shrink-0 overflow-hidden h-8 w-8 rounded-lg\">\n\t\t\t\t\t\t\t\t\t<Image.Img\n\t\t\t\t\t\t\t\t\t\tclass=\"aspect-square h-full w-full\"\n\t\t\t\t\t\t\t\t\t\tsrc={props.user.avatar}\n\t\t\t\t\t\t\t\t\t\talt={props.user.name}\n\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t\t<Image.Fallback class=\"flex h-full w-full items-center justify-center bg-muted rounded-lg\">\n\t\t\t\t\t\t\t\t\t\tCN\n\t\t\t\t\t\t\t\t\t</Image.Fallback>\n\t\t\t\t\t\t\t\t</Image>\n\t\t\t\t\t\t\t\t<div class=\"grid flex-1 text-left text-sm leading-tight\">\n\t\t\t\t\t\t\t\t\t<span class=\"truncate font-semibold\">{props.user.name}</span>\n\t\t\t\t\t\t\t\t\t<span class=\"truncate text-xs\">{props.user.email}</span>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\t\tclass=\"ml-auto size-4\"\n\t\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t\t\td=\"m7 15l5 5l5-5M7 9l5-5l5 5\"\n\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t</SidebarMenuButton>\n\t\t\t\t\t\t)}\n\t\t\t\t\t/>\n\t\t\t\t\t<DropdownMenuContent class=\"w-[--kb-popper-anchor-width] min-w-56 rounded-lg\">\n\t\t\t\t\t\t<DropdownMenuGroup>\n\t\t\t\t\t\t\t<DropdownMenuGroupLabel class=\"p-0 font-normal\">\n\t\t\t\t\t\t\t\t<div class=\"flex items-center gap-2 px-1 py-1.5 text-left text-sm\">\n\t\t\t\t\t\t\t\t\t<Image class=\"relative flex shrink-0 overflow-hidden h-8 w-8 rounded-lg\">\n\t\t\t\t\t\t\t\t\t\t<Image.Img\n\t\t\t\t\t\t\t\t\t\t\tclass=\"aspect-square h-full w-full\"\n\t\t\t\t\t\t\t\t\t\t\tsrc={props.user.avatar}\n\t\t\t\t\t\t\t\t\t\t\talt={props.user.name}\n\t\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t\t\t<Image.Fallback class=\"flex h-full w-full items-center justify-center bg-muted rounded-lg\">\n\t\t\t\t\t\t\t\t\t\t\tCN\n\t\t\t\t\t\t\t\t\t\t</Image.Fallback>\n\t\t\t\t\t\t\t\t\t</Image>\n\t\t\t\t\t\t\t\t\t<div class=\"grid flex-1 text-left text-sm leading-tight\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"truncate font-semibold\">\n\t\t\t\t\t\t\t\t\t\t\t{props.user.name}\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t\t<span class=\"truncate text-xs\">{props.user.email}</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</DropdownMenuGroupLabel>\n\t\t\t\t\t\t</DropdownMenuGroup>\n\t\t\t\t\t\t<DropdownMenuSeparator />\n\t\t\t\t\t\t<DropdownMenuGroup>\n\t\t\t\t\t\t\t<DropdownMenuItem>\n\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t\t\td=\"M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0zM20 3v4m2-2h-4M4 17v2m1-1H3\"\n\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\tUpgrade to Pro\n\t\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t\t</DropdownMenuGroup>\n\t\t\t\t\t\t<DropdownMenuSeparator />\n\t\t\t\t\t\t<DropdownMenuGroup>\n\t\t\t\t\t\t\t<DropdownMenuItem>\n\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t<g\n\t\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t<path d=\"M3.85 8.62a4 4 0 0 1 4.78-4.77a4 4 0 0 1 6.74 0a4 4 0 0 1 4.78 4.78a4 4 0 0 1 0 6.74a4 4 0 0 1-4.77 4.78a4 4 0 0 1-6.75 0a4 4 0 0 1-4.78-4.77a4 4 0 0 1 0-6.76\" />\n\t\t\t\t\t\t\t\t\t\t<path d=\"m9 12l2 2l4-4\" />\n\t\t\t\t\t\t\t\t\t</g>\n\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\tAccount\n\t\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t\t\t<DropdownMenuItem>\n\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t<g\n\t\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t<rect width=\"20\" height=\"14\" x=\"2\" y=\"5\" rx=\"2\" />\n\t\t\t\t\t\t\t\t\t\t<path d=\"M2 10h20\" />\n\t\t\t\t\t\t\t\t\t</g>\n\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\tBilling\n\t\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t\t\t<DropdownMenuItem>\n\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t\t\td=\"M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9m4.3 13a1.94 1.94 0 0 0 3.4 0\"\n\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\tNotifications\n\t\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t\t</DropdownMenuGroup>\n\t\t\t\t\t\t<DropdownMenuSeparator />\n\t\t\t\t\t\t<DropdownMenuItem>\n\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t\td=\"M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4m7 14l5-5l-5-5m5 5H9\"\n\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\tLog out\n\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t</DropdownMenuContent>\n\t\t\t\t</DropdownMenu>\n\t\t\t</SidebarMenuItem>\n\t\t</SidebarMenu>\n\t);\n};\n\nexport default NavUser;\n"
 			},{
-				path: "src/registry/tailwindcss/blocks/sidebar-07/components/team-switcher.tsx",
+				path: "src/registry/tailwindcss/blocks/sidebar-01/components/team-switcher.tsx",
 				type: "registry:component",
 				target: "src/components/team-switcher.tsx",
 				content: "import {\n\tDropdownMenu,\n\tDropdownMenuContent,\n\tDropdownMenuGroup,\n\tDropdownMenuGroupLabel,\n\tDropdownMenuItem,\n\tDropdownMenuSeparator,\n\tDropdownMenuShortcut,\n\tDropdownMenuTrigger,\n} from \"@/components/ui/dropdown-menu\";\nimport {\n\tSidebarMenu,\n\tSidebarMenuButton,\n\tSidebarMenuItem,\n\tuseSideBar,\n} from \"@/components/ui/sidebar\";\nimport type { DropdownMenuTriggerProps } from \"@kobalte/core/dropdown-menu\";\nimport { type Accessor, For, type JSX, createSignal } from \"solid-js\";\n\nconst TeamSwitcher = (props: {\n\tteams: {\n\t\tname: string;\n\t\tlogo: Accessor<JSX.Element>;\n\t\tplan: string;\n\t}[];\n}) => {\n\tconst [activeTeam, setActiveTeam] = createSignal(props.teams[0]);\n\tconst { isMobile } = useSideBar();\n\n\treturn (\n\t\t<SidebarMenu>\n\t\t\t<SidebarMenuItem>\n\t\t\t\t<DropdownMenu\n\t\t\t\t\tplacement={isMobile() ? \"bottom-end\" : \"right-start\"}\n\t\t\t\t\tsameWidth\n\t\t\t\t>\n\t\t\t\t\t<DropdownMenuTrigger\n\t\t\t\t\t\tas={(props: DropdownMenuTriggerProps) => (\n\t\t\t\t\t\t\t// @ts-expect-error\n\t\t\t\t\t\t\t<SidebarMenuButton\n\t\t\t\t\t\t\t\t{...props}\n\t\t\t\t\t\t\t\tsize=\"lg\"\n\t\t\t\t\t\t\t\tclass=\"data-[expanded]:bg-sidebar-accent data-[expanded]:text-sidebar-accent-foreground\"\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t<div class=\"flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground\">\n\t\t\t\t\t\t\t\t\t{activeTeam().logo()}\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div class=\"grid flex-1 text-left text-sm leading-tight\">\n\t\t\t\t\t\t\t\t\t<span class=\"truncate font-semibold\">\n\t\t\t\t\t\t\t\t\t\t{activeTeam().name}\n\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t<span class=\"truncate text-xs\">{activeTeam().plan}</span>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\t\tclass=\"ml-auto size-4\"\n\t\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t\t\td=\"m7 15l5 5l5-5M7 9l5-5l5 5\"\n\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t</SidebarMenuButton>\n\t\t\t\t\t\t)}\n\t\t\t\t\t/>\n\t\t\t\t\t<DropdownMenuContent class=\"w-[--kb-popper-anchor-width] min-w-56 rounded-lg\">\n\t\t\t\t\t\t<DropdownMenuGroup>\n\t\t\t\t\t\t\t<DropdownMenuGroupLabel class=\"text-xs text-muted-foreground\">\n\t\t\t\t\t\t\t\tTeams\n\t\t\t\t\t\t\t</DropdownMenuGroupLabel>\n\t\t\t\t\t\t\t<For each={props.teams}>\n\t\t\t\t\t\t\t\t{(team, index) => (\n\t\t\t\t\t\t\t\t\t<DropdownMenuItem\n\t\t\t\t\t\t\t\t\t\tonClick={() => setActiveTeam(team)}\n\t\t\t\t\t\t\t\t\t\tclass=\"gap-2 p-2\"\n\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t<div class=\"flex size-6 items-center justify-center rounded-sm border\">\n\t\t\t\t\t\t\t\t\t\t\t{team.logo()}\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t{team.name}\n\t\t\t\t\t\t\t\t\t\t<DropdownMenuShortcut>⌘{index() + 1}</DropdownMenuShortcut>\n\t\t\t\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t\t</For>\n\t\t\t\t\t\t</DropdownMenuGroup>\n\t\t\t\t\t\t<DropdownMenuSeparator />\n\t\t\t\t\t\t<DropdownMenuItem class=\"gap-2 p-2\">\n\t\t\t\t\t\t\t<div class=\"flex size-6 items-center justify-center rounded-md border bg-background\">\n\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t\t\td=\"M5 12h14m-7-7v14\"\n\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"font-medium text-muted-foreground\">Add team</div>\n\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t</DropdownMenuContent>\n\t\t\t\t</DropdownMenu>\n\t\t\t</SidebarMenuItem>\n\t\t</SidebarMenu>\n\t);\n};\n\nexport default TeamSwitcher;\n"
 			}],
-			component: clientOnly(() => import("@/registry/tailwindcss/blocks/sidebar-07/index"), { lazy: true }),
-			source: "src/__registry__/tailwindcss/blocks/sidebar-07/index.tsx",
+			component: clientOnly(() => import("@/registry/tailwindcss/blocks/sidebar-01/index"), { lazy: true }),
+			source: "src/__registry__/tailwindcss/blocks/sidebar-01/index.tsx",
 			category: "Application",
-			subcategory: "Sidebars",
-			meta: {"iframeHeight":"800px","containerClassName":null,"description":"A sidebar that collapses to icons."}
+			subcategory: "Sidebars"
+		}, 
+		"sidebar-02": {
+			name: "sidebar-02",
+			description: "A floating sidebar with submenus.",
+			type: "registry:block",
+			registryDependencies: ["sidebar"],
+			files: [{
+				path: "src/registry/tailwindcss/blocks/sidebar-02/index.tsx",
+				type: "registry:page",
+				target: "src/routes/dashboard.tsx",
+				content: "import AppSidebar from \"@/components/app-sidebar\";\r\nimport {\r\n\tSidebarInset,\r\n\tSidebarProvider,\r\n\tSidebarTrigger,\r\n} from \"@/components/ui/sidebar\";\r\n\r\nconst Page = () => {\r\n\treturn (\r\n\t\t<SidebarProvider\r\n\t\t\tstyle={{\r\n\t\t\t\t\"--sidebar-width\": \"19rem\",\r\n\t\t\t}}\r\n\t\t>\r\n\t\t\t<AppSidebar />\r\n\t\t\t<SidebarInset>\r\n\t\t\t\t<header class=\"flex h-16 shrink-0 items-center gap-2 px-4\">\r\n\t\t\t\t\t<SidebarTrigger class=\"-ml-1\" />\r\n\t\t\t\t</header>\r\n\t\t\t\t<div class=\"flex flex-1 flex-col gap-4 p-4 pt-0\">\r\n\t\t\t\t\t<div class=\"grid auto-rows-min gap-4 md:grid-cols-3\">\r\n\t\t\t\t\t\t<div class=\"aspect-video rounded-xl bg-muted/50\" />\r\n\t\t\t\t\t\t<div class=\"aspect-video rounded-xl bg-muted/50\" />\r\n\t\t\t\t\t\t<div class=\"aspect-video rounded-xl bg-muted/50\" />\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min\" />\r\n\t\t\t\t</div>\r\n\t\t\t</SidebarInset>\r\n\t\t</SidebarProvider>\r\n\t);\r\n};\r\n\r\nexport default Page;\r\n"
+			},{
+				path: "src/registry/tailwindcss/blocks/sidebar-02/components/app-sidebar.tsx",
+				type: "registry:component",
+				target: "src/components/app-sidebar.tsx",
+				content: "import {\r\n\tSidebar,\r\n\tSidebarContent,\r\n\tSidebarGroup,\r\n\tSidebarHeader,\r\n\tSidebarMenu,\r\n\tSidebarMenuButton,\r\n\tSidebarMenuItem,\r\n\tSidebarMenuSub,\r\n\tSidebarMenuSubButton,\r\n\tSidebarMenuSubItem,\r\n} from \"@/components/ui/sidebar\";\r\nimport { type ComponentProps, For, Show } from \"solid-js\";\r\n\r\n// This is sample data.\r\nconst data = {\r\n\tnavMain: [\r\n\t\t{\r\n\t\t\ttitle: \"Getting Started\",\r\n\t\t\turl: \"#\",\r\n\t\t\titems: [\r\n\t\t\t\t{\r\n\t\t\t\t\ttitle: \"Installation\",\r\n\t\t\t\t\turl: \"#\",\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\ttitle: \"Project Structure\",\r\n\t\t\t\t\turl: \"#\",\r\n\t\t\t\t},\r\n\t\t\t],\r\n\t\t},\r\n\t\t{\r\n\t\t\ttitle: \"Building Your Application\",\r\n\t\t\turl: \"#\",\r\n\t\t\titems: [\r\n\t\t\t\t{\r\n\t\t\t\t\ttitle: \"Routing\",\r\n\t\t\t\t\turl: \"#\",\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\ttitle: \"Data Fetching\",\r\n\t\t\t\t\turl: \"#\",\r\n\t\t\t\t\tisActive: true,\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\ttitle: \"Rendering\",\r\n\t\t\t\t\turl: \"#\",\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\ttitle: \"Caching\",\r\n\t\t\t\t\turl: \"#\",\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\ttitle: \"Styling\",\r\n\t\t\t\t\turl: \"#\",\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\ttitle: \"Optimizing\",\r\n\t\t\t\t\turl: \"#\",\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\ttitle: \"Configuring\",\r\n\t\t\t\t\turl: \"#\",\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\ttitle: \"Testing\",\r\n\t\t\t\t\turl: \"#\",\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\ttitle: \"Authentication\",\r\n\t\t\t\t\turl: \"#\",\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\ttitle: \"Deploying\",\r\n\t\t\t\t\turl: \"#\",\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\ttitle: \"Upgrading\",\r\n\t\t\t\t\turl: \"#\",\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\ttitle: \"Examples\",\r\n\t\t\t\t\turl: \"#\",\r\n\t\t\t\t},\r\n\t\t\t],\r\n\t\t},\r\n\t\t{\r\n\t\t\ttitle: \"API Reference\",\r\n\t\t\turl: \"#\",\r\n\t\t\titems: [\r\n\t\t\t\t{\r\n\t\t\t\t\ttitle: \"Components\",\r\n\t\t\t\t\turl: \"#\",\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\ttitle: \"File Conventions\",\r\n\t\t\t\t\turl: \"#\",\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\ttitle: \"Functions\",\r\n\t\t\t\t\turl: \"#\",\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\ttitle: \"next.config.js Options\",\r\n\t\t\t\t\turl: \"#\",\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\ttitle: \"CLI\",\r\n\t\t\t\t\turl: \"#\",\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\ttitle: \"Edge Runtime\",\r\n\t\t\t\t\turl: \"#\",\r\n\t\t\t\t},\r\n\t\t\t],\r\n\t\t},\r\n\t\t{\r\n\t\t\ttitle: \"Architecture\",\r\n\t\t\turl: \"#\",\r\n\t\t\titems: [\r\n\t\t\t\t{\r\n\t\t\t\t\ttitle: \"Accessibility\",\r\n\t\t\t\t\turl: \"#\",\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\ttitle: \"Fast Refresh\",\r\n\t\t\t\t\turl: \"#\",\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\ttitle: \"Next.js Compiler\",\r\n\t\t\t\t\turl: \"#\",\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\ttitle: \"Supported Browsers\",\r\n\t\t\t\t\turl: \"#\",\r\n\t\t\t\t},\r\n\t\t\t\t{\r\n\t\t\t\t\ttitle: \"Turbopack\",\r\n\t\t\t\t\turl: \"#\",\r\n\t\t\t\t},\r\n\t\t\t],\r\n\t\t},\r\n\t\t{\r\n\t\t\ttitle: \"Community\",\r\n\t\t\turl: \"#\",\r\n\t\t\titems: [\r\n\t\t\t\t{\r\n\t\t\t\t\ttitle: \"Contribution Guide\",\r\n\t\t\t\t\turl: \"#\",\r\n\t\t\t\t},\r\n\t\t\t],\r\n\t\t},\r\n\t],\r\n};\r\n\r\nconst AppSidebar = (props: ComponentProps<typeof Sidebar>) => {\r\n\treturn (\r\n\t\t<Sidebar variant=\"floating\" {...props}>\r\n\t\t\t<SidebarHeader>\r\n\t\t\t\t<SidebarMenu>\r\n\t\t\t\t\t<SidebarMenuItem>\r\n\t\t\t\t\t\t<SidebarMenuButton size=\"lg\" as=\"a\" href=\"#\">\r\n\t\t\t\t\t\t\t<div class=\"flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground\">\r\n\t\t\t\t\t\t\t\t<svg\r\n\t\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\r\n\t\t\t\t\t\t\t\t\tclass=\"size-4\"\r\n\t\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\r\n\t\t\t\t\t\t\t\t>\r\n\t\t\t\t\t\t\t\t\t<g\r\n\t\t\t\t\t\t\t\t\t\tfill=\"none\"\r\n\t\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\r\n\t\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\r\n\t\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\r\n\t\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\r\n\t\t\t\t\t\t\t\t\t>\r\n\t\t\t\t\t\t\t\t\t\t<path d=\"M7 2h10M5 6h14\" />\r\n\t\t\t\t\t\t\t\t\t\t<rect width=\"18\" height=\"12\" x=\"3\" y=\"10\" rx=\"2\" />\r\n\t\t\t\t\t\t\t\t\t</g>\r\n\t\t\t\t\t\t\t\t</svg>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t<div class=\"flex flex-col gap-0.5 leading-none\">\r\n\t\t\t\t\t\t\t\t<span class=\"font-semibold\">Documentation</span>\r\n\t\t\t\t\t\t\t\t<span class=\"\">v1.0.0</span>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t</SidebarMenuButton>\r\n\t\t\t\t\t</SidebarMenuItem>\r\n\t\t\t\t</SidebarMenu>\r\n\t\t\t</SidebarHeader>\r\n\t\t\t<SidebarContent>\r\n\t\t\t\t<SidebarGroup>\r\n\t\t\t\t\t<SidebarMenu class=\"gap-2\">\r\n\t\t\t\t\t\t<For each={data.navMain}>\r\n\t\t\t\t\t\t\t{(item) => (\r\n\t\t\t\t\t\t\t\t<>\r\n\t\t\t\t\t\t\t\t\t<SidebarMenuButton as=\"a\" href={item.url} class=\"font-medium\">\r\n\t\t\t\t\t\t\t\t\t\t{item.title}\r\n\t\t\t\t\t\t\t\t\t</SidebarMenuButton>\r\n\t\t\t\t\t\t\t\t\t<Show when={item.items.length}>\r\n\t\t\t\t\t\t\t\t\t\t<SidebarMenuSub class=\"ml-0 border-l-0 px-1.5\">\r\n\t\t\t\t\t\t\t\t\t\t\t<For each={item.items}>\r\n\t\t\t\t\t\t\t\t\t\t\t\t{(item) => (\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t<SidebarMenuSubItem>\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<SidebarMenuSubButton\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tisActive={item.isActive}\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tas=\"a\"\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\thref={item.url}\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t>\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t{item.title}\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t</SidebarMenuSubButton>\r\n\t\t\t\t\t\t\t\t\t\t\t\t\t</SidebarMenuSubItem>\r\n\t\t\t\t\t\t\t\t\t\t\t\t)}\r\n\t\t\t\t\t\t\t\t\t\t\t</For>\r\n\t\t\t\t\t\t\t\t\t\t</SidebarMenuSub>\r\n\t\t\t\t\t\t\t\t\t</Show>\r\n\t\t\t\t\t\t\t\t</>\r\n\t\t\t\t\t\t\t)}\r\n\t\t\t\t\t\t</For>\r\n\t\t\t\t\t</SidebarMenu>\r\n\t\t\t\t</SidebarGroup>\r\n\t\t\t</SidebarContent>\r\n\t\t</Sidebar>\r\n\t);\r\n};\r\n\r\nexport default AppSidebar;\r\n"
+			}],
+			component: clientOnly(() => import("@/registry/tailwindcss/blocks/sidebar-02/index"), { lazy: true }),
+			source: "src/__registry__/tailwindcss/blocks/sidebar-02/index.tsx",
+			category: "Application",
+			subcategory: "Sidebars"
+		}, 
+		"sidebar-03": {
+			name: "sidebar-03",
+			description: "An inset sidebar with secondary navigation.",
+			type: "registry:block",
+			registryDependencies: ["sidebar","collapsible","dropdown-menu"],
+			files: [{
+				path: "src/registry/tailwindcss/blocks/sidebar-03/index.tsx",
+				type: "registry:page",
+				target: "src/routes/dashboard.tsx",
+				content: "import AppSidebar from \"@/components/app-sidebar\";\nimport {\n\tSidebarInset,\n\tSidebarProvider,\n\tSidebarSeparator,\n\tSidebarTrigger,\n} from \"@/components/ui/sidebar\";\n\nconst Page = () => {\n\treturn (\n\t\t<SidebarProvider>\n\t\t\t<AppSidebar />\n\t\t\t<SidebarInset>\n\t\t\t\t<header class=\"flex h-16 shrink-0 items-center gap-2\">\n\t\t\t\t\t<div class=\"flex items-center gap-2 px-4\">\n\t\t\t\t\t\t<SidebarTrigger class=\"-ml-1\" />\n\t\t\t\t\t\t<SidebarSeparator orientation=\"vertical\" class=\"mr-2 h-4\" />\n\t\t\t\t\t</div>\n\t\t\t\t</header>\n\t\t\t\t<div class=\"flex flex-1 flex-col gap-4 p-4 pt-0\">\n\t\t\t\t\t<div class=\"grid auto-rows-min gap-4 md:grid-cols-3\">\n\t\t\t\t\t\t<div class=\"aspect-video rounded-xl bg-muted/50\" />\n\t\t\t\t\t\t<div class=\"aspect-video rounded-xl bg-muted/50\" />\n\t\t\t\t\t\t<div class=\"aspect-video rounded-xl bg-muted/50\" />\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min\" />\n\t\t\t\t</div>\n\t\t\t</SidebarInset>\n\t\t</SidebarProvider>\n\t);\n};\n\nexport default Page;\n"
+			},{
+				path: "src/registry/tailwindcss/blocks/sidebar-03/components/app-sidebar.tsx",
+				type: "registry:component",
+				target: "src/components/app-sidebar.tsx",
+				content: "import NavMain from \"@/components/nav-main\";\nimport NavProjects from \"@/components/nav-projects\";\nimport NavSecondary from \"@/components/nav-secondary\";\nimport NavUser from \"@/components/nav-user\";\nimport {\n\tSidebar,\n\tSidebarContent,\n\tSidebarFooter,\n\tSidebarHeader,\n\tSidebarMenu,\n\tSidebarMenuButton,\n\tSidebarMenuItem,\n} from \"@/components/ui/sidebar\";\nimport type { ComponentProps } from \"solid-js\";\n\n// This is sample data.\nconst data = {\n\tuser: {\n\t\tname: \"shadcn\",\n\t\temail: \"m@example.com\",\n\t\tavatar: \"https://ui.shadcn.com/avatars/shadcn.jpg\",\n\t},\n\tnavMain: [\n\t\t{\n\t\t\ttitle: \"Playground\",\n\t\t\turl: \"#\",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<g\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t>\n\t\t\t\t\t\t<path d=\"m7 11l2-2l-2-2m4 6h4\" />\n\t\t\t\t\t\t<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" ry=\"2\" />\n\t\t\t\t\t</g>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t\tisActive: true,\n\t\t\titems: [\n\t\t\t\t{\n\t\t\t\t\ttitle: \"History\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Starred\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Settings\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t],\n\t\t},\n\t\t{\n\t\t\ttitle: \"Models\",\n\t\t\turl: \"#\",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<g\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t>\n\t\t\t\t\t\t<path d=\"M12 8V4H8\" />\n\t\t\t\t\t\t<rect width=\"16\" height=\"12\" x=\"4\" y=\"8\" rx=\"2\" />\n\t\t\t\t\t\t<path d=\"M2 14h2m16 0h2m-7-1v2m-6-2v2\" />\n\t\t\t\t\t</g>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t\titems: [\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Genesis\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Explorer\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Quantum\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t],\n\t\t},\n\t\t{\n\t\t\ttitle: \"Documentation\",\n\t\t\turl: \"#\",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<path\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\td=\"M12 7v14m-9-3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4a4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3a3 3 0 0 0-3-3z\"\n\t\t\t\t\t/>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t\titems: [\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Introduction\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Get Started\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Tutorials\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Changelog\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t],\n\t\t},\n\t\t{\n\t\t\ttitle: \"Settings\",\n\t\t\turl: \"#\",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<g\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t>\n\t\t\t\t\t\t<path d=\"M20 7h-9m3 10H5\" />\n\t\t\t\t\t\t<circle cx=\"17\" cy=\"17\" r=\"3\" />\n\t\t\t\t\t\t<circle cx=\"7\" cy=\"7\" r=\"3\" />\n\t\t\t\t\t</g>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t\titems: [\n\t\t\t\t{\n\t\t\t\t\ttitle: \"General\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Team\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Billing\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle: \"Limits\",\n\t\t\t\t\turl: \"#\",\n\t\t\t\t},\n\t\t\t],\n\t\t},\n\t],\n\tnavSecondary: [\n\t\t{\n\t\t\ttitle: \"Support\",\n\t\t\turl: \"#\",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<g\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t>\n\t\t\t\t\t\t<circle cx=\"12\" cy=\"12\" r=\"10\" />\n\t\t\t\t\t\t<path d=\"m4.93 4.93l4.24 4.24m5.66 0l4.24-4.24m-4.24 9.9l4.24 4.24m-9.9-4.24l-4.24 4.24\" />\n\t\t\t\t\t\t<circle cx=\"12\" cy=\"12\" r=\"4\" />\n\t\t\t\t\t</g>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t},\n\t\t{\n\t\t\ttitle: \"Feedback\",\n\t\t\turl: \"#\",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<path\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\td=\"M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11zm7.318-19.539l-10.94 10.939\"\n\t\t\t\t\t/>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t},\n\t],\n\tprojects: [\n\t\t{\n\t\t\tname: \"Design Engineering\",\n\t\t\turl: \"#\",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<path\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\td=\"M22 6H2m20 12H2M6 2v20M18 2v20\"\n\t\t\t\t\t/>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t},\n\t\t{\n\t\t\tname: \"Sales & Marketing\",\n\t\t\turl: \"#\",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<g\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t>\n\t\t\t\t\t\t<path d=\"M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z\" />\n\t\t\t\t\t\t<path d=\"M21.21 15.89A10 10 0 1 1 8 2.83\" />\n\t\t\t\t\t</g>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t},\n\t\t{\n\t\t\tname: \"Travel\",\n\t\t\turl: \"#\",\n\t\t\ticon: () => (\n\t\t\t\t<svg\n\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t>\n\t\t\t\t\t<path\n\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\td=\"M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0zm.894.211v15M9 3.236v15\"\n\t\t\t\t\t/>\n\t\t\t\t</svg>\n\t\t\t),\n\t\t},\n\t],\n};\n\nconst AppSidebar = (props: ComponentProps<typeof Sidebar>) => {\n\treturn (\n\t\t<Sidebar variant=\"inset\" {...props}>\n\t\t\t<SidebarHeader>\n\t\t\t\t<SidebarMenu>\n\t\t\t\t\t<SidebarMenuItem>\n\t\t\t\t\t\t<SidebarMenuButton size=\"lg\" as=\"a\" href=\"#\">\n\t\t\t\t\t\t\t<div class=\"flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground\">\n\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t\t\td=\"M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3\"\n\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"grid flex-1 text-left text-sm leading-tight\">\n\t\t\t\t\t\t\t\t<span class=\"truncate font-semibold\">Acme Inc</span>\n\t\t\t\t\t\t\t\t<span class=\"truncate text-xs\">Enterprise</span>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</SidebarMenuButton>\n\t\t\t\t\t</SidebarMenuItem>\n\t\t\t\t</SidebarMenu>\n\t\t\t</SidebarHeader>\n\t\t\t<SidebarContent>\n\t\t\t\t<NavMain items={data.navMain} />\n\t\t\t\t<NavProjects projects={data.projects} />\n\t\t\t\t<NavSecondary items={data.navSecondary} class=\"mt-auto\" />\n\t\t\t</SidebarContent>\n\t\t\t<SidebarFooter>\n\t\t\t\t<NavUser user={data.user} />\n\t\t\t</SidebarFooter>\n\t\t</Sidebar>\n\t);\n};\n\nexport default AppSidebar;\n"
+			},{
+				path: "src/registry/tailwindcss/blocks/sidebar-03/components/nav-main.tsx",
+				type: "registry:component",
+				target: "src/components/nav-main.tsx",
+				content: "import {\n\tCollapsible,\n\tCollapsibleContent,\n\tCollapsibleTrigger,\n} from \"@/components/ui/collapsible\";\nimport {\n\tSidebarGroup,\n\tSidebarGroupLabel,\n\tSidebarMenu,\n\tSidebarMenuAction,\n\tSidebarMenuButton,\n\tSidebarMenuItem,\n\tSidebarMenuSub,\n\tSidebarMenuSubButton,\n\tSidebarMenuSubItem,\n} from \"@/components/ui/sidebar\";\nimport type {\n\tCollapsibleRootProps,\n\tCollapsibleTriggerProps,\n} from \"@kobalte/core/collapsible\";\nimport { type Accessor, For, type JSX, Show } from \"solid-js\";\n\nconst NavMain = (props: {\n\titems: {\n\t\ttitle: string;\n\t\turl: string;\n\t\ticon: Accessor<JSX.Element>;\n\t\tisActive?: boolean;\n\t\titems?: {\n\t\t\ttitle: string;\n\t\t\turl: string;\n\t\t}[];\n\t}[];\n}) => {\n\treturn (\n\t\t<SidebarGroup>\n\t\t\t<SidebarGroupLabel>Platform</SidebarGroupLabel>\n\t\t\t<SidebarMenu>\n\t\t\t\t<For each={props.items}>\n\t\t\t\t\t{(item) => (\n\t\t\t\t\t\t<Collapsible\n\t\t\t\t\t\t\tdefaultOpen={item.isActive}\n\t\t\t\t\t\t\tas={(props: CollapsibleRootProps) => (\n\t\t\t\t\t\t\t\t<SidebarMenuItem {...props}>\n\t\t\t\t\t\t\t\t\t<SidebarMenuButton\n\t\t\t\t\t\t\t\t\t\ttooltip={item.title}\n\t\t\t\t\t\t\t\t\t\tas=\"a\"\n\t\t\t\t\t\t\t\t\t\thref={item.url}\n\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t<item.icon />\n\t\t\t\t\t\t\t\t\t\t<span>{item.title}</span>\n\t\t\t\t\t\t\t\t\t</SidebarMenuButton>\n\t\t\t\t\t\t\t\t\t<Show when={item.items?.length}>\n\t\t\t\t\t\t\t\t\t\t<CollapsibleTrigger\n\t\t\t\t\t\t\t\t\t\t\tas={(props: CollapsibleTriggerProps) => (\n\t\t\t\t\t\t\t\t\t\t\t\t// @ts-expect-error\n\t\t\t\t\t\t\t\t\t\t\t\t<SidebarMenuAction\n\t\t\t\t\t\t\t\t\t\t\t\t\t{...props}\n\t\t\t\t\t\t\t\t\t\t\t\t\tclass=\"data-[expanded]:rotate-90\"\n\t\t\t\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tclass=\"transition-transform duration-200\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\td=\"m9 18l6-6l-6-6\"\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"sr-only\">Toggle</span>\n\t\t\t\t\t\t\t\t\t\t\t\t</SidebarMenuAction>\n\t\t\t\t\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t\t\t<CollapsibleContent>\n\t\t\t\t\t\t\t\t\t\t\t<SidebarMenuSub>\n\t\t\t\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\t\t\t<For each={item.items}>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t{(subItem) => (\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<SidebarMenuSubItem>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<SidebarMenuSubButton as=\"a\" href={subItem.url}>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span>{subItem.title}</span>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</SidebarMenuSubButton>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</SidebarMenuSubItem>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t\t\t\t\t\t\t\t</For>\n\t\t\t\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t\t\t\t</SidebarMenuSub>\n\t\t\t\t\t\t\t\t\t\t</CollapsibleContent>\n\t\t\t\t\t\t\t\t\t</Show>\n\t\t\t\t\t\t\t\t</SidebarMenuItem>\n\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t/>\n\t\t\t\t\t)}\n\t\t\t\t</For>\n\t\t\t</SidebarMenu>\n\t\t</SidebarGroup>\n\t);\n};\n\nexport default NavMain;\n"
+			},{
+				path: "src/registry/tailwindcss/blocks/sidebar-03/components/nav-projects.tsx",
+				type: "registry:component",
+				target: "src/components/nav-projects.tsx",
+				content: "import {\n\tDropdownMenu,\n\tDropdownMenuContent,\n\tDropdownMenuItem,\n\tDropdownMenuSeparator,\n\tDropdownMenuTrigger,\n} from \"@/components/ui/dropdown-menu\";\nimport {\n\tSidebarGroup,\n\tSidebarGroupLabel,\n\tSidebarMenu,\n\tSidebarMenuAction,\n\tSidebarMenuButton,\n\tSidebarMenuItem,\n\tuseSideBar,\n} from \"@/components/ui/sidebar\";\nimport type { DropdownMenuTriggerProps } from \"@kobalte/core/dropdown-menu\";\nimport { type Accessor, For, type JSX } from \"solid-js\";\n\nconst NavProjects = (props: {\n\tprojects: {\n\t\tname: string;\n\t\turl: string;\n\t\ticon: Accessor<JSX.Element>;\n\t}[];\n}) => {\n\tconst { isMobile } = useSideBar();\n\n\treturn (\n\t\t<SidebarGroup class=\"group-data-[collapsible=icon]:hidden\">\n\t\t\t<SidebarGroupLabel>Projects</SidebarGroupLabel>\n\t\t\t<SidebarMenu>\n\t\t\t\t<For each={props.projects}>\n\t\t\t\t\t{(item) => (\n\t\t\t\t\t\t<SidebarMenuItem>\n\t\t\t\t\t\t\t<SidebarMenuButton as=\"a\" href={item.url}>\n\t\t\t\t\t\t\t\t<item.icon />\n\t\t\t\t\t\t\t\t<span>{item.name}</span>\n\t\t\t\t\t\t\t</SidebarMenuButton>\n\t\t\t\t\t\t\t<DropdownMenu\n\t\t\t\t\t\t\t\tplacement={isMobile() ? \"bottom-end\" : \"right-start\"}\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t<DropdownMenuTrigger\n\t\t\t\t\t\t\t\t\tas={(props: DropdownMenuTriggerProps) => (\n\t\t\t\t\t\t\t\t\t\t// @ts-expect-error\n\t\t\t\t\t\t\t\t\t\t<SidebarMenuAction showOnHover {...props}>\n\t\t\t\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t\t\t<g\n\t\t\t\t\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t\t\t\t<circle cx=\"12\" cy=\"12\" r=\"1\" />\n\t\t\t\t\t\t\t\t\t\t\t\t\t<circle cx=\"19\" cy=\"12\" r=\"1\" />\n\t\t\t\t\t\t\t\t\t\t\t\t\t<circle cx=\"5\" cy=\"12\" r=\"1\" />\n\t\t\t\t\t\t\t\t\t\t\t\t</g>\n\t\t\t\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"sr-only\">More</span>\n\t\t\t\t\t\t\t\t\t\t</SidebarMenuAction>\n\t\t\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t<DropdownMenuContent class=\"w-48 rounded-lg\">\n\t\t\t\t\t\t\t\t\t<DropdownMenuItem>\n\t\t\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\t\t\t\tclass=\"text-muted-foreground size-4\"\n\t\t\t\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t\t\t\t\td=\"M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z\"\n\t\t\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\t\t\t<span>View Project</span>\n\t\t\t\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t\t\t\t\t<DropdownMenuItem>\n\t\t\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\t\t\t\tclass=\"text-muted-foreground size-4\"\n\t\t\t\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t\t<g\n\t\t\t\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t\t\t<path d=\"m15 17l5-5l-5-5\" />\n\t\t\t\t\t\t\t\t\t\t\t\t<path d=\"M4 18v-2a4 4 0 0 1 4-4h12\" />\n\t\t\t\t\t\t\t\t\t\t\t</g>\n\t\t\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\t\t\t<span>Share Project</span>\n\t\t\t\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t\t\t\t\t<DropdownMenuSeparator />\n\t\t\t\t\t\t\t\t\t<DropdownMenuItem>\n\t\t\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\t\t\t\tclass=\"text-muted-foreground size-4\"\n\t\t\t\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t\t\t\t\td=\"M3 6h18m-2 0v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6m3 0V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2m-6 5v6m4-6v6\"\n\t\t\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\t\t\t<span>Delete Project</span>\n\t\t\t\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t\t\t\t</DropdownMenuContent>\n\t\t\t\t\t\t\t</DropdownMenu>\n\t\t\t\t\t\t</SidebarMenuItem>\n\t\t\t\t\t)}\n\t\t\t\t</For>\n\t\t\t\t<SidebarMenuItem>\n\t\t\t\t\t<SidebarMenuButton class=\"text-sidebar-foreground/70\">\n\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\tclass=\"text-sidebar-foreground/70 size-4\"\n\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t>\n\t\t\t\t\t\t\t<g\n\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t<circle cx=\"12\" cy=\"12\" r=\"1\" />\n\t\t\t\t\t\t\t\t<circle cx=\"19\" cy=\"12\" r=\"1\" />\n\t\t\t\t\t\t\t\t<circle cx=\"5\" cy=\"12\" r=\"1\" />\n\t\t\t\t\t\t\t</g>\n\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t<span>More</span>\n\t\t\t\t\t</SidebarMenuButton>\n\t\t\t\t</SidebarMenuItem>\n\t\t\t</SidebarMenu>\n\t\t</SidebarGroup>\n\t);\n};\n\nexport default NavProjects;\n"
+			},{
+				path: "src/registry/tailwindcss/blocks/sidebar-03/components/nav-user.tsx",
+				type: "registry:component",
+				target: "src/components/nav-user.tsx",
+				content: "import {\n\tDropdownMenu,\n\tDropdownMenuContent,\n\tDropdownMenuGroup,\n\tDropdownMenuGroupLabel,\n\tDropdownMenuItem,\n\tDropdownMenuSeparator,\n\tDropdownMenuTrigger,\n} from \"@/components/ui/dropdown-menu\";\nimport {\n\tSidebarMenu,\n\tSidebarMenuButton,\n\tSidebarMenuItem,\n\tuseSideBar,\n} from \"@/components/ui/sidebar\";\nimport type { DropdownMenuTriggerProps } from \"@kobalte/core/dropdown-menu\";\nimport { Image } from \"@kobalte/core/image\";\n\nconst NavUser = (props: {\n\tuser: {\n\t\tname: string;\n\t\temail: string;\n\t\tavatar: string;\n\t};\n}) => {\n\tconst { isMobile } = useSideBar();\n\n\treturn (\n\t\t<SidebarMenu>\n\t\t\t<SidebarMenuItem>\n\t\t\t\t<DropdownMenu placement={isMobile() ? \"bottom-end\" : \"right-end\"}>\n\t\t\t\t\t<DropdownMenuTrigger\n\t\t\t\t\t\tas={(triggerProps: DropdownMenuTriggerProps) => (\n\t\t\t\t\t\t\t// @ts-expect-error\n\t\t\t\t\t\t\t<SidebarMenuButton\n\t\t\t\t\t\t\t\t{...triggerProps}\n\t\t\t\t\t\t\t\tsize=\"lg\"\n\t\t\t\t\t\t\t\tclass=\"data-[expanded]:bg-sidebar-accent data-[expanded]:text-sidebar-accent-foreground\"\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t<Image class=\"relative flex shrink-0 overflow-hidden h-8 w-8 rounded-lg\">\n\t\t\t\t\t\t\t\t\t<Image.Img\n\t\t\t\t\t\t\t\t\t\tclass=\"aspect-square h-full w-full\"\n\t\t\t\t\t\t\t\t\t\tsrc={props.user.avatar}\n\t\t\t\t\t\t\t\t\t\talt={props.user.name}\n\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t\t<Image.Fallback class=\"flex h-full w-full items-center justify-center bg-muted rounded-lg\">\n\t\t\t\t\t\t\t\t\t\tCN\n\t\t\t\t\t\t\t\t\t</Image.Fallback>\n\t\t\t\t\t\t\t\t</Image>\n\t\t\t\t\t\t\t\t<div class=\"grid flex-1 text-left text-sm leading-tight\">\n\t\t\t\t\t\t\t\t\t<span class=\"truncate font-semibold\">{props.user.name}</span>\n\t\t\t\t\t\t\t\t\t<span class=\"truncate text-xs\">{props.user.email}</span>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\t\tclass=\"ml-auto size-4\"\n\t\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t\t\td=\"m7 15l5 5l5-5M7 9l5-5l5 5\"\n\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t</SidebarMenuButton>\n\t\t\t\t\t\t)}\n\t\t\t\t\t/>\n\t\t\t\t\t<DropdownMenuContent class=\"w-[--kb-popper-anchor-width] min-w-56 rounded-lg\">\n\t\t\t\t\t\t<DropdownMenuGroup>\n\t\t\t\t\t\t\t<DropdownMenuGroupLabel class=\"p-0 font-normal\">\n\t\t\t\t\t\t\t\t<div class=\"flex items-center gap-2 px-1 py-1.5 text-left text-sm\">\n\t\t\t\t\t\t\t\t\t<Image class=\"relative flex shrink-0 overflow-hidden h-8 w-8 rounded-lg\">\n\t\t\t\t\t\t\t\t\t\t<Image.Img\n\t\t\t\t\t\t\t\t\t\t\tclass=\"aspect-square h-full w-full\"\n\t\t\t\t\t\t\t\t\t\t\tsrc={props.user.avatar}\n\t\t\t\t\t\t\t\t\t\t\talt={props.user.name}\n\t\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t\t\t<Image.Fallback class=\"flex h-full w-full items-center justify-center bg-muted rounded-lg\">\n\t\t\t\t\t\t\t\t\t\t\tCN\n\t\t\t\t\t\t\t\t\t\t</Image.Fallback>\n\t\t\t\t\t\t\t\t\t</Image>\n\t\t\t\t\t\t\t\t\t<div class=\"grid flex-1 text-left text-sm leading-tight\">\n\t\t\t\t\t\t\t\t\t\t<span class=\"truncate font-semibold\">\n\t\t\t\t\t\t\t\t\t\t\t{props.user.name}\n\t\t\t\t\t\t\t\t\t\t</span>\n\t\t\t\t\t\t\t\t\t\t<span class=\"truncate text-xs\">{props.user.email}</span>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</DropdownMenuGroupLabel>\n\t\t\t\t\t\t</DropdownMenuGroup>\n\t\t\t\t\t\t<DropdownMenuSeparator />\n\t\t\t\t\t\t<DropdownMenuGroup>\n\t\t\t\t\t\t\t<DropdownMenuItem>\n\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t\t\td=\"M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0zM20 3v4m2-2h-4M4 17v2m1-1H3\"\n\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\tUpgrade to Pro\n\t\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t\t</DropdownMenuGroup>\n\t\t\t\t\t\t<DropdownMenuSeparator />\n\t\t\t\t\t\t<DropdownMenuGroup>\n\t\t\t\t\t\t\t<DropdownMenuItem>\n\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t<g\n\t\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t<path d=\"M3.85 8.62a4 4 0 0 1 4.78-4.77a4 4 0 0 1 6.74 0a4 4 0 0 1 4.78 4.78a4 4 0 0 1 0 6.74a4 4 0 0 1-4.77 4.78a4 4 0 0 1-6.75 0a4 4 0 0 1-4.78-4.77a4 4 0 0 1 0-6.76\" />\n\t\t\t\t\t\t\t\t\t\t<path d=\"m9 12l2 2l4-4\" />\n\t\t\t\t\t\t\t\t\t</g>\n\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\tAccount\n\t\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t\t\t<DropdownMenuItem>\n\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t<g\n\t\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t\t<rect width=\"20\" height=\"14\" x=\"2\" y=\"5\" rx=\"2\" />\n\t\t\t\t\t\t\t\t\t\t<path d=\"M2 10h20\" />\n\t\t\t\t\t\t\t\t\t</g>\n\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\tBilling\n\t\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t\t\t<DropdownMenuItem>\n\t\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t\t\td=\"M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9m4.3 13a1.94 1.94 0 0 0 3.4 0\"\n\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\tNotifications\n\t\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t\t</DropdownMenuGroup>\n\t\t\t\t\t\t<DropdownMenuSeparator />\n\t\t\t\t\t\t<DropdownMenuItem>\n\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t\td=\"M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4m7 14l5-5l-5-5m5 5H9\"\n\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\tLog out\n\t\t\t\t\t\t</DropdownMenuItem>\n\t\t\t\t\t</DropdownMenuContent>\n\t\t\t\t</DropdownMenu>\n\t\t\t</SidebarMenuItem>\n\t\t</SidebarMenu>\n\t);\n};\n\nexport default NavUser;\n"
+			},{
+				path: "src/registry/tailwindcss/blocks/sidebar-03/components/nav-secondary.tsx",
+				type: "registry:component",
+				target: "src/components/nav-secondary.tsx",
+				content: "import {\r\n\tSidebarGroup,\r\n\tSidebarGroupContent,\r\n\tSidebarMenu,\r\n\tSidebarMenuButton,\r\n\tSidebarMenuItem,\r\n} from \"@/components/ui/sidebar\";\r\nimport {\r\n\ttype Accessor,\r\n\ttype ComponentProps,\r\n\tFor,\r\n\ttype JSXElement,\r\n\tsplitProps,\r\n} from \"solid-js\";\r\n\r\nconst NavSecondary = (\r\n\tprops: ComponentProps<typeof SidebarGroup> & {\r\n\t\titems: {\r\n\t\t\ttitle: string;\r\n\t\t\turl: string;\r\n\t\t\ticon: Accessor<JSXElement>;\r\n\t\t}[];\r\n\t},\r\n) => {\r\n\tconst [local, rest] = splitProps(props, [\"items\"]);\r\n\r\n\treturn (\r\n\t\t<SidebarGroup {...rest}>\r\n\t\t\t<SidebarGroupContent>\r\n\t\t\t\t<SidebarMenu>\r\n\t\t\t\t\t<For each={local.items}>\r\n\t\t\t\t\t\t{(item) => (\r\n\t\t\t\t\t\t\t<SidebarMenuItem>\r\n\t\t\t\t\t\t\t\t<SidebarMenuButton as=\"a\" size=\"sm\" href={item.url}>\r\n\t\t\t\t\t\t\t\t\t<item.icon />\r\n\t\t\t\t\t\t\t\t\t<span>{item.title}</span>\r\n\t\t\t\t\t\t\t\t</SidebarMenuButton>\r\n\t\t\t\t\t\t\t</SidebarMenuItem>\r\n\t\t\t\t\t\t)}\r\n\t\t\t\t\t</For>\r\n\t\t\t\t</SidebarMenu>\r\n\t\t\t</SidebarGroupContent>\r\n\t\t</SidebarGroup>\r\n\t);\r\n};\r\n\r\nexport default NavSecondary;\r\n"
+			}],
+			component: clientOnly(() => import("@/registry/tailwindcss/blocks/sidebar-03/index"), { lazy: true }),
+			source: "src/__registry__/tailwindcss/blocks/sidebar-03/index.tsx",
+			category: "Application",
+			subcategory: "Sidebars"
 		},
 	},
   }

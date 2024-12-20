@@ -1,16 +1,9 @@
 "use server";
 
-import { createHighlighterCore } from "shiki/core";
-import { createOnigurumaEngine } from "shiki/engine/oniguruma";
+import { codeToHtml } from "shiki";
 
-export async function highlightCode(code: string) {
-	const highlighter = await createHighlighterCore({
-		themes: [import("shiki/themes/vesper.mjs")],
-		langs: [import("shiki/langs/tsx.mjs")],
-		engine: createOnigurumaEngine(import("shiki/wasm")),
-	});
-
-	const html = highlighter.codeToHtml(code, {
+export const highlightCode = async (code: string) => {
+	const html = await codeToHtml(code, {
 		lang: "tsx",
 		theme: "vesper",
 		transformers: [
@@ -22,7 +15,5 @@ export async function highlightCode(code: string) {
 		],
 	});
 
-	highlighter.dispose();
-
 	return html;
-}
+};

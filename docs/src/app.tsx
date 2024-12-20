@@ -35,7 +35,7 @@ export default function App() {
 					<ColorModeScript storageType={storageManager.type} />
 					<ColorModeProvider storageManager={storageManager}>
 						<Suspense>
-							<div class="relative flex min-h-screen flex-col bg-background">
+							<div class="relative flex min-h-svh flex-col bg-background">
 								{props.children}
 							</div>
 						</Suspense>

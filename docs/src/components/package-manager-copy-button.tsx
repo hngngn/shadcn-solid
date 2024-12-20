@@ -100,7 +100,7 @@ const PackageManagerCopyButton: VoidComponent<Props> = (props) => {
 					fallback={
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
-							class="h-4 w-4"
+							class="size-3.5"
 							viewBox="0 0 24 24"
 						>
 							<g
@@ -119,7 +119,7 @@ const PackageManagerCopyButton: VoidComponent<Props> = (props) => {
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
-						class="h-4 w-4"
+						class="size-3.5"
 						viewBox="0 0 24 24"
 					>
 						<g

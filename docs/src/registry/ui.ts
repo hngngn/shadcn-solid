@@ -560,4 +560,89 @@ export const ui: Registry = [
 			},
 		],
 	},
+	{
+		name: "sidebar",
+		type: "registry:ui",
+		dependencies: ["@kobalte/core"],
+		registryDependencies: [
+			"call-handler",
+			"combine-props",
+			"button",
+			"drawer",
+			"separator",
+			"skeleton",
+			"textfield",
+			"tooltip",
+		],
+		files: [
+			{
+				path: "ui/tooltip.tsx",
+				type: "registry:ui",
+			},
+		],
+		tailwind: {
+			config: {
+				theme: {
+					extend: {
+						colors: {
+							sidebar: {
+								DEFAULT: "hsl(var(--sidebar-background))",
+								foreground: "hsl(var(--sidebar-foreground))",
+								primary: "hsl(var(--sidebar-primary))",
+								"primary-foreground": "hsl(var(--sidebar-primary-foreground))",
+								accent: "hsl(var(--sidebar-accent))",
+								"accent-foreground": "hsl(var(--sidebar-accent-foreground))",
+								border: "hsl(var(--sidebar-border))",
+								ring: "hsl(var(--sidebar-ring))",
+							},
+						},
+					},
+				},
+			},
+		},
+		uno: {
+			config: {
+				theme: {
+					colors: {
+						sidebar: {
+							DEFAULT: "hsl(var(--sidebar-background))",
+							foreground: "hsl(var(--sidebar-foreground))",
+							primary: {
+								DEFAULT: "hsl(var(--sidebar-primary))",
+								foreground: "hsl(var(--sidebar-primary-foreground))",
+							},
+							accent: {
+								DEFAULT: "hsl(var(--sidebar-accent))",
+								foreground: "hsl(var(--sidebar-accent-foreground))",
+							},
+							border: "hsl(var(--sidebar-border))",
+							ring: "hsl(var(--sidebar-ring))",
+						},
+					},
+				},
+			},
+		},
+		cssVars: {
+			light: {
+				"sidebar-background": "0 0% 98%",
+				"sidebar-foreground": "240 5.3% 26.1%",
+				"sidebar-primary": "240 5.9% 10%",
+				"sidebar-primary-foreground": "0 0% 98%",
+				"sidebar-accent": "240 4.8% 95.9%",
+				"sidebar-accent-foreground": "240 5.9% 10%",
+				"sidebar-border": "220 13% 91%",
+				"sidebar-ring": "217.2 91.2% 59.8%",
+			},
+			dark: {
+				"sidebar-background": "240 5.9% 10%",
+				"sidebar-foreground": "240 4.8% 95.9%",
+				"sidebar-primary": "224.3 76.3% 48%",
+				"sidebar-primary-foreground": "0 0% 100%",
+				"sidebar-accent": "240 3.7% 15.9%",
+				"sidebar-accent-foreground": "240 4.8% 95.9%",
+				"sidebar-border": "240 3.7% 15.9%",
+				"sidebar-ring": "217.2 91.2% 59.8%",
+			},
+		},
+	},
 ];

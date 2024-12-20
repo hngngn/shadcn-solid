@@ -15,22 +15,20 @@ const DocsLayout = (props: RouteSectionProps) => {
 		allDocs.find((item) => item.slug === props.location.pathname)!;
 
 	return (
-		<div class="border-b">
+		<div class="container-wrapper">
 			<div class="container flex-1 items-start md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
-				<aside class="fixed top-14 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 md:sticky md:block">
-					<div class="relative h-full overflow-y-auto py-6 pr-6 lg:py-8">
+				<aside class="border-grid fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 border-r md:sticky md:block">
+					<div class="no-scrollbar h-full overflow-auto py-6 pr-4 lg:py-8">
 						<Sidebar />
 					</div>
 				</aside>
 				<main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
-					<div class="mx-auto w-full min-w-0">
+					<div class="mx-auto w-full min-w-0 max-w-2xl">
 						<div class="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
-							<div class="overflow-hidden text-ellipsis whitespace-nowrap">
-								Docs
-							</div>
+							<div class="truncate">Docs</div>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
-								class="h-4 w-4"
+								class="size-3.5"
 								viewBox="0 0 24 24"
 							>
 								<path
@@ -41,18 +39,15 @@ const DocsLayout = (props: RouteSectionProps) => {
 									stroke-width="2"
 									d="m9 6l6 6l-6 6"
 								/>
-								<title>{}</title>
 							</svg>
-							<div class="font-medium text-foreground">
-								{data().frontmatter.title}
-							</div>
+							<div class="text-foreground">{data().frontmatter.title}</div>
 						</div>
 						<div class="space-y-2">
-							<h1 class="scroll-m-20 text-4xl font-bold tracking-tight">
+							<h1 class="scroll-m-20 text-3xl font-bold tracking-tight">
 								{data().frontmatter.title}
 							</h1>
 							<Show when={data().frontmatter.description}>
-								<p class="text-lg text-muted-foreground">
+								<p class="text-base text-muted-foreground">
 									<Balancer>{data().frontmatter.description}</Balancer>
 								</p>
 							</Show>

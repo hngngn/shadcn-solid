@@ -121,7 +121,7 @@ const BlockViewerProvider = (props: ParentProps<BlockViewerProps>) => {
 				data-view={view()}
 				class="group/block-view-wrapper flex min-w-0 flex-col items-stretch gap-4"
 				style={{
-					"--height": props.item.meta?.iframeHeight ?? 450,
+					"--height": props.item.meta?.iframeHeight ?? "800px",
 				}}
 			>
 				{props.children}
@@ -141,26 +141,26 @@ const BlockViewerToolbar = () => {
 	};
 
 	return (
-		<div class="flex w-full items-center gap-2 md:pr-[14px]">
+		<div class="flex w-full items-center gap-2">
 			<Tabs
 				defaultValue="preview"
 				onChange={(value) => setView(value as "preview" | "code")}
 				class="hidden lg:flex w-fit"
 			>
-				<TabsList class="h-7 items-center rounded-md p-0 px-[calc(theme(spacing.1)_-_2px)] py-[theme(spacing.1)] w-fit">
-					<TabsTrigger
-						value="preview"
-						class="h-[1.45rem] rounded-sm px-2 text-xs"
-					>
+				<TabsList class="h-7 rounded-md">
+					<TabsTrigger value="preview" class="h-[1.45rem] px-2 text-xs">
 						Preview
 					</TabsTrigger>
-					<TabsTrigger value="code" class="h-[1.45rem] rounded-sm px-2 text-xs">
+					<TabsTrigger value="code" class="h-[1.45rem] px-2 text-xs">
 						Code
 					</TabsTrigger>
-					<TabsIndicator />
+					<TabsIndicator class="rounded-sm" />
 				</TabsList>
 			</Tabs>
-			<Separator orientation="vertical" class="mx-2 hidden h-4 lg:flex" />
+			<Separator
+				orientation="vertical"
+				class="mx-2 hidden data-[orientation=vertical]:h-4 lg:flex"
+			/>
 			<a
 				href={`#${item().name}`}
 				class="text-sm font-medium underline-offset-2 hover:underline"
@@ -179,7 +179,7 @@ const BlockViewerToolbar = () => {
 						fallback={
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
-								class="size-4"
+								class="size-3.5"
 								viewBox="0 0 24 24"
 							>
 								<path
@@ -195,7 +195,7 @@ const BlockViewerToolbar = () => {
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
-							class="size-4"
+							class="size-3.5"
 							viewBox="0 0 24 24"
 						>
 							<path
@@ -323,7 +323,7 @@ const BlockViewerView = () => {
 	const { item, sizes, setSizes } = useBlockViewer();
 
 	return (
-		<div class="h-[--height] group-data-[view=code]/block-view-wrapper:hidden">
+		<div class="group-data-[view=code]/block-view-wrapper:hidden md:h-[--height]">
 			<div class="grid w-full gap-4">
 				<Resizable sizes={sizes()} onSizesChange={setSizes}>
 					<ResizablePanel
@@ -337,7 +337,7 @@ const BlockViewerView = () => {
 							data-block={item.name}
 							width={1440}
 							height={900}
-							class="absolute left-0 top-0 z-20 w-[970px] max-w-none bg-background data-[block=sidebar-10]:left-auto data-[block=sidebar-10]:right-0 data-[block=sidebar-11]:-top-1/3 data-[block=sidebar-14]:left-auto data-[block=sidebar-14]:right-0 data-[block=login-01]:max-w-full data-[block=sidebar-13]:max-w-full data-[block=sidebar-15]:max-w-full dark:hidden sm:w-[1280px] md:hidden md:dark:hidden"
+							class="object-cover dark:hidden md:hidden md:dark:hidden"
 						/>
 						<img
 							src={`/images/blocks/${item().name}-dark.png`}
@@ -345,11 +345,11 @@ const BlockViewerView = () => {
 							data-block={item.name}
 							width={1440}
 							height={900}
-							class="absolute left-0 top-0 z-20 hidden w-[970px] max-w-none bg-background data-[block=sidebar-10]:left-auto data-[block=sidebar-10]:right-0 data-[block=sidebar-11]:-top-1/3 data-[block=sidebar-14]:left-auto data-[block=sidebar-14]:right-0 data-[block=login-01]:max-w-full data-[block=sidebar-13]:max-w-full data-[block=sidebar-15]:max-w-full dark:block sm:w-[1280px] md:hidden md:dark:hidden"
+							class="hidden object-cover dark:block md:hidden md:dark:hidden"
 						/>
 						<iframe
 							src={`/blocks/${item().name}`}
-							height={item().meta?.iframeHeight ?? 450}
+							height={item().meta?.iframeHeight ?? 800}
 							class="w-full bg-background hidden md:block"
 							title={item().name}
 							loading="lazy"

@@ -1,7 +1,7 @@
-import NavMain from "@/registry/tailwindcss/blocks/sidebar-07/components/nav-main";
-import NavProjects from "@/registry/tailwindcss/blocks/sidebar-07/components/nav-projects";
-import NavUser from "@/registry/tailwindcss/blocks/sidebar-07/components/nav-user";
-import TeamSwitcher from "@/registry/tailwindcss/blocks/sidebar-07/components/team-switcher";
+import NavMain from "@/registry/tailwindcss/blocks/sidebar-01/components/nav-main";
+import NavProjects from "@/registry/tailwindcss/blocks/sidebar-01/components/nav-projects";
+import NavUser from "@/registry/tailwindcss/blocks/sidebar-01/components/nav-user";
+import TeamSwitcher from "@/registry/tailwindcss/blocks/sidebar-01/components/team-switcher";
 import {
 	Sidebar,
 	SidebarContent,
@@ -16,7 +16,7 @@ const data = {
 	user: {
 		name: "shadcn",
 		email: "m@example.com",
-		avatar: "https://ui.shadcn.com/avatars/shadcn.jpg",
+		avatar: "/avatars/shadcn.jpg",
 	},
 	teams: [
 		{
@@ -314,7 +314,7 @@ const AppSidebar = (props: ComponentProps<typeof Sidebar>) => {
 				<NavProjects projects={data.projects} />
 			</SidebarContent>
 			<SidebarFooter>
-				<NavUser user={data.user} />{" "}
+				<NavUser user={data.user} />
 			</SidebarFooter>
 			<SidebarRail />
 		</Sidebar>

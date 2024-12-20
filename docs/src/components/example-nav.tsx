@@ -17,12 +17,12 @@ const examples = [
 	},
 ];
 
-const Example = () => {
+const ExampleNav = () => {
 	const location = useLocation();
 
 	return (
 		<div class="relative">
-			<div class="mb-4 flex items-center">
+			<div class="flex items-center">
 				<For each={examples}>
 					{(item, index) => (
 						<a
@@ -44,4 +44,4 @@ const Example = () => {
 	);
 };
 
-export default Example;
+export default ExampleNav;
