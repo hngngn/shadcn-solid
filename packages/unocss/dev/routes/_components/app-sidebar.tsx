@@ -3,11 +3,10 @@ import {
 	SidebarContent,
 	SidebarFooter,
 	SidebarHeader,
-	SidebarRail,
 } from "@/components/ui/sidebar";
 import type { ComponentProps } from "solid-js";
 import NavMain from "./nav-main";
-import NavProjects from "./nav-project";
+import NavProjects from "./nav-projects";
 import NavUser from "./nav-user";
 import TeamSwitcher from "./team-switcher";
 
@@ -16,7 +15,7 @@ const data = {
 	user: {
 		name: "shadcn",
 		email: "m@example.com",
-		avatar: "https://ui.shadcn.com/avatars/shadcn.jpg",
+		avatar: "/avatars/shadcn.jpg",
 	},
 	teams: [
 		{
@@ -314,9 +313,9 @@ const AppSidebar = (props: ComponentProps<typeof Sidebar>) => {
 				<NavProjects projects={data.projects} />
 			</SidebarContent>
 			<SidebarFooter>
-				<NavUser user={data.user} />{" "}
+				<NavUser user={data.user} />
 			</SidebarFooter>
-			<SidebarRail />
+			{/* <SidebarRail /> */}
 		</Sidebar>
 	);
 };

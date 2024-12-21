@@ -1,5 +1,3 @@
-"use server";
-
 import { codeToHtml } from "shiki";
 
 export const highlightCode = async (code: string) => {

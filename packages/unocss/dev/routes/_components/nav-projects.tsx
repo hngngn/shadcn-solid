@@ -38,12 +38,12 @@ const NavProjects = (props: {
 								<span>{item.name}</span>
 							</SidebarMenuButton>
 							<DropdownMenu
-								placement={`${isMobile() ? "bottom-end" : "right-start"}`}
+								placement={isMobile() ? "bottom-end" : "right-start"}
 							>
 								<DropdownMenuTrigger
 									as={(props: DropdownMenuTriggerProps) => (
 										// @ts-expect-error
-										<SidebarMenuAction showOnHover {...props}>
+										<SidebarMenuAction {...props} showOnHover>
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												class="size-4"

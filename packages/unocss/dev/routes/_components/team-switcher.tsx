@@ -31,7 +31,7 @@ const TeamSwitcher = (props: {
 		<SidebarMenu>
 			<SidebarMenuItem>
 				<DropdownMenu
-					placement={`${isMobile() ? "bottom-end" : "right-start"}`}
+					placement={isMobile() ? "bottom-end" : "right-start"}
 					sameWidth
 				>
 					<DropdownMenuTrigger

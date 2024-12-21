@@ -2,7 +2,8 @@ import { ColorModeProvider, ColorModeScript } from "@kobalte/core";
 import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
 import { Suspense } from "solid-js";
-import { Toaster } from "somoto";
+import { Toaster } from "../ui/sonner";
+import { ToastList, ToastRegion } from "../ui/toast";
 
 import "virtual:uno.css";
 import "@unocss/reset/tailwind-compat.css";
@@ -16,6 +17,9 @@ export default function App() {
 					<ColorModeScript />
 					<ColorModeProvider>
 						<Suspense>{props.children}</Suspense>
+						<ToastRegion>
+							<ToastList />
+						</ToastRegion>
 						<Toaster />
 					</ColorModeProvider>
 				</>

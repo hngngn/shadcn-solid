@@ -28,7 +28,7 @@ const NavUser = (props: {
 	return (
 		<SidebarMenu>
 			<SidebarMenuItem>
-				<DropdownMenu placement={`${isMobile() ? "bottom-end" : "right-end"}`}>
+				<DropdownMenu placement={isMobile() ? "bottom-end" : "right-end"}>
 					<DropdownMenuTrigger
 						as={(triggerProps: DropdownMenuTriggerProps) => (
 							// @ts-expect-error
