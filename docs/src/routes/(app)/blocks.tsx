@@ -2,10 +2,11 @@ import { Announcement } from "@/components/announcement";
 import BlockDisplay from "@/components/block-display";
 import { getAllBlockId } from "@/libs/blocks";
 import { Button } from "@/registry/tailwindcss/ui/button";
-import { For, createMemo } from "solid-js";
+import { createAsync } from "@solidjs/router";
+import { For } from "solid-js";
 
 const BlockPage = () => {
-	const blocks = createMemo(() => getAllBlockId());
+	const blocks = createAsync(() => getAllBlockId());
 
 	return (
 		<>
