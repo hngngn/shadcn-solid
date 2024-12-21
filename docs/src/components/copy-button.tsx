@@ -1,4 +1,4 @@
-import { cn } from "@/libs/cn";
+import { cn } from "@/registry/tailwindcss/libs/cn";
 import { Show, createSignal } from "solid-js";
 
 type Props = {
@@ -6,12 +6,12 @@ type Props = {
 	withMeta: boolean;
 };
 
-const CopyButton = (props: Props) => {
+export const CopyButton = (props: Props) => {
 	const [isCopied, setIsCopied] = createSignal(false);
 
-	const copyToClipboard = () => {
+	const copyToClipboard = async () => {
 		setIsCopied(true);
-		navigator.clipboard.writeText(props.rawString);
+		await navigator.clipboard.writeText(props.rawString);
 		setTimeout(() => setIsCopied(false), 2000);
 	};
 
@@ -29,7 +29,7 @@ const CopyButton = (props: Props) => {
 				fallback={
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
-						class="h-4 w-4"
+						class="size-3.5"
 						viewBox="0 0 24 24"
 					>
 						<g
@@ -48,7 +48,7 @@ const CopyButton = (props: Props) => {
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					class="h-4 w-4"
+					class="size-3.5"
 					viewBox="0 0 24 24"
 				>
 					<g
@@ -67,5 +67,3 @@ const CopyButton = (props: Props) => {
 		</button>
 	);
 };
-
-export default CopyButton;

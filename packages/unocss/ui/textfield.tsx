@@ -103,7 +103,7 @@ export const TextFieldDescription = <T extends ValidComponent = "div">(
 	);
 };
 
-type textFieldInputProps<T extends ValidComponent = "input"> = VoidProps<
+export type textFieldInputProps<T extends ValidComponent = "input"> = VoidProps<
 	TextFieldInputProps<T> & {
 		class?: string;
 	}

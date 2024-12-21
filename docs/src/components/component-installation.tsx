@@ -4,16 +4,12 @@ import {
 	TabsIndicator,
 	TabsList,
 	TabsTrigger,
-} from "@repo/tailwindcss/ui/tabs";
-import type { JSX } from "solid-js";
+} from "@/registry/tailwindcss/ui/tabs";
+import { type ParentProps, children } from "solid-js";
 
-type Props = {
-	cli?: JSX.Element;
-	tw?: JSX.Element;
-	uno?: JSX.Element;
-};
+const ComponentInstallation = (props: ParentProps) => {
+	const childrens = children(() => props.children).toArray();
 
-const ComponentInstallation = (props: Props) => {
 	return (
 		<Tabs defaultValue="cli" class="relative mt-6 w-full">
 			<TabsList class="bg-transparent border-b rounded-none">
@@ -25,7 +21,12 @@ const ComponentInstallation = (props: Props) => {
 				</TabsTrigger>
 				<TabsIndicator variant="underline" />
 			</TabsList>
-			<TabsContent value="cli">{props.cli}</TabsContent>
+			<TabsContent
+				class="relative [&_h3.font-heading]:text-base [&_h3.font-heading]:font-semibold"
+				value="cli"
+			>
+				{childrens[0]}
+			</TabsContent>
 			<TabsContent
 				value="manual"
 				class="relative [&_h3.font-heading]:text-base [&_h3.font-heading]:font-semibold"
@@ -40,8 +41,8 @@ const ComponentInstallation = (props: Props) => {
 						</TabsTrigger>
 						<TabsIndicator />
 					</TabsList>
-					<TabsContent value="tw">{props.tw}</TabsContent>
-					<TabsContent value="uno">{props.uno}</TabsContent>
+					<TabsContent value="tw">{childrens[1]}</TabsContent>
+					<TabsContent value="uno">{childrens[2]}</TabsContent>
 				</Tabs>
 			</TabsContent>
 		</Tabs>
