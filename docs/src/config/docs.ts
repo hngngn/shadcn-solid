@@ -245,6 +245,12 @@ export const docsConfig: TDocsConfig = {
 					items: [],
 				},
 				{
+					title: "Sidebar",
+					href: "/docs/components/sidebar",
+					items: [],
+					label: "New",
+				},
+				{
 					title: "Skeleton",
 					href: "/docs/components/skeleton",
 					items: [],

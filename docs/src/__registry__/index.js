@@ -376,6 +376,12 @@ export const Index = {
       registryDependencies: undefined,
       component: lazy(() => import("../examples/sheet-side"))
     },
+    "sidebar-demo": {
+      name: "sidebar-demo",
+      type: "components:example",
+      registryDependencies: undefined,
+      component: lazy(() => import("../examples/sidebar-demo"))
+    },
     "skeleton-demo": {
       name: "skeleton-demo",
       type: "components:example",

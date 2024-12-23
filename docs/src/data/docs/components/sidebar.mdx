@@ -1,0 +1,100 @@
+---
+title: Sidebar
+description: A composable, themeable and customizable sidebar component.
+component: true
+---
+
+import ComponentInstallation from "@/components/component-installation";
+import ComponentPreview from "@/components/component-preview";
+
+<ComponentPreview name="sidebar-demo" client:only="solid-js">
+  <Fragment slot="code">
+    ```tsx file=<rootDir>/src/examples/sidebar-demo.tsx
+    ```
+  </Fragment>
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation client:only="solid-js">
+
+  <Fragment slot="cli">
+    ```bash
+    npx shadcn-solid@latest add sidebar
+    ```
+  </Fragment>
+
+  <Step slot="tw">
+
+    <StepItem>Install the following dependencies:</StepItem>
+    ```bash
+    npm install @kobalte/core
+    ```
+
+    <StepItem>Copy and paste the following code into your project:</StepItem>
+    ```tsx file=<rootDir>/../packages/tailwindcss/ui/sidebar.tsx
+    ```
+
+  </Step>
+
+  <Step slot="uno">
+
+    <StepItem>Install the following dependencies:</StepItem>
+    ```bash
+    npm install @kobalte/core
+    ```
+
+    <StepItem>Copy and paste the following code into your project:</StepItem>
+    ```tsx file=<rootDir>/../packages/unocss/ui/sidebar.tsx
+    ```
+
+  </Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx showLineNumbers title="src/app.tsx"
+
+export default function App() {
+return (
+<Router
+  root={(props) => (
+    <MetaProvider>
+      <Title>My App</Title>
+      <Suspense>{props.children}</Suspense>
+    </MetaProvider>
+  )}
+>
+  <FileRoutes />
+</Router>
+);
+}
+```
+
+```tsx showLineNumbers title="components/app-sidebar.tsx"
+import {
+Sidebar,
+SidebarContent,
+  SidebarFooter,
+  SidebarGroup,
+  SidebarHeader,
+} from "@/components/ui/sidebar"
+
+export function AppSidebar() {
+return (
+<Sidebar>
+  <SidebarHeader />
+  <SidebarContent>
+    <SidebarGroup />
+    <SidebarGroup />
+  </SidebarContent>
+  <SidebarFooter />
+</Sidebar>
+)
+}
+```
+
+## Examples
+
+###

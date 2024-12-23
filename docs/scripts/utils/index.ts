@@ -184,6 +184,12 @@ const ui = [
 		files: ["ui/sheet.tsx"],
 	},
 	{
+		name: "sidebar",
+		type: "components:ui",
+		dependencies: ["@kobalte/core"],
+		files: ["ui/sidebar.tsx"],
+	},
+	{
 		name: "skeleton",
 		type: "components:ui",
 		files: ["ui/skeleton.tsx"],
@@ -560,6 +566,11 @@ const example = [
 		name: "sheet-side",
 		type: "components:example",
 		files: ["examples/sheet-side.tsx"],
+	},
+	{
+		name: "sidebar-demo",
+		type: "components:example",
+		files: ["examples/sidebar-demo.tsx"],
 	},
 	{
 		name: "skeleton-demo",

@@ -312,6 +312,16 @@
     "type": "components:ui"
   },
   {
+    "name": "sidebar",
+    "dependencies": [
+      "@kobalte/core"
+    ],
+    "files": [
+      "ui/sidebar.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
     "name": "skeleton",
     "files": [
       "ui/skeleton.tsx"
