@@ -1,16 +1,7 @@
 import { Announcement } from "@/components/announcement";
 import ChartDisplay from "@/components/chart-display";
-import AreaChartGradient from "@/registry/tailwindcss/charts/area-chart-gradient";
-import AreaChartLegend from "@/registry/tailwindcss/charts/area-chart-legend";
-import AreaChartLinear from "@/registry/tailwindcss/charts/area-chart-linear";
-import AreaChartStacked from "@/registry/tailwindcss/charts/area-chart-stacked";
-import AreaChartStep from "@/registry/tailwindcss/charts/area-chart-step";
 import { Button } from "@/registry/tailwindcss/ui/button";
-import { clientOnly } from "@solidjs/start";
-
-const AreaChart = clientOnly(
-	() => import("@/registry/tailwindcss/charts/area-chart"),
-);
+import { Chart } from "@/routes/(app)/_blocks";
 
 const ChartsPage = () => {
 	return (
@@ -52,22 +43,22 @@ const ChartsPage = () => {
 										id="area-chart"
 									>
 										<ChartDisplay name="chart-area">
-											<AreaChart />
+											<Chart.AreaChart />
 										</ChartDisplay>
 										<ChartDisplay name="chart-area-linear">
-											<AreaChartLinear />
+											<Chart.AreaChartLinear />
 										</ChartDisplay>
 										<ChartDisplay name="chart-area-step">
-											<AreaChartStep />
+											<Chart.AreaChartStep />
 										</ChartDisplay>
 										<ChartDisplay name="chart-area-stacked">
-											<AreaChartStacked />
+											<Chart.AreaChartStacked />
 										</ChartDisplay>
 										<ChartDisplay name="chart-area-legend">
-											<AreaChartLegend />
+											<Chart.AreaChartLegend />
 										</ChartDisplay>
 										<ChartDisplay name="chart-area-gradient">
-											<AreaChartGradient />
+											<Chart.AreaChartGradient />
 										</ChartDisplay>
 									</div>
 								</div>

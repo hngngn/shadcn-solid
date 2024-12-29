@@ -7,12 +7,13 @@ import {
 	CardTitle,
 } from "@/registry/tailwindcss/ui/card";
 import {
+	type ChartConfig,
 	ChartContainer,
 	ChartCrosshair,
 	ChartTooltipContent,
 } from "@/registry/tailwindcss/ui/chart";
 import { VisArea, VisAxis, VisLine, VisTooltip } from "@unovis/solid";
-import { Area, CurveType, Position } from "@unovis/ts";
+import { CurveType, Position } from "@unovis/ts";
 
 type DataRecord = {
 	month: string;
@@ -28,6 +29,25 @@ const data: DataRecord[] = [
 	{ month: "June", desktop: 214 },
 ];
 
+const chartConfig = {
+	desktop: {
+		label: "Desktop",
+		color: "hsl(var(--chart-1))",
+		icon: (
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+				<path
+					fill="none"
+					stroke="currentColor"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"
+				/>
+			</svg>
+		),
+	},
+} satisfies ChartConfig;
+
 const AreaChartStep = () => {
 	return (
 		<Card>
@@ -38,60 +58,37 @@ const AreaChartStep = () => {
 				</CardDescription>
 			</CardHeader>
 			<CardContent>
-				<ChartContainer type="xy" data={data}>
+				<ChartContainer
+					config={chartConfig}
+					type="xy"
+					data={data}
+					yDomain={[0, 310]}
+				>
 					<VisArea<DataRecord>
 						x={(_, i) => i}
 						y={(d) => d.desktop}
-						color="auto"
-						opacity={0.7}
+						color="var(--color-desktop)"
+						opacity={0.4}
 						curveType={CurveType.Step}
-						attributes={{
-							[Area.selectors.area]: {
-								fill: "url(#chart-linear-gradient-1)",
-							},
-						}}
 					/>
 					<VisLine<DataRecord>
 						x={(_, i) => i}
 						y={(d) => d.desktop}
+						color="var(--color-desktop)"
 						curveType={CurveType.Step}
-						color="hsl(var(--chart-1))"
-						lineWidth={1.5}
+						lineWidth={1}
 					/>
 					<VisAxis<DataRecord>
 						type="x"
-						tickFormat={(d) => {
-							if (typeof d === "number") {
-								return data[d]?.month;
-							}
-							return "";
-						}}
-						y={(d) => d.desktop + 20}
+						tickFormat={(d) => data[d as number].month}
 						gridLine={false}
 						tickLine={false}
 						domainLine={false}
 						numTicks={data.length}
 					/>
 					<ChartCrosshair<DataRecord>
-						color="hsl(var(--chart-1))"
 						template={(props) => (
-							<ChartTooltipContent
-								labelKey="month"
-								hideLabel
-								icon={() => (
-									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-										<path
-											fill="none"
-											stroke="currentColor"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											stroke-width="2"
-											d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"
-										/>
-									</svg>
-								)}
-								{...props}
-							/>
+							<ChartTooltipContent labelKey="month" hideLabel {...props} />
 						)}
 					/>
 					<VisTooltip horizontalPlacement={Position.Center} />

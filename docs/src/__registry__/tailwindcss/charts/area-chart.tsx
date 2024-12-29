@@ -46,7 +46,12 @@ const AreaChart = () => {
 				</CardDescription>
 			</CardHeader>
 			<CardContent>
-				<ChartContainer config={chartConfig} type="xy" data={data}>
+				<ChartContainer
+					config={chartConfig}
+					type="xy"
+					data={data}
+					yDomain={[0, 310]}
+				>
 					<VisArea<DataRecord>
 						x={(_, i) => i}
 						y={(d) => d.desktop}
@@ -64,7 +69,6 @@ const AreaChart = () => {
 					<VisAxis<DataRecord>
 						type="x"
 						tickFormat={(d) => data[d as number].month}
-						y={(d) => d.desktop + 20}
 						gridLine={false}
 						tickLine={false}
 						domainLine={false}
@@ -72,7 +76,11 @@ const AreaChart = () => {
 					/>
 					<ChartCrosshair<DataRecord>
 						template={(props) => (
-							<ChartTooltipContent labelKey="month" {...props} />
+							<ChartTooltipContent
+								labelKey="month"
+								indicator="line"
+								{...props}
+							/>
 						)}
 					/>
 					<VisTooltip horizontalPlacement={Position.Center} />

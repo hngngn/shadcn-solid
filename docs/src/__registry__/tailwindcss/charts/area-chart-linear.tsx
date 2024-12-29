@@ -7,12 +7,13 @@ import {
 	CardTitle,
 } from "@/registry/tailwindcss/ui/card";
 import {
+	type ChartConfig,
 	ChartContainer,
 	ChartCrosshair,
 	ChartTooltipContent,
 } from "@/registry/tailwindcss/ui/chart";
 import { VisArea, VisAxis, VisLine, VisTooltip } from "@unovis/solid";
-import { Area, CurveType, Position } from "@unovis/ts";
+import { CurveType, Position } from "@unovis/ts";
 
 type DataRecord = {
 	month: string;
@@ -28,6 +29,13 @@ const data: DataRecord[] = [
 	{ month: "June", desktop: 214 },
 ];
 
+const chartConfig = {
+	desktop: {
+		label: "Desktop",
+		color: "hsl(var(--chart-1))",
+	},
+} satisfies ChartConfig;
+
 const AreaChartLinear = () => {
 	return (
 		<Card>
@@ -38,42 +46,35 @@ const AreaChartLinear = () => {
 				</CardDescription>
 			</CardHeader>
 			<CardContent>
-				<ChartContainer type="xy" data={data}>
+				<ChartContainer
+					config={chartConfig}
+					type="xy"
+					data={data}
+					yDomain={[0, 310]}
+				>
 					<VisArea<DataRecord>
 						x={(_, i) => i}
 						y={(d) => d.desktop}
-						color="auto"
-						opacity={0.7}
+						color="var(--color-desktop)"
+						opacity={0.4}
 						curveType={CurveType.Linear}
-						attributes={{
-							[Area.selectors.area]: {
-								fill: "url(#chart-linear-gradient-1)",
-							},
-						}}
 					/>
 					<VisLine<DataRecord>
 						x={(_, i) => i}
 						y={(d) => d.desktop}
+						color="var(--color-desktop)"
 						curveType={CurveType.Linear}
-						color="hsl(var(--chart-1))"
-						lineWidth={1.5}
+						lineWidth={1}
 					/>
 					<VisAxis<DataRecord>
 						type="x"
-						tickFormat={(d) => {
-							if (typeof d === "number") {
-								return data[d]?.month;
-							}
-							return "";
-						}}
-						y={(d) => d.desktop + 20}
+						tickFormat={(d) => data[d as number].month}
 						gridLine={false}
 						tickLine={false}
 						domainLine={false}
 						numTicks={data.length}
 					/>
 					<ChartCrosshair<DataRecord>
-						color="hsl(var(--chart-1))"
 						template={(props) => (
 							<ChartTooltipContent
 								labelKey="month"
