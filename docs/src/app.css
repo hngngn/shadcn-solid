@@ -32,6 +32,20 @@
 		--sidebar-accent-foreground: 240 5.9% 10%;
 		--sidebar-border: 220 13% 91%;
 		--sidebar-ring: 240 5% 64.9%;
+		--vis-tooltip-padding: theme("padding[1.5]") theme("padding[2.5]") !important;
+		--vis-tooltip-box-shadow: theme("boxShadow.xl") !important;
+		--vis-tooltip-background-color: theme("backgroundColor.background") !important;
+		--vis-tooltip-border-color: theme("borderColor.border") !important;
+		--vis-tooltip-border-radius: theme("borderRadius.lg") !important;
+		--vis-tooltip-text-color: theme("textColor.foreground") !important;
+		--vis-font-family: theme("fontFamily.sans") !important;
+		--vis-legend-label-font-size: theme("fontSize.xs") !important;
+		--vis-legend-label-color: var(--vis-tooltip-text-color) !important;
+		--chart-1: 12 76% 61%;
+		--chart-2: 173 58% 39%;
+		--chart-3: 197 37% 24%;
+		--chart-4: 43 74% 66%;
+		--chart-5: 27 87% 67%;
 	}
 
 	[data-kb-theme="dark"] {
@@ -62,6 +76,11 @@
 		--sidebar-accent-foreground: 240 4.8% 95.9%;
 		--sidebar-border: 240 3.7% 15.9%;
 		--sidebar-ring: 240 4.9% 83.9%;
+		--chart-1: 220 70% 50%;
+		--chart-2: 160 60% 45%;
+		--chart-3: 30 80% 55%;
+		--chart-4: 280 65% 60%;
+		--chart-5: 340 75% 55%;
 	}
 }
 

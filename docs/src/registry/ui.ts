@@ -645,4 +645,15 @@ export const ui: Registry = [
 			},
 		},
 	},
+	{
+		name: "chart",
+		type: "registry:ui",
+		dependencies: ["@unovis/ts", "@unovis/solid"],
+		files: [
+			{
+				path: "ui/chart.tsx",
+				type: "registry:ui",
+			},
+		],
+	},
 ];

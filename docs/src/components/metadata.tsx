@@ -34,7 +34,14 @@ export const Metadata = () => {
 			<Link rel="manifest" href="/site.webmanifest" />
 			<Link
 				rel="preload"
-				href="/fonts/GeistVariableVF.woff2"
+				href="/fonts/Geist%5Bwght%5D.woff2"
+				as="font"
+				type="font/woff2"
+				crossorigin="anonymous"
+			/>
+			<Link
+				rel="preload"
+				href="/fonts/GeistMono%5Bwght%5D.woff2"
 				as="font"
 				type="font/woff2"
 				crossorigin="anonymous"
@@ -44,7 +51,13 @@ export const Metadata = () => {
 				{`
 		      @font-face {
 		        font-family: "Geist Sans Variable";
-		        src: url("/fonts/GeistVariableVF.woff2") format("woff2");
+		        src: url("/fonts/Geist%5Bwght%5D.woff2") format("woff2");
+		        font-display: swap;
+		      }
+		      
+		      @font-face {
+		        font-family: "Geist Mono Variable";
+		        src: url("/fonts/GeistMono%5Bwght%5D.woff2") format("woff2");
 		        font-display: swap;
 		      }
 	      `}

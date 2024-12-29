@@ -1,4 +1,5 @@
 import { blocks } from "./blocks";
+import { charts } from "./charts";
 import { examples } from "./examples";
 import { hooks } from "./hooks";
 import { libs } from "./libs";
@@ -11,4 +12,5 @@ export const registry: Registry = [
 	...libs,
 	...hooks,
 	...blocks,
+	...charts,
 ];

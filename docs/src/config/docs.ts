@@ -32,6 +32,10 @@ export const docsConfig: TDocsConfig = {
 			title: "Blocks",
 			href: "/blocks",
 		},
+		{
+			title: "Charts",
+			href: "/charts",
+		},
 	],
 	sidebarNav: [
 		{
@@ -103,12 +107,6 @@ export const docsConfig: TDocsConfig = {
 			title: "Components",
 			items: [
 				{
-					title: "Sidebar",
-					href: "/docs/components/sidebar",
-					items: [],
-					label: "New",
-				},
-				{
 					title: "Accordion",
 					href: "/docs/components/accordion",
 					items: [],
@@ -142,6 +140,12 @@ export const docsConfig: TDocsConfig = {
 					title: "Carousel",
 					href: "/docs/components/carousel",
 					items: [],
+				},
+				{
+					title: "Chart",
+					href: "/docs/components/chart",
+					items: [],
+					label: "New",
 				},
 				{
 					title: "Checkbox",
@@ -253,6 +257,12 @@ export const docsConfig: TDocsConfig = {
 					title: "Separator",
 					href: "/docs/components/separator",
 					items: [],
+				},
+				{
+					title: "Sidebar",
+					href: "/docs/components/sidebar",
+					items: [],
+					label: "New",
 				},
 				{
 					title: "Skeleton",

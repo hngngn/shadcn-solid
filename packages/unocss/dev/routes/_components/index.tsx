@@ -35,6 +35,7 @@ import DropdownMenuDemo from "./dropdown-menu-demo";
 import HoverCardDemo from "./hover-card-demo";
 import MenubarDemo from "./menubar-demo";
 import NavigationMenuDemo from "./navigation-menu-demo";
+import NumberFieldDemo from "./number-field-demo";
 import OtpFieldDemo from "./otp-field-demo";
 import PaginationDemo from "./pagination-demo";
 import PopoverDemo from "./popover-demo";
@@ -154,6 +155,9 @@ const Page = () => {
 						</ComponentWrapper>
 						<ComponentWrapper name="NavigationMenu" class="col-span-2">
 							<NavigationMenuDemo />
+						</ComponentWrapper>
+						<ComponentWrapper name="NumberField">
+							<NumberFieldDemo />
 						</ComponentWrapper>
 						<ComponentWrapper name="Pagination">
 							<PaginationDemo />

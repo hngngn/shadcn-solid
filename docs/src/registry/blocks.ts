@@ -43,8 +43,6 @@ export const blocks: Registry = [
 				target: "src/components/team-switcher.tsx",
 			},
 		],
-		category: "Application",
-		subcategory: "Sidebars",
 	},
 	{
 		name: "sidebar-02",
@@ -63,8 +61,6 @@ export const blocks: Registry = [
 				target: "src/components/app-sidebar.tsx",
 			},
 		],
-		category: "Application",
-		subcategory: "Sidebars",
 	},
 	{
 		name: "sidebar-03",
@@ -103,7 +99,5 @@ export const blocks: Registry = [
 				target: "src/components/nav-secondary.tsx",
 			},
 		],
-		category: "Application",
-		subcategory: "Sidebars",
 	},
 ];

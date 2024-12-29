@@ -16,6 +16,7 @@ export default {
 			},
 			fontFamily: {
 				sans: ["Geist Sans Variable", ...fontFamily.sans],
+				mono: ["Geist Mono Variable", ...fontFamily.mono],
 			},
 			colors: {
 				border: "hsl(var(--border))",

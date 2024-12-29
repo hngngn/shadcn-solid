@@ -1563,8 +1563,8 @@ export const Index: Record<string, any> = {
 			}],
 			component: clientOnly(() => import("@/registry/tailwindcss/blocks/sidebar-01/index"), { lazy: true }),
 			source: "src/__registry__/tailwindcss/blocks/sidebar-01/index.tsx",
-			category: "Application",
-			subcategory: "Sidebars"
+			category: "",
+			subcategory: ""
 		}, 
 		"sidebar-02": {
 			name: "sidebar-02",
@@ -1584,8 +1584,8 @@ export const Index: Record<string, any> = {
 			}],
 			component: clientOnly(() => import("@/registry/tailwindcss/blocks/sidebar-02/index"), { lazy: true }),
 			source: "src/__registry__/tailwindcss/blocks/sidebar-02/index.tsx",
-			category: "Application",
-			subcategory: "Sidebars"
+			category: "",
+			subcategory: ""
 		}, 
 		"sidebar-03": {
 			name: "sidebar-03",
@@ -1625,8 +1625,56 @@ export const Index: Record<string, any> = {
 			}],
 			component: clientOnly(() => import("@/registry/tailwindcss/blocks/sidebar-03/index"), { lazy: true }),
 			source: "src/__registry__/tailwindcss/blocks/sidebar-03/index.tsx",
-			category: "Application",
-			subcategory: "Sidebars"
+			category: "",
+			subcategory: ""
+		}, 
+		"area-chart": {
+			name: "area-chart",
+			description: "",
+			type: "registry:block",
+			registryDependencies: ["chart"],
+			files: [{
+				path: "src/registry/tailwindcss/charts/area-chart.tsx",
+				type: "registry:block",
+				target: "",
+				content: "import {\n\tCard,\n\tCardContent,\n\tCardDescription,\n\tCardFooter,\n\tCardHeader,\n\tCardTitle,\n} from \"@/components/ui/card\";\nimport {\n\ttype ChartConfig,\n\tChartContainer,\n\tChartCrosshair,\n\tChartTooltipContent,\n} from \"@/components/ui/chart\";\nimport { VisArea, VisAxis, VisLine, VisTooltip } from \"@unovis/solid\";\nimport { CurveType, Position } from \"@unovis/ts\";\n\ntype DataRecord = {\n\tmonth: string;\n\tdesktop: number;\n};\n\nconst data: DataRecord[] = [\n\t{ month: \"January\", desktop: 186 },\n\t{ month: \"February\", desktop: 305 },\n\t{ month: \"March\", desktop: 237 },\n\t{ month: \"April\", desktop: 73 },\n\t{ month: \"May\", desktop: 209 },\n\t{ month: \"June\", desktop: 214 },\n];\n\nconst chartConfig = {\n\tdesktop: {\n\t\tlabel: \"Desktop\",\n\t\tcolor: \"hsl(var(--chart-1))\",\n\t},\n} satisfies ChartConfig;\n\nconst AreaChart = () => {\n\treturn (\n\t\t<Card>\n\t\t\t<CardHeader>\n\t\t\t\t<CardTitle>Area Chart</CardTitle>\n\t\t\t\t<CardDescription>\n\t\t\t\t\tShowing total visitors for the last 6 months\n\t\t\t\t</CardDescription>\n\t\t\t</CardHeader>\n\t\t\t<CardContent>\n\t\t\t\t<ChartContainer config={chartConfig} type=\"xy\" data={data}>\n\t\t\t\t\t<VisArea<DataRecord>\n\t\t\t\t\t\tx={(_, i) => i}\n\t\t\t\t\t\ty={(d) => d.desktop}\n\t\t\t\t\t\tcolor=\"var(--color-desktop)\"\n\t\t\t\t\t\topacity={0.4}\n\t\t\t\t\t\tcurveType={CurveType.Natural}\n\t\t\t\t\t/>\n\t\t\t\t\t<VisLine<DataRecord>\n\t\t\t\t\t\tx={(_, i) => i}\n\t\t\t\t\t\ty={(d) => d.desktop}\n\t\t\t\t\t\tcolor=\"var(--color-desktop)\"\n\t\t\t\t\t\tcurveType={CurveType.Natural}\n\t\t\t\t\t\tlineWidth={1}\n\t\t\t\t\t/>\n\t\t\t\t\t<VisAxis<DataRecord>\n\t\t\t\t\t\ttype=\"x\"\n\t\t\t\t\t\ttickFormat={(d) => data[d as number].month}\n\t\t\t\t\t\ty={(d) => d.desktop + 20}\n\t\t\t\t\t\tgridLine={false}\n\t\t\t\t\t\ttickLine={false}\n\t\t\t\t\t\tdomainLine={false}\n\t\t\t\t\t\tnumTicks={data.length}\n\t\t\t\t\t/>\n\t\t\t\t\t<ChartCrosshair<DataRecord>\n\t\t\t\t\t\ttemplate={(props) => (\n\t\t\t\t\t\t\t<ChartTooltipContent labelKey=\"month\" {...props} />\n\t\t\t\t\t\t)}\n\t\t\t\t\t/>\n\t\t\t\t\t<VisTooltip horizontalPlacement={Position.Center} />\n\t\t\t\t</ChartContainer>\n\t\t\t</CardContent>\n\t\t\t<CardFooter>\n\t\t\t\t<div class=\"flex w-full items-start gap-2 text-sm\">\n\t\t\t\t\t<div class=\"grid gap-2\">\n\t\t\t\t\t\t<div class=\"flex items-center gap-2 font-medium leading-none\">\n\t\t\t\t\t\t\tTrending up by 5.2% this month{\" \"}\n\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t<g\n\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t<path d=\"m22 7l-8.5 8.5l-5-5L2 17\" />\n\t\t\t\t\t\t\t\t\t<path d=\"M16 7h6v6\" />\n\t\t\t\t\t\t\t\t</g>\n\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"flex items-center gap-2 leading-none text-muted-foreground\">\n\t\t\t\t\t\t\tJanuary - June 2024\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</CardFooter>\n\t\t</Card>\n\t);\n};\n\nexport default AreaChart;\n"
+			}],
+			component: clientOnly(() => import("@/registry/tailwindcss/charts/area-chart"), { lazy: true }),
+			source: "src/__registry__/tailwindcss/charts/area-chart.tsx",
+			category: "",
+			subcategory: ""
+		}, 
+		"area-chart-linear": {
+			name: "area-chart-linear",
+			description: "",
+			type: "registry:block",
+			registryDependencies: ["chart"],
+			files: [{
+				path: "src/registry/tailwindcss/charts/area-chart-linear.tsx",
+				type: "registry:block",
+				target: "",
+				content: "import {\n\tCard,\n\tCardContent,\n\tCardDescription,\n\tCardFooter,\n\tCardHeader,\n\tCardTitle,\n} from \"@/components/ui/card\";\nimport {\n\tChartContainer,\n\tChartCrosshair,\n\tChartTooltipContent,\n} from \"@/components/ui/chart\";\nimport { VisArea, VisAxis, VisLine, VisTooltip } from \"@unovis/solid\";\nimport { Area, CurveType, Position } from \"@unovis/ts\";\n\ntype DataRecord = {\n\tmonth: string;\n\tdesktop: number;\n};\n\nconst data: DataRecord[] = [\n\t{ month: \"January\", desktop: 186 },\n\t{ month: \"February\", desktop: 305 },\n\t{ month: \"March\", desktop: 237 },\n\t{ month: \"April\", desktop: 73 },\n\t{ month: \"May\", desktop: 209 },\n\t{ month: \"June\", desktop: 214 },\n];\n\nconst AreaChartLinear = () => {\n\treturn (\n\t\t<Card>\n\t\t\t<CardHeader>\n\t\t\t\t<CardTitle>Area Chart - Linear</CardTitle>\n\t\t\t\t<CardDescription>\n\t\t\t\t\tShowing total visitors for the last 6 months\n\t\t\t\t</CardDescription>\n\t\t\t</CardHeader>\n\t\t\t<CardContent>\n\t\t\t\t<ChartContainer type=\"xy\" data={data}>\n\t\t\t\t\t<VisArea<DataRecord>\n\t\t\t\t\t\tx={(_, i) => i}\n\t\t\t\t\t\ty={(d) => d.desktop}\n\t\t\t\t\t\tcolor=\"auto\"\n\t\t\t\t\t\topacity={0.7}\n\t\t\t\t\t\tcurveType={CurveType.Linear}\n\t\t\t\t\t\tattributes={{\n\t\t\t\t\t\t\t[Area.selectors.area]: {\n\t\t\t\t\t\t\t\tfill: \"url(#chart-linear-gradient-1)\",\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t}}\n\t\t\t\t\t/>\n\t\t\t\t\t<VisLine<DataRecord>\n\t\t\t\t\t\tx={(_, i) => i}\n\t\t\t\t\t\ty={(d) => d.desktop}\n\t\t\t\t\t\tcurveType={CurveType.Linear}\n\t\t\t\t\t\tcolor=\"hsl(var(--chart-1))\"\n\t\t\t\t\t\tlineWidth={1.5}\n\t\t\t\t\t/>\n\t\t\t\t\t<VisAxis<DataRecord>\n\t\t\t\t\t\ttype=\"x\"\n\t\t\t\t\t\ttickFormat={(d) => {\n\t\t\t\t\t\t\tif (typeof d === \"number\") {\n\t\t\t\t\t\t\t\treturn data[d]?.month;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\treturn \"\";\n\t\t\t\t\t\t}}\n\t\t\t\t\t\ty={(d) => d.desktop + 20}\n\t\t\t\t\t\tgridLine={false}\n\t\t\t\t\t\ttickLine={false}\n\t\t\t\t\t\tdomainLine={false}\n\t\t\t\t\t\tnumTicks={data.length}\n\t\t\t\t\t/>\n\t\t\t\t\t<ChartCrosshair<DataRecord>\n\t\t\t\t\t\tcolor=\"hsl(var(--chart-1))\"\n\t\t\t\t\t\ttemplate={(props) => (\n\t\t\t\t\t\t\t<ChartTooltipContent\n\t\t\t\t\t\t\t\tlabelKey=\"month\"\n\t\t\t\t\t\t\t\tindicator=\"dot\"\n\t\t\t\t\t\t\t\thideLabel\n\t\t\t\t\t\t\t\t{...props}\n\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t)}\n\t\t\t\t\t/>\n\t\t\t\t\t<VisTooltip horizontalPlacement={Position.Center} />\n\t\t\t\t</ChartContainer>\n\t\t\t</CardContent>\n\t\t\t<CardFooter>\n\t\t\t\t<div class=\"flex w-full items-start gap-2 text-sm\">\n\t\t\t\t\t<div class=\"grid gap-2\">\n\t\t\t\t\t\t<div class=\"flex items-center gap-2 font-medium leading-none\">\n\t\t\t\t\t\t\tTrending up by 5.2% this month{\" \"}\n\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t<g\n\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t<path d=\"m22 7l-8.5 8.5l-5-5L2 17\" />\n\t\t\t\t\t\t\t\t\t<path d=\"M16 7h6v6\" />\n\t\t\t\t\t\t\t\t</g>\n\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"flex items-center gap-2 leading-none text-muted-foreground\">\n\t\t\t\t\t\t\tJanuary - June 2024\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</CardFooter>\n\t\t</Card>\n\t);\n};\n\nexport default AreaChartLinear;\n"
+			}],
+			component: clientOnly(() => import("@/registry/tailwindcss/charts/area-chart-linear"), { lazy: true }),
+			source: "src/__registry__/tailwindcss/charts/area-chart-linear.tsx",
+			category: "",
+			subcategory: ""
+		}, 
+		"area-chart-step": {
+			name: "area-chart-step",
+			description: "",
+			type: "registry:block",
+			registryDependencies: ["chart"],
+			files: [{
+				path: "src/registry/tailwindcss/charts/area-chart-step.tsx",
+				type: "registry:block",
+				target: "",
+				content: "import {\n\tCard,\n\tCardContent,\n\tCardDescription,\n\tCardFooter,\n\tCardHeader,\n\tCardTitle,\n} from \"@/components/ui/card\";\nimport {\n\tChartContainer,\n\tChartCrosshair,\n\tChartTooltipContent,\n} from \"@/components/ui/chart\";\nimport { VisArea, VisAxis, VisLine, VisTooltip } from \"@unovis/solid\";\nimport { Area, CurveType, Position } from \"@unovis/ts\";\n\ntype DataRecord = {\n\tmonth: string;\n\tdesktop: number;\n};\n\nconst data: DataRecord[] = [\n\t{ month: \"January\", desktop: 186 },\n\t{ month: \"February\", desktop: 305 },\n\t{ month: \"March\", desktop: 237 },\n\t{ month: \"April\", desktop: 73 },\n\t{ month: \"May\", desktop: 209 },\n\t{ month: \"June\", desktop: 214 },\n];\n\nconst AreaChartStep = () => {\n\treturn (\n\t\t<Card>\n\t\t\t<CardHeader>\n\t\t\t\t<CardTitle>Area Chart - Step</CardTitle>\n\t\t\t\t<CardDescription>\n\t\t\t\t\tShowing total visitors for the last 6 months\n\t\t\t\t</CardDescription>\n\t\t\t</CardHeader>\n\t\t\t<CardContent>\n\t\t\t\t<ChartContainer type=\"xy\" data={data}>\n\t\t\t\t\t<VisArea<DataRecord>\n\t\t\t\t\t\tx={(_, i) => i}\n\t\t\t\t\t\ty={(d) => d.desktop}\n\t\t\t\t\t\tcolor=\"auto\"\n\t\t\t\t\t\topacity={0.7}\n\t\t\t\t\t\tcurveType={CurveType.Step}\n\t\t\t\t\t\tattributes={{\n\t\t\t\t\t\t\t[Area.selectors.area]: {\n\t\t\t\t\t\t\t\tfill: \"url(#chart-linear-gradient-1)\",\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t}}\n\t\t\t\t\t/>\n\t\t\t\t\t<VisLine<DataRecord>\n\t\t\t\t\t\tx={(_, i) => i}\n\t\t\t\t\t\ty={(d) => d.desktop}\n\t\t\t\t\t\tcurveType={CurveType.Step}\n\t\t\t\t\t\tcolor=\"hsl(var(--chart-1))\"\n\t\t\t\t\t\tlineWidth={1.5}\n\t\t\t\t\t/>\n\t\t\t\t\t<VisAxis<DataRecord>\n\t\t\t\t\t\ttype=\"x\"\n\t\t\t\t\t\ttickFormat={(d) => {\n\t\t\t\t\t\t\tif (typeof d === \"number\") {\n\t\t\t\t\t\t\t\treturn data[d]?.month;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\treturn \"\";\n\t\t\t\t\t\t}}\n\t\t\t\t\t\ty={(d) => d.desktop + 20}\n\t\t\t\t\t\tgridLine={false}\n\t\t\t\t\t\ttickLine={false}\n\t\t\t\t\t\tdomainLine={false}\n\t\t\t\t\t\tnumTicks={data.length}\n\t\t\t\t\t/>\n\t\t\t\t\t<ChartCrosshair<DataRecord>\n\t\t\t\t\t\tcolor=\"hsl(var(--chart-1))\"\n\t\t\t\t\t\ttemplate={(props) => (\n\t\t\t\t\t\t\t<ChartTooltipContent\n\t\t\t\t\t\t\t\tlabelKey=\"month\"\n\t\t\t\t\t\t\t\thideLabel\n\t\t\t\t\t\t\t\ticon={() => (\n\t\t\t\t\t\t\t\t\t<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\">\n\t\t\t\t\t\t\t\t\t\t<path\n\t\t\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t\t\t\td=\"M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2\"\n\t\t\t\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t\t\t)}\n\t\t\t\t\t\t\t\t{...props}\n\t\t\t\t\t\t\t/>\n\t\t\t\t\t\t)}\n\t\t\t\t\t/>\n\t\t\t\t\t<VisTooltip horizontalPlacement={Position.Center} />\n\t\t\t\t</ChartContainer>\n\t\t\t</CardContent>\n\t\t\t<CardFooter>\n\t\t\t\t<div class=\"flex w-full items-start gap-2 text-sm\">\n\t\t\t\t\t<div class=\"grid gap-2\">\n\t\t\t\t\t\t<div class=\"flex items-center gap-2 font-medium leading-none\">\n\t\t\t\t\t\t\tTrending up by 5.2% this month{\" \"}\n\t\t\t\t\t\t\t<svg\n\t\t\t\t\t\t\t\txmlns=\"http://www.w3.org/2000/svg\"\n\t\t\t\t\t\t\t\tclass=\"size-4\"\n\t\t\t\t\t\t\t\tviewBox=\"0 0 24 24\"\n\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t<g\n\t\t\t\t\t\t\t\t\tfill=\"none\"\n\t\t\t\t\t\t\t\t\tstroke=\"currentColor\"\n\t\t\t\t\t\t\t\t\tstroke-linecap=\"round\"\n\t\t\t\t\t\t\t\t\tstroke-linejoin=\"round\"\n\t\t\t\t\t\t\t\t\tstroke-width=\"2\"\n\t\t\t\t\t\t\t\t>\n\t\t\t\t\t\t\t\t\t<path d=\"m22 7l-8.5 8.5l-5-5L2 17\" />\n\t\t\t\t\t\t\t\t\t<path d=\"M16 7h6v6\" />\n\t\t\t\t\t\t\t\t</g>\n\t\t\t\t\t\t\t</svg>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"flex items-center gap-2 leading-none text-muted-foreground\">\n\t\t\t\t\t\t\tJanuary - June 2024\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</CardFooter>\n\t\t</Card>\n\t);\n};\n\nexport default AreaChartStep;\n"
+			}],
+			component: clientOnly(() => import("@/registry/tailwindcss/charts/area-chart-step"), { lazy: true }),
+			source: "src/__registry__/tailwindcss/charts/area-chart-step.tsx",
+			category: "",
+			subcategory: ""
 		},
 	},
   }
