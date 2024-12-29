@@ -150,14 +150,4 @@ export default defineConfig({
 			},
 		},
 	},
-	server: {
-		prerender: {
-			crawlLinks: true,
-		},
-		esbuild: {
-			options: {
-				target: "esnext",
-			},
-		},
-	},
 });
