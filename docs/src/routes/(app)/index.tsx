@@ -1,11 +1,7 @@
 import { Announcement } from "@/components/announcement";
 import ExampleNav from "@/components/example-nav";
 import { Button } from "@/registry/tailwindcss/ui/button";
-import { clientOnly } from "@solidjs/start";
-
-const MailUI = clientOnly(
-	() => import("@/routes/(app)/examples/_components/mail/ui"),
-);
+import MailUI from "@/routes/(app)/examples/_components/mail/ui";
 
 const Home = () => {
 	return (

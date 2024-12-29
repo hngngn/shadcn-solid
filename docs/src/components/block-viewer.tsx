@@ -2,10 +2,7 @@ import type {
 	FileTree,
 	createFileTreeForRegistryItemFiles,
 } from "@/libs/registry";
-import type {
-	registryEntrySchema,
-	registryItemFileSchema,
-} from "@/registry/schema";
+import type { RegistryEntry, registryItemFileSchema } from "@/registry/schema";
 import { Button } from "@/registry/tailwindcss/ui/button";
 import {
 	Collapsible,
@@ -40,6 +37,7 @@ import {
 	ToggleGroupItem,
 } from "@/registry/tailwindcss/ui/toggle-group";
 import type { CollapsibleTriggerProps } from "@kobalte/core/collapsible";
+import type { AccessorWithLatest } from "@solidjs/router";
 import {
 	type Accessor,
 	For,
@@ -54,7 +52,7 @@ import {
 import type * as v from "valibot";
 
 type BlockViewerProps = {
-	item: v.InferInput<typeof registryEntrySchema>;
+	item: RegistryEntry | undefined;
 	tree: ReturnType<typeof createFileTreeForRegistryItemFiles> | null;
 	highlightedFiles:
 		| (v.InferInput<typeof registryItemFileSchema> & {
@@ -64,7 +62,7 @@ type BlockViewerProps = {
 };
 
 type BlockViewerContext = {
-	item: Accessor<v.InferInput<typeof registryEntrySchema>>;
+	item: Accessor<RegistryEntry | undefined>;
 	view: Accessor<"code" | "preview">;
 	setView: Setter<"code" | "preview">;
 	sizes: Accessor<number[]>;
@@ -117,11 +115,11 @@ const BlockViewerProvider = (props: ParentProps<BlockViewerProps>) => {
 	return (
 		<BlockViewerContext.Provider value={value}>
 			<div
-				id={props.item.name}
+				id={props.item?.name}
 				data-view={view()}
 				class="group/block-view-wrapper flex min-w-0 flex-col items-stretch gap-4"
 				style={{
-					"--height": props.item.meta?.iframeHeight ?? "800px",
+					"--height": props.item?.meta?.iframeHeight ?? "800px",
 				}}
 			>
 				{props.children}
@@ -136,7 +134,9 @@ const BlockViewerToolbar = () => {
 
 	const copyToClipboard = async () => {
 		setIsCopied(true);
-		await navigator.clipboard.writeText(`npx shadcn@latest add ${item().name}`);
+		await navigator.clipboard.writeText(
+			`npx shadcn@latest add ${item()?.name}`,
+		);
 		setTimeout(() => setIsCopied(false), 2000);
 	};
 
@@ -162,10 +162,10 @@ const BlockViewerToolbar = () => {
 				class="mx-2 hidden data-[orientation=vertical]:h-4 lg:flex"
 			/>
 			<a
-				href={`#${item().name}`}
+				href={`#${item()?.name}`}
 				class="text-sm font-medium underline-offset-2 hover:underline"
 			>
-				{item().description}
+				{item()?.description}
 			</a>
 			<div class="ml-auto flex items-center gap-2">
 				<Button
@@ -209,7 +209,7 @@ const BlockViewerToolbar = () => {
 						</svg>
 					</Show>
 					<span class="hidden lg:inline">
-						npx shadcn-solid add {item().name}
+						npx shadcn-solid add {item()?.name}
 					</span>
 				</Button>
 				<Separator orientation="vertical" class="mx-2 hidden h-4 md:flex" />
@@ -290,7 +290,7 @@ const BlockViewerToolbar = () => {
 							class="h-[22px] w-[22px] rounded-sm p-0"
 							as="a"
 							title="Open in New Tab"
-							href={`/blocks/${item().name}`}
+							href={`/blocks/${item()?.name}`}
 							target="_blank"
 						>
 							<span class="sr-only">Open in New Tab</span>
@@ -332,7 +332,7 @@ const BlockViewerView = () => {
 						class="relative aspect-[4/2.5] rounded-xl border bg-background md:aspect-auto overflow-hidden"
 					>
 						<img
-							src={`/images/blocks/${item().name}.png`}
+							src={`/images/blocks/${item()?.name}.png`}
 							alt={item.name}
 							data-block={item.name}
 							width={1440}
@@ -340,7 +340,7 @@ const BlockViewerView = () => {
 							class="object-cover dark:hidden md:hidden md:dark:hidden"
 						/>
 						<img
-							src={`/images/blocks/${item().name}-dark.png`}
+							src={`/images/blocks/${item()?.name}-dark.png`}
 							alt={item.name}
 							data-block={item.name}
 							width={1440}
@@ -348,10 +348,10 @@ const BlockViewerView = () => {
 							class="hidden object-cover dark:block md:hidden md:dark:hidden"
 						/>
 						<iframe
-							src={`/blocks/${item().name}`}
-							height={item().meta?.iframeHeight ?? 800}
+							src={`/blocks/${item()?.name}`}
+							height={item()?.meta?.iframeHeight ?? 800}
 							class="w-full bg-background hidden md:block"
-							title={item().name}
+							title={item()?.name}
 							loading="lazy"
 						/>
 					</ResizablePanel>
@@ -400,7 +400,7 @@ const BlockViewerCode = () => {
 						</div>
 					</div>
 					<div
-						data-rehype-pretty-code-figure
+						data-rehype-pretty-code-figure=""
 						// eslint-disable-next-line solid/no-innerhtml
 						innerHTML={file()?.highlightedContent ?? ""}
 						class="relative flex-1 overflow-hidden after:absolute after:inset-y-0 after:left-0 after:w-10 after:bg-zinc-950 [&_.line:before]:sticky [&_.line:before]:left-2 [&_.line:before]:z-10 [&_.line:before]:translate-y-[-1px] [&_.line:before]:pr-1 [&_pre]:h-[--height] [&_pre]:overflow-auto [&_pre]:!bg-transparent [&_pre]:pb-12 [&_pre]:pt-4 [&_pre]:font-mono [&_pre]:text-sm [&_pre]:leading-relaxed"
@@ -562,7 +562,7 @@ const BlockCopyCodeButton = () => {
 	};
 
 	const file = createMemo(() => {
-		return item().files?.find((file) => file.target === activeFile());
+		return item()?.files?.find((file) => file.target === activeFile());
 	});
 
 	const content = () => file()?.content;

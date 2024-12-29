@@ -1,7 +1,7 @@
 import { Announcement } from "@/components/announcement";
 import ChartDisplay from "@/components/chart-display";
 import { Button } from "@/registry/tailwindcss/ui/button";
-import { Chart } from "@/routes/(app)/_blocks";
+import { Chart } from "@/routes/(app)/_charts";
 
 const ChartsPage = () => {
 	return (

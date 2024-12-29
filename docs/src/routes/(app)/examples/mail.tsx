@@ -1,6 +1,4 @@
-import { clientOnly } from "@solidjs/start";
-
-const MailUI = clientOnly(() => import("./_components/mail/ui"));
+import MailUI from "@/routes/(app)/examples/_components/mail/ui";
 
 const MailPage = () => {
 	return <MailUI />;
