@@ -35,4 +35,37 @@ export const charts: Registry = [
 			},
 		],
 	},
+	{
+		name: "area-chart-stacked",
+		type: "registry:block",
+		registryDependencies: ["chart"],
+		files: [
+			{
+				path: "charts/area-chart-stacked.tsx",
+				type: "registry:block",
+			},
+		],
+	},
+	{
+		name: "area-chart-legend",
+		type: "registry:block",
+		registryDependencies: ["chart"],
+		files: [
+			{
+				path: "charts/area-chart-legend.tsx",
+				type: "registry:block",
+			},
+		],
+	},
+	{
+		name: "area-chart-gradient",
+		type: "registry:block",
+		registryDependencies: ["chart"],
+		files: [
+			{
+				path: "charts/area-chart-gradient.tsx",
+				type: "registry:block",
+			},
+		],
+	},
 ];

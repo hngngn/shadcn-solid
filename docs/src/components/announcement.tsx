@@ -4,8 +4,9 @@ export const Announcement = () => {
 			href="/docs/changelog#dec-2024---updates"
 			class="group mb-2 inline-flex items-center px-0.5 text-sm font-medium"
 		>
-			<span class="sm:hidden">New components</span>
-			<span class="hidden sm:inline">New components</span>
+			<span class="underline-offset-4 group-hover:underline">
+				Introducing Charts, Sidebar component and more
+			</span>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				class="ml-1 h-4 w-4"

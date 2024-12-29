@@ -1,5 +1,6 @@
 {
 	"src/**/*.{ts,tsx}": [
+		"pnpm registry:gen",
 		"biome check --write --unsafe --staged --no-errors-on-unmatched",
 		"eslint --fix"
 	]
