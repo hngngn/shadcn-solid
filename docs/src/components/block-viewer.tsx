@@ -37,7 +37,6 @@ import {
 	ToggleGroupItem,
 } from "@/registry/tailwindcss/ui/toggle-group";
 import type { CollapsibleTriggerProps } from "@kobalte/core/collapsible";
-import type { AccessorWithLatest } from "@solidjs/router";
 import {
 	type Accessor,
 	For,

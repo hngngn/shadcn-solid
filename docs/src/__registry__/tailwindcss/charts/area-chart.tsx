@@ -75,6 +75,7 @@ const AreaChart = () => {
 						numTicks={data.length}
 					/>
 					<ChartCrosshair<DataRecord>
+						color="var(--color-desktop)"
 						template={(props) => (
 							<ChartTooltipContent
 								labelKey="month"

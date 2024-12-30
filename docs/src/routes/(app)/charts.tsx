@@ -42,22 +42,22 @@ const ChartsPage = () => {
 										class="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
 										id="area-chart"
 									>
-										<ChartDisplay name="chart-area">
+										<ChartDisplay name="area-chart">
 											<Chart.AreaChart />
 										</ChartDisplay>
-										<ChartDisplay name="chart-area-linear">
+										<ChartDisplay name="area-chart-linear">
 											<Chart.AreaChartLinear />
 										</ChartDisplay>
-										<ChartDisplay name="chart-area-step">
+										<ChartDisplay name="area-chart-step">
 											<Chart.AreaChartStep />
 										</ChartDisplay>
-										<ChartDisplay name="chart-area-stacked">
+										<ChartDisplay name="area-chart-stacked">
 											<Chart.AreaChartStacked />
 										</ChartDisplay>
-										<ChartDisplay name="chart-area-legend">
+										<ChartDisplay name="area-chart-legend">
 											<Chart.AreaChartLegend />
 										</ChartDisplay>
-										<ChartDisplay name="chart-area-gradient">
+										<ChartDisplay name="area-chart-gradient">
 											<Chart.AreaChartGradient />
 										</ChartDisplay>
 									</div>
