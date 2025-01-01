@@ -60,6 +60,11 @@ const ChartsPage = () => {
 										<ChartDisplay name="area-chart-gradient">
 											<Chart.AreaChartGradient />
 										</ChartDisplay>
+										<div class="md:col-span-2 lg:col-span-3">
+											<ChartDisplay name="area-chart-interactive">
+												<Chart.AreaChartInteractive />
+											</ChartDisplay>
+										</div>
 									</div>
 								</div>
 							</div>

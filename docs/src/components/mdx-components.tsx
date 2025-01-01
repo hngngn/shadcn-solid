@@ -1,15 +1,11 @@
+import ComponentInstallation from "@/components/component-installation";
+import ComponentPreview from "@/components/component-preview";
 import { cn } from "@/registry/tailwindcss/libs/cn";
 import { Alert, AlertDescription } from "@/registry/tailwindcss/ui/alert";
-import { clientOnly } from "@solidjs/start";
 import { type ComponentProps, Show, splitProps } from "solid-js";
 import { CopyButton } from "./copy-button";
 import type { MDXComponents } from "./mdx";
 import PackageManagerCopyButton from "./package-manager-copy-button";
-
-const ComponentPreview = clientOnly(() => import("./component-preview"));
-const ComponentInstallation = clientOnly(
-	() => import("./component-installation"),
-);
 
 export const mdxComponents: Partial<MDXComponents> | Record<string, unknown> = {
 	a: (props) => (

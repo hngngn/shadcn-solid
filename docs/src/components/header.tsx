@@ -1,11 +1,9 @@
+import CommandMenu from "@/components/command-menu";
 import { siteConfig } from "@/config/site";
 import { Button } from "@/registry/tailwindcss/ui/button";
-import { clientOnly } from "@solidjs/start";
 import { MobileNavbar } from "./mobile-navbar";
 import ModeToggle from "./mode-toggle";
 import { Navbar } from "./navbar";
-
-const CommandMenu = clientOnly(() => import("./command-menu"));
 
 export const Header = () => {
 	return (

@@ -29,7 +29,7 @@
 		"tailwind-merge": "^2.5.5",
 		"unocss": "^0.65.1",
 		"unocss-preset-animations": "^1.1.0",
-		"vinxi": "^0.5.1"
+		"vinxi": "^0.4.3"
 	},
 	"private": true,
 	"type": "module",

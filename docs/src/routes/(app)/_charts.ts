@@ -18,6 +18,9 @@ const AreaChartLegend = clientOnly(
 const AreaChartGradient = clientOnly(
 	() => import("@/registry/tailwindcss/charts/area-chart-gradient"),
 );
+const AreaChartInteractive = clientOnly(
+	() => import("@/registry/tailwindcss/charts/area-chart-interactive"),
+);
 
 export const Chart = {
 	AreaChart,
@@ -26,4 +29,5 @@ export const Chart = {
 	AreaChartStacked,
 	AreaChartLegend,
 	AreaChartGradient,
+	AreaChartInteractive,
 };

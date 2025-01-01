@@ -1,9 +1,8 @@
 import { Index } from "@/__registry__";
 import type { RegistryEntry } from "@/registry/schema";
 import { cn } from "@/registry/tailwindcss/libs/cn";
-import { createAsync } from "@solidjs/router";
 import { clientOnly } from "@solidjs/start";
-import { type ComponentProps, Show, splitProps } from "solid-js";
+import { type ComponentProps, Show, createMemo, splitProps } from "solid-js";
 
 const ChartToolbar = clientOnly(() => import("./chart-toolbar"), {
 	lazy: true,
@@ -15,7 +14,7 @@ const ChartDisplay = (
 	},
 ) => {
 	const [local, rest] = splitProps(props, ["name", "children", "class"]);
-	const item = createAsync<RegistryEntry>(() => Index.tailwindcss[props.name]);
+	const item = createMemo<RegistryEntry>(() => Index.tailwindcss[props.name]);
 
 	return (
 		<Show when={item()}>
