@@ -67,13 +67,12 @@ const AreaChartLegend = () => {
 					Showing total visitors for the last 6 months
 				</CardDescription>
 			</CardHeader>
-			<CardContent>
+			<CardContent class="h-[300px]">
 				<ChartContainer
 					config={chartConfig}
 					type="xy"
 					data={data}
 					yDomain={[0, 620]}
-					height={264}
 				>
 					<VisArea<DataRecord>
 						x={(_, i) => i}
@@ -91,7 +90,7 @@ const AreaChartLegend = () => {
 					/>
 					<VisAxis<DataRecord>
 						type="x"
-						tickFormat={(d) => data[d as number].month}
+						tickFormat={(d) => data[d as number].month.slice(0, 3)}
 						gridLine={false}
 						tickLine={false}
 						domainLine={false}

@@ -60,7 +60,12 @@ type chartContainerProps<T> = (XYContainer<T> | SingleContainer<T>) &
 	chartContextProps;
 
 export const ChartContainer = <T,>(props: chartContainerProps<T>) => {
-	const [local, rest] = splitProps(props, ["config", "children", "type"]);
+	const [local, rest] = splitProps(props, [
+		"config",
+		"children",
+		"type",
+		"class",
+	]);
 
 	return (
 		<ChartContext.Provider
@@ -70,21 +75,23 @@ export const ChartContainer = <T,>(props: chartContainerProps<T>) => {
 				},
 			}}
 		>
-			<Switch>
-				<Match when={local.type === "xy"}>
-					<VisXYContainer {...(rest as Omit<XYContainer<T>, "type">)}>
-						<ChartStyle type="xy" config={local.config} />
-						{local.children}
-					</VisXYContainer>
-				</Match>
+			<div class={cn("flex aspect-video justify-center", local.class)}>
+				<Switch>
+					<Match when={local.type === "xy"}>
+						<VisXYContainer {...(rest as Omit<XYContainer<T>, "type">)}>
+							<ChartStyle type="xy" config={local.config} />
+							{local.children}
+						</VisXYContainer>
+					</Match>
 
-				<Match when={local.type === "single"}>
-					<VisSingleContainer {...(rest as Omit<SingleContainer<T>, "type">)}>
-						<ChartStyle type="single" config={local.config} />
-						{local.children}
-					</VisSingleContainer>
-				</Match>
-			</Switch>
+					<Match when={local.type === "single"}>
+						<VisSingleContainer {...(rest as Omit<SingleContainer<T>, "type">)}>
+							<ChartStyle type="single" config={local.config} />
+							{local.children}
+						</VisSingleContainer>
+					</Match>
+				</Switch>
+			</div>
 		</ChartContext.Provider>
 	);
 };
@@ -99,8 +106,8 @@ export const ChartStyle = (
 
 	return (
 		<Show when={colorConfig().length}>
-			<style>
-				{Object.entries(THEMES)
+			<style
+				innerText={Object.entries(THEMES)
 					.map(
 						([theme, prefix]) => `
 						${prefix} [data-vis-${props.type}-container] {
@@ -116,7 +123,7 @@ export const ChartStyle = (
 						`,
 					)
 					.join("\n")}
-			</style>
+			/>
 		</Show>
 	);
 };
@@ -147,12 +154,13 @@ export const ChartCrosshair = <T,>(props: chartCrosshairProps<T>) => {
 
 type chartTooltipContentProps<T> = {
 	data: T;
-	x?: number | Date;
+	x: number | Date;
 	class?: string;
 	hideLabel?: boolean;
 	hideIndicator?: boolean;
 	indicator?: "line" | "dot" | "dashed";
 	labelKey: keyof T;
+	labelFormatter?: (data: number | Date) => JSX.Element;
 } & chartContextProps;
 
 export const ChartTooltipContent = <T,>(props: chartTooltipContentProps<T>) => {
@@ -173,7 +181,18 @@ export const ChartTooltipContent = <T,>(props: chartTooltipContentProps<T>) => {
 			return null;
 		}
 
-		return <div class="font-medium">{value().label as JSX.Element}</div>;
+		return (
+			<div class="font-medium">
+				<Show
+					when={!merge.labelFormatter}
+					fallback={merge.labelFormatter!(
+						typeof merge.x === "number" ? Math.round(merge.x) : merge.x,
+					)}
+				>
+					{value().label as JSX.Element}
+				</Show>
+			</div>
+		);
 	};
 
 	const nestLabel = () =>
@@ -241,16 +260,22 @@ const getConfigFromData = <T,>(
 	labelKey: keyof T,
 	config: ChartConfig,
 ) => {
-	//  @ts-expect-error
+	// @ts-expect-error
 	const valueKeys = Object.entries(data)
 		.filter(([key, value]) => key !== labelKey && typeof value === "number")
 		.map(([key]) => key);
 
 	const items = valueKeys.map((key) => {
 		const configItem = config[key];
-		const color = `var(--color-${key})`;
+		let color = configItem.color;
+
+		// @ts-expect-error
+		if (!color && "fill" in data) {
+			color = data.fill as string;
+		}
+
 		return {
-			// @ts-expect-error
+			// @ts-expect-error: Access numeric value
 			value: data[key] as number,
 			key: configItem.label,
 			icon: configItem.icon,

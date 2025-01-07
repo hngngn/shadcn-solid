@@ -1,6 +1,7 @@
 import { Announcement } from "@/components/announcement";
 import ChartDisplay from "@/components/chart-display";
 import { Button } from "@/registry/tailwindcss/ui/button";
+import { Separator } from "@/registry/tailwindcss/ui/separator";
 import { Chart } from "@/routes/(app)/_charts";
 
 const ChartsPage = () => {
@@ -65,6 +66,30 @@ const ChartsPage = () => {
 												<Chart.AreaChartInteractive />
 											</ChartDisplay>
 										</div>
+									</div>
+									<Separator />
+									<div
+										class="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
+										id="bar-chart"
+									>
+										<ChartDisplay name="bar-chart">
+											<Chart.BarChart />
+										</ChartDisplay>
+										<ChartDisplay name="bar-chart-horizontal">
+											<Chart.BarChartHorizontal />
+										</ChartDisplay>
+										<ChartDisplay name="bar-chart-multiply">
+											<Chart.BarChartMultiply />
+										</ChartDisplay>
+										<ChartDisplay name="bar-chart-stacked">
+											<Chart.BarChartStacked />
+										</ChartDisplay>
+										<ChartDisplay name="bar-chart-mixed">
+											<Chart.BarChartMixed />
+										</ChartDisplay>
+										<ChartDisplay name="bar-chart-active">
+											<Chart.BarChartActive />
+										</ChartDisplay>
 									</div>
 								</div>
 							</div>

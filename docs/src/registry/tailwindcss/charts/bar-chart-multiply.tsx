@@ -9,21 +9,11 @@ import {
 import {
 	type ChartConfig,
 	ChartContainer,
-	ChartCrosshair,
 	ChartTooltipContent,
 } from "@/registry/tailwindcss/ui/chart";
-import {
-	VisArea,
-	VisAxis,
-	VisBulletLegend,
-	VisLine,
-	VisTooltip,
-} from "@unovis/solid";
-import {
-	type BulletLegendItemInterface,
-	CurveType,
-	Position,
-} from "@unovis/ts";
+import { VisAxis, VisGroupedBar, VisTooltip } from "@unovis/solid";
+import { GroupedBar } from "@unovis/ts";
+import { render } from "solid-js/web";
 
 type DataRecord = {
 	month: string;
@@ -51,42 +41,26 @@ const chartConfig = {
 	},
 } satisfies ChartConfig;
 
-const AreaChartLegend = () => {
-	const items = (): BulletLegendItemInterface[] => {
-		return Object.entries(chartConfig).map(([_, config]) => ({
-			name: config.label,
-			color: config.color,
-		}));
-	};
-
+const BarChartMultiply = () => {
 	return (
 		<Card>
 			<CardHeader>
-				<CardTitle>Area Chart - Legend</CardTitle>
-				<CardDescription>
-					Showing total visitors for the last 6 months
-				</CardDescription>
+				<CardTitle>Bar Chart - Multiply</CardTitle>
+				<CardDescription>January - June 2024</CardDescription>
 			</CardHeader>
 			<CardContent class="h-[300px]">
 				<ChartContainer
 					config={chartConfig}
 					type="xy"
 					data={data}
-					yDomain={[0, 620]}
+					yDomain={[0, 310]}
 				>
-					<VisArea<DataRecord>
+					<VisGroupedBar<DataRecord>
 						x={(_, i) => i}
-						y={[(d) => d.mobile, (d) => d.desktop]}
-						color={["var(--color-mobile)", "var(--color-desktop)"]}
-						opacity={0.4}
-						curveType={CurveType.Natural}
-					/>
-					<VisLine<DataRecord>
-						x={(_, i) => i}
-						y={[(d) => d.mobile, (d) => d.mobile + d.desktop]}
-						color={["var(--color-mobile)", "var(--color-desktop)"]}
-						curveType={CurveType.Natural}
-						lineWidth={1}
+						y={[(d) => d.desktop, (d) => d.mobile]}
+						color={["var(--color-desktop)", "var(--color-mobile)"]}
+						roundedCorners={4}
+						barPadding={0.2}
 					/>
 					<VisAxis<DataRecord>
 						type="x"
@@ -96,21 +70,25 @@ const AreaChartLegend = () => {
 						domainLine={false}
 						numTicks={data.length}
 					/>
-					<ChartCrosshair<DataRecord>
-						color={["var(--color-mobile)", "var(--color-desktop)"]}
-						template={(props) => (
-							<ChartTooltipContent
-								labelKey="month"
-								indicator="line"
-								{...props}
-							/>
-						)}
+					<VisTooltip
+						triggers={{
+							[GroupedBar.selectors.bar]: (d: DataRecord, x) => {
+								const container = document.createElement("div");
+								const Component = () => (
+									<ChartTooltipContent
+										data={d}
+										x={x}
+										config={chartConfig}
+										labelKey="month"
+										indicator="dashed"
+									/>
+								);
+								render(() => <Component />, container);
+								return container.innerHTML;
+							},
+						}}
 					/>
-					<VisTooltip horizontalPlacement={Position.Center} />
 				</ChartContainer>
-				<div class="flex items-center justify-center gap-4 pt-3">
-					<VisBulletLegend items={items()} />
-				</div>
 			</CardContent>
 			<CardFooter>
 				<div class="flex w-full items-start gap-2 text-sm">
@@ -135,7 +113,7 @@ const AreaChartLegend = () => {
 							</svg>
 						</div>
 						<div class="flex items-center gap-2 leading-none text-muted-foreground">
-							January - June 2024
+							Showing total visitors for the last 6 months
 						</div>
 					</div>
 				</div>
@@ -144,4 +122,4 @@ const AreaChartLegend = () => {
 	);
 };
 
-export default AreaChartLegend;
+export default BarChartMultiply;

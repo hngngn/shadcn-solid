@@ -12,32 +12,21 @@ import {
 	ChartCrosshair,
 	ChartTooltipContent,
 } from "@/registry/tailwindcss/ui/chart";
-import {
-	VisArea,
-	VisAxis,
-	VisBulletLegend,
-	VisLine,
-	VisTooltip,
-} from "@unovis/solid";
-import {
-	type BulletLegendItemInterface,
-	CurveType,
-	Position,
-} from "@unovis/ts";
+import { VisAxis, VisStackedBar, VisTooltip } from "@unovis/solid";
+import { Position } from "@unovis/ts";
 
 type DataRecord = {
 	month: string;
 	desktop: number;
-	mobile: number;
 };
 
 const data: DataRecord[] = [
-	{ month: "January", desktop: 186, mobile: 80 },
-	{ month: "February", desktop: 305, mobile: 200 },
-	{ month: "March", desktop: 237, mobile: 120 },
-	{ month: "April", desktop: 73, mobile: 190 },
-	{ month: "May", desktop: 209, mobile: 130 },
-	{ month: "June", desktop: 214, mobile: 140 },
+	{ month: "January", desktop: 186 },
+	{ month: "February", desktop: 305 },
+	{ month: "March", desktop: 237 },
+	{ month: "April", desktop: 73 },
+	{ month: "May", desktop: 209 },
+	{ month: "June", desktop: 214 },
 ];
 
 const chartConfig = {
@@ -45,48 +34,27 @@ const chartConfig = {
 		label: "Desktop",
 		color: "hsl(var(--chart-1))",
 	},
-	mobile: {
-		label: "Mobile",
-		color: "hsl(var(--chart-2))",
-	},
 } satisfies ChartConfig;
 
-const AreaChartLegend = () => {
-	const items = (): BulletLegendItemInterface[] => {
-		return Object.entries(chartConfig).map(([_, config]) => ({
-			name: config.label,
-			color: config.color,
-		}));
-	};
-
+const BarChartNegative = () => {
 	return (
 		<Card>
 			<CardHeader>
-				<CardTitle>Area Chart - Legend</CardTitle>
-				<CardDescription>
-					Showing total visitors for the last 6 months
-				</CardDescription>
+				<CardTitle>Bar Chart - Negative</CardTitle>
+				<CardDescription>January - June 2024</CardDescription>
 			</CardHeader>
-			<CardContent class="h-[300px]">
+			<CardContent>
 				<ChartContainer
 					config={chartConfig}
 					type="xy"
 					data={data}
-					yDomain={[0, 620]}
+					yDomain={[0, 310]}
 				>
-					<VisArea<DataRecord>
+					<VisStackedBar<DataRecord>
 						x={(_, i) => i}
-						y={[(d) => d.mobile, (d) => d.desktop]}
-						color={["var(--color-mobile)", "var(--color-desktop)"]}
-						opacity={0.4}
-						curveType={CurveType.Natural}
-					/>
-					<VisLine<DataRecord>
-						x={(_, i) => i}
-						y={[(d) => d.mobile, (d) => d.mobile + d.desktop]}
-						color={["var(--color-mobile)", "var(--color-desktop)"]}
-						curveType={CurveType.Natural}
-						lineWidth={1}
+						y={(d) => d.desktop}
+						color="var(--color-desktop)"
+						roundedCorners={8}
 					/>
 					<VisAxis<DataRecord>
 						type="x"
@@ -97,7 +65,7 @@ const AreaChartLegend = () => {
 						numTicks={data.length}
 					/>
 					<ChartCrosshair<DataRecord>
-						color={["var(--color-mobile)", "var(--color-desktop)"]}
+						color="var(--color-desktop)"
 						template={(props) => (
 							<ChartTooltipContent
 								labelKey="month"
@@ -108,9 +76,6 @@ const AreaChartLegend = () => {
 					/>
 					<VisTooltip horizontalPlacement={Position.Center} />
 				</ChartContainer>
-				<div class="flex items-center justify-center gap-4 pt-3">
-					<VisBulletLegend items={items()} />
-				</div>
 			</CardContent>
 			<CardFooter>
 				<div class="flex w-full items-start gap-2 text-sm">
@@ -135,7 +100,7 @@ const AreaChartLegend = () => {
 							</svg>
 						</div>
 						<div class="flex items-center gap-2 leading-none text-muted-foreground">
-							January - June 2024
+							Showing total visitors for the last 6 months
 						</div>
 					</div>
 				</div>
@@ -144,4 +109,4 @@ const AreaChartLegend = () => {
 	);
 };
 
-export default AreaChartLegend;
+export default BarChartNegative;

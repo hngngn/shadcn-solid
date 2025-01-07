@@ -3,7 +3,6 @@ import {
 	Card,
 	CardContent,
 	CardDescription,
-	CardFooter,
 	CardHeader,
 	CardTitle,
 } from "@/registry/tailwindcss/ui/card";
@@ -27,7 +26,7 @@ import {
 	CurveType,
 	Position,
 } from "@unovis/ts";
-import { batch, createEffect, createSignal } from "solid-js";
+import { batch, createSignal } from "solid-js";
 
 type DataRecord = {
 	date: string;
@@ -179,6 +178,7 @@ const AreaChartInteractive = () => {
 					yDomain={[0, 1600]}
 					xDomain={domain()}
 					duration={duration()}
+					class="aspect-auto"
 				>
 					<svg height={0} width={0}>
 						<defs>
@@ -273,6 +273,7 @@ const AreaChartInteractive = () => {
 					padding={{
 						top: 12,
 					}}
+					class="aspect-auto"
 				>
 					<svg height={0} width={0}>
 						<defs>
