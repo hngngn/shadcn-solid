@@ -1,18 +1,27 @@
 {
-	"$schema": "https://turbo.build/schema.json",
-	"globalDependencies": ["**/.env.*local"],
-	"tasks": {
-		"build": {
-			"dependsOn": ["^build"],
-			"outputs": [".vercel/output/**", ".vinxi/**"],
-			"env": ["COMPATIBILITY_DATE", "VITE_CJS_IGNORE_WARNING"]
-		},
-		"check": {
-			"dependsOn": ["^check"]
-		},
-		"dev": {
-			"cache": false,
-			"persistent": true
-		}
-	}
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".vercel/output/**", ".vinxi/**"],
+      "env": ["COMPATIBILITY_DATE", "VITE_CJS_IGNORE_WARNING"]
+    },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "format": {
+      "dependsOn": ["^format"]
+    },
+    "ci:format": {
+      "dependsOn": ["^ci:format"]
+    },
+    "ci:lint": {
+      "dependsOn": ["^ci:lint"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    }
+  }
 }

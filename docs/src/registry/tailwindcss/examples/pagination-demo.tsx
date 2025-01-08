@@ -1,27 +1,27 @@
 import {
-	Pagination,
-	PaginationEllipsis,
-	PaginationItem,
-	PaginationItems,
-	PaginationNext,
-	PaginationPrevious,
-} from "@/registry/tailwindcss/ui/pagination";
+  Pagination,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationItems,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/registry/tailwindcss/ui/pagination"
 
 const PaginationDemo = () => {
-	return (
-		<Pagination
-			fixedItems
-			count={10}
-			itemComponent={(props) => (
-				<PaginationItem page={props.page}>{props.page}</PaginationItem>
-			)}
-			ellipsisComponent={() => <PaginationEllipsis />}
-		>
-			<PaginationPrevious />
-			<PaginationItems />
-			<PaginationNext />
-		</Pagination>
-	);
-};
+  return (
+    <Pagination
+      fixedItems
+      count={10}
+      itemComponent={(props) => (
+        <PaginationItem page={props.page}>{props.page}</PaginationItem>
+      )}
+      ellipsisComponent={() => <PaginationEllipsis />}
+    >
+      <PaginationPrevious />
+      <PaginationItems />
+      <PaginationNext />
+    </Pagination>
+  )
+}
 
-export default PaginationDemo;
+export default PaginationDemo

@@ -10,39 +10,45 @@ description: Adding dark mode to your site.
 Add the `ColorModeProvider` and `ColorModeScript` to your app.
 
 ```tsx {1,9-13,16-18,25-26} title="src/app.tsx"
-import { ColorModeProvider, ColorModeScript, cookieStorageManagerSSR } from "@kobalte/core";
-import { MetaProvider } from "@solidjs/meta";
-import { Router } from "@solidjs/router";
-import { FileRoutes } from "@solidjs/start";
-import { Suspense } from "solid-js";
-import { isServer } from "solid-js/web";
-import { getCookie } from "vinxi/http";
+import { Suspense } from "solid-js"
+import { isServer } from "solid-js/web"
+import { MetaProvider } from "@solidjs/meta"
+import { Router } from "@solidjs/router"
+import { FileRoutes } from "@solidjs/start"
+import {
+  ColorModeProvider,
+  ColorModeScript,
+  cookieStorageManagerSSR,
+} from "@kobalte/core"
+import { getCookie } from "vinxi/http"
 
 const getServerCookies = () => {
-	"use server";
-	const colorMode = getCookie("kb-color-mode");
-	return colorMode ? `kb-color-mode=${colorMode}` : "";
-};
+  "use server"
+  const colorMode = getCookie("kb-color-mode")
+  return colorMode ? `kb-color-mode=${colorMode}` : ""
+}
 
 export default function App() {
   const storageManager = cookieStorageManagerSSR(
-		isServer ? getServerCookies() : document.cookie,
-	);
+    isServer ? getServerCookies() : document.cookie
+  )
 
   return (
     <Router
-      root={props => (
+      root={(props) => (
         <MetaProvider>
           <Suspense>
             <ColorModeScript storageType={storageManager.type} />
-            <ColorModeProvider storageManager={storageManager}>{props.children}</ColorModeProvider>
+            <ColorModeProvider storageManager={storageManager}>
+              {props.children}
+            </ColorModeProvider>
           </Suspense>
         </MetaProvider>
       )}
     >
       <FileRoutes />
     </Router>
-  );
+  )
 }
 ```
 

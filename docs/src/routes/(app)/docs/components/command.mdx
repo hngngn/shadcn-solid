@@ -6,11 +6,10 @@ link:
   doc: https://cmdk-solid.vercel.app
 ---
 
-
-
 <ComponentPreview name="command-demo" >
 
 ```tsx file=<rootDir>/src/registry/tailwindcss/examples/command-demo.tsx
+
 ```
 
 </ComponentPreview>
@@ -19,18 +18,14 @@ link:
 
 <ComponentInstallation >
 
-
 ```bash
 npx shadcn-solid@latest add command
 ```
 
-
 <Step >
 
 <StepItem>Install the following dependencies:</StepItem>
-```bash
-npm install cmdk-solid
-```
+```bash npm install cmdk-solid ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
 ```tsx file=<rootDir>/src/registry/tailwindcss/ui/command.tsx
@@ -41,9 +36,7 @@ npm install cmdk-solid
 <Step >
 
 <StepItem>Install the following dependencies:</StepItem>
-```bash
-npm install cmdk-solid
-```
+```bash npm install cmdk-solid ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
 ```tsx file=<rootDir>/../packages/unocss/ui/command.tsx
@@ -96,6 +89,7 @@ import {
 <ComponentPreview name="command-dialog" >
 
 ```tsx file=<rootDir>/src/registry/tailwindcss/examples/command-dialog.tsx
+
 ```
 
 </ComponentPreview>
@@ -104,35 +98,35 @@ To show the command menu in a dialog, use the `<CommandDialog />` component.
 
 ```tsx
 export function CommandMenu() {
-  const [open, setOpen] = createSignal(false);
+  const [open, setOpen] = createSignal(false)
 
   createEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === "j" && (e.metaKey || e.ctrlKey)) {
-        e.preventDefault();
-        setOpen(open => !open);
+        e.preventDefault()
+        setOpen((open) => !open)
       }
-    };
+    }
 
-    document.addEventListener("keydown", down);
+    document.addEventListener("keydown", down)
 
     onCleanup(() => {
-      document.removeEventListener("keydown", down);
-    });
-  });
+      document.removeEventListener("keydown", down)
+    })
+  })
 
   return (
     <CommandDialog open={open()} onOpenChange={setOpen}>
-        <CommandInput placeholder="Type a command or search..." />
-        <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="Suggestions">
-            <CommandItem>Calendar</CommandItem>
-            <CommandItem>Search Emoji</CommandItem>
-            <CommandItem>Calculator</CommandItem>
-          </CommandGroup>
-        </CommandList>
-      </CommandDialog>
-  );
+      <CommandInput placeholder="Type a command or search..." />
+      <CommandList>
+        <CommandEmpty>No results found.</CommandEmpty>
+        <CommandGroup heading="Suggestions">
+          <CommandItem>Calendar</CommandItem>
+          <CommandItem>Search Emoji</CommandItem>
+          <CommandItem>Calculator</CommandItem>
+        </CommandGroup>
+      </CommandList>
+    </CommandDialog>
+  )
 }
 ```

@@ -1,7 +1,7 @@
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@/components/ui/badge"
 
 const BadgeOutline = () => {
-	return <Badge variant="outline">Outline</Badge>;
-};
+  return <Badge variant="outline">Outline</Badge>
+}
 
-export default BadgeOutline;
+export default BadgeOutline

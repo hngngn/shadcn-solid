@@ -7,11 +7,10 @@ link:
   api: https://kobalte.dev/docs/core/components/toast#api-reference
 ---
 
-
-
 <ComponentPreview name="toast-demo" >
 
 ```tsx file=<rootDir>/src/registry/tailwindcss/examples/toast-demo.tsx
+
 ```
 
 </ComponentPreview>
@@ -20,18 +19,14 @@ link:
 
 <ComponentInstallation >
 
-
 ```bash
 npx shadcn-solid@latest add toast
 ```
 
-
 <Step >
 
 <StepItem>Install the following dependencies:</StepItem>
-```bash
-npm install @kobalte/core
-```
+```bash npm install @kobalte/core ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
 ```tsx file=<rootDir>/src/registry/tailwindcss/ui/toast.tsx
@@ -42,9 +37,7 @@ npm install @kobalte/core
 <Step >
 
 <StepItem>Install the following dependencies:</StepItem>
-```bash
-npm install @kobalte/core
-```
+```bash npm install @kobalte/core ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
 ```tsx file=<rootDir>/../packages/unocss/ui/toast.tsx
@@ -57,17 +50,18 @@ npm install @kobalte/core
 ## Usage
 
 ```tsx
-import { toaster } from "@kobalte/core";
+import { toaster } from "@kobalte/core"
+
 import {
   Toast,
   ToastContent,
   ToastProgress,
-  ToastTitle
-} from "@/components/ui/toast";
+  ToastTitle,
+} from "@/components/ui/toast"
 ```
 
 ```tsx
-toaster.show(props => (
+toaster.show((props) => (
   <Toast toastId={props.toastId}>
     <ToastContent>
       <ToastTitle>Toast</ToastTitle>
@@ -78,29 +72,29 @@ toaster.show(props => (
 ```
 
 ```tsx title="src/main.tsx" {1,11-13}
-import { ToastRegion, ToastList } from "@/components/ui/toast"
- 
+import { ToastList, ToastRegion } from "@/components/ui/toast"
+
 const App = () => {
   return (
     <Router
-      root={props => (
-          <Suspense>
-            <ColorModeScript />
-            <ColorModeProvider>
-              {props.children}
-              <ToastRegion>
-                <ToastList />
-              </ToastRegion>
-            </ColorModeProvider>
-          </Suspense>
+      root={(props) => (
+        <Suspense>
+          <ColorModeScript />
+          <ColorModeProvider>
+            {props.children}
+            <ToastRegion>
+              <ToastList />
+            </ToastRegion>
+          </ColorModeProvider>
+        </Suspense>
       )}
     >
       <FileRoutes />
     </Router>
-  );
-};
- 
-export default App;
+  )
+}
+
+export default App
 ```
 
 ## Examples
@@ -110,6 +104,7 @@ export default App;
 <ComponentPreview name="toast-destructive" >
 
 ```tsx file=<rootDir>/src/registry/tailwindcss/examples/toast-destructive.tsx
+
 ```
 
 </ComponentPreview>

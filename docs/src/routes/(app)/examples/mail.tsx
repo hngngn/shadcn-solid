@@ -1,7 +1,7 @@
-import MailUI from "@/routes/(app)/examples/_components/mail/ui";
+import MailUI from "@/routes/(app)/examples/_components/mail/ui"
 
 const MailPage = () => {
-	return <MailUI />;
-};
+  return <MailUI />
+}
 
-export default MailPage;
+export default MailPage

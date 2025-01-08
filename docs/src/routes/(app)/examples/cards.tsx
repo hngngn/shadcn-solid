@@ -1,7 +1,7 @@
-import CardsUI from "./_components/cards/ui";
+import CardsUI from "./_components/cards/ui"
 
 const CardPage = () => {
-	return <CardsUI />;
-};
+  return <CardsUI />
+}
 
-export default CardPage;
+export default CardPage

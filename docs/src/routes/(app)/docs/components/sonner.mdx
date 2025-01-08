@@ -7,11 +7,10 @@ link:
   api: https://oc1s.github.io/somo/toaster/#api-reference
 ---
 
-
-
 <ComponentPreview name="sonner-demo" >
 
 ```tsx file=<rootDir>/src/registry/tailwindcss/examples/sonner-demo.tsx
+
 ```
 
 </ComponentPreview>
@@ -20,18 +19,14 @@ link:
 
 <ComponentInstallation >
 
-
 ```bash
 npx shadcn-solid@latest add sonner
 ```
 
-
 <Step >
 
 <StepItem>Install the following dependencies:</StepItem>
-```bash
-npm install somoto
-```
+```bash npm install somoto ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
 ```tsx file=<rootDir>/src/registry/tailwindcss/ui/sonner.tsx
@@ -42,9 +37,7 @@ npm install somoto
 <Step >
 
 <StepItem>Install the following dependencies:</StepItem>
-```bash
-npm install somoto
-```
+```bash npm install somoto ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
 ```tsx file=<rootDir>/../packages/unocss/ui/sonner.tsx
@@ -66,24 +59,24 @@ toast("Event has been created.")
 
 ```tsx title="src/main.tsx" {1,11}
 import { Toaster } from "@/components/ui/sonner"
- 
+
 const App = () => {
   return (
     <Router
-      root={props => (
-          <Suspense>
-            <ColorModeScript />
-            <ColorModeProvider>
-              {props.children}
-              <Toaster />
-            </ColorModeProvider>
-          </Suspense>
+      root={(props) => (
+        <Suspense>
+          <ColorModeScript />
+          <ColorModeProvider>
+            {props.children}
+            <Toaster />
+          </ColorModeProvider>
+        </Suspense>
       )}
     >
       <FileRoutes />
     </Router>
-  );
-};
- 
-export default App;
+  )
+}
+
+export default App
 ```

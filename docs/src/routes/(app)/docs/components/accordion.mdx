@@ -7,11 +7,10 @@ link:
   api: https://kobalte.dev/docs/core/components/accordion#api-reference
 ---
 
-
-
 <ComponentPreview name="accordion-demo" >
 
 ```tsx file=<rootDir>/src/registry/tailwindcss/examples/accordion-demo.tsx
+
 ```
 
 </ComponentPreview>
@@ -20,18 +19,14 @@ link:
 
 <ComponentInstallation >
 
-
 ```bash
 npx shadcn-solid@latest add accordion
 ```
 
-
 <Step >
 
 <StepItem>Install the following dependencies:</StepItem>
-```bash
-npm install @kobalte/core
-```
+```bash npm install @kobalte/core ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
 ```tsx file=<rootDir>/src/registry/tailwindcss/ui/accordion.tsx
@@ -47,20 +42,20 @@ module.exports = {
       keyframes: {
         "accordion-down": {
           from: { height: 0 },
-          to: { height: "var(--kb-accordion-content-height)" }
+          to: { height: "var(--kb-accordion-content-height)" },
         },
         "accordion-up": {
           from: { height: "var(--kb-accordion-content-height)" },
-          to: { height: 0 }
-        }
+          to: { height: 0 },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out"
-      }
-    }
-  }
-};
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
+    },
+  },
+}
 ```
 
 </Step>
@@ -68,9 +63,7 @@ module.exports = {
 <Step >
 
 <StepItem>Install the following dependencies:</StepItem>
-```bash
-npm install @kobalte/core
-```
+```bash npm install @kobalte/core ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
 ```tsx file=<rootDir>/../packages/unocss/ui/accordion.tsx
@@ -83,27 +76,27 @@ export default defineConfig({
   themes: {
     animation: {
       keyframes: {
-       "accordion-down":
+        "accordion-down":
           "{ from { height: 0 } to { height: var(--kb-accordion-content-height) } }",
-        "accordion-up": "{ from { height: var(--kb-accordion-content-height) } to { height: 0 } }"
+        "accordion-up":
+          "{ from { height: var(--kb-accordion-content-height) } to { height: 0 } }",
       },
       timingFns: {
         "accordion-down": "ease-out",
-        "accordion-up": "ease-out"
+        "accordion-up": "ease-out",
       },
       durations: {
         "accordion-down": "0.2s",
-        "accordion-up": "0.2s"
-      }
-    }
-  }
-});
+        "accordion-up": "0.2s",
+      },
+    },
+  },
+})
 ```
 
 </Step>
 
 </ComponentInstallation>
-
 
 ## Usage
 
@@ -112,7 +105,7 @@ import {
   Accordion,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger
+  AccordionTrigger,
 } from "@/components/ui/accordion"
 ```
 
@@ -120,7 +113,9 @@ import {
 <Accordion type="single" collapsible>
   <AccordionItem value="item-1">
     <AccordionTrigger>Is it accessible?</AccordionTrigger>
-    <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
+    <AccordionContent>
+      Yes. It adheres to the WAI-ARIA design pattern.
+    </AccordionContent>
   </AccordionItem>
 </Accordion>
 ```

@@ -63,7 +63,7 @@ npm add -D unocss
 Then create uno.config.ts in the root of your project:
 
 ```ts title="uno.config.ts"
-import { defineConfig } from 'unocss'
+import { defineConfig } from "unocss"
 
 export default defineConfig({
   // ...UnoCSS options
@@ -73,16 +73,13 @@ export default defineConfig({
 Finally add UnoCSS integration to Astro config file:
 
 ```ts title="astro.config.mjs"{3,9}
-import { defineConfig } from 'astro/config'
 import solidJs from "@astrojs/solid-js"
-import UnoCSS from 'unocss/astro'
+import { defineConfig } from "astro/config"
+import UnoCSS from "unocss/astro"
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-    solidJs(),
-    UnoCSS(),
-  ],
+  integrations: [solidJs(), UnoCSS()],
 })
 ```
 

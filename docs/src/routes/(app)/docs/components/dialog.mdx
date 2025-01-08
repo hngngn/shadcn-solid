@@ -7,11 +7,10 @@ link:
   api: https://kobalte.dev/docs/core/components/dialog#api-reference
 ---
 
-
-
 <ComponentPreview name="dialog-demo" >
 
 ```tsx file=<rootDir>/src/registry/tailwindcss/examples/dialog-demo.tsx
+
 ```
 
 </ComponentPreview>
@@ -20,18 +19,14 @@ link:
 
 <ComponentInstallation >
 
-
 ```bash
 npx shadcn-solid@latest add dialog
 ```
 
-
 <Step >
 
 <StepItem>Install the following dependencies:</StepItem>
-```bash
-npm install @kobalte/core
-```
+```bash npm install @kobalte/core ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
 ```tsx file=<rootDir>/src/registry/tailwindcss/ui/dialog.tsx
@@ -42,9 +37,7 @@ npm install @kobalte/core
 <Step >
 
 <StepItem>Install the following dependencies:</StepItem>
-```bash
-npm install @kobalte/core
-```
+```bash npm install @kobalte/core ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
 ```tsx file=<rootDir>/../packages/unocss/ui/dialog.tsx
@@ -63,8 +56,8 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger
-} from "@/components/ui/dialog";
+  DialogTrigger,
+} from "@/components/ui/dialog"
 ```
 
 ```tsx
@@ -74,8 +67,8 @@ import {
     <DialogHeader>
       <DialogTitle>Are you sure absolutely sure?</DialogTitle>
       <DialogDescription>
-        This action cannot be undone. This will permanently delete your account and remove your data
-        from our servers.
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
       </DialogDescription>
     </DialogHeader>
   </DialogContent>

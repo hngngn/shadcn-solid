@@ -1,17 +1,17 @@
-import { Index } from "@/__registry__";
-import { Navigate, type RouteSectionProps } from "@solidjs/router";
-import { type JSX, Show, createMemo } from "solid-js";
+import { Show, createMemo, type JSX } from "solid-js"
+import { Navigate, type RouteSectionProps } from "@solidjs/router"
+import { Index } from "@/__registry__"
 
 const BlockFullView = (props: RouteSectionProps) => {
-	const Component = createMemo(
-		() => Index.tailwindcss[props.params.name].component as JSX.Element,
-	);
+  const Component = createMemo(
+    () => Index.tailwindcss[props.params.name].component as JSX.Element
+  )
 
-	return (
-		<Show when={Component()} fallback={<Navigate href="/404" />}>
-			{Component()}
-		</Show>
-	);
-};
+  return (
+    <Show when={Component()} fallback={<Navigate href="/404" />}>
+      {Component()}
+    </Show>
+  )
+}
 
-export default BlockFullView;
+export default BlockFullView

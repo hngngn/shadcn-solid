@@ -1,7 +1,7 @@
-import { Button } from "@/registry/tailwindcss/ui/button";
+import { Button } from "@/registry/tailwindcss/ui/button"
 
 const ButtonDemo = () => {
-	return <Button>Button</Button>;
-};
+  return <Button>Button</Button>
+}
 
-export default ButtonDemo;
+export default ButtonDemo

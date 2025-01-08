@@ -6,11 +6,10 @@ link:
   doc: https://tanstack.com/table/latest/docs/introduction
 ---
 
-
-
 <ComponentPreview name="data-table-demo" >
 
 ```tsx file=<rootDir>/src/registry/tailwindcss/examples/data-table-demo.tsx
+
 ```
 
 </ComponentPreview>
@@ -59,12 +58,12 @@ We are going to build a table to show tasks. Here's what our data looks like:
 
 ```tsx
 type Task = {
-  id: string;
-  code: string;
-  title: string;
-  status: "todo" | "in-progress" | "done" | "cancelled";
-  label: "bug" | "feature" | "enhancement" | "documentation";
-};
+  id: string
+  code: string
+  title: string
+  status: "todo" | "in-progress" | "done" | "cancelled"
+  label: "bug" | "feature" | "enhancement" | "documentation"
+}
 
 export const tasks: Task[] = [
   {
@@ -72,7 +71,7 @@ export const tasks: Task[] = [
     code: "TASK-33",
     title: "We need to bypass the redundant AI interface!",
     status: "todo",
-    label: "bug"
+    label: "bug",
   },
   {
     id: "RsrTg_SmBKPKwbUlr7Ztv",
@@ -80,10 +79,10 @@ export const tasks: Task[] = [
     title:
       "Overriding the capacitor won't do anything, we need to generate the solid state JBOD pixel!",
     status: "in-progress",
-    label: "feature"
-  }
+    label: "feature",
+  },
   // ...
-];
+]
 ```
 
 ## Project Structure
@@ -114,32 +113,32 @@ Let's start by building a basic table.
 First, we'll define our columns.
 
 ```tsx title="src/routes/_components/columns.tsx" {1,13-26}
-import type { ColumnDef } from "@tanstack/solid-table";
+import type { ColumnDef } from "@tanstack/solid-table"
 
 // This type is used to define the shape of our data.
 // You can use a Zod or Validbot schema here if you want.
 export type Task = {
-  id: string;
-  code: string;
-  title: string;
-  status: "todo" | "in-progress" | "done" | "cancelled";
-  label: "bug" | "feature" | "enhancement" | "documentation";
-};
+  id: string
+  code: string
+  title: string
+  status: "todo" | "in-progress" | "done" | "cancelled"
+  label: "bug" | "feature" | "enhancement" | "documentation"
+}
 
 export const columns: ColumnDef<Task>[] = [
   {
     accessorKey: "code",
-    header: "Task"
+    header: "Task",
   },
   {
     accessorKey: "title",
-    header: "Title"
+    header: "Title",
   },
   {
     accessorKey: "status",
-    header: "Status"
-  }
-];
+    header: "Status",
+  },
+]
 ```
 
 ### `<DataTable />` component
@@ -147,50 +146,58 @@ export const columns: ColumnDef<Task>[] = [
 Next, we'll create a `<DataTable />` component to render our table.
 
 ```tsx title="src/routes/_components/data-table.tsx"
-import type { ColumnDef } from "@tanstack/solid-table";
-import { flexRender, createSolidTable, getCoreRowModel } from "@tanstack/solid-table";
-import { For, Show, splitProps, Accessor } from "solid-js";
+import { Accessor, For, Show, splitProps } from "solid-js"
+import {
+  createSolidTable,
+  flexRender,
+  getCoreRowModel,
+  type ColumnDef,
+} from "@tanstack/solid-table"
+
 import {
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableHeader,
-  TableRow
-} from "@/components/ui/table";
+  TableRow,
+} from "@/components/ui/table"
 
 type Props<TData, TValue> = {
-  columns: ColumnDef<TData, TValue>[];
-  data: Accessor<TData[] | undefined>;
-};
+  columns: ColumnDef<TData, TValue>[]
+  data: Accessor<TData[] | undefined>
+}
 
 export const DataTable = <TData, TValue>(props: Props<TData, TValue>) => {
-  const [local] = splitProps(props, ["columns", "data"]);
+  const [local] = splitProps(props, ["columns", "data"])
 
   const table = createSolidTable({
     get data() {
-      return local.data() || [];
+      return local.data() || []
     },
     columns: local.columns,
-    getCoreRowModel: getCoreRowModel()
-  });
+    getCoreRowModel: getCoreRowModel(),
+  })
 
   return (
     <div class="rounded-md border">
       <Table>
         <TableHeader>
           <For each={table.getHeaderGroups()}>
-            {headerGroup => (
+            {(headerGroup) => (
               <TableRow>
                 <For each={headerGroup.headers}>
-                  {header => {
+                  {(header) => {
                     return (
                       <TableHead>
                         {header.isPlaceholder
                           ? null
-                          : flexRender(header.column.columnDef.header, header.getContext())}
+                          : flexRender(
+                              header.column.columnDef.header,
+                              header.getContext()
+                            )}
                       </TableHead>
-                    );
+                    )
                   }}
                 </For>
               </TableRow>
@@ -202,19 +209,25 @@ export const DataTable = <TData, TValue>(props: Props<TData, TValue>) => {
             when={table.getRowModel().rows?.length}
             fallback={
               <TableRow>
-                <TableCell colSpan={local.columns.length} class="h-24 text-center">
+                <TableCell
+                  colSpan={local.columns.length}
+                  class="h-24 text-center"
+                >
                   No results.
                 </TableCell>
               </TableRow>
             }
           >
             <For each={table.getRowModel().rows}>
-              {row => (
+              {(row) => (
                 <TableRow data-state={row.getIsSelected() && "selected"}>
                   <For each={row.getVisibleCells()}>
-                    {cell => (
+                    {(cell) => (
                       <TableCell>
-                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext()
+                        )}
                       </TableCell>
                     )}
                   </For>
@@ -225,8 +238,8 @@ export const DataTable = <TData, TValue>(props: Props<TData, TValue>) => {
         </TableBody>
       </Table>
     </div>
-  );
-};
+  )
+}
 ```
 
 ### Render the table
@@ -234,11 +247,10 @@ export const DataTable = <TData, TValue>(props: Props<TData, TValue>) => {
 Finally, we'll render our table in our index page.
 
 ```tsx title="src/routes/index.tsx" {30}
-import type { Task } from "./_components/columns";
-import { columns } from "./_components/columns";
-import { DataTable } from "./_components/data-table";
-import type { RouteDefinition } from "@solidjs/router";
-import { cache, createAsync } from "@solidjs/router";
+import { cache, createAsync, type RouteDefinition } from "@solidjs/router"
+
+import { columns, type Task } from "./_components/columns"
+import { DataTable } from "./_components/data-table"
 
 const getData = cache(async (): Promise<Task[]> => {
   // Fetch data from your API here.
@@ -248,27 +260,27 @@ const getData = cache(async (): Promise<Task[]> => {
       code: "TASK-33",
       title: "We need to bypass the redundant AI interface!",
       status: "todo",
-      label: "bug"
-    }
+      label: "bug",
+    },
     // ...
-  ];
-}, "data");
+  ]
+}, "data")
 
 export const route: RouteDefinition = {
-  load: () => getData()
-};
+  load: () => getData(),
+}
 
 const Home = () => {
-  const data = createAsync(() => getData());
+  const data = createAsync(() => getData())
 
   return (
     <div class="w-full space-y-2.5">
       <DataTable columns={columns} data={data} />
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
 ```
 
 </Step>
@@ -283,8 +295,8 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger
-} from "@/components/ui/dropdown-menu";
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 export const columns: ColumnDef<Task>[] = [
   // ...
@@ -293,7 +305,11 @@ export const columns: ColumnDef<Task>[] = [
     cell: () => (
       <DropdownMenu placement="bottom-end">
         <DropdownMenuTrigger class="flex items-center justify-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="size-4" viewBox="0 0 24 24">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="size-4"
+            viewBox="0 0 24 24"
+          >
             <path
               fill="none"
               stroke="currentColor"
@@ -309,10 +325,10 @@ export const columns: ColumnDef<Task>[] = [
           <DropdownMenuItem>Delete</DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-    )
-  }
+    ),
+  },
   // ...
-];
+]
 ```
 
 You can access the row data using `row.original` in the `cell` function. Use this to handle actions for your row eg. use the `id` to make a DELETE call to your API.
@@ -329,17 +345,17 @@ Next, we'll add pagination to our table.
 //...
 import {
   //...
-  getPaginationRowModel
-} from "@tanstack/solid-table";
+  getPaginationRowModel,
+} from "@tanstack/solid-table"
 
 export const DataTable = <TData, TValue>(props: Props<TData, TValue>) => {
   const table = createSolidTable({
     //...
-    getPaginationRowModel: getPaginationRowModel()
-  });
+    getPaginationRowModel: getPaginationRowModel(),
+  })
 
   // ...
-};
+}
 ```
 
 This will automatically paginate your rows into pages of 10. See the [pagination docs](https://tanstack.com/table/v8/docs/api/features/pagination) for more information on customizing page size and implementing manual pagination.
@@ -394,11 +410,11 @@ export const DataTable = <TData, TValue>(props: Props<TData, TValue>) {
 //...
 import {
   //...
-  getSortedRowModel
-} from "@tanstack/solid-table";
+  getSortedRowModel,
+} from "@tanstack/solid-table"
 
 export const DataTable = <TData, TValue>(props: Props<TData, TValue>) => {
-  const [sorting, setSorting] = createSignal<SortingState>([]);
+  const [sorting, setSorting] = createSignal<SortingState>([])
 
   const table = createSolidTable({
     //...
@@ -406,13 +422,13 @@ export const DataTable = <TData, TValue>(props: Props<TData, TValue>) => {
     getSortedRowModel: getSortedRowModel(),
     state: {
       get sorting() {
-        return sorting();
-      }
-    }
-  });
+        return sorting()
+      },
+    },
+  })
 
   // ...
-};
+}
 ```
 
 ### Make header cell sortable
@@ -421,7 +437,7 @@ Update the `status` header cell to add sorting controls.
 
 ```tsx title="src/routes/_components/columns.tsx" {2,6-33}
 //...
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button"
 
 export const columns: ColumnDef<Task>[] = [
   // ...
@@ -450,11 +466,11 @@ export const columns: ColumnDef<Task>[] = [
             />
           </svg>
         </Button>
-      );
-    }
-  }
+      )
+    },
+  },
   // ...
-];
+]
 ```
 
 </Step>
@@ -469,13 +485,13 @@ Add filter to the title. See the [filtering docs](https://tanstack.com/table/v8/
 //...
 import {
   //...
-  getFilteredRowModel
-} from "@tanstack/solid-table";
-import { TextFieldRoot, TextField } from "~/components/ui/textfield";
+  getFilteredRowModel,
+} from "@tanstack/solid-table"
+import { TextField, TextFieldRoot } from "~/components/ui/textfield"
 
 export const DataTable = <TData, TValue>(props: Props<TData, TValue>) => {
   //...
-  const [columnFilters, setColumnFilters] = createSignal<ColumnFiltersState>([]);
+  const [columnFilters, setColumnFilters] = createSignal<ColumnFiltersState>([])
 
   const table = createSolidTable({
     //...
@@ -484,25 +500,27 @@ export const DataTable = <TData, TValue>(props: Props<TData, TValue>) => {
     state: {
       //...
       get columnFilters() {
-        return columnFilters();
-      }
-    }
-  });
+        return columnFilters()
+      },
+    },
+  })
 
-  <div>
+  ;<div>
     <div class="flex items-center py-4">
       <TextFieldRoot>
         <TextField
           placeholder="Filter title..."
           value={(table.getColumn("title")?.getFilterValue() as string) ?? ""}
-          onInput={event => table.getColumn("title")?.setFilterValue(event.currentTarget.value)}
+          onInput={(event) =>
+            table.getColumn("title")?.setFilterValue(event.currentTarget.value)
+          }
           class="max-w-sm"
         />
       </TextFieldRoot>
     </div>
     <div class="rounded-md border">...</div>
-  </div>;
-};
+  </div>
+}
 ```
 
 ## Visibility
@@ -513,19 +531,22 @@ Adding column visibility using visibility API.
 
 ```tsx title="src/routes/_components/data-table.tsx" {2-9,13,17,20-22,30-54}
 //...
-import { As } from "@kobalte/core";
-import { Button } from "~/components/ui/button";
+import { As } from "@kobalte/core"
+import type { DropdownMenuTriggerProps } from "@kobalte/core/dropdown-menu"
+import { Button } from "~/components/ui/button"
+
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuTrigger
-} from "@/components/ui/dropdown-menu";
-import type { DropdownMenuTriggerProps } from "@kobalte/core/dropdown-menu";
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 export const DataTable = <TData, TValue>(props: Props<TData, TValue>) => {
   //...
-  const [columnVisibility, setColumnVisibility] = createSignal<VisibilityState>({});
+  const [columnVisibility, setColumnVisibility] = createSignal<VisibilityState>(
+    {}
+  )
 
   const table = createSolidTable({
     //...
@@ -533,32 +554,31 @@ export const DataTable = <TData, TValue>(props: Props<TData, TValue>) => {
     state: {
       //...
       get columnVisibility() {
-        return columnVisibility();
-      }
-    }
-  });
+        return columnVisibility()
+      },
+    },
+  })
 
-  <div>
+  ;<div>
     <div class="flex items-center py-4">
       //...
       <DropdownMenu>
-        <DropdownMenuTrigger as={(props: DropdownMenuTriggerProps) => (
-            <Button
-              {...props}
-              variant="outline"
-              class="ml-auto"
-            >
+        <DropdownMenuTrigger
+          as={(props: DropdownMenuTriggerProps) => (
+            <Button {...props} variant="outline" class="ml-auto">
               Columns
             </Button>
           )}
         />
         <DropdownMenuContent>
-          <For each={table.getAllColumns().filter(column => column.getCanHide())}>
-            {item => (
+          <For
+            each={table.getAllColumns().filter((column) => column.getCanHide())}
+          >
+            {(item) => (
               <DropdownMenuCheckboxItem
                 class="capitalize"
                 checked={item.getIsVisible()}
-                onChange={value => item.toggleVisibility(!!value)}
+                onChange={(value) => item.toggleVisibility(!!value)}
               >
                 {item.id}
               </DropdownMenuCheckboxItem>
@@ -568,8 +588,8 @@ export const DataTable = <TData, TValue>(props: Props<TData, TValue>) => {
       </DropdownMenu>
     </div>
     <div class="rounded-md border">...</div>
-  </div>;
-};
+  </div>
+}
 ```
 
 ## Row Selection
@@ -582,7 +602,7 @@ Next, we're going to add row selection to our table.
 
 ```tsx title="src/routes/_components/columns.tsx" {2,5-28}
 //...
-import { Checkbox, CheckboxControl } from "@/components/ui/checkbox";
+import { Checkbox, CheckboxControl } from "@/components/ui/checkbox"
 
 export const columns: ColumnDef<Task>[] = [
   {
@@ -591,7 +611,7 @@ export const columns: ColumnDef<Task>[] = [
       <Checkbox
         indeterminate={table.getIsSomePageRowsSelected()}
         checked={table.getIsAllPageRowsSelected()}
-        onChange={value => table.toggleAllPageRowsSelected(!!value)}
+        onChange={(value) => table.toggleAllPageRowsSelected(!!value)}
         aria-label="Select all"
       >
         <CheckboxControl />
@@ -600,17 +620,17 @@ export const columns: ColumnDef<Task>[] = [
     cell: ({ row }) => (
       <Checkbox
         checked={row.getIsSelected()}
-        onChange={value => row.toggleSelected(!!value)}
+        onChange={(value) => row.toggleSelected(!!value)}
         aria-label="Select row"
       >
         <CheckboxControl />
       </Checkbox>
     ),
     enableSorting: false,
-    enableHiding: false
-  }
+    enableHiding: false,
+  },
   // ...
-];
+]
 ```
 
 ### Update `<DataTable>`
@@ -620,7 +640,7 @@ export const columns: ColumnDef<Task>[] = [
 
 export const DataTable = <TData, TValue>(props: Props<TData, TValue>) => {
   //...
-  const [rowSelection, setRowSelection] = createSignal({});
+  const [rowSelection, setRowSelection] = createSignal({})
 
   const table = createSolidTable({
     //...
@@ -628,13 +648,13 @@ export const DataTable = <TData, TValue>(props: Props<TData, TValue>) => {
     state: {
       // ...
       get rowSelection() {
-        return rowSelection();
-      }
-    }
-  });
+        return rowSelection()
+      },
+    },
+  })
 
-  <div>...</div>;
-};
+  ;<div>...</div>
+}
 ```
 
 ### Show selected rows
@@ -643,8 +663,8 @@ You can show the number of selected rows using the `table.getFilteredSelectedRow
 
 ```tsx
 <div class="text-muted-foreground flex-1 text-sm">
-  {table.getFilteredSelectedRowModel().rows.length} of {table.getFilteredRowModel().rows.length}{" "}
-  row(s) selected.
+  {table.getFilteredSelectedRowModel().rows.length} of{" "}
+  {table.getFilteredRowModel().rows.length} row(s) selected.
 </div>
 ```
 

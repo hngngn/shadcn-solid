@@ -1,0 +1,30 @@
+/** @type {import('prettier').Config} */
+module.exports = {
+  endOfLine: "lf",
+  semi: false,
+  singleQuote: false,
+  tabWidth: 2,
+  trailingComma: "es5",
+  plugins: [
+    "@ianvs/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss",
+  ],
+  importOrder: [
+    "^(solid-js/(.*)$)|^(solid-js$)",
+    "^(@solidjs/(.*)$)|^(@solidjs$)",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "^@workspace/(.*)$",
+    "",
+    "^types$",
+    "^@/config/(.*)$",
+    "^@/libs/(.*)$",
+    "^@/components/(.*)$",
+    "^@/registry/(.*)$",
+    "",
+    "^[./]",
+  ],
+  importOrderParserPlugins: ["typescript", "jsx", "decorators-legacy"],
+  importOrderTypeScriptVersion: "5.0.0",
+  importOrderCaseSensitive: true,
+}

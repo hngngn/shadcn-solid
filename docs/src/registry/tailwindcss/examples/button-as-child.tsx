@@ -1,11 +1,11 @@
-import { Button } from "@/registry/tailwindcss/ui/button";
+import { Button } from "@/registry/tailwindcss/ui/button"
 
 const ButtonAsChild = () => {
-	return (
-		<Button as="a" href="#">
-			Login
-		</Button>
-	);
-};
+  return (
+    <Button as="a" href="#">
+      Login
+    </Button>
+  )
+}
 
-export default ButtonAsChild;
+export default ButtonAsChild

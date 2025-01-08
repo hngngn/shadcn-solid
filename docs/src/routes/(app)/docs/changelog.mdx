@@ -14,11 +14,8 @@ Learn more about [Chart](/charts).
 
 ### Sidebar
 
-<figure className="flex flex-col gap-4 mt-4">
-  <ComponentPreview
-    name="sidebar-01"
-    block
-  />
+<figure className="mt-4 flex flex-col gap-4">
+  <ComponentPreview name="sidebar-01" block />
   <figcaption className="text-center text-sm text-gray-500">
     A sidebar that collapses to icons.
   </figcaption>
@@ -134,8 +131,8 @@ npx shadcn-solid diff alert
 
 ```tsx
 const alertVariants = cva(
-- "relative w-full rounded-lg border",
-+ "relative w-full pl-12 rounded-lg border"
+  -"relative w-full rounded-lg border",
+  +"relative w-full pl-12 rounded-lg border"
 )
 ```
 

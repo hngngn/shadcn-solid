@@ -29,9 +29,7 @@ Customizable.
 <Step >
 
 <StepItem>Run the following command to install `sidebar.tsx`</StepItem>
-```bash
-npx shadcn-solid@latest add sidebar
-```
+```bash npx shadcn-solid@latest add sidebar ```
 
 </Step>
 
@@ -175,7 +173,7 @@ A `Sidebar` component is composed of the following parts:
   width="716"
   height="420"
   alt="Sidebar Structure"
-  class="border dark:hidden rounded-lg overflow-hidden mt-6 w-full"
+  class="mt-6 w-full overflow-hidden rounded-lg border dark:hidden"
 />
 
 <img
@@ -183,15 +181,16 @@ A `Sidebar` component is composed of the following parts:
   width="716"
   height="420"
   alt="Sidebar Structure"
-  class="border hidden dark:block rounded-lg overflow-hidden mt-6 w-full"
+  class="mt-6 hidden w-full overflow-hidden rounded-lg border dark:block"
 />
 
 ## Usage
 
 ```tsx title="src/routes/index.tsx"
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
-import type { RouteSectionProps } from "@solidjs/router";
+import type { RouteSectionProps } from "@solidjs/router"
+
+import { AppSidebar } from "@/components/app-sidebar"
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 
 const Page = (props: RouteSectionProps) => {
   return (
@@ -202,10 +201,10 @@ const Page = (props: RouteSectionProps) => {
         {props.children}
       </main>
     </SidebarProvider>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page
 ```
 
 ```tsx title="src/components/app-sidebar.tsx"
@@ -215,7 +214,7 @@ import {
   SidebarFooter,
   SidebarGroup,
   SidebarHeader,
-} from "@/components/ui/sidebar";
+} from "@/components/ui/sidebar"
 
 export const AppSidebar = () => {
   return (
@@ -227,8 +226,8 @@ export const AppSidebar = () => {
       </SidebarContent>
       <SidebarFooter />
     </Sidebar>
-  );
-};
+  )
+}
 ```
 
 ## Your First Sidebar
@@ -242,9 +241,10 @@ Let's start with the most basic sidebar. A collapsible sidebar with a menu.
 </StepItem>
 
 ```tsx title="src/routes/index.tsx"
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
-import type { RouteSectionProps } from "@solidjs/router";
+import type { RouteSectionProps } from "@solidjs/router"
+
+import { AppSidebar } from "@/components/app-sidebar"
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 
 const Page = (props: RouteSectionProps) => {
   return (
@@ -255,10 +255,10 @@ const Page = (props: RouteSectionProps) => {
         {props.children}
       </main>
     </SidebarProvider>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page
 ```
 
 <StepItem>
@@ -266,17 +266,17 @@ export default Page;
 </StepItem>
 
 ```tsx title="src/components/app-sidebar.tsx"
-import { Sidebar, SidebarContent } from "@/components/ui/sidebar";
+import { Sidebar, SidebarContent } from "@/components/ui/sidebar"
 
 const AppSidebar = () => {
   return (
     <Sidebar>
       <SidebarContent />
     </Sidebar>
-  );
-};
+  )
+}
 
-export default AppSidebar;
+export default AppSidebar
 ```
 
 <StepItem>Now, let's add a `SidebarMenu` to the sidebar.</StepItem>
@@ -293,7 +293,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar";
+} from "@/components/ui/sidebar"
 
 // Menu items.
 const items = [
@@ -408,7 +408,7 @@ const items = [
       </svg>
     ),
   },
-];
+]
 
 const AppSidebar = () => {
   return (
@@ -433,10 +433,10 @@ const AppSidebar = () => {
         </SidebarGroup>
       </SidebarContent>
     </Sidebar>
-  );
-};
+  )
+}
 
-export default AppSidebar;
+export default AppSidebar
 ```
 
 <StepItem>You've created your first sidebar.</StepItem>
@@ -475,8 +475,8 @@ The `SidebarProvider` component is used to provide the sidebar context to the `S
 If you have a single sidebar in your application, you can use the `SIDEBAR_WIDTH` and `SIDEBAR_WIDTH_MOBILE` variables in `sidebar.tsx` to set the width of the sidebar.
 
 ```tsx title="src/components/ui/sidebar.tsx"
-const SIDEBAR_WIDTH = "16rem";
-const SIDEBAR_WIDTH_MOBILE = "18rem";
+const SIDEBAR_WIDTH = "16rem"
+const SIDEBAR_WIDTH_MOBILE = "18rem"
 ```
 
 For multiple sidebars in your application, you can use the `style` prop to set the width of the sidebar.
@@ -505,7 +505,7 @@ To trigger the sidebar, you use the `cmd+b` keyboard shortcut on Mac and `ctrl+b
 You can change the keyboard shortcut by updating the `SIDEBAR_KEYBOARD_SHORTCUT` variable.
 
 ```tsx title="components/ui/sidebar.tsx"
-const SIDEBAR_KEYBOARD_SHORTCUT = "b";
+const SIDEBAR_KEYBOARD_SHORTCUT = "b"
 ```
 
 ## Sidebar
@@ -513,13 +513,13 @@ const SIDEBAR_KEYBOARD_SHORTCUT = "b";
 The main `Sidebar` component used to render a collapsible sidebar.
 
 ```tsx showLineNumbers
-import { Sidebar } from "@/components/ui/sidebar";
+import { Sidebar } from "@/components/ui/sidebar"
 
 const AppSidebar = () => {
-  return <Sidebar />;
-};
+  return <Sidebar />
+}
 
-export default AppSidebar;
+export default AppSidebar
 ```
 
 ### Props
@@ -537,13 +537,13 @@ Use the `side` prop to change the side of the sidebar.
 Available options are `left` and `right`.
 
 ```tsx
-import { Sidebar } from "@/components/ui/sidebar";
+import { Sidebar } from "@/components/ui/sidebar"
 
 const AppSidebar = () => {
-  return <Sidebar side="left | right" />;
-};
+  return <Sidebar side="left | right" />
+}
 
-export default AppSidebar;
+export default AppSidebar
 ```
 
 ### variant
@@ -553,13 +553,13 @@ Use the `variant` prop to change the variant of the sidebar.
 Available options are `sidebar`, `floating` and `inset`.
 
 ```tsx showLineNumbers
-import { Sidebar } from "@/components/ui/sidebar";
+import { Sidebar } from "@/components/ui/sidebar"
 
 const AppSidebar = () => {
-  return <Sidebar variant="sidebar | floating | inset" />;
-};
+  return <Sidebar variant="sidebar | floating | inset" />
+}
 
-export default AppSidebar;
+export default AppSidebar
 ```
 
 <Alert class="bg-[#101010]">
@@ -585,13 +585,13 @@ Use the `collapsible` prop to make the sidebar collapsible.
 Available options are `offcanvas`, `icon` and `none`.
 
 ```tsx
-import { Sidebar } from "@/components/ui/sidebar";
+import { Sidebar } from "@/components/ui/sidebar"
 
 const AppSidebar = () => {
-  return <Sidebar collapsible="offcanvas | icon | none" />;
-};
+  return <Sidebar collapsible="offcanvas | icon | none" />
+}
 
-export default AppSidebar;
+export default AppSidebar
 ```
 
 | Prop        | Description                                                  |
@@ -605,7 +605,7 @@ export default AppSidebar;
 The `useSidebar` hook is used to control the sidebar.
 
 ```tsx
-import { useSidebar } from "@/components/ui/sidebar";
+import { useSidebar } from "@/components/ui/sidebar"
 
 const AppSidebar = () => {
   const {
@@ -616,10 +616,10 @@ const AppSidebar = () => {
     setOpenMobile,
     isMobile,
     toggleSidebar,
-  } = useSidebar();
-};
+  } = useSidebar()
+}
 
-export default AppSidebar;
+export default AppSidebar
 ```
 
 | Property        | Type                                                    | Description                                   |

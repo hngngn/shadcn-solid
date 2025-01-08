@@ -7,11 +7,10 @@ link:
   api: https://kobalte.dev/docs/core/components/number-field#api-reference
 ---
 
-
-
 <ComponentPreview name="number-field-demo" >
 
 ```tsx file=<rootDir>/src/registry/tailwindcss/examples/number-field-demo.tsx
+
 ```
 
 </ComponentPreview>
@@ -20,18 +19,14 @@ link:
 
 <ComponentInstallation >
 
-
 ```bash
 npx shadcn-solid@latest add number-field
 ```
 
-
 <Step >
 
 <StepItem>Install the following dependencies:</StepItem>
-```bash
-npm install @kobalte/core
-```
+```bash npm install @kobalte/core ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
 ```tsx file=<rootDir>/src/registry/tailwindcss/ui/number-field.tsx
@@ -42,9 +37,7 @@ npm install @kobalte/core
 <Step >
 
 <StepItem>Install the following dependencies:</StepItem>
-```bash
-npm install @kobalte/core
-```
+```bash npm install @kobalte/core ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
 ```tsx file=<rootDir>/../packages/unocss/ui/number-field.tsx
@@ -64,17 +57,17 @@ import {
   NumberFieldGroup,
   NumberFieldIncrementTrigger,
   NumberFieldInput,
-  NumberFieldLabel
-} from "@components/ui/number-field";
+  NumberFieldLabel,
+} from "@components/ui/number-field"
 ```
 
 ```tsx
 <NumberField>
-    <NumberFieldGroup>
-        <NumberFieldDecrementTrigger aria-label="Decrement" />
-        <NumberFieldInput />
-        <NumberFieldIncrementTrigger aria-label="Increment" />
-    </NumberFieldGroup>
+  <NumberFieldGroup>
+    <NumberFieldDecrementTrigger aria-label="Decrement" />
+    <NumberFieldInput />
+    <NumberFieldIncrementTrigger aria-label="Increment" />
+  </NumberFieldGroup>
 </NumberField>
 ```
 
@@ -85,6 +78,7 @@ import {
 <ComponentPreview name="number-field-disabled-demo" >
 
 ```tsx file=<rootDir>/src/registry/tailwindcss/examples/number-field-disabled-demo.tsx
+
 ```
 
 </ComponentPreview>
@@ -94,6 +88,7 @@ import {
 <ComponentPreview name="number-field-with-error-demo" >
 
 ```tsx file=<rootDir>/src/registry/tailwindcss/examples/number-field-with-error-demo.tsx
+
 ```
 
 </ComponentPreview>

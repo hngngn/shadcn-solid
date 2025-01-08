@@ -7,11 +7,10 @@ link:
   api: https://corvu.dev/docs/primitives/otp-field#api-reference
 ---
 
-
-
 <ComponentPreview name="otp-field-demo" >
 
 ```tsx file=<rootDir>/src/registry/tailwindcss/examples/otp-field-demo.tsx
+
 ```
 
 </ComponentPreview>
@@ -20,18 +19,14 @@ link:
 
 <ComponentInstallation >
 
-
 ```bash
 npx shadcn-solid@latest add otp-field
 ```
 
-
 <Step >
 
 <StepItem>Install the following dependencies:</StepItem>
-```bash
-npm install @corvu/otp-field
-```
+```bash npm install @corvu/otp-field ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
 ```tsx file=<rootDir>/src/registry/tailwindcss/ui/otp-field.tsx
@@ -47,20 +42,20 @@ module.exports = {
       keyframes: {
         "accordion-down": {
           from: { height: 0 },
-          to: { height: "var(--kb-accordion-content-height)" }
+          to: { height: "var(--kb-accordion-content-height)" },
         },
         "accordion-up": {
           from: { height: "var(--kb-accordion-content-height)" },
-          to: { height: 0 }
-        }
+          to: { height: 0 },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out"
-      }
-    }
-  }
-};
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
+    },
+  },
+}
 ```
 
 </Step>
@@ -68,9 +63,7 @@ module.exports = {
 <Step >
 
 <StepItem>Install the following dependencies:</StepItem>
-```bash
-npm install @corvu/otp-field
-```
+```bash npm install @corvu/otp-field ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
 ```tsx file=<rootDir>/../packages/unocss/ui/otp-field.tsx
@@ -83,20 +76,20 @@ export default defineConfig({
   themes: {
     animation: {
       keyframes: {
-        "caret-blink": "{ 0%,70%,100% { opacity: 1 } 20%,50% { opacity: 0 } }"
+        "caret-blink": "{ 0%,70%,100% { opacity: 1 } 20%,50% { opacity: 0 } }",
       },
       timingFns: {
-        "caret-blink": "ease-out"
+        "caret-blink": "ease-out",
       },
       durations: {
-        "caret-blink": "1.25s"
+        "caret-blink": "1.25s",
       },
       counts: {
-        "caret-blink": "infinite"
-      }
-    }
-  }
-});
+        "caret-blink": "infinite",
+      },
+    },
+  },
+})
 ```
 
 </Step>
@@ -111,8 +104,8 @@ import {
   OTPFieldGroup,
   OTPFieldInput,
   OTPFieldSeparator,
-  OTPFieldSlot
-} from "@/components/ui/otp-field";
+  OTPFieldSlot,
+} from "@/components/ui/otp-field"
 ```
 
 ```tsx
@@ -141,6 +134,7 @@ Use the `pattern` prop to define a custom pattern for the OTP field.
 <ComponentPreview name="otp-field-with-pattern-demo" >
 
 ```tsx file=<rootDir>/src/registry/tailwindcss/examples/otp-field-with-pattern-demo.tsx
+
 ```
 
 </ComponentPreview>
@@ -152,6 +146,7 @@ You can use the `value` and `onValueChange` props to control the input value.
 <ComponentPreview name="otp-field-with-controlled-demo" >
 
 ```tsx file=<rootDir>/src/registry/tailwindcss/examples/otp-field-with-controlled-demo.tsx
+
 ```
 
 </ComponentPreview>

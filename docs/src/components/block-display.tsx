@@ -1,31 +1,29 @@
-import { Index } from "@/__registry__";
-import {
-	getCachedFileTree,
-	getCachedHighlightedFiles,
-} from "@/action/registry";
-import type { RegistryEntry } from "@/registry/schema";
-import { createAsync } from "@solidjs/router";
-import { clientOnly } from "@solidjs/start";
-import { Show, createMemo } from "solid-js";
+import { Show, createMemo } from "solid-js"
+import { createAsync } from "@solidjs/router"
+import { clientOnly } from "@solidjs/start"
+import { Index } from "@/__registry__"
+import { getCachedFileTree, getCachedHighlightedFiles } from "@/action/registry"
 
-const BlockViewer = clientOnly(() => import("./block-viewer"), { lazy: true });
+import type { RegistryEntry } from "@/registry/schema"
+
+const BlockViewer = clientOnly(() => import("./block-viewer"), { lazy: true })
 
 const BlockDisplay = (props: { name: string }) => {
-	const item = createMemo<RegistryEntry>(() => Index.tailwindcss[props.name]);
-	const tree = createAsync(() => getCachedFileTree(item().files));
-	const highlightedFiles = createAsync(() =>
-		getCachedHighlightedFiles(item().files),
-	);
+  const item = createMemo<RegistryEntry>(() => Index.tailwindcss[props.name])
+  const tree = createAsync(() => getCachedFileTree(item().files))
+  const highlightedFiles = createAsync(() =>
+    getCachedHighlightedFiles(item().files)
+  )
 
-	return (
-		<Show when={item().files && tree() && highlightedFiles()}>
-			<BlockViewer
-				item={item()}
-				tree={tree()!}
-				highlightedFiles={highlightedFiles()!}
-			/>
-		</Show>
-	);
-};
+  return (
+    <Show when={item().files && tree() && highlightedFiles()}>
+      <BlockViewer
+        item={item()}
+        tree={tree()!}
+        highlightedFiles={highlightedFiles()!}
+      />
+    </Show>
+  )
+}
 
-export default BlockDisplay;
+export default BlockDisplay

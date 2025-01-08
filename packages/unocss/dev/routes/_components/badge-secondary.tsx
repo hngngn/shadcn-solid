@@ -1,7 +1,7 @@
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@/components/ui/badge"
 
 const BadgeSecondary = () => {
-	return <Badge variant="secondary">Secondary</Badge>;
-};
+  return <Badge variant="secondary">Secondary</Badge>
+}
 
-export default BadgeSecondary;
+export default BadgeSecondary

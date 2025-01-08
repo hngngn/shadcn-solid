@@ -7,11 +7,10 @@ link:
   api: https://kobalte.dev/docs/core/components/alert-dialog#api-reference
 ---
 
-
-
 <ComponentPreview name="alert-dialog-demo" >
 
 ```tsx file=<rootDir>/src/registry/tailwindcss/examples/alert-dialog-demo.tsx
+
 ```
 
 </ComponentPreview>
@@ -20,18 +19,14 @@ link:
 
 <ComponentInstallation >
 
-
 ```bash
 npx shadcn-solid@latest add alert-dialog
 ```
 
-
 <Step >
 
 <StepItem>Install the following dependencies:</StepItem>
-```bash
-npm install @kobalte/core
-```
+```bash npm install @kobalte/core ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
 ```tsx file=<rootDir>/src/registry/tailwindcss/ui/alert-dialog.tsx
@@ -42,9 +37,7 @@ npm install @kobalte/core
 <Step >
 
 <StepItem>Install the following dependencies:</StepItem>
-```bash
-npm install @kobalte/core
-```
+```bash npm install @kobalte/core ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
 ```tsx file=<rootDir>/../packages/unocss/ui/alert-dialog.tsx
@@ -59,6 +52,7 @@ npm install @kobalte/core
 ```tsx
 import {
   AlertDialog,
+  AlertDialogAction,
   AlertDialogClose,
   AlertDialogContent,
   AlertDialogDescription,
@@ -66,8 +60,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-  AlertDialogAction
-} from "@/components/ui/alert-dialog";
+} from "@/components/ui/alert-dialog"
 ```
 
 ```tsx
@@ -77,8 +70,8 @@ import {
     <AlertDialogHeader>
       <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
       <AlertDialogDescription>
-        This action cannot be undone. This will permanently delete your account and remove your data
-        from our servers.
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
       </AlertDialogDescription>
     </AlertDialogHeader>
     <AlertDialogFooter>

@@ -43,22 +43,22 @@ I'm use the `@` alias to make it easier to import your components. This is how y
 ```
 
 ```ts title="app.config.ts"{10-14}
-import { defineConfig } from "@solidjs/start/config";
-import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { dirname, resolve } from "node:path"
+import { fileURLToPath } from "node:url"
+import { defineConfig } from "@solidjs/start/config"
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        "@": resolve(__dirname, "./src")
-      }
-    }
-  }
-});
+        "@": resolve(__dirname, "./src"),
+      },
+    },
+  },
+})
 ```
 
 If you prefer to use a different alias than `@`, you'll need to update the `import` statements when adding components.
@@ -68,7 +68,7 @@ If you prefer to use a different alias than `@`, you'll need to update the `impo
 This is what this project's `tailwind.config.cjs` file looks like:
 
 ```js title="tailwind.config.cjs"
-const { fontFamily } = require("tailwindcss/defaultTheme");
+const { fontFamily } = require("tailwindcss/defaultTheme")
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -76,7 +76,7 @@ export default {
   content: [
     "src/routes/**/*.{ts,tsx,mdx}",
     "src/components/**/*.{ts,tsx}",
-    "src/registry/**/*.{ts,tsx}"
+    "src/registry/**/*.{ts,tsx}",
   ],
   theme: {
     extend: {
@@ -84,8 +84,8 @@ export default {
         center: true,
         padding: "2rem",
         screens: {
-          "2xl": "1400px"
-        }
+          "2xl": "1400px",
+        },
       },
       colors: {
         border: "hsl(var(--border))",
@@ -95,86 +95,91 @@ export default {
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))"
+          foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))"
+          foreground: "hsl(var(--secondary-foreground))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))"
+          foreground: "hsl(var(--destructive-foreground))",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))"
+          foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
           DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))"
+          foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))"
+          foreground: "hsl(var(--popover-foreground))",
         },
         card: {
           DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))"
-        }
+          foreground: "hsl(var(--card-foreground))",
+        },
       },
       borderRadius: {
         lg: `var(--radius)`,
         md: `calc(var(--radius) - 2px)`,
-        sm: "calc(var(--radius) - 4px)"
+        sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["Inter Variable", ...fontFamily.sans]
+        sans: ["Inter Variable", ...fontFamily.sans],
       },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },
-          to: { height: "var(--kb-accordion-content-height)" }
+          to: { height: "var(--kb-accordion-content-height)" },
         },
         "accordion-up": {
           from: { height: "var(--kb-accordion-content-height)" },
-          to: { height: 0 }
+          to: { height: 0 },
         },
         "collapsible-down": {
           from: { height: 0 },
-          to: { height: "var(--kb-collapsible-content-height)" }
+          to: { height: "var(--kb-collapsible-content-height)" },
         },
         "collapsible-up": {
           from: { height: "var(--kb-collapsible-content-height)" },
-          to: { height: 0 }
-        }
+          to: { height: 0 },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "collapsible-down": "collapsible-down 0.2s ease-out",
-        "collapsible-up": "collapsible-up 0.2s ease-out"
-      }
-    }
+        "collapsible-up": "collapsible-up 0.2s ease-out",
+      },
+    },
   },
-  plugins: [require("tailwindcss-animate")]
-};
+  plugins: [require("tailwindcss-animate")],
+}
 ```
 
 or `uno.config.ts`
 
 ```ts title="uno.config.ts"
-import { defineConfig, presetUno, transformerDirectives, transformerVariantGroup } from "unocss";
-import presetAnimations from "unocss-preset-animations";
+import {
+  defineConfig,
+  presetUno,
+  transformerDirectives,
+  transformerVariantGroup,
+} from "unocss"
+import presetAnimations from "unocss-preset-animations"
 
 export default defineConfig({
   presets: [
     presetUno({
       dark: {
         dark: '[data-kb-theme="dark"]',
-        light: '[data-kb-theme="light"]'
-      }
+        light: '[data-kb-theme="light"]',
+      },
     }),
-    presetAnimations()
+    presetAnimations(),
   ],
   transformers: [transformerVariantGroup(), transformerDirectives()],
   theme: {
@@ -186,63 +191,64 @@ export default defineConfig({
       foreground: "hsl(var(--foreground))",
       primary: {
         DEFAULT: "hsl(var(--primary))",
-        foreground: "hsl(var(--primary-foreground))"
+        foreground: "hsl(var(--primary-foreground))",
       },
       secondary: {
         DEFAULT: "hsl(var(--secondary))",
-        foreground: "hsl(var(--secondary-foreground))"
+        foreground: "hsl(var(--secondary-foreground))",
       },
       destructive: {
         DEFAULT: "hsl(var(--destructive))",
-        foreground: "hsl(var(--destructive-foreground))"
+        foreground: "hsl(var(--destructive-foreground))",
       },
       muted: {
         DEFAULT: "hsl(var(--muted))",
-        foreground: "hsl(var(--muted-foreground))"
+        foreground: "hsl(var(--muted-foreground))",
       },
       accent: {
         DEFAULT: "hsl(var(--accent))",
-        foreground: "hsl(var(--accent-foreground))"
+        foreground: "hsl(var(--accent-foreground))",
       },
       popover: {
         DEFAULT: "hsl(var(--popover))",
-        foreground: "hsl(var(--popover-foreground))"
+        foreground: "hsl(var(--popover-foreground))",
       },
       card: {
         DEFAULT: "hsl(var(--card))",
-        foreground: "hsl(var(--card-foreground))"
-      }
+        foreground: "hsl(var(--card-foreground))",
+      },
     },
     borderRadius: {
       lg: `var(--radius)`,
       md: `calc(var(--radius) - 2px)`,
-      sm: "calc(var(--radius) - 4px)"
+      sm: "calc(var(--radius) - 4px)",
     },
     animation: {
       keyframes: {
         "accordion-down":
           "{ from { height: 0 } to { height: var(--kb-accordion-content-height) } }",
-        "accordion-up": "{ from { height: var(--kb-accordion-content-height) } to { height: 0 } }",
+        "accordion-up":
+          "{ from { height: var(--kb-accordion-content-height) } to { height: 0 } }",
         "collapsible-down":
           "{ from { height: 0 } to { height: var(--kb-collapsible-content-height) } }",
         "collapsible-up":
-          "{ from { height: var(--kb-collapsible-content-height) } to { height: 0 } }"
+          "{ from { height: var(--kb-collapsible-content-height) } to { height: 0 } }",
       },
       timingFns: {
         "accordion-down": "ease-out",
         "accordion-up": "ease-out",
         "collapsible-down": "ease-out",
-        "collapsible-up": "ease-out"
+        "collapsible-up": "ease-out",
       },
       durations: {
         "accordion-down": "0.2s",
         "accordion-up": "0.2s",
         "collapsible-down": "0.2s",
-        "collapsible-up": "0.2s"
-      }
-    }
-  }
-});
+        "collapsible-up": "0.2s",
+      },
+    },
+  },
+})
 ```
 
 ### Configure styles
@@ -406,11 +412,10 @@ body {
 I use a `cn` helper to make it easier to conditionally add Tailwind CSS classes. Here's how I define it in `src/libs/cn.ts`:
 
 ```ts title="src/libs/cn.ts"
-import type { ClassValue } from "clsx";
-import clsx from "clsx";
-import { twMerge } from "tailwind-merge";
+import clsx, { type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
 
-export const cn = (...classLists: ClassValue[]) => twMerge(clsx(classLists));
+export const cn = (...classLists: ClassValue[]) => twMerge(clsx(classLists))
 ```
 
 ### That's it

@@ -1,7 +1,7 @@
-import { Badge } from "@/registry/tailwindcss/ui/badge";
+import { Badge } from "@/registry/tailwindcss/ui/badge"
 
 const BadgeDemo = () => {
-	return <Badge>Badge</Badge>;
-};
+  return <Badge>Badge</Badge>
+}
 
-export default BadgeDemo;
+export default BadgeDemo

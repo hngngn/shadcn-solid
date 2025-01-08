@@ -1,7 +1,7 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button"
 
 const ButtonDestructive = () => {
-	return <Button variant="destructive">Destructive</Button>;
-};
+  return <Button variant="destructive">Destructive</Button>
+}
 
-export default ButtonDestructive;
+export default ButtonDestructive

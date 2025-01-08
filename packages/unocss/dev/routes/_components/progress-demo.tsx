@@ -1,7 +1,7 @@
-import { Progress } from "@/components/ui/progress";
+import { Progress } from "@/components/ui/progress"
 
 const ProgressDemo = () => {
-	return <Progress value={60} class="w-60%" />;
-};
+  return <Progress value={60} class="w-60%" />
+}
 
-export default ProgressDemo;
+export default ProgressDemo

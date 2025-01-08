@@ -7,11 +7,10 @@ link:
   api: https://kobalte.dev/docs/core/components/combobox#api-reference
 ---
 
-
-
 <ComponentPreview name="combobox-demo" >
 
 ```tsx file=<rootDir>/src/registry/tailwindcss/examples/combobox-demo.tsx
+
 ```
 
 </ComponentPreview>
@@ -20,18 +19,14 @@ link:
 
 <ComponentInstallation >
 
-
 ```bash
 npx shadcn-solid@latest add combobox
 ```
 
-
 <Step >
 
 <StepItem>Install the following dependencies:</StepItem>
-```bash
-npm install @kobalte/core
-```
+```bash npm install @kobalte/core ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
 ```tsx file=<rootDir>/src/registry/tailwindcss/ui/combobox.tsx
@@ -42,9 +37,7 @@ npm install @kobalte/core
 <Step >
 
 <StepItem>Install the following dependencies:</StepItem>
-```bash
-npm install @kobalte/core
-```
+```bash npm install @kobalte/core ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
 ```tsx file=<rootDir>/../packages/unocss/ui/combobox.tsx
@@ -57,31 +50,34 @@ npm install @kobalte/core
 ## Usage
 
 ```tsx
+import { createSignal } from "solid-js"
+import { createFilter } from "@kobalte/core"
+
 import {
   Combobox,
+  ComboboxContent,
   ComboboxItem,
   ComboboxTrigger,
-  ComboboxContent
-} from "@/components/ui/combobox";
-import { createFilter } from "@kobalte/core";
-import { createSignal } from "solid-js";
+} from "@/components/ui/combobox"
 ```
 
 ```tsx
-const ALL_OPTIONS = ["Apple", "Banana", "Blueberry", "Grapes", "Pineapple"];
+const ALL_OPTIONS = ["Apple", "Banana", "Blueberry", "Grapes", "Pineapple"]
 
-const filter = createFilter({ sensitivity: "base" });
-const [options, setOptions] = createSignal(ALL_OPTIONS);
+const filter = createFilter({ sensitivity: "base" })
+const [options, setOptions] = createSignal(ALL_OPTIONS)
 const onInputChange = (value: string) => {
-  setOptions(ALL_OPTIONS.filter(option => filter.contains(option, value)));
-};
+  setOptions(ALL_OPTIONS.filter((option) => filter.contains(option, value)))
+}
 ```
 
 ```tsx
 <Combobox
   options={options()}
   onInputChange={onInputChange}
-  itemComponent={props => <ComboboxItem item={props.item}>{props.item.rawValue}</ComboboxItem>}
+  itemComponent={(props) => (
+    <ComboboxItem item={props.item}>{props.item.rawValue}</ComboboxItem>
+  )}
 >
   <ComboboxTrigger>
     <ComboboxInput />

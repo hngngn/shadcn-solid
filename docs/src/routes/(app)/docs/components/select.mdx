@@ -7,11 +7,10 @@ link:
   api: https://kobalte.dev/docs/core/components/select#api-reference
 ---
 
-
-
 <ComponentPreview name="select-demo" >
 
 ```tsx file=<rootDir>/src/registry/tailwindcss/examples/select-demo.tsx
+
 ```
 
 </ComponentPreview>
@@ -20,18 +19,14 @@ link:
 
 <ComponentInstallation >
 
-
 ```bash
 npx shadcn-solid@latest add select
 ```
 
-
 <Step >
 
 <StepItem>Install the following dependencies:</StepItem>
-```bash
-npm install @kobalte/core
-```
+```bash npm install @kobalte/core ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
 ```tsx file=<rootDir>/src/registry/tailwindcss/ui/select.tsx
@@ -42,9 +37,7 @@ npm install @kobalte/core
 <Step >
 
 <StepItem>Install the following dependencies:</StepItem>
-```bash
-npm install @kobalte/core
-```
+```bash npm install @kobalte/core ```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
 ```tsx file=<rootDir>/../packages/unocss/ui/select.tsx
@@ -62,17 +55,19 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue
-} from "@/components/ui/select";
+  SelectValue,
+} from "@/components/ui/select"
 ```
 
 ```tsx
 <Select
   options={["Apple", "Banana", "Blueberry", "Grapes", "Pineapple"]}
-  itemComponent={props => <SelectItem item={props.item}>{props.item.rawValue}</SelectItem>}
+  itemComponent={(props) => (
+    <SelectItem item={props.item}>{props.item.rawValue}</SelectItem>
+  )}
 >
   <SelectTrigger>
-    <SelectValue<string>>{state => state.selectedOption()}</SelectValue>
+    <SelectValue<string>>{(state) => state.selectedOption()}</SelectValue>
   </SelectTrigger>
   <SelectContent />
 </Select>

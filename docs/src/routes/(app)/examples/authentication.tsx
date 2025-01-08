@@ -1,7 +1,7 @@
-import AuthenticationUI from "./_components/authentication/ui";
+import AuthenticationUI from "./_components/authentication/ui"
 
 const AuthenticationPage = () => {
-	return <AuthenticationUI />;
-};
+  return <AuthenticationUI />
+}
 
-export default AuthenticationPage;
+export default AuthenticationPage
