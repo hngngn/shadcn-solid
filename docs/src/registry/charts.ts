@@ -145,4 +145,15 @@ export const charts: Registry = [
       },
     ],
   },
+  {
+    name: "bar-chart-interactive",
+    type: "registry:block",
+    registryDependencies: ["card", "chart", "use-mobile"],
+    files: [
+      {
+        path: "charts/bar-chart-interactive.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
 ]

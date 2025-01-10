@@ -91,6 +91,11 @@ const ChartsPage = () => {
                     <ChartDisplay name="bar-chart-active">
                       <Chart.BarChartActive />
                     </ChartDisplay>
+                    <div class="md:col-span-2 lg:col-span-3">
+                      <ChartDisplay name="bar-chart-interactive">
+                        <Chart.BarChartInteractive />
+                      </ChartDisplay>
+                    </div>
                   </div>
                 </div>
               </div>

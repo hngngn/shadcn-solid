@@ -153,7 +153,7 @@ export const ChartCrosshair = <T,>(props: chartCrosshairProps<T>) => {
   return <VisCrosshair template={template} {...rest} />
 }
 
-type chartTooltipContentProps<T> = {
+type chartTooltipContentProps<T, C extends ChartConfig> = {
   data: T
   x: number | Date
   class?: string
@@ -161,21 +161,29 @@ type chartTooltipContentProps<T> = {
   hideIndicator?: boolean
   indicator?: "line" | "dot" | "dashed"
   labelKey: keyof T
+  nameKey?: keyof C
   labelFormatter?: (data: number | Date) => JSX.Element
 } & chartContextProps
 
-export const ChartTooltipContent = <T,>(props: chartTooltipContentProps<T>) => {
+export const ChartTooltipContent = <T, C extends ChartConfig>(
+  props: chartTooltipContentProps<T, C>
+) => {
   const merge = mergeProps(
     {
       hideLabel: false,
       hideIndicator: false,
       indicator: "dot",
-    } satisfies Partial<chartTooltipContentProps<T>>,
+    } satisfies Partial<chartTooltipContentProps<T, C>>,
     props
   )
 
   const value = () =>
-    getConfigFromData(merge.data, merge.labelKey, merge.config)
+    getConfigFromData(
+      merge.data,
+      merge.labelKey,
+      merge.nameKey as keyof ChartConfig,
+      merge.config
+    )
 
   const tooltipLabel = () => {
     if (merge.hideLabel || !value().items.length) {
@@ -259,12 +267,19 @@ export const ChartTooltipContent = <T,>(props: chartTooltipContentProps<T>) => {
 const getConfigFromData = <T,>(
   data: T,
   labelKey: keyof T,
+  nameKey: keyof ChartConfig | undefined,
   config: ChartConfig
 ) => {
-  // @ts-expect-error
-  const valueKeys = Object.entries(data)
-    .filter(([key, value]) => key !== labelKey && typeof value === "number")
-    .map(([key]) => key)
+  const valueKeys =
+    // @ts-expect-error
+    Object.entries(data)
+      .filter(
+        ([key, value]) =>
+          key !== labelKey &&
+          (typeof value === "number" || typeof value === "object")
+      )
+      .filter(([key]) => !key.includes("_"))
+      .map(([key]) => key)
 
   const items = valueKeys.map((key) => {
     const configItem = config[key]
@@ -275,10 +290,15 @@ const getConfigFromData = <T,>(
       color = data.fill as string
     }
 
+    const rawValue = data[key as keyof T]
+    const value =
+      typeof rawValue === "object" && rawValue !== null
+        ? Object.values(rawValue).find((v) => typeof v === "number")
+        : (rawValue as number)
+
     return {
-      // @ts-expect-error: Access numeric value
-      value: data[key] as number,
-      key: configItem.label,
+      value,
+      key: nameKey ? config[nameKey].label : configItem.label,
       icon: configItem.icon,
       color,
     }

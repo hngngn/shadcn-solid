@@ -138,7 +138,7 @@ const BarChartInteractive = () => {
     if (isMobile()) {
       return 4
     }
-    return 15
+    return 9
   }
 
   const [activeChart, setActiveChart] =

@@ -7,6 +7,7 @@ import {
 } from "solid-js"
 import { Index } from "@/__registry__"
 
+import { cn } from "@/registry/tailwindcss/libs/cn"
 import {
   Tabs,
   TabsContent,
@@ -18,12 +19,17 @@ import {
 type Props = {
   name: string
   block?: boolean
+  class?: string
+  hideCode?: boolean
 }
 
 const ComponentPreview = (props: ParentProps<Props>) => {
-  const merge = mergeProps({ block: false }, props)
+  const merge = mergeProps<Partial<Props>[]>(
+    { block: false, hideCode: false },
+    props
+  )
   const Component = createMemo(
-    () => Index.tailwindcss[props.name].component as JSX.Element
+    () => Index.tailwindcss[props.name]?.component as JSX.Element
   )
 
   return (
@@ -56,19 +62,26 @@ const ComponentPreview = (props: ParentProps<Props>) => {
         </div>
       }
     >
-      <div class="group relative my-4 flex flex-col space-y-2 [&_.preview>div:not(:has(table))]:sm:max-w-[70%]">
+      <div
+        class={cn(
+          "group relative my-4 flex flex-col space-y-2 [&_.preview>div:not(:has(table))]:sm:max-w-[70%]",
+          merge.class
+        )}
+      >
         <Tabs defaultValue="preview">
-          <div class="pb-3">
-            <TabsList class="rounded-none border-b bg-transparent">
-              <TabsTrigger value="preview" class="w-fit">
-                Preview
-              </TabsTrigger>
-              <TabsTrigger value="code" class="w-fit">
-                Code
-              </TabsTrigger>
-              <TabsIndicator variant="underline" />
-            </TabsList>
-          </div>
+          <Show when={!merge.hideCode}>
+            <div class="pb-3">
+              <TabsList class="rounded-none border-b bg-transparent">
+                <TabsTrigger value="preview" class="w-fit">
+                  Preview
+                </TabsTrigger>
+                <TabsTrigger value="code" class="w-fit">
+                  Code
+                </TabsTrigger>
+                <TabsIndicator variant="underline" />
+              </TabsList>
+            </div>
+          </Show>
           <TabsContent
             value="preview"
             class="preview relative flex min-h-[350px] w-full items-center justify-center rounded-md border p-10 has-[table:not([data-scope=date-picker])]:border-none has-[table:not([data-scope=date-picker])]:p-0"

@@ -8,6 +8,7 @@ import AreaChartStep from "@/registry/tailwindcss/charts/area-chart-step"
 import BarChart from "@/registry/tailwindcss/charts/bar-chart"
 import BarChartActive from "@/registry/tailwindcss/charts/bar-chart-active"
 import BarChartHorizontal from "@/registry/tailwindcss/charts/bar-chart-horizontal"
+import BarChartInteractive from "@/registry/tailwindcss/charts/bar-chart-interactive"
 import BarChartMixed from "@/registry/tailwindcss/charts/bar-chart-mixed"
 import BarChartMultiply from "@/registry/tailwindcss/charts/bar-chart-multiply"
 import BarChartStacked from "@/registry/tailwindcss/charts/bar-chart-stacked"
@@ -26,4 +27,5 @@ export const Chart = {
   BarChartStacked,
   BarChartMixed,
   BarChartActive,
+  BarChartInteractive,
 }
