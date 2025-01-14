@@ -1,7 +1,6 @@
 import { For, createMemo, createSignal } from "solid-js"
-import { render } from "solid-js/web"
-import { VisAxis, VisStackedBar, VisTooltip } from "@unovis/solid"
-import { StackedBar } from "@unovis/ts"
+import { VisAxis, VisLine, VisTooltip } from "@unovis/solid"
+import { Position } from "@unovis/ts"
 
 import { useIsMobile } from "@/registry/tailwindcss/hooks/use-mobile"
 import {
@@ -13,6 +12,7 @@ import {
 } from "@/registry/tailwindcss/ui/card"
 import {
   ChartContainer,
+  ChartCrosshair,
   ChartTooltipContent,
   type ChartConfig,
 } from "@/registry/tailwindcss/ui/chart"
@@ -131,7 +131,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-const BarChartInteractive = () => {
+const LineChartInteractive = () => {
   const isMobile = useIsMobile()
 
   const numTicks = () => {
@@ -165,7 +165,7 @@ const BarChartInteractive = () => {
     <Card>
       <CardHeader class="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row">
         <div class="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
-          <CardTitle>Bar Chart - Interactive</CardTitle>
+          <CardTitle>Line Chart - Interactive</CardTitle>
           <CardDescription>
             Showing total visitors for the last 3 months
           </CardDescription>
@@ -200,11 +200,10 @@ const BarChartInteractive = () => {
           class="aspect-auto"
           yDomain={[0, Math.max(...data.map((d) => d.mobile.view + 50))]}
         >
-          <VisStackedBar<DataRecord>
+          <VisLine<DataRecord>
             x={(_, i) => i}
             y={y()}
             color={`var(--color-${activeChart()})`}
-            barPadding={0.2}
           />
           <VisAxis<DataRecord>
             type="x"
@@ -220,39 +219,34 @@ const BarChartInteractive = () => {
             domainLine={false}
             numTicks={numTicks()}
           />
-          <VisTooltip
-            triggers={{
-              [StackedBar.selectors.bar]: (d: DataRecord, x) => {
-                const container = document.createElement("div")
-                const Component = () => (
-                  <ChartTooltipContent<Partial<DataRecord>, typeof chartConfig>
-                    data={{
-                      date: d.date,
-                      // @ts-expect-error
-                      [activeChart()]: d[activeChart()],
-                    }}
-                    x={x}
-                    config={chartConfig}
-                    labelKey="date"
-                    nameKey="view"
-                    labelFormatter={() =>
-                      new Date(d.date).toLocaleDateString("en-US", {
-                        month: "short",
-                        day: "numeric",
-                        year: "numeric",
-                      })
-                    }
-                  />
-                )
-                render(() => <Component />, container)
-                return container.innerHTML
-              },
-            }}
+          <ChartCrosshair<DataRecord>
+            color={`var(--color-${activeChart()})`}
+            template={(props) => (
+              <ChartTooltipContent
+                indicator="line"
+                labelKey="date"
+                nameKey="view"
+                labelFormatter={() =>
+                  new Date(props.data.date).toLocaleDateString("en-US", {
+                    month: "short",
+                    day: "numeric",
+                    year: "numeric",
+                  })
+                }
+                {...props}
+                data={{
+                  date: props.data.date,
+                  // @ts-expect-error
+                  [activeChart()]: props.data[activeChart()],
+                }}
+              />
+            )}
           />
+          <VisTooltip horizontalPlacement={Position.Center} />
         </ChartContainer>
       </CardContent>
     </Card>
   )
 }
 
-export default BarChartInteractive
+export default LineChartInteractive

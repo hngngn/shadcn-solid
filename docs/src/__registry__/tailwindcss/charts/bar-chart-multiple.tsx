@@ -42,11 +42,11 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-const BarChartMultiply = () => {
+const BarChartMultiple = () => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Bar Chart - Multiply</CardTitle>
+        <CardTitle>Bar Chart - Multiple</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
       <CardContent class="h-[300px]">
@@ -123,4 +123,4 @@ const BarChartMultiply = () => {
   )
 }
 
-export default BarChartMultiply
+export default BarChartMultiple

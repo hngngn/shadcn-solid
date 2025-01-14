@@ -79,6 +79,7 @@ export const charts: Registry = [
       },
     ],
   },
+  // Bar Charts
   {
     name: "bar-chart",
     type: "registry:block",
@@ -102,12 +103,12 @@ export const charts: Registry = [
     ],
   },
   {
-    name: "bar-chart-multiply",
+    name: "bar-chart-multiple",
     type: "registry:block",
     registryDependencies: ["card", "chart"],
     files: [
       {
-        path: "charts/bar-chart-multiply.tsx",
+        path: "charts/bar-chart-multiple.tsx",
         type: "registry:block",
       },
     ],
@@ -152,6 +153,51 @@ export const charts: Registry = [
     files: [
       {
         path: "charts/bar-chart-interactive.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  // Line Charts
+  {
+    name: "line-chart",
+    type: "registry:block",
+    registryDependencies: ["card", "chart"],
+    files: [
+      {
+        path: "charts/line-chart.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "line-chart-linear",
+    type: "registry:block",
+    registryDependencies: ["card", "chart"],
+    files: [
+      {
+        path: "charts/line-chart-linear.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "line-chart-multiple",
+    type: "registry:block",
+    registryDependencies: ["card", "chart"],
+    files: [
+      {
+        path: "charts/line-chart-multiple.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "line-chart-interactive",
+    type: "registry:block",
+    registryDependencies: ["card", "chart"],
+    files: [
+      {
+        path: "charts/line-chart-interactive.tsx",
         type: "registry:block",
       },
     ],

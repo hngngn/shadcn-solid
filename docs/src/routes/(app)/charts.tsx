@@ -79,8 +79,8 @@ const ChartsPage = () => {
                     <ChartDisplay name="bar-chart-horizontal">
                       <Chart.BarChartHorizontal />
                     </ChartDisplay>
-                    <ChartDisplay name="bar-chart-multiply">
-                      <Chart.BarChartMultiply />
+                    <ChartDisplay name="bar-chart-multiple">
+                      <Chart.BarChartMultiple />
                     </ChartDisplay>
                     <ChartDisplay name="bar-chart-stacked">
                       <Chart.BarChartStacked />
@@ -94,6 +94,26 @@ const ChartsPage = () => {
                     <div class="md:col-span-2 lg:col-span-3">
                       <ChartDisplay name="bar-chart-interactive">
                         <Chart.BarChartInteractive />
+                      </ChartDisplay>
+                    </div>
+                  </div>
+                  <Separator />
+                  <div
+                    class="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
+                    id="line-chart"
+                  >
+                    <ChartDisplay name="line-chart">
+                      <Chart.LineChart />
+                    </ChartDisplay>
+                    <ChartDisplay name="line-chart-linear">
+                      <Chart.LineChartLinear />
+                    </ChartDisplay>
+                    <ChartDisplay name="line-chart-multiple">
+                      <Chart.LineChartMultiple />
+                    </ChartDisplay>
+                    <div class="md:col-span-2 lg:col-span-3">
+                      <ChartDisplay name="line-chart-interactive">
+                        <Chart.LineChartInteractive />
                       </ChartDisplay>
                     </div>
                   </div>

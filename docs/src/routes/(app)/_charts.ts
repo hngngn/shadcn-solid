@@ -1,17 +1,59 @@
-import AreaChart from "@/registry/tailwindcss/charts/area-chart"
-import AreaChartGradient from "@/registry/tailwindcss/charts/area-chart-gradient"
-import AreaChartInteractive from "@/registry/tailwindcss/charts/area-chart-interactive"
-import AreaChartLegend from "@/registry/tailwindcss/charts/area-chart-legend"
-import AreaChartLinear from "@/registry/tailwindcss/charts/area-chart-linear"
-import AreaChartStacked from "@/registry/tailwindcss/charts/area-chart-stacked"
-import AreaChartStep from "@/registry/tailwindcss/charts/area-chart-step"
-import BarChart from "@/registry/tailwindcss/charts/bar-chart"
-import BarChartActive from "@/registry/tailwindcss/charts/bar-chart-active"
-import BarChartHorizontal from "@/registry/tailwindcss/charts/bar-chart-horizontal"
-import BarChartInteractive from "@/registry/tailwindcss/charts/bar-chart-interactive"
-import BarChartMixed from "@/registry/tailwindcss/charts/bar-chart-mixed"
-import BarChartMultiply from "@/registry/tailwindcss/charts/bar-chart-multiply"
-import BarChartStacked from "@/registry/tailwindcss/charts/bar-chart-stacked"
+import { clientOnly } from "@solidjs/start"
+
+const AreaChart = clientOnly(
+  () => import("@/registry/tailwindcss/charts/area-chart")
+)
+const AreaChartGradient = clientOnly(
+  () => import("@/registry/tailwindcss/charts/area-chart-gradient")
+)
+const AreaChartInteractive = clientOnly(
+  () => import("@/registry/tailwindcss/charts/area-chart-interactive")
+)
+const AreaChartLegend = clientOnly(
+  () => import("@/registry/tailwindcss/charts/area-chart-legend")
+)
+const AreaChartLinear = clientOnly(
+  () => import("@/registry/tailwindcss/charts/area-chart-linear")
+)
+const AreaChartStacked = clientOnly(
+  () => import("@/registry/tailwindcss/charts/area-chart-stacked")
+)
+const AreaChartStep = clientOnly(
+  () => import("@/registry/tailwindcss/charts/area-chart-step")
+)
+const BarChart = clientOnly(
+  () => import("@/registry/tailwindcss/charts/bar-chart")
+)
+const BarChartActive = clientOnly(
+  () => import("@/registry/tailwindcss/charts/bar-chart-active")
+)
+const BarChartHorizontal = clientOnly(
+  () => import("@/registry/tailwindcss/charts/bar-chart-horizontal")
+)
+const BarChartInteractive = clientOnly(
+  () => import("@/registry/tailwindcss/charts/bar-chart-interactive")
+)
+const BarChartMixed = clientOnly(
+  () => import("@/registry/tailwindcss/charts/bar-chart-mixed")
+)
+const BarChartMultiple = clientOnly(
+  () => import("@/registry/tailwindcss/charts/bar-chart-multiple")
+)
+const BarChartStacked = clientOnly(
+  () => import("@/registry/tailwindcss/charts/bar-chart-stacked")
+)
+const LineChart = clientOnly(
+  () => import("@/registry/tailwindcss/charts/line-chart")
+)
+const LineChartLinear = clientOnly(
+  () => import("@/registry/tailwindcss/charts/line-chart-linear")
+)
+const LineChartMultiple = clientOnly(
+  () => import("@/registry/tailwindcss/charts/line-chart-multiple")
+)
+const LineChartInteractive = clientOnly(
+  () => import("@/registry/tailwindcss/charts/line-chart-interactive")
+)
 
 export const Chart = {
   AreaChart,
@@ -23,9 +65,13 @@ export const Chart = {
   AreaChartInteractive,
   BarChart,
   BarChartHorizontal,
-  BarChartMultiply,
+  BarChartMultiple,
   BarChartStacked,
   BarChartMixed,
   BarChartActive,
   BarChartInteractive,
+  LineChart,
+  LineChartLinear,
+  LineChartMultiple,
+  LineChartInteractive,
 }
