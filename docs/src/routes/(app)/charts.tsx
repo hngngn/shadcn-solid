@@ -117,6 +117,20 @@ const ChartsPage = () => {
                       </ChartDisplay>
                     </div>
                   </div>
+                  <div
+                    class="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
+                    id="line-chart"
+                  >
+                    <ChartDisplay name="donut-chart">
+                      <Chart.DonutChart />
+                    </ChartDisplay>
+                    <ChartDisplay name="donut-chart-pie">
+                      <Chart.DonutChartPie />
+                    </ChartDisplay>
+                    <ChartDisplay name="donut-chart-legend">
+                      <Chart.DonutChartLegend />
+                    </ChartDisplay>
+                  </div>
                 </div>
               </div>
             </div>

@@ -223,7 +223,6 @@ const LineChartInteractive = () => {
             color={`var(--color-${activeChart()})`}
             template={(props) => (
               <ChartTooltipContent
-                indicator="line"
                 labelKey="date"
                 nameKey="view"
                 labelFormatter={() =>

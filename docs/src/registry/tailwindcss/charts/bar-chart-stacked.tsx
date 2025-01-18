@@ -61,7 +61,7 @@ const BarChartStacked = () => {
         <CardTitle>Bar Chart - Stacked</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
-      <CardContent class="h-[300px]">
+      <CardContent class="">
         <ChartContainer
           config={chartConfig}
           type="xy"

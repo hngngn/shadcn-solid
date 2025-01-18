@@ -54,6 +54,15 @@ const LineChartMultiple = clientOnly(
 const LineChartInteractive = clientOnly(
   () => import("@/registry/tailwindcss/charts/line-chart-interactive")
 )
+const DonutChart = clientOnly(
+  () => import("@/registry/tailwindcss/charts/donut-chart")
+)
+const DonutChartPie = clientOnly(
+  () => import("@/registry/tailwindcss/charts/donut-chart-pie")
+)
+const DonutChartLegend = clientOnly(
+  () => import("@/registry/tailwindcss/charts/donut-chart-legend")
+)
 
 export const Chart = {
   AreaChart,
@@ -74,4 +83,7 @@ export const Chart = {
   LineChartLinear,
   LineChartMultiple,
   LineChartInteractive,
+  DonutChart,
+  DonutChartPie,
+  DonutChartLegend,
 }

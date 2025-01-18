@@ -87,7 +87,7 @@ export const ChartContainer = <T,>(props: chartContainerProps<T>) => {
 
           <Match when={local.type === "single"}>
             <VisSingleContainer {...(rest as Omit<SingleContainer<T>, "type">)}>
-              <ChartStyle type="single" config={local.config} />
+              <ChartStyle type="singe" config={local.config} />
               {local.children}
             </VisSingleContainer>
           </Match>
@@ -97,8 +97,9 @@ export const ChartContainer = <T,>(props: chartContainerProps<T>) => {
   )
 }
 
+// TODO: fix the typo
 export const ChartStyle = (
-  props: { type: "xy" | "single" } & Omit<chartContextProps, "data">
+  props: { type: "xy" | "singe" } & Omit<chartContextProps, "data">
 ) => {
   const colorConfig = () =>
     Object.entries(props.config).filter(
@@ -107,8 +108,8 @@ export const ChartStyle = (
 
   return (
     <Show when={colorConfig().length}>
-      <style
-        innerText={Object.entries(THEMES)
+      <style>
+        {Object.entries(THEMES)
           .map(
             ([theme, prefix]) => `
 						${prefix} [data-vis-${props.type}-container] {
@@ -124,7 +125,7 @@ export const ChartStyle = (
 						`
           )
           .join("\n")}
-      />
+      </style>
     </Show>
   )
 }
@@ -163,6 +164,7 @@ type chartTooltipContentProps<T, C extends ChartConfig> = {
   labelKey: keyof T
   nameKey?: keyof C
   labelFormatter?: (data: number | Date) => JSX.Element
+  labelAsKey?: boolean
 } & chartContextProps
 
 export const ChartTooltipContent = <T, C extends ChartConfig>(
@@ -173,6 +175,7 @@ export const ChartTooltipContent = <T, C extends ChartConfig>(
       hideLabel: false,
       hideIndicator: false,
       indicator: "dot",
+      labelAsKey: false,
     } satisfies Partial<chartTooltipContentProps<T, C>>,
     props
   )
@@ -191,7 +194,7 @@ export const ChartTooltipContent = <T, C extends ChartConfig>(
     }
 
     return (
-      <div class="font-medium">
+      <div class="font-medium capitalize">
         <Show
           when={!merge.labelFormatter}
           fallback={merge.labelFormatter!(
@@ -249,7 +252,12 @@ export const ChartTooltipContent = <T, C extends ChartConfig>(
                 <div class="grid gap-1.5">
                   <Show when={nestLabel()}>{tooltipLabel()}</Show>
                   <span class="text-muted-foreground capitalize">
-                    {item.key}
+                    <Show
+                      when={!merge.labelAsKey}
+                      fallback={value().label as string}
+                    >
+                      {item.key}
+                    </Show>
                   </span>
                 </div>
                 <span class="text-foreground font-mono font-medium tabular-nums">

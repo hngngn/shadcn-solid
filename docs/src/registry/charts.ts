@@ -202,4 +202,38 @@ export const charts: Registry = [
       },
     ],
   },
+  // Circular Chart
+  {
+    name: "donut-chart",
+    type: "registry:block",
+    registryDependencies: ["card", "chart"],
+    files: [
+      {
+        path: "charts/donut-chart.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "donut-chart-pie",
+    type: "registry:block",
+    registryDependencies: ["card", "chart"],
+    files: [
+      {
+        path: "charts/donut-chart-pie.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
+  {
+    name: "donut-chart-legend",
+    type: "registry:block",
+    registryDependencies: ["card", "chart"],
+    files: [
+      {
+        path: "charts/donut-chart-legend.tsx",
+        type: "registry:block",
+      },
+    ],
+  },
 ]

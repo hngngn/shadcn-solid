@@ -46,7 +46,7 @@ const AreaChartLinear = () => {
           Showing total visitors for the last 6 months
         </CardDescription>
       </CardHeader>
-      <CardContent class="h-[300px]">
+      <CardContent class="">
         <ChartContainer
           config={chartConfig}
           type="xy"
