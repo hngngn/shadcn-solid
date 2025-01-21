@@ -154,20 +154,28 @@ export const ChartCrosshair = <T,>(props: chartCrosshairProps<T>) => {
   return <VisCrosshair template={template} {...rest} />
 }
 
-type chartTooltipContentProps<T, C extends ChartConfig> = {
+// @ts-expect-error
+type chartTooltipContentProps<T, C extends ChartConfig = undefined> = {
   data: T
   x: number | Date
+  labelKey: C extends undefined ? keyof T : keyof C
   class?: string
   hideLabel?: boolean
   hideIndicator?: boolean
   indicator?: "line" | "dot" | "dashed"
-  labelKey: keyof T
-  nameKey?: keyof C
+  customKey?: C extends undefined ? never : keyof C
   labelFormatter?: (data: number | Date) => JSX.Element
   labelAsKey?: boolean
+  formatter?: (
+    value: number,
+    name: JSX.Element,
+    item: T,
+    index: number
+  ) => JSX.Element
 } & chartContextProps
 
-export const ChartTooltipContent = <T, C extends ChartConfig>(
+// @ts-expect-error
+export const ChartTooltipContent = <T, C extends ChartConfig = undefined>(
   props: chartTooltipContentProps<T, C>
 ) => {
   const merge = mergeProps(
@@ -181,11 +189,11 @@ export const ChartTooltipContent = <T, C extends ChartConfig>(
   )
 
   const value = () =>
-    getConfigFromData(
+    getConfigFromData<T, C>(
       merge.data,
+      merge.config,
       merge.labelKey,
-      merge.nameKey as keyof ChartConfig,
-      merge.config
+      merge.customKey
     )
 
   const tooltipLabel = () => {
@@ -217,53 +225,63 @@ export const ChartTooltipContent = <T, C extends ChartConfig>(
       <Show when={!nestLabel()}>{tooltipLabel()}</Show>
       <div class="grid gap-1.5">
         <For each={value().items}>
-          {(item) => (
+          {(item, index) => (
             <div
               class={cn(
                 "[&>svg]:text-muted-foreground flex w-full flex-wrap items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5",
                 merge.indicator === "dot" && "items-center"
               )}
             >
-              <Show when={item.icon}>{item.icon}</Show>
-              <Show when={!item.icon && !merge.hideIndicator}>
-                <div
-                  class={cn(
-                    "shrink-0 rounded-[2px] border-[--color-border] bg-[--color-bg]",
-                    {
-                      "h-2.5 w-2.5": merge.indicator === "dot",
-                      "w-1": merge.indicator === "line",
-                      "w-0 border-[1.5px] border-dashed bg-transparent":
-                        merge.indicator === "dashed",
-                      "my-0.5": nestLabel() && merge.indicator === "dashed",
-                    }
-                  )}
-                  style={{
-                    "--color-border": item.color,
-                    "--color-bg": item.color,
-                  }}
-                />
-              </Show>
-              <div
-                class={cn(
-                  "flex flex-1 justify-between gap-1.5 leading-none",
-                  nestLabel() ? "items-end" : "items-center"
+              <Show
+                when={!merge.formatter}
+                fallback={merge.formatter!(
+                  item.value!,
+                  item.key,
+                  merge.data,
+                  index()
                 )}
               >
-                <div class="grid gap-1.5">
-                  <Show when={nestLabel()}>{tooltipLabel()}</Show>
-                  <span class="text-muted-foreground capitalize">
-                    <Show
-                      when={!merge.labelAsKey}
-                      fallback={value().label as string}
-                    >
-                      {item.key}
-                    </Show>
+                <Show when={item.icon}>{item.icon}</Show>
+                <Show when={!item.icon && !merge.hideIndicator}>
+                  <div
+                    class={cn(
+                      "shrink-0 rounded-[2px] border-[--color-border] bg-[--color-bg]",
+                      {
+                        "h-2.5 w-2.5": merge.indicator === "dot",
+                        "w-1": merge.indicator === "line",
+                        "w-0 border-[1.5px] border-dashed bg-transparent":
+                          merge.indicator === "dashed",
+                        "my-0.5": nestLabel() && merge.indicator === "dashed",
+                      }
+                    )}
+                    style={{
+                      "--color-border": item.color,
+                      "--color-bg": item.color,
+                    }}
+                  />
+                </Show>
+                <div
+                  class={cn(
+                    "flex flex-1 justify-between gap-1.5 leading-none",
+                    nestLabel() ? "items-end" : "items-center"
+                  )}
+                >
+                  <div class="grid gap-1.5">
+                    <Show when={nestLabel()}>{tooltipLabel()}</Show>
+                    <span class="text-muted-foreground capitalize">
+                      <Show
+                        when={!merge.labelAsKey}
+                        fallback={value().label as string}
+                      >
+                        {item.key}
+                      </Show>
+                    </span>
+                  </div>
+                  <span class="text-foreground font-mono font-medium tabular-nums">
+                    {item.value}
                   </span>
                 </div>
-                <span class="text-foreground font-mono font-medium tabular-nums">
-                  {item.value}
-                </span>
-              </div>
+              </Show>
             </div>
           )}
         </For>
@@ -272,11 +290,12 @@ export const ChartTooltipContent = <T, C extends ChartConfig>(
   )
 }
 
-const getConfigFromData = <T,>(
+// @ts-expect-error
+const getConfigFromData = <T, C extends ChartConfig = undefined>(
   data: T,
-  labelKey: keyof T,
-  nameKey: keyof ChartConfig | undefined,
-  config: ChartConfig
+  config: ChartConfig,
+  labelKey?: C extends undefined ? keyof T : keyof C,
+  customKey?: C extends undefined ? never : keyof C
 ) => {
   const valueKeys =
     // @ts-expect-error
@@ -306,14 +325,16 @@ const getConfigFromData = <T,>(
 
     return {
       value,
-      key: nameKey ? config[nameKey].label : configItem.label,
+      key: customKey ? config[customKey].label : configItem.label,
       icon: configItem.icon,
       color,
     }
   })
 
+  const label = data[labelKey as keyof T] ?? config[labelKey as keyof C].label
+
   return {
-    label: data[labelKey],
+    label,
     items,
   }
 }

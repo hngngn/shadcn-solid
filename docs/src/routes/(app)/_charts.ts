@@ -63,6 +63,33 @@ const DonutChartPie = clientOnly(
 const DonutChartLegend = clientOnly(
   () => import("@/registry/tailwindcss/charts/donut-chart-legend")
 )
+const ChartTooltipDefault = clientOnly(
+  () => import("@/registry/tailwindcss/charts/chart-tooltip-default")
+)
+const ChartTooltipLine = clientOnly(
+  () => import("@/registry/tailwindcss/charts/chart-tooltip-line")
+)
+const ChartTooltipNoIndicator = clientOnly(
+  () => import("@/registry/tailwindcss/charts/chart-tooltip-no-indicator")
+)
+const ChartTooltipCustomLabel = clientOnly(
+  () => import("@/registry/tailwindcss/charts/chart-tooltip-custom-label")
+)
+const ChartTooltipLabelFormatter = clientOnly(
+  () => import("@/registry/tailwindcss/charts/chart-tooltip-label-formatter")
+)
+const ChartTooltipNoLabel = clientOnly(
+  () => import("@/registry/tailwindcss/charts/chart-tooltip-no-label")
+)
+const ChartTooltipFormatter = clientOnly(
+  () => import("@/registry/tailwindcss/charts/chart-tooltip-formatter")
+)
+const ChartTooltipIcon = clientOnly(
+  () => import("@/registry/tailwindcss/charts/chart-tooltip-icon")
+)
+const ChartTooltipAdvanced = clientOnly(
+  () => import("@/registry/tailwindcss/charts/chart-tooltip-advanced")
+)
 
 export const Chart = {
   AreaChart,
@@ -86,4 +113,13 @@ export const Chart = {
   DonutChart,
   DonutChartPie,
   DonutChartLegend,
+  ChartTooltipDefault,
+  ChartTooltipLine,
+  ChartTooltipNoIndicator,
+  ChartTooltipCustomLabel,
+  ChartTooltipLabelFormatter,
+  ChartTooltipNoLabel,
+  ChartTooltipFormatter,
+  ChartTooltipIcon,
+  ChartTooltipAdvanced,
 }

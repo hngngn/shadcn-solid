@@ -1,20 +1,9 @@
-import { render } from "solid-js/web"
-import { VisDonut, VisTooltip } from "@unovis/solid"
-import { Donut } from "@unovis/ts"
+import {render} from "solid-js/web"
+import {VisDonut, VisTooltip} from "@unovis/solid"
+import {Donut} from "@unovis/ts"
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/registry/tailwindcss/ui/card"
-import {
-  ChartContainer,
-  ChartTooltipContent,
-  type ChartConfig,
-} from "@/registry/tailwindcss/ui/chart"
+import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle,} from "@/registry/tailwindcss/ui/card"
+import {type ChartConfig, ChartContainer, ChartTooltipContent,} from "@/registry/tailwindcss/ui/chart"
 
 type DataRecord = {
   browser: string
@@ -81,7 +70,7 @@ const DonutChartLabel = () => {
                     x={x}
                     config={chartConfig}
                     labelKey="browser"
-                    nameKey="visitors"
+                    customKey="visitors"
                     hideLabel
                   />
                 )

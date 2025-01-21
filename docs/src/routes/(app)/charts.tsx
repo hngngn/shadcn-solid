@@ -119,7 +119,7 @@ const ChartsPage = () => {
                   </div>
                   <div
                     class="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
-                    id="line-chart"
+                    id="circular-chart"
                   >
                     <ChartDisplay name="donut-chart">
                       <Chart.DonutChart />
@@ -129,6 +129,39 @@ const ChartsPage = () => {
                     </ChartDisplay>
                     <ChartDisplay name="donut-chart-legend">
                       <Chart.DonutChartLegend />
+                    </ChartDisplay>
+                  </div>
+                  <Separator />
+                  <div
+                    class="grid flex-1 scroll-mt-20 items-start gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10"
+                    id="chart-tooltip"
+                  >
+                    <ChartDisplay name="chart-tooltip-default">
+                      <Chart.ChartTooltipDefault />
+                    </ChartDisplay>
+                    <ChartDisplay name="chart-tooltip-line">
+                      <Chart.ChartTooltipLine />
+                    </ChartDisplay>
+                    <ChartDisplay name="chart-tooltip-no-indicator">
+                      <Chart.ChartTooltipNoIndicator />
+                    </ChartDisplay>
+                    <ChartDisplay name="chart-tooltip-custom-label">
+                      <Chart.ChartTooltipCustomLabel />
+                    </ChartDisplay>
+                    <ChartDisplay name="chart-tooltip-label-formatter">
+                      <Chart.ChartTooltipLabelFormatter />
+                    </ChartDisplay>
+                    <ChartDisplay name="chart-tooltip-no-label">
+                      <Chart.ChartTooltipNoLabel />
+                    </ChartDisplay>
+                    <ChartDisplay name="chart-tooltip-formatter">
+                      <Chart.ChartTooltipFormatter />
+                    </ChartDisplay>
+                    <ChartDisplay name="chart-tooltip-icon">
+                      <Chart.ChartTooltipIcon />
+                    </ChartDisplay>
+                    <ChartDisplay name="chart-tooltip-advanced">
+                      <Chart.ChartTooltipAdvanced />
                     </ChartDisplay>
                   </div>
                 </div>

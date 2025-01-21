@@ -224,7 +224,7 @@ const LineChartInteractive = () => {
             template={(props) => (
               <ChartTooltipContent
                 labelKey="date"
-                nameKey="view"
+                customKey="view"
                 labelFormatter={() =>
                   new Date(props.data.date).toLocaleDateString("en-US", {
                     month: "short",
