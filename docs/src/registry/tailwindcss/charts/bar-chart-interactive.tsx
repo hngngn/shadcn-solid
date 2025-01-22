@@ -234,7 +234,7 @@ const BarChartInteractive = () => {
                     x={x}
                     config={chartConfig}
                     labelKey="date"
-                    customKey="view"
+                    nameKey="view"
                     labelFormatter={() =>
                       new Date(d.date).toLocaleDateString("en-US", {
                         month: "short",

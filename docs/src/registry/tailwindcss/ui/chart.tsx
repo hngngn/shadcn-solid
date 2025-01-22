@@ -163,7 +163,7 @@ type chartTooltipContentProps<T, C extends ChartConfig = undefined> = {
   hideLabel?: boolean
   hideIndicator?: boolean
   indicator?: "line" | "dot" | "dashed"
-  customKey?: C extends undefined ? never : keyof C
+  nameKey?: C extends undefined ? never : keyof C
   labelFormatter?: (data: number | Date) => JSX.Element
   labelAsKey?: boolean
   formatter?: (
@@ -193,7 +193,7 @@ export const ChartTooltipContent = <T, C extends ChartConfig = undefined>(
       merge.data,
       merge.config,
       merge.labelKey,
-      merge.customKey
+      merge.nameKey
     )
 
   const tooltipLabel = () => {
@@ -295,7 +295,7 @@ const getConfigFromData = <T, C extends ChartConfig = undefined>(
   data: T,
   config: ChartConfig,
   labelKey?: C extends undefined ? keyof T : keyof C,
-  customKey?: C extends undefined ? never : keyof C
+  nameKey?: C extends undefined ? never : keyof C
 ) => {
   const valueKeys =
     // @ts-expect-error
@@ -325,7 +325,7 @@ const getConfigFromData = <T, C extends ChartConfig = undefined>(
 
     return {
       value,
-      key: customKey ? config[customKey].label : configItem.label,
+      key: nameKey ? config[nameKey].label : configItem.label,
       icon: configItem.icon,
       color,
     }

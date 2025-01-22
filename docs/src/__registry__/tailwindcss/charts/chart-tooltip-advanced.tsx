@@ -1,3 +1,4 @@
+import { Show } from "solid-js"
 import { render } from "solid-js/web"
 import { VisAxis, VisStackedBar, VisTooltip } from "@unovis/solid"
 import { StackedBar } from "@unovis/ts"
@@ -81,34 +82,33 @@ const ChartTooltipAdvanced = () => {
                     config={chartConfig}
                     labelKey="date"
                     hideLabel
-                    formatter={(value, name) => (
+                    formatter={(value, name, item, index) => (
                       <>
                         <div
                           class="h-2.5 w-2.5 shrink-0 rounded-[2px] bg-[--color-bg]"
                           style={{
-                            "--color-bg": `var(--color-${name})`,
+                            "--color-bg": `var(--color-${(name as string).toLowerCase()})`,
                           }}
                         />
-                        {chartConfig[name as keyof typeof chartConfig].label ||
-                          name}
+                        {name}
                         <div class="text-foreground ml-auto flex items-baseline gap-0.5 font-mono font-medium tabular-nums">
                           {value}
                           <span class="text-muted-foreground font-normal">
                             kcal
                           </span>
                         </div>
-                        {/*/!* Add this after the last item *!/*/}
-                        {/*{index === 1 && (*/}
-                        {/*  <div class="text-foreground mt-1.5 flex basis-full items-center border-t pt-1.5 text-xs font-medium">*/}
-                        {/*    Total*/}
-                        {/*    <div class="text-foreground ml-auto flex items-baseline gap-0.5 font-mono font-medium tabular-nums">*/}
-                        {/*      {item.payload.running + item.payload.swimming}*/}
-                        {/*      <span class="text-muted-foreground font-normal">*/}
-                        {/*        kcal*/}
-                        {/*      </span>*/}
-                        {/*    </div>*/}
-                        {/*  </div>*/}
-                        {/*)}*/}
+                        {/* Add this after the last item */}
+                        <Show when={index === 1}>
+                          <div class="text-foreground mt-1.5 flex basis-full items-center border-t pt-1.5 text-xs font-medium">
+                            Total
+                            <div class="text-foreground ml-auto flex items-baseline gap-0.5 font-mono font-medium tabular-nums">
+                              {item.running + item.swimming}
+                              <span class="text-muted-foreground font-normal">
+                                kcal
+                              </span>
+                            </div>
+                          </div>
+                        </Show>
                       </>
                     )}
                   />

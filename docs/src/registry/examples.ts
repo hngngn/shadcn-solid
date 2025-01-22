@@ -951,4 +951,14 @@ export const examples: Registry = [
       },
     ],
   },
+  {
+    name: "chart-tooltip-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/chart-tooltip-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

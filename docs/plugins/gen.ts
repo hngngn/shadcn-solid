@@ -58,7 +58,9 @@ const traverseDirectory = async (
         const slug = match[2]
         const text = match[3].trim()
 
-        headings.push({ depth, slug, text })
+        if (depth <= 3) {
+          headings.push({ depth, slug, text })
+        }
       }
 
       docs.push({

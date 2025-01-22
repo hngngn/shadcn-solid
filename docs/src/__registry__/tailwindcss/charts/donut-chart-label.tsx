@@ -70,7 +70,7 @@ const DonutChartLabel = () => {
                     x={x}
                     config={chartConfig}
                     labelKey="browser"
-                    customKey="visitors"
+                    nameKey="visitors"
                     hideLabel
                   />
                 )
