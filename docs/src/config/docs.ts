@@ -73,7 +73,7 @@ export const docsConfig: TDocsConfig = {
         },
         {
           title: "Changelog",
-          href: "/docs/changelog#dec-2024---updates",
+          href: "/docs/changelog",
           items: [],
         },
         {

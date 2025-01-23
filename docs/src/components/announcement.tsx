@@ -1,7 +1,7 @@
 export const Announcement = () => {
   return (
     <a
-      href="/docs/changelog#dec-2024---updates"
+      href="/docs/changelog"
       class="group mb-2 inline-flex items-center px-0.5 text-sm font-medium"
     >
       <span class="underline-offset-4 group-hover:underline">
