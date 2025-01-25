@@ -4,6 +4,12 @@ import CodeBlockCommand from "@/components/code-block-command"
 import ComponentInstallation from "@/components/component-installation"
 import ComponentPreview from "@/components/component-preview"
 import { cn } from "@/registry/tailwindcss/libs/cn"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/registry/tailwindcss/ui/accordion"
 import { Alert, AlertDescription } from "@/registry/tailwindcss/ui/alert"
 
 import { CopyButton } from "./copy-button"
@@ -149,4 +155,8 @@ export const mdxComponents: Partial<MDXComponents> | Record<string, unknown> = {
   ComponentInstallation,
   Alert,
   AlertDescription,
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
 }
