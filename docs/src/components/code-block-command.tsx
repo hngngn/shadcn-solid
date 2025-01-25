@@ -106,14 +106,15 @@ const CodeBlockCommand = (
         onChange={setPackageManager}
       >
         <div class="dark:border-border flex items-center justify-between border-b border-zinc-700 bg-[#101010] px-3 pt-2.5">
-          <TabsList class="h-7 translate-y-[2px] gap-3 bg-transparent p-0 pl-1">
+          <TabsList class="h-7 translate-y-[2px] gap-4 bg-transparent p-0 pl-1">
             <For each={tabs}>
               {(item) => {
                 return (
                   <TabsTrigger
                     value={item.title}
-                    class="w-fit p-0 pb-1.5 font-mono text-zinc-400 data-[selected]:text-zinc-50"
+                    class="w-fit gap-1.5 p-0 pb-1.5 font-mono text-zinc-400 data-[selected]:text-zinc-50"
                   >
+                    {item.icon}
                     {item.title}
                   </TabsTrigger>
                 )
