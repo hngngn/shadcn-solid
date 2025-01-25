@@ -25,6 +25,8 @@
     "@solidjs/start": "^1.0.10",
     "@tanstack/solid-table": "^8.20.5",
     "@unocss/reset": "^0.65.1",
+    "@unovis/solid": "^1.5.0",
+    "@unovis/ts": "^1.5.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk-solid": "^1.1.0",

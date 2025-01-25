@@ -228,7 +228,7 @@ export const ChartTooltipContent = <T, C extends ChartConfig = undefined>(
           {(item, index) => (
             <div
               class={cn(
-                "[&>svg]:text-muted-foreground flex w-full flex-wrap items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5",
+                "[&>svg]:text-muted-foreground flex w-full flex-wrap items-stretch gap-2 [&>svg]:size-2.5",
                 merge.indicator === "dot" && "items-center"
               )}
             >
@@ -247,7 +247,7 @@ export const ChartTooltipContent = <T, C extends ChartConfig = undefined>(
                     class={cn(
                       "shrink-0 rounded-[2px] border-[--color-border] bg-[--color-bg]",
                       {
-                        "h-2.5 w-2.5": merge.indicator === "dot",
+                        "size-2.5": merge.indicator === "dot",
                         "w-1": merge.indicator === "line",
                         "w-0 border-[1.5px] border-dashed bg-transparent":
                           merge.indicator === "dashed",

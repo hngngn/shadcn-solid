@@ -39,29 +39,29 @@ export const DrawerContent = <T extends ValidComponent = "div">(
   return (
     <DrawerPrimitive.Portal>
       <DrawerPrimitive.Overlay
-        class="data-[transitioning]:(transition-[background-color] ease-[cubic-bezier(0.32,0.72,0,1)]) fixed inset-0 z-50 duration-500"
+        class="fixed inset-0 z-50 data-[transitioning]:(transition-[background-color] duration-500 ![transition-timing-function:cubic-bezier(0.32,0.72,0,1)])"
         style={{
           "background-color": `rgb(0 0 0 / ${0.6 * ctx.openPercentage()})`,
         }}
       />
       <DrawerPrimitive.Content
         class={cn(
-          "border-border bg-background data-[transitioning]:(transition-transform ease-[cubic-bezier(0.32,0.72,0,1)]) after:(absolute bg-inherit) fixed z-50 flex h-auto duration-500 md:select-none",
+          "border-border bg-background fixed z-50 flex h-auto after:(content-empty absolute bg-inherit) data-[transitioning]:(transition-transform duration-500 ![transition-timing-function:cubic-bezier(0.32,0.72,0,1)]) md:select-none",
           ctx.side() === "right" && [
             "inset-y-0 right-0 rounded-l-lg border-l pl-4",
-            "after:(inset-y-0 after:w-1/2) left-[calc(100%-1px)]",
+            "after:(inset-y-0 left-[calc(100%-1px)] w-1/2)",
           ],
           ctx.side() === "bottom" && [
             "inset-x-0 bottom-0 flex-col rounded-t-lg border-t pt-4",
-            "after:(inset-x-0 after:h-1/2) top-[calc(100%-1px)]",
+            "after:(inset-x-0 top-[calc(100%-1px)] h-1/2)",
           ],
           ctx.side() === "left" && [
             "inset-y-0 left-0 flex-row-reverse rounded-r-lg border-r pr-4",
-            "after:(inset-y-0 after:w-1/2) right-[calc(100%-1px)]",
+            "after:inset-y-0 right-[calc(100%-1px)] w-1/2)",
           ],
           ctx.side() === "top" && [
             "inset-x-0 top-0 flex-col-reverse rounded-b-lg border-b pb-4",
-            "after:(inset-x-0 after:h-1/2) bottom-[calc(100%-1px)]",
+            "after:(inset-x-0 bottom-[calc(100%-1px)] h-1/2)",
           ],
           local.class
         )}

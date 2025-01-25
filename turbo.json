@@ -8,16 +8,20 @@
       "env": ["COMPATIBILITY_DATE", "VITE_CJS_IGNORE_WARNING"]
     },
     "lint": {
-      "dependsOn": ["^lint"]
+      "dependsOn": ["^lint"],
+      "cache": false
     },
     "format": {
-      "dependsOn": ["^format"]
+      "dependsOn": ["^format"],
+      "cache": false
     },
     "ci:format": {
-      "dependsOn": ["^ci:format"]
+      "dependsOn": ["^ci:format"],
+      "cache": false
     },
     "ci:lint": {
-      "dependsOn": ["^ci:lint"]
+      "dependsOn": ["^ci:lint"],
+      "cache": false
     },
     "dev": {
       "cache": false,

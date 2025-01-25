@@ -565,6 +565,7 @@ export const ui: Registry = [
     type: "registry:ui",
     dependencies: ["@kobalte/core"],
     registryDependencies: [
+      "use-mobile",
       "call-handler",
       "combine-props",
       "button",

@@ -1,6 +1,7 @@
 import {
   defineConfig,
   presetUno,
+  presetWebFonts,
   transformerDirectives,
   transformerVariantGroup,
 } from "unocss"
@@ -15,6 +16,20 @@ export default defineConfig({
       },
     }),
     presetAnimations(),
+    presetWebFonts({
+      fonts: {
+        sans: {
+          name: "Geist Sans",
+          provider: "fontsource",
+          weights: [400, 500, 600, 700],
+        },
+        mono: {
+          name: "Geist Mono",
+          provider: "fontsource",
+          weights: [400, 500, 600, 700],
+        },
+      },
+    }),
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
   theme: {

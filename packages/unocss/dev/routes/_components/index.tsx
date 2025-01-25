@@ -8,6 +8,7 @@ import AccordionDemo from "./accordion-demo"
 import AlertDemo from "./alert-demo"
 import AlertDialogDemo from "./alert-dialog-demo"
 import AppSidebar from "./app-sidebar"
+import AreaChartInteractive from "./area-chart-interactive"
 import BadgeDemo from "./badge-demo"
 import BadgeDestructive from "./badge-destructive"
 import BadgeOutline from "./badge-outline"
@@ -35,6 +36,7 @@ import DrawerDemo from "./drawer-demo"
 import DropdownMenuDemo from "./dropdown-menu-demo"
 import HoverCardDemo from "./hover-card-demo"
 import MenubarDemo from "./menubar-demo"
+import ModeToggle from "./mode-toggle"
 import NavigationMenuDemo from "./navigation-menu-demo"
 import NumberFieldDemo from "./number-field-demo"
 import OtpFieldDemo from "./otp-field-demo"
@@ -215,6 +217,12 @@ const Page = () => {
             </ComponentWrapper>
             <ComponentWrapper name="Tooltip">
               <TooltipDemo />
+            </ComponentWrapper>
+            <ComponentWrapper name="Mode Toggle">
+              <ModeToggle />
+            </ComponentWrapper>
+            <ComponentWrapper name="Area Chart" class="col-span-3">
+              <AreaChartInteractive />
             </ComponentWrapper>
           </div>
         </div>

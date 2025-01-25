@@ -41,7 +41,6 @@
     --vis-tooltip-border-radius: theme("borderRadius.lg") !important;
     --vis-tooltip-text-color: theme("textColor.foreground") !important;
     --vis-font-family: theme("fontFamily.sans") !important;
-    --vis-legend-label-font-size: theme("fontSize.xs") !important;
     --vis-legend-label-color: var(--vis-tooltip-text-color) !important;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;

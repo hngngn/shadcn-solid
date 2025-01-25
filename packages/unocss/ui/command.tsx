@@ -132,7 +132,7 @@ export const CommandGroup = (props: CommandGroupProps) => {
   return (
     <CommandPrimitive.Group
       class={cn(
-        "text-foreground [&_[cmdk-group-heading]]:(px-2 text-muted-foreground) overflow-hidden p-1 py-1.5 text-xs font-medium",
+        "text-foreground [&_[cmdk-group-heading]]:(px-2 text-muted-foreground text-xs py-1.5 font-medium) overflow-hidden p-1",
         local.class
       )}
       {...rest}
