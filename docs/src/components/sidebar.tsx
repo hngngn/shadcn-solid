@@ -15,7 +15,7 @@ export const Sidebar = () => {
             <h4 class="mb-1 rounded-md px-2 py-1 text-sm font-semibold">
               {item.title}
             </h4>
-            <div class="grid grid-flow-row auto-rows-max text-sm">
+            <div class="grid grid-flow-row auto-rows-max gap-0.5 text-sm">
               <For each={item.items}>
                 {(item) => (
                   <Show
@@ -47,12 +47,12 @@ export const Sidebar = () => {
                     <a
                       href={item.href}
                       class={cn(
-                        "flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline",
+                        "hover:bg-accent hover:text-accent-foreground flex h-8 w-full items-center rounded-md border border-transparent px-2",
                         item.disabled && "cursor-not-allowed opacity-60",
                         location.pathname === item.href ||
                           (location.pathname.includes("/docs/installation") &&
                             item.href === "/docs/installation")
-                          ? "text-foreground font-medium"
+                          ? "bg-accent text-accent-foreground font-medium"
                           : "text-muted-foreground"
                       )}
                     >

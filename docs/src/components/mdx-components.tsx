@@ -1,5 +1,6 @@
 import { Show, splitProps, type ComponentProps } from "solid-js"
 
+import CodeBlockCommand from "@/components/code-block-command"
 import ComponentInstallation from "@/components/component-installation"
 import ComponentPreview from "@/components/component-preview"
 import { cn } from "@/registry/tailwindcss/libs/cn"
@@ -7,7 +8,6 @@ import { Alert, AlertDescription } from "@/registry/tailwindcss/ui/alert"
 
 import { CopyButton } from "./copy-button"
 import type { MDXComponents } from "./mdx"
-import PackageManagerCopyButton from "./package-manager-copy-button"
 
 export const mdxComponents: Partial<MDXComponents> | Record<string, unknown> = {
   a: (props) => (
@@ -68,16 +68,29 @@ export const mdxComponents: Partial<MDXComponents> | Record<string, unknown> = {
       withMeta: boolean
     }
   ) => {
-    const [local, rest] = splitProps(props, [
-      "rawString",
-      "npmCommand",
-      "yarnCommand",
-      "pnpmCommand",
-      "bunCommand",
-      "withMeta",
-    ])
+    const [local, command, rest] = splitProps(
+      props,
+      [
+        "rawString",
+        "npmCommand",
+        "yarnCommand",
+        "pnpmCommand",
+        "bunCommand",
+        "withMeta",
+      ],
+      ["npmCommand", "yarnCommand", "pnpmCommand", "bunCommand"]
+    )
+    const isNpmCommand = () =>
+      local.npmCommand &&
+      local.pnpmCommand &&
+      local.yarnCommand &&
+      local.bunCommand
+
     return (
-      <>
+      <Show
+        when={!isNpmCommand()}
+        fallback={<CodeBlockCommand {...command} {...props} />}
+      >
         <pre
           class="mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-lg border bg-[#101010] py-4 text-white"
           {...rest}
@@ -85,22 +98,7 @@ export const mdxComponents: Partial<MDXComponents> | Record<string, unknown> = {
         <Show when={local.rawString && !local.npmCommand}>
           <CopyButton rawString={local.rawString} withMeta={local.withMeta} />
         </Show>
-        <Show
-          when={
-            local.npmCommand &&
-            local.yarnCommand &&
-            local.pnpmCommand &&
-            local.bunCommand
-          }
-        >
-          <PackageManagerCopyButton
-            npmCommand={local.npmCommand}
-            yarnCommand={local.yarnCommand}
-            pnpmCommand={local.pnpmCommand}
-            bunCommand={local.bunCommand}
-          />
-        </Show>
-      </>
+      </Show>
     )
   },
   Step: (props: ComponentProps<"div">) => (

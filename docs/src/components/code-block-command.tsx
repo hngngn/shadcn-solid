@@ -1,21 +1,23 @@
-import { For, Show, createSignal, type VoidComponent } from "solid-js"
+import { ComponentProps, For, Show, createSignal } from "solid-js"
 
+import { Button } from "@/registry/tailwindcss/ui/button"
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/registry/tailwindcss/ui/dropdown-menu"
+  Tabs,
+  TabsContent,
+  TabsIndicator,
+  TabsList,
+  TabsTrigger,
+} from "@/registry/tailwindcss/ui/tabs"
 
-type Props = {
-  npmCommand: string
-  pnpmCommand: string
-  yarnCommand: string
-  bunCommand: string
-}
-
-const PackageManagerCopyButton: VoidComponent<Props> = (props) => {
-  const packageList = [
+const CodeBlockCommand = (
+  props: {
+    npmCommand: string
+    yarnCommand: string
+    pnpmCommand: string
+    bunCommand: string
+  } & ComponentProps<"pre">
+) => {
+  const tabs = [
     {
       title: "npm",
       icon: (
@@ -86,16 +88,67 @@ const PackageManagerCopyButton: VoidComponent<Props> = (props) => {
   ]
 
   const [isCopied, setIsCopied] = createSignal(false)
+  const [packageManager, setPackageManager] = createSignal("pnpm")
 
-  const copyToClipboard = async (value: string) => {
+  const copyToClipboard = async () => {
+    const index = tabs.findIndex((d) => d.title === packageManager())
+
     setIsCopied(true)
-    await navigator.clipboard.writeText(value)
+    await navigator.clipboard.writeText(tabs[index].value())
     setTimeout(() => setIsCopied(false), 2000)
   }
 
   return (
-    <DropdownMenu placement="bottom-end">
-      <DropdownMenuTrigger class="absolute right-4 top-4 rounded-md p-1 text-white transition-colors hover:bg-neutral-700/70">
+    <div class="relative mt-6 max-h-[650px] overflow-x-auto rounded-lg border bg-zinc-950 dark:bg-zinc-900">
+      <Tabs
+        defaultValue={tabs[2].title}
+        value={packageManager()}
+        onChange={setPackageManager}
+      >
+        <div class="dark:border-border flex items-center justify-between border-b border-zinc-700 bg-[#101010] px-3 pt-2.5">
+          <TabsList class="h-7 translate-y-[2px] gap-3 bg-transparent p-0 pl-1">
+            <For each={tabs}>
+              {(item) => {
+                return (
+                  <TabsTrigger
+                    value={item.title}
+                    class="w-fit p-0 pb-1.5 font-mono text-zinc-400 data-[selected]:text-zinc-50"
+                  >
+                    {item.title}
+                  </TabsTrigger>
+                )
+              }}
+            </For>
+            <TabsIndicator variant="underline" class="bg-zinc-50" />
+          </TabsList>
+        </div>
+        <For each={tabs}>
+          {(item) => {
+            return (
+              <TabsContent
+                value={item.title}
+                class="bg-[#101010] data-[orientation=horizontal]:mt-0"
+              >
+                <pre class="px-4 py-5">
+                  <code
+                    class="relative font-mono text-sm leading-none text-white"
+                    data-language="bash"
+                  >
+                    {item.value()}
+                  </code>
+                </pre>
+              </TabsContent>
+            )
+          }}
+        </For>
+      </Tabs>
+      <Button
+        size="icon"
+        variant="ghost"
+        class="absolute right-2.5 top-2 z-10 h-6 w-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50 [&_svg]:size-3"
+        onClick={copyToClipboard}
+      >
+        <span class="sr-only">Copy</span>
         <Show
           when={isCopied()}
           fallback={
@@ -136,22 +189,9 @@ const PackageManagerCopyButton: VoidComponent<Props> = (props) => {
             <title>Copied</title>
           </svg>
         </Show>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent>
-        <For each={packageList}>
-          {(item) => (
-            <DropdownMenuItem
-              class="flex items-center gap-[0.5rem]"
-              onClick={() => copyToClipboard(item.value())}
-            >
-              {item.icon}
-              {item.title}
-            </DropdownMenuItem>
-          )}
-        </For>
-      </DropdownMenuContent>
-    </DropdownMenu>
+      </Button>
+    </div>
   )
 }
 
-export default PackageManagerCopyButton
+export default CodeBlockCommand
