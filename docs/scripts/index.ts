@@ -2,12 +2,19 @@ import fs, { existsSync, mkdirSync } from "node:fs"
 import { tmpdir } from "node:os"
 import path from "node:path"
 import { registry } from "@/registry"
+import { Eta } from "eta"
 import { rimraf } from "rimraf"
 import { Project, ScriptKind } from "ts-morph"
 import * as v from "valibot"
 
+import { colorMapping, colors } from "@/registry/colors"
 import { frameworks } from "@/registry/frameworks"
-import { registrySchema, type Registry } from "@/registry/schema"
+import {
+  registryItemSchema,
+  registryItemTypeSchema,
+  registrySchema,
+  type Registry,
+} from "@/registry/schema"
 
 const REGISTRY_PATH = path.join(process.cwd(), "public/registry")
 
@@ -261,7 +268,437 @@ export const Index: Record<string, any> = {
   fs.writeFileSync(path.join(process.cwd(), "src/__registry__/index.ts"), index)
 }
 
+const REGISTRY_INDEX_WHITELIST: v.InferInput<typeof registryItemTypeSchema>[] =
+  [
+    "registry:ui",
+    "registry:libs",
+    "registry:hook",
+    "registry:block",
+    "registry:example",
+  ]
+
+// ----------------------------------------------------------------------------
+// Build registry/frameworks/[framework]/[name].json.
+// ----------------------------------------------------------------------------
+async function buildStyles(registry: Registry) {
+  for (const framework of frameworks) {
+    const targetPath = path.join(REGISTRY_PATH, "frameworks", framework.name)
+
+    // Create directory if it doesn't exist.
+    if (!existsSync(targetPath)) {
+      fs.mkdirSync(targetPath, { recursive: true })
+    }
+
+    for (const item of registry) {
+      if (!REGISTRY_INDEX_WHITELIST.includes(item.type)) {
+        continue
+      }
+
+      let files
+      if (item.files) {
+        files = await Promise.all(
+          item.files.map((_file) => {
+            const file =
+              typeof _file === "string"
+                ? {
+                    path: _file,
+                    type: item.type,
+                    content: "",
+                    target: "",
+                  }
+                : _file
+
+            let content: string
+            try {
+              if (framework.name === "unocss") {
+                content = fs.readFileSync(
+                  path.join(
+                    process.cwd(),
+                    "../packages",
+                    framework.name,
+                    file.path
+                  ),
+                  "utf8"
+                )
+              } else {
+                content = fs.readFileSync(
+                  path.join(
+                    process.cwd(),
+                    "src/registry",
+                    framework.name,
+                    file.path
+                  ),
+                  "utf8"
+                )
+              }
+            } catch (error) {
+              return
+            }
+
+            const tempFile = createTempSourceFile(file.path)
+            const sourceFile = project.createSourceFile(tempFile, content, {
+              scriptKind: ScriptKind.TSX,
+            })
+
+            const target = file.target ?? ""
+
+            return {
+              path: file.path,
+              type: file.type,
+              content: sourceFile.getText(),
+              target,
+            }
+          })
+        )
+      }
+
+      const payload = v.safeParse(registryItemSchema, {
+        $schema: "https://shadcn-solid.com/registry.json",
+        author: "hngngn (https://shadcn-solid.com)",
+        ...item,
+        files,
+      })
+
+      if (payload.success) {
+        fs.writeFileSync(
+          path.join(targetPath, `${item.name}.json`),
+          JSON.stringify(payload.output, null, 2),
+          "utf8"
+        )
+      }
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Build registry/frameworks/index.json.
+// ----------------------------------------------------------------------------
+const stylesJson = JSON.stringify(frameworks, null, 2)
+if (!existsSync(path.join(REGISTRY_PATH, "frameworks")))
+  fs.mkdirSync(path.join(REGISTRY_PATH, "frameworks"), {
+    recursive: true,
+  })
+else
+  fs.writeFileSync(
+    path.join(REGISTRY_PATH, "frameworks/index.json"),
+    stylesJson,
+    "utf8"
+  )
+
+// ----------------------------------------------------------------------------
+// Build registry/colors/index.json.
+// ----------------------------------------------------------------------------
+function buildThemes() {
+  const colorsTargetPath = path.join(REGISTRY_PATH, "colors")
+  rimraf.sync(colorsTargetPath)
+  if (!existsSync(colorsTargetPath)) {
+    fs.mkdirSync(colorsTargetPath, { recursive: true })
+  }
+
+  const colorsData: Record<string, any> = {}
+  for (const [color, value] of Object.entries(colors)) {
+    if (typeof value === "string") {
+      colorsData[color] = value
+      continue
+    }
+
+    if (Array.isArray(value)) {
+      colorsData[color] = value.map((item) => ({
+        ...item,
+        rgbChannel: item.rgb.replace(/^rgb\((\d+),(\d+),(\d+)\)$/, "$1 $2 $3"),
+        hslChannel: item.hsl.replace(
+          /^hsl\(([\d.]+),([\d.]+%),([\d.]+%)\)$/,
+          "$1 $2 $3"
+        ),
+      }))
+      continue
+    }
+
+    if (typeof value === "object") {
+      colorsData[color] = {
+        ...value,
+        rgbChannel: value.rgb.replace(/^rgb\((\d+),(\d+),(\d+)\)$/, "$1 $2 $3"),
+        hslChannel: value.hsl.replace(
+          /^hsl\(([\d.]+),([\d.]+%),([\d.]+%)\)$/,
+          "$1 $2 $3"
+        ),
+      }
+    }
+  }
+
+  fs.writeFileSync(
+    path.join(colorsTargetPath, "index.json"),
+    JSON.stringify(colorsData, null, 2),
+    "utf8"
+  )
+
+  // ----------------------------------------------------------------------------
+  // Build registry/colors/[base].json.
+  // ----------------------------------------------------------------------------
+  const TAILWIND_BASE_STYLES = `@tailwind base;
+@tailwind components;
+@tailwind utilities;
+  `
+
+  const TAILWIND_BASE_STYLES_WITH_VARIABLES = `@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: <%= it.colors.light["background"] %>;
+    --foreground: <%= it.colors.light["foreground"] %>;
+    --card: <%= it.colors.light["card"] %>;
+    --card-foreground: <%= it.colors.light["card-foreground"] %>;
+    --popover: <%= it.colors.light["popover"] %>;
+    --popover-foreground: <%= it.colors.light["popover-foreground"] %>;
+    --primary: <%= it.colors.light["primary"] %>;
+    --primary-foreground: <%= it.colors.light["primary-foreground"] %>;
+    --secondary: <%= it.colors.light["secondary"] %>;
+    --secondary-foreground: <%= it.colors.light["secondary-foreground"] %>;
+    --muted: <%= it.colors.light["muted"] %>;
+    --muted-foreground: <%= it.colors.light["muted-foreground"] %>;
+    --accent: <%= it.colors.light["accent"] %>;
+    --accent-foreground: <%= it.colors.light["accent-foreground"] %>;
+    --destructive: <%= it.colors.light["destructive"] %>;
+    --destructive-foreground: <%= it.colors.light["destructive-foreground"] %>;
+    --border: <%= it.colors.light["border"] %>;
+    --input: <%= it.colors.light["input"] %>;
+    --ring: <%= it.colors.light["ring"] %>;
+    --radius: 0.5rem;
+    --sidebar-background: <%= it.colors.light["sidebar-background"] %>;
+    --sidebar-foreground: <%= it.colors.light["sidebar-foreground"] %>;
+    --sidebar-primary: <%= it.colors.light["sidebar-primary"] %>;
+    --sidebar-primary-foreground: <%= it.colors.light["sidebar-primary-foreground"] %>;
+    --sidebar-accent: <%= it.colors.light["sidebar-accent"] %>;
+    --sidebar-accent-foreground: <%= it.colors.light["sidebar-accent-foreground"] %>;
+    --sidebar-border: <%= it.colors.light["sidebar-border"] %>;
+    --sidebar-ring: <%= it.colors.light["sidebar-ring"] %>;
+    --vis-tooltip-padding: 0.375rem 0.625rem !important;
+    --vis-tooltip-box-shadow: var(--un-shadow-inset) 0 20px 25px -5px
+      rgb(0 0 0 / 0.1) !important;
+    --vis-tooltip-background-color: theme("colors.background") !important;
+    --vis-tooltip-border-color: theme("colors.border") !important;
+    --vis-tooltip-border-radius: theme("borderRadius.lg") !important;
+    --vis-tooltip-text-color: theme("colors.foreground") !important;
+    --vis-font-family: theme("fontFamily.sans") !important;
+    --vis-legend-label-color: var(--vis-tooltip-text-color) !important;
+    --chart-1: <%= it.colors.light["chart-1"] %>;
+    --chart-2: <%= it.colors.light["chart-2"] %>;
+    --chart-3: <%= it.colors.light["chart-3"] %>;
+    --chart-4: <%= it.colors.light["chart-4"] %>;
+    --chart-5: <%= it.colors.light["chart-5"] %>;
+  }
+
+  .dark {
+    --background: <%= it.colors.dark["background"] %>;
+    --foreground: <%= it.colors.dark["foreground"] %>;
+    --card: <%= it.colors.dark["card"] %>;
+    --card-foreground: <%= it.colors.dark["card-foreground"] %>;
+    --popover: <%= it.colors.dark["popover"] %>;
+    --popover-foreground: <%= it.colors.dark["popover-foreground"] %>;
+    --primary: <%= it.colors.dark["primary"] %>;
+    --primary-foreground: <%= it.colors.dark["primary-foreground"] %>;
+    --secondary: <%= it.colors.dark["secondary"] %>;
+    --secondary-foreground: <%= it.colors.dark["secondary-foreground"] %>;
+    --muted: <%= it.colors.dark["muted"] %>;
+    --muted-foreground: <%= it.colors.dark["muted-foreground"] %>;
+    --accent: <%= it.colors.dark["accent"] %>;
+    --accent-foreground: <%= it.colors.dark["accent-foreground"] %>;
+    --destructive: <%= it.colors.dark["destructive"] %>;
+    --destructive-foreground: <%= it.colors.dark["destructive-foreground"] %>;
+    --border: <%= it.colors.dark["border"] %>;
+    --input: <%= it.colors.dark["input"] %>;
+    --ring: <%= it.colors.dark["ring"] %>;
+    --sidebar-background: <%= it.colors.dark["sidebar-background"] %>;
+    --sidebar-foreground: <%= it.colors.dark["sidebar-foreground"] %>;
+    --sidebar-primary: <%= it.colors.dark["sidebar-primary"] %>;
+    --sidebar-primary-foreground: <%= it.colors.dark["sidebar-primary-foreground"] %>;
+    --sidebar-accent: <%= it.colors.dark["sidebar-accent"] %>;
+    --sidebar-accent-foreground: <%= it.colors.dark["sidebar-accent-foreground"] %>;
+    --sidebar-border: <%= it.colors.dark["sidebar-border"] %>;
+    --sidebar-ring: <%= it.colors.dark["sidebar-ring"] %>;
+    --chart-1: <%= it.colors.dark["chart-1"] %>;
+    --chart-2: <%= it.colors.dark["chart-2"] %>;
+    --chart-3: <%= it.colors.dark["chart-3"] %>;
+    --chart-4: <%= it.colors.dark["chart-4"] %>;
+    --chart-5: <%= it.colors.dark["chart-5"] %>;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}`
+
+  const UNO_BASE_STYLES_WITH_VARIABLES = `:root {
+  --background: <%= it.colors.light["background"] %>;
+  --foreground: <%= it.colors.light["foreground"] %>;
+  --card: <%= it.colors.light["card"] %>;
+  --card-foreground: <%= it.colors.light["card-foreground"] %>;
+  --popover: <%= it.colors.light["popover"] %>;
+  --popover-foreground: <%= it.colors.light["popover-foreground"] %>;
+  --primary: <%= it.colors.light["primary"] %>;
+  --primary-foreground: <%= it.colors.light["primary-foreground"] %>;
+  --secondary: <%= it.colors.light["secondary"] %>;
+  --secondary-foreground: <%= it.colors.light["secondary-foreground"] %>;
+  --muted: <%= it.colors.light["muted"] %>;
+  --muted-foreground: <%= it.colors.light["muted-foreground"] %>;
+  --accent: <%= it.colors.light["accent"] %>;
+  --accent-foreground: <%= it.colors.light["accent-foreground"] %>;
+  --destructive: <%= it.colors.light["destructive"] %>;
+  --destructive-foreground: <%= it.colors.light["destructive-foreground"] %>;
+  --border: <%= it.colors.light["border"] %>;
+  --input: <%= it.colors.light["input"] %>;
+  --ring: <%= it.colors.light["ring"] %>;
+  --radius: 0.5rem;
+  --sidebar-background: <%= it.colors.light["sidebar-background"] %>;
+  --sidebar-foreground: <%= it.colors.light["sidebar-foreground"] %>;
+  --sidebar-primary: <%= it.colors.light["sidebar-primary"] %>;
+  --sidebar-primary-foreground: <%= it.colors.light["sidebar-primary-foreground"] %>;
+  --sidebar-accent: <%= it.colors.light["sidebar-accent"] %>;
+  --sidebar-accent-foreground: <%= it.colors.light["sidebar-accent-foreground"] %>;
+  --sidebar-border: <%= it.colors.light["sidebar-border"] %>;
+  --sidebar-ring: <%= it.colors.light["sidebar-ring"] %>;
+  --vis-tooltip-padding: 0.375rem 0.625rem !important;
+  --vis-tooltip-box-shadow: var(--un-shadow-inset) 0 20px 25px -5px
+    rgb(0 0 0 / 0.1) !important;
+  --vis-tooltip-background-color: theme("colors.background") !important;
+  --vis-tooltip-border-color: theme("colors.border") !important;
+  --vis-tooltip-border-radius: theme("borderRadius.lg") !important;
+  --vis-tooltip-text-color: theme("colors.foreground") !important;
+  --vis-font-family: theme("fontFamily.sans") !important;
+  --vis-legend-label-color: var(--vis-tooltip-text-color) !important;
+  --chart-1: <%= it.colors.light["chart-1"] %>;
+  --chart-2: <%= it.colors.light["chart-2"] %>;
+  --chart-3: <%= it.colors.light["chart-3"] %>;
+  --chart-4: <%= it.colors.light["chart-4"] %>;
+  --chart-5: <%= it.colors.light["chart-5"] %>;
+}
+
+[data-kb-theme="dark"] {
+  --background: <%= it.colors.dark["background"] %>;
+  --foreground: <%= it.colors.dark["foreground"] %>;
+  --card: <%= it.colors.dark["card"] %>;
+  --card-foreground: <%= it.colors.dark["card-foreground"] %>;
+  --popover: <%= it.colors.dark["popover"] %>;
+  --popover-foreground: <%= it.colors.dark["popover-foreground"] %>;
+  --primary: <%= it.colors.dark["primary"] %>;
+  --primary-foreground: <%= it.colors.dark["primary-foreground"] %>;
+  --secondary: <%= it.colors.dark["secondary"] %>;
+  --secondary-foreground: <%= it.colors.dark["secondary-foreground"] %>;
+  --muted: <%= it.colors.dark["muted"] %>;
+  --muted-foreground: <%= it.colors.dark["muted-foreground"] %>;
+  --accent: <%= it.colors.dark["accent"] %>;
+  --accent-foreground: <%= it.colors.dark["accent-foreground"] %>;
+  --destructive: <%= it.colors.dark["destructive"] %>;
+  --destructive-foreground: <%= it.colors.dark["destructive-foreground"] %>;
+  --border: <%= it.colors.dark["border"] %>;
+  --input: <%= it.colors.dark["input"] %>;
+  --ring: <%= it.colors.dark["ring"] %>;
+  --sidebar-background: <%= it.colors.dark["sidebar-background"] %>;
+  --sidebar-foreground: <%= it.colors.dark["sidebar-foreground"] %>;
+  --sidebar-primary: <%= it.colors.dark["sidebar-primary"] %>;
+  --sidebar-primary-foreground: <%= it.colors.dark["sidebar-primary-foreground"] %>;
+  --sidebar-accent: <%= it.colors.dark["sidebar-accent"] %>;
+  --sidebar-accent-foreground: <%= it.colors.dark["sidebar-accent-foreground"] %>;
+  --sidebar-border: <%= it.colors.dark["sidebar-border"] %>;
+  --sidebar-ring: <%= it.colors.dark["sidebar-ring"] %>;
+  --chart-1: <%= it.colors.dark["chart-1"] %>;
+  --chart-2: <%= it.colors.dark["chart-2"] %>;
+  --chart-3: <%= it.colors.dark["chart-3"] %>;
+  --chart-4: <%= it.colors.dark["chart-4"] %>;
+  --chart-5: <%= it.colors.dark["chart-5"] %>;
+}
+
+* {
+  --un-default-border-color: theme("colors.border");
+}
+
+body {
+  @apply bg-background text-foreground;
+}
+
+button {
+  @apply bg-transparent;
+}`
+
+  for (const baseColor of ["slate", "gray", "zinc", "neutral", "stone"]) {
+    const base: Record<string, any> = {
+      inlineColors: {},
+      cssVars: {},
+    }
+    for (const [mode, values] of Object.entries(colorMapping)) {
+      base.inlineColors[mode] = {}
+      base.cssVars[mode] = {}
+      for (const [key, value] of Object.entries(values)) {
+        if (typeof value === "string") {
+          // Chart and Sidebar colors do not have a 1-to-1 mapping with tailwind colors.
+          if (key.startsWith("chart-") || key.startsWith("sidebar-")) {
+            base.cssVars[mode][key] = value
+            continue
+          }
+
+          const resolvedColor = value.replace(/{{base}}-/g, `${baseColor}-`)
+          base.inlineColors[mode][key] = resolvedColor
+
+          const [resolvedBase, scale] = resolvedColor.split("-")
+          const color = scale
+            ? colorsData[resolvedBase].find(
+                (item: any) => item.scale === parseInt(scale)
+              )
+            : colorsData[resolvedBase]
+          if (color) {
+            base.cssVars[mode][key] = color.hslChannel
+          }
+        }
+      }
+    }
+
+    const eta = new Eta()
+    for (const framework of frameworks) {
+      const frameworkColorPath = path.join(
+        REGISTRY_PATH,
+        "colors",
+        framework.name
+      )
+      if (!existsSync(frameworkColorPath)) {
+        mkdirSync(frameworkColorPath, { recursive: true })
+      }
+      // Build css vars.
+      if (framework.name === "unocss") {
+        base.inlineColorsTemplate = undefined
+        base.cssVarsTemplate = eta.renderString(
+          UNO_BASE_STYLES_WITH_VARIABLES,
+          {
+            colors: base.cssVars,
+          }
+        )
+      } else {
+        base.inlineColorsTemplate = eta.renderString(TAILWIND_BASE_STYLES, {})
+        base.cssVarsTemplate = eta.renderString(
+          TAILWIND_BASE_STYLES_WITH_VARIABLES,
+          {
+            colors: base.cssVars,
+          }
+        )
+      }
+
+      fs.writeFileSync(
+        path.join(REGISTRY_PATH, `colors/${framework.name}/${baseColor}.json`),
+        JSON.stringify(base, null, 2),
+        "utf8"
+      )
+    }
+  }
+}
+
 try {
+  console.log("💽 Building registry...")
   const result = v.safeParse(registrySchema, registry)
 
   if (!result.success) {
@@ -270,6 +707,8 @@ try {
   }
 
   buildRegistry(result.output)
+  await buildStyles(result.output)
+  buildThemes()
 
   console.log("✅ Done!")
 } catch (error) {

@@ -14,14 +14,12 @@ export const blockChunkSchema = v.object({
 })
 
 export const TypeSchema = [
-  "registry:style",
   "registry:libs",
   "registry:example",
   "registry:block",
   "registry:component",
   "registry:ui",
   "registry:hook",
-  "registry:theme",
   "registry:page",
 ] as const
 
@@ -48,8 +46,11 @@ export const registryItemCssVarsSchema = v.object({
 })
 
 export const registryItemSchema = v.object({
+  $schema: v.optional(v.string()),
   name: v.string(),
   type: registryItemTypeSchema,
+  title: v.optional(v.string()),
+  author: v.optional(v.pipe(v.string(), v.minLength(2))),
   description: v.optional(v.string()),
   dependencies: v.optional(v.array(v.string())),
   devDependencies: v.optional(v.array(v.string())),
