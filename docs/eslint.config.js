@@ -4,6 +4,6 @@ import config from "../eslint.config.mjs"
 export default [
   ...config,
   {
-    ignores: ["src/__registry__/**", "app.config.ts"],
+    ignores: ["src/__registry__/**", "app.config.ts", "scripts/**"],
   },
 ]
