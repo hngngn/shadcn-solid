@@ -12,7 +12,7 @@ import {
   SidebarMenuItem,
   SidebarProvider,
   SidebarTrigger,
-} from "../ui/sidebar"
+} from "@/registry/tailwindcss/ui/sidebar"
 
 const items = [
   {
