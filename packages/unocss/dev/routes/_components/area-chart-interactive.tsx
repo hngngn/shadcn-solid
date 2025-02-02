@@ -1,5 +1,4 @@
 import { batch, createSignal } from "solid-js"
-import { useIsMobile } from "@/hooks/use-mobile"
 import {
   VisArea,
   VisAxis,
@@ -15,6 +14,7 @@ import {
   type BulletLegendItemInterface,
 } from "@unovis/ts"
 
+import { useIsMobile } from "@/hooks/use-mobile"
 import {
   ChartContainer,
   ChartCrosshair,

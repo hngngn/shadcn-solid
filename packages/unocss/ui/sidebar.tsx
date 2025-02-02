@@ -15,7 +15,6 @@ import {
   type JSX,
   type ValidComponent,
 } from "solid-js"
-import { useIsMobile } from "@/hooks/use-mobile"
 import {
   Polymorphic,
   type ElementOf,
@@ -24,6 +23,7 @@ import {
 import type { TooltipContentProps } from "@kobalte/core/tooltip"
 import { cva, type VariantProps } from "class-variance-authority"
 
+import { useIsMobile } from "@/hooks/use-mobile"
 import { callHandler } from "@/libs/call-handler"
 import { cn } from "@/libs/cn"
 import { combineStyle } from "@/libs/combine-props"
