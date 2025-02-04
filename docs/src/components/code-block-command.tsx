@@ -99,7 +99,7 @@ const CodeBlockCommand = (
   }
 
   return (
-    <div class="relative mt-6 max-h-[650px] overflow-x-auto rounded-lg border bg-zinc-950 dark:bg-zinc-900">
+    <div class="relative mt-6 max-h-[650px] overflow-auto rounded-lg border bg-zinc-950 dark:bg-zinc-900">
       <Tabs
         defaultValue={tabs[2].title}
         value={packageManager()}
@@ -128,11 +128,11 @@ const CodeBlockCommand = (
             return (
               <TabsContent
                 value={item.title}
-                class="bg-[#101010] data-[orientation=horizontal]:mt-0"
+                class="flex w-full overflow-x-auto whitespace-nowrap bg-[#101010] px-4 py-5 data-[orientation=horizontal]:mt-0"
               >
-                <pre class="px-4 py-5">
+                <pre>
                   <code
-                    class="relative font-mono text-sm leading-none text-white"
+                    class="font-mono text-sm leading-none text-white"
                     data-language="bash"
                   >
                     {item.value()}
