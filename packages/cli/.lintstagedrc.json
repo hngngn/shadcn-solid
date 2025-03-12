@@ -1,3 +1,0 @@
-{
-  "src/**/*.{ts,tsx}": ["pnpm run check"]
-}

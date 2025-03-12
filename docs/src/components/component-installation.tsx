@@ -1,51 +1,53 @@
+import { children, type ParentProps } from "solid-js"
+
 import {
-	Tabs,
-	TabsContent,
-	TabsIndicator,
-	TabsList,
-	TabsTrigger,
-} from "@repo/tailwindcss/ui/tabs";
-import type { JSX } from "solid-js";
+  Tabs,
+  TabsContent,
+  TabsIndicator,
+  TabsList,
+  TabsTrigger,
+} from "@/registry/tailwindcss/ui/tabs"
 
-type Props = {
-	cli?: JSX.Element;
-	tw?: JSX.Element;
-	uno?: JSX.Element;
-};
+const ComponentInstallation = (props: ParentProps) => {
+  const childrens = children(() => props.children).toArray()
 
-const ComponentInstallation = (props: Props) => {
-	return (
-		<Tabs defaultValue="cli" class="relative mt-6 w-full">
-			<TabsList class="bg-transparent border-b rounded-none">
-				<TabsTrigger value="cli" class="w-fit">
-					CLI
-				</TabsTrigger>
-				<TabsTrigger value="manual" class="w-fit">
-					Manual
-				</TabsTrigger>
-				<TabsIndicator variant="underline" />
-			</TabsList>
-			<TabsContent value="cli">{props.cli}</TabsContent>
-			<TabsContent
-				value="manual"
-				class="relative [&_h3.font-heading]:text-base [&_h3.font-heading]:font-semibold"
-			>
-				<Tabs defaultValue="tw">
-					<TabsList class="mt-6 w-fit">
-						<TabsTrigger value="tw" class="w-[110px]">
-							TailwindCSS
-						</TabsTrigger>
-						<TabsTrigger value="uno" class="w-[110px]">
-							UnoCSS
-						</TabsTrigger>
-						<TabsIndicator />
-					</TabsList>
-					<TabsContent value="tw">{props.tw}</TabsContent>
-					<TabsContent value="uno">{props.uno}</TabsContent>
-				</Tabs>
-			</TabsContent>
-		</Tabs>
-	);
-};
+  return (
+    <Tabs defaultValue="cli" class="relative mt-6 w-full">
+      <TabsList class="rounded-none border-b bg-transparent">
+        <TabsTrigger value="cli" class="w-fit">
+          CLI
+        </TabsTrigger>
+        <TabsTrigger value="manual" class="w-fit">
+          Manual
+        </TabsTrigger>
+        <TabsIndicator variant="underline" />
+      </TabsList>
+      <TabsContent
+        class="relative [&_h3.font-heading]:text-base [&_h3.font-heading]:font-semibold"
+        value="cli"
+      >
+        {childrens[0]}
+      </TabsContent>
+      <TabsContent
+        value="manual"
+        class="relative [&_h3.font-heading]:text-base [&_h3.font-heading]:font-semibold"
+      >
+        <Tabs defaultValue="tw">
+          <TabsList class="mt-6 w-fit">
+            <TabsTrigger value="tw" class="w-[110px]">
+              TailwindCSS
+            </TabsTrigger>
+            <TabsTrigger value="uno" class="w-[110px]">
+              UnoCSS
+            </TabsTrigger>
+            <TabsIndicator />
+          </TabsList>
+          <TabsContent value="tw">{childrens[1]}</TabsContent>
+          <TabsContent value="uno">{childrens[2]}</TabsContent>
+        </Tabs>
+      </TabsContent>
+    </Tabs>
+  )
+}
 
-export default ComponentInstallation;
+export default ComponentInstallation

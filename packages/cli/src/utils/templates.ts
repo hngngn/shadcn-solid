@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { twMerge } from "tailwind-merge";
 
 export const cn = (...classLists: ClassValue[]) => twMerge(clsx(classLists));
-`;
+`
 
 export const TAILWIND_CONFIG = `/** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -52,7 +52,7 @@ module.exports = {
   },
   plugins: [require("tailwindcss-animate")],
 };
-`;
+`
 
 export const TAILWIND_CONFIG_WITH_VARIABLES = `/** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -141,7 +141,7 @@ module.exports = {
   },
   plugins: [require("tailwindcss-animate")],
 };
-`;
+`
 
 export const UNO_CONFIG = `import {
   defineConfig,
@@ -196,7 +196,7 @@ export default defineConfig({
     },
   },
 });
-`;
+`
 
 export const UNO_CONFIG_WITH_VARIABLES = `import {
   defineConfig,
@@ -291,4 +291,4 @@ export default defineConfig({
     },
   },
 });
-`;
+`

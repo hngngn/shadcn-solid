@@ -1,22 +1,27 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": [
-    "**/.env.*local"
-  ],
+  "globalDependencies": ["**/.env.*local"],
   "tasks": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "outputs": [
-        ".next/**",
-        "!.next/cache/**"
-      ]
+      "dependsOn": ["^build"],
+      "outputs": [".vercel/output/**", ".vinxi/**"],
+      "env": ["COMPATIBILITY_DATE", "VITE_CJS_IGNORE_WARNING"]
     },
-    "check": {
-      "dependsOn": [
-        "^check"
-      ]
+    "lint": {
+      "dependsOn": ["^lint"],
+      "cache": false
+    },
+    "format": {
+      "dependsOn": ["^format"],
+      "cache": false
+    },
+    "ci:format": {
+      "dependsOn": ["^ci:format"],
+      "cache": false
+    },
+    "ci:lint": {
+      "dependsOn": ["^ci:lint"],
+      "cache": false
     },
     "dev": {
       "cache": false,

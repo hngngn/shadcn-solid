@@ -1,5 +1,0 @@
-{
-	"src/**/*.{ts,tsx}": [
-		"biome check --write --unsafe --staged --no-errors-on-unmatched"
-	]
-}

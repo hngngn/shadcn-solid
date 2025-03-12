@@ -1,107 +1,141 @@
-import { cn } from "@/libs/cn";
-import type {
-	ContentProps,
-	DescriptionProps,
-	DynamicProps,
-	LabelProps,
-} from "@corvu/drawer";
-import DrawerPrimitive from "@corvu/drawer";
-import type { ComponentProps, ParentProps, ValidComponent } from "solid-js";
-import { splitProps } from "solid-js";
+import {
+  Show,
+  mergeProps,
+  splitProps,
+  type ComponentProps,
+  type ParentProps,
+  type ValidComponent,
+} from "solid-js"
+import DrawerPrimitive, {
+  type ContentProps,
+  type DescriptionProps,
+  type DynamicProps,
+  type LabelProps,
+} from "@corvu/drawer"
 
-export const Drawer = DrawerPrimitive;
-export const DrawerTrigger = DrawerPrimitive.Trigger;
-export const DrawerClose = DrawerPrimitive.Close;
+import { cn } from "@/libs/cn"
+
+export const Drawer = DrawerPrimitive
+export const DrawerTrigger = DrawerPrimitive.Trigger
+export const DrawerClose = DrawerPrimitive.Close
 
 type drawerContentProps<T extends ValidComponent = "div"> = ParentProps<
-	ContentProps<T> & {
-		class?: string;
-	}
->;
+  ContentProps<T> & {
+    class?: string
+    withHandle?: boolean
+  }
+>
 
 export const DrawerContent = <T extends ValidComponent = "div">(
-	props: DynamicProps<T, drawerContentProps<T>>,
+  props: DynamicProps<T, drawerContentProps<T>>
 ) => {
-	const [local, rest] = splitProps(props as drawerContentProps, [
-		"class",
-		"children",
-	]);
-	const ctx = DrawerPrimitive.useContext();
+  const ctx = DrawerPrimitive.useContext()
+  const merge = mergeProps(
+    { withHandle: ctx.side() === "bottom" } as drawerContentProps,
+    props
+  )
+  const [local, rest] = splitProps(merge, ["class", "children", "withHandle"])
 
-	return (
-		<DrawerPrimitive.Portal>
-			<DrawerPrimitive.Overlay
-				class="fixed inset-0 z-50 data-[transitioning]:(transition-colors duration-200)"
-				style={{
-					"background-color": `hsl(var(--background) / ${0.8 * ctx.openPercentage()})`,
-				}}
-			/>
-			<DrawerPrimitive.Content
-				class={cn(
-					"fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-xl border bg-background after:(absolute inset-x-0 top-full h-[50%] bg-inherit) data-[transitioning]:(transition-transform duration-200) md:select-none",
-					local.class,
-				)}
-				{...rest}
-			>
-				<div class="mx-auto mt-4 h-2 w-[100px] rounded-full bg-muted" />
-				{local.children}
-			</DrawerPrimitive.Content>
-		</DrawerPrimitive.Portal>
-	);
-};
+  return (
+    <DrawerPrimitive.Portal>
+      <DrawerPrimitive.Overlay
+        class="fixed inset-0 z-50 data-[transitioning]:(transition-[background-color] duration-500 ![transition-timing-function:cubic-bezier(0.32,0.72,0,1)])"
+        style={{
+          "background-color": `rgb(0 0 0 / ${0.6 * ctx.openPercentage()})`,
+        }}
+      />
+      <DrawerPrimitive.Content
+        class={cn(
+          "border-border bg-background fixed z-50 flex h-auto after:(content-empty absolute bg-inherit) data-[transitioning]:(transition-transform duration-500 ![transition-timing-function:cubic-bezier(0.32,0.72,0,1)]) md:select-none",
+          ctx.side() === "right" && [
+            "inset-y-0 right-0 rounded-l-lg border-l pl-4",
+            "after:(inset-y-0 left-[calc(100%-1px)] w-1/2)",
+          ],
+          ctx.side() === "bottom" && [
+            "inset-x-0 bottom-0 flex-col rounded-t-lg border-t pt-4",
+            "after:(inset-x-0 top-[calc(100%-1px)] h-1/2)",
+          ],
+          ctx.side() === "left" && [
+            "inset-y-0 left-0 flex-row-reverse rounded-r-lg border-r pr-4",
+            "after:inset-y-0 right-[calc(100%-1px)] w-1/2)",
+          ],
+          ctx.side() === "top" && [
+            "inset-x-0 top-0 flex-col-reverse rounded-b-lg border-b pb-4",
+            "after:(inset-x-0 bottom-[calc(100%-1px)] h-1/2)",
+          ],
+          local.class
+        )}
+        {...rest}
+      >
+        <Show when={local.withHandle}>
+          <div
+            class={cn(
+              "bg-muted shrink-0 self-center rounded-full",
+              ctx.side() === "right" && "h-10 w-1",
+              ctx.side() === "bottom" && "h-1 w-10",
+              ctx.side() === "left" && "h-10 w-1",
+              ctx.side() === "top" && "h-1 w-10"
+            )}
+          />
+        </Show>
+        {local.children}
+      </DrawerPrimitive.Content>
+    </DrawerPrimitive.Portal>
+  )
+}
 
 export const DrawerHeader = (props: ComponentProps<"div">) => {
-	const [local, rest] = splitProps(props, ["class"]);
+  const [local, rest] = splitProps(props, ["class"])
 
-	return (
-		<div
-			class={cn("grid gap-1.5 p-4 text-center sm:text-left", local.class)}
-			{...rest}
-		/>
-	);
-};
+  return (
+    <div
+      class={cn("grid gap-1.5 p-4 text-center sm:text-left", local.class)}
+      {...rest}
+    />
+  )
+}
 
 export const DrawerFooter = (props: ComponentProps<"div">) => {
-	const [local, rest] = splitProps(props, ["class"]);
+  const [local, rest] = splitProps(props, ["class"])
 
-	return (
-		<div class={cn("mt-auto flex flex-col gap-2 p-4", local.class)} {...rest} />
-	);
-};
+  return (
+    <div class={cn("mt-auto flex flex-col gap-2 p-4", local.class)} {...rest} />
+  )
+}
 
 type DrawerLabelProps = LabelProps & {
-	class?: string;
-};
+  class?: string
+}
 
 export const DrawerLabel = <T extends ValidComponent = "h2">(
-	props: DynamicProps<T, DrawerLabelProps>,
+  props: DynamicProps<T, DrawerLabelProps>
 ) => {
-	const [local, rest] = splitProps(props as DrawerLabelProps, ["class"]);
+  const [local, rest] = splitProps(props as DrawerLabelProps, ["class"])
 
-	return (
-		<DrawerPrimitive.Label
-			class={cn(
-				"text-lg font-semibold leading-none tracking-tight",
-				local.class,
-			)}
-			{...rest}
-		/>
-	);
-};
+  return (
+    <DrawerPrimitive.Label
+      class={cn(
+        "text-lg font-semibold leading-none tracking-tight",
+        local.class
+      )}
+      {...rest}
+    />
+  )
+}
 
 type DrawerDescriptionProps = DescriptionProps & {
-	class?: string;
-};
+  class?: string
+}
 
 export const DrawerDescription = <T extends ValidComponent = "p">(
-	props: DynamicProps<T, DrawerDescriptionProps>,
+  props: DynamicProps<T, DrawerDescriptionProps>
 ) => {
-	const [local, rest] = splitProps(props as DrawerDescriptionProps, ["class"]);
+  const [local, rest] = splitProps(props as DrawerDescriptionProps, ["class"])
 
-	return (
-		<DrawerPrimitive.Description
-			class={cn("text-sm text-muted-foreground", local.class)}
-			{...rest}
-		/>
-	);
-};
+  return (
+    <DrawerPrimitive.Description
+      class={cn("text-muted-foreground text-sm", local.class)}
+      {...rest}
+    />
+  )
+}
