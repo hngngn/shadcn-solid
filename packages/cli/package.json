@@ -21,8 +21,8 @@
   "scripts": {
     "dev": "tsup src/index.ts --watch --format esm --clean",
     "build": "tsup src/index.ts --minify --format esm --clean",
-    "format": "prettier -w src/**/*.{ts,tsx}",
-    "ci:format": "prettier -c \"**/*.{ts,tsx}\""
+    "format": "prettier -w src/**/*.ts",
+    "ci:format": "prettier -c \"**/*.ts\""
   },
   "dependencies": {
     "@clack/prompts": "^0.7.0",
