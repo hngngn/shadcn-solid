@@ -19,6 +19,22 @@ const CodeBlockCommand = (
 ) => {
   const tabs = [
     {
+      title: "pnpm",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          class="h-3 w-3 fill-current"
+        >
+          <path d="M0 0v7.5h7.5V0zm8.25 0v7.5h7.498V0zm8.25 0v7.5H24V0zM8.25 8.25v7.5h7.498v-7.5zm8.25 0v7.5H24v-7.5zM0 16.5V24h7.5v-7.5zm8.25 0V24h7.498v-7.5zm8.25 0V24H24v-7.5z" />
+          <title>Pnpm command</title>
+        </svg>
+      ),
+      value: () => props.pnpmCommand,
+    },
+    {
       title: "npm",
       icon: (
         <svg
@@ -50,22 +66,7 @@ const CodeBlockCommand = (
       ),
       value: () => props.yarnCommand,
     },
-    {
-      title: "pnpm",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          class="h-3 w-3 fill-current"
-        >
-          <path d="M0 0v7.5h7.5V0zm8.25 0v7.5h7.498V0zm8.25 0v7.5H24V0zM8.25 8.25v7.5h7.498v-7.5zm8.25 0v7.5H24v-7.5zM0 16.5V24h7.5v-7.5zm8.25 0V24h7.498v-7.5zm8.25 0V24H24v-7.5z" />
-          <title>Pnpm command</title>
-        </svg>
-      ),
-      value: () => props.pnpmCommand,
-    },
+
     {
       title: "bun",
       icon: (

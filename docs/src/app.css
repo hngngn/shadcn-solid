@@ -144,11 +144,11 @@
   }
 
   .border-grid {
-    @apply border-border/30 dark:border-border;
+    @apply border-border/30 dark:border-border border-dashed;
   }
 
   .container-wrapper {
-    @apply border-border/30 dark:border-border mx-auto w-full min-[1800px]:max-w-[1536px] min-[1800px]:border-x;
+    @apply border-border/30 dark:border-border mx-auto w-full border-dashed min-[1800px]:max-w-[1536px] min-[1800px]:border-x;
   }
 
   .container {
