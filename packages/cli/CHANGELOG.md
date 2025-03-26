@@ -1,5 +1,11 @@
 # shadcn-solid
 
+## 0.7.6
+
+### Patch Changes
+
+- [`e056c67`](https://github.com/hngngn/shadcn-solid/commit/e056c67b0218b587a3a46b6c26deb23c114dba4c) Thanks [@hngngn](https://github.com/hngngn)! - temporally change the registry URL
+
 ## 0.7.5
 
 ### Patch Changes
