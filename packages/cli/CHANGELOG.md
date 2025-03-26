@@ -1,5 +1,11 @@
 # shadcn-solid
 
+## 0.7.7
+
+### Patch Changes
+
+- [`84fa320`](https://github.com/hngngn/shadcn-solid/commit/84fa320111f5d404aedeffd98555a7c1fa7bcf08) Thanks [@hngngn](https://github.com/hngngn)! - fix: missing protocol
+
 ## 0.7.6
 
 ### Patch Changes
