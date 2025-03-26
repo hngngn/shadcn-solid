@@ -12,7 +12,7 @@ import {
 import type { Config } from "./config";
 
 // const baseURL = process.env.REGISTRY_URL ?? "https://shadcn-solid.com";
-const baseURL = process.env.REGISTRY_URL ?? "shadcn-solid.vercel.app";
+const baseURL = process.env.REGISTRY_URL ?? "https://shadcn-solid.vercel.app";
 
 const frameworkSchema = array(
 	object({
