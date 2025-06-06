@@ -1,0 +1,17 @@
+{
+  "name": "@repo/tailwindcss",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "format": "prettier --write ./src",
+    "lint": "eslint --fix ./src",
+    "ci:lint": "eslint --report-unused-disable-directives ./src",
+    "ci:format": "prettier --check ./src"
+  },
+  "exports": {
+    "./ui/*": "./src/ui/*.tsx",
+    "./utils/*": "./src/utils/*.ts",
+    "./hooks/*": "./src/hooks/*.ts",
+    "./examples/*": "./src/examples/*.tsx"
+  }
+}

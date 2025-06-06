@@ -1,36 +1,52 @@
 {
-  "name": "root",
-  "devDependencies": {
-    "@changesets/changelog-github": "^0.5.0",
-    "@changesets/cli": "^2.27.10",
-    "@commitlint/cli": "^19.6.0",
-    "@commitlint/config-conventional": "^19.6.0",
-    "@eslint/js": "^9.16.0",
-    "@ianvs/prettier-plugin-sort-imports": "^4.4.0",
-    "@typescript-eslint/parser": "^8.17.0",
-    "eslint": "^9.16.0",
-    "eslint-plugin-solid": "^0.14.4",
-    "husky": "^9.1.7",
-    "prettier": "^3.4.2",
-    "prettier-plugin-tailwindcss": "^0.6.9",
-    "turbo": "^2.3.3",
-    "typescript-eslint": "^8.17.0"
-  },
+  "name": "shadcn-solid",
   "private": true,
   "scripts": {
-    "build": "turbo build",
-    "dev": "turbo dev",
+    "build": "turbo run build",
+    "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "turbo run format",
-    "release": "changeset version",
-    "prepare": "husky",
+    "check-types": "turbo run check-types",
+    "registry": "turbo run registry",
     "ci:format": "turbo run ci:format",
     "ci:lint": "turbo run ci:lint"
   },
-  "packageManager": "pnpm@9.4.0",
-  "pnpm": {
-    "overrides": {
-      "vite": "5.4.10"
-    }
+  "devDependencies": {
+    "@eslint/js": "^9.28.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.2",
+    "@rollup/rollup-win32-x64-msvc": "^4.42.0",
+    "@typescript-eslint/parser": "^8.33.1",
+    "eslint": "^9.28.0",
+    "eslint-plugin-solid": "^0.14.5",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.12",
+    "turbo": "^2.5.4",
+    "typescript": "5.8.2",
+    "typescript-eslint": "^8.33.1"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@corvu/calendar": "^0.1.2",
+    "@corvu/drawer": "^0.2.4",
+    "@corvu/otp-field": "^0.1.4",
+    "@corvu/resizable": "^0.2.5",
+    "@kobalte/core": "^0.13.10",
+    "@solid-primitives/media": "^2.3.1",
+    "@solid-primitives/props": "^3.2.1",
+    "@tanstack/solid-table": "^8.21.3",
+    "@unovis/solid": "^1.5.2",
+    "@unovis/ts": "^1.5.2",
+    "cmdk-solid": "^1.1.2",
+    "cva": "1.0.0-beta.4",
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-solid": "^8.6.0",
+    "solid-js": "^1.9.7",
+    "somoto": "^0.0.2",
+    "tailwind-merge": "^3.3.0",
+    "vinxi": "0.5.3",
+    "vite": "6.1.4"
   }
 }

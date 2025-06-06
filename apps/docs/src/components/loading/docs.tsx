@@ -1,0 +1,22 @@
+const DocsLoading = () => {
+  return (
+    <div class="flex h-[calc(100dvh-57px-61px)] items-center justify-center">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="size-4 animate-spin"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M12 2v4m4.2 1.8l2.9-2.9M18 12h4m-5.8 4.2l2.9 2.9M12 18v4m-7.1-2.9l2.9-2.9M2 12h4M4.9 4.9l2.9 2.9"
+        />
+      </svg>
+    </div>
+  )
+}
+
+export default DocsLoading

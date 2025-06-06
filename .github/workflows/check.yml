@@ -26,8 +26,5 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Format
-        run: pnpm ci:format
-
-      - name: Lint
-        run: pnpm ci:lint
+      - name: Check
+        run: pnpm "/^ci:.*/"

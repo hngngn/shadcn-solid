@@ -1,29 +1,32 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["**/.env.*local"],
+  "$schema": "https://turborepo.com/schema.json",
+  "ui": "tui",
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".vercel/output/**", ".vinxi/**"],
-      "env": ["COMPATIBILITY_DATE", "VITE_CJS_IGNORE_WARNING"]
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": [".vinxi/**", ".output/**", ".vercel/**"]
     },
     "lint": {
-      "dependsOn": ["^lint"],
-      "cache": false
+      "dependsOn": ["^lint"]
     },
     "format": {
-      "dependsOn": ["^format"],
-      "cache": false
-    },
-    "ci:format": {
-      "dependsOn": ["^ci:format"],
-      "cache": false
+      "dependsOn": ["^format"]
     },
     "ci:lint": {
-      "dependsOn": ["^ci:lint"],
-      "cache": false
+      "dependsOn": ["^ci:lint"]
+    },
+    "ci:format": {
+      "dependsOn": ["^ci:format"]
+    },
+    "check-types": {
+      "dependsOn": ["^check-types"]
     },
     "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "registry": {
       "cache": false,
       "persistent": true
     }
