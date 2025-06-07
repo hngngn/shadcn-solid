@@ -1,24 +1,28 @@
-import { createRoot } from "solid-js"
-import { createStore } from "solid-js/store"
-import { makePersisted } from "@solid-primitives/storage"
+import { persistentAtom } from "@nanostores/persistent"
+import { useStore } from "@nanostores/solid"
 
 interface Config {
   packageManager: "npm" | "yarn" | "pnpm" | "bun"
   installationType: "cli" | "manual"
 }
 
-const useConfig = () => {
-  const [config, setConfig] = makePersisted(
-    createStore<Config>({
-      packageManager: "pnpm",
-      installationType: "cli",
-    }),
-    {
-      name: "config",
-    },
-  )
+export const $configAtom = persistentAtom<Config>(
+  "config",
+  {
+    packageManager: "pnpm",
+    installationType: "cli",
+  },
+  {
+    encode: JSON.stringify,
+    decode: JSON.parse,
+  },
+)
+
+export const useConfig = () => {
+  const config = useStore($configAtom)
+  const setConfig = (config: Config) => {
+    $configAtom.set({ ...$configAtom.get(), ...config })
+  }
 
   return { config, setConfig }
 }
-
-export default createRoot(useConfig)

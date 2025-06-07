@@ -32,7 +32,7 @@ import { Separator } from "@repo/tailwindcss/ui/v4/separator"
 import { cx } from "@repo/tailwindcss/utils/cva"
 
 import { docsConfig } from "@/config/docs"
-import useConfig from "@/hooks/use-config"
+import { useConfig } from "@/hooks/use-config"
 
 const CommandKbd = (props: ComponentProps<"kbd">) => {
   const [local, rest] = splitProps(props, ["class"])
@@ -85,7 +85,7 @@ const CommandMenuItem = (
 }
 
 const CommandMenu = () => {
-  const { config } = useConfig
+  const { config } = useConfig()
 
   const navigate = useNavigate()
 
@@ -105,11 +105,11 @@ const CommandMenu = () => {
       setSelectedType("component")
       setCopyPayload(
         `${
-          config.packageManager === "npm"
+          config().packageManager === "npm"
             ? "npx"
-            : config.packageManager === "pnpm"
+            : config().packageManager === "pnpm"
               ? "pnpx"
-              : config.packageManager === "yarn"
+              : config().packageManager === "yarn"
                 ? "yarn dlx"
                 : "bunx --bun"
         } shadcn-solid@latest add ${name}`,

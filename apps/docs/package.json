@@ -13,12 +13,14 @@
     "registry": "tsx ./scripts/index.ts"
   },
   "dependencies": {
+    "@nanostores/persistent": "^1.0.0",
+    "@nanostores/solid": "^1.0.0",
     "@repo/tailwindcss": "workspace:*",
     "@solid-primitives/intersection-observer": "^2.2.1",
     "@solid-primitives/mutation-observer": "^1.2.1",
-    "@solid-primitives/storage": "^4.3.2",
     "@tanstack/solid-router": "^1.120.15",
     "@tanstack/solid-start": "^1.120.16",
+    "nanostores": "^1.0.1",
     "valibot": "^1.1.0"
   },
   "devDependencies": {

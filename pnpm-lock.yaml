@@ -102,6 +102,12 @@ importers:
 
   apps/docs:
     dependencies:
+      '@nanostores/persistent':
+        specifier: ^1.0.0
+        version: 1.0.0(nanostores@1.0.1)
+      '@nanostores/solid':
+        specifier: ^1.0.0
+        version: 1.0.0(nanostores@1.0.1)(solid-js@1.9.7)
       '@repo/tailwindcss':
         specifier: workspace:*
         version: link:../../packages/tailwindcss
@@ -111,15 +117,15 @@ importers:
       '@solid-primitives/mutation-observer':
         specifier: ^1.2.1
         version: 1.2.1(solid-js@1.9.7)
-      '@solid-primitives/storage':
-        specifier: ^4.3.2
-        version: 4.3.2(solid-js@1.9.7)
       '@tanstack/solid-router':
         specifier: ^1.120.15
         version: 1.120.15(solid-js@1.9.7)
       '@tanstack/solid-start':
         specifier: ^1.120.16
         version: 1.120.16(@netlify/blobs@9.1.2)(@types/node@22.15.30)(babel-plugin-macros@3.1.0)(db0@0.3.2)(ioredis@5.6.1)(jiti@2.4.2)(lightningcss@1.30.1)(solid-js@1.9.7)(terser@5.41.0)(tsx@4.19.4)(vite@6.1.4(@types/node@22.15.30)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.41.0)(tsx@4.19.4)(yaml@1.10.2))(yaml@1.10.2)
+      nanostores:
+        specifier: ^1.0.1
+        version: 1.0.1
       valibot:
         specifier: ^1.1.0
         version: 1.1.0(typescript@5.8.2)
@@ -1117,6 +1123,18 @@ packages:
   '@mdx-js/mdx@3.1.0':
     resolution: {integrity: sha512-/QxEhPAvGwbQmy1Px8F899L5Uc2KZ6JtXwlCgJmjSTBedwOZkByYcBG4GceIGPXRDsmfxhHazuS+hlOShRLeDw==}
 
+  '@nanostores/persistent@1.0.0':
+    resolution: {integrity: sha512-iuucWTxcxSLwHvcxBTIAwofDc+KO7cw5EiQklAltJX6Ynx/CKTecOCUG76kF42yNnCZZQcMeuIcl99DkxekIig==}
+    engines: {node: ^20.0.0 || >=22.0.0}
+    peerDependencies:
+      nanostores: ^0.9.0 || ^0.10.0 || ^0.11.0 || ^1.0.0
+
+  '@nanostores/solid@1.0.0':
+    resolution: {integrity: sha512-H3P5mvHyX0oSlMMm4PF60zyUIhCCUoHeAJukdSjhYSAagxJUru7rde9/RfUH1tiMJ1Dt0o/c0DNX9QLUB+SvjA==}
+    peerDependencies:
+      nanostores: '>=0.9.0 <2.0.0'
+      solid-js: ^1.6.0
+
   '@netlify/binary-info@1.0.0':
     resolution: {integrity: sha512-4wMPu9iN3/HL97QblBsBay3E1etIciR84izI3U+4iALY+JHCrI+a2jO0qbAZ/nxKoegypYEaiiqWXylm+/zfrw==}
 
@@ -1582,18 +1600,6 @@ packages:
     resolution: {integrity: sha512-daXWvpLjd+4hbYdGaaEJ2kKFuFhshvfIBFLveW7mfk2BWHl9lGQVwUuExp3qllkK9ONA9p+5D2cpwBQosv8odQ==}
     peerDependencies:
       solid-js: ^1.6.12
-
-  '@solid-primitives/storage@4.3.2':
-    resolution: {integrity: sha512-Vkuk/AqgUOjz6k7Mo5yDFQBQg8KMQcZfaac/bxLApaza3e5c/iNllNvxZWPM9Vf+Gf4m5SgRbvgsm6dSLJ27Jw==}
-    peerDependencies:
-      '@tauri-apps/plugin-store': '*'
-      solid-js: ^1.6.12
-      solid-start: '*'
-    peerDependenciesMeta:
-      '@tauri-apps/plugin-store':
-        optional: true
-      solid-start:
-        optional: true
 
   '@solid-primitives/styles@0.1.1':
     resolution: {integrity: sha512-eOf3GQjxEcYWxUU62CSpTIXOOzF5FBMdiJl/yBb20Dq6h/VVWCABHDPsh1KJ3SKc4AUAimSMbclDG+Co0EBpvQ==}
@@ -4186,6 +4192,10 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
+  nanostores@1.0.1:
+    resolution: {integrity: sha512-kNZ9xnoJYKg/AfxjrVL4SS0fKX++4awQReGqWnwTRHxeHGZ1FJFVgTqr/eMrNQdp0Tz7M7tG/TDaX8QfHDwVCw==}
+    engines: {node: ^20.0.0 || >=22.0.0}
+
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
@@ -6394,6 +6404,15 @@ snapshots:
       - acorn
       - supports-color
 
+  '@nanostores/persistent@1.0.0(nanostores@1.0.1)':
+    dependencies:
+      nanostores: 1.0.1
+
+  '@nanostores/solid@1.0.0(nanostores@1.0.1)(solid-js@1.9.7)':
+    dependencies:
+      nanostores: 1.0.1
+      solid-js: 1.9.7
+
   '@netlify/binary-info@1.0.0': {}
 
   '@netlify/blobs@9.1.2':
@@ -6868,11 +6887,6 @@ snapshots:
       solid-js: 1.9.7
 
   '@solid-primitives/static-store@0.1.1(solid-js@1.9.7)':
-    dependencies:
-      '@solid-primitives/utils': 6.3.1(solid-js@1.9.7)
-      solid-js: 1.9.7
-
-  '@solid-primitives/storage@4.3.2(solid-js@1.9.7)':
     dependencies:
       '@solid-primitives/utils': 6.3.1(solid-js@1.9.7)
       solid-js: 1.9.7
@@ -10389,6 +10403,8 @@ snapshots:
   murmurhash-js@1.0.0: {}
 
   nanoid@3.3.11: {}
+
+  nanostores@1.0.1: {}
 
   natural-compare@1.4.0: {}
 

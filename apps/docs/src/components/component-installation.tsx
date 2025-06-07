@@ -8,20 +8,20 @@ import {
   TabsTrigger,
 } from "@repo/tailwindcss/ui/v4/tabs"
 
-import useConfig from "@/hooks/use-config"
+import { useConfig } from "@/hooks/use-config"
 
 const ComponentInstallation = (props: ComponentProps<typeof TabsContent>) => {
   const childrens = children(() => props.children).toArray()
 
-  const { config, setConfig } = useConfig
+  const { config, setConfig } = useConfig()
 
   return (
     <Tabs
       class="relative mt-6 w-full"
-      value={config.installationType}
+      value={config().installationType}
       onChange={(value) => {
         // @ts-expect-error
-        setConfig("installationType", value)
+        setConfig({ installationType: value })
       }}
     >
       <TabsList class="justify-start gap-4 rounded-none bg-transparent px-2 md:px-0">

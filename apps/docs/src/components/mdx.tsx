@@ -1,5 +1,5 @@
 import type { ComponentProps, JSX } from "solid-js"
-import { Match, Show, Switch, createMemo, splitProps } from "solid-js"
+import { Match, Show, Switch, splitProps } from "solid-js"
 import type { LinkProps } from "@tanstack/solid-router"
 import { Link } from "@tanstack/solid-router"
 
@@ -115,9 +115,9 @@ export const mdxCustomComponents: MDXComponents | Record<string, unknown> = {
       "__pnpm__",
       "__bun__",
     ])
-    const isCommand = createMemo(
-      () => local.__npm__ && local.__yarn__ && local.__pnpm__ && local.__bun__,
-    )
+
+    const isCommand = () =>
+      local.__npm__ ?? local.__yarn__ ?? local.__pnpm__ ?? local.__bun__
 
     return (
       <Switch

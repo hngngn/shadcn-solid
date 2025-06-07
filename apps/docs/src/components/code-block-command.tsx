@@ -1,4 +1,4 @@
-import { For, createMemo } from "solid-js"
+import { For, Show, createMemo } from "solid-js"
 
 import {
   Tabs,
@@ -9,7 +9,7 @@ import {
 } from "@repo/tailwindcss/ui/v4/tabs"
 
 import CopyButton from "@/components/copy-button"
-import useConfig from "@/hooks/use-config"
+import { useConfig } from "@/hooks/use-config"
 
 const CodeBlockCommand = (props: {
   __npm__?: string
@@ -24,16 +24,16 @@ const CodeBlockCommand = (props: {
     bun: props.__bun__,
   }))
 
-  const { config, setConfig } = useConfig
+  const { config, setConfig } = useConfig()
 
   return (
     <div class="overflow-x-auto">
       <Tabs
         class="gap-0"
-        value={config.packageManager}
+        value={config().packageManager}
         onChange={(value) => {
           // @ts-expect-error
-          setConfig("packageManager", value)
+          setConfig({ packageManager: value })
         }}
       >
         <div class="border-border/50 flex items-center gap-2 border-b px-3 py-1">
@@ -70,26 +70,25 @@ const CodeBlockCommand = (props: {
         <div class="no-scrollbar overflow-x-auto">
           <For each={Object.entries(tabs())}>
             {([key, value]) => (
-              <TabsContent value={key} class="mt-0 px-4 py-3.5">
-                <pre>
-                  <code
-                    class="relative font-mono text-sm leading-none"
-                    data-language="bash"
-                  >
-                    {value}
-                  </code>
-                </pre>
-              </TabsContent>
+              <Show when={key === config().packageManager}>
+                <TabsContent value={key} class="mt-0 px-4 py-3.5" forceMount>
+                  <pre>
+                    <code
+                      class="relative font-mono text-sm leading-none"
+                      data-language="bash"
+                    >
+                      {value}
+                    </code>
+                  </pre>
+                </TabsContent>
+              </Show>
             )}
           </For>
         </div>
       </Tabs>
       <CopyButton
         class="top-1.5"
-        value={
-          // @ts-expect-error
-          tabs()[currentTab()]
-        }
+        value={tabs()[config().packageManager as keyof typeof tabs]}
       />
     </div>
   )
