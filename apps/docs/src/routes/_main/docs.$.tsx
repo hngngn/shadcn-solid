@@ -9,6 +9,7 @@ import {
 import { Badge } from "@repo/tailwindcss/ui/v4/badge"
 import { Button } from "@repo/tailwindcss/ui/v4/button"
 
+import DocsLoading from "@/components/loading/docs"
 import DocNotFound from "@/components/not-found/doc"
 import Toc from "@/components/toc"
 import {
@@ -29,6 +30,7 @@ export const Route = createFileRoute("/_main/docs/$")({
   },
   notFoundComponent: DocNotFound,
   component: RouteComponent,
+  pendingComponent: DocsLoading,
 })
 
 function RouteComponent() {

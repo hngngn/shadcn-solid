@@ -1,29 +1,34 @@
-import { For, createSignal } from "solid-js"
+import { For, createEffect, createSignal } from "solid-js"
 import { createIntersectionObserver } from "@solid-primitives/intersection-observer"
 
 const Toc = (props: {
   data: { depth: number; slug: string; text: string }[]
 }) => {
+  const [targets, setTargets] = createSignal<Element[]>([])
+
+  createEffect(() => {
+    for (const item of props.data) {
+      setTargets((p) => [...p, document.getElementById(item.slug) as Element])
+    }
+  })
+
   const [activeItem, setActiveItem] = createSignal<string[]>([])
 
-  createIntersectionObserver(
-    () => document.querySelectorAll("h2, h3, h4") as unknown as Element[],
-    (entries) => {
-      for (const entry of entries) {
-        const id = entry.target.getAttribute("id")
-        if (id === null) return
+  createIntersectionObserver(targets, (entries) => {
+    for (const entry of entries) {
+      const id = entry.target.getAttribute("id")
+      if (id === null) return
 
-        if (entry.isIntersecting && !activeItem().includes(id)) {
-          setActiveItem([...activeItem(), id])
-          return
-        }
-        if (!entry.isIntersecting && activeItem().includes(id)) {
-          setActiveItem(activeItem().filter((h) => h !== id))
-          return
-        }
+      if (entry.isIntersecting && !activeItem().includes(id)) {
+        setActiveItem([...activeItem(), id])
+        return
       }
-    },
-  )
+      if (!entry.isIntersecting && activeItem().includes(id)) {
+        setActiveItem(activeItem().filter((h) => h !== id))
+        return
+      }
+    }
+  })
 
   return (
     <aside class="flex flex-col gap-2 p-4 pt-0">

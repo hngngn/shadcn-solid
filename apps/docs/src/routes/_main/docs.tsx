@@ -6,7 +6,6 @@ import { MDXProvider } from "solid-mdx"
 import { SidebarProvider } from "@repo/tailwindcss/ui/v4/sidebar"
 
 import DocsSidebar from "@/components/docs-sidebar"
-import DocsLoading from "@/components/loading/docs"
 import { mdxCustomComponents } from "@/components/mdx"
 
 export const Route = createFileRoute("/_main/docs")({
@@ -19,7 +18,7 @@ function RouteComponent() {
       <SidebarProvider class="min-h-min flex-1 items-start px-0 [--sidebar-width:220px] [--top-spacing:0] lg:grid lg:grid-cols-[var(--sidebar-width)_minmax(0,1fr)] lg:[--sidebar-width:240px] lg:[--top-spacing:calc(var(--spacing)*4)]">
         <DocsSidebar />
         <div class="size-full">
-          <Suspense fallback={<DocsLoading />}>
+          <Suspense>
             <MDXProvider components={mdxCustomComponents}>
               <Outlet />
             </MDXProvider>
