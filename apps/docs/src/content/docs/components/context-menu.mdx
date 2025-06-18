@@ -1,0 +1,65 @@
+---
+title: Context Menu
+description: Displays a menu to the user — such as a set of actions or functions — triggered by a button.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/context-menu
+  api: https://kobalte.dev/docs/core/components/context-menu#api-reference
+---
+
+<ComponentPreview name="context-menu-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/context-menu-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add context-menu
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Update the import paths to match your project setup.</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/context-menu" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/context-menu.tsx
+
+    ```
+
+  </ComponentSource>
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuTrigger,
+} from "@/components/ui/context-menu"
+```
+
+```tsx
+<ContextMenu>
+  <ContextMenuTrigger />
+  <ContextMenuContent>
+    <ContextMenuItem />
+  </ContextMenuContent>
+</ContextMenu>
+```

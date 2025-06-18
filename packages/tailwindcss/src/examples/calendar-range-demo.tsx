@@ -37,7 +37,7 @@ const CalendarRangeDemo = () => {
               aria-label="Go to next month"
             />
           </div>
-          <div class="flex gap-4 md:flex-row">
+          <div class="space-y-4 md:flex md:space-x-4 md:space-y-0">
             <Index each={props.months}>
               {(month, index) => (
                 <div class="flex flex-col gap-4">

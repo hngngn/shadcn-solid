@@ -1,0 +1,85 @@
+---
+title: Drawer
+description: A draggable dialog that is attached to any side of the viewport.
+component: true
+link:
+  doc: https://corvu.dev/docs/primitives/drawer
+  api: https://corvu.dev/docs/primitives/drawer/#api-reference
+---
+
+<ComponentPreview name="drawer-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/drawer-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add drawer
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install @corvu/drawer
+```
+
+<StepItem>Update the import paths to match your project setup.</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/drawer" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/drawer.tsx
+
+    ```
+
+  </ComponentSource>
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import {
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerHeader,
+  DrawerPortal,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@components/ui/drawer"
+```
+
+```tsx
+<Drawer>
+  <DrawerTrigger />
+  <DrawerPortal>
+    <DrawerContent>
+      <DrawerHeader>
+        <DrawerTitle />
+        <DrawerDescription />
+      </DrawerHeader>
+    </DrawerContent>
+  </DrawerPortal>
+</Drawer>
+```
+
+## Examples
+
+### Side
+
+<ComponentPreview name="drawer-side-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/drawer-side-demo.tsx
+
+```
+
+</ComponentPreview>

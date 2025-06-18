@@ -137,7 +137,7 @@ export const CalendarCell = <T extends ValidComponent = "td">(
     <CalendarPrimitive.Cell
       data-slot="calendar-cell"
       class={cx(
-        "has-[[data-in-range]]:bg-accent relative p-0 text-center text-sm focus-within:relative focus-within:z-20 has-[[data-range-end]]:rounded-r-md has-[[data-range-start]]:rounded-l-md has-[[data-in-range]]:first:rounded-l-md has-[[data-in-range]]:last:rounded-r-md",
+        "has-[[data-in-range]]:bg-accent relative p-0 text-center text-sm focus-within:relative focus-within:z-20 has-[[data-range-end]]:rounded-r-md has-[[data-range-start]]:rounded-l-md has-[[data-disabled][data-selected]]:opacity-50 has-[[data-in-range]]:first:rounded-l-md has-[[data-in-range]]:last:rounded-r-md",
         local.class,
       )}
       {...rest}
@@ -164,7 +164,6 @@ export const CalendarCellTrigger = <T extends ValidComponent = "button">(
           "aria-selected:not-[[data-in-range]]:bg-primary aria-selected:not-[[data-in-range]]:text-primary-foreground aria-selected:not-[[data-in-range]]:hover:bg-primary aria-selected:not-[[data-in-range]]:hover:text-primary-foreground",
           "data-[range-start]:aria-selected:bg-primary data-[range-start]:aria-selected:text-primary-foreground data-[range-start]:aria-selected:hover:bg-primary! data-[range-start]:aria-selected:hover:text-primary-foreground!",
           "data-[range-end]:aria-selected:bg-primary data-[range-end]:aria-selected:text-primary-foreground data-[range-end]:aria-selected:hover:bg-primary! data-[range-end]:aria-selected:hover:text-primary-foreground!",
-          "",
           local.class,
         ],
       })}

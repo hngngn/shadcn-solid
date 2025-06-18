@@ -1,7 +1,5 @@
 import type { ComponentProps, JSX } from "solid-js"
 import { Match, Show, Switch, splitProps } from "solid-js"
-import type { LinkProps } from "@tanstack/solid-router"
-import { Link } from "@tanstack/solid-router"
 
 import * as accordion from "@repo/tailwindcss/ui/v4/accordion"
 import { cx } from "@repo/tailwindcss/utils/cva"
@@ -12,6 +10,8 @@ import ComponentPreview from "@/components/component-preview"
 import ComponentSource from "@/components/component-source"
 import CopyButton from "@/components/copy-button"
 
+import Callout from "./callout"
+
 type MDXComponents = {
   [key in keyof JSX.IntrinsicElements]: (
     props: JSX.IntrinsicElements[key],
@@ -19,8 +19,8 @@ type MDXComponents = {
 }
 
 export const mdxCustomComponents: MDXComponents | Record<string, unknown> = {
-  a: (props: LinkProps) => (
-    <Link class="font-medium underline underline-offset-4" {...props} />
+  a: (props) => (
+    <a class="font-medium underline underline-offset-4" {...props} />
   ),
   h1: (props) => (
     <h1
@@ -171,4 +171,5 @@ export const mdxCustomComponents: MDXComponents | Record<string, unknown> = {
   ComponentPreview,
   ComponentInstallation,
   ComponentSource,
+  Callout,
 }

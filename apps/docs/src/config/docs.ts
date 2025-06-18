@@ -2,7 +2,7 @@ export interface TNavItem {
   title: string
   href?: string
   disabled?: boolean
-  label?: string
+  indicator?: "new" | "updated"
 }
 
 export type TSidebarNavItem = TNavItem & {
@@ -28,14 +28,14 @@ export const docsConfig: TDocsConfig = {
       title: "Components",
       href: "/docs/components/accordion",
     },
-    {
-      title: "Blocks",
-      href: "/blocks",
-    },
-    {
-      title: "Charts",
-      href: "/charts",
-    },
+    // {
+    //   title: "Blocks",
+    //   href: "/blocks",
+    // },
+    // {
+    //   title: "Charts",
+    //   href: "/charts",
+    // },
   ],
   sidebarNav: [
     {
@@ -50,44 +50,48 @@ export const docsConfig: TDocsConfig = {
           title: "components.json",
           href: "/docs/components-json",
           items: [],
+          disabled: true,
         },
         {
           title: "Theming",
           href: "/docs/theming",
           items: [],
+          disabled: true,
         },
         {
           title: "Dark mode",
           href: "/docs/dark-mode",
           items: [],
+          disabled: true,
         },
         {
           title: "CLI",
           href: "/docs/cli",
           items: [],
+          disabled: true,
         },
       ],
     },
-    {
-      title: "Installation",
-      items: [
-        {
-          title: "Solid Start",
-          href: "/docs/installation/solid-start",
-          items: [],
-        },
-        {
-          title: "Astro",
-          href: "/docs/installation/astro",
-          items: [],
-        },
-        {
-          title: "Manual",
-          href: "/docs/installation/manual",
-          items: [],
-        },
-      ],
-    },
+    // {
+    //   title: "Installation",
+    //   items: [
+    //     {
+    //       title: "Solid Start",
+    //       href: "/docs/installation/solid-start",
+    //       items: [],
+    //     },
+    //     {
+    //       title: "Astro",
+    //       href: "/docs/installation/astro",
+    //       items: [],
+    //     },
+    //     {
+    //       title: "Manual",
+    //       href: "/docs/installation/manual",
+    //       items: [],
+    //     },
+    //   ],
+    // },
     {
       title: "Components",
       items: [
@@ -112,9 +116,21 @@ export const docsConfig: TDocsConfig = {
           items: [],
         },
         {
+          title: "Breadcrumbs",
+          href: "/docs/components/breadcrumbs",
+          items: [],
+          indicator: "new",
+        },
+        {
           title: "Button",
           href: "/docs/components/button",
           items: [],
+        },
+        {
+          title: "Calendar",
+          href: "/docs/components/calendar",
+          items: [],
+          indicator: "new",
         },
         {
           title: "Card",
@@ -130,7 +146,8 @@ export const docsConfig: TDocsConfig = {
           title: "Chart",
           href: "/docs/components/chart",
           items: [],
-          label: "New",
+          indicator: "new",
+          disabled: true,
         },
         {
           title: "Checkbox",
@@ -148,7 +165,7 @@ export const docsConfig: TDocsConfig = {
           items: [],
         },
         {
-          title: "CommandMenu",
+          title: "Command",
           href: "/docs/components/command",
           items: [],
         },
@@ -161,11 +178,13 @@ export const docsConfig: TDocsConfig = {
           title: "Data Table",
           href: "/docs/components/data-table",
           items: [],
+          disabled: true,
         },
         {
           title: "Date Picker",
           href: "/docs/components/date-picker",
           items: [],
+          indicator: "updated",
         },
         {
           title: "Dialog",
@@ -176,7 +195,7 @@ export const docsConfig: TDocsConfig = {
           title: "Drawer",
           href: "/docs/components/drawer",
           items: [],
-          label: "Updated",
+          indicator: "updated",
         },
         {
           title: "Dropdown Menu",
@@ -207,103 +226,115 @@ export const docsConfig: TDocsConfig = {
           title: "OTP Field",
           href: "/docs/components/otp-field",
           items: [],
+          disabled: true,
         },
         {
           title: "Pagination",
           href: "/docs/components/pagination",
           items: [],
+          disabled: true,
         },
         {
           title: "Popover",
           href: "/docs/components/popover",
           items: [],
+          disabled: true,
         },
         {
           title: "Progress",
           href: "/docs/components/progress",
           items: [],
+          disabled: true,
         },
         {
           title: "Radio Group",
           href: "/docs/components/radio-group",
           items: [],
+          disabled: true,
         },
         {
           title: "Resizable",
           href: "/docs/components/resizable",
           items: [],
+          disabled: true,
         },
         {
           title: "Select",
           href: "/docs/components/select",
           items: [],
+          disabled: true,
         },
         {
           title: "Separator",
           href: "/docs/components/separator",
           items: [],
+          disabled: true,
         },
         {
           title: "Sidebar",
           href: "/docs/components/sidebar",
           items: [],
-          label: "New",
+          indicator: "new",
+          disabled: true,
         },
         {
           title: "Skeleton",
           href: "/docs/components/skeleton",
           items: [],
+          disabled: true,
         },
         {
           title: "Sonner",
           href: "/docs/components/sonner",
           items: [],
-          label: "Updated",
+          disabled: true,
         },
         {
           title: "Switch",
           href: "/docs/components/switch",
           items: [],
+          disabled: true,
         },
         {
           title: "Table",
           href: "/docs/components/table",
           items: [],
+          disabled: true,
         },
         {
           title: "Tabs",
           href: "/docs/components/tabs",
           items: [],
+          disabled: true,
         },
         {
           title: "Text Field",
-          href: "/docs/components/textfield",
-          items: [],
-        },
-        {
-          title: "Textarea",
-          href: "/docs/components/textarea",
+          href: "/docs/components/text-field",
           items: [],
         },
         {
           title: "Toast",
           href: "/docs/components/toast",
           items: [],
+          disabled: true,
         },
         {
           title: "Toggle Group",
           href: "/docs/components/toggle-group",
           items: [],
+          disabled: true,
         },
         {
           title: "Toggle",
           href: "/docs/components/toggle",
           items: [],
+          disabled: true,
         },
         {
           title: "Tooltip",
           href: "/docs/components/tooltip",
           items: [],
+          disabled: true,
         },
       ],
     },

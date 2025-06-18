@@ -1,0 +1,190 @@
+---
+title: Carousel
+description: A carousel with motion and swipe built using Embla.
+component: true
+link:
+  doc: https://www.embla-carousel.com/get-started/solid
+  api: https://www.embla-carousel.com/api
+---
+
+<ComponentPreview name="carousel-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/carousel-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add carousel
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install embla-carousel-solid
+```
+
+<StepItem>Update the import paths to match your project setup.</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/carousel" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/carousel.tsx
+
+    ```
+
+  </ComponentSource>
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+```
+
+```tsx
+<Carousel>
+  <CarouselContent>
+    <CarouselItem />
+    <CarouselItem />
+    <CarouselItem />
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+</Carousel>
+```
+
+## Examples
+
+### Sizes
+
+To set the size of the items, you can use the `basis` utility class on the `<CarouselItem />`.
+
+<ComponentPreview name="carousel-size-demo" >
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/carousel-size-demo.tsx
+
+```
+
+</ComponentPreview>
+
+```tsx {4-6}
+// 33% of the carousel width.
+<Carousel>
+  <CarouselContent>
+    <CarouselItem class="basis-1/3">...</CarouselItem>
+    <CarouselItem class="basis-1/3">...</CarouselItem>
+    <CarouselItem class="basis-1/3">...</CarouselItem>
+  </CarouselContent>
+</Carousel>
+```
+
+```tsx {4-6}
+// 50% on small screens and 33% on larger screens.
+<Carousel>
+  <CarouselContent>
+    <CarouselItem class="md:basis-1/2 lg:basis-1/3">...</CarouselItem>
+    <CarouselItem class="md:basis-1/2 lg:basis-1/3">...</CarouselItem>
+    <CarouselItem class="md:basis-1/2 lg:basis-1/3">...</CarouselItem>
+  </CarouselContent>
+</Carousel>
+```
+
+### Spacing
+
+To set the spacing between the items, we use a `pl-[VALUE]` utility on the `<CarouselItem />` and a negative `-ml-[VALUE]` on the `<CarouselContent />`.
+
+<Callout class="mt-6">
+  **Why:** I tried to use the `gap` property or a `grid` layout on the `
+  <CarouselContent />` but it required a lot of math and mental effort to get the
+  spacing right. I found `pl-[VALUE]` and `-ml-[VALUE]` utilities much easier to
+  use.
+
+You can always adjust this in your own project if you need to.
+
+</Callout>
+
+### Orientation
+
+Use the `orientation` prop to set the orientation of the carousel.
+
+<ComponentPreview name="carousel-orientation-demo" >
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/carousel-orientation-demo.tsx
+
+```
+
+</ComponentPreview>
+
+```tsx /vertical | horizontal/
+<Carousel orientation="vertical | horizontal">
+  <CarouselContent>
+    <CarouselItem />
+    <CarouselItem />
+    <CarouselItem />
+  </CarouselContent>
+</Carousel>
+```
+
+## Options
+
+You can pass options to the carousel using the `options` prop. See the [Embla Carousel docs](https://www.embla-carousel.com/api/options/) for more information.
+
+```tsx {2-5}
+<Carousel
+  options={() => ({
+    align: "start",
+    loop: true,
+  })}
+>
+  <CarouselContent>
+    <CarouselItem />
+    <CarouselItem />
+    <CarouselItem />
+  </CarouselContent>
+</Carousel>
+```
+
+## Plugins
+
+You can use the `plugins` prop to add plugins to the carousel.
+
+```tsx {1,6-10}
+import Autoplay from "embla-carousel-autoplay"
+
+export function Example() {
+  return (
+    <Carousel
+      plugins={() => [
+        Autoplay({
+          delay: 2000,
+        }),
+      ]}
+    >
+      // ...
+    </Carousel>
+  )
+}
+```
+
+<ComponentPreview name="carousel-plugin-demo" >
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/carousel-plugin-demo.tsx
+
+```
+
+</ComponentPreview>

@@ -35,17 +35,21 @@ const DocsSidebar = (props: ComponentProps<typeof Sidebar>) => {
                 <SidebarMenu class="gap-0.5">
                   <For each={item.items}>
                     {(item) => (
-                      <SidebarMenuItem>
+                      <SidebarMenuItem
+                        data-indicator={item.indicator}
+                        class="data-[indicator]:before:ring-background w-fit data-[indicator]:before:absolute data-[indicator]:before:top-0 data-[indicator]:before:-right-0.5 data-[indicator]:before:z-10 data-[indicator]:before:size-1.5 data-[indicator]:before:rounded-full data-[indicator]:before:ring-2 data-[indicator=new]:before:bg-green-500 data-[indicator=updated]:before:bg-blue-500"
+                      >
                         <SidebarMenuButton<typeof SidebarMenuButton>
                           as={(props) => {
                             const [local, rest] = splitProps(props, ["class"])
 
                             return (
                               <Link
+                                disabled={item.disabled}
                                 to={item.href}
                                 class={cx(
                                   local.class,
-                                  "relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md",
+                                  "relative h-[30px] overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md disabled:pointer-events-none disabled:opacity-30",
                                 )}
                                 activeProps={{
                                   class: "bg-accent border-accent",

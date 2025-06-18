@@ -1,0 +1,74 @@
+---
+title: Menubar
+description: A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/menubar
+  api: https://kobalte.dev/docs/core/components/menubar#api-reference
+---
+
+<ComponentPreview name="menubar-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/menubar-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add menubar
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Update the import paths to match your project setup.</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/menubar" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/menubar.tsx
+
+    ```
+
+  </ComponentSource>
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import {
+  Menubar,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarPortal,
+  MenubarSeparator,
+  MenubarTrigger,
+} from "@/components/ui/menubar"
+```
+
+```tsx
+<Menubar>
+  <MenubarMenu>
+    <MenubarTrigger />
+    <MenubarPortal>
+      <MenubarContent>
+        <MenubarItem />
+        <MenubarSeparator />
+        <MenubarItem />
+      </MenubarContent>
+    </MenubarPortal>
+  </MenubarMenu>
+</Menubar>
+```

@@ -1,0 +1,73 @@
+---
+title: Dialog
+description: A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/dialog
+  api: https://kobalte.dev/docs/core/components/dialog#api-reference
+---
+
+<ComponentPreview name="dialog-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/dialog-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add dialog
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Update the import paths to match your project setup.</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/dialog" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/dialog.tsx
+
+    ```
+
+  </ComponentSource>
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogPortal,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+```
+
+```tsx
+<Dialog>
+  <DialogTrigger />
+  <DialogPortal>
+    <DialogContent>
+      <DialogHeader>
+        <DialogTitle />
+        <DialogDescription />
+      </DialogHeader>
+    </DialogContent>
+  </DialogPortal>
+</Dialog>
+```

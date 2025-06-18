@@ -1,0 +1,159 @@
+---
+title: Breadcrumbs
+description: Displays the path to the current resource using a hierarchy of links.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/breadcrumbs
+  api: https://kobalte.dev/docs/core/components/breadcrumbs#api-reference
+---
+
+<ComponentPreview name="breadcrumbs-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/breadcrumbs-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add breadcrumbs
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Update the import paths to match your project setup.</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/breadcrumbs" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/breadcrumbs.tsx
+
+    ```
+
+  </ComponentSource>
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import {
+  BreadcrumbList,
+  Breadcrumbs,
+  BreadcrumbsItem,
+  BreadcrumbsLink,
+  BreadcrumbsSeparator,
+} from "@components/ui/breadcrumbs"
+```
+
+```tsx
+<Breadcrumbs>
+  <BreadcrumbList>
+    <BreadcrumbsItem>
+      <BreadcrumbsLink />
+    </BreadcrumbsItem>
+    <BreadcrumbsSeparator />
+  </BreadcrumbList>
+</Breadcrumbs>
+```
+
+## Examples
+
+### Custom separator
+
+Use the `separator` prop to provide a default content for all `<BreadcrumbsSeparator />`. You can pass it a string or a SolidJS component.
+
+<ComponentPreview name="breadcrumbs-custom-separator-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/breadcrumbs-custom-separator-demo.tsx
+
+```
+
+</ComponentPreview>
+
+```tsx {1,5}
+import Icon from "your-library"
+
+...
+
+<Breadcrumbs separator={<Icon />}>
+  <BreadcrumbList>
+    <BreadcrumbsItem>
+      <BreadcrumbsLink />
+    </BreadcrumbsItem>
+    <BreadcrumbsSeparator />
+  </BreadcrumbList>
+</Breadcrumbs>
+```
+
+### Dropdown
+
+You can compose `<BreadcrumbsItem />` with a `<DropdownMenu />` to create a dropdown in the breadcrumbs.
+
+<ComponentPreview name="breadcrumbs-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/breadcrumbs-demo.tsx
+
+```
+
+</ComponentPreview>
+
+```tsx {1-6,10-19}
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+
+...
+
+<BreadcrumbsItem>
+  <DropdownMenu>
+    <DropdownMenuTrigger />
+    <DropdownMenuContent>
+      <DropdownMenuItem />
+      <DropdownMenuItem />
+      <DropdownMenuItem />
+    </DropdownMenuContent>
+  </DropdownMenu>
+</BreadcrumbsItem>
+```
+
+### Collapsed
+
+We provide a `<BreadcrumbsEllipsis />` component to show a collapsed state when the breadcrumbs is too long.
+
+<ComponentPreview name="breadcrumbs-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/breadcrumbs-demo.tsx
+
+```
+
+</ComponentPreview>
+
+```tsx {1,9}
+import { BreadcrumbsEllipsis } from "@/components/ui/breadcrumb"
+
+...
+
+<Breadcrumbs>
+  <BreadcrumbsList>
+    {/* ... */}
+    <BreadcrumbsItem>
+      <BreadcrumbsEllipsis />
+    </BreadcrumbsItem>
+    {/* ... */}
+  </BreadcrumbsList>
+</Breadcrumbs>
+```

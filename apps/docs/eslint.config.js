@@ -23,6 +23,10 @@ export default [
     },
   },
   {
-    ignores: ["plugins/*", "src/__registry__/*"],
+    ignores: [
+      "plugins/*",
+      "src/__registry__/*",
+      "src/components/client-only-wrapper.tsx",
+    ],
   },
 ]

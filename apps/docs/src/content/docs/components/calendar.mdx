@@ -1,0 +1,107 @@
+---
+title: Calendar
+description: A date field component that allows users to enter and edit date.
+component: true
+link:
+  doc: https://corvu.dev/docs/primitives/calendar/
+  api: https://corvu.dev/docs/primitives/calendar/#api-reference
+---
+
+<ComponentPreview name="calendar-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/calendar-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add calendar
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install @corvu/calendar
+```
+
+<StepItem>Update the import paths to match your project setup.</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/calendar" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/calendar.tsx
+
+    ```
+
+  </ComponentSource>
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import {
+  Calendar,
+  CalendarCell,
+  CalendarCellTrigger,
+  CalendarHeadCell,
+  CalendarLabel,
+  CalendarNav,
+  CalendarTable,
+} from "@components/ui/calendar"
+```
+
+```tsx
+<Calendar mode="single">
+  {(props) => (
+    <>
+      <CalendarNav action="prev-month" />
+      <CalendarLabel />
+      <CalendarNav action="next-month" />
+      <CalendarTable>
+        <thead>
+          <tr class="flex">
+            <Index each={props.weekdays}>
+              {(weekday) => <CalendarHeadCell />}
+            </Index>
+          </tr>
+        </thead>
+        <tbody>
+          <Index each={props.weeks}>
+            {(week) => (
+              <tr>
+                <Index each={week()}>
+                  {(day) => (
+                    <CalendarCell>
+                      <CalendarCellTrigger day={day()} />
+                    </CalendarCell>
+                  )}
+                </Index>
+              </tr>
+            )}
+          </Index>
+        </tbody>
+      </CalendarTable>
+    </>
+  )}
+</Calendar>
+```
+
+## Examples
+
+### Range Calendar
+
+<ComponentPreview name="calendar-range-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/calendar-range-demo.tsx
+
+```
+
+</ComponentPreview>

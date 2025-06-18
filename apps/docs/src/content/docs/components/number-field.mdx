@@ -1,0 +1,81 @@
+---
+title: Number Field
+description: A number input that allow users to input custom number entries with a keyboard.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/number-field
+  api: https://kobalte.dev/docs/core/components/number-field#api-reference
+---
+
+<ComponentPreview name="number-field-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/number-field-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add number-field
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Update the import paths to match your project setup.</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/number-field" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/number-field.tsx
+
+    ```
+
+  </ComponentSource>
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import {
+  NumberField,
+  NumberFieldDecrementTrigger,
+  NumberFieldGroup,
+  NumberFieldIncrementTrigger,
+  NumberFieldInput,
+  NumberFieldLabel,
+} from "@components/ui/number-field"
+```
+
+```tsx
+<NumberField>
+  <NumberFieldLabel />
+  <NumberFieldGroup>
+    <NumberFieldInput />
+    <NumberFieldDecrementTrigger />
+    <NumberFieldIncrementTrigger />
+  </NumberFieldGroup>
+</NumberField>
+```
+
+## Examples
+
+### With Error
+
+<ComponentPreview name="number-field-error-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/number-field-error-demo.tsx
+
+```
+
+</ComponentPreview>

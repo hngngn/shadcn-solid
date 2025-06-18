@@ -1,0 +1,126 @@
+---
+title: Combobox
+description: Combines a text input with a listbox, allowing users to filter a list of options to items matching a query.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/combobox
+  api: https://kobalte.dev/docs/core/components/combobox#api-reference
+---
+
+<ComponentPreview name="combobox-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/combobox-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add combobox
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Update the import paths to match your project setup.</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/combobox" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/combobox.tsx
+
+    ```
+
+  </ComponentSource>
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import { createSignal } from "solid-js"
+import { createFilter } from "@kobalte/core"
+
+import {
+  Combobox,
+  ComboboxContent,
+  ComboboxItem,
+  ComboboxTrigger,
+} from "@/components/ui/combobox"
+```
+
+```tsx
+const ALL_OPTIONS = ["Apple", "Banana", "Blueberry", "Grapes", "Pineapple"]
+
+const filter = createFilter({ sensitivity: "base" })
+const [options, setOptions] = createSignal(ALL_OPTIONS)
+const onInputChange = (value: string) => {
+  setOptions(ALL_OPTIONS.filter((option) => filter.contains(option, value)))
+}
+```
+
+```tsx
+<Combobox
+  options={options()}
+  onInputChange={onInputChange}
+  itemComponent={(props) => (
+    <ComboboxItem item={props.item}>{props.item.rawValue}</ComboboxItem>
+  )}
+>
+  <ComboboxTrigger>
+    <ComboboxInput />
+  </ComboboxTrigger>
+  <ComboboxContent />
+</Combobox>
+```
+
+## Examples
+
+### Disabled
+
+<ComponentPreview name="combobox-disabled-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/combobox-disabled-demo.tsx
+
+```
+
+</ComponentPreview>
+
+### Error
+
+<ComponentPreview name="combobox-error-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/combobox-error-demo.tsx
+
+```
+
+</ComponentPreview>
+
+### Group
+
+<ComponentPreview name="combobox-group-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/combobox-group-demo.tsx
+
+```
+
+</ComponentPreview>
+
+### Multi
+
+<ComponentPreview name="combobox-multi-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/combobox-multi-demo.tsx
+
+```
+
+</ComponentPreview>

@@ -1,0 +1,69 @@
+---
+title: Accordion
+description: A vertically stacked set of interactive headings that each reveal a section of content.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/accordion
+  api: https://kobalte.dev/docs/core/components/accordion#api-reference
+---
+
+<ComponentPreview name="accordion-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/accordion-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add accordion
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Update the import paths to match your project setup.</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/accordion" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/accordion.tsx
+
+    ```
+
+  </ComponentSource>
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+```
+
+```tsx
+<Accordion>
+  <AccordionItem value="item-1">
+    <AccordionTrigger />
+    <AccordionContent />
+  </AccordionItem>
+  <AccordionItem value="item-2">
+    <AccordionTrigger />
+    <AccordionContent />
+  </AccordionItem>
+</Accordion>
+```

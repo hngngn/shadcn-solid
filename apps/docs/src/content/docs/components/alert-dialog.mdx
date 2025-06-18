@@ -1,0 +1,79 @@
+---
+title: Alert Dialog
+description: A modal dialog that interrupts the user with important content and expects a response.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/alert-dialog
+  api: https://kobalte.dev/docs/core/components/alert-dialog#api-reference
+---
+
+<ComponentPreview name="alert-dialog-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/alert-dialog-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add alert-dialog
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Update the import paths to match your project setup.</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/alert-dialog" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/alert-dialog.tsx
+
+    ```
+
+  </ComponentSource>
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
+```
+
+```tsx
+<AlertDialog>
+  <AlertDialogTrigger />
+  <AlertDialogPortal>
+    <AlertDialogContent>
+      <AlertDialogHeader>
+        <AlertDialogTitle />
+        <AlertDialogDescription />
+      </AlertDialogHeader>
+      <AlertDialogFooter>
+        <AlertDialogCancel />
+        <AlertDialogAction />
+      </AlertDialogFooter>
+    </AlertDialogContent>
+  </AlertDialogPortal>
+</AlertDialog>
+```

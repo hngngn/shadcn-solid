@@ -29,17 +29,17 @@ const Sidebar = () => {
                         )}
                       >
                         {item.title}
-                        <Show when={item.label}>
+                        <Show when={item.indicator}>
                           <span
                             class={cx(
                               "ml-2 rounded-md bg-lime-600/10 px-2 py-1 text-xs leading-none text-lime-600 no-underline ring-1 ring-lime-600/20 ring-inset group-hover:no-underline dark:bg-lime-500/10 dark:text-lime-500 dark:ring-lime-500/20",
-                              item.label === "Soon" &&
+                              item.indicator === "Soon" &&
                                 "bg-muted text-muted-foreground",
-                              item.label === "Updated" &&
+                              item.indicator === "Updated" &&
                                 "bg-blue-600/10 text-blue-600 ring-blue-600/20 dark:bg-blue-400/10 dark:text-blue-400 dark:ring-blue-500/20",
                             )}
                           >
-                            {item.label}
+                            {item.indicator}
                           </span>
                         </Show>
                       </span>
@@ -58,17 +58,17 @@ const Sidebar = () => {
                       )}
                     >
                       {item.title}
-                      <Show when={item.label}>
+                      <Show when={item.indicator}>
                         <span
                           class={cx(
                             "ml-2 rounded-md bg-lime-600/10 px-2 py-1 text-xs leading-none text-lime-600 no-underline ring-1 ring-lime-600/20 ring-inset group-hover:no-underline dark:bg-lime-500/10 dark:text-lime-500 dark:ring-lime-500/20",
-                            item.label === "Soon" &&
+                            item.indicator === "Soon" &&
                               "bg-muted text-muted-foreground",
-                            item.label === "Updated" &&
+                            item.indicator === "Updated" &&
                               "bg-blue-600/10 text-blue-600 ring-blue-600/20 dark:bg-blue-400/10 dark:text-blue-400 dark:ring-blue-500/20",
                           )}
                         >
-                          {item.label}
+                          {item.indicator}
                         </span>
                       </Show>
                     </Link>

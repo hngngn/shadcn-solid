@@ -1,0 +1,88 @@
+---
+title: Navigation Menu
+description: A collection of links for navigating websites.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/navigation-menu
+  api: https://kobalte.dev/docs/core/components/navigation-menu#api-reference
+---
+
+<ComponentPreview name="navigation-menu-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/navigation-menu-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add navigation-menu
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Update the import paths to match your project setup.</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/navigation-menu" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/navigation-menu.tsx
+
+    ```
+
+  </ComponentSource>
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import {
+  NavigationItemDescription,
+  NavigationItemLabel,
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuPortal,
+  NavigationMenuTrigger,
+} from "@components/ui/navigation-menu"
+```
+
+```tsx
+<NavigationMenu>
+  <NavigationMenuList>
+    <NavigationMenuTrigger />
+    <NavigationMenuPortal>
+      <NavigationMenuContent>
+        <NavigationMenuItem>
+          <NavigationItemLabel />
+          <NavigationItemDescription />
+        </NavigationMenuItem>
+      </NavigationMenuContent>
+    </NavigationMenuPortal>
+  </NavigationMenuList>
+</NavigationMenu>
+```
+
+## Examples
+
+### Orientation
+
+<ComponentPreview name="navigation-menu-vertical-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/navigation-menu-vertical-demo.tsx
+
+```
+
+</ComponentPreview>

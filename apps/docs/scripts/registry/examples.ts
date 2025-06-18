@@ -82,6 +82,26 @@ export const examples: Registry = [
     ],
   },
   {
+    name: "breadcrumbs-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/breadcrumbs-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "breadcrumbs-custom-separator-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/breadcrumbs-custom-separator-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "button-demo",
     type: "registry:example",
     files: [
@@ -192,16 +212,6 @@ export const examples: Registry = [
     ],
   },
   {
-    name: "carouse-plugin-demo",
-    type: "registry:example",
-    files: [
-      {
-        path: "examples/carouse-plugin-demo.tsx",
-        type: "registry:example",
-      },
-    ],
-  },
-  {
     name: "carousel-demo",
     type: "registry:example",
     files: [
@@ -217,6 +227,16 @@ export const examples: Registry = [
     files: [
       {
         path: "examples/carousel-orientation-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "carousel-plugin-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/carousel-plugin-demo.tsx",
         type: "registry:example",
       },
     ],
@@ -342,6 +362,26 @@ export const examples: Registry = [
     ],
   },
   {
+    name: "date-picker-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/date-picker-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "date-picker-range-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/date-picker-range-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "dialog-demo",
     type: "registry:example",
     files: [
@@ -387,6 +427,96 @@ export const examples: Registry = [
     files: [
       {
         path: "examples/hover-card-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "menubar-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/menubar-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "navigation-menu-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/navigation-menu-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "navigation-menu-vertical-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/navigation-menu-vertical-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "number-field-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/number-field-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "number-field-error-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/number-field-error-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "text-field-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/text-field-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "text-field-disabled-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/text-field-disabled-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "text-field-error-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/text-field-error-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "text-field-area-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/text-field-area-demo.tsx",
         type: "registry:example",
       },
     ],

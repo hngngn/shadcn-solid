@@ -28,26 +28,19 @@ const ComponentPreview = (props: Props) => {
     } as Props,
     props,
   )
-  const [local, rest] = splitProps(merge, [
-    "name",
-    "type",
-    "class",
-    "align",
-    "hideCode",
-  ])
+  const [local, rest] = splitProps(merge, ["name", "type", "align", "hideCode"])
 
   const component = createMemo(
-    () => Index.tailwindcss[local.name]?.component as JSX.Element,
+    () => Index.tailwindcss[local.name]?.component() as JSX.Element,
   )
 
   return (
     <Switch
       fallback={
         <ComponentPreviewTabs
-          class={local.class}
           align={local.align}
           hideCode={local.hideCode}
-          component={component()}
+          component={component}
           {...rest}
         />
       }

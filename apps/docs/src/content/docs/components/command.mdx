@@ -1,0 +1,129 @@
+---
+title: Command
+description: Composable command menu.
+component: true
+link:
+  doc: https://cmdk-solid.vercel.app
+---
+
+<ComponentPreview name="command-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/command-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add command
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install cmdk-solid
+```
+
+<StepItem>Update the import paths to match your project setup.</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/command" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/command.tsx
+
+    ```
+
+  </ComponentSource>
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import {
+  Command,
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+  CommandShortcut,
+} from "@/components/ui/command"
+```
+
+```tsx
+<Command>
+  <CommandInput />
+  <CommandList>
+    <CommandEmpty />
+    <CommandGroup>
+      <CommandItem />
+      <CommandItem />
+      <CommandItem />
+    </CommandGroup>
+    <CommandSeparator />
+    <CommandGroup>
+      <CommandItem />
+      <CommandItem />
+      <CommandItem />
+    </CommandGroup>
+  </CommandList>
+</Command>
+```
+
+## Examples
+
+### Dialog
+
+<ComponentPreview name="command-dialog-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/command-dialog-demo.tsx
+
+```
+
+</ComponentPreview>
+
+To show the command menu in a dialog, use the `<CommandDialog />` component.
+
+```tsx
+export function CommandMenu() {
+  const [open, setOpen] = createSignal(false)
+
+  const down = (e: KeyboardEvent) => {
+    if (e.key === "j" && (e.metaKey || e.ctrlKey)) {
+      e.preventDefault()
+      setOpen((open) => !open)
+    }
+  }
+
+  createEffect(() => {
+    document.addEventListener("keydown", down)
+
+    onCleanup(() => {
+      document.removeEventListener("keydown", down)
+    })
+  })
+
+  return (
+    <CommandDialog open={open()} onOpenChange={setOpen}>
+      <CommandInput placeholder="Type a command or search..." />
+      <CommandList>
+        <CommandEmpty>No results found.</CommandEmpty>
+        <CommandGroup heading="Suggestions">
+          <CommandItem>Calendar</CommandItem>
+          <CommandItem>Search Emoji</CommandItem>
+          <CommandItem>Calculator</CommandItem>
+        </CommandGroup>
+      </CommandList>
+    </CommandDialog>
+  )
+}
+```

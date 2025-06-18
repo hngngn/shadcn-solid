@@ -24,6 +24,176 @@ interface Content {
 }
 
 export const Contents : Record<string, Content> = {
+  "components/accordion": {
+    component: lazy(() => import("@/content/docs/components/accordion.mdx")),
+    data: {
+  "title": "Accordion",
+  "description": "A vertically stacked set of interactive headings that each reveal a section of content.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/accordion",
+    "api": "https://kobalte.dev/docs/core/components/accordion#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  }
+]
+  },
+  "components/alert-dialog": {
+    component: lazy(() => import("@/content/docs/components/alert-dialog.mdx")),
+    data: {
+  "title": "Alert Dialog",
+  "description": "A modal dialog that interrupts the user with important content and expects a response.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/alert-dialog",
+    "api": "https://kobalte.dev/docs/core/components/alert-dialog#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  }
+]
+  },
+  "components/alert": {
+    component: lazy(() => import("@/content/docs/components/alert.mdx")),
+    data: {
+  "title": "Alert",
+  "description": "Displays a callout for user attention.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/alert",
+    "api": "https://kobalte.dev/docs/core/components/alert#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  },
+  {
+    "depth": 2,
+    "text": "Examples",
+    "slug": "examples"
+  },
+  {
+    "depth": 3,
+    "text": "Destructive",
+    "slug": "destructive"
+  }
+]
+  },
+  "components/badge": {
+    component: lazy(() => import("@/content/docs/components/badge.mdx")),
+    data: {
+  "title": "Badge",
+  "description": "Displays a badge or a component that looks like a badge.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/badge",
+    "api": "https://kobalte.dev/docs/core/components/badge#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  },
+  {
+    "depth": 2,
+    "text": "Examples",
+    "slug": "examples"
+  },
+  {
+    "depth": 3,
+    "text": "Secondary",
+    "slug": "secondary"
+  },
+  {
+    "depth": 3,
+    "text": "Destructive",
+    "slug": "destructive"
+  },
+  {
+    "depth": 3,
+    "text": "Outline",
+    "slug": "outline"
+  }
+]
+  },
+  "components/breadcrumbs": {
+    component: lazy(() => import("@/content/docs/components/breadcrumbs.mdx")),
+    data: {
+  "title": "Breadcrumbs",
+  "description": "Displays the path to the current resource using a hierarchy of links.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/breadcrumbs",
+    "api": "https://kobalte.dev/docs/core/components/breadcrumbs#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  },
+  {
+    "depth": 2,
+    "text": "Examples",
+    "slug": "examples"
+  },
+  {
+    "depth": 3,
+    "text": "Custom separator",
+    "slug": "custom-separator"
+  },
+  {
+    "depth": 3,
+    "text": "Dropdown",
+    "slug": "dropdown"
+  },
+  {
+    "depth": 3,
+    "text": "Collapsed",
+    "slug": "collapsed"
+  }
+]
+  },
   "components/button": {
     component: lazy(() => import("@/content/docs/components/button.mdx")),
     data: {
@@ -80,6 +250,550 @@ export const Contents : Record<string, Content> = {
     "depth": 3,
     "text": "Secondary",
     "slug": "secondary"
+  }
+]
+  },
+  "components/calendar": {
+    component: lazy(() => import("@/content/docs/components/calendar.mdx")),
+    data: {
+  "title": "Calendar",
+  "description": "A date field component that allows users to enter and edit date.",
+  "component": true,
+  "link": {
+    "doc": "https://corvu.dev/docs/primitives/calendar/",
+    "api": "https://corvu.dev/docs/primitives/calendar/#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  },
+  {
+    "depth": 2,
+    "text": "Examples",
+    "slug": "examples"
+  },
+  {
+    "depth": 3,
+    "text": "Range Calendar",
+    "slug": "range-calendar"
+  }
+]
+  },
+  "components/card": {
+    component: lazy(() => import("@/content/docs/components/card.mdx")),
+    data: {
+  "title": "Card",
+  "description": "Displays a card with header, content, and footer.",
+  "component": true
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  }
+]
+  },
+  "components/carousel": {
+    component: lazy(() => import("@/content/docs/components/carousel.mdx")),
+    data: {
+  "title": "Carousel",
+  "description": "A carousel with motion and swipe built using Embla.",
+  "component": true,
+  "link": {
+    "doc": "https://www.embla-carousel.com/get-started/solid",
+    "api": "https://www.embla-carousel.com/api"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  },
+  {
+    "depth": 2,
+    "text": "Examples",
+    "slug": "examples"
+  },
+  {
+    "depth": 3,
+    "text": "Sizes",
+    "slug": "sizes"
+  },
+  {
+    "depth": 3,
+    "text": "Spacing",
+    "slug": "spacing"
+  },
+  {
+    "depth": 3,
+    "text": "Orientation",
+    "slug": "orientation"
+  },
+  {
+    "depth": 2,
+    "text": "Options",
+    "slug": "options"
+  },
+  {
+    "depth": 2,
+    "text": "Plugins",
+    "slug": "plugins"
+  }
+]
+  },
+  "components/checkbox": {
+    component: lazy(() => import("@/content/docs/components/checkbox.mdx")),
+    data: {
+  "title": "Checkbox",
+  "description": "A control that allows the user to toggle between checked and not checked.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/checkbox",
+    "api": "https://kobalte.dev/docs/core/components/checkbox#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  },
+  {
+    "depth": 2,
+    "text": "Examples",
+    "slug": "examples"
+  },
+  {
+    "depth": 3,
+    "text": "Disabled",
+    "slug": "disabled"
+  }
+]
+  },
+  "components/collapsible": {
+    component: lazy(() => import("@/content/docs/components/collapsible.mdx")),
+    data: {
+  "title": "Collapsible",
+  "description": "An interactive component which expands/collapses a panel.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/collapsible",
+    "api": "https://kobalte.dev/docs/core/components/collapsible#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  }
+]
+  },
+  "components/combobox": {
+    component: lazy(() => import("@/content/docs/components/combobox.mdx")),
+    data: {
+  "title": "Combobox",
+  "description": "Combines a text input with a listbox, allowing users to filter a list of options to items matching a query.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/combobox",
+    "api": "https://kobalte.dev/docs/core/components/combobox#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  },
+  {
+    "depth": 2,
+    "text": "Examples",
+    "slug": "examples"
+  },
+  {
+    "depth": 3,
+    "text": "Disabled",
+    "slug": "disabled"
+  },
+  {
+    "depth": 3,
+    "text": "Error",
+    "slug": "error"
+  },
+  {
+    "depth": 3,
+    "text": "Group",
+    "slug": "group"
+  },
+  {
+    "depth": 3,
+    "text": "Multi",
+    "slug": "multi"
+  }
+]
+  },
+  "components/command": {
+    component: lazy(() => import("@/content/docs/components/command.mdx")),
+    data: {
+  "title": "Command",
+  "description": "Composable command menu.",
+  "component": true,
+  "link": {
+    "doc": "https://cmdk-solid.vercel.app"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  },
+  {
+    "depth": 2,
+    "text": "Examples",
+    "slug": "examples"
+  },
+  {
+    "depth": 3,
+    "text": "Dialog",
+    "slug": "dialog"
+  }
+]
+  },
+  "components/context-menu": {
+    component: lazy(() => import("@/content/docs/components/context-menu.mdx")),
+    data: {
+  "title": "Context Menu",
+  "description": "Displays a menu to the user — such as a set of actions or functions — triggered by a button.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/context-menu",
+    "api": "https://kobalte.dev/docs/core/components/context-menu#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  }
+]
+  },
+  "components/date-picker": {
+    component: lazy(() => import("@/content/docs/components/date-picker.mdx")),
+    data: {
+  "title": "Date Picker",
+  "description": "A date picker component with range and presets.",
+  "component": true
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  },
+  {
+    "depth": 2,
+    "text": "Examples",
+    "slug": "examples"
+  },
+  {
+    "depth": 3,
+    "text": "With range",
+    "slug": "with-range"
+  }
+]
+  },
+  "components/dialog": {
+    component: lazy(() => import("@/content/docs/components/dialog.mdx")),
+    data: {
+  "title": "Dialog",
+  "description": "A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/dialog",
+    "api": "https://kobalte.dev/docs/core/components/dialog#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  }
+]
+  },
+  "components/drawer": {
+    component: lazy(() => import("@/content/docs/components/drawer.mdx")),
+    data: {
+  "title": "Drawer",
+  "description": "A draggable dialog that is attached to any side of the viewport.",
+  "component": true,
+  "link": {
+    "doc": "https://corvu.dev/docs/primitives/drawer",
+    "api": "https://corvu.dev/docs/primitives/drawer/#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  },
+  {
+    "depth": 2,
+    "text": "Examples",
+    "slug": "examples"
+  },
+  {
+    "depth": 3,
+    "text": "Side",
+    "slug": "side"
+  }
+]
+  },
+  "components/dropdown-menu": {
+    component: lazy(() => import("@/content/docs/components/dropdown-menu.mdx")),
+    data: {
+  "title": "Dropdown Menu",
+  "description": "Displays a menu to the user — such as a set of actions or functions — triggered by a button.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/dropdown-menu",
+    "api": "https://kobalte.dev/docs/core/components/dropdown-menu#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  }
+]
+  },
+  "components/hover-card": {
+    component: lazy(() => import("@/content/docs/components/hover-card.mdx")),
+    data: {
+  "title": "Hover Card",
+  "description": "For sighted users to preview content available behind a link.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/hover-card",
+    "api": "https://kobalte.dev/docs/core/components/hover-card#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  }
+]
+  },
+  "components/menubar": {
+    component: lazy(() => import("@/content/docs/components/menubar.mdx")),
+    data: {
+  "title": "Menubar",
+  "description": "A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/menubar",
+    "api": "https://kobalte.dev/docs/core/components/menubar#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  }
+]
+  },
+  "components/navigation-menu": {
+    component: lazy(() => import("@/content/docs/components/navigation-menu.mdx")),
+    data: {
+  "title": "Navigation Menu",
+  "description": "A collection of links for navigating websites.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/navigation-menu",
+    "api": "https://kobalte.dev/docs/core/components/navigation-menu#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  },
+  {
+    "depth": 2,
+    "text": "Examples",
+    "slug": "examples"
+  },
+  {
+    "depth": 3,
+    "text": "Orientation",
+    "slug": "orientation"
+  }
+]
+  },
+  "components/number-field": {
+    component: lazy(() => import("@/content/docs/components/number-field.mdx")),
+    data: {
+  "title": "Number Field",
+  "description": "A number input that allow users to input custom number entries with a keyboard.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/number-field",
+    "api": "https://kobalte.dev/docs/core/components/number-field#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  },
+  {
+    "depth": 2,
+    "text": "Examples",
+    "slug": "examples"
+  },
+  {
+    "depth": 3,
+    "text": "With Error",
+    "slug": "with-error"
+  }
+]
+  },
+  "components/text-field": {
+    component: lazy(() => import("@/content/docs/components/text-field.mdx")),
+    data: {
+  "title": "TextField",
+  "description": "A text input that allow users to input custom text entries with a keyboard.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/text-field",
+    "api": "https://kobalte.dev/docs/core/components/text-field#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  },
+  {
+    "depth": 2,
+    "text": "Examples",
+    "slug": "examples"
+  },
+  {
+    "depth": 3,
+    "text": "Disabled",
+    "slug": "disabled"
+  },
+  {
+    "depth": 3,
+    "text": "Error",
+    "slug": "error"
+  },
+  {
+    "depth": 3,
+    "text": "Text Area",
+    "slug": "text-area"
   }
 ]
   },

@@ -1,0 +1,65 @@
+---
+title: Hover Card
+description: For sighted users to preview content available behind a link.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/hover-card
+  api: https://kobalte.dev/docs/core/components/hover-card#api-reference
+---
+
+<ComponentPreview name="hover-card-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/hover-card-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add hover-card
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Update the import paths to match your project setup.</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/hover-card" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/hover-card.tsx
+
+    ```
+
+  </ComponentSource>
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardPortal,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card"
+```
+
+```tsx
+<HoverCard>
+  <HoverCardTrigger />
+  <HoverCardPortal>
+    <HoverCardContent />
+  </HoverCardPortal>
+</HoverCard>
+```

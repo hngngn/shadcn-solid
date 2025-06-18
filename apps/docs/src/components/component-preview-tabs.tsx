@@ -17,7 +17,7 @@ import { cx } from "@repo/tailwindcss/utils/cva"
 type Props = ComponentProps<"div"> & {
   align?: "center" | "start" | "end"
   hideCode?: boolean
-  component: JSX.Element
+  component: () => JSX.Element
 }
 
 const ComponentPreviewTabs = (props: Props) => {
@@ -64,9 +64,9 @@ const ComponentPreviewTabs = (props: Props) => {
           <TabsContent value="preview">
             <div
               data-align={local.align}
-              class="preview flex h-[450px] w-full justify-center overflow-hidden rounded-lg border p-10 data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start"
+              class="preview flex min-h-[450px] w-full justify-center rounded-lg border p-10 data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start"
             >
-              {local.component}
+              {local.component()}
             </div>
           </TabsContent>
           <TabsContent

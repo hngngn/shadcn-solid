@@ -171,14 +171,14 @@ const commandData: List[] = [
 const CommandDialogDemo = () => {
   const [open, setOpen] = createSignal(false)
 
-  createEffect(() => {
-    const down = (e: KeyboardEvent) => {
-      if (e.key === "j" && (e.metaKey || e.ctrlKey)) {
-        e.preventDefault()
-        setOpen((open) => !open)
-      }
+  const down = (e: KeyboardEvent) => {
+    if (e.key === "j" && (e.metaKey || e.ctrlKey)) {
+      e.preventDefault()
+      setOpen((open) => !open)
     }
+  }
 
+  createEffect(() => {
     document.addEventListener("keydown", down)
 
     onCleanup(() => {

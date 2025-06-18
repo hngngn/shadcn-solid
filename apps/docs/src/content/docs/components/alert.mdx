@@ -1,0 +1,70 @@
+---
+title: Alert
+description: Displays a callout for user attention.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/alert
+  api: https://kobalte.dev/docs/core/components/alert#api-reference
+---
+
+<ComponentPreview name="alert-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/alert-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add alert
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Update the import paths to match your project setup.</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/alert" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/alert.tsx
+
+    ```
+
+  </ComponentSource>
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+```
+
+```tsx
+<Alert>
+  <AlertTitle />
+  <AlertDescription />
+</Alert>
+```
+
+## Examples
+
+### Destructive
+
+<ComponentPreview name="alert-destructive-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/alert-destructive-demo.tsx
+
+```
+
+</ComponentPreview>

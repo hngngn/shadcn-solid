@@ -10,7 +10,7 @@ import {
   CarouselPrevious,
 } from "@repo/tailwindcss/ui/v4/carousel"
 
-const CarousePluginDemo = () => {
+const CarouselPluginDemo = () => {
   const autoPlayPlugin = createMemo(() =>
     Autoplay({ delay: 2000, stopOnInteraction: true }),
   )
@@ -45,4 +45,4 @@ const CarousePluginDemo = () => {
   )
 }
 
-export default CarousePluginDemo
+export default CarouselPluginDemo

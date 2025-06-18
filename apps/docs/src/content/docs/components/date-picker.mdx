@@ -1,0 +1,78 @@
+---
+title: Date Picker
+description: A date picker component with range and presets.
+component: true
+---
+
+<ComponentPreview name="date-picker-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/date-picker-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+The Date Picker is built using a composition of the `<Popover />` and the `<Calendar />` components.
+
+See installation instructions for the [Popover](/docs/components/popover) and the [Calendar](/docs/components/calendar) components.
+
+## Usage
+
+```tsx
+<Calendar mode="single">
+  {(props) => (
+    <Popover>
+      <PopoverTrigger />
+      <PopoverPortal>
+        <PopoverContent>
+          <div>
+            <div>
+              <CalendarNav action="prev-month" />
+              <CalendarLabel />
+              <CalendarNav action="next-month" />
+            </div>
+            <CalendarTable>
+              <thead>
+                <tr>
+                  <Index each={props.weekdays}>
+                    {(weekday) => <CalendarHeadCell />}
+                  </Index>
+                </tr>
+              </thead>
+              <tbody>
+                <Index each={props.weeks}>
+                  {(week) => (
+                    <tr>
+                      <Index each={week()}>
+                        {(day) => (
+                          <CalendarCell>
+                            <CalendarCellTrigger />
+                          </CalendarCell>
+                        )}
+                      </Index>
+                    </tr>
+                  )}
+                </Index>
+              </tbody>
+            </CalendarTable>
+          </div>
+        </PopoverContent>
+      </PopoverPortal>
+    </Popover>
+  )}
+</Calendar>
+```
+
+## Examples
+
+### With range
+
+<ComponentPreview name="date-picker-range-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/date-picker-range-demo.tsx
+
+```
+
+</ComponentPreview>

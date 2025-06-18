@@ -8,7 +8,7 @@ import {
 
 const HoverCardDemo = () => {
   return (
-    <HoverCard placement="right">
+    <HoverCard>
       <HoverCardTrigger<typeof Button>
         as={(props) => (
           <Button variant="link" {...props}>
