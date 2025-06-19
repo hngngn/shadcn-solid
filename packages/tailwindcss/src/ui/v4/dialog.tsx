@@ -68,7 +68,7 @@ export const DialogContent = <T extends ValidComponent = "div">(
         <Show when={local.showCloseButton}>
           <DialogPrimitive.CloseButton
             aria-label="Close"
-            class="ring-offset-background focus:ring-ring data-[expanded]:bg-accent data-[expanded]:text-muted-foreground rounded-xs focus:outline-hidden absolute right-4 top-4 opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0"
+            class="rounded-xs focus-visible:ring-ring absolute right-4 top-4 opacity-70 transition-[opacity,box-shadow] duration-200 hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path
