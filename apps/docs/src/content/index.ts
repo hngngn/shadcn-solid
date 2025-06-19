@@ -753,6 +753,45 @@ export const Contents : Record<string, Content> = {
   }
 ]
   },
+  "components/slider": {
+    component: lazy(() => import("@/content/docs/components/slider.mdx")),
+    data: {
+  "title": "Slider",
+  "description": "An input where the user selects a value from within a given range.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/slider",
+    "api": "https://kobalte.dev/docs/core/components/slider#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  },
+  {
+    "depth": 2,
+    "text": "Examples",
+    "slug": "examples"
+  },
+  {
+    "depth": 3,
+    "text": "Vertical",
+    "slug": "vertical"
+  },
+  {
+    "depth": 3,
+    "text": "Custom Label",
+    "slug": "custom-label"
+  }
+]
+  },
   "components/text-field": {
     component: lazy(() => import("@/content/docs/components/text-field.mdx")),
     data: {

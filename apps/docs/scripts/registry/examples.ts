@@ -482,6 +482,36 @@ export const examples: Registry = [
     ],
   },
   {
+    name: "slider-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/slider-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "slider-custom-label-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/slider-custom-label-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "slider-vertical-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/slider-vertical-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "text-field-demo",
     type: "registry:example",
     files: [

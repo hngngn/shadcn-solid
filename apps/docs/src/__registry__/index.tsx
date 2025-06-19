@@ -51,6 +51,9 @@ const NavigationMenuDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/exa
 const NavigationMenuVerticalDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/navigation-menu-vertical-demo"), { lazy: true })
 const NumberFieldDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/number-field-demo"), { lazy: true })
 const NumberFieldErrorDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/number-field-error-demo"), { lazy: true })
+const SliderDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/slider-demo"), { lazy: true })
+const SliderCustomLabelDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/slider-custom-label-demo"), { lazy: true })
+const SliderVerticalDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/slider-vertical-demo"), { lazy: true })
 const TextFieldDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/text-field-demo"), { lazy: true })
 const TextFieldDisabledDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/text-field-disabled-demo"), { lazy: true })
 const TextFieldErrorDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/text-field-error-demo"), { lazy: true })
@@ -822,6 +825,54 @@ export const Index: Record<string, any> = {
         content: ""
       }],
       component: () => <NumberFieldErrorDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    }, 
+    "slider-demo": {
+      name: "slider-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/slider-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <SliderDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    }, 
+    "slider-custom-label-demo": {
+      name: "slider-custom-label-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/slider-custom-label-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <SliderCustomLabelDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    }, 
+    "slider-vertical-demo": {
+      name: "slider-vertical-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/slider-vertical-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <SliderVerticalDemo />,
       source: "",
       category: "",
       subcategory: ""

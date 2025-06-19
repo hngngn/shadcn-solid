@@ -1,0 +1,87 @@
+---
+title: Slider
+description: An input where the user selects a value from within a given range.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/slider
+  api: https://kobalte.dev/docs/core/components/slider#api-reference
+---
+
+<ComponentPreview name="slider-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/slider-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add slider
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Update the import paths to match your project setup.</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/slider" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/slider.tsx
+
+    ```
+
+  </ComponentSource>
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import {
+  Slider,
+  SliderFill,
+  SliderThumb,
+  SliderTrack,
+} from "@components/ui/slider"
+```
+
+```tsx
+<Slider>
+  <SliderTrack>
+    <SliderFill />
+    <SliderThumb />
+  </SliderTrack>
+</Slider>
+```
+
+## Examples
+
+### Vertical
+
+<ComponentPreview name="slider-vertical-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/slider-vertical-demo.tsx
+
+```
+
+</ComponentPreview>
+
+### Custom Label
+
+<ComponentPreview name="slider-custom-label-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/slider-custom-label-demo.tsx
+
+```
+
+</ComponentPreview>

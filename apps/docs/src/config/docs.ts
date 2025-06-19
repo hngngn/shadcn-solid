@@ -284,6 +284,12 @@ export const docsConfig: TDocsConfig = {
           disabled: true,
         },
         {
+          title: "Slider",
+          href: "/docs/components/slider",
+          items: [],
+          indicator: "new",
+        },
+        {
           title: "Sonner",
           href: "/docs/components/sonner",
           items: [],
