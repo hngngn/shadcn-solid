@@ -1,0 +1,65 @@
+---
+title: Button
+description: Displays a button or a component that looks like a button.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/button
+  api: https://kobalte.dev/docs/core/components/button#api-reference
+---
+
+<ComponentPreview name="popover-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/popover-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add popover
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Update the import paths to match your project setup.</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/popover" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/popover.tsx
+
+    ```
+
+  </ComponentSource>
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import {
+  Popover,
+  PopoverContent,
+  PopoverPortal,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+```
+
+```tsx
+<Popover>
+  <PopoverTrigger />
+  <PopoverPortal>
+    <PopoverContent />
+  </PopoverPortal>
+</Popover>
+```

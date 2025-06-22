@@ -226,31 +226,26 @@ export const docsConfig: TDocsConfig = {
           title: "OTP Field",
           href: "/docs/components/otp-field",
           items: [],
-          disabled: true,
         },
         {
           title: "Pagination",
           href: "/docs/components/pagination",
           items: [],
-          disabled: true,
         },
         {
           title: "Popover",
           href: "/docs/components/popover",
           items: [],
-          disabled: true,
         },
         {
           title: "Progress",
           href: "/docs/components/progress",
           items: [],
-          disabled: true,
         },
         {
           title: "Radio Group",
           href: "/docs/components/radio-group",
           items: [],
-          disabled: true,
         },
         {
           title: "Resizable",

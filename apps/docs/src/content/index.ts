@@ -753,6 +753,121 @@ export const Contents : Record<string, Content> = {
   }
 ]
   },
+  "components/otp-field": {
+    component: lazy(() => import("@/content/docs/components/otp-field.mdx")),
+    data: {
+  "title": "OTP Field",
+  "description": "An accessible and customizable OTP Input component.",
+  "component": true,
+  "link": {
+    "doc": "https://corvu.dev/docs/primitives/otp-field/",
+    "api": "https://corvu.dev/docs/primitives/otp-field/#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  }
+]
+  },
+  "components/pagination": {
+    component: lazy(() => import("@/content/docs/components/pagination.mdx")),
+    data: {
+  "title": "Pagination",
+  "description": "Pagination with page navigation, next and previous links.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/pagination",
+    "api": "https://kobalte.dev/docs/core/components/pagination#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  }
+]
+  },
+  "components/popover": {
+    component: lazy(() => import("@/content/docs/components/popover.mdx")),
+    data: {
+  "title": "Button",
+  "description": "Displays a button or a component that looks like a button.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/button",
+    "api": "https://kobalte.dev/docs/core/components/button#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  }
+]
+  },
+  "components/progress": {
+    component: lazy(() => import("@/content/docs/components/progress.mdx")),
+    data: {
+  "title": "Progress",
+  "description": "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/progress",
+    "api": "https://kobalte.dev/docs/core/components/progress#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  }
+]
+  },
+  "components/radio-group": {
+    component: lazy(() => import("@/content/docs/components/radio-group.mdx")),
+    data: {
+  "title": "Radio Group",
+  "description": "A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/radio-group",
+    "api": "https://kobalte.dev/docs/core/components/radio-group#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  }
+]
+  },
   "components/slider": {
     component: lazy(() => import("@/content/docs/components/slider.mdx")),
     data: {

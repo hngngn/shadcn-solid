@@ -1,0 +1,70 @@
+---
+title: Pagination
+description: Pagination with page navigation, next and previous links.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/pagination
+  api: https://kobalte.dev/docs/core/components/pagination#api-reference
+---
+
+<ComponentPreview name="pagination-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/pagination-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add pagination
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Update the import paths to match your project setup.</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/pagination" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/pagination.tsx
+
+    ```
+
+  </ComponentSource>
+
+</Step>
+
+</ComponentInstallation>
+
+```tsx
+import {
+  Pagination,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationItems,
+  PaginationNext,
+  PaginationPrevious,
+} from "@components/ui/pagination"
+```
+
+```tsx
+<Pagination
+  count={10}
+  itemComponent={(props) => (
+    <PaginationItem page={props.page}>{props.page}</PaginationItem>
+  )}
+  ellipsisComponent={() => <PaginationEllipsis />}
+>
+  <PaginationPrevious />
+  <PaginationItems />
+  <PaginationNext />
+</Pagination>
+```

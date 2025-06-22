@@ -1,0 +1,72 @@
+---
+title: Radio Group
+description: A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/radio-group
+  api: https://kobalte.dev/docs/core/components/radio-group#api-reference
+---
+
+<ComponentPreview name="radio-group-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/radio-group-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add radio-group
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Update the import paths to match your project setup.</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/radio-group" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/radio-group.tsx
+
+    ```
+
+  </ComponentSource>
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import {
+  RadioGroup,
+  RadioGroupItemControl,
+  RadioGroupItemIndicator,
+  RadioGroupItemLabel,
+  RadioGroupItems,
+  RadioGroupLabel,
+} from "@components/ui/radio-group"
+```
+
+```tsx
+<RadioGroup>
+  <RadioGroupLabel />
+  <RadioGroupItems>
+    <RadioGroupItem>
+      <RadioGroupItemControl>
+        <RadioGroupItemIndicator />
+      </RadioGroupItemControl>
+      <RadioGroupItemLabel />
+    </RadioGroupItem>
+  </RadioGroupItems>
+</RadioGroup>
+```

@@ -482,6 +482,56 @@ export const examples: Registry = [
     ],
   },
   {
+    name: "otp-field-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/otp-field-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "pagination-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/pagination-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "popover-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/popover-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "progress-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/progress-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "radio-group-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/radio-group-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "slider-demo",
     type: "registry:example",
     files: [

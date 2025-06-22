@@ -51,6 +51,11 @@ const NavigationMenuDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/exa
 const NavigationMenuVerticalDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/navigation-menu-vertical-demo"), { lazy: true })
 const NumberFieldDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/number-field-demo"), { lazy: true })
 const NumberFieldErrorDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/number-field-error-demo"), { lazy: true })
+const OtpFieldDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/otp-field-demo"), { lazy: true })
+const PaginationDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/pagination-demo"), { lazy: true })
+const PopoverDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/popover-demo"), { lazy: true })
+const ProgressDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/progress-demo"), { lazy: true })
+const RadioGroupDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/radio-group-demo"), { lazy: true })
 const SliderDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/slider-demo"), { lazy: true })
 const SliderCustomLabelDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/slider-custom-label-demo"), { lazy: true })
 const SliderVerticalDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/slider-vertical-demo"), { lazy: true })
@@ -825,6 +830,86 @@ export const Index: Record<string, any> = {
         content: ""
       }],
       component: () => <NumberFieldErrorDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    }, 
+    "otp-field-demo": {
+      name: "otp-field-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/otp-field-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <OtpFieldDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    }, 
+    "pagination-demo": {
+      name: "pagination-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/pagination-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <PaginationDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    }, 
+    "popover-demo": {
+      name: "popover-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/popover-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <PopoverDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    }, 
+    "progress-demo": {
+      name: "progress-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/progress-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <ProgressDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    }, 
+    "radio-group-demo": {
+      name: "radio-group-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/radio-group-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <RadioGroupDemo />,
       source: "",
       category: "",
       subcategory: ""
