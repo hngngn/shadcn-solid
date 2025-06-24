@@ -532,6 +532,36 @@ export const examples: Registry = [
     ],
   },
   {
+    name: "resizable-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/resizable-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "resizable-orientation-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/resizable-orientation-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "resizable-with-handle-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/resizable-with-handle-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "slider-demo",
     type: "registry:example",
     files: [

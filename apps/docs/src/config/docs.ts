@@ -251,7 +251,6 @@ export const docsConfig: TDocsConfig = {
           title: "Resizable",
           href: "/docs/components/resizable",
           items: [],
-          disabled: true,
         },
         {
           title: "Select",

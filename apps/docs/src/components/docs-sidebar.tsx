@@ -49,7 +49,7 @@ const DocsSidebar = (props: ComponentProps<typeof Sidebar>) => {
                                 to={item.href}
                                 class={cx(
                                   local.class,
-                                  "relative h-[30px] overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md disabled:pointer-events-none disabled:opacity-30",
+                                  "relative h-[30px] overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md aria-disabled:pointer-events-none aria-disabled:opacity-40 aria-disabled:select-none",
                                 )}
                                 activeProps={{
                                   class: "bg-accent border-accent",

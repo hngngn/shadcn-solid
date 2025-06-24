@@ -56,6 +56,9 @@ const PaginationDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/example
 const PopoverDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/popover-demo"), { lazy: true })
 const ProgressDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/progress-demo"), { lazy: true })
 const RadioGroupDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/radio-group-demo"), { lazy: true })
+const ResizableDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/resizable-demo"), { lazy: true })
+const ResizableOrientationDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/resizable-orientation-demo"), { lazy: true })
+const ResizableWithHandleDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/resizable-with-handle-demo"), { lazy: true })
 const SliderDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/slider-demo"), { lazy: true })
 const SliderCustomLabelDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/slider-custom-label-demo"), { lazy: true })
 const SliderVerticalDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/slider-vertical-demo"), { lazy: true })
@@ -910,6 +913,54 @@ export const Index: Record<string, any> = {
         content: ""
       }],
       component: () => <RadioGroupDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    }, 
+    "resizable-demo": {
+      name: "resizable-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/resizable-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <ResizableDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    }, 
+    "resizable-orientation-demo": {
+      name: "resizable-orientation-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/resizable-orientation-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <ResizableOrientationDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    }, 
+    "resizable-with-handle-demo": {
+      name: "resizable-with-handle-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/resizable-with-handle-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <ResizableWithHandleDemo />,
       source: "",
       category: "",
       subcategory: ""

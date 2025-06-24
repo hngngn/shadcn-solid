@@ -1,0 +1,125 @@
+---
+title: Resizable
+description: A component that divides your interface into resizable sections.
+component: true
+link:
+  doc: https://corvu.dev/docs/primitives/resizable
+  api: https://corvu.dev/docs/primitives/resizable#api-reference
+---
+
+<ComponentPreview name="resizable-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/resizable-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add resizable
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install @corvu/resizable
+```
+
+<StepItem>Update the import paths to match your project setup.</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/resizable" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/resizable.tsx
+
+    ```
+
+  </ComponentSource>
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import {
+  Resizable,
+  ResizableHandle,
+  ResizablePanel,
+} from "@components/ui/resizable"
+```
+
+```tsx
+<Resizable>
+  <ResizablePanel />
+  <ResizableHandle />
+  <ResizablePanel />
+</Resizable>
+```
+
+## Examples
+
+### Orientation
+
+Use the `orientation` prop to set the direction of the resizable panels.
+
+<ComponentPreview name="resizable-orientation-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/resizable-orientation-demo.tsx
+
+```
+
+</ComponentPreview>
+
+```tsx {9}
+import {
+  Resizable,
+  ResizableHandle,
+  ResizablePanel,
+} from "@/components/ui/resizable"
+
+export default function Example() {
+  return (
+    <Resizable orientation="vertical">
+      <ResizablePanel>One</ResizablePanel>
+      <ResizableHandle />
+      <ResizablePanel>Two</ResizablePanel>
+    </Resizable>
+  )
+}
+```
+
+### With Handle
+
+You can set or hide the handle by using the `withHandle` prop on the ResizableHandle component.
+
+<ComponentPreview name="resizable-with-handle-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/resizable-with-handle-demo.tsx
+
+```
+
+</ComponentPreview>
+
+```tsx {11}
+import {
+  Resizable,
+  ResizableHandle,
+  ResizablePanel,
+} from "@/components/ui/resizable"
+
+export default function Example() {
+  return (
+    <Resizable>
+      <ResizablePanel>One</ResizablePanel>
+      <ResizableHandle withHandle />
+      <ResizablePanel>Two</ResizablePanel>
+    </Resizable>
+  )
+}
+```

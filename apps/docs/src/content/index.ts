@@ -868,6 +868,45 @@ export const Contents : Record<string, Content> = {
   }
 ]
   },
+  "components/resizable": {
+    component: lazy(() => import("@/content/docs/components/resizable.mdx")),
+    data: {
+  "title": "Resizable",
+  "description": "A component that divides your interface into resizable sections.",
+  "component": true,
+  "link": {
+    "doc": "https://corvu.dev/docs/primitives/resizable",
+    "api": "https://corvu.dev/docs/primitives/resizable#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  },
+  {
+    "depth": 2,
+    "text": "Examples",
+    "slug": "examples"
+  },
+  {
+    "depth": 3,
+    "text": "Orientation",
+    "slug": "orientation"
+  },
+  {
+    "depth": 3,
+    "text": "With Handle",
+    "slug": "with-handle"
+  }
+]
+  },
   "components/slider": {
     component: lazy(() => import("@/content/docs/components/slider.mdx")),
     data: {
