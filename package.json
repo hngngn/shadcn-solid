@@ -43,6 +43,7 @@
     "cva": "1.0.0-beta.4",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-solid": "^8.6.0",
+    "minisearch": "^7.1.2",
     "solid-js": "^1.9.7",
     "somoto": "^0.0.2",
     "tailwind-merge": "^3.3.0",

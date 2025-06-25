@@ -562,6 +562,26 @@ export const examples: Registry = [
     ],
   },
   {
+    name: "search-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/search-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "search-inline-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/search-inline-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "slider-demo",
     type: "registry:example",
     files: [

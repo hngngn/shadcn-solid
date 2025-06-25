@@ -1,0 +1,77 @@
+---
+title: Search
+description: Search a searchbox text input with a menu. Handle the case where dataset filtering needs to occur outside the combobox component.
+component: true
+link:
+  docs: https://kobalte.dev/docs/core/components/search
+  api: https://kobalte.dev/docs/core/components/search#api-reference
+---
+
+<ComponentPreview name="search-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/search-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add search
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Update the import paths to match your project setup.</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/search" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/search.tsx
+
+    ```
+
+  </ComponentSource>
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import {
+  Search,
+  SearchContent,
+  SearchControl,
+  SearchPortal,
+} from "@components/ui/search"
+```
+
+```tsx
+<Search>
+  <SearchControl />
+  <SearchPortal>
+    <SearchContent />
+  </SearchPortal>
+</Search>
+```
+
+## Examples
+
+### Inline
+
+<ComponentPreview name="search-inline-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/search-inline-demo.tsx
+
+```
+
+</ComponentPreview>

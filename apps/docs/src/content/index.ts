@@ -907,6 +907,40 @@ export const Contents : Record<string, Content> = {
   }
 ]
   },
+  "components/search": {
+    component: lazy(() => import("@/content/docs/components/search.mdx")),
+    data: {
+  "title": "Search",
+  "description": "Search a searchbox text input with a menu. Handle the case where dataset filtering needs to occur outside the combobox component.",
+  "component": true,
+  "link": {
+    "docs": "https://kobalte.dev/docs/core/components/search",
+    "api": "https://kobalte.dev/docs/core/components/search#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  },
+  {
+    "depth": 2,
+    "text": "Examples",
+    "slug": "examples"
+  },
+  {
+    "depth": 3,
+    "text": "Inline",
+    "slug": "inline"
+  }
+]
+  },
   "components/slider": {
     component: lazy(() => import("@/content/docs/components/slider.mdx")),
     data: {

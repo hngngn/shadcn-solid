@@ -9,10 +9,6 @@ export type TSidebarNavItem = TNavItem & {
   items: TSidebarNavItem[]
 }
 
-export type TNavItemWithChildren = TNavItem & {
-  items: TNavItemWithChildren[]
-}
-
 export interface TDocsConfig {
   mainNav: TNavItem[]
   sidebarNav: TSidebarNavItem[]
@@ -251,6 +247,12 @@ export const docsConfig: TDocsConfig = {
           title: "Resizable",
           href: "/docs/components/resizable",
           items: [],
+        },
+        {
+          title: "Search",
+          href: "/docs/components/search",
+          items: [],
+          indicator: "new",
         },
         {
           title: "Select",

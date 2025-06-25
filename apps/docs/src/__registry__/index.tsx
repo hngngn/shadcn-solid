@@ -59,6 +59,8 @@ const RadioGroupDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/example
 const ResizableDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/resizable-demo"), { lazy: true })
 const ResizableOrientationDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/resizable-orientation-demo"), { lazy: true })
 const ResizableWithHandleDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/resizable-with-handle-demo"), { lazy: true })
+const SearchDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/search-demo"), { lazy: true })
+const SearchInlineDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/search-inline-demo"), { lazy: true })
 const SliderDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/slider-demo"), { lazy: true })
 const SliderCustomLabelDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/slider-custom-label-demo"), { lazy: true })
 const SliderVerticalDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/slider-vertical-demo"), { lazy: true })
@@ -961,6 +963,38 @@ export const Index: Record<string, any> = {
         content: ""
       }],
       component: () => <ResizableWithHandleDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    }, 
+    "search-demo": {
+      name: "search-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/search-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <SearchDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    }, 
+    "search-inline-demo": {
+      name: "search-inline-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/search-inline-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <SearchInlineDemo />,
       source: "",
       category: "",
       subcategory: ""
