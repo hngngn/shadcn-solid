@@ -281,7 +281,7 @@ const SearchInlineDemo = () => {
       />
       <div class="bg-popover text-popover-foreground border-input min-h-40 rounded-b-md border border-t-0">
         <SearchListbox />
-        <SearchNoResult>No documentation found</SearchNoResult>
+        <SearchNoResult>No component found</SearchNoResult>
       </div>
     </Search>
   )

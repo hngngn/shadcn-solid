@@ -5,7 +5,10 @@ import {
   type ComponentProps,
   type ValidComponent,
 } from "solid-js"
-import { Search as SearchPrimitive } from "@kobalte/core/search"
+import {
+  Search as SearchPrimitive,
+  useSearchContext,
+} from "@kobalte/core/search"
 
 import { cx } from "@repo/tailwindcss/utils/cva"
 
@@ -162,8 +165,13 @@ export const SearchContent = <T extends ValidComponent = "div">(
       class={cx(
         "bg-popover text-popover-foreground data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0 data-[closed]:zoom-out-95 data-[expanded]:zoom-in-95 origin-(--kb-search-content-transform-origin) relative z-50 min-w-[8rem] overflow-y-auto overflow-x-hidden rounded-md border shadow-md",
         "[[data-popper-positioner][style*='--kb-popper-content-transform-origin:_top']>[data-slot=search-content]]:slide-in-from-top-2 [[data-popper-positioner][style*='--kb-popper-content-transform-origin:_bottom']>[data-slot=search-content]]:slide-in-from-bottom-2 [[data-popper-positioner][style*='--kb-popper-content-transform-origin:_left']>[data-slot=search-content]]:slide-in-from-left-2 [[data-popper-positioner][style*='--kb-popper-content-transform-origin:_right']>[data-slot=search-content]]:slide-in-from-right-2",
+        // TODO: remove when maintainer found a fix
+        "data-[closed]:hidden",
         local.class,
       )}
+      onCloseAutoFocus={(e) => {
+        e.preventDefault()
+      }}
       {...rest}
     />
   )
@@ -180,7 +188,7 @@ export const SearchNoResult = <T extends ValidComponent = "span">(
   return (
     <SearchPrimitive.NoResult
       data-slot="search-no-result"
-      class={cx("pb-6 pt-5 text-center text-sm", local.class)}
+      class={cx("py-6 text-center text-sm", local.class)}
       {...rest}
     />
   )
@@ -274,20 +282,32 @@ export const SearchItemLabel = <T extends ValidComponent = "div">(
   return <SearchPrimitive.ItemLabel data-slot="search-item-label" {...props} />
 }
 
-export type SearchListboxProps<T extends ValidComponent = "ul"> =
-  ComponentProps<typeof SearchPrimitive.Listbox<T>>
+export type SearchListboxProps<
+  Option,
+  OptGroup = never,
+  T extends ValidComponent = "ul",
+> = ComponentProps<typeof SearchPrimitive.Listbox<Option, OptGroup, T>>
 
-export const SearchListbox = <T extends ValidComponent = "ul">(
-  props: SearchListboxProps<T>,
+export const SearchListbox = <
+  Option,
+  OptGroup = never,
+  T extends ValidComponent = "ul",
+>(
+  props: SearchListboxProps<Option, OptGroup, T>,
 ) => {
-  const [local, rest] = splitProps(props as SearchListboxProps, ["class"])
+  const [local, rest] = splitProps(props as SearchListboxProps<Option>, [
+    "class",
+  ])
+  const context = useSearchContext()
 
   return (
-    <SearchPrimitive.Listbox
-      data-slot="search-listbox"
-      class={cx("p-1", local.class)}
-      {...rest}
-    />
+    <Show when={!context.noResult()}>
+      <SearchPrimitive.Listbox
+        data-slot="search-listbox"
+        class={cx("p-1", local.class)}
+        {...rest}
+      />
+    </Show>
   )
 }
 

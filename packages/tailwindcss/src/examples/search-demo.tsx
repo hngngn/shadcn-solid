@@ -278,13 +278,9 @@ const SearchDemo = () => {
     >
       <SearchControl aria-label="Components Search" />
       <SearchPortal>
-        <SearchContent
-          onCloseAutoFocus={(e) => {
-            e.preventDefault()
-          }}
-        >
+        <SearchContent>
           <SearchListbox />
-          <SearchNoResult>No documentation found</SearchNoResult>
+          <SearchNoResult>No component found</SearchNoResult>
         </SearchContent>
       </SearchPortal>
     </Search>
