@@ -582,6 +582,26 @@ export const examples: Registry = [
     ],
   },
   {
+    name: "segmented-control-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/segmented-control-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "segmented-control-orientation-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/segmented-control-orientation-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "slider-demo",
     type: "registry:example",
     files: [

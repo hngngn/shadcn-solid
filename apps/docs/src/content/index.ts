@@ -941,6 +941,40 @@ export const Contents : Record<string, Content> = {
   }
 ]
   },
+  "components/segmented-control": {
+    component: lazy(() => import("@/content/docs/components/segmented-control.mdx")),
+    data: {
+  "title": "Segmented Control",
+  "description": "A linear set of two or more segments, each of which functions as a radio input, and a default value is required.",
+  "component": true,
+  "link": {
+    "docs": "https://kobalte.dev/docs/core/components/segmented-control",
+    "api": "https://kobalte.dev/docs/core/components/segmented-control#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  },
+  {
+    "depth": 2,
+    "text": "Examples",
+    "slug": "examples"
+  },
+  {
+    "depth": 3,
+    "text": "Orientation",
+    "slug": "orientation"
+  }
+]
+  },
   "components/slider": {
     component: lazy(() => import("@/content/docs/components/slider.mdx")),
     data: {

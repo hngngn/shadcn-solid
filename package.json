@@ -7,7 +7,7 @@
     "lint": "turbo run lint",
     "format": "turbo run format",
     "check-types": "turbo run check-types",
-    "registry": "turbo run registry",
+    "registry": "turbo run registry --ui stream",
     "ci:format": "turbo run ci:format",
     "ci:lint": "turbo run ci:lint"
   },

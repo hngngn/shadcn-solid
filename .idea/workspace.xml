@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c064ed7e-896d-4950-9aba-d51d198df05f" name="Changes" comment="feat: `Search` component&#10;&#10;feat: better animation based on  component direction">
+    <list default="true" id="c064ed7e-896d-4950-9aba-d51d198df05f" name="Changes" comment="fix(temporary): `SearchContent` when interacting outside the component">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/tailwindcss/src/examples/search-demo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/tailwindcss/src/examples/search-demo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/tailwindcss/src/examples/search-inline-demo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/tailwindcss/src/examples/search-inline-demo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/tailwindcss/src/ui/v4/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/tailwindcss/src/ui/v4/search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/docs/scripts/registry/examples.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/docs/scripts/registry/examples.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/docs/src/__registry__/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/docs/src/__registry__/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/docs/src/config/docs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/docs/src/config/docs.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/docs/src/content/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/docs/src/content/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +21,13 @@
     <option name="groupingKeys">
       <option value="directory" />
       <option value="repository" />
+    </option>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+      </list>
     </option>
   </component>
   <component name="Git.Settings">
@@ -51,24 +60,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#130 on feat/new-update&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\hngngn\\Desktop\\shadcn-solid\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "#130 on feat/new-update",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Users/hngngn/Desktop/shadcn-solid/packages/tailwindcss/src/examples",
+    "node.js.detected.package.standard": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "nodejs_package_manager_path": "pnpm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\hngngn\\Desktop\\shadcn-solid\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "ts.external.directory.path": "C:\\Users\\hngngn\\Desktop\\shadcn-solid\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hngngn\Desktop\shadcn-solid\packages\tailwindcss\src\examples" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -87,7 +103,9 @@
       <workItem from="1750853123414" duration="1223000" />
       <workItem from="1750854427633" duration="14789000" />
       <workItem from="1750906546753" duration="3385000" />
-      <workItem from="1750994096709" duration="5863000" />
+      <workItem from="1750994096709" duration="5929000" />
+      <workItem from="1751080639424" duration="8959000" />
+      <workItem from="1751189721007" duration="7720000" />
     </task>
     <task id="LOCAL-00001" summary="feat: `Search` component&#10;&#10;feat: better animation based on  component direction">
       <option name="closed" value="true" />
@@ -97,7 +115,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750869676243</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix(temporary): `SearchContent` when interacting outside the component">
+      <option name="closed" value="true" />
+      <created>1751006755139</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1751006755139</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,6 +131,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: `Search` component&#10;&#10;feat: better animation based on  component direction" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="fix(temporary): `SearchContent` when interacting outside the component" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(temporary): `SearchContent` when interacting outside the component" />
   </component>
 </project>

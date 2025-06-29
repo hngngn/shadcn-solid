@@ -255,6 +255,12 @@ export const docsConfig: TDocsConfig = {
           indicator: "new",
         },
         {
+          title: "Segmented Control",
+          href: "/docs/components/segmented-control",
+          items: [],
+          indicator: "new",
+        },
+        {
           title: "Select",
           href: "/docs/components/select",
           items: [],

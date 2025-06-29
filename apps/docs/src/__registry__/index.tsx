@@ -61,6 +61,8 @@ const ResizableOrientationDemo = clientOnlyWrapper(() => import("@repo/tailwindc
 const ResizableWithHandleDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/resizable-with-handle-demo"), { lazy: true })
 const SearchDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/search-demo"), { lazy: true })
 const SearchInlineDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/search-inline-demo"), { lazy: true })
+const SegmentedControlDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/segmented-control-demo"), { lazy: true })
+const SegmentedControlOrientationDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/segmented-control-orientation-demo"), { lazy: true })
 const SliderDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/slider-demo"), { lazy: true })
 const SliderCustomLabelDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/slider-custom-label-demo"), { lazy: true })
 const SliderVerticalDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/slider-vertical-demo"), { lazy: true })
@@ -995,6 +997,38 @@ export const Index: Record<string, any> = {
         content: ""
       }],
       component: () => <SearchInlineDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    }, 
+    "segmented-control-demo": {
+      name: "segmented-control-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/segmented-control-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <SegmentedControlDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    }, 
+    "segmented-control-orientation-demo": {
+      name: "segmented-control-orientation-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/segmented-control-orientation-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <SegmentedControlOrientationDemo />,
       source: "",
       category: "",
       subcategory: ""
