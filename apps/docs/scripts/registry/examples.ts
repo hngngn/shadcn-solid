@@ -602,6 +602,26 @@ export const examples: Registry = [
     ],
   },
   {
+    name: "select-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/select-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "select-error-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/select-error-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "slider-demo",
     type: "registry:example",
     files: [

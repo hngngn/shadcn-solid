@@ -975,6 +975,40 @@ export const Contents : Record<string, Content> = {
   }
 ]
   },
+  "components/select": {
+    component: lazy(() => import("@/content/docs/components/select.mdx")),
+    data: {
+  "title": "Select",
+  "description": "Displays a list of options for the user to pick from—triggered by a button.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/select",
+    "api": "https://kobalte.dev/docs/core/components/select#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  },
+  {
+    "depth": 2,
+    "text": "Examples",
+    "slug": "examples"
+  },
+  {
+    "depth": 3,
+    "text": "Error",
+    "slug": "error"
+  }
+]
+  },
   "components/slider": {
     component: lazy(() => import("@/content/docs/components/slider.mdx")),
     data: {

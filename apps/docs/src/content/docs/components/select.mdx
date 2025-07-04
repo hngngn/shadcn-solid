@@ -1,0 +1,87 @@
+---
+title: Select
+description: Displays a list of options for the user to pick from—triggered by a button.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/select
+  api: https://kobalte.dev/docs/core/components/select#api-reference
+---
+
+<ComponentPreview name="select-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/select-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add select
+```
+
+  <Step>
+    <StepItem>Install the following dependencies:</StepItem>
+
+    ```bash
+    npm install @kobalte/core
+    ```
+
+    <StepItem>Update the import paths to match your project setup.</StepItem>
+
+    <ComponentSource>
+
+      ```tsx title="components/ui/select" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/select.tsx
+
+      ```
+
+    </ComponentSource>
+
+  </Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectPortal,
+  SelectTrigger,
+  SelectValue,
+} from "@components/ui/select"
+```
+
+```tsx
+<Select
+  options={[...]}
+  itemComponent={(props) => (
+    <SelectItem item={props.item}>{props.item.rawValue}</SelectItem>
+  )}
+>
+  <SelectTrigger>
+    <SelectValue<string>>{(state) => state.selectedOption()}</SelectValue>
+  </SelectTrigger>
+  <SelectPortal>
+    <SelectContent />
+  </SelectPortal>
+</Select>
+```
+
+## Examples
+
+### Error
+
+<ComponentPreview name="select-error-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/select-error-demo.tsx
+
+```
+
+</ComponentPreview>
+

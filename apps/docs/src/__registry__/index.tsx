@@ -63,6 +63,8 @@ const SearchDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/se
 const SearchInlineDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/search-inline-demo"), { lazy: true })
 const SegmentedControlDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/segmented-control-demo"), { lazy: true })
 const SegmentedControlOrientationDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/segmented-control-orientation-demo"), { lazy: true })
+const SelectDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/select-demo"), { lazy: true })
+const SelectErrorDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/select-error-demo"), { lazy: true })
 const SliderDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/slider-demo"), { lazy: true })
 const SliderCustomLabelDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/slider-custom-label-demo"), { lazy: true })
 const SliderVerticalDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/slider-vertical-demo"), { lazy: true })
@@ -1029,6 +1031,38 @@ export const Index: Record<string, any> = {
         content: ""
       }],
       component: () => <SegmentedControlOrientationDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    }, 
+    "select-demo": {
+      name: "select-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/select-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <SelectDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    }, 
+    "select-error-demo": {
+      name: "select-error-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/select-error-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <SelectErrorDemo />,
       source: "",
       category: "",
       subcategory: ""

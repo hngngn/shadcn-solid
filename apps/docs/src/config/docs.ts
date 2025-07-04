@@ -264,7 +264,6 @@ export const docsConfig: TDocsConfig = {
           title: "Select",
           href: "/docs/components/select",
           items: [],
-          disabled: true,
         },
         {
           title: "Separator",
