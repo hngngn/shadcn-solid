@@ -622,6 +622,16 @@ export const examples: Registry = [
     ],
   },
   {
+    name: "separator-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/separator-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "slider-demo",
     type: "registry:example",
     files: [

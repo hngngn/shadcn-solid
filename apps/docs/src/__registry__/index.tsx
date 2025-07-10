@@ -65,6 +65,7 @@ const SegmentedControlDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/e
 const SegmentedControlOrientationDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/segmented-control-orientation-demo"), { lazy: true })
 const SelectDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/select-demo"), { lazy: true })
 const SelectErrorDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/select-error-demo"), { lazy: true })
+const SeparatorDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/separator-demo"), { lazy: true })
 const SliderDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/slider-demo"), { lazy: true })
 const SliderCustomLabelDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/slider-custom-label-demo"), { lazy: true })
 const SliderVerticalDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/slider-vertical-demo"), { lazy: true })
@@ -1063,6 +1064,22 @@ export const Index: Record<string, any> = {
         content: ""
       }],
       component: () => <SelectErrorDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    }, 
+    "separator-demo": {
+      name: "separator-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/separator-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <SeparatorDemo />,
       source: "",
       category: "",
       subcategory: ""

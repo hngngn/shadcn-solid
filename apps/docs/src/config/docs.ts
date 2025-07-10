@@ -269,7 +269,6 @@ export const docsConfig: TDocsConfig = {
           title: "Separator",
           href: "/docs/components/separator",
           items: [],
-          disabled: true,
         },
         {
           title: "Sidebar",

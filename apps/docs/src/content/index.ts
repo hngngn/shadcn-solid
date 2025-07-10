@@ -1009,6 +1009,30 @@ export const Contents : Record<string, Content> = {
   }
 ]
   },
+  "components/separator": {
+    component: lazy(() => import("@/content/docs/components/separator.mdx")),
+    data: {
+  "title": "Separator",
+  "description": "Visually or semantically separates content.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/separator",
+    "api": "https://kobalte.dev/docs/core/components/separator#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  }
+]
+  },
   "components/slider": {
     component: lazy(() => import("@/content/docs/components/slider.mdx")),
     data: {

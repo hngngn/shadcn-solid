@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c064ed7e-896d-4950-9aba-d51d198df05f" name="Changes" comment="feat: `Segmented Control` component">
+    <list default="true" id="c064ed7e-896d-4950-9aba-d51d198df05f" name="Changes" comment="feat: `Select` component">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/docs/scripts/registry/examples.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/docs/scripts/registry/examples.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/docs/src/__registry__/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/docs/src/__registry__/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/docs/src/config/docs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/docs/src/config/docs.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/docs/src/content/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/docs/src/content/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +105,7 @@
       <workItem from="1751552800365" duration="1465000" />
       <workItem from="1751563905718" duration="1649000" />
       <workItem from="1751565635304" duration="3290000" />
-      <workItem from="1751608032308" duration="623000" />
+      <workItem from="1751608032308" duration="1886000" />
     </task>
     <task id="LOCAL-00001" summary="feat: `Search` component&#10;&#10;feat: better animation based on  component direction">
       <option name="closed" value="true" />
@@ -135,7 +131,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751211606649</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: `Select` component">
+      <option name="closed" value="true" />
+      <created>1751609305789</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1751609305789</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,6 +149,7 @@
     <MESSAGE value="feat: `Search` component&#10;&#10;feat: better animation based on  component direction" />
     <MESSAGE value="fix(temporary): `SearchContent` when interacting outside the component" />
     <MESSAGE value="feat: `Segmented Control` component" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: `Segmented Control` component" />
+    <MESSAGE value="feat: `Select` component" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: `Select` component" />
   </component>
 </project>

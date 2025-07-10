@@ -1,0 +1,55 @@
+---
+title: Separator
+description: Visually or semantically separates content.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/separator
+  api: https://kobalte.dev/docs/core/components/separator#api-reference
+---
+
+<ComponentPreview name="separator-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/separator-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add separator
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Update the import paths to match your project setup.</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/separator" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/separator.tsx
+
+    ```
+
+  </ComponentSource>
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import { Separator } from "@components/ui/separator"
+```
+
+```tsx
+<Separator />
+```
