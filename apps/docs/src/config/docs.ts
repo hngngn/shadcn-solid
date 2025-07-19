@@ -275,7 +275,6 @@ export const docsConfig: TDocsConfig = {
           href: "/docs/components/sidebar",
           items: [],
           indicator: "new",
-          disabled: true,
         },
         {
           title: "Skeleton",

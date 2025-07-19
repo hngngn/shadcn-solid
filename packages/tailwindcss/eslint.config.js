@@ -19,6 +19,7 @@ export default [
   {
     rules: {
       "@typescript-eslint/no-unsafe-member-access": "off",
+      "@typescript-eslint/no-misused-spread": "off",
     },
   },
 ]

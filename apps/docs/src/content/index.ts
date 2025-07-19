@@ -1033,6 +1033,101 @@ export const Contents : Record<string, Content> = {
   }
 ]
   },
+  "components/sidebar": {
+    component: lazy(() => import("@/content/docs/components/sidebar.mdx")),
+    data: {
+  "title": "Sidebar",
+  "description": "A composable, themeable and customizable sidebar component.",
+  "component": true
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Structure",
+    "slug": "structure"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  },
+  {
+    "depth": 2,
+    "text": "Your First Sidebar",
+    "slug": "your-first-sidebar"
+  },
+  {
+    "depth": 2,
+    "text": "Components",
+    "slug": "components"
+  },
+  {
+    "depth": 2,
+    "text": "SidebarProvider",
+    "slug": "sidebarprovider"
+  },
+  {
+    "depth": 3,
+    "text": "Props",
+    "slug": "props"
+  },
+  {
+    "depth": 3,
+    "text": "Width",
+    "slug": "width"
+  },
+  {
+    "depth": 3,
+    "text": "Keyboard Shortcut",
+    "slug": "keyboard-shortcut"
+  },
+  {
+    "depth": 2,
+    "text": "Sidebar",
+    "slug": "sidebar"
+  },
+  {
+    "depth": 3,
+    "text": "Props",
+    "slug": "props"
+  },
+  {
+    "depth": 3,
+    "text": "side",
+    "slug": "side"
+  },
+  {
+    "depth": 3,
+    "text": "variant",
+    "slug": "variant"
+  },
+  {
+    "depth": 3,
+    "text": "collapsible",
+    "slug": "collapsible"
+  },
+  {
+    "depth": 2,
+    "text": "useSidebar",
+    "slug": "usesidebar"
+  },
+  {
+    "depth": 2,
+    "text": "Theming",
+    "slug": "theming"
+  },
+  {
+    "depth": 2,
+    "text": "Styling",
+    "slug": "styling"
+  }
+]
+  },
   "components/slider": {
     component: lazy(() => import("@/content/docs/components/slider.mdx")),
     data: {

@@ -66,6 +66,7 @@ const SegmentedControlOrientationDemo = clientOnlyWrapper(() => import("@repo/ta
 const SelectDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/select-demo"), { lazy: true })
 const SelectErrorDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/select-error-demo"), { lazy: true })
 const SeparatorDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/separator-demo"), { lazy: true })
+const SidebarDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/sidebar-demo"), { lazy: true })
 const SliderDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/slider-demo"), { lazy: true })
 const SliderCustomLabelDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/slider-custom-label-demo"), { lazy: true })
 const SliderVerticalDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/slider-vertical-demo"), { lazy: true })
@@ -73,9 +74,10 @@ const TextFieldDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples
 const TextFieldDisabledDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/text-field-disabled-demo"), { lazy: true })
 const TextFieldErrorDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/text-field-error-demo"), { lazy: true })
 const TextFieldAreaDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/text-field-area-demo"), { lazy: true })
+const Sidebar01 = clientOnlyWrapper(() => import("@repo/tailwindcss/blocks/sidebar-01/index"), { lazy: true })
 
 export const Index: Record<string, any> = {
-   "tailwindcss": { 
+   "tailwindcss": {
     "accordion-demo": {
       name: "accordion-demo",
       description: "",
@@ -91,7 +93,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "alert-demo": {
       name: "alert-demo",
       description: "",
@@ -107,7 +109,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "alert-destructive-demo": {
       name: "alert-destructive-demo",
       description: "",
@@ -123,7 +125,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "alert-dialog-demo": {
       name: "alert-dialog-demo",
       description: "",
@@ -139,7 +141,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "badge-demo": {
       name: "badge-demo",
       description: "",
@@ -155,7 +157,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "badge-destructive-demo": {
       name: "badge-destructive-demo",
       description: "",
@@ -171,7 +173,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "badge-outline-demo": {
       name: "badge-outline-demo",
       description: "",
@@ -187,7 +189,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "badge-secondary-demo": {
       name: "badge-secondary-demo",
       description: "",
@@ -203,7 +205,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "breadcrumbs-demo": {
       name: "breadcrumbs-demo",
       description: "",
@@ -219,7 +221,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "breadcrumbs-custom-separator-demo": {
       name: "breadcrumbs-custom-separator-demo",
       description: "",
@@ -235,7 +237,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "button-demo": {
       name: "button-demo",
       description: "",
@@ -251,7 +253,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "button-destructive-demo": {
       name: "button-destructive-demo",
       description: "",
@@ -267,7 +269,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "button-ghost-demo": {
       name: "button-ghost-demo",
       description: "",
@@ -283,7 +285,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "button-left-icon-demo": {
       name: "button-left-icon-demo",
       description: "",
@@ -299,7 +301,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "button-link-demo": {
       name: "button-link-demo",
       description: "",
@@ -315,7 +317,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "button-loading-demo": {
       name: "button-loading-demo",
       description: "",
@@ -331,7 +333,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "button-outline-demo": {
       name: "button-outline-demo",
       description: "",
@@ -347,7 +349,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "button-secondary-demo": {
       name: "button-secondary-demo",
       description: "",
@@ -363,7 +365,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "calendar-demo": {
       name: "calendar-demo",
       description: "",
@@ -379,7 +381,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "calendar-range-demo": {
       name: "calendar-range-demo",
       description: "",
@@ -395,7 +397,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "card-demo": {
       name: "card-demo",
       description: "",
@@ -411,7 +413,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "carousel-demo": {
       name: "carousel-demo",
       description: "",
@@ -427,7 +429,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "carousel-orientation-demo": {
       name: "carousel-orientation-demo",
       description: "",
@@ -443,7 +445,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "carousel-plugin-demo": {
       name: "carousel-plugin-demo",
       description: "",
@@ -459,7 +461,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "carousel-size-demo": {
       name: "carousel-size-demo",
       description: "",
@@ -475,7 +477,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "checkbox-demo": {
       name: "checkbox-demo",
       description: "",
@@ -491,7 +493,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "checkbox-disabled-demo": {
       name: "checkbox-disabled-demo",
       description: "",
@@ -507,7 +509,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "collapsible-demo": {
       name: "collapsible-demo",
       description: "",
@@ -523,7 +525,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "combobox-demo": {
       name: "combobox-demo",
       description: "",
@@ -539,7 +541,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "combobox-disabled-demo": {
       name: "combobox-disabled-demo",
       description: "",
@@ -555,7 +557,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "combobox-error-demo": {
       name: "combobox-error-demo",
       description: "",
@@ -571,7 +573,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "combobox-group-demo": {
       name: "combobox-group-demo",
       description: "",
@@ -587,7 +589,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "combobox-multi-demo": {
       name: "combobox-multi-demo",
       description: "",
@@ -603,7 +605,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "command-demo": {
       name: "command-demo",
       description: "",
@@ -619,7 +621,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "command-dialog-demo": {
       name: "command-dialog-demo",
       description: "",
@@ -635,7 +637,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "context-menu-demo": {
       name: "context-menu-demo",
       description: "",
@@ -651,7 +653,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "date-picker-demo": {
       name: "date-picker-demo",
       description: "",
@@ -667,7 +669,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "date-picker-range-demo": {
       name: "date-picker-range-demo",
       description: "",
@@ -683,7 +685,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "dialog-demo": {
       name: "dialog-demo",
       description: "",
@@ -699,7 +701,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "drawer-demo": {
       name: "drawer-demo",
       description: "",
@@ -715,7 +717,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "drawer-side-demo": {
       name: "drawer-side-demo",
       description: "",
@@ -731,7 +733,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "dropdown-menu-demo": {
       name: "dropdown-menu-demo",
       description: "",
@@ -747,7 +749,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "hover-card-demo": {
       name: "hover-card-demo",
       description: "",
@@ -763,7 +765,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "menubar-demo": {
       name: "menubar-demo",
       description: "",
@@ -779,7 +781,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "navigation-menu-demo": {
       name: "navigation-menu-demo",
       description: "",
@@ -795,7 +797,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "navigation-menu-vertical-demo": {
       name: "navigation-menu-vertical-demo",
       description: "",
@@ -811,7 +813,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "number-field-demo": {
       name: "number-field-demo",
       description: "",
@@ -827,7 +829,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "number-field-error-demo": {
       name: "number-field-error-demo",
       description: "",
@@ -843,7 +845,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "otp-field-demo": {
       name: "otp-field-demo",
       description: "",
@@ -859,7 +861,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "pagination-demo": {
       name: "pagination-demo",
       description: "",
@@ -875,7 +877,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "popover-demo": {
       name: "popover-demo",
       description: "",
@@ -891,7 +893,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "progress-demo": {
       name: "progress-demo",
       description: "",
@@ -907,7 +909,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "radio-group-demo": {
       name: "radio-group-demo",
       description: "",
@@ -923,7 +925,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "resizable-demo": {
       name: "resizable-demo",
       description: "",
@@ -939,7 +941,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "resizable-orientation-demo": {
       name: "resizable-orientation-demo",
       description: "",
@@ -955,7 +957,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "resizable-with-handle-demo": {
       name: "resizable-with-handle-demo",
       description: "",
@@ -971,7 +973,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "search-demo": {
       name: "search-demo",
       description: "",
@@ -987,7 +989,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "search-inline-demo": {
       name: "search-inline-demo",
       description: "",
@@ -1003,7 +1005,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "segmented-control-demo": {
       name: "segmented-control-demo",
       description: "",
@@ -1019,7 +1021,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "segmented-control-orientation-demo": {
       name: "segmented-control-orientation-demo",
       description: "",
@@ -1035,7 +1037,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "select-demo": {
       name: "select-demo",
       description: "",
@@ -1051,7 +1053,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "select-error-demo": {
       name: "select-error-demo",
       description: "",
@@ -1067,7 +1069,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "separator-demo": {
       name: "separator-demo",
       description: "",
@@ -1083,7 +1085,23 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
+    "sidebar-demo": {
+      name: "sidebar-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/sidebar-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <SidebarDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    },
     "slider-demo": {
       name: "slider-demo",
       description: "",
@@ -1099,7 +1117,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "slider-custom-label-demo": {
       name: "slider-custom-label-demo",
       description: "",
@@ -1115,7 +1133,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "slider-vertical-demo": {
       name: "slider-vertical-demo",
       description: "",
@@ -1131,7 +1149,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "text-field-demo": {
       name: "text-field-demo",
       description: "",
@@ -1147,7 +1165,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "text-field-disabled-demo": {
       name: "text-field-disabled-demo",
       description: "",
@@ -1163,7 +1181,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "text-field-error-demo": {
       name: "text-field-error-demo",
       description: "",
@@ -1179,7 +1197,7 @@ export const Index: Record<string, any> = {
       source: "",
       category: "",
       subcategory: ""
-    }, 
+    },
     "text-field-area-demo": {
       name: "text-field-area-demo",
       description: "",
@@ -1193,6 +1211,47 @@ export const Index: Record<string, any> = {
       }],
       component: () => <TextFieldAreaDemo />,
       source: "",
+      category: "",
+      subcategory: ""
+    },
+    "sidebar-01": {
+      name: "sidebar-01",
+      description: "A sidebar that collapses to icons.",
+      type: "registry:block",
+      registryDependencies: ["sidebar","separator","collapsible","dropdown-menu"],
+      files: [{
+        path: "../../packages/tailwindcss/src/blocks/sidebar-01/index.tsx",
+        type: "registry:page",
+        target: "src/routes/dashboard.tsx",
+        content: "import { Separator } from \"@repo/tailwindcss/ui/v4/separator\"\r\nimport {\r\n  SidebarInset,\r\n  SidebarProvider,\r\n  SidebarTrigger,\r\n} from \"@repo/tailwindcss/ui/v4/sidebar\"\r\n\r\nimport AppSidebar from \"./components/app-sidebar\"\r\n\r\nconst Page = () => {\r\n  return (\r\n    <SidebarProvider>\r\n      <AppSidebar />\r\n      <SidebarInset>\r\n        <header class=\"flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12\">\r\n          <div class=\"flex items-center gap-2 px-4\">\r\n            <SidebarTrigger class=\"-ml-1\" />\r\n            <Separator orientation=\"vertical\" class=\"mr-2 h-4\" />\r\n          </div>\r\n        </header>\r\n        <div class=\"flex flex-1 flex-col gap-4 p-4 pt-0\">\r\n          <div class=\"grid auto-rows-min gap-4 md:grid-cols-3\">\r\n            <div class=\"bg-muted/50 aspect-video rounded-xl\" />\r\n            <div class=\"bg-muted/50 aspect-video rounded-xl\" />\r\n            <div class=\"bg-muted/50 aspect-video rounded-xl\" />\r\n          </div>\r\n          <div class=\"bg-muted/50 min-h-[100vh] flex-1 rounded-xl md:min-h-min\" />\r\n        </div>\r\n      </SidebarInset>\r\n    </SidebarProvider>\r\n  )\r\n}\r\n\r\nexport default Page\r\n"
+      },{
+        path: "../../packages/tailwindcss/src/blocks/sidebar-01/components/app-sidebar.tsx",
+        type: "registry:component",
+        target: "src/components/app-sidebar.tsx",
+        content: "import type { ComponentProps } from \"solid-js\"\r\n\r\nimport {\r\n  Sidebar,\r\n  SidebarContent,\r\n  SidebarFooter,\r\n  SidebarHeader,\r\n  SidebarRail,\r\n} from \"@repo/tailwindcss/ui/v4/sidebar\"\r\n\r\nimport NavMain from \"./nav-main\"\r\nimport NavProjects from \"./nav-projects\"\r\nimport NavUser from \"./nav-user\"\r\nimport TeamSwitcher from \"./team-switcher\"\r\n\r\n// This is sample data.\r\nconst data = {\r\n  user: {\r\n    name: \"shadcn\",\r\n    email: \"m@example.com\",\r\n    avatar: \"/avatars/shadcn.jpg\",\r\n  },\r\n  teams: [\r\n    {\r\n      name: \"Acme Inc\",\r\n      logo: () => (\r\n        <svg\r\n          xmlns=\"http://www.w3.org/2000/svg\"\r\n          class=\"size-4 shrink-0\"\r\n          viewBox=\"0 0 24 24\"\r\n        >\r\n          <g\r\n            fill=\"none\"\r\n            stroke=\"currentColor\"\r\n            stroke-linecap=\"round\"\r\n            stroke-linejoin=\"round\"\r\n            stroke-width=\"2\"\r\n          >\r\n            <path d=\"M7 2h10M5 6h14\" />\r\n            <rect width=\"18\" height=\"12\" x=\"3\" y=\"10\" rx=\"2\" />\r\n          </g>\r\n        </svg>\r\n      ),\r\n      plan: \"Enterprise\",\r\n    },\r\n    {\r\n      name: \"Acme Corp.\",\r\n      logo: () => (\r\n        <svg\r\n          xmlns=\"http://www.w3.org/2000/svg\"\r\n          class=\"size-4 shrink-0\"\r\n          viewBox=\"0 0 24 24\"\r\n        >\r\n          <path\r\n            fill=\"none\"\r\n            stroke=\"currentColor\"\r\n            stroke-linecap=\"round\"\r\n            stroke-linejoin=\"round\"\r\n            stroke-width=\"2\"\r\n            d=\"M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2\"\r\n          />\r\n        </svg>\r\n      ),\r\n      plan: \"Startup\",\r\n    },\r\n    {\r\n      name: \"Evil Corp.\",\r\n      logo: () => (\r\n        <svg\r\n          xmlns=\"http://www.w3.org/2000/svg\"\r\n          class=\"size-4 shrink-0\"\r\n          viewBox=\"0 0 24 24\"\r\n        >\r\n          <path\r\n            fill=\"none\"\r\n            stroke=\"currentColor\"\r\n            stroke-linecap=\"round\"\r\n            stroke-linejoin=\"round\"\r\n            stroke-width=\"2\"\r\n            d=\"M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3\"\r\n          />\r\n        </svg>\r\n      ),\r\n      plan: \"Free\",\r\n    },\r\n  ],\r\n  navMain: [\r\n    {\r\n      title: \"Playground\",\r\n      url: \"#\",\r\n      icon: () => (\r\n        <svg\r\n          xmlns=\"http://www.w3.org/2000/svg\"\r\n          class=\"size-4\"\r\n          viewBox=\"0 0 24 24\"\r\n        >\r\n          <g\r\n            fill=\"none\"\r\n            stroke=\"currentColor\"\r\n            stroke-linecap=\"round\"\r\n            stroke-linejoin=\"round\"\r\n            stroke-width=\"2\"\r\n          >\r\n            <path d=\"m7 11l2-2l-2-2m4 6h4\" />\r\n            <rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" ry=\"2\" />\r\n          </g>\r\n        </svg>\r\n      ),\r\n      isActive: true,\r\n      items: [\r\n        {\r\n          title: \"History\",\r\n          url: \"#\",\r\n        },\r\n        {\r\n          title: \"Starred\",\r\n          url: \"#\",\r\n        },\r\n        {\r\n          title: \"Settings\",\r\n          url: \"#\",\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      title: \"Models\",\r\n      url: \"#\",\r\n      icon: () => (\r\n        <svg\r\n          xmlns=\"http://www.w3.org/2000/svg\"\r\n          class=\"size-4\"\r\n          viewBox=\"0 0 24 24\"\r\n        >\r\n          <g\r\n            fill=\"none\"\r\n            stroke=\"currentColor\"\r\n            stroke-linecap=\"round\"\r\n            stroke-linejoin=\"round\"\r\n            stroke-width=\"2\"\r\n          >\r\n            <path d=\"M12 8V4H8\" />\r\n            <rect width=\"16\" height=\"12\" x=\"4\" y=\"8\" rx=\"2\" />\r\n            <path d=\"M2 14h2m16 0h2m-7-1v2m-6-2v2\" />\r\n          </g>\r\n        </svg>\r\n      ),\r\n      items: [\r\n        {\r\n          title: \"Genesis\",\r\n          url: \"#\",\r\n        },\r\n        {\r\n          title: \"Explorer\",\r\n          url: \"#\",\r\n        },\r\n        {\r\n          title: \"Quantum\",\r\n          url: \"#\",\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      title: \"Documentation\",\r\n      url: \"#\",\r\n      icon: () => (\r\n        <svg\r\n          xmlns=\"http://www.w3.org/2000/svg\"\r\n          class=\"size-4\"\r\n          viewBox=\"0 0 24 24\"\r\n        >\r\n          <path\r\n            fill=\"none\"\r\n            stroke=\"currentColor\"\r\n            stroke-linecap=\"round\"\r\n            stroke-linejoin=\"round\"\r\n            stroke-width=\"2\"\r\n            d=\"M12 7v14m-9-3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4a4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3a3 3 0 0 0-3-3z\"\r\n          />\r\n        </svg>\r\n      ),\r\n      items: [\r\n        {\r\n          title: \"Introduction\",\r\n          url: \"#\",\r\n        },\r\n        {\r\n          title: \"Get Started\",\r\n          url: \"#\",\r\n        },\r\n        {\r\n          title: \"Tutorials\",\r\n          url: \"#\",\r\n        },\r\n        {\r\n          title: \"Changelog\",\r\n          url: \"#\",\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      title: \"Settings\",\r\n      url: \"#\",\r\n      icon: () => (\r\n        <svg\r\n          xmlns=\"http://www.w3.org/2000/svg\"\r\n          class=\"size-4\"\r\n          viewBox=\"0 0 24 24\"\r\n        >\r\n          <g\r\n            fill=\"none\"\r\n            stroke=\"currentColor\"\r\n            stroke-linecap=\"round\"\r\n            stroke-linejoin=\"round\"\r\n            stroke-width=\"2\"\r\n          >\r\n            <path d=\"M20 7h-9m3 10H5\" />\r\n            <circle cx=\"17\" cy=\"17\" r=\"3\" />\r\n            <circle cx=\"7\" cy=\"7\" r=\"3\" />\r\n          </g>\r\n        </svg>\r\n      ),\r\n      items: [\r\n        {\r\n          title: \"General\",\r\n          url: \"#\",\r\n        },\r\n        {\r\n          title: \"Team\",\r\n          url: \"#\",\r\n        },\r\n        {\r\n          title: \"Billing\",\r\n          url: \"#\",\r\n        },\r\n        {\r\n          title: \"Limits\",\r\n          url: \"#\",\r\n        },\r\n      ],\r\n    },\r\n  ],\r\n  projects: [\r\n    {\r\n      name: \"Design Engineering\",\r\n      url: \"#\",\r\n      icon: () => (\r\n        <svg\r\n          xmlns=\"http://www.w3.org/2000/svg\"\r\n          class=\"size-4\"\r\n          viewBox=\"0 0 24 24\"\r\n        >\r\n          <path\r\n            fill=\"none\"\r\n            stroke=\"currentColor\"\r\n            stroke-linecap=\"round\"\r\n            stroke-linejoin=\"round\"\r\n            stroke-width=\"2\"\r\n            d=\"M22 6H2m20 12H2M6 2v20M18 2v20\"\r\n          />\r\n        </svg>\r\n      ),\r\n    },\r\n    {\r\n      name: \"Sales & Marketing\",\r\n      url: \"#\",\r\n      icon: () => (\r\n        <svg\r\n          xmlns=\"http://www.w3.org/2000/svg\"\r\n          class=\"size-4\"\r\n          viewBox=\"0 0 24 24\"\r\n        >\r\n          <g\r\n            fill=\"none\"\r\n            stroke=\"currentColor\"\r\n            stroke-linecap=\"round\"\r\n            stroke-linejoin=\"round\"\r\n            stroke-width=\"2\"\r\n          >\r\n            <path d=\"M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z\" />\r\n            <path d=\"M21.21 15.89A10 10 0 1 1 8 2.83\" />\r\n          </g>\r\n        </svg>\r\n      ),\r\n    },\r\n    {\r\n      name: \"Travel\",\r\n      url: \"#\",\r\n      icon: () => (\r\n        <svg\r\n          xmlns=\"http://www.w3.org/2000/svg\"\r\n          class=\"size-4\"\r\n          viewBox=\"0 0 24 24\"\r\n        >\r\n          <path\r\n            fill=\"none\"\r\n            stroke=\"currentColor\"\r\n            stroke-linecap=\"round\"\r\n            stroke-linejoin=\"round\"\r\n            stroke-width=\"2\"\r\n            d=\"M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0zm.894.211v15M9 3.236v15\"\r\n          />\r\n        </svg>\r\n      ),\r\n    },\r\n  ],\r\n}\r\n\r\nconst AppSidebar = (props: ComponentProps<typeof Sidebar>) => {\r\n  return (\r\n    <Sidebar collapsible=\"icon\" {...props}>\r\n      <SidebarHeader>\r\n        <TeamSwitcher teams={data.teams} />\r\n      </SidebarHeader>\r\n      <SidebarContent>\r\n        <NavMain items={data.navMain} />\r\n        <NavProjects projects={data.projects} />\r\n      </SidebarContent>\r\n      <SidebarFooter>\r\n        <NavUser user={data.user} />\r\n      </SidebarFooter>\r\n      <SidebarRail />\r\n    </Sidebar>\r\n  )\r\n}\r\n\r\nexport default AppSidebar\r\n"
+      },{
+        path: "../../packages/tailwindcss/src/blocks/sidebar-01/components/nav-main.tsx",
+        type: "registry:component",
+        target: "src/components/nav-main.tsx",
+        content: "import { For, Show, type Accessor, type JSX } from \"solid-js\"\r\nimport type { CollapsibleRootProps } from \"@kobalte/core/collapsible\"\r\n\r\nimport {\r\n  Collapsible,\r\n  CollapsibleContent,\r\n  CollapsibleTrigger,\r\n} from \"@repo/tailwindcss/ui/v4/collapsible\"\r\nimport {\r\n  SidebarGroup,\r\n  SidebarGroupLabel,\r\n  SidebarMenu,\r\n  SidebarMenuButton,\r\n  SidebarMenuItem,\r\n  SidebarMenuSub,\r\n  SidebarMenuSubButton,\r\n  SidebarMenuSubItem,\r\n} from \"@repo/tailwindcss/ui/v4/sidebar\"\r\n\r\nconst NavMain = (props: {\r\n  items: {\r\n    title: string\r\n    url: string\r\n    icon?: Accessor<JSX.Element>\r\n    isActive?: boolean\r\n    items?: {\r\n      title: string\r\n      url: string\r\n    }[]\r\n  }[]\r\n}) => {\r\n  return (\r\n    <SidebarGroup>\r\n      <SidebarGroupLabel>Platform</SidebarGroupLabel>\r\n      <SidebarMenu>\r\n        <For each={props.items}>\r\n          {(item) => (\r\n            <Collapsible\r\n              defaultOpen={item.isActive}\r\n              as={(props: CollapsibleRootProps) => (\r\n                <SidebarMenuItem {...props}>\r\n                  <CollapsibleTrigger<typeof SidebarMenuButton>\r\n                    as={(props) => (\r\n                      <SidebarMenuButton\r\n                        {...props}\r\n                        tooltip={item.title}\r\n                        class=\"[&>svg:last-of-type]:data-[expanded]:rotate-90\"\r\n                      >\r\n                        <Show when={item.icon!()}>{item.icon!()}</Show>\r\n                        <span>{item.title}</span>\r\n                        <svg\r\n                          xmlns=\"http://www.w3.org/2000/svg\"\r\n                          class=\"ml-auto transition-transform duration-200\"\r\n                          viewBox=\"0 0 24 24\"\r\n                        >\r\n                          <path\r\n                            fill=\"none\"\r\n                            stroke=\"currentColor\"\r\n                            stroke-linecap=\"round\"\r\n                            stroke-linejoin=\"round\"\r\n                            stroke-width=\"2\"\r\n                            d=\"m9 18l6-6l-6-6\"\r\n                          />\r\n                        </svg>\r\n                      </SidebarMenuButton>\r\n                    )}\r\n                  />\r\n                  <CollapsibleContent>\r\n                    <SidebarMenuSub>\r\n                      <For each={item.items}>\r\n                        {(subItem) => (\r\n                          <SidebarMenuSubItem>\r\n                            <SidebarMenuSubButton as=\"a\" href={subItem.url}>\r\n                              <span>{subItem.title}</span>\r\n                            </SidebarMenuSubButton>\r\n                          </SidebarMenuSubItem>\r\n                        )}\r\n                      </For>\r\n                    </SidebarMenuSub>\r\n                  </CollapsibleContent>\r\n                </SidebarMenuItem>\r\n              )}\r\n            />\r\n          )}\r\n        </For>\r\n      </SidebarMenu>\r\n    </SidebarGroup>\r\n  )\r\n}\r\n\r\nexport default NavMain\r\n"
+      },{
+        path: "../../packages/tailwindcss/src/blocks/sidebar-01/components/nav-projects.tsx",
+        type: "registry:component",
+        target: "src/components/nav-projects.tsx",
+        content: "import { For, type Accessor, type JSX } from \"solid-js\"\r\nimport type { DropdownMenuTriggerProps } from \"@kobalte/core/dropdown-menu\"\r\n\r\nimport {\r\n  DropdownMenu,\r\n  DropdownMenuContent,\r\n  DropdownMenuItem,\r\n  DropdownMenuSeparator,\r\n  DropdownMenuTrigger,\r\n} from \"@repo/tailwindcss/ui/v4/dropdown-menu\"\r\nimport {\r\n  SidebarGroup,\r\n  SidebarGroupLabel,\r\n  SidebarMenu,\r\n  SidebarMenuAction,\r\n  SidebarMenuButton,\r\n  SidebarMenuItem,\r\n  useSidebar,\r\n} from \"@repo/tailwindcss/ui/v4/sidebar\"\r\n\r\nconst NavProjects = (props: {\r\n  projects: {\r\n    name: string\r\n    url: string\r\n    icon: Accessor<JSX.Element>\r\n  }[]\r\n}) => {\r\n  const { isMobile } = useSidebar()\r\n\r\n  return (\r\n    <SidebarGroup class=\"group-data-[collapsible=icon]:hidden\">\r\n      <SidebarGroupLabel>Projects</SidebarGroupLabel>\r\n      <SidebarMenu>\r\n        <For each={props.projects}>\r\n          {(item) => (\r\n            <SidebarMenuItem>\r\n              <SidebarMenuButton as=\"a\" href={item.url}>\r\n                <item.icon />\r\n                <span>{item.name}</span>\r\n              </SidebarMenuButton>\r\n              <DropdownMenu\r\n                placement={isMobile() ? \"bottom-end\" : \"right-start\"}\r\n              >\r\n                <DropdownMenuTrigger\r\n                  as={(props: DropdownMenuTriggerProps) => (\r\n                    // @ts-expect-error\r\n                    <SidebarMenuAction {...props} showOnHover>\r\n                      <svg\r\n                        xmlns=\"http://www.w3.org/2000/svg\"\r\n                        class=\"size-4\"\r\n                        viewBox=\"0 0 24 24\"\r\n                      >\r\n                        <g\r\n                          fill=\"none\"\r\n                          stroke=\"currentColor\"\r\n                          stroke-linecap=\"round\"\r\n                          stroke-linejoin=\"round\"\r\n                          stroke-width=\"2\"\r\n                        >\r\n                          <circle cx=\"12\" cy=\"12\" r=\"1\" />\r\n                          <circle cx=\"19\" cy=\"12\" r=\"1\" />\r\n                          <circle cx=\"5\" cy=\"12\" r=\"1\" />\r\n                        </g>\r\n                      </svg>\r\n                      <span class=\"sr-only\">More</span>\r\n                    </SidebarMenuAction>\r\n                  )}\r\n                />\r\n                <DropdownMenuContent class=\"w-48 rounded-lg\">\r\n                  <DropdownMenuItem>\r\n                    <svg\r\n                      xmlns=\"http://www.w3.org/2000/svg\"\r\n                      class=\"text-muted-foreground size-4\"\r\n                      viewBox=\"0 0 24 24\"\r\n                    >\r\n                      <path\r\n                        fill=\"none\"\r\n                        stroke=\"currentColor\"\r\n                        stroke-linecap=\"round\"\r\n                        stroke-linejoin=\"round\"\r\n                        stroke-width=\"2\"\r\n                        d=\"M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z\"\r\n                      />\r\n                    </svg>\r\n                    <span>View Project</span>\r\n                  </DropdownMenuItem>\r\n                  <DropdownMenuItem>\r\n                    <svg\r\n                      xmlns=\"http://www.w3.org/2000/svg\"\r\n                      class=\"text-muted-foreground size-4\"\r\n                      viewBox=\"0 0 24 24\"\r\n                    >\r\n                      <g\r\n                        fill=\"none\"\r\n                        stroke=\"currentColor\"\r\n                        stroke-linecap=\"round\"\r\n                        stroke-linejoin=\"round\"\r\n                        stroke-width=\"2\"\r\n                      >\r\n                        <path d=\"m15 17l5-5l-5-5\" />\r\n                        <path d=\"M4 18v-2a4 4 0 0 1 4-4h12\" />\r\n                      </g>\r\n                    </svg>\r\n                    <span>Share Project</span>\r\n                  </DropdownMenuItem>\r\n                  <DropdownMenuSeparator />\r\n                  <DropdownMenuItem>\r\n                    <svg\r\n                      xmlns=\"http://www.w3.org/2000/svg\"\r\n                      class=\"text-muted-foreground size-4\"\r\n                      viewBox=\"0 0 24 24\"\r\n                    >\r\n                      <path\r\n                        fill=\"none\"\r\n                        stroke=\"currentColor\"\r\n                        stroke-linecap=\"round\"\r\n                        stroke-linejoin=\"round\"\r\n                        stroke-width=\"2\"\r\n                        d=\"M3 6h18m-2 0v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6m3 0V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2m-6 5v6m4-6v6\"\r\n                      />\r\n                    </svg>\r\n                    <span>Delete Project</span>\r\n                  </DropdownMenuItem>\r\n                </DropdownMenuContent>\r\n              </DropdownMenu>\r\n            </SidebarMenuItem>\r\n          )}\r\n        </For>\r\n        <SidebarMenuItem>\r\n          <SidebarMenuButton class=\"text-sidebar-foreground/70\">\r\n            <svg\r\n              xmlns=\"http://www.w3.org/2000/svg\"\r\n              class=\"text-sidebar-foreground/70 size-4\"\r\n              viewBox=\"0 0 24 24\"\r\n            >\r\n              <g\r\n                fill=\"none\"\r\n                stroke=\"currentColor\"\r\n                stroke-linecap=\"round\"\r\n                stroke-linejoin=\"round\"\r\n                stroke-width=\"2\"\r\n              >\r\n                <circle cx=\"12\" cy=\"12\" r=\"1\" />\r\n                <circle cx=\"19\" cy=\"12\" r=\"1\" />\r\n                <circle cx=\"5\" cy=\"12\" r=\"1\" />\r\n              </g>\r\n            </svg>\r\n            <span>More</span>\r\n          </SidebarMenuButton>\r\n        </SidebarMenuItem>\r\n      </SidebarMenu>\r\n    </SidebarGroup>\r\n  )\r\n}\r\n\r\nexport default NavProjects\r\n"
+      },{
+        path: "../../packages/tailwindcss/src/blocks/sidebar-01/components/nav-user.tsx",
+        type: "registry:component",
+        target: "src/components/nav-user.tsx",
+        content: "import { Image } from \"@kobalte/core/image\"\r\n\r\nimport {\r\n  DropdownMenu,\r\n  DropdownMenuContent,\r\n  DropdownMenuGroup,\r\n  DropdownMenuGroupLabel,\r\n  DropdownMenuItem,\r\n  DropdownMenuSeparator,\r\n  DropdownMenuTrigger,\r\n} from \"@repo/tailwindcss/ui/v4/dropdown-menu\"\r\nimport {\r\n  SidebarMenu,\r\n  SidebarMenuButton,\r\n  SidebarMenuItem,\r\n  useSidebar,\r\n} from \"@repo/tailwindcss/ui/v4/sidebar\"\r\n\r\nconst NavUser = (props: {\r\n  user: {\r\n    name: string\r\n    email: string\r\n    avatar: string\r\n  }\r\n}) => {\r\n  const { isMobile } = useSidebar()\r\n\r\n  return (\r\n    <SidebarMenu>\r\n      <SidebarMenuItem>\r\n        <DropdownMenu placement={isMobile() ? \"bottom-end\" : \"right-end\"}>\r\n          <DropdownMenuTrigger\r\n            as={(triggerProps: typeof SidebarMenuButton) => (\r\n              <SidebarMenuButton\r\n                {...triggerProps}\r\n                size=\"lg\"\r\n                class=\"data-[expanded]:bg-sidebar-accent data-[expanded]:text-sidebar-accent-foreground\"\r\n              >\r\n                <Image class=\"relative flex h-8 w-8 shrink-0 overflow-hidden rounded-lg\">\r\n                  <Image.Img\r\n                    class=\"aspect-square h-full w-full\"\r\n                    src={props.user.avatar}\r\n                    alt={props.user.name}\r\n                  />\r\n                  <Image.Fallback class=\"bg-muted flex h-full w-full items-center justify-center rounded-lg\">\r\n                    CN\r\n                  </Image.Fallback>\r\n                </Image>\r\n                <div class=\"grid flex-1 text-left text-sm leading-tight\">\r\n                  <span class=\"truncate font-semibold\">{props.user.name}</span>\r\n                  <span class=\"truncate text-xs\">{props.user.email}</span>\r\n                </div>\r\n                <svg\r\n                  xmlns=\"http://www.w3.org/2000/svg\"\r\n                  class=\"ml-auto size-4\"\r\n                  viewBox=\"0 0 24 24\"\r\n                >\r\n                  <path\r\n                    fill=\"none\"\r\n                    stroke=\"currentColor\"\r\n                    stroke-linecap=\"round\"\r\n                    stroke-linejoin=\"round\"\r\n                    stroke-width=\"2\"\r\n                    d=\"m7 15l5 5l5-5M7 9l5-5l5 5\"\r\n                  />\r\n                </svg>\r\n              </SidebarMenuButton>\r\n            )}\r\n          />\r\n          <DropdownMenuContent class=\"w-[--kb-popper-anchor-width] min-w-56 rounded-lg\">\r\n            <DropdownMenuGroup>\r\n              <DropdownMenuGroupLabel class=\"p-0 font-normal\">\r\n                <div class=\"flex items-center gap-2 px-1 py-1.5 text-left text-sm\">\r\n                  <Image class=\"relative flex h-8 w-8 shrink-0 overflow-hidden rounded-lg\">\r\n                    <Image.Img\r\n                      class=\"aspect-square h-full w-full\"\r\n                      src={props.user.avatar}\r\n                      alt={props.user.name}\r\n                    />\r\n                    <Image.Fallback class=\"bg-muted flex h-full w-full items-center justify-center rounded-lg\">\r\n                      CN\r\n                    </Image.Fallback>\r\n                  </Image>\r\n                  <div class=\"grid flex-1 text-left text-sm leading-tight\">\r\n                    <span class=\"truncate font-semibold\">\r\n                      {props.user.name}\r\n                    </span>\r\n                    <span class=\"truncate text-xs\">{props.user.email}</span>\r\n                  </div>\r\n                </div>\r\n              </DropdownMenuGroupLabel>\r\n            </DropdownMenuGroup>\r\n            <DropdownMenuSeparator />\r\n            <DropdownMenuGroup>\r\n              <DropdownMenuItem>\r\n                <svg\r\n                  xmlns=\"http://www.w3.org/2000/svg\"\r\n                  class=\"size-4\"\r\n                  viewBox=\"0 0 24 24\"\r\n                >\r\n                  <path\r\n                    fill=\"none\"\r\n                    stroke=\"currentColor\"\r\n                    stroke-linecap=\"round\"\r\n                    stroke-linejoin=\"round\"\r\n                    stroke-width=\"2\"\r\n                    d=\"M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0zM20 3v4m2-2h-4M4 17v2m1-1H3\"\r\n                  />\r\n                </svg>\r\n                Upgrade to Pro\r\n              </DropdownMenuItem>\r\n            </DropdownMenuGroup>\r\n            <DropdownMenuSeparator />\r\n            <DropdownMenuGroup>\r\n              <DropdownMenuItem>\r\n                <svg\r\n                  xmlns=\"http://www.w3.org/2000/svg\"\r\n                  class=\"size-4\"\r\n                  viewBox=\"0 0 24 24\"\r\n                >\r\n                  <g\r\n                    fill=\"none\"\r\n                    stroke=\"currentColor\"\r\n                    stroke-linecap=\"round\"\r\n                    stroke-linejoin=\"round\"\r\n                    stroke-width=\"2\"\r\n                  >\r\n                    <path d=\"M3.85 8.62a4 4 0 0 1 4.78-4.77a4 4 0 0 1 6.74 0a4 4 0 0 1 4.78 4.78a4 4 0 0 1 0 6.74a4 4 0 0 1-4.77 4.78a4 4 0 0 1-6.75 0a4 4 0 0 1-4.78-4.77a4 4 0 0 1 0-6.76\" />\r\n                    <path d=\"m9 12l2 2l4-4\" />\r\n                  </g>\r\n                </svg>\r\n                Account\r\n              </DropdownMenuItem>\r\n              <DropdownMenuItem>\r\n                <svg\r\n                  xmlns=\"http://www.w3.org/2000/svg\"\r\n                  class=\"size-4\"\r\n                  viewBox=\"0 0 24 24\"\r\n                >\r\n                  <g\r\n                    fill=\"none\"\r\n                    stroke=\"currentColor\"\r\n                    stroke-linecap=\"round\"\r\n                    stroke-linejoin=\"round\"\r\n                    stroke-width=\"2\"\r\n                  >\r\n                    <rect width=\"20\" height=\"14\" x=\"2\" y=\"5\" rx=\"2\" />\r\n                    <path d=\"M2 10h20\" />\r\n                  </g>\r\n                </svg>\r\n                Billing\r\n              </DropdownMenuItem>\r\n              <DropdownMenuItem>\r\n                <svg\r\n                  xmlns=\"http://www.w3.org/2000/svg\"\r\n                  class=\"size-4\"\r\n                  viewBox=\"0 0 24 24\"\r\n                >\r\n                  <path\r\n                    fill=\"none\"\r\n                    stroke=\"currentColor\"\r\n                    stroke-linecap=\"round\"\r\n                    stroke-linejoin=\"round\"\r\n                    stroke-width=\"2\"\r\n                    d=\"M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9m4.3 13a1.94 1.94 0 0 0 3.4 0\"\r\n                  />\r\n                </svg>\r\n                Notifications\r\n              </DropdownMenuItem>\r\n            </DropdownMenuGroup>\r\n            <DropdownMenuSeparator />\r\n            <DropdownMenuItem>\r\n              <svg\r\n                xmlns=\"http://www.w3.org/2000/svg\"\r\n                class=\"size-4\"\r\n                viewBox=\"0 0 24 24\"\r\n              >\r\n                <path\r\n                  fill=\"none\"\r\n                  stroke=\"currentColor\"\r\n                  stroke-linecap=\"round\"\r\n                  stroke-linejoin=\"round\"\r\n                  stroke-width=\"2\"\r\n                  d=\"M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4m7 14l5-5l-5-5m5 5H9\"\r\n                />\r\n              </svg>\r\n              Log out\r\n            </DropdownMenuItem>\r\n          </DropdownMenuContent>\r\n        </DropdownMenu>\r\n      </SidebarMenuItem>\r\n    </SidebarMenu>\r\n  )\r\n}\r\n\r\nexport default NavUser\r\n"
+      },{
+        path: "../../packages/tailwindcss/src/blocks/sidebar-01/components/team-switcher.tsx",
+        type: "registry:component",
+        target: "src/components/team-switcher.tsx",
+        content: "import { For, createSignal, type Accessor, type JSX } from \"solid-js\"\r\nimport type { DropdownMenuTriggerProps } from \"@kobalte/core/dropdown-menu\"\r\n\r\nimport {\r\n  DropdownMenu,\r\n  DropdownMenuContent,\r\n  DropdownMenuGroup,\r\n  DropdownMenuGroupLabel,\r\n  DropdownMenuItem,\r\n  DropdownMenuSeparator,\r\n  DropdownMenuShortcut,\r\n  DropdownMenuTrigger,\r\n} from \"@repo/tailwindcss/ui/v4/dropdown-menu\"\r\nimport {\r\n  SidebarMenu,\r\n  SidebarMenuButton,\r\n  SidebarMenuItem,\r\n  useSidebar,\r\n} from \"@repo/tailwindcss/ui/v4/sidebar\"\r\n\r\nconst TeamSwitcher = (props: {\r\n  teams: {\r\n    name: string\r\n    logo: Accessor<JSX.Element>\r\n    plan: string\r\n  }[]\r\n}) => {\r\n  // eslint-disable-next-line solid/reactivity\r\n  const [activeTeam, setActiveTeam] = createSignal(props.teams[0])\r\n  const { isMobile } = useSidebar()\r\n\r\n  return (\r\n    <SidebarMenu>\r\n      <SidebarMenuItem>\r\n        <DropdownMenu\r\n          placement={isMobile() ? \"bottom-end\" : \"right-start\"}\r\n          sameWidth\r\n        >\r\n          <DropdownMenuTrigger\r\n            as={(props: DropdownMenuTriggerProps) => (\r\n              // @ts-expect-error\r\n              <SidebarMenuButton\r\n                {...props}\r\n                size=\"lg\"\r\n                class=\"data-[expanded]:bg-sidebar-accent data-[expanded]:text-sidebar-accent-foreground\"\r\n              >\r\n                <div class=\"bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg\">\r\n                  {activeTeam().logo()}\r\n                </div>\r\n                <div class=\"grid flex-1 text-left text-sm leading-tight\">\r\n                  <span class=\"truncate font-semibold\">\r\n                    {activeTeam().name}\r\n                  </span>\r\n                  <span class=\"truncate text-xs\">{activeTeam().plan}</span>\r\n                </div>\r\n                <svg\r\n                  xmlns=\"http://www.w3.org/2000/svg\"\r\n                  class=\"ml-auto size-4\"\r\n                  viewBox=\"0 0 24 24\"\r\n                >\r\n                  <path\r\n                    fill=\"none\"\r\n                    stroke=\"currentColor\"\r\n                    stroke-linecap=\"round\"\r\n                    stroke-linejoin=\"round\"\r\n                    stroke-width=\"2\"\r\n                    d=\"m7 15l5 5l5-5M7 9l5-5l5 5\"\r\n                  />\r\n                </svg>\r\n              </SidebarMenuButton>\r\n            )}\r\n          />\r\n          <DropdownMenuContent class=\"w-[--kb-popper-anchor-width] min-w-56 rounded-lg\">\r\n            <DropdownMenuGroup>\r\n              <DropdownMenuGroupLabel class=\"text-muted-foreground text-xs\">\r\n                Teams\r\n              </DropdownMenuGroupLabel>\r\n              <For each={props.teams}>\r\n                {(team, index) => (\r\n                  <DropdownMenuItem\r\n                    onClick={() => setActiveTeam(team)}\r\n                    class=\"gap-2 p-2\"\r\n                  >\r\n                    <div class=\"flex size-6 items-center justify-center rounded-sm border\">\r\n                      {team.logo()}\r\n                    </div>\r\n                    {team.name}\r\n                    <DropdownMenuShortcut>⌘{index() + 1}</DropdownMenuShortcut>\r\n                  </DropdownMenuItem>\r\n                )}\r\n              </For>\r\n            </DropdownMenuGroup>\r\n            <DropdownMenuSeparator />\r\n            <DropdownMenuItem class=\"gap-2 p-2\">\r\n              <div class=\"bg-background flex size-6 items-center justify-center rounded-md border\">\r\n                <svg\r\n                  xmlns=\"http://www.w3.org/2000/svg\"\r\n                  class=\"size-4\"\r\n                  viewBox=\"0 0 24 24\"\r\n                >\r\n                  <path\r\n                    fill=\"none\"\r\n                    stroke=\"currentColor\"\r\n                    stroke-linecap=\"round\"\r\n                    stroke-linejoin=\"round\"\r\n                    stroke-width=\"2\"\r\n                    d=\"M5 12h14m-7-7v14\"\r\n                  />\r\n                </svg>\r\n              </div>\r\n              <div class=\"text-muted-foreground font-medium\">Add team</div>\r\n            </DropdownMenuItem>\r\n          </DropdownMenuContent>\r\n        </DropdownMenu>\r\n      </SidebarMenuItem>\r\n    </SidebarMenu>\r\n  )\r\n}\r\n\r\nexport default TeamSwitcher\r\n"
+      }],
+      component: () => <Sidebar01 />,
+      source: "src/__registry__/tailwindcss/blocks/sidebar-01/index.tsx",
       category: "",
       subcategory: ""
     },

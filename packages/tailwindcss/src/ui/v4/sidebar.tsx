@@ -32,7 +32,13 @@ import { cva, cx } from "@repo/tailwindcss/utils/cva"
 import { Button } from "./button"
 import { Drawer, DrawerContent } from "./drawer"
 import { Separator } from "./separator"
-import { Tooltip, TooltipContent, TooltipTrigger } from "./tooltip"
+import { Skeleton } from "./skeleton"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipPortal,
+  TooltipTrigger,
+} from "./tooltip"
 
 const SIDEBAR_COOKIE_NAME = "sidebar_state"
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
@@ -613,7 +619,7 @@ export type SidebarMenuButtonOptions = VariantProps<
   typeof SidebarMenuButtonVariants
 > & {
   isActive?: boolean
-  tooltip?: Accessor<string | ComponentProps<typeof TooltipContent>>
+  tooltip?: string | ComponentProps<typeof TooltipContent>
 }
 
 export interface SidebarMenuButtonCommonProps<
@@ -647,9 +653,9 @@ export const SidebarMenuButton = <T extends ValidComponent = "button">(
 
   return (
     <Show
-      when={!local.tooltip || state() === "collapsed"}
+      when={!local.tooltip && state() === "collapsed"}
       fallback={
-        <Tooltip placement="right" openDelay={0} closeDelay={0}>
+        <Tooltip placement="right">
           <TooltipTrigger
             as={local.as}
             data-slot="sidebar-menu-button"
@@ -663,12 +669,14 @@ export const SidebarMenuButton = <T extends ValidComponent = "button">(
             })}
             {...rest}
           />
-          <TooltipContent
-            hidden={state() !== "collapsed" || isMobile()}
-            {...(typeof local.tooltip === "string"
-              ? { children: local.tooltip }
-              : local.tooltip)}
-          />
+          <TooltipPortal>
+            <TooltipContent
+              hidden={state() === "expanded" || isMobile()}
+              {...(typeof local.tooltip === "string"
+                ? { children: local.tooltip }
+                : local.tooltip)}
+            />
+          </TooltipPortal>
         </Tooltip>
       }
     >
@@ -742,7 +750,7 @@ export type SidebarMenuBadgeProps<T extends ValidComponent = "span"> =
 export const SidebarMenuBadge = <T extends ValidComponent = "span">(
   props: SidebarMenuBadgeProps<T>,
 ) => {
-  const [local, rest] = splitProps(props, ["class"])
+  const [local, rest] = splitProps(props as SidebarMenuBadgeProps, ["class"])
 
   return (
     <Badge

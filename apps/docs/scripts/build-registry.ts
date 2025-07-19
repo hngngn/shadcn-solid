@@ -175,14 +175,6 @@ import clientOnlyWrapper from "@/components/client-only-wrapper"
               sourceFilename = `src/__registry__/${framework.name}/${files[0].path}`
             }
           }
-
-          const sourcePath = path.join(process.cwd(), sourceFilename)
-          if (!fs.existsSync(sourcePath)) {
-            fs.mkdirSync(sourcePath, { recursive: true })
-          }
-
-          rimraf.sync(sourcePath)
-          fs.writeFileSync(sourcePath, sourceFile.getText())
         }
 
         if (item.files) {
@@ -205,7 +197,7 @@ import clientOnlyWrapper from "@/components/client-only-wrapper"
           path: componentPath,
         })
 
-        index += ` 
+        index += `
     "${item.name}": {
       name: "${item.name}",
       description: "${item.description ?? ""}",

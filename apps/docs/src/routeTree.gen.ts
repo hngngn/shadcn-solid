@@ -13,6 +13,7 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as MainImport } from './routes/_main'
 import { Route as MainIndexImport } from './routes/_main/index'
+import { Route as ViewNameImport } from './routes/view.$name'
 import { Route as MainDocsImport } from './routes/_main/docs'
 import { Route as MainDocsSplatImport } from './routes/_main/docs.$'
 
@@ -27,6 +28,12 @@ const MainIndexRoute = MainIndexImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => MainRoute,
+} as any)
+
+const ViewNameRoute = ViewNameImport.update({
+  id: '/view/$name',
+  path: '/view/$name',
+  getParentRoute: () => rootRoute,
 } as any)
 
 const MainDocsRoute = MainDocsImport.update({
@@ -58,6 +65,13 @@ declare module '@tanstack/solid-router' {
       fullPath: '/docs'
       preLoaderRoute: typeof MainDocsImport
       parentRoute: typeof MainImport
+    }
+    '/view/$name': {
+      id: '/view/$name'
+      path: '/view/$name'
+      fullPath: '/view/$name'
+      preLoaderRoute: typeof ViewNameImport
+      parentRoute: typeof rootRoute
     }
     '/_main/': {
       id: '/_main/'
@@ -105,12 +119,14 @@ const MainRouteWithChildren = MainRoute._addFileChildren(MainRouteChildren)
 export interface FileRoutesByFullPath {
   '': typeof MainRouteWithChildren
   '/docs': typeof MainDocsRouteWithChildren
+  '/view/$name': typeof ViewNameRoute
   '/': typeof MainIndexRoute
   '/docs/$': typeof MainDocsSplatRoute
 }
 
 export interface FileRoutesByTo {
   '/docs': typeof MainDocsRouteWithChildren
+  '/view/$name': typeof ViewNameRoute
   '/': typeof MainIndexRoute
   '/docs/$': typeof MainDocsSplatRoute
 }
@@ -119,25 +135,34 @@ export interface FileRoutesById {
   __root__: typeof rootRoute
   '/_main': typeof MainRouteWithChildren
   '/_main/docs': typeof MainDocsRouteWithChildren
+  '/view/$name': typeof ViewNameRoute
   '/_main/': typeof MainIndexRoute
   '/_main/docs/$': typeof MainDocsSplatRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '' | '/docs' | '/' | '/docs/$'
+  fullPaths: '' | '/docs' | '/view/$name' | '/' | '/docs/$'
   fileRoutesByTo: FileRoutesByTo
-  to: '/docs' | '/' | '/docs/$'
-  id: '__root__' | '/_main' | '/_main/docs' | '/_main/' | '/_main/docs/$'
+  to: '/docs' | '/view/$name' | '/' | '/docs/$'
+  id:
+    | '__root__'
+    | '/_main'
+    | '/_main/docs'
+    | '/view/$name'
+    | '/_main/'
+    | '/_main/docs/$'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   MainRoute: typeof MainRouteWithChildren
+  ViewNameRoute: typeof ViewNameRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   MainRoute: MainRouteWithChildren,
+  ViewNameRoute: ViewNameRoute,
 }
 
 export const routeTree = rootRoute
@@ -150,7 +175,8 @@ export const routeTree = rootRoute
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
-        "/_main"
+        "/_main",
+        "/view/$name"
       ]
     },
     "/_main": {
@@ -166,6 +192,9 @@ export const routeTree = rootRoute
       "children": [
         "/_main/docs/$"
       ]
+    },
+    "/view/$name": {
+      "filePath": "view.$name.tsx"
     },
     "/_main/": {
       "filePath": "_main/index.tsx",
