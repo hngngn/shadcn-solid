@@ -1,0 +1,55 @@
+---
+title: Skeleton
+description: Visually indicates content loading.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/skeleton
+  api: https://kobalte.dev/docs/core/components/skeleton#api-reference
+---
+
+<ComponentPreview name="skeleton-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/skeleton-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add skeleton
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/skeleton" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/skeleton.tsx
+
+    ```
+
+  </ComponentSource>
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import { Skeleton } from "@components/ui/skeleton"
+```
+
+```tsx
+<Skeleton />
+```

@@ -642,6 +642,16 @@ export const examples: Registry = [
     ],
   },
   {
+    name: "skeleton-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/skeleton-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "slider-demo",
     type: "registry:example",
     files: [

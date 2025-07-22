@@ -280,7 +280,6 @@ export const docsConfig: TDocsConfig = {
           title: "Skeleton",
           href: "/docs/components/skeleton",
           items: [],
-          disabled: true,
         },
         {
           title: "Slider",

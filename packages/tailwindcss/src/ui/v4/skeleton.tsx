@@ -1,5 +1,5 @@
 import type { ComponentProps, ValidComponent } from "solid-js"
-import { splitProps } from "solid-js"
+import { mergeProps, splitProps } from "solid-js"
 import { Root as SkeletonPrimitive } from "@kobalte/core/skeleton"
 
 import { cx } from "@repo/tailwindcss/utils/cva"
@@ -11,12 +11,23 @@ export type SkeletonProps<T extends ValidComponent = "div"> = ComponentProps<
 export const Skeleton = <T extends ValidComponent = "div">(
   props: SkeletonProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SkeletonProps, ["class"])
+  const merge = mergeProps(
+    {
+      radius: 8,
+    } as SkeletonProps,
+    props,
+  )
+  const [local, rest] = splitProps(merge, ["class"])
 
   return (
     <SkeletonPrimitive
       data-slot="skeleton"
-      class={cx("bg-accent animate-pulse rounded-md", local.class)}
+      class={cx(
+        "translate-z-0 relative h-auto w-full",
+        "data-[visible=true]:after:bg-accent data-[visible=true]:after:absolute data-[visible=true]:after:inset-0 data-[visible=true]:after:z-[11] data-[visible=true]:after:content-['']",
+        "data-[visible=true]:animate-pulse data-[visible=true]:overflow-hidden",
+        local.class,
+      )}
       {...rest}
     />
   )

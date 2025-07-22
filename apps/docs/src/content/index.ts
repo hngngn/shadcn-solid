@@ -1128,6 +1128,30 @@ export const Contents : Record<string, Content> = {
   }
 ]
   },
+  "components/skeleton": {
+    component: lazy(() => import("@/content/docs/components/skeleton.mdx")),
+    data: {
+  "title": "Skeleton",
+  "description": "Visually indicates content loading.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/skeleton",
+    "api": "https://kobalte.dev/docs/core/components/skeleton#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  }
+]
+  },
   "components/slider": {
     component: lazy(() => import("@/content/docs/components/slider.mdx")),
     data: {
