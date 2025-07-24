@@ -1215,6 +1215,30 @@ export const Contents : Record<string, Content> = {
   }
 ]
   },
+  "components/switch": {
+    component: lazy(() => import("@/content/docs/components/switch.mdx")),
+    data: {
+  "title": "Switch",
+  "description": "A control that allows the user to toggle between checked and not checked.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/switch",
+    "api": "https://kobalte.dev/docs/core/components/switch#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  }
+]
+  },
   "components/text-field": {
     component: lazy(() => import("@/content/docs/components/text-field.mdx")),
     data: {

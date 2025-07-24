@@ -692,6 +692,16 @@ export const examples: Registry = [
     ],
   },
   {
+    name: "switch-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/switch-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "text-field-demo",
     type: "registry:example",
     files: [

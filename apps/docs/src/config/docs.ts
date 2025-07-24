@@ -302,7 +302,6 @@ export const docsConfig: TDocsConfig = {
           title: "Switch",
           href: "/docs/components/switch",
           items: [],
-          disabled: true,
         },
         {
           title: "Table",

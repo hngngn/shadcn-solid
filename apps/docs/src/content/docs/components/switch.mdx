@@ -1,0 +1,65 @@
+---
+title: Switch
+description: A control that allows the user to toggle between checked and not checked.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/switch
+  api: https://kobalte.dev/docs/core/components/switch#api-reference
+---
+
+<ComponentPreview name="switch-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/switch-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add switch
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/switch" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/switch.tsx
+
+    ```
+
+  </ComponentSource>
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import {
+  Switch,
+  SwitchControl,
+  SwitchInput,
+  SwitchThumb,
+} from "@components/ui/switch"
+```
+
+```tsx
+<Switch>
+  <SwitchInput />
+  <SwitchControl>
+    <SwitchThumb />
+  </SwitchControl>
+</Switch>
+```
