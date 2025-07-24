@@ -1,3 +1,5 @@
+/// <reference types="vite/client" />
+
 import { Outlet, createRootRoute } from "@tanstack/solid-router"
 import { ColorModeProvider, ColorModeScript } from "@kobalte/core"
 

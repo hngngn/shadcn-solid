@@ -12,13 +12,14 @@ export default defineConfig({
     port: 3000,
   },
   plugins: [
-    mdx(),
-    content(),
     tsConfigPaths({
       projects: ["./tsconfig.json"],
     }),
+    mdx(),
+    content(),
     tanstackStart({
       customViteSolidPlugin: true,
+      target: "vercel",
     }),
     solid({
       ssr: true,
