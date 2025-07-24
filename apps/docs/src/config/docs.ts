@@ -9,6 +9,10 @@ export type TSidebarNavItem = TNavItem & {
   items: TSidebarNavItem[]
 }
 
+export type TNavItemWithChildren = TNavItem & {
+  items: TNavItemWithChildren[]
+}
+
 export interface TDocsConfig {
   mainNav: TNavItem[]
   sidebarNav: TSidebarNavItem[]
@@ -280,6 +284,7 @@ export const docsConfig: TDocsConfig = {
           title: "Skeleton",
           href: "/docs/components/skeleton",
           items: [],
+          indicator: "new",
         },
         {
           title: "Slider",

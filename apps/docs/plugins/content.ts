@@ -6,7 +6,7 @@ import { mdxFromMarkdown } from "mdast-util-mdx"
 import { mdxjs } from "micromark-extension-mdxjs"
 import { rimraf } from "rimraf"
 import { visit } from "unist-util-visit"
-import type { Plugin } from "vinxi"
+import type { Plugin } from "vite"
 
 const folderPath = "./src/content/docs"
 

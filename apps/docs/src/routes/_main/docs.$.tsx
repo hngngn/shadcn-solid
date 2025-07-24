@@ -1,4 +1,4 @@
-import { Show, createMemo } from "solid-js"
+import { Show } from "solid-js"
 import {
   Link,
   createFileRoute,
@@ -12,24 +12,19 @@ import { Button } from "@repo/tailwindcss/ui/v4/button"
 import DocsLoading from "@/components/loading/docs"
 import DocNotFound from "@/components/not-found/doc"
 import Toc from "@/components/toc"
-import {
-  docsConfig,
-  type TNavItem,
-  type TNavItemWithChildren,
-} from "@/config/docs"
+import type { TNavItem, TNavItemWithChildren } from "@/config/docs"
+import { docsConfig } from "@/config/docs"
 import { Contents } from "@/content"
 
 export const Route = createFileRoute("/_main/docs/$")({
-  loader: ({ params }) => {
+  beforeLoad: ({ params }) => {
     if (params._splat === undefined) throw notFound()
 
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (Contents[params._splat] === undefined) throw notFound()
-
-    return Contents[params._splat]
   },
-  notFoundComponent: DocNotFound,
   component: RouteComponent,
+  notFoundComponent: DocNotFound,
   pendingComponent: DocsLoading,
 })
 
@@ -37,9 +32,9 @@ function RouteComponent() {
   const params = Route.useParams()
   const location = useLocation()
 
-  const data = createMemo(() => Contents[params()._splat!].data)
-  const headings = createMemo(() => Contents[params()._splat!].headings)
-  const component = createMemo(() => Contents[params()._splat!].component)
+  const data = () => Contents[params()._splat!].data
+  const headings = () => Contents[params()._splat!].headings
+  const component = () => Contents[params()._splat!].component
 
   const getPagerForDoc = (slug: string) => {
     const flattenedLinks = [null, ...flatten(docsConfig.sidebarNav), null]

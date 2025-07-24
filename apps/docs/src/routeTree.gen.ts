@@ -8,89 +8,134 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-// Import Routes
+import { Route as rootRouteImport } from './routes/__root'
+import { Route as TestRouteImport } from './routes/test'
+import { Route as MainRouteImport } from './routes/_main'
+import { Route as MainIndexRouteImport } from './routes/_main/index'
+import { Route as ViewNameRouteImport } from './routes/view.$name'
+import { Route as MainDocsRouteImport } from './routes/_main/docs'
+import { Route as MainDocsSplatRouteImport } from './routes/_main/docs.$'
 
-import { Route as rootRoute } from './routes/__root'
-import { Route as MainImport } from './routes/_main'
-import { Route as MainIndexImport } from './routes/_main/index'
-import { Route as ViewNameImport } from './routes/view.$name'
-import { Route as MainDocsImport } from './routes/_main/docs'
-import { Route as MainDocsSplatImport } from './routes/_main/docs.$'
-
-// Create/Update Routes
-
-const MainRoute = MainImport.update({
-  id: '/_main',
-  getParentRoute: () => rootRoute,
+const TestRoute = TestRouteImport.update({
+  id: '/test',
+  path: '/test',
+  getParentRoute: () => rootRouteImport,
 } as any)
-
-const MainIndexRoute = MainIndexImport.update({
+const MainRoute = MainRouteImport.update({
+  id: '/_main',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MainIndexRoute = MainIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => MainRoute,
 } as any)
-
-const ViewNameRoute = ViewNameImport.update({
+const ViewNameRoute = ViewNameRouteImport.update({
   id: '/view/$name',
   path: '/view/$name',
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-
-const MainDocsRoute = MainDocsImport.update({
+const MainDocsRoute = MainDocsRouteImport.update({
   id: '/docs',
   path: '/docs',
   getParentRoute: () => MainRoute,
 } as any)
-
-const MainDocsSplatRoute = MainDocsSplatImport.update({
+const MainDocsSplatRoute = MainDocsSplatRouteImport.update({
   id: '/$',
   path: '/$',
   getParentRoute: () => MainDocsRoute,
 } as any)
 
-// Populate the FileRoutesByPath interface
+export interface FileRoutesByFullPath {
+  '/test': typeof TestRoute
+  '/docs': typeof MainDocsRouteWithChildren
+  '/view/$name': typeof ViewNameRoute
+  '/': typeof MainIndexRoute
+  '/docs/$': typeof MainDocsSplatRoute
+}
+export interface FileRoutesByTo {
+  '/test': typeof TestRoute
+  '/docs': typeof MainDocsRouteWithChildren
+  '/view/$name': typeof ViewNameRoute
+  '/': typeof MainIndexRoute
+  '/docs/$': typeof MainDocsSplatRoute
+}
+export interface FileRoutesById {
+  __root__: typeof rootRouteImport
+  '/_main': typeof MainRouteWithChildren
+  '/test': typeof TestRoute
+  '/_main/docs': typeof MainDocsRouteWithChildren
+  '/view/$name': typeof ViewNameRoute
+  '/_main/': typeof MainIndexRoute
+  '/_main/docs/$': typeof MainDocsSplatRoute
+}
+export interface FileRouteTypes {
+  fileRoutesByFullPath: FileRoutesByFullPath
+  fullPaths: '/test' | '/docs' | '/view/$name' | '/' | '/docs/$'
+  fileRoutesByTo: FileRoutesByTo
+  to: '/test' | '/docs' | '/view/$name' | '/' | '/docs/$'
+  id:
+    | '__root__'
+    | '/_main'
+    | '/test'
+    | '/_main/docs'
+    | '/view/$name'
+    | '/_main/'
+    | '/_main/docs/$'
+  fileRoutesById: FileRoutesById
+}
+export interface RootRouteChildren {
+  MainRoute: typeof MainRouteWithChildren
+  TestRoute: typeof TestRoute
+  ViewNameRoute: typeof ViewNameRoute
+}
 
 declare module '@tanstack/solid-router' {
   interface FileRoutesByPath {
+    '/test': {
+      id: '/test'
+      path: '/test'
+      fullPath: '/test'
+      preLoaderRoute: typeof TestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_main': {
       id: '/_main'
       path: ''
       fullPath: ''
-      preLoaderRoute: typeof MainImport
-      parentRoute: typeof rootRoute
-    }
-    '/_main/docs': {
-      id: '/_main/docs'
-      path: '/docs'
-      fullPath: '/docs'
-      preLoaderRoute: typeof MainDocsImport
-      parentRoute: typeof MainImport
-    }
-    '/view/$name': {
-      id: '/view/$name'
-      path: '/view/$name'
-      fullPath: '/view/$name'
-      preLoaderRoute: typeof ViewNameImport
-      parentRoute: typeof rootRoute
+      preLoaderRoute: typeof MainRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/_main/': {
       id: '/_main/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof MainIndexImport
-      parentRoute: typeof MainImport
+      preLoaderRoute: typeof MainIndexRouteImport
+      parentRoute: typeof MainRoute
+    }
+    '/view/$name': {
+      id: '/view/$name'
+      path: '/view/$name'
+      fullPath: '/view/$name'
+      preLoaderRoute: typeof ViewNameRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_main/docs': {
+      id: '/_main/docs'
+      path: '/docs'
+      fullPath: '/docs'
+      preLoaderRoute: typeof MainDocsRouteImport
+      parentRoute: typeof MainRoute
     }
     '/_main/docs/$': {
       id: '/_main/docs/$'
       path: '/$'
       fullPath: '/docs/$'
-      preLoaderRoute: typeof MainDocsSplatImport
-      parentRoute: typeof MainDocsImport
+      preLoaderRoute: typeof MainDocsSplatRouteImport
+      parentRoute: typeof MainDocsRoute
     }
   }
 }
-
-// Create and export the route tree
 
 interface MainDocsRouteChildren {
   MainDocsSplatRoute: typeof MainDocsSplatRoute
@@ -116,94 +161,11 @@ const MainRouteChildren: MainRouteChildren = {
 
 const MainRouteWithChildren = MainRoute._addFileChildren(MainRouteChildren)
 
-export interface FileRoutesByFullPath {
-  '': typeof MainRouteWithChildren
-  '/docs': typeof MainDocsRouteWithChildren
-  '/view/$name': typeof ViewNameRoute
-  '/': typeof MainIndexRoute
-  '/docs/$': typeof MainDocsSplatRoute
-}
-
-export interface FileRoutesByTo {
-  '/docs': typeof MainDocsRouteWithChildren
-  '/view/$name': typeof ViewNameRoute
-  '/': typeof MainIndexRoute
-  '/docs/$': typeof MainDocsSplatRoute
-}
-
-export interface FileRoutesById {
-  __root__: typeof rootRoute
-  '/_main': typeof MainRouteWithChildren
-  '/_main/docs': typeof MainDocsRouteWithChildren
-  '/view/$name': typeof ViewNameRoute
-  '/_main/': typeof MainIndexRoute
-  '/_main/docs/$': typeof MainDocsSplatRoute
-}
-
-export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '' | '/docs' | '/view/$name' | '/' | '/docs/$'
-  fileRoutesByTo: FileRoutesByTo
-  to: '/docs' | '/view/$name' | '/' | '/docs/$'
-  id:
-    | '__root__'
-    | '/_main'
-    | '/_main/docs'
-    | '/view/$name'
-    | '/_main/'
-    | '/_main/docs/$'
-  fileRoutesById: FileRoutesById
-}
-
-export interface RootRouteChildren {
-  MainRoute: typeof MainRouteWithChildren
-  ViewNameRoute: typeof ViewNameRoute
-}
-
 const rootRouteChildren: RootRouteChildren = {
   MainRoute: MainRouteWithChildren,
+  TestRoute: TestRoute,
   ViewNameRoute: ViewNameRoute,
 }
-
-export const routeTree = rootRoute
+export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-/* ROUTE_MANIFEST_START
-{
-  "routes": {
-    "__root__": {
-      "filePath": "__root.tsx",
-      "children": [
-        "/_main",
-        "/view/$name"
-      ]
-    },
-    "/_main": {
-      "filePath": "_main.tsx",
-      "children": [
-        "/_main/docs",
-        "/_main/"
-      ]
-    },
-    "/_main/docs": {
-      "filePath": "_main/docs.tsx",
-      "parent": "/_main",
-      "children": [
-        "/_main/docs/$"
-      ]
-    },
-    "/view/$name": {
-      "filePath": "view.$name.tsx"
-    },
-    "/_main/": {
-      "filePath": "_main/index.tsx",
-      "parent": "/_main"
-    },
-    "/_main/docs/$": {
-      "filePath": "_main/docs.$.tsx",
-      "parent": "/_main/docs"
-    }
-  }
-}
-ROUTE_MANIFEST_END */

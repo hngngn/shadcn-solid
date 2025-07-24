@@ -3,9 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vinxi dev",
-    "build": "vinxi build",
-    "start": "vinxi start",
+    "dev": "vite dev",
+    "build": "vite build && tsc --noEmit",
+    "start": "vite start",
     "format": "prettier --write ./src",
     "lint": "eslint --fix ./src",
     "ci:lint": "eslint --report-unused-disable-directives ./src",
@@ -18,8 +18,8 @@
     "@repo/tailwindcss": "workspace:*",
     "@solid-primitives/intersection-observer": "^2.2.1",
     "@solid-primitives/mutation-observer": "^1.2.1",
-    "@tanstack/solid-router": "^1.120.15",
-    "@tanstack/solid-start": "^1.120.16",
+    "@tanstack/solid-router": "^1.129.8",
+    "@tanstack/solid-start": "^1.129.8",
     "nanostores": "^1.0.1",
     "valibot": "^1.1.0"
   },
