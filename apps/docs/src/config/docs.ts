@@ -296,7 +296,7 @@ export const docsConfig: TDocsConfig = {
           title: "Sonner",
           href: "/docs/components/sonner",
           items: [],
-          disabled: true,
+          indicator: "updated",
         },
         {
           title: "Switch",

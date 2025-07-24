@@ -3,6 +3,8 @@
 import { Outlet, createRootRoute } from "@tanstack/solid-router"
 import { ColorModeProvider, ColorModeScript } from "@kobalte/core"
 
+import { Toaster } from "@repo/tailwindcss/ui/v4/sonner"
+
 import { siteConfig } from "@/config/site"
 import mainCSS from "@/styles/app.css?url"
 
@@ -100,6 +102,7 @@ function RootComponent() {
       <ColorModeScript />
       <ColorModeProvider>
         <Outlet />
+        <Toaster position="top-center" />
       </ColorModeProvider>
     </>
   )

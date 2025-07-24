@@ -1,0 +1,76 @@
+---
+title: Sonner
+description: An opinionated toast component for Solid.
+component: true
+link:
+  doc: https://oc1s.github.io/somo
+  api: https://oc1s.github.io/somo/toaster/#api-reference
+---
+
+<ComponentPreview name="sonner-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/sonner-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add sonner
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install somoto @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/sonner" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/sonner.tsx
+
+    ```
+
+  </ComponentSource>
+
+<StepItem>Add the Toaster component</StepItem>
+
+```tsx title="src/app.tsx" {1,9}
+import { Toaster } from "@/components/ui/sonner"
+
+export default function App() {
+  return (
+    <Router
+      root={(props) => (
+        <Suspense>
+          {props.children}
+          <Toaster />
+        </Suspense>
+      )}
+    >
+      <FileRoutes />
+    </Router>
+  )
+}
+```
+
+</Step>
+
+</ComponentInstallation>
+
+## Usage
+
+```tsx
+import { toast } from "somoto"
+```
+
+```tsx
+toast("Event has been created.")
+```

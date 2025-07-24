@@ -1,4 +1,3 @@
-import { Suspense } from "solid-js"
 import { Outlet, createFileRoute } from "@tanstack/solid-router"
 // @ts-expect-error
 import { MDXProvider } from "solid-mdx"
@@ -18,11 +17,9 @@ function RouteComponent() {
       <SidebarProvider class="min-h-min flex-1 items-start px-0 [--sidebar-width:220px] [--top-spacing:0] lg:grid lg:grid-cols-[var(--sidebar-width)_minmax(0,1fr)] lg:[--sidebar-width:240px] lg:[--top-spacing:calc(var(--spacing)*4)]">
         <DocsSidebar />
         <div class="size-full">
-          <Suspense>
-            <MDXProvider components={mdxCustomComponents}>
-              <Outlet />
-            </MDXProvider>
-          </Suspense>
+          <MDXProvider components={mdxCustomComponents}>
+            <Outlet />
+          </MDXProvider>
         </div>
       </SidebarProvider>
     </div>

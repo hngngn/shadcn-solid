@@ -1191,6 +1191,30 @@ export const Contents : Record<string, Content> = {
   }
 ]
   },
+  "components/sonner": {
+    component: lazy(() => import("@/content/docs/components/sonner.mdx")),
+    data: {
+  "title": "Sonner",
+  "description": "An opinionated toast component for Solid.",
+  "component": true,
+  "link": {
+    "doc": "https://oc1s.github.io/somo",
+    "api": "https://oc1s.github.io/somo/toaster/#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  }
+]
+  },
   "components/text-field": {
     component: lazy(() => import("@/content/docs/components/text-field.mdx")),
     data: {
