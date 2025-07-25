@@ -307,7 +307,6 @@ export const docsConfig: TDocsConfig = {
           title: "Table",
           href: "/docs/components/table",
           items: [],
-          disabled: true,
         },
         {
           title: "Tabs",

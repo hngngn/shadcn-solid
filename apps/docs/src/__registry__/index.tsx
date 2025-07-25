@@ -73,6 +73,7 @@ const SliderCustomLabelDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/
 const SliderVerticalDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/slider-vertical-demo"), { lazy: true })
 const SonnerDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/sonner-demo"), { lazy: true })
 const SwitchDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/switch-demo"), { lazy: true })
+const TableDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/table-demo"), { lazy: true })
 const TextFieldDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/text-field-demo"), { lazy: true })
 const TextFieldDisabledDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/text-field-disabled-demo"), { lazy: true })
 const TextFieldErrorDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/text-field-error-demo"), { lazy: true })
@@ -1197,6 +1198,22 @@ export const Index: Record<string, any> = {
         content: ""
       }],
       component: () => <SwitchDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    },
+    "table-demo": {
+      name: "table-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/table-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <TableDemo />,
       source: "",
       category: "",
       subcategory: ""

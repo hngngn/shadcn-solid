@@ -702,6 +702,16 @@ export const examples: Registry = [
     ],
   },
   {
+    name: "table-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/table-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "text-field-demo",
     type: "registry:example",
     files: [

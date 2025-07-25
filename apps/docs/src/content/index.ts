@@ -29,7 +29,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Accordion",
   "description": "A vertically stacked set of interactive headings that each reveal a section of content.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/accordion",
     "api": "https://kobalte.dev/docs/core/components/accordion#api-reference"
@@ -53,7 +52,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Alert Dialog",
   "description": "A modal dialog that interrupts the user with important content and expects a response.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/alert-dialog",
     "api": "https://kobalte.dev/docs/core/components/alert-dialog#api-reference"
@@ -77,7 +75,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Alert",
   "description": "Displays a callout for user attention.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/alert",
     "api": "https://kobalte.dev/docs/core/components/alert#api-reference"
@@ -111,7 +108,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Badge",
   "description": "Displays a badge or a component that looks like a badge.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/badge",
     "api": "https://kobalte.dev/docs/core/components/badge#api-reference"
@@ -155,7 +151,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Breadcrumbs",
   "description": "Displays the path to the current resource using a hierarchy of links.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/breadcrumbs",
     "api": "https://kobalte.dev/docs/core/components/breadcrumbs#api-reference"
@@ -199,7 +194,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Button",
   "description": "Displays a button or a component that looks like a button.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/button",
     "api": "https://kobalte.dev/docs/core/components/button#api-reference"
@@ -258,7 +252,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Calendar",
   "description": "A date field component that allows users to enter and edit date.",
-  "component": true,
   "link": {
     "doc": "https://corvu.dev/docs/primitives/calendar/",
     "api": "https://corvu.dev/docs/primitives/calendar/#api-reference"
@@ -291,8 +284,7 @@ export const Contents : Record<string, Content> = {
     component: lazy(() => import("@/content/docs/components/card.mdx")),
     data: {
   "title": "Card",
-  "description": "Displays a card with header, content, and footer.",
-  "component": true
+  "description": "Displays a card with header, content, and footer."
 },
     headings: [
   {
@@ -312,7 +304,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Carousel",
   "description": "A carousel with motion and swipe built using Embla.",
-  "component": true,
   "link": {
     "doc": "https://www.embla-carousel.com/get-started/solid",
     "api": "https://www.embla-carousel.com/api"
@@ -366,7 +357,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Checkbox",
   "description": "A control that allows the user to toggle between checked and not checked.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/checkbox",
     "api": "https://kobalte.dev/docs/core/components/checkbox#api-reference"
@@ -400,7 +390,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Collapsible",
   "description": "An interactive component which expands/collapses a panel.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/collapsible",
     "api": "https://kobalte.dev/docs/core/components/collapsible#api-reference"
@@ -424,7 +413,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Combobox",
   "description": "Combines a text input with a listbox, allowing users to filter a list of options to items matching a query.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/combobox",
     "api": "https://kobalte.dev/docs/core/components/combobox#api-reference"
@@ -473,7 +461,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Command",
   "description": "Composable command menu.",
-  "component": true,
   "link": {
     "doc": "https://cmdk-solid.vercel.app"
   }
@@ -506,7 +493,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Context Menu",
   "description": "Displays a menu to the user — such as a set of actions or functions — triggered by a button.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/context-menu",
     "api": "https://kobalte.dev/docs/core/components/context-menu#api-reference"
@@ -529,8 +515,7 @@ export const Contents : Record<string, Content> = {
     component: lazy(() => import("@/content/docs/components/date-picker.mdx")),
     data: {
   "title": "Date Picker",
-  "description": "A date picker component with range and presets.",
-  "component": true
+  "description": "A date picker component with range and presets."
 },
     headings: [
   {
@@ -560,7 +545,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Dialog",
   "description": "A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/dialog",
     "api": "https://kobalte.dev/docs/core/components/dialog#api-reference"
@@ -584,7 +568,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Drawer",
   "description": "A draggable dialog that is attached to any side of the viewport.",
-  "component": true,
   "link": {
     "doc": "https://corvu.dev/docs/primitives/drawer",
     "api": "https://corvu.dev/docs/primitives/drawer/#api-reference"
@@ -618,7 +601,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Dropdown Menu",
   "description": "Displays a menu to the user — such as a set of actions or functions — triggered by a button.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/dropdown-menu",
     "api": "https://kobalte.dev/docs/core/components/dropdown-menu#api-reference"
@@ -642,7 +624,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Hover Card",
   "description": "For sighted users to preview content available behind a link.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/hover-card",
     "api": "https://kobalte.dev/docs/core/components/hover-card#api-reference"
@@ -666,7 +647,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Menubar",
   "description": "A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/menubar",
     "api": "https://kobalte.dev/docs/core/components/menubar#api-reference"
@@ -690,7 +670,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Navigation Menu",
   "description": "A collection of links for navigating websites.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/navigation-menu",
     "api": "https://kobalte.dev/docs/core/components/navigation-menu#api-reference"
@@ -724,7 +703,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Number Field",
   "description": "A number input that allow users to input custom number entries with a keyboard.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/number-field",
     "api": "https://kobalte.dev/docs/core/components/number-field#api-reference"
@@ -758,7 +736,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "OTP Field",
   "description": "An accessible and customizable OTP Input component.",
-  "component": true,
   "link": {
     "doc": "https://corvu.dev/docs/primitives/otp-field/",
     "api": "https://corvu.dev/docs/primitives/otp-field/#api-reference"
@@ -782,7 +759,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Pagination",
   "description": "Pagination with page navigation, next and previous links.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/pagination",
     "api": "https://kobalte.dev/docs/core/components/pagination#api-reference"
@@ -801,7 +777,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Button",
   "description": "Displays a button or a component that looks like a button.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/button",
     "api": "https://kobalte.dev/docs/core/components/button#api-reference"
@@ -825,7 +800,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Progress",
   "description": "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/progress",
     "api": "https://kobalte.dev/docs/core/components/progress#api-reference"
@@ -849,7 +823,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Radio Group",
   "description": "A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/radio-group",
     "api": "https://kobalte.dev/docs/core/components/radio-group#api-reference"
@@ -873,7 +846,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Resizable",
   "description": "A component that divides your interface into resizable sections.",
-  "component": true,
   "link": {
     "doc": "https://corvu.dev/docs/primitives/resizable",
     "api": "https://corvu.dev/docs/primitives/resizable#api-reference"
@@ -912,7 +884,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Search",
   "description": "Search a searchbox text input with a menu. Handle the case where dataset filtering needs to occur outside the combobox component.",
-  "component": true,
   "link": {
     "docs": "https://kobalte.dev/docs/core/components/search",
     "api": "https://kobalte.dev/docs/core/components/search#api-reference"
@@ -946,7 +917,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Segmented Control",
   "description": "A linear set of two or more segments, each of which functions as a radio input, and a default value is required.",
-  "component": true,
   "link": {
     "docs": "https://kobalte.dev/docs/core/components/segmented-control",
     "api": "https://kobalte.dev/docs/core/components/segmented-control#api-reference"
@@ -980,7 +950,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Select",
   "description": "Displays a list of options for the user to pick from—triggered by a button.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/select",
     "api": "https://kobalte.dev/docs/core/components/select#api-reference"
@@ -1014,7 +983,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Separator",
   "description": "Visually or semantically separates content.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/separator",
     "api": "https://kobalte.dev/docs/core/components/separator#api-reference"
@@ -1037,8 +1005,7 @@ export const Contents : Record<string, Content> = {
     component: lazy(() => import("@/content/docs/components/sidebar.mdx")),
     data: {
   "title": "Sidebar",
-  "description": "A composable, themeable and customizable sidebar component.",
-  "component": true
+  "description": "A composable, themeable and customizable sidebar component."
 },
     headings: [
   {
@@ -1133,7 +1100,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Skeleton",
   "description": "Visually indicates content loading.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/skeleton",
     "api": "https://kobalte.dev/docs/core/components/skeleton#api-reference"
@@ -1157,7 +1123,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Slider",
   "description": "An input where the user selects a value from within a given range.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/slider",
     "api": "https://kobalte.dev/docs/core/components/slider#api-reference"
@@ -1196,7 +1161,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Sonner",
   "description": "An opinionated toast component for Solid.",
-  "component": true,
   "link": {
     "doc": "https://oc1s.github.io/somo",
     "api": "https://oc1s.github.io/somo/toaster/#api-reference"
@@ -1220,11 +1184,29 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Switch",
   "description": "A control that allows the user to toggle between checked and not checked.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/switch",
     "api": "https://kobalte.dev/docs/core/components/switch#api-reference"
   }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  }
+]
+  },
+  "components/table": {
+    component: lazy(() => import("@/content/docs/components/table.mdx")),
+    data: {
+  "title": "Table",
+  "description": "A responsive table component."
 },
     headings: [
   {
@@ -1244,7 +1226,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "TextField",
   "description": "A text input that allow users to input custom text entries with a keyboard.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/text-field",
     "api": "https://kobalte.dev/docs/core/components/text-field#api-reference"
