@@ -319,12 +319,6 @@ export const docsConfig: TDocsConfig = {
           items: [],
         },
         {
-          title: "Toast",
-          href: "/docs/components/toast",
-          items: [],
-          disabled: true,
-        },
-        {
           title: "Toggle Group",
           href: "/docs/components/toggle-group",
           items: [],

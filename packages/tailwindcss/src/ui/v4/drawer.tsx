@@ -1,7 +1,7 @@
 import type { ComponentProps, ValidComponent } from "solid-js"
 import { Show, mergeProps, splitProps } from "solid-js"
+import type { DynamicProps } from "@corvu/drawer"
 import DrawerPrimitive from "@corvu/drawer"
-import type { PolymorphicProps } from "@kobalte/core/polymorphic"
 
 import { cx } from "@repo/tailwindcss/utils/cva"
 
@@ -101,7 +101,7 @@ export type DrawerLabelProps<T extends ValidComponent = "h2"> = ComponentProps<
 >
 
 export const DrawerLabel = <T extends ValidComponent = "h2">(
-  props: PolymorphicProps<T, DrawerLabelProps<T>>,
+  props: DynamicProps<T, DrawerLabelProps<T>>,
 ) => {
   const [local, rest] = splitProps(props as DrawerLabelProps, ["class"])
 
@@ -118,7 +118,7 @@ export type DrawerDescriptionProps<T extends ValidComponent = "p"> =
   ComponentProps<typeof DrawerPrimitive.Description<T>>
 
 export const DrawerDescription = <T extends ValidComponent = "p">(
-  props: PolymorphicProps<T, DrawerDescriptionProps<T>>,
+  props: DynamicProps<T, DrawerDescriptionProps<T>>,
 ) => {
   const [local, rest] = splitProps(props as DrawerDescriptionProps, ["class"])
 

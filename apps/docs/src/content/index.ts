@@ -885,7 +885,7 @@ export const Contents : Record<string, Content> = {
   "title": "Search",
   "description": "Search a searchbox text input with a menu. Handle the case where dataset filtering needs to occur outside the combobox component.",
   "link": {
-    "docs": "https://kobalte.dev/docs/core/components/search",
+    "doc": "https://kobalte.dev/docs/core/components/search",
     "api": "https://kobalte.dev/docs/core/components/search#api-reference"
   }
 },
