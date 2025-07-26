@@ -74,6 +74,8 @@ const SliderVerticalDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/exa
 const SonnerDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/sonner-demo"), { lazy: true })
 const SwitchDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/switch-demo"), { lazy: true })
 const TableDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/table-demo"), { lazy: true })
+const TabsDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/tabs-demo"), { lazy: true })
+const TabsOrientationDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/tabs-orientation-demo"), { lazy: true })
 const TextFieldDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/text-field-demo"), { lazy: true })
 const TextFieldDisabledDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/text-field-disabled-demo"), { lazy: true })
 const TextFieldErrorDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/text-field-error-demo"), { lazy: true })
@@ -1214,6 +1216,38 @@ export const Index: Record<string, any> = {
         content: ""
       }],
       component: () => <TableDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    },
+    "tabs-demo": {
+      name: "tabs-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/tabs-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <TabsDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    },
+    "tabs-orientation-demo": {
+      name: "tabs-orientation-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/tabs-orientation-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <TabsOrientationDemo />,
       source: "",
       category: "",
       subcategory: ""

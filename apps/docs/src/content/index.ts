@@ -1221,6 +1221,35 @@ export const Contents : Record<string, Content> = {
   }
 ]
   },
+  "components/tabs": {
+    component: lazy(() => import("@/content/docs/components/tabs.mdx")),
+    data: {
+  "title": "Tabs",
+  "description": "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/tabs",
+    "api": "https://kobalte.dev/docs/core/components/tabs#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  },
+  {
+    "depth": 2,
+    "text": "Examples",
+    "slug": "examples"
+  }
+]
+  },
   "components/text-field": {
     component: lazy(() => import("@/content/docs/components/text-field.mdx")),
     data: {

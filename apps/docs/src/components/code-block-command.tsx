@@ -53,7 +53,7 @@ const CodeBlockCommand = (props: {
               />
             </svg>
           </div>
-          <TabsList class="rounded-none bg-transparent p-0">
+          <TabsList class="rounded-none bg-transparent p-0 ring-0">
             <For each={Object.entries(tabs())}>
               {([key]) => (
                 <TabsTrigger

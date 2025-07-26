@@ -44,7 +44,7 @@ const ComponentPreviewTabs = (props: Props) => {
       <Tabs class="relative mr-auto w-full">
         <div class="flex items-center justify-between">
           <Show when={!local.hideCode}>
-            <TabsList class="justify-start gap-4 rounded-none bg-transparent px-2 md:px-0">
+            <TabsList class="justify-start gap-4 rounded-none bg-transparent px-2 ring-0 md:px-0">
               <TabsTrigger
                 value="preview"
                 class="text-muted-foreground data-[selected]:text-foreground px-0 data-[selected]:shadow-none dark:data-[selected]:border-transparent dark:data-[selected]:bg-transparent"

@@ -24,7 +24,7 @@ const ComponentInstallation = (props: ComponentProps<typeof TabsContent>) => {
         setConfig({ installationType: value })
       }}
     >
-      <TabsList class="justify-start gap-4 rounded-none bg-transparent px-2 md:px-0">
+      <TabsList class="justify-start gap-4 rounded-none bg-transparent px-2 ring-0 md:px-0">
         <TabsTrigger
           value="cli"
           class="text-muted-foreground data-[selected]:text-foreground px-0 data-[selected]:shadow-none dark:data-[selected]:border-transparent dark:data-[selected]:bg-transparent"

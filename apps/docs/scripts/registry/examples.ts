@@ -712,6 +712,26 @@ export const examples: Registry = [
     ],
   },
   {
+    name: "tabs-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/tabs-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "tabs-orientation-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/tabs-orientation-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "text-field-demo",
     type: "registry:example",
     files: [
