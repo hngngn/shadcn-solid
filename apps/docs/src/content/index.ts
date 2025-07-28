@@ -1293,6 +1293,98 @@ export const Contents : Record<string, Content> = {
   }
 ]
   },
+  "components/toggle-button": {
+    component: lazy(() => import("@/content/docs/components/toggle-button.mdx")),
+    data: {
+  "title": "Toggle Button",
+  "description": "A two-state button that can be either on or off.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/toggle-button",
+    "api": "https://kobalte.dev/docs/core/components/toggle-button#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  },
+  {
+    "depth": 2,
+    "text": "Examples",
+    "slug": "examples"
+  },
+  {
+    "depth": 3,
+    "text": "Outline",
+    "slug": "outline"
+  },
+  {
+    "depth": 3,
+    "text": "Size",
+    "slug": "size"
+  },
+  {
+    "depth": 3,
+    "text": "Disabled",
+    "slug": "disabled"
+  }
+]
+  },
+  "components/toggle-group": {
+    component: lazy(() => import("@/content/docs/components/toggle-group.mdx")),
+    data: {
+  "title": "Toggle Group",
+  "description": "A set of two-state buttons that can be toggled on (pressed) or off (not pressed).",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/toggle-group",
+    "api": "https://kobalte.dev/docs/core/components/toggle-group#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  }
+]
+  },
+  "components/tooltip": {
+    component: lazy(() => import("@/content/docs/components/tooltip.mdx")),
+    data: {
+  "title": "Tooltip",
+  "description": "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+  "component": true,
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/tooltip",
+    "api": "https://kobalte.dev/docs/core/components/tooltip#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 3,
+    "text": "Usage",
+    "slug": "usage"
+  }
+]
+  },
   "introduction": {
     component: lazy(() => import("@/content/docs/introduction.mdx")),
     data: {

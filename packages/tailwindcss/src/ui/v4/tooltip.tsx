@@ -36,7 +36,7 @@ export type TooltipContentProps<T extends ValidComponent = "button"> =
 export const TooltipContent = <T extends ValidComponent = "button">(
   props: TooltipContentProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as TooltipContentProps, [
+  const [, rest] = splitProps(props as TooltipContentProps, [
     "class",
     "children",
   ])
@@ -46,7 +46,8 @@ export const TooltipContent = <T extends ValidComponent = "button">(
       data-slot="tooltip-content"
       class={cx(
         "bg-primary text-primary-foreground animate-in fade-in-0 zoom-in-95 data-[closed]:animate-out data-[closed]:fade-out-0 data-[closed]:zoom-out-95 origin-(--kb-tooltip-content-transform-origin) z-50 w-fit text-balance rounded-md px-3 py-1.5 text-xs",
-        local.class,
+        "[[data-popper-positioner][style*='--kb-popper-content-transform-origin:_top']>[data-slot=tooltip-content]]:slide-in-from-top-2 [[data-popper-positioner][style*='--kb-popper-content-transform-origin:_bottom']>[data-slot=tooltip-content]]:slide-in-from-bottom-2 [[data-popper-positioner][style*='--kb-popper-content-transform-origin:_left']>[data-slot=tooltip-content]]:slide-in-from-left-2 [[data-popper-positioner][style*='--kb-popper-content-transform-origin:_right']>[data-slot=tooltip-content]]:slide-in-from-right-2",
+        props.class,
       )}
       {...rest}
     >
@@ -56,7 +57,7 @@ export const TooltipContent = <T extends ValidComponent = "button">(
           width: "calc(var(--spacing) * 4)",
         }}
       />
-      {local.children}
+      {props.children}
     </TooltipPrimitive.Content>
   )
 }

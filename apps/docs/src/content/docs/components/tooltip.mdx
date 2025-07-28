@@ -1,0 +1,65 @@
+---
+title: Tooltip
+description: A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.
+component: true
+link:
+  doc: https://kobalte.dev/docs/core/components/tooltip
+  api: https://kobalte.dev/docs/core/components/tooltip#api-reference
+---
+
+<ComponentPreview name="tooltip-demo">
+
+```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/tooltip-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add tooltip
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install @kobalte/core
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/tooltip" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/tooltip.tsx
+
+    ```
+
+  </ComponentSource>
+
+</Step>
+
+</ComponentInstallation>
+
+### Usage
+
+```tsx
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipPortal,
+  TooltipTrigger,
+} from "@repo/tailwindcss/ui/v4/tooltip"
+```
+
+```tsx
+<Tooltip>
+  <TooltipTrigger />
+  <TooltipPortal>
+    <TooltipContent />
+  </TooltipPortal>
+</Tooltip>
+```

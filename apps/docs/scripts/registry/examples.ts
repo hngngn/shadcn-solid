@@ -771,4 +771,64 @@ export const examples: Registry = [
       },
     ],
   },
+  {
+    name: "toggle-group-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/toggle-group-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toggle-button-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/toggle-button-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toggle-button-outline-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/toggle-button-outline-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toggle-button-size-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/toggle-button-size-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "toggle-button-disabled-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/toggle-button-disabled-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "tooltip-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/tooltip-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
 ]

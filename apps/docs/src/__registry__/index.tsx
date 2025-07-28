@@ -80,6 +80,12 @@ const TextFieldDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples
 const TextFieldDisabledDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/text-field-disabled-demo"), { lazy: true })
 const TextFieldErrorDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/text-field-error-demo"), { lazy: true })
 const TextFieldAreaDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/text-field-area-demo"), { lazy: true })
+const ToggleGroupDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/toggle-group-demo"), { lazy: true })
+const ToggleButtonDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/toggle-button-demo"), { lazy: true })
+const ToggleButtonOutlineDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/toggle-button-outline-demo"), { lazy: true })
+const ToggleButtonSizeDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/toggle-button-size-demo"), { lazy: true })
+const ToggleButtonDisabledDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/toggle-button-disabled-demo"), { lazy: true })
+const TooltipDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/tooltip-demo"), { lazy: true })
 const Sidebar01 = clientOnlyWrapper(() => import("@repo/tailwindcss/blocks/sidebar-01/index"), { lazy: true })
 
 export const Index: Record<string, any> = {
@@ -1312,6 +1318,102 @@ export const Index: Record<string, any> = {
         content: ""
       }],
       component: () => <TextFieldAreaDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    },
+    "toggle-group-demo": {
+      name: "toggle-group-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/toggle-group-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <ToggleGroupDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    },
+    "toggle-button-demo": {
+      name: "toggle-button-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/toggle-button-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <ToggleButtonDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    },
+    "toggle-button-outline-demo": {
+      name: "toggle-button-outline-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/toggle-button-outline-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <ToggleButtonOutlineDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    },
+    "toggle-button-size-demo": {
+      name: "toggle-button-size-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/toggle-button-size-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <ToggleButtonSizeDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    },
+    "toggle-button-disabled-demo": {
+      name: "toggle-button-disabled-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/toggle-button-disabled-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <ToggleButtonDisabledDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    },
+    "tooltip-demo": {
+      name: "tooltip-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/tooltip-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <TooltipDemo />,
       source: "",
       category: "",
       subcategory: ""
