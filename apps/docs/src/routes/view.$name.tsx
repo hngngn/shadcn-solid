@@ -6,10 +6,9 @@ import { Index } from "@/__registry__"
 
 export const Route = createFileRoute("/view/$name")({
   beforeLoad: ({ params }) => {
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-    if (params.name === undefined) throw notFound()
+    if (!params.name) throw notFound()
 
-    if (Index.tailwindcss[params.name] === undefined) throw notFound()
+    if (!Index.tailwindcss[params.name]) throw notFound()
   },
   component: RouteComponent,
 })

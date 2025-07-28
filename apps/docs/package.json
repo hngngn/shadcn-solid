@@ -9,7 +9,7 @@
     "format": "prettier --write ./src",
     "lint": "eslint --fix ./src",
     "ci:lint": "eslint --report-unused-disable-directives ./src",
-    "ci:format": "prettier --check ./src",
+    "ci:format": "prettier --config ./prettier.config.check.cjs --check ./src",
     "registry": "tsx ./scripts/index.ts"
   },
   "dependencies": {
