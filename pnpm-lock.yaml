@@ -154,12 +154,6 @@ importers:
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
-      hast-util-heading-rank:
-        specifier: ^3.0.0
-        version: 3.0.0
-      hast-util-to-string:
-        specifier: ^3.0.1
-        version: 3.0.1
       mdast-util-from-markdown:
         specifier: ^2.0.2
         version: 2.0.2
