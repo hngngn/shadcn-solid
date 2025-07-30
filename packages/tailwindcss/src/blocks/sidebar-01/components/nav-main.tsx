@@ -44,7 +44,7 @@ const NavMain = (props: {
                       <SidebarMenuButton
                         {...props}
                         tooltip={item.title}
-                        class="[&>svg:last-of-type]:data-[expanded]:rotate-90"
+                        class="aria-expanded:[&>svg:last-of-type]:rotate-90"
                       >
                         <Show when={item.icon!()}>{item.icon!()}</Show>
                         <span>{item.title}</span>
