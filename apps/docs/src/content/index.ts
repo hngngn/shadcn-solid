@@ -511,6 +511,138 @@ export const Contents : Record<string, Content> = {
   }
 ]
   },
+  "components/data-table": {
+    component: lazy(() => import("@/content/docs/components/data-table.mdx")),
+    data: {
+  "title": "Data Table",
+  "description": "Powerful table and datagrids built using TanStack Table.",
+  "link": {
+    "doc": "https://tanstack.com/table/latest/docs/introduction"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Introduction",
+    "slug": "introduction"
+  },
+  {
+    "depth": 2,
+    "text": "Table of Contents",
+    "slug": "table-of-contents"
+  },
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Prerequisites",
+    "slug": "prerequisites"
+  },
+  {
+    "depth": 2,
+    "text": "Project Structure",
+    "slug": "project-structure"
+  },
+  {
+    "depth": 2,
+    "text": "Basic Table",
+    "slug": "basic-table"
+  },
+  {
+    "depth": 3,
+    "text": "Column Definitions",
+    "slug": "column-definitions"
+  },
+  {
+    "depth": 3,
+    "text": "<DataTable /> component",
+    "slug": "datatable--component"
+  },
+  {
+    "depth": 3,
+    "text": "Render the table",
+    "slug": "render-the-table"
+  },
+  {
+    "depth": 2,
+    "text": "Row Actions",
+    "slug": "row-actions"
+  },
+  {
+    "depth": 2,
+    "text": "Pagination",
+    "slug": "pagination"
+  },
+  {
+    "depth": 3,
+    "text": "Update <DataTable />",
+    "slug": "update-datatable-"
+  },
+  {
+    "depth": 3,
+    "text": "Add pagination controls",
+    "slug": "add-pagination-controls"
+  },
+  {
+    "depth": 2,
+    "text": "Sorting",
+    "slug": "sorting"
+  },
+  {
+    "depth": 3,
+    "text": "Update <DataTable />",
+    "slug": "update-datatable--1"
+  },
+  {
+    "depth": 3,
+    "text": "Make header cell sortable",
+    "slug": "make-header-cell-sortable"
+  },
+  {
+    "depth": 2,
+    "text": "Filtering",
+    "slug": "filtering"
+  },
+  {
+    "depth": 3,
+    "text": "Update <DataTable />",
+    "slug": "update-datatable--2"
+  },
+  {
+    "depth": 2,
+    "text": "Visibility",
+    "slug": "visibility"
+  },
+  {
+    "depth": 3,
+    "text": "Update <DataTable />",
+    "slug": "update-datatable--3"
+  },
+  {
+    "depth": 2,
+    "text": "Row Selection",
+    "slug": "row-selection"
+  },
+  {
+    "depth": 3,
+    "text": "Update column definitions",
+    "slug": "update-column-definitions"
+  },
+  {
+    "depth": 3,
+    "text": "Update <DataTable />",
+    "slug": "update-datatable--4"
+  },
+  {
+    "depth": 3,
+    "text": "Show selected rows",
+    "slug": "show-selected-rows"
+  }
+]
+  },
   "components/date-picker": {
     component: lazy(() => import("@/content/docs/components/date-picker.mdx")),
     data: {
@@ -1061,7 +1193,7 @@ export const Contents : Record<string, Content> = {
   {
     "depth": 3,
     "text": "Props",
-    "slug": "props"
+    "slug": "props-1"
   },
   {
     "depth": 3,
@@ -1226,7 +1358,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Tabs",
   "description": "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/tabs",
     "api": "https://kobalte.dev/docs/core/components/tabs#api-reference"
@@ -1298,7 +1429,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Toggle Button",
   "description": "A two-state button that can be either on or off.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/toggle-button",
     "api": "https://kobalte.dev/docs/core/components/toggle-button#api-reference"
@@ -1342,7 +1472,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Toggle Group",
   "description": "A set of two-state buttons that can be toggled on (pressed) or off (not pressed).",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/toggle-group",
     "api": "https://kobalte.dev/docs/core/components/toggle-group#api-reference"
@@ -1366,7 +1495,6 @@ export const Contents : Record<string, Content> = {
     data: {
   "title": "Tooltip",
   "description": "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  "component": true,
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/tooltip",
     "api": "https://kobalte.dev/docs/core/components/tooltip#api-reference"

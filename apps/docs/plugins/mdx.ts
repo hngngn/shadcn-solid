@@ -24,6 +24,7 @@ export default (): Plugin => {
         ],
       ],
       rehypePlugins: [
+        rehypeSlug,
         [
           rehypePrettyCode,
           {
@@ -105,7 +106,6 @@ export default (): Plugin => {
             ],
           } satisfies Options,
         ],
-        rehypeSlug,
       ],
     }),
   }

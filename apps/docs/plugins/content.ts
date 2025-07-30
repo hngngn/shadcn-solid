@@ -1,5 +1,6 @@
 import { readFileSync, readdirSync, statSync, writeFileSync } from "node:fs"
 import { join, resolve } from "node:path"
+import GithubSlugger from "github-slugger"
 import grayMatter from "gray-matter"
 import { fromMarkdown } from "mdast-util-from-markdown"
 import { mdxFromMarkdown } from "mdast-util-mdx"
@@ -21,6 +22,8 @@ const generateContents = (folderPath: string) => {
     }[]
   }[] = []
 
+  const slugger = new GithubSlugger()
+
   readdirSync(folderPath).forEach((file) => {
     const filePath = join(folderPath, file)
 
@@ -41,16 +44,33 @@ const generateContents = (folderPath: string) => {
 
         const headings: { depth: number; slug: string; text: string }[] = []
 
+        const usedSlugs = new Map<string, number>()
+
         visit(tree, "heading", (node) => {
+          const value = node.children
+            .filter((i) => i.type === "text" || i.type === "inlineCode")
+            .map((i) => i.value)
+            .join("")
+
+          // Normalize value and slug base
+          let baseSlug = slugger.slug(value)
+
+          // Remove trailing -<number> if present
+          const match = baseSlug.match(/(.*)-(\d+)$/)
+          if (match) {
+            baseSlug = match[1]
+          }
+
+          // Track duplicates
+          const count = usedSlugs.get(baseSlug) ?? 0
+          usedSlugs.set(baseSlug, count + 1)
+
+          const finalSlug = count === 0 ? baseSlug : `${baseSlug}-${count}`
+
           headings.push({
             depth: node.depth,
-            // @ts-expect-error
-            text: node.children[0].value,
-            // @ts-expect-error
-            slug: String(node.children[0].value)
-              .toLowerCase()
-              .split(" ")
-              .join("-"),
+            text: value,
+            slug: finalSlug,
           })
         })
 

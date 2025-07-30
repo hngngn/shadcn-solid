@@ -39,6 +39,7 @@ const ComboboxMultiDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/exam
 const CommandDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/command-demo"), { lazy: true })
 const CommandDialogDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/command-dialog-demo"), { lazy: true })
 const ContextMenuDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/context-menu-demo"), { lazy: true })
+const DataTableDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/data-table-demo"), { lazy: true })
 const DatePickerDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/date-picker-demo"), { lazy: true })
 const DatePickerRangeDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/date-picker-range-demo"), { lazy: true })
 const DialogDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/dialog-demo"), { lazy: true })
@@ -662,6 +663,22 @@ export const Index: Record<string, any> = {
         content: ""
       }],
       component: () => <ContextMenuDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    },
+    "data-table-demo": {
+      name: "data-table-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/data-table-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <DataTableDemo />,
       source: "",
       category: "",
       subcategory: ""

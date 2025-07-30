@@ -178,7 +178,6 @@ export const docsConfig: TDocsConfig = {
           title: "Data Table",
           href: "/docs/components/data-table",
           items: [],
-          disabled: true,
         },
         {
           title: "Date Picker",

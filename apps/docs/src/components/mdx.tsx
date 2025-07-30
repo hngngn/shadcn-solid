@@ -30,13 +30,13 @@ export const mdxCustomComponents: MDXComponents | Record<string, unknown> = {
   ),
   h2: (props) => (
     <h2
-      class="font-heading mt-12 scroll-m-28 text-2xl font-medium tracking-tight first:mt-0 lg:mt-20 [&+p]:!mt-4"
+      class="font-heading mt-12 scroll-m-28 text-2xl font-medium tracking-tight first:mt-0 lg:mt-20 [&+p]:!mt-4 *:[code]:text-2xl"
       {...props}
     />
   ),
   h3: (props) => (
     <h3
-      class="font-heading mt-8 scroll-m-28 text-xl font-semibold tracking-tight"
+      class="font-heading mt-8 scroll-m-28 text-xl font-semibold tracking-tight *:[code]:text-xl"
       {...props}
     />
   ),

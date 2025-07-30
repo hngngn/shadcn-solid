@@ -362,6 +362,16 @@ export const examples: Registry = [
     ],
   },
   {
+    name: "data-table-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/data-table-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "date-picker-demo",
     type: "registry:example",
     files: [
