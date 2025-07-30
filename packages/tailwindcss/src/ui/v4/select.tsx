@@ -128,7 +128,9 @@ export const SelectItem = <T extends ValidComponent = "li">(
       )}
       {...rest}
     >
-      <SelectPrimitive.ItemLabel>{props.children}</SelectPrimitive.ItemLabel>
+      <SelectPrimitive.ItemLabel>
+        {(props as SelectItemProps).children}
+      </SelectPrimitive.ItemLabel>
       <SelectPrimitive.ItemIndicator<ValidComponent>
         class="size-3.5"
         as={(props) => (
