@@ -28,6 +28,6 @@ export default defineConfig({
     tailwindcss(),
   ],
   resolve: {
-    noExternal: ["@kobalte/core", "cmdk-solid"],
+    noExternal: ["@kobalte/core", "cmdk-solid", "@unovis/solid", "@unovis/ts"],
   },
 })

@@ -13,6 +13,7 @@
     "./utils/*": "./src/utils/*.ts",
     "./hooks/*": "./src/hooks/*.ts",
     "./examples/*": "./src/examples/*.tsx",
-    "./blocks/*": "./src/blocks/*.tsx"
+    "./blocks/*": "./src/blocks/*.tsx",
+    "./charts/*": "./src/charts/*.tsx"
   }
 }

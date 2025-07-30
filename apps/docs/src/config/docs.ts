@@ -32,10 +32,10 @@ export const docsConfig: TDocsConfig = {
     //   title: "Blocks",
     //   href: "/blocks",
     // },
-    // {
-    //   title: "Charts",
-    //   href: "/charts",
-    // },
+    {
+      title: "Charts",
+      href: "/charts/area",
+    },
   ],
   sidebarNav: [
     {
