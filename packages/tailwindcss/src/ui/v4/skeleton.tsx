@@ -17,7 +17,7 @@ export const Skeleton = <T extends ValidComponent = "div">(
     } as SkeletonProps,
     props,
   )
-  const [local, rest] = splitProps(merge, ["class"])
+  const [, rest] = splitProps(merge, ["class"])
 
   return (
     <SkeletonPrimitive
@@ -26,7 +26,7 @@ export const Skeleton = <T extends ValidComponent = "div">(
         "translate-z-0 relative h-auto w-full",
         "data-[visible=true]:after:bg-accent data-[visible=true]:after:absolute data-[visible=true]:after:inset-0 data-[visible=true]:after:z-[11] data-[visible=true]:after:content-['']",
         "data-[visible=true]:animate-pulse data-[visible=true]:overflow-hidden",
-        local.class,
+        props.class,
       )}
       {...rest}
     />

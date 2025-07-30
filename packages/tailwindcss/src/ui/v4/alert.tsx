@@ -27,14 +27,14 @@ export type AlertProps<T extends ValidComponent = "button"> = ComponentProps<
 export const Alert = <T extends ValidComponent = "button">(
   props: AlertProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as AlertProps, ["class", "variant"])
+  const [, rest] = splitProps(props as AlertProps, ["class", "variant"])
 
   return (
     <AlertPrimitive
       data-slot="alert"
       class={alertVariants({
-        variant: local.variant,
-        class: local.class,
+        variant: props.variant,
+        class: props.class,
       })}
       {...rest}
     />
@@ -44,14 +44,14 @@ export const Alert = <T extends ValidComponent = "button">(
 export type AlertTitleProps = ComponentProps<"div">
 
 export const AlertTitle = (props: AlertTitleProps) => {
-  const [local, rest] = splitProps(props, ["class"])
+  const [, rest] = splitProps(props, ["class"])
 
   return (
     <div
       data-slot="alert-title"
       class={cx(
         "col-start-2 line-clamp-1 min-h-4 font-medium tracking-tight",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -61,14 +61,14 @@ export const AlertTitle = (props: AlertTitleProps) => {
 export type AlertDescriptionProps = ComponentProps<"div">
 
 export const AlertDescription = (props: AlertDescriptionProps) => {
-  const [local, rest] = splitProps(props, ["class"])
+  const [, rest] = splitProps(props, ["class"])
 
   return (
     <div
       data-slot="alert-description"
       class={cx(
         "text-muted-foreground col-start-2 grid justify-items-start gap-1 text-sm [&_p]:leading-relaxed",
-        local.class,
+        props.class,
       )}
       {...rest}
     />

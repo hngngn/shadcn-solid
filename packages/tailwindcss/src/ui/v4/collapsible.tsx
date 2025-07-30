@@ -31,14 +31,14 @@ export type CollapsibleContentProps<T extends ValidComponent = "button"> =
 export const CollapsibleContent = <T extends ValidComponent = "button">(
   props: CollapsibleContentProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as CollapsibleContentProps, ["class"])
+  const [, rest] = splitProps(props as CollapsibleContentProps, ["class"])
 
   return (
     <CollapsiblePrimitive.Content
       data-slot="collapsible-content"
       class={cx(
         "data-[closed]:animate-collapsible-up data-[expanded]:animate-collapsible-down overflow-hidden",
-        local.class,
+        props.class,
       )}
       {...rest}
     />

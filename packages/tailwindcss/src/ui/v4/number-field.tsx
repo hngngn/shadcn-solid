@@ -11,12 +11,12 @@ export type NumberFieldProps<T extends ValidComponent = "div"> = ComponentProps<
 export const NumberField = <T extends ValidComponent = "div">(
   props: NumberFieldProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as NumberFieldProps, ["class"])
+  const [, rest] = splitProps(props as NumberFieldProps, ["class"])
 
   return (
     <NumberFieldPrimitive
       data-slot="number-field"
-      class={cx("grid gap-2", local.class)}
+      class={cx("grid gap-2", props.class)}
       {...rest}
     />
   )
@@ -25,14 +25,14 @@ export const NumberField = <T extends ValidComponent = "div">(
 export type NumberFieldGroupProps = ComponentProps<"div">
 
 export const NumberFieldGroup = (props: NumberFieldGroupProps) => {
-  const [local, rest] = splitProps(props, ["class"])
+  const [, rest] = splitProps(props, ["class"])
 
   return (
     <div
       data-slot="number-field-group"
       class={cx(
         "focus-within:border-ring focus-within:ring-ring/50 border-input has-aria-invalid:ring-destructive/20 dark:has-aria-invalid:ring-destructive/40 has-aria-invalid:border-destructive relative rounded-md border transition-shadow focus-within:ring-[3px]",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -45,14 +45,14 @@ export type NumberFieldLabelProps<T extends ValidComponent = "label"> =
 export const NumberFieldLabel = <T extends ValidComponent = "label">(
   props: NumberFieldLabelProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as NumberFieldLabelProps, ["class"])
+  const [, rest] = splitProps(props as NumberFieldLabelProps, ["class"])
 
   return (
     <NumberFieldPrimitive.Label
       data-slot="number-field-label"
       class={cx(
         "aria-invalid:text-destructive flex select-none items-center gap-2 text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-50 group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -65,14 +65,14 @@ export type NumberFieldInputProps<T extends ValidComponent = "input"> =
 export const NumberFieldInput = <T extends ValidComponent = "input">(
   props: NumberFieldInputProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as NumberFieldInputProps, ["class"])
+  const [, rest] = splitProps(props as NumberFieldInputProps, ["class"])
 
   return (
     <NumberFieldPrimitive.Input
       data-slot="number-field-input"
       class={cx(
         "placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 shadow-xs flex h-9 w-full min-w-0 rounded-md bg-transparent px-3 py-1 text-center text-base outline-none transition-colors disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -88,7 +88,7 @@ export const NumberFieldDecrementTrigger = <
 >(
   props: NumberFieldDecrementTriggerProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as NumberFieldDecrementTriggerProps, [
+  const [, rest] = splitProps(props as NumberFieldDecrementTriggerProps, [
     "class",
   ])
 
@@ -97,7 +97,7 @@ export const NumberFieldDecrementTrigger = <
       data-slot="number-field-decrement-trigger"
       class={cx(
         "absolute left-0 top-1/2 -translate-y-1/2 p-3 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50",
-        local.class,
+        props.class,
       )}
       {...rest}
     >
@@ -128,7 +128,7 @@ export const NumberFieldIncrementTrigger = <
 >(
   props: NumberFieldIncrementTriggerProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as NumberFieldIncrementTriggerProps, [
+  const [, rest] = splitProps(props as NumberFieldIncrementTriggerProps, [
     "class",
   ])
 
@@ -137,7 +137,7 @@ export const NumberFieldIncrementTrigger = <
       data-slot="number-field-increment-trigger"
       class={cx(
         "absolute right-0 top-1/2 -translate-y-1/2 p-3 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50",
-        local.class,
+        props.class,
       )}
       {...rest}
     >
@@ -165,14 +165,12 @@ export type NumberFieldErrorMessageProps<T extends ValidComponent = "div"> =
 export const NumberFieldErrorMessage = <T extends ValidComponent = "div">(
   props: NumberFieldErrorMessageProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as NumberFieldErrorMessageProps, [
-    "class",
-  ])
+  const [, rest] = splitProps(props as NumberFieldErrorMessageProps, ["class"])
 
   return (
     <NumberFieldPrimitive.ErrorMessage
       data-slot="number-field-error-message"
-      class={cx("text-destructive text-sm", local.class)}
+      class={cx("text-destructive text-sm", props.class)}
       {...rest}
     />
   )
@@ -184,14 +182,12 @@ export type NumberFieldDescriptionProps<T extends ValidComponent = "div"> =
 export const NumberFieldDescription = <T extends ValidComponent = "div">(
   props: NumberFieldDescriptionProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as NumberFieldDescriptionProps, [
-    "class",
-  ])
+  const [, rest] = splitProps(props as NumberFieldDescriptionProps, ["class"])
 
   return (
     <NumberFieldPrimitive.Description
       data-slot="number-field-description"
-      class={cx("text-muted-foreground text-sm", local.class)}
+      class={cx("text-muted-foreground text-sm", props.class)}
       {...rest}
     />
   )

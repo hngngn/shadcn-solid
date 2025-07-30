@@ -20,14 +20,14 @@ export type CheckboxLabelProps<T extends ValidComponent = "label"> =
 export const CheckboxLabel = <T extends ValidComponent = "label">(
   props: CheckboxLabelProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as CheckboxLabelProps, ["class"])
+  const [, rest] = splitProps(props as CheckboxLabelProps, ["class"])
 
   return (
     <CheckboxPrimitive.Label
       data-slot="checkbox-label"
       class={cx(
         "flex select-none items-center gap-2 text-sm font-medium leading-none data-[disabled]:pointer-events-none data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -40,14 +40,14 @@ export type CheckboxDescriptionProps<T extends ValidComponent = "div"> =
 export const CheckboxDescription = <T extends ValidComponent = "div">(
   props: CheckboxDescriptionProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as CheckboxDescriptionProps, ["class"])
+  const [, rest] = splitProps(props as CheckboxDescriptionProps, ["class"])
 
   return (
     <CheckboxPrimitive.Description
       data-slot="checkbox-description"
       class={cx(
         "text-muted-foreground text-sm data-[disabled]:opacity-50",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -60,14 +60,14 @@ export type CheckboxInputProps<T extends ValidComponent = "input"> =
 export const CheckboxInput = <T extends ValidComponent = "input">(
   props: CheckboxInputProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as CheckboxInputProps, ["class"])
+  const [, rest] = splitProps(props as CheckboxInputProps, ["class"])
 
   return (
     <CheckboxPrimitive.Input
       data-slot="checkbox-input"
       class={cx(
         "[&:focus-visible+div]:ring-ring/50 peer [&:focus-visible+div]:ring-[3px]",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -80,7 +80,7 @@ export type CheckboxControlProps<T extends ValidComponent = "div"> =
 export const CheckboxControl = <T extends ValidComponent = "div">(
   props: CheckboxControlProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as CheckboxControlProps, ["class"])
+  const [, rest] = splitProps(props as CheckboxControlProps, ["class"])
 
   return (
     <>
@@ -89,7 +89,7 @@ export const CheckboxControl = <T extends ValidComponent = "div">(
         data-slot="checkbox-control"
         class={cx(
           "peer-focus-visible:border-ring border-input dark:bg-input/30 data-[checked]:bg-primary data-[checked]:text-primary-foreground dark:data-[checked]:bg-primary data-[checked]:border-primary aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive shadow-xs size-4 shrink-0 rounded-[4px] border outline-none transition-shadow disabled:cursor-not-allowed disabled:opacity-50",
-          local.class,
+          props.class,
         )}
         {...rest}
       >

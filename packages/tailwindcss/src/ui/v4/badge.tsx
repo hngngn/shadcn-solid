@@ -32,14 +32,14 @@ export type BadgeProps<T extends ValidComponent = "span"> = ComponentProps<
 export const Badge = <T extends ValidComponent = "span">(
   props: BadgeProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as BadgeProps, ["class", "variant"])
+  const [, rest] = splitProps(props as BadgeProps, ["class", "variant"])
 
   return (
     <BadgePrimitive
       data-slot="badge"
       class={badgeVariants({
-        variant: local.variant,
-        class: local.class,
+        variant: props.variant,
+        class: props.class,
       })}
       {...rest}
     />

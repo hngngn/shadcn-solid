@@ -11,12 +11,12 @@ export type RadioGroupProps<T extends ValidComponent = "div"> = ComponentProps<
 export const RadioGroup = <T extends ValidComponent = "div">(
   props: RadioGroupProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as RadioGroupProps, ["class"])
+  const [, rest] = splitProps(props as RadioGroupProps, ["class"])
 
   return (
     <RadioGroupPrimitive
       data-slot="radio-group"
-      class={cx("grid gap-3", local.class)}
+      class={cx("grid gap-3", props.class)}
       {...rest}
     />
   )
@@ -25,13 +25,13 @@ export const RadioGroup = <T extends ValidComponent = "div">(
 export type RadioGroupItemsProps = ComponentProps<"div">
 
 export const RadioGroupItems = (props: RadioGroupItemsProps) => {
-  const [local, rest] = splitProps(props, ["class"])
+  const [, rest] = splitProps(props, ["class"])
 
   return (
     <div
       role="presentation"
       data-slot="radio-group-items"
-      class={cx("flex gap-3", local.class)}
+      class={cx("flex gap-3", props.class)}
       {...rest}
     />
   )
@@ -43,7 +43,7 @@ export type RadioGroupItemProps<T extends ValidComponent = "div"> =
 export const RadioGroupItem = <T extends ValidComponent = "div">(
   props: RadioGroupItemProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as RadioGroupItemProps, [
+  const [, rest] = splitProps(props as RadioGroupItemProps, [
     "class",
     "children",
   ])
@@ -51,14 +51,14 @@ export const RadioGroupItem = <T extends ValidComponent = "div">(
   return (
     <RadioGroupPrimitive.Item
       data-slot="radio-group-item"
-      class={cx("flex items-center gap-3", local.class)}
+      class={cx("flex items-center gap-3", props.class)}
       {...rest}
     >
       <RadioGroupPrimitive.ItemInput
         data-slot="radio-group-item-input"
         class="peer/radio-group"
       />
-      {local.children}
+      {props.children}
     </RadioGroupPrimitive.Item>
   )
 }
@@ -69,9 +69,7 @@ export type RadioGroupItemControlProps<T extends ValidComponent = "div"> =
 export const RadioGroupItemControl = <T extends ValidComponent = "div">(
   props: RadioGroupItemControlProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as RadioGroupItemControlProps, [
-    "class",
-  ])
+  const [, rest] = splitProps(props as RadioGroupItemControlProps, ["class"])
 
   return (
     <RadioGroupPrimitive.ItemControl
@@ -80,7 +78,7 @@ export const RadioGroupItemControl = <T extends ValidComponent = "div">(
         "border-input dark:bg-input/30 shadow-xs flex size-4 items-center justify-center rounded-full border outline-none transition-[color,box-shadow] disabled:cursor-not-allowed disabled:opacity-50",
         "data-[invalid]:ring-destructive/20 dark:data-[invalid]:ring-destructive/40 data-[invalid]:border-destructive",
         "peer-focus-visible/radio-group:ring-ring/50 peer-focus-visible/radio-group:border-ring peer-focus-visible/radio-group:ring-[3px]",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -93,15 +91,13 @@ export type RadioGroupItemIndicatorProps<T extends ValidComponent = "div"> =
 export const RadioGroupItemIndicator = <T extends ValidComponent = "div">(
   props: RadioGroupItemIndicatorProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as RadioGroupItemIndicatorProps, [
-    "class",
-  ])
+  const [, rest] = splitProps(props as RadioGroupItemIndicatorProps, ["class"])
 
   return (
     <RadioGroupPrimitive.ItemIndicator
       forceMount
       data-slot="radio-group-item-indicator"
-      class={cx("data-[checked]:bg-primary size-2 rounded-full", local.class)}
+      class={cx("data-[checked]:bg-primary size-2 rounded-full", props.class)}
       {...rest}
     />
   )
@@ -113,13 +109,13 @@ export type RadioGroupLabelProps<T extends ValidComponent = "span"> =
 export const RadioGroupLabel = <T extends ValidComponent = "span">(
   props: RadioGroupLabelProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as RadioGroupLabelProps, ["class"])
+  const [, rest] = splitProps(props as RadioGroupLabelProps, ["class"])
 
   return (
     <RadioGroupPrimitive.Label
       forceMount
       data-slot="radio-group-label"
-      class={cx("select-none text-sm font-medium", local.class)}
+      class={cx("select-none text-sm font-medium", props.class)}
       {...rest}
     />
   )
@@ -131,13 +127,13 @@ export type RadioGroupItemLabelProps<T extends ValidComponent = "span"> =
 export const RadioGroupItemLabel = <T extends ValidComponent = "span">(
   props: RadioGroupItemLabelProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as RadioGroupItemLabelProps, ["class"])
+  const [, rest] = splitProps(props as RadioGroupItemLabelProps, ["class"])
 
   return (
     <RadioGroupPrimitive.ItemLabel
       forceMount
       data-slot="radio-group-item-label"
-      class={cx("select-none text-sm font-medium", local.class)}
+      class={cx("select-none text-sm font-medium", props.class)}
       {...rest}
     />
   )
@@ -149,15 +145,13 @@ export type RadioGroupDescriptionProps<T extends ValidComponent = "span"> =
 export const RadioGroupDescription = <T extends ValidComponent = "span">(
   props: RadioGroupDescriptionProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as RadioGroupDescriptionProps, [
-    "class",
-  ])
+  const [, rest] = splitProps(props as RadioGroupDescriptionProps, ["class"])
 
   return (
     <RadioGroupPrimitive.Description
       forceMount
       data-slot="radio-group-description"
-      class={cx("text-muted-foreground text-sm", local.class)}
+      class={cx("text-muted-foreground text-sm", props.class)}
       {...rest}
     />
   )
@@ -169,15 +163,13 @@ export type RadioGroupErrorMessageProps<T extends ValidComponent = "span"> =
 export const RadioGroupErrorMessage = <T extends ValidComponent = "span">(
   props: RadioGroupErrorMessageProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as RadioGroupErrorMessageProps, [
-    "class",
-  ])
+  const [, rest] = splitProps(props as RadioGroupErrorMessageProps, ["class"])
 
   return (
     <RadioGroupPrimitive.ErrorMessage
       forceMount
       data-slot="radio-group-error-message"
-      class={cx("text-destructive text-sm", local.class)}
+      class={cx("text-destructive text-sm", props.class)}
       {...rest}
     />
   )

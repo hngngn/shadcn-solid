@@ -20,12 +20,12 @@ export type AccordionItemProps<T extends ValidComponent = "div"> =
 export const AccordionItem = <T extends ValidComponent = "div">(
   props: AccordionItemProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as AccordionItemProps, ["class"])
+  const [, rest] = splitProps(props as AccordionItemProps, ["class"])
 
   return (
     <AccordionPrimitive.Item
       data-slot="accordion-item"
-      class={cx("border-b last:border-b-0", local.class)}
+      class={cx("border-b last:border-b-0", props.class)}
       {...rest}
     />
   )
@@ -37,7 +37,7 @@ export type AccordionTriggerProps<T extends ValidComponent = "button"> =
 export const AccordionTrigger = <T extends ValidComponent = "button">(
   props: AccordionTriggerProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as AccordionTriggerProps, [
+  const [, rest] = splitProps(props as AccordionTriggerProps, [
     "class",
     "children",
   ])
@@ -48,11 +48,11 @@ export const AccordionTrigger = <T extends ValidComponent = "button">(
         data-slot="accordion-trigger"
         class={cx(
           "focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-left text-sm font-medium outline-none transition-all hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-expanded]>svg]:rotate-180",
-          local.class,
+          props.class,
         )}
         {...rest}
       >
-        {local.children}
+        {props.children}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -78,7 +78,7 @@ export type AccordionContentProps<T extends ValidComponent = "div"> =
 export const AccordionContent = <T extends ValidComponent = "div">(
   props: AccordionContentProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as AccordionContentProps, [
+  const [, rest] = splitProps(props as AccordionContentProps, [
     "class",
     "children",
   ])
@@ -89,7 +89,7 @@ export const AccordionContent = <T extends ValidComponent = "div">(
       class="data-[closed]:animate-accordion-up data-[expanded]:animate-accordion-down overflow-hidden text-sm"
       {...rest}
     >
-      <div class={cx("pb-4 pt-0", local.class)}>{local.children}</div>
+      <div class={cx("pb-4 pt-0", props.class)}>{props.children}</div>
     </AccordionPrimitive.Content>
   )
 }

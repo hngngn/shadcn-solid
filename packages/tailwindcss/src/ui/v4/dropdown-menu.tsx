@@ -74,7 +74,7 @@ export type DropdownMenuSubTriggerProps<T extends ValidComponent = "div"> =
 export const DropdownMenuSubTrigger = <T extends ValidComponent = "div">(
   props: DropdownMenuSubTriggerProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as DropdownMenuSubTriggerProps, [
+  const [, rest] = splitProps(props as DropdownMenuSubTriggerProps, [
     "class",
     "children",
     "inset",
@@ -83,14 +83,14 @@ export const DropdownMenuSubTrigger = <T extends ValidComponent = "div">(
   return (
     <DropdownMenuPrimitive.SubTrigger
       data-slot="dropdown-menu-sub-trigger"
-      data-inset={local.inset}
+      data-inset={props.inset}
       class={cx(
         "data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[expanded]:bg-accent data-[expanded]:text-accent-foreground outline-hidden flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm data-[inset]:pl-8 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
-        local.class,
+        props.class,
       )}
       {...rest}
     >
-      {local.children}
+      {props.children}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="ml-auto"
@@ -115,9 +115,7 @@ export type DropdownMenuSubContentProps<T extends ValidComponent = "div"> =
 export const DropdownMenuSubContent = <T extends ValidComponent = "div">(
   props: DropdownMenuSubContentProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as DropdownMenuSubContentProps, [
-    "class",
-  ])
+  const [, rest] = splitProps(props as DropdownMenuSubContentProps, ["class"])
 
   return (
     <DropdownMenuPrimitive.SubContent
@@ -125,7 +123,7 @@ export const DropdownMenuSubContent = <T extends ValidComponent = "div">(
       class={cx(
         "bg-popover text-popover-foreground data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0 data-[closed]:zoom-out-95 data-[expanded]:zoom-in-95 origin-(--kb-menu-content-transform-origin) z-50 min-w-[8rem] overflow-hidden rounded-md border p-1 shadow-lg outline-none",
         "[[data-popper-positioner][style*='--kb-popper-content-transform-origin:_top']>[data-slot=dropdown-menu-sub-content]]:slide-in-from-top-2 [[data-popper-positioner][style*='--kb-popper-content-transform-origin:_bottom']>[data-slot=dropdown-menu-sub-content]]:slide-in-from-bottom-2 [[data-popper-positioner][style*='--kb-popper-content-transform-origin:_left']>[data-slot=dropdown-menu-sub-content]]:slide-in-from-left-2 [[data-popper-positioner][style*='--kb-popper-content-transform-origin:_right']>[data-slot=dropdown-menu-sub-content]]:slide-in-from-right-2",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -138,7 +136,7 @@ export type DropdownMenuContentProps<T extends ValidComponent = "div"> =
 export const DropdownMenuContent = <T extends ValidComponent = "div">(
   props: DropdownMenuContentProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as DropdownMenuContentProps, ["class"])
+  const [, rest] = splitProps(props as DropdownMenuContentProps, ["class"])
 
   return (
     <DropdownMenuPrimitive.Content
@@ -146,7 +144,7 @@ export const DropdownMenuContent = <T extends ValidComponent = "div">(
       class={cx(
         "bg-popover text-popover-foreground data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0 data-[closed]:zoom-out-95 data-[expanded]:zoom-in-95 origin-(--kb-menu-content-transform-origin) z-50 min-w-[8rem] overflow-y-auto overflow-x-hidden rounded-md border p-1 shadow-md outline-none",
         "[[data-popper-positioner][style*='--kb-popper-content-transform-origin:_top']>[data-slot=dropdown-menu-content]]:slide-in-from-top-2 [[data-popper-positioner][style*='--kb-popper-content-transform-origin:_bottom']>[data-slot=dropdown-menu-content]]:slide-in-from-bottom-2 [[data-popper-positioner][style*='--kb-popper-content-transform-origin:_left']>[data-slot=dropdown-menu-content]]:slide-in-from-left-2 [[data-popper-positioner][style*='--kb-popper-content-transform-origin:_right']>[data-slot=dropdown-menu-content]]:slide-in-from-right-2",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -162,7 +160,7 @@ export type DropdownMenuItemProps<T extends ValidComponent = "div"> =
 export const DropdownMenuItem = <T extends ValidComponent = "div">(
   props: DropdownMenuItemProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as DropdownMenuItemProps, [
+  const [, rest] = splitProps(props as DropdownMenuItemProps, [
     "class",
     "inset",
     "variant",
@@ -171,11 +169,11 @@ export const DropdownMenuItem = <T extends ValidComponent = "div">(
   return (
     <DropdownMenuPrimitive.Item
       data-slot="dropdown-menu-item"
-      data-inset={local.inset}
-      data-variant={local.variant}
+      data-inset={props.inset}
+      data-variant={props.variant}
       class={cx(
         "data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[variant=destructive]:text-destructive data-[variant=destructive]:data-[highlighted]:bg-destructive/10 dark:data-[variant=destructive]:data-[highlighted]:bg-destructive/20 data-[variant=destructive]:data-[highlighted]:text-destructive data-[variant=destructive]:*:[svg]:!text-destructive [&_svg:not([class*='text-'])]:text-muted-foreground outline-hidden relative flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm data-[disabled]:pointer-events-none data-[inset]:pl-8 data-[disabled]:opacity-50 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -188,7 +186,7 @@ export type DropdownMenuCheckboxItemProps<T extends ValidComponent = "div"> =
 export const DropdownMenuCheckboxItem = <T extends ValidComponent = "div">(
   props: DropdownMenuCheckboxItemProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as DropdownMenuCheckboxItemProps, [
+  const [, rest] = splitProps(props as DropdownMenuCheckboxItemProps, [
     "class",
     "children",
   ])
@@ -198,7 +196,7 @@ export const DropdownMenuCheckboxItem = <T extends ValidComponent = "div">(
       data-slot="dropdown-menu-checkbox-item"
       class={cx(
         "data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground outline-hidden relative flex cursor-default select-none items-center gap-2 rounded-sm py-1.5 pl-8 pr-2 text-sm data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
-        local.class,
+        props.class,
       )}
       {...rest}
     >
@@ -219,7 +217,7 @@ export const DropdownMenuCheckboxItem = <T extends ValidComponent = "div">(
           />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
-      {local.children}
+      {props.children}
     </DropdownMenuPrimitive.CheckboxItem>
   )
 }
@@ -230,7 +228,7 @@ export type DropdownMenuRadioItemProps<T extends ValidComponent = "div"> =
 export const DropdownMenuRadioItem = <T extends ValidComponent = "div">(
   props: DropdownMenuRadioItemProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as DropdownMenuRadioItemProps, [
+  const [, rest] = splitProps(props as DropdownMenuRadioItemProps, [
     "class",
     "children",
   ])
@@ -240,7 +238,7 @@ export const DropdownMenuRadioItem = <T extends ValidComponent = "div">(
       data-slot="dropdown-menu-radio-item"
       class={cx(
         "data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground outline-hidden relative flex cursor-default select-none items-center gap-2 rounded-sm py-1.5 pl-8 pr-2 text-sm data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
-        local.class,
+        props.class,
       )}
       {...rest}
     >
@@ -263,7 +261,7 @@ export const DropdownMenuRadioItem = <T extends ValidComponent = "div">(
           />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
-      {local.children}
+      {props.children}
     </DropdownMenuPrimitive.RadioItem>
   )
 }
@@ -276,7 +274,7 @@ export type DropdownMenuGroupLabelProps<T extends ValidComponent = "span"> =
 export const DropdownMenuGroupLabel = <T extends ValidComponent = "span">(
   props: DropdownMenuGroupLabelProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as DropdownMenuGroupLabelProps, [
+  const [, rest] = splitProps(props as DropdownMenuGroupLabelProps, [
     "class",
     "inset",
   ])
@@ -285,10 +283,10 @@ export const DropdownMenuGroupLabel = <T extends ValidComponent = "span">(
     <DropdownMenuPrimitive.GroupLabel
       as="div"
       data-slot="dropdown-menu-group-label"
-      data-inset={local.inset}
+      data-inset={props.inset}
       class={cx(
         "text-foreground my-1.5 px-2 text-sm font-medium data-[inset]:pl-8",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -303,7 +301,7 @@ export type DropdownMenuItemLabelProps<T extends ValidComponent = "div"> =
 export const DropdownMenuItemLabel = <T extends ValidComponent = "div">(
   props: DropdownMenuItemLabelProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as DropdownMenuItemLabelProps, [
+  const [, rest] = splitProps(props as DropdownMenuItemLabelProps, [
     "class",
     "inset",
   ])
@@ -311,10 +309,10 @@ export const DropdownMenuItemLabel = <T extends ValidComponent = "div">(
   return (
     <DropdownMenuPrimitive.ItemLabel
       data-slot="dropdown-menu-item-label"
-      data-inset={local.inset}
+      data-inset={props.inset}
       class={cx(
         "text-foreground px-2 py-1.5 text-sm font-medium data-[inset]:pl-8",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -327,14 +325,12 @@ export type DropdownMenuSeparatorProps<T extends ValidComponent = "hr"> =
 export const DropdownMenuSeparator = <T extends ValidComponent = "hr">(
   props: DropdownMenuSeparatorProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as DropdownMenuSeparatorProps, [
-    "class",
-  ])
+  const [, rest] = splitProps(props as DropdownMenuSeparatorProps, ["class"])
 
   return (
     <DropdownMenuPrimitive.Separator
       data-slot="dropdown-menu-separator"
-      class={cx("bg-border -mx-1 my-1 h-px", local.class)}
+      class={cx("bg-border -mx-1 my-1 h-px", props.class)}
       {...rest}
     />
   )
@@ -343,14 +339,14 @@ export const DropdownMenuSeparator = <T extends ValidComponent = "hr">(
 export type DropdownMenuShortcutProps = ComponentProps<"span">
 
 export const DropdownMenuShortcut = (props: DropdownMenuShortcutProps) => {
-  const [local, rest] = splitProps(props, ["class"])
+  const [, rest] = splitProps(props, ["class"])
 
   return (
     <span
       data-slot="dropdown-menu-shortcut"
       class={cx(
         "text-muted-foreground ml-auto text-xs tracking-widest",
-        local.class,
+        props.class,
       )}
       {...rest}
     />

@@ -24,14 +24,14 @@ export type PaginationProps<T extends ValidComponent = "nav"> = ComponentProps<
 export const Pagination = <T extends ValidComponent = "nav">(
   props: PaginationProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as PaginationProps, ["class"])
+  const [, rest] = splitProps(props as PaginationProps, ["class"])
 
   return (
     <PaginationPrimitive
       data-slot="pagination"
       class={cx(
         "mx-auto flex w-full justify-center [&>ul]:flex [&>ul]:flex-row [&>ul]:items-center [&>ul]:gap-1",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -44,12 +44,12 @@ export type PaginationEllipsisProps<T extends ValidComponent = "div"> =
 export const PaginationEllipsis = <T extends ValidComponent = "div">(
   props: PaginationEllipsisProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as PaginationEllipsisProps, ["class"])
+  const [, rest] = splitProps(props as PaginationEllipsisProps, ["class"])
 
   return (
     <PaginationPrimitive.Ellipsis
       data-slot="pagination-ellipsis"
-      class={cx("flex size-9 items-center justify-center", local.class)}
+      class={cx("flex size-9 items-center justify-center", props.class)}
       {...rest}
     >
       <svg
@@ -80,21 +80,21 @@ export const PaginationItem = <T extends ValidComponent = "button">(
   props: PaginationItemProps<T>,
 ) => {
   const merge = mergeProps({ size: "icon" } as PaginationItemProps, props)
-  const [local, rest] = splitProps(merge, ["class", "page", "size"])
+  const [, rest] = splitProps(merge, ["class", "page", "size"])
 
   const context = usePaginationContext()
 
-  const isCurrent = () => context.page() === local.page
+  const isCurrent = () => context.page() === props.page
 
   return (
     <PaginationPrimitive.Item
       data-slot="pagination-item"
       class={buttonVariants({
         variant: isCurrent() ? "outline" : "ghost",
-        size: local.size,
-        class: local.class,
+        size: props.size,
+        class: props.class,
       })}
-      page={local.page}
+      page={props.page}
       {...rest}
     />
   )
@@ -106,7 +106,7 @@ export type PaginationNextProps<T extends ValidComponent = "button"> =
 export const PaginationNext = <T extends ValidComponent = "button">(
   props: PaginationNextProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as PaginationNextProps, ["class"])
+  const [, rest] = splitProps(props as PaginationNextProps, ["class"])
 
   return (
     <PaginationPrimitive.Next
@@ -114,7 +114,7 @@ export const PaginationNext = <T extends ValidComponent = "button">(
       class={cx(
         buttonVariants({
           variant: "ghost",
-          class: local.class,
+          class: props.class,
         }),
         "gap-1 px-2.5 sm:pr-2.5",
       )}
@@ -144,7 +144,7 @@ export type PaginationPreviousProps<T extends ValidComponent = "button"> =
 export const PaginationPrevious = <T extends ValidComponent = "button">(
   props: PaginationPreviousProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as PaginationPreviousProps, ["class"])
+  const [, rest] = splitProps(props as PaginationPreviousProps, ["class"])
 
   return (
     <PaginationPrimitive.Previous
@@ -152,7 +152,7 @@ export const PaginationPrevious = <T extends ValidComponent = "button">(
       class={cx(
         buttonVariants({
           variant: "ghost",
-          class: local.class,
+          class: props.class,
         }),
         "gap-1 px-2.5 sm:pl-2.5",
       )}

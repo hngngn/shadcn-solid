@@ -10,12 +10,12 @@ export type SegmentedControlProps<T extends ValidComponent = "div"> =
 export const SegmentedControl = <T extends ValidComponent = "div">(
   props: SegmentedControlProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SegmentedControlProps, ["class"])
+  const [, rest] = splitProps(props as SegmentedControlProps, ["class"])
 
   return (
     <SegmentedControlPrimitive
       data-slot="segmented-control"
-      class={cx("group/segmented-control flex flex-col gap-2", local.class)}
+      class={cx("group/segmented-control flex flex-col gap-2", props.class)}
       {...rest}
     />
   )
@@ -41,7 +41,7 @@ export type SegmentedControlItemLabelProps<T extends ValidComponent = "label"> =
 export const SegmentedControlItemLabel = <T extends ValidComponent = "label">(
   props: SegmentedControlItemLabelProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SegmentedControlItemLabelProps, [
+  const [, rest] = splitProps(props as SegmentedControlItemLabelProps, [
     "class",
   ])
 
@@ -50,7 +50,7 @@ export const SegmentedControlItemLabel = <T extends ValidComponent = "label">(
       data-slot="segmented-control-item-label"
       class={cx(
         "text-foreground dark:text-muted-foreground dark:data-[checked]:text-foreground relative flex select-none flex-nowrap place-content-center whitespace-nowrap px-2 py-1 text-sm font-medium transition-[color,opacity] data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -63,7 +63,7 @@ export type SegmentedControlIndicatorProps<T extends ValidComponent = "div"> =
 export const SegmentedControlIndicator = <T extends ValidComponent = "div">(
   props: SegmentedControlIndicatorProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SegmentedControlIndicatorProps, [
+  const [, rest] = splitProps(props as SegmentedControlIndicatorProps, [
     "class",
   ])
 
@@ -73,7 +73,7 @@ export const SegmentedControlIndicator = <T extends ValidComponent = "div">(
       class={cx(
         "bg-background dark:border-input dark:bg-input/30 absolute left-[3px] top-[3px] rounded-md border border-transparent shadow-sm transition-[width,height,transform]",
         "group-[[data-invalid]]/segmented-control:border-destructive dark:group-[[data-invalid]]/segmented-control:border-destructive",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -86,9 +86,7 @@ export type SegmentedControlItemProps<T extends ValidComponent = "div"> =
 export const SegmentedControlItem = <T extends ValidComponent = "div">(
   props: SegmentedControlItemProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SegmentedControlItemProps, [
-    "class",
-  ])
+  const [, rest] = splitProps(props as SegmentedControlItemProps, ["class"])
 
   return (
     <SegmentedControlPrimitive.Item
@@ -99,7 +97,7 @@ export const SegmentedControlItem = <T extends ValidComponent = "div">(
         "group-[[aria-orientation=horizontal]]/segmented-control:not-first-of-type:before:inset-y-2 group-[[aria-orientation=horizontal]]/segmented-control:not-first-of-type:before:inset-x-0 group-[[aria-orientation=horizontal]]/segmented-control:not-first-of-type:before:w-px group-[[aria-orientation=horizontal]]/segmented-control:not-first-of-type:before:translate-x-[calc(-1*1px/2)]",
         "group-[[aria-orientation=vertical]]/segmented-control:not-first-of-type:before:inset-x-2 group-[[aria-orientation=vertical]]/segmented-control:not-first-of-type:before:inset-y-0 group-[[aria-orientation=vertical]]/segmented-control:not-first-of-type:before:h-px group-[[aria-orientation=vertical]]/segmented-control:not-first-of-type:before:translate-y-[calc(-1*1px/2)]",
         "has-[[data-slot=segmented-control-item-input]:checked]:before:opacity-0 has-[[data-slot=segmented-control-item-input]:checked]:[&+::before]:opacity-0",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -109,7 +107,7 @@ export const SegmentedControlItem = <T extends ValidComponent = "div">(
 export type SegmentedControlListProps = ComponentProps<"div">
 
 export const SegmentedControlList = (props: SegmentedControlListProps) => {
-  const [local, rest] = splitProps(props, ["class"])
+  const [, rest] = splitProps(props, ["class"])
 
   return (
     <div
@@ -119,7 +117,7 @@ export const SegmentedControlList = (props: SegmentedControlListProps) => {
         "bg-muted text-muted-foreground relative h-full w-fit rounded-lg",
         "has-[[data-slot=segmented-control-item-input]:focus-visible]:[&_[data-slot=segmented-control-indicator]]:ring-ring/50 has-[[data-slot=segmented-control-item-input]:focus-visible]:[&_[data-slot=segmented-control-indicator]]:outline-ring has-[[data-slot=segmented-control-item-input]:focus-visible]:[&_[data-slot=segmented-control-indicator]]:outline-1 has-[[data-slot=segmented-control-item-input]:focus-visible]:[&_[data-slot=segmented-control-indicator]]:ring-[3px]",
         "group-[[data-invalid]]/segmented-control:has-[[data-slot=segmented-control-item-input]:focus-visible]:[&_[data-slot=segmented-control-indicator]]:ring-destructive/20 dark:group-[[data-invalid]]/segmented-control:has-[[data-slot=segmented-control-item-input]:focus-visible]:[&_[data-slot=segmented-control-indicator]]:ring-destructive/40",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -129,7 +127,7 @@ export const SegmentedControlList = (props: SegmentedControlListProps) => {
 export type SegmentedControlItemsProps = ComponentProps<"div">
 
 export const SegmentedControlItems = (props: SegmentedControlItemsProps) => {
-  const [local, rest] = splitProps(props, ["class"])
+  const [, rest] = splitProps(props, ["class"])
 
   return (
     <div
@@ -137,7 +135,7 @@ export const SegmentedControlItems = (props: SegmentedControlItemsProps) => {
       role="presentation"
       class={cx(
         "inline-flex list-none p-[3px] group-[[aria-orientation=vertical]]/segmented-control:flex-col",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -150,16 +148,14 @@ export type SegmentedControlLabelProps<T extends ValidComponent = "span"> =
 export const SegmentedControlLabel = <T extends ValidComponent = "span">(
   props: SegmentedControlLabelProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SegmentedControlLabelProps, [
-    "class",
-  ])
+  const [, rest] = splitProps(props as SegmentedControlLabelProps, ["class"])
 
   return (
     <SegmentedControlPrimitive.Label
       data-slot="segmented-control-label"
       class={cx(
         "data-[invalid]:text-destructive select-none text-sm font-medium",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -172,14 +168,14 @@ export type SegmentedControlDescriptionProps<T extends ValidComponent = "div"> =
 export const SegmentedControlDescription = <T extends ValidComponent = "div">(
   props: SegmentedControlDescriptionProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SegmentedControlDescriptionProps, [
+  const [, rest] = splitProps(props as SegmentedControlDescriptionProps, [
     "class",
   ])
 
   return (
     <SegmentedControlPrimitive.Description
       data-slot="segmented-control-description"
-      class={cx("text-muted-foreground text-sm", local.class)}
+      class={cx("text-muted-foreground text-sm", props.class)}
       {...rest}
     />
   )
@@ -194,15 +190,14 @@ export const SegmentedControlItemDescription = <
 >(
   props: SegmentedControlItemDescriptionProps<T>,
 ) => {
-  const [local, rest] = splitProps(
-    props as SegmentedControlItemDescriptionProps,
-    ["class"],
-  )
+  const [, rest] = splitProps(props as SegmentedControlItemDescriptionProps, [
+    "class",
+  ])
 
   return (
     <SegmentedControlPrimitive.ItemDescription
       data-slot="segmented-control-item-description"
-      class={cx("text-muted-foreground text-sm", local.class)}
+      class={cx("text-muted-foreground text-sm", props.class)}
       {...rest}
     />
   )
@@ -215,14 +210,14 @@ export type SegmentedControlErrorMessageProps<
 export const SegmentedControlErrorMessage = <T extends ValidComponent = "div">(
   props: SegmentedControlErrorMessageProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SegmentedControlErrorMessageProps, [
+  const [, rest] = splitProps(props as SegmentedControlErrorMessageProps, [
     "class",
   ])
 
   return (
     <SegmentedControlPrimitive.ErrorMessage
       data-slot="segmented-control-error-message"
-      class={cx("text-destructive text-sm", local.class)}
+      class={cx("text-destructive text-sm", props.class)}
       {...rest}
     />
   )

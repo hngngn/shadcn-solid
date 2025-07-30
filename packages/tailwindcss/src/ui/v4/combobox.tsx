@@ -19,14 +19,12 @@ export const Combobox = <
 >(
   props: ComboboxProps<Option, Group, T>,
 ) => {
-  const [local, rest] = splitProps(props as ComboboxProps<Option, Group>, [
-    "class",
-  ])
+  const [, rest] = splitProps(props as ComboboxProps<Option, Group>, ["class"])
 
   return (
     <ComboboxPrimitive
       data-slot="combobox"
-      class={cx("space-y-2", local.class)}
+      class={cx("space-y-2", props.class)}
       {...rest}
     />
   )
@@ -38,14 +36,14 @@ export type ComboboxInputProps<T extends ValidComponent = "input"> =
 export const ComboboxInput = <T extends ValidComponent = "input">(
   props: ComboboxInputProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as ComboboxInputProps, ["class"])
+  const [, rest] = splitProps(props as ComboboxInputProps, ["class"])
 
   return (
     <ComboboxPrimitive.Input
       data-slot="combobox-input"
       class={cx(
         "placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground pr-3 outline-none",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -58,12 +56,12 @@ export type ComboboxTriggerProps<T extends ValidComponent = "button"> =
 export const ComboboxTrigger = <T extends ValidComponent = "button">(
   props: ComboboxTriggerProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as ComboboxTriggerProps, ["class"])
+  const [, rest] = splitProps(props as ComboboxTriggerProps, ["class"])
 
   return (
     <ComboboxPrimitive.Trigger
       data-slot="combobox-trigger"
-      class={cx("[&>svg]:text-muted-foreground [&>svg]:size-3.5", local.class)}
+      class={cx("[&>svg]:text-muted-foreground [&>svg]:size-3.5", props.class)}
       {...rest}
     >
       <ComboboxPrimitive.Icon
@@ -92,9 +90,7 @@ export type ComboboxControlProps<
 export const ComboboxControl = <Option, T extends ValidComponent = "div">(
   props: ComboboxControlProps<Option, T>,
 ) => {
-  const [local, rest] = splitProps(props as ComboboxControlProps<Option>, [
-    "class",
-  ])
+  const [, rest] = splitProps(props as ComboboxControlProps<Option>, ["class"])
 
   return (
     <ComboboxPrimitive.Control
@@ -102,7 +98,7 @@ export const ComboboxControl = <Option, T extends ValidComponent = "div">(
       class={cx(
         "dark:bg-input/30 border-input shadow-xs flex h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base transition-[color,box-shadow] data-[disabled]:pointer-events-none data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 md:text-sm",
         "data-[invalid]:ring-destructive/20 dark:data-[invalid]:ring-destructive/40 data-[invalid]:border-destructive",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -115,7 +111,7 @@ export type ComboboxContentProps<T extends ValidComponent = "div"> =
 export const ComboboxContent = <T extends ValidComponent = "div">(
   props: ComboboxContentProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as ComboboxContentProps, ["class"])
+  const [, rest] = splitProps(props as ComboboxContentProps, ["class"])
 
   return (
     <ComboboxPrimitive.Content
@@ -123,7 +119,7 @@ export const ComboboxContent = <T extends ValidComponent = "div">(
       class={cx(
         "bg-popover text-popover-foreground data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0 data-[closed]:zoom-out-95 data-[expanded]:zoom-in-95 origin-(--kb-combobox-content-transform-origin) relative z-50 min-w-[8rem] overflow-y-auto overflow-x-hidden rounded-md border shadow-md",
         "[[data-popper-positioner][style*='--kb-popper-content-transform-origin:_top']>[data-slot=combobox-content]]:slide-in-from-top-2 [[data-popper-positioner][style*='--kb-popper-content-transform-origin:_bottom']>[data-slot=combobox-content]]:slide-in-from-bottom-2 [[data-popper-positioner][style*='--kb-popper-content-transform-origin:_left']>[data-slot=combobox-content]]:slide-in-from-left-2 [[data-popper-positioner][style*='--kb-popper-content-transform-origin:_right']>[data-slot=combobox-content]]:slide-in-from-right-2",
-        local.class,
+        props.class,
       )}
       {...rest}
     >
@@ -138,21 +134,18 @@ export type ComboboxItemProps<T extends ValidComponent = "div"> =
 export const ComboboxItem = <T extends ValidComponent = "div">(
   props: ComboboxItemProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as ComboboxItemProps, [
-    "class",
-    "children",
-  ])
+  const [, rest] = splitProps(props as ComboboxItemProps, ["class", "children"])
 
   return (
     <ComboboxPrimitive.Item
       data-slot="combobox-item"
       class={cx(
         "data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground [&_svg:not([class*='text-'])]:text-muted-foreground outline-hidden relative flex w-full cursor-default select-none items-center justify-between gap-2 rounded-sm px-2 py-1.5 text-sm data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
-        local.class,
+        props.class,
       )}
       {...rest}
     >
-      {local.children}
+      {props.children}
       <ComboboxPrimitive.ItemIndicator>
         <ComboboxPrimitive.Icon
           as="svg"
@@ -190,14 +183,14 @@ export type ComboboxDescriptionProps<T extends ValidComponent = "div"> =
 export const ComboboxDescription = <T extends ValidComponent = "div">(
   props: ComboboxDescriptionProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as ComboboxDescriptionProps, ["class"])
+  const [, rest] = splitProps(props as ComboboxDescriptionProps, ["class"])
 
   return (
     <ComboboxPrimitive.Description
       data-slot="combobox-description"
       class={cx(
         "text-muted-foreground text-sm data-[disabled]:opacity-50",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -210,14 +203,14 @@ export type ComboboxLabelProps<T extends ValidComponent = "label"> =
 export const ComboboxLabel = <T extends ValidComponent = "label">(
   props: ComboboxLabelProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as ComboboxLabelProps, ["class"])
+  const [, rest] = splitProps(props as ComboboxLabelProps, ["class"])
 
   return (
     <ComboboxPrimitive.Label
       data-slot="combobox-label"
       class={cx(
         "flex select-none items-center gap-2 text-sm font-medium leading-none data-[disabled]:pointer-events-none data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -230,16 +223,14 @@ export type ComboboxErrorMessageProps<T extends ValidComponent = "div"> =
 export const ComboboxErrorMessage = <T extends ValidComponent = "div">(
   props: ComboboxErrorMessageProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as ComboboxErrorMessageProps, [
-    "class",
-  ])
+  const [, rest] = splitProps(props as ComboboxErrorMessageProps, ["class"])
 
   return (
     <ComboboxPrimitive.ErrorMessage
       data-slot="combobox-errormessage"
       class={cx(
         "text-destructive text-sm data-[disabled]:opacity-50",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -252,14 +243,14 @@ export type ComboboxSectionProps<T extends ValidComponent = "li"> =
 export const ComboboxSection = <T extends ValidComponent = "li">(
   props: ComboboxSectionProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as ComboboxSectionProps, ["class"])
+  const [, rest] = splitProps(props as ComboboxSectionProps, ["class"])
 
   return (
     <ComboboxPrimitive.Section
       data-slot="combobox-section"
       class={cx(
         "text-muted-foreground not-first-of-type:mt-1 px-2 py-1.5 text-xs",
-        local.class,
+        props.class,
       )}
       {...rest}
     />

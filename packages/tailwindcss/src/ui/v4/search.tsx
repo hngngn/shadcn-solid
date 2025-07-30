@@ -43,14 +43,14 @@ export type SearchIconProps<T extends ValidComponent = "span"> = ComponentProps<
 export const SearchIcon = <T extends ValidComponent = "span">(
   props: SearchIconProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SearchIconProps, ["class"])
+  const [, rest] = splitProps(props as SearchIconProps, ["class"])
 
   return (
     <SearchPrimitive.Icon
       data-slot="search-icon"
       class={cx(
         "[&_svg:not([class*='text-'])]:text-muted-foreground [&_svg:not([class*='size-'])]:size-3.5",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -63,12 +63,12 @@ export type SearchIndicatorProps<T extends ValidComponent = "div"> =
 export const SearchIndicator = <T extends ValidComponent = "div">(
   props: SearchIndicatorProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SearchIndicatorProps, ["class"])
+  const [, rest] = splitProps(props as SearchIndicatorProps, ["class"])
 
   return (
     <SearchPrimitive.Indicator
       data-slot="search-indicator"
-      class={cx("flex items-center justify-center", local.class)}
+      class={cx("flex items-center justify-center", props.class)}
       {...rest}
     />
   )
@@ -83,7 +83,7 @@ export type SearchControlProps<T extends ValidComponent = "div"> =
 export const SearchControl = <T extends ValidComponent = "div">(
   props: SearchControlProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SearchControlProps, [
+  const [, rest] = splitProps(props as SearchControlProps, [
     "class",
     "leftIndicator",
     "rightIndicator",
@@ -95,25 +95,25 @@ export const SearchControl = <T extends ValidComponent = "div">(
       class={cx(
         "dark:bg-input/30 border-input shadow-xs flex h-9 w-full rounded-md border bg-transparent px-3 py-1 text-base transition-[color,box-shadow] data-[disabled]:pointer-events-none data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 md:text-sm",
         "data-[invalid]:ring-destructive/20 dark:data-[invalid]:ring-destructive/40 data-[invalid]:border-destructive",
-        local.class,
+        props.class,
       )}
       {...rest}
     >
-      {local.leftIndicator?.()}
+      {props.leftIndicator?.()}
       <SearchPrimitive.Input
         data-slot="search-input"
         class={cx(
           "w-full focus-visible:outline-none",
-          local.leftIndicator?.() && "pl-3",
-          (!local.rightIndicator?.() && !local.leftIndicator?.()) ||
-            local.rightIndicator?.()
+          props.leftIndicator?.() && "pl-3",
+          (!props.rightIndicator?.() && !props.leftIndicator?.()) ||
+            props.rightIndicator?.()
             ? "pr-3"
             : null,
         )}
       />
       <Show
-        when={!local.rightIndicator?.() && !local.leftIndicator?.()}
-        fallback={local.rightIndicator?.()}
+        when={!props.rightIndicator?.() && !props.leftIndicator?.()}
+        fallback={props.rightIndicator?.()}
       >
         <SearchIndicator
           loadingComponent={
@@ -157,7 +157,7 @@ export type SearchContentProps<T extends ValidComponent = "div"> =
 export const SearchContent = <T extends ValidComponent = "div">(
   props: SearchContentProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SearchContentProps, ["class"])
+  const [, rest] = splitProps(props as SearchContentProps, ["class"])
 
   return (
     <SearchPrimitive.Content
@@ -167,7 +167,7 @@ export const SearchContent = <T extends ValidComponent = "div">(
         "[[data-popper-positioner][style*='--kb-popper-content-transform-origin:_top']>[data-slot=search-content]]:slide-in-from-top-2 [[data-popper-positioner][style*='--kb-popper-content-transform-origin:_bottom']>[data-slot=search-content]]:slide-in-from-bottom-2 [[data-popper-positioner][style*='--kb-popper-content-transform-origin:_left']>[data-slot=search-content]]:slide-in-from-left-2 [[data-popper-positioner][style*='--kb-popper-content-transform-origin:_right']>[data-slot=search-content]]:slide-in-from-right-2",
         // TODO: remove when maintainer found a fix
         "data-[closed]:hidden",
-        local.class,
+        props.class,
       )}
       onCloseAutoFocus={(e) => {
         e.preventDefault()
@@ -183,12 +183,12 @@ export type SearchNoResultProps<T extends ValidComponent = "span"> =
 export const SearchNoResult = <T extends ValidComponent = "span">(
   props: SearchNoResultProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SearchContentProps, ["class"])
+  const [, rest] = splitProps(props as SearchContentProps, ["class"])
 
   return (
     <SearchPrimitive.NoResult
       data-slot="search-no-result"
-      class={cx("py-6 text-center text-sm", local.class)}
+      class={cx("py-6 text-center text-sm", props.class)}
       {...rest}
     />
   )
@@ -201,14 +201,14 @@ export type SearchItemProps<T extends ValidComponent = "li"> = ComponentProps<
 export const SearchItem = <T extends ValidComponent = "li">(
   props: SearchItemProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SearchItemProps, ["class"])
+  const [, rest] = splitProps(props as SearchItemProps, ["class"])
 
   return (
     <SearchPrimitive.Item
       data-slot="search-item"
       class={cx(
         "data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground [&_svg:not([class*='text-'])]:text-muted-foreground outline-hidden relative flex w-full cursor-default select-none items-center justify-between gap-2 rounded-sm px-2 py-1.5 text-sm data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -221,7 +221,7 @@ export type SearchLabelProps<T extends ValidComponent = "label"> =
 export const SearchLabel = <T extends ValidComponent = "label">(
   props: SearchLabelProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SearchLabelProps, ["class"])
+  const [, rest] = splitProps(props as SearchLabelProps, ["class"])
 
   return (
     <SearchPrimitive.Label
@@ -230,7 +230,7 @@ export const SearchLabel = <T extends ValidComponent = "label">(
         "select-none text-sm font-medium",
         "data-[disabled]:pointer-events-none data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
         "data-[invalid]:text-destructive",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -243,12 +243,12 @@ export type SearchDescriptionProps<T extends ValidComponent = "div"> =
 export const SearchDescription = <T extends ValidComponent = "div">(
   props: SearchDescriptionProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SearchDescriptionProps, ["class"])
+  const [, rest] = splitProps(props as SearchDescriptionProps, ["class"])
 
   return (
     <SearchPrimitive.Description
       data-slot="search-description"
-      class={cx("text-muted-foreground text-sm", local.class)}
+      class={cx("text-muted-foreground text-sm", props.class)}
       {...rest}
     />
   )
@@ -260,14 +260,12 @@ export type SearchItemDescriptionProps<T extends ValidComponent = "div"> =
 export const SearchItemDescription = <T extends ValidComponent = "div">(
   props: SearchItemDescriptionProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SearchItemDescriptionProps, [
-    "class",
-  ])
+  const [, rest] = splitProps(props as SearchItemDescriptionProps, ["class"])
 
   return (
     <SearchPrimitive.ItemDescription
       data-slot="search-item-description"
-      class={cx("text-muted-foreground text-sm", local.class)}
+      class={cx("text-muted-foreground text-sm", props.class)}
       {...rest}
     />
   )
@@ -295,16 +293,14 @@ export const SearchListbox = <
 >(
   props: SearchListboxProps<Option, OptGroup, T>,
 ) => {
-  const [local, rest] = splitProps(props as SearchListboxProps<Option>, [
-    "class",
-  ])
+  const [, rest] = splitProps(props as SearchListboxProps<Option>, ["class"])
   const context = useSearchContext()
 
   return (
     <Show when={!context.noResult()}>
       <SearchPrimitive.Listbox
         data-slot="search-listbox"
-        class={cx("p-1", local.class)}
+        class={cx("p-1", props.class)}
         {...rest}
       />
     </Show>

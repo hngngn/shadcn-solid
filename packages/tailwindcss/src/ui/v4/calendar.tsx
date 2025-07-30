@@ -18,27 +18,24 @@ export type CalendarNavProps<T extends ValidComponent = "button"> =
 export const CalendarNav = <T extends ValidComponent = "button">(
   props: CalendarNavProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as CalendarNavProps, [
-    "action",
-    "class",
-  ])
+  const [, rest] = splitProps(props as CalendarNavProps, ["action", "class"])
 
   return (
     <CalendarPrimitive.Nav
       data-slot="calendar-nav"
-      action={local.action}
+      action={props.action}
       class={buttonVariants({
         variant: "outline",
         class: [
           "size-7 bg-transparent p-0 opacity-50 hover:opacity-100",
-          local.class,
+          props.class,
         ],
       })}
       {...rest}
     >
       <Switch>
         <Match
-          when={local.action === "prev-year" || local.action === "prev-month"}
+          when={props.action === "prev-year" || props.action === "prev-month"}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +53,7 @@ export const CalendarNav = <T extends ValidComponent = "button">(
           </svg>
         </Match>
         <Match
-          when={local.action === "next-year" || local.action === "next-month"}
+          when={props.action === "next-year" || props.action === "next-month"}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -84,12 +81,12 @@ export type CalendarLabelProps<T extends ValidComponent = "h2"> =
 export const CalendarLabel = <T extends ValidComponent = "h2">(
   props: CalendarLabelProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as CalendarLabelProps, ["class"])
+  const [, rest] = splitProps(props as CalendarLabelProps, ["class"])
 
   return (
     <CalendarPrimitive.Label
       data-slot="calendar-label"
-      class={cx("text-sm font-medium", local.class)}
+      class={cx("text-sm font-medium", props.class)}
       {...rest}
     />
   )
@@ -110,14 +107,14 @@ export type CalendarHeadCellProps<T extends ValidComponent = "th"> =
 export const CalendarHeadCell = <T extends ValidComponent = "th">(
   props: CalendarHeadCellProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as CalendarHeadCellProps, ["class"])
+  const [, rest] = splitProps(props as CalendarHeadCellProps, ["class"])
 
   return (
     <CalendarPrimitive.HeadCell
       data-slot="calendar-head-cell"
       class={cx(
         "text-muted-foreground w-8 rounded-md text-[0.8rem] font-normal",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -131,14 +128,14 @@ export type CalendarCellProps<T extends ValidComponent = "td"> = ComponentProps<
 export const CalendarCell = <T extends ValidComponent = "td">(
   props: CalendarCellProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as CalendarCellProps, ["class"])
+  const [, rest] = splitProps(props as CalendarCellProps, ["class"])
 
   return (
     <CalendarPrimitive.Cell
       data-slot="calendar-cell"
       class={cx(
         "has-[[data-in-range]]:bg-accent relative p-0 text-center text-sm focus-within:relative focus-within:z-20 has-[[data-range-end]]:rounded-r-md has-[[data-range-start]]:rounded-l-md has-[[data-disabled][data-selected]]:opacity-50 has-[[data-in-range]]:first:rounded-l-md has-[[data-in-range]]:last:rounded-r-md",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -151,7 +148,7 @@ export type CalendarCellTriggerProps<T extends ValidComponent = "button"> =
 export const CalendarCellTrigger = <T extends ValidComponent = "button">(
   props: CalendarCellTriggerProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as CalendarCellTriggerProps, ["class"])
+  const [, rest] = splitProps(props as CalendarCellTriggerProps, ["class"])
 
   return (
     <CalendarPrimitive.CellTrigger
@@ -164,7 +161,7 @@ export const CalendarCellTrigger = <T extends ValidComponent = "button">(
           "aria-selected:not-[[data-in-range]]:bg-primary aria-selected:not-[[data-in-range]]:text-primary-foreground aria-selected:not-[[data-in-range]]:hover:bg-primary aria-selected:not-[[data-in-range]]:hover:text-primary-foreground",
           "data-[range-start]:aria-selected:bg-primary data-[range-start]:aria-selected:text-primary-foreground data-[range-start]:aria-selected:hover:bg-primary! data-[range-start]:aria-selected:hover:text-primary-foreground!",
           "data-[range-end]:aria-selected:bg-primary data-[range-end]:aria-selected:text-primary-foreground data-[range-end]:aria-selected:hover:bg-primary! data-[range-end]:aria-selected:hover:text-primary-foreground!",
-          local.class,
+          props.class,
         ],
       })}
       {...rest}

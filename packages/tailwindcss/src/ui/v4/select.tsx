@@ -19,14 +19,12 @@ export const Select = <
 >(
   props: SelectProps<Option, OptGroup, T>,
 ) => {
-  const [local, rest] = splitProps(props as SelectProps<Option, OptGroup>, [
-    "class",
-  ])
+  const [, rest] = splitProps(props as SelectProps<Option, OptGroup>, ["class"])
 
   return (
     <SelectPrimitive
       data-slot="select"
-      class={cx("space-y-2", local.class)}
+      class={cx("space-y-2", props.class)}
       {...rest}
     />
   )
@@ -52,19 +50,19 @@ export const SelectTrigger = <T extends ValidComponent = "button">(
   props: SelectTriggerProps<T>,
 ) => {
   const merge = mergeProps({ size: "default" } as SelectTriggerProps, props)
-  const [local, rest] = splitProps(merge, ["class", "size", "children"])
+  const [, rest] = splitProps(merge, ["class", "size", "children"])
 
   return (
     <SelectPrimitive.Trigger
       data-slot="select-trigger"
-      data-size={local.size}
+      data-size={props.size}
       class={cx(
         "border-input data-[placeholder]:text-muted-foreground [&_svg:not([class*='text-'])]:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 data-[invalid]:ring-destructive/20 dark:data-[invalid]:ring-destructive/40 data-[invalid]:border-destructive dark:bg-input/30 dark:hover:bg-input/50 shadow-xs flex w-fit items-center justify-between gap-2 whitespace-nowrap rounded-md border bg-transparent px-3 py-2 text-sm outline-none transition-[color,box-shadow] focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 data-[size=default]:h-9 data-[size=sm]:h-8 *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
-        local.class,
+        props.class,
       )}
       {...rest}
     >
-      {local.children}
+      {props.children}
       <SelectPrimitive.Icon<ValidComponent>
         class="size-4 opacity-50"
         as={(props) => (
@@ -95,7 +93,7 @@ export type SelectContentProps<T extends ValidComponent = "div"> = VoidProps<
 export const SelectContent = <T extends ValidComponent = "div">(
   props: SelectContentProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SelectContentProps, ["class"])
+  const [, rest] = splitProps(props as SelectContentProps, ["class"])
 
   return (
     <SelectPrimitive.Content
@@ -103,7 +101,7 @@ export const SelectContent = <T extends ValidComponent = "div">(
       class={cx(
         "bg-popover text-popover-foreground data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0 data-[closed]:zoom-out-95 data-[expanded]:zoom-in-95 origin-(--kb-select-content-transform-origin) relative z-50 min-w-[8rem] overflow-y-auto overflow-x-hidden rounded-md border shadow-md",
         "[[data-popper-positioner][style*='--kb-popper-content-transform-origin:_top']>[data-slot=select-content]]:slide-in-from-top-2 [[data-popper-positioner][style*='--kb-popper-content-transform-origin:_bottom']>[data-slot=select-content]]:slide-in-from-bottom-2 [[data-popper-positioner][style*='--kb-popper-content-transform-origin:_left']>[data-slot=select-content]]:slide-in-from-left-2 [[data-popper-positioner][style*='--kb-popper-content-transform-origin:_right']>[data-slot=select-content]]:slide-in-from-right-2",
-        local.class,
+        props.class,
       )}
       {...rest}
     >
@@ -119,21 +117,18 @@ export type SelectItemProps<T extends ValidComponent = "li"> = ComponentProps<
 export const SelectItem = <T extends ValidComponent = "li">(
   props: SelectItemProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SelectItemProps, [
-    "class",
-    "children",
-  ])
+  const [, rest] = splitProps(props as SelectItemProps, ["class", "children"])
 
   return (
     <SelectPrimitive.Item
       data-slot="select-item"
       class={cx(
         "focus:bg-accent focus:text-accent-foreground [&_svg:not([class*='text-'])]:text-muted-foreground outline-hidden *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2 relative flex w-full cursor-default select-none items-center justify-between gap-2 rounded-sm px-2 py-1.5 text-sm data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
-        local.class,
+        props.class,
       )}
       {...rest}
     >
-      <SelectPrimitive.ItemLabel>{local.children}</SelectPrimitive.ItemLabel>
+      <SelectPrimitive.ItemLabel>{props.children}</SelectPrimitive.ItemLabel>
       <SelectPrimitive.ItemIndicator<ValidComponent>
         class="size-3.5"
         as={(props) => (
@@ -163,12 +158,12 @@ export type SelectSectionProps<T extends ValidComponent = "li"> =
 export const SelectSection = <T extends ValidComponent = "li">(
   props: SelectSectionProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SelectSectionProps, ["class"])
+  const [, rest] = splitProps(props as SelectSectionProps, ["class"])
 
   return (
     <SelectPrimitive.Section
       data-slot="select-section"
-      class={cx("text-muted-foreground px-2 py-1.5 text-xs", local.class)}
+      class={cx("text-muted-foreground px-2 py-1.5 text-xs", props.class)}
       {...rest}
     />
   )
@@ -180,14 +175,14 @@ export type SelectDescriptionProps<T extends ValidComponent = "div"> =
 export const SelectDescription = <T extends ValidComponent = "div">(
   props: SelectDescriptionProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SelectDescriptionProps, ["class"])
+  const [, rest] = splitProps(props as SelectDescriptionProps, ["class"])
 
   return (
     <SelectPrimitive.Description
       data-slot="select-description"
       class={cx(
         "text-muted-foreground text-sm data-[disabled]:opacity-50",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -200,14 +195,14 @@ export type SelectLabelProps<T extends ValidComponent = "label"> =
 export const SelectLabel = <T extends ValidComponent = "label">(
   props: SelectLabelProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SelectLabelProps, ["class"])
+  const [, rest] = splitProps(props as SelectLabelProps, ["class"])
 
   return (
     <SelectPrimitive.Label
       data-slot="select-label"
       class={cx(
         "flex select-none items-center gap-2 text-sm font-medium leading-none data-[disabled]:pointer-events-none data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -220,14 +215,14 @@ export type SelectErrorMessageProps<T extends ValidComponent = "div"> =
 export const SelectErrorMessage = <T extends ValidComponent = "div">(
   props: SelectErrorMessageProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SelectErrorMessageProps, ["class"])
+  const [, rest] = splitProps(props as SelectErrorMessageProps, ["class"])
 
   return (
     <SelectPrimitive.ErrorMessage
       data-slot="select-errormessage"
       class={cx(
         "text-destructive text-sm data-[disabled]:opacity-50",
-        local.class,
+        props.class,
       )}
       {...rest}
     />

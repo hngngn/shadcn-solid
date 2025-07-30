@@ -10,18 +10,15 @@ export type ProgressProps<T extends ValidComponent = "div"> = ComponentProps<
 export const Progress = <T extends ValidComponent = "div">(
   props: ProgressProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as ProgressProps, [
-    "class",
-    "children",
-  ])
+  const [, rest] = splitProps(props as ProgressProps, ["class", "children"])
 
   return (
     <ProgressPrimitive
       data-slot="progress"
-      class={cx("flex w-full flex-col gap-3", local.class)}
+      class={cx("flex w-full flex-col gap-3", props.class)}
       {...rest}
     >
-      {local.children}
+      {props.children}
       <ProgressPrimitive.Track
         data-slot="progress-track"
         class="bg-primary/20 relative h-2 w-full overflow-hidden rounded-full"
@@ -38,12 +35,12 @@ export const Progress = <T extends ValidComponent = "div">(
 export type ProgressGroupProps = ComponentProps<"div">
 
 export const ProgressGroup = (props: ProgressGroupProps) => {
-  const [local, rest] = splitProps(props, ["class"])
+  const [, rest] = splitProps(props, ["class"])
 
   return (
     <div
       data-slot="progress-group"
-      class={cx("flex justify-between", local.class)}
+      class={cx("flex justify-between", props.class)}
       {...rest}
     />
   )
@@ -55,12 +52,12 @@ export type ProgressLabelProps<T extends ValidComponent = "span"> =
 export const ProgressLabel = <T extends ValidComponent = "span">(
   props: ProgressLabelProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as ProgressLabelProps, ["class"])
+  const [, rest] = splitProps(props as ProgressLabelProps, ["class"])
 
   return (
     <ProgressPrimitive.Label
       data-slot="progress-label"
-      class={cx("select-none text-sm font-medium", local.class)}
+      class={cx("select-none text-sm font-medium", props.class)}
       {...rest}
     />
   )
@@ -72,12 +69,12 @@ export type ProgressValueLabelProps<T extends ValidComponent = "span"> =
 export const ProgressValueLabel = <T extends ValidComponent = "span">(
   props: ProgressValueLabelProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as ProgressValueLabelProps, ["class"])
+  const [, rest] = splitProps(props as ProgressValueLabelProps, ["class"])
 
   return (
     <ProgressPrimitive.ValueLabel
       data-slot="progress-value-label"
-      class={cx("select-none text-sm font-medium", local.class)}
+      class={cx("select-none text-sm font-medium", props.class)}
       {...rest}
     />
   )

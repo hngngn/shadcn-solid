@@ -16,12 +16,12 @@ export type ResizableProps<T extends ValidComponent = "div"> = ComponentProps<
 export const Resizable = <T extends ValidComponent>(
   props: ResizableProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as ResizableProps, ["class"])
+  const [, rest] = splitProps(props as ResizableProps, ["class"])
 
   return (
     <ResizablePrimitive
       data-slot="resizable"
-      class={cx("size-full", local.class)}
+      class={cx("size-full", props.class)}
       {...rest}
     />
   )
@@ -45,7 +45,7 @@ export const ResizableHandle = <T extends ValidComponent>(
   props: ResizableHandleProps<T>,
 ) => {
   const merge = mergeProps({ withHandle: false } as ResizableHandleProps, props)
-  const [local, rest] = splitProps(merge, ["class", "withHandle"])
+  const [, rest] = splitProps(merge, ["class", "withHandle"])
 
   return (
     <ResizablePrimitive.Handle
@@ -53,11 +53,11 @@ export const ResizableHandle = <T extends ValidComponent>(
       class={cx(
         "bg-border focus-visible:ring-ring focus-visible:outline-hidden relative flex w-px items-center justify-center after:absolute after:inset-y-0 after:left-1/2 after:w-1 after:-translate-x-1/2 focus-visible:ring-1 focus-visible:ring-offset-1",
         "data-[orientation=vertical]:h-px data-[orientation=vertical]:w-full data-[orientation=vertical]:after:left-0 data-[orientation=vertical]:after:h-1 data-[orientation=vertical]:after:w-full data-[orientation=vertical]:after:-translate-y-1/2 data-[orientation=vertical]:after:translate-x-0 [&[data-orientation=vertical]>div]:rotate-90",
-        local.class,
+        props.class,
       )}
       {...rest}
     >
-      <Show when={local.withHandle}>
+      <Show when={props.withHandle}>
         <div class="bg-border rounded-xs z-10 flex h-4 w-3 items-center justify-center border">
           <svg
             xmlns="http://www.w3.org/2000/svg"

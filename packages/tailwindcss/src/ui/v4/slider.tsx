@@ -11,14 +11,14 @@ export type SliderProps<T extends ValidComponent = "div"> = ComponentProps<
 export const Slider = <T extends ValidComponent = "div">(
   props: SliderProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SliderProps, ["class"])
+  const [, rest] = splitProps(props as SliderProps, ["class"])
 
   return (
     <SliderPrimitive
       data-slot="slider"
       class={cx(
         "relative flex w-full touch-none select-none flex-col items-center gap-2 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[disabled]:opacity-50",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -32,14 +32,14 @@ export type SliderTrackProps<T extends ValidComponent = "div"> = ComponentProps<
 export const SliderTrack = <T extends ValidComponent = "div">(
   props: SliderTrackProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SliderTrackProps, ["class"])
+  const [, rest] = splitProps(props as SliderTrackProps, ["class"])
 
   return (
     <SliderPrimitive.Track
       data-slot="slider-track"
       class={cx(
         "bg-muted relative rounded-full data-[orientation=horizontal]:h-1.5 data-[orientation=vertical]:h-[inherit] data-[orientation=vertical]:min-h-[inherit] data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-1.5",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -53,14 +53,14 @@ export type SliderFillProps<T extends ValidComponent = "div"> = VoidProps<
 export const SliderFill = <T extends ValidComponent = "div">(
   props: SliderFillProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SliderFillProps, ["class"])
+  const [, rest] = splitProps(props as SliderFillProps, ["class"])
 
   return (
     <SliderPrimitive.Fill
       data-slot="slider-fill"
       class={cx(
         "bg-primary absolute rounded-full data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -74,14 +74,14 @@ export type SliderThumbProps<T extends ValidComponent = "span"> = VoidProps<
 export const SliderThumb = <T extends ValidComponent = "span">(
   props: SliderThumbProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SliderThumbProps, ["class"])
+  const [, rest] = splitProps(props as SliderThumbProps, ["class"])
 
   return (
     <SliderPrimitive.Thumb
       data-slot="slider-thumb"
       class={cx(
         "border-primary bg-background ring-ring/50 focus-visible:outline-hidden size-4 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 disabled:pointer-events-none disabled:opacity-50 data-[orientation=horizontal]:-top-1 data-[orientation=vertical]:-left-1",
-        local.class,
+        props.class,
       )}
       {...rest}
     >
@@ -93,12 +93,12 @@ export const SliderThumb = <T extends ValidComponent = "span">(
 export type SliderGroupProps = ComponentProps<"div">
 
 export const SliderGroup = (props: SliderGroupProps) => {
-  const [local, rest] = splitProps(props, ["class"])
+  const [, rest] = splitProps(props, ["class"])
 
   return (
     <div
       data-slot="slider-group"
-      class={cx("flex w-full justify-between", local.class)}
+      class={cx("flex w-full justify-between", props.class)}
       {...rest}
     />
   )
@@ -110,12 +110,12 @@ export type SliderLabelProps<T extends ValidComponent = "label"> =
 export const SliderLabel = <T extends ValidComponent = "label">(
   props: SliderLabelProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SliderLabelProps, ["class"])
+  const [, rest] = splitProps(props as SliderLabelProps, ["class"])
 
   return (
     <SliderPrimitive.Label
       data-slot="slider-label"
-      class={cx("select-none text-sm font-medium", local.class)}
+      class={cx("select-none text-sm font-medium", props.class)}
       {...rest}
     />
   )
@@ -127,12 +127,12 @@ export type SliderValueLabelProps<T extends ValidComponent = "div"> =
 export const SliderValueLabel = <T extends ValidComponent = "div">(
   props: SliderValueLabelProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SliderValueLabelProps, ["class"])
+  const [, rest] = splitProps(props as SliderValueLabelProps, ["class"])
 
   return (
     <SliderPrimitive.ValueLabel
       data-slot="slider-value-label"
-      class={cx("select-none text-sm font-medium", local.class)}
+      class={cx("select-none text-sm font-medium", props.class)}
       {...rest}
     />
   )
@@ -144,12 +144,12 @@ export type SliderDescriptionProps<T extends ValidComponent = "div"> =
 export const SliderDescription = <T extends ValidComponent = "div">(
   props: SliderDescriptionProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SliderDescriptionProps, ["class"])
+  const [, rest] = splitProps(props as SliderDescriptionProps, ["class"])
 
   return (
     <SliderPrimitive.Description
       data-slot="slider-description"
-      class={cx("text-muted-foreground text-sm", local.class)}
+      class={cx("text-muted-foreground text-sm", props.class)}
       {...rest}
     />
   )
@@ -161,12 +161,12 @@ export type SliderErrorMessageProps<T extends ValidComponent = "div"> =
 export const SliderErrorMessage = <T extends ValidComponent = "div">(
   props: SliderErrorMessageProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SliderErrorMessageProps, ["class"])
+  const [, rest] = splitProps(props as SliderErrorMessageProps, ["class"])
 
   return (
     <SliderPrimitive.ErrorMessage
       data-slot="slider-ErrorMessage"
-      class={cx("text-destructive text-sm", local.class)}
+      class={cx("text-destructive text-sm", props.class)}
       {...rest}
     />
   )

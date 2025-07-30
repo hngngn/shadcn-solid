@@ -66,7 +66,7 @@ export const Carousel = (props: CarouselProps) => {
     },
     props,
   )
-  const [local, rest] = splitProps(merge, [
+  const [, rest] = splitProps(merge, [
     "orientation",
     "options",
     "setAPI",
@@ -77,10 +77,10 @@ export const Carousel = (props: CarouselProps) => {
 
   const [ref, api] = createEmblaCarousel(
     () => ({
-      ...local.options?.(),
-      axis: local.orientation === "horizontal" ? "x" : "y",
+      ...props.options?.(),
+      axis: props.orientation === "horizontal" ? "x" : "y",
     }),
-    () => local.plugins?.() ?? [],
+    () => props.plugins?.() ?? [],
   )
 
   const [store, setStore] = createStore({
@@ -115,9 +115,9 @@ export const Carousel = (props: CarouselProps) => {
   }
 
   onMount(() => {
-    if (!api() || !local.setAPI) return
+    if (!api() || !props.setAPI) return
     // @ts-expect-error - api should be defined
-    local.setAPI(api)
+    props.setAPI(api)
   })
 
   createEffect(() => {
@@ -142,22 +142,22 @@ export const Carousel = (props: CarouselProps) => {
     api,
     canScrollPrev: () => store.canScrollPrev,
     get options() {
-      return local.options
+      return props.options
     },
     canScrollNext: () => store.canScrollNext,
     get orientation() {
       return (
-        local.orientation ??
-        (local.options?.().axis === "y" ? "vertical" : "horizontal")
+        props.orientation ??
+        (props.options?.().axis === "y" ? "vertical" : "horizontal")
       )
     },
     get plugins() {
-      return local.plugins
+      return props.plugins
     },
     scrollNext,
     scrollPrev,
     get setAPI() {
-      return local.setAPI
+      return props.setAPI
     },
   }
 
@@ -165,13 +165,13 @@ export const Carousel = (props: CarouselProps) => {
     <CarouselContext.Provider value={value}>
       <div
         onKeyDown={handleKeyDown}
-        class={cx("relative", local.class)}
+        class={cx("relative", props.class)}
         role="region"
         aria-roledescription="carousel"
         data-slot="carousel"
         {...rest}
       >
-        {local.children}
+        {props.children}
       </div>
     </CarouselContext.Provider>
   )
@@ -181,7 +181,7 @@ export type CarouselContentProps = ComponentProps<"div">
 
 export const CarouselContent = (props: CarouselContentProps) => {
   const { ref, orientation } = useCarousel()
-  const [local, rest] = splitProps(props, ["class"])
+  const [, rest] = splitProps(props, ["class"])
 
   return (
     <div ref={ref} class="overflow-hidden" data-slot="carousel-content">
@@ -189,7 +189,7 @@ export const CarouselContent = (props: CarouselContentProps) => {
         class={cx(
           "flex",
           orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col",
-          local.class,
+          props.class,
         )}
         {...rest}
       />
@@ -201,7 +201,7 @@ export type CarouselItemProps = ComponentProps<"div">
 
 export const CarouselItem = (props: CarouselItemProps) => {
   const { orientation } = useCarousel()
-  const [local, rest] = splitProps(props, ["class"])
+  const [, rest] = splitProps(props, ["class"])
 
   return (
     <div
@@ -211,7 +211,7 @@ export const CarouselItem = (props: CarouselItemProps) => {
       class={cx(
         "min-w-0 shrink-0 grow-0 basis-full",
         orientation === "horizontal" ? "pl-4" : "pt-4",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -233,19 +233,19 @@ export const CarouselNext = <T extends ValidComponent = "button">(
     },
     props as CarouselNextProps,
   )
-  const [local, rest] = splitProps(merge, ["class", "variant", "size"])
+  const [, rest] = splitProps(merge, ["class", "variant", "size"])
 
   return (
     <Button
       data-slot="carousel-next"
-      variant={local.variant}
-      size={local.size}
+      variant={props.variant}
+      size={props.size}
       class={cx(
         "absolute size-8 rounded-full",
         orientation === "horizontal"
           ? "-right-12 top-1/2 -translate-y-1/2"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
-        local.class,
+        props.class,
       )}
       disabled={!canScrollNext()}
       onClick={scrollNext}
@@ -283,19 +283,19 @@ export const CarouselPrevious = <T extends ValidComponent = "button">(
     },
     props as CarouselPreviousProps,
   )
-  const [local, rest] = splitProps(merge, ["class", "variant", "size"])
+  const [, rest] = splitProps(merge, ["class", "variant", "size"])
 
   return (
     <Button
       data-slot="carousel-previous"
-      variant={local.variant}
-      size={local.size}
+      variant={props.variant}
+      size={props.size}
       class={cx(
         "absolute size-8 rounded-full",
         orientation === "horizontal"
           ? "-left-12 top-1/2 -translate-y-1/2"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
-        local.class,
+        props.class,
       )}
       disabled={!canScrollPrev()}
       onClick={scrollPrev}

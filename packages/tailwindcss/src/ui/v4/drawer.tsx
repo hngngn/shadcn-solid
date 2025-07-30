@@ -47,7 +47,7 @@ export const DrawerContent = <T extends ValidComponent = "div">(
     },
     props as DrawerContentProps,
   )
-  const [local, rest] = splitProps(merge, ["class", "children", "withHandle"])
+  const [, rest] = splitProps(merge, ["class", "children", "withHandle"])
 
   return (
     <>
@@ -78,11 +78,11 @@ export const DrawerContent = <T extends ValidComponent = "div">(
             "inset-y-0 right-0 w-3/4 border-l sm:max-w-sm",
             "after:inset-y-0 after:left-[calc(100%-1px)] after:w-1/2",
           ],
-          local.class,
+          props.class,
         )}
         {...rest}
       >
-        <Show when={local.withHandle}>
+        <Show when={props.withHandle}>
           <div
             class={cx(
               "bg-muted shrink-0 self-center rounded-full",
@@ -90,7 +90,7 @@ export const DrawerContent = <T extends ValidComponent = "div">(
             )}
           />
         </Show>
-        {local.children}
+        {props.children}
       </DrawerPrimitive.Content>
     </>
   )
@@ -103,12 +103,12 @@ export type DrawerLabelProps<T extends ValidComponent = "h2"> = ComponentProps<
 export const DrawerLabel = <T extends ValidComponent = "h2">(
   props: DynamicProps<T, DrawerLabelProps<T>>,
 ) => {
-  const [local, rest] = splitProps(props as DrawerLabelProps, ["class"])
+  const [, rest] = splitProps(props as DrawerLabelProps, ["class"])
 
   return (
     <DrawerPrimitive.Label
       data-slot="drawer-label"
-      class={cx("text-foreground font-semibold", local.class)}
+      class={cx("text-foreground font-semibold", props.class)}
       {...rest}
     />
   )
@@ -120,12 +120,12 @@ export type DrawerDescriptionProps<T extends ValidComponent = "p"> =
 export const DrawerDescription = <T extends ValidComponent = "p">(
   props: DynamicProps<T, DrawerDescriptionProps<T>>,
 ) => {
-  const [local, rest] = splitProps(props as DrawerDescriptionProps, ["class"])
+  const [, rest] = splitProps(props as DrawerDescriptionProps, ["class"])
 
   return (
     <DrawerPrimitive.Description
       data-slot="drawer-description"
-      class={cx("text-muted-foreground text-sm", local.class)}
+      class={cx("text-muted-foreground text-sm", props.class)}
       {...rest}
     />
   )
@@ -134,12 +134,12 @@ export const DrawerDescription = <T extends ValidComponent = "p">(
 export type DrawerHeaderProps = ComponentProps<"div">
 
 export const DrawerHeader = (props: DrawerHeaderProps) => {
-  const [local, rest] = splitProps(props, ["class"])
+  const [, rest] = splitProps(props, ["class"])
 
   return (
     <div
       data-slot="drawer-header"
-      class={cx("flex flex-col gap-1.5 p-4", local.class)}
+      class={cx("flex flex-col gap-1.5 p-4", props.class)}
       {...rest}
     />
   )
@@ -148,12 +148,12 @@ export const DrawerHeader = (props: DrawerHeaderProps) => {
 export type DrawerFooterProps = ComponentProps<"div">
 
 export const DrawerFooter = (props: DrawerFooterProps) => {
-  const [local, rest] = splitProps(props, ["class"])
+  const [, rest] = splitProps(props, ["class"])
 
   return (
     <div
       data-slot="drawer-footer"
-      class={cx("mt-auto flex flex-col gap-2 p-4", local.class)}
+      class={cx("mt-auto flex flex-col gap-2 p-4", props.class)}
       {...rest}
     />
   )

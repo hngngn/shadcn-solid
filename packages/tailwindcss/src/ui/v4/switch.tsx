@@ -81,7 +81,7 @@ export type SwitchLabelProps<T extends ValidComponent = "label"> =
 export const SwitchLabel = <T extends ValidComponent = "label">(
   props: SwitchLabelProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SwitchLabelProps, ["class"])
+  const [, rest] = splitProps(props as SwitchLabelProps, ["class"])
 
   return (
     <SwitchPrimitive.Label
@@ -90,7 +90,7 @@ export const SwitchLabel = <T extends ValidComponent = "label">(
         "select-none text-sm font-medium",
         "data-[disabled]:pointer-events-none data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
         "data-[invalid]:text-destructive",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -103,12 +103,12 @@ export type SwitchErrorMessageProps<T extends ValidComponent = "div"> =
 export const SwitchErrorMessage = <T extends ValidComponent = "div">(
   props: SwitchErrorMessageProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SwitchErrorMessageProps, ["class"])
+  const [, rest] = splitProps(props as SwitchErrorMessageProps, ["class"])
 
   return (
     <SwitchPrimitive.ErrorMessage
       data-slot="switch-error-message"
-      class={cx("text-destructive text-sm", local.class)}
+      class={cx("text-destructive text-sm", props.class)}
       {...rest}
     />
   )
@@ -120,12 +120,12 @@ export type SwitchDescriptionProps<T extends ValidComponent = "div"> =
 export const SwitchDescription = <T extends ValidComponent = "div">(
   props: SwitchDescriptionProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SwitchDescriptionProps, ["class"])
+  const [, rest] = splitProps(props as SwitchDescriptionProps, ["class"])
 
   return (
     <SwitchPrimitive.Description
       data-slot="switch-description"
-      class={cx("text-muted-foreground text-sm", local.class)}
+      class={cx("text-muted-foreground text-sm", props.class)}
       {...rest}
     />
   )

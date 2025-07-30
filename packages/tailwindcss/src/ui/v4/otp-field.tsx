@@ -16,12 +16,12 @@ export type OTPFieldProps<T extends ValidComponent = "div"> = ComponentProps<
 export const OTPField = <T extends ValidComponent = "div">(
   props: OTPFieldProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as OTPFieldProps, ["class"])
+  const [, rest] = splitProps(props as OTPFieldProps, ["class"])
 
   return (
     <OTPFieldPrimitive
       data-slot="otp-field"
-      class={cx("has-disabled:opacity-50 flex items-center gap-2", local.class)}
+      class={cx("has-disabled:opacity-50 flex items-center gap-2", props.class)}
       {...rest}
     />
   )
@@ -30,12 +30,12 @@ export const OTPField = <T extends ValidComponent = "div">(
 export type OTPFieldGroupProps = ComponentProps<"div">
 
 export const OTPFieldGroup = (props: OTPFieldGroupProps) => {
-  const [local, rest] = splitProps(props, ["class"])
+  const [, rest] = splitProps(props, ["class"])
 
   return (
     <div
       data-slot="otp-field-group"
-      class={cx("flex items-center", local.class)}
+      class={cx("flex items-center", props.class)}
       {...rest}
     />
   )
@@ -46,14 +46,14 @@ export type OTPFieldSlotProps = VoidProps<
 >
 
 export const OTPFieldSlot = (props: OTPFieldSlotProps) => {
-  const [local, rest] = splitProps(props, ["class", "index"])
+  const [, rest] = splitProps(props, ["class", "index"])
 
   const context = OTPFieldPrimitive.useContext()
 
-  const char = () => context.value()[local.index]
+  const char = () => context.value()[props.index]
   const hasFakeCaret = () =>
-    context.value().length === local.index && context.isInserting()
-  const isActive = () => context.activeSlots().includes(local.index)
+    context.value().length === props.index && context.isInserting()
+  const isActive = () => context.activeSlots().includes(props.index)
 
   return (
     <div
@@ -61,7 +61,7 @@ export const OTPFieldSlot = (props: OTPFieldSlotProps) => {
       data-active={isActive()}
       class={cx(
         "data-[active=true]:border-ring data-[active=true]:ring-ring/50 data-[active=true]:aria-invalid:ring-destructive/20 dark:data-[active=true]:aria-invalid:ring-destructive/40 aria-invalid:border-destructive data-[active=true]:aria-invalid:border-destructive dark:bg-input/30 border-input shadow-xs relative flex h-9 w-9 items-center justify-center border-y border-r text-sm outline-none transition-all first:rounded-l-md first:border-l last:rounded-r-md data-[active=true]:z-10 data-[active=true]:ring-[3px]",
-        local.class,
+        props.class,
       )}
       {...rest}
     >

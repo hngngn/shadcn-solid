@@ -44,11 +44,7 @@ export const DialogContent = <T extends ValidComponent = "div">(
     } as DialogContentProps,
     props,
   )
-  const [local, rest] = splitProps(merge, [
-    "class",
-    "children",
-    "showCloseButton",
-  ])
+  const [, rest] = splitProps(merge, ["class", "children", "showCloseButton"])
 
   return (
     <>
@@ -60,12 +56,12 @@ export const DialogContent = <T extends ValidComponent = "div">(
         data-slot="dialog-content"
         class={cx(
           "bg-background data-[expanded]:animate-in data-[closed]:animate-out data-[closed]:fade-out-0 data-[expanded]:fade-in-0 data-[closed]:zoom-out-95 data-[expanded]:zoom-in-95 fixed left-[50%] top-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-lg border p-6 shadow-lg duration-200 sm:max-w-lg",
-          local.class,
+          props.class,
         )}
         {...rest}
       >
-        {local.children}
-        <Show when={local.showCloseButton}>
+        {props.children}
+        <Show when={props.showCloseButton}>
           <DialogPrimitive.CloseButton
             aria-label="Close"
             class="rounded-xs focus-visible:ring-ring absolute right-4 top-4 opacity-70 transition-[opacity,box-shadow] duration-200 hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0"
@@ -90,12 +86,12 @@ export const DialogContent = <T extends ValidComponent = "div">(
 export type DialogHeaderProps = ComponentProps<"div">
 
 export const DialogHeader = (props: DialogHeaderProps) => {
-  const [local, rest] = splitProps(props, ["class"])
+  const [, rest] = splitProps(props, ["class"])
 
   return (
     <div
       data-slot="dialog-header"
-      class={cx("flex flex-col gap-2 text-center sm:text-left", local.class)}
+      class={cx("flex flex-col gap-2 text-center sm:text-left", props.class)}
       {...rest}
     />
   )
@@ -104,14 +100,14 @@ export const DialogHeader = (props: DialogHeaderProps) => {
 export type DialogFooterProps = ComponentProps<"div">
 
 export const DialogFooter = (props: DialogFooterProps) => {
-  const [local, rest] = splitProps(props, ["class"])
+  const [, rest] = splitProps(props, ["class"])
 
   return (
     <div
       data-slot="dialog-footer"
       class={cx(
         "flex flex-col-reverse gap-2 sm:flex-row sm:justify-end",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
@@ -125,12 +121,12 @@ export type DialogTitleProps<T extends ValidComponent = "h2"> = ComponentProps<
 export const DialogTitle = <T extends ValidComponent = "h2">(
   props: DialogTitleProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as DialogTitleProps, ["class"])
+  const [, rest] = splitProps(props as DialogTitleProps, ["class"])
 
   return (
     <DialogPrimitive.Title
       data-slot="dialog-title"
-      class={cx("text-lg font-semibold leading-none", local.class)}
+      class={cx("text-lg font-semibold leading-none", props.class)}
       {...rest}
     />
   )
@@ -142,12 +138,12 @@ export type DialogDescriptionProps<T extends ValidComponent = "p"> =
 export const DialogDescription = <T extends ValidComponent = "p">(
   props: DialogDescriptionProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as DialogDescriptionProps, ["class"])
+  const [, rest] = splitProps(props as DialogDescriptionProps, ["class"])
 
   return (
     <DialogPrimitive.Description
       data-slot="dialog-description"
-      class={cx("text-muted-foreground text-sm", local.class)}
+      class={cx("text-muted-foreground text-sm", props.class)}
       {...rest}
     />
   )

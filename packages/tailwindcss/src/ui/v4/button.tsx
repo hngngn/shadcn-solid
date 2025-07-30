@@ -42,7 +42,7 @@ export type ButtonProps<T extends ValidComponent = "button"> = ComponentProps<
 export const Button = <T extends ValidComponent = "button">(
   props: ButtonProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as ButtonProps, [
+  const [, rest] = splitProps(props as ButtonProps, [
     "class",
     "variant",
     "size",
@@ -52,7 +52,9 @@ export const Button = <T extends ValidComponent = "button">(
     <ButtonPrimitive
       data-slot="button"
       class={buttonVariants({
-        ...local,
+        variant: props.variant,
+        size: props.size,
+        class: props.class,
       })}
       {...rest}
     />

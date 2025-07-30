@@ -11,14 +11,14 @@ export type SeparatorProps<T extends ValidComponent = "hr"> = ComponentProps<
 export const Separator = <T extends ValidComponent = "hr">(
   props: SeparatorProps<T>,
 ) => {
-  const [local, rest] = splitProps(props as SeparatorProps, ["class"])
+  const [, rest] = splitProps(props as SeparatorProps, ["class"])
 
   return (
     <SeparatorPrimitive
       data-slot="separator"
       class={cx(
         "bg-border shrink-0 border-none data-[orientation=horizontal]:h-px data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px",
-        local.class,
+        props.class,
       )}
       {...rest}
     />
