@@ -35,9 +35,7 @@ function RouteComponent() {
 
   return (
     <div class="grid flex-1 gap-12 lg:gap-24">
-      <h2 class="sr-only">
-        {params().type.charAt(0).toUpperCase() + params().type.slice(1)} Charts
-      </h2>
+      <h2 class="sr-only">{params().type.toUpperCase()} Charts</h2>
       <div class="grid flex-1 scroll-mt-20 items-stretch gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:gap-10">
         <For each={Array.from({ length: 12 })}>
           {(_, index) => {
