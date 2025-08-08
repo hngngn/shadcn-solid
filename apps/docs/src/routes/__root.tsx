@@ -1,6 +1,7 @@
 /// <reference types="vite/client" />
 
-import { Outlet, createRootRoute } from "@tanstack/solid-router"
+import type { JSX } from "solid-js"
+import { HeadContent, Scripts, createRootRoute } from "@tanstack/solid-router"
 import { ColorModeProvider, ColorModeScript } from "@kobalte/core"
 
 import { Toaster } from "@repo/tailwindcss/ui/v4/sonner"
@@ -9,7 +10,6 @@ import { siteConfig } from "@/config/site"
 import mainCSS from "@/styles/app.css?url"
 
 export const Route = createRootRoute({
-  component: RootComponent,
   head: () => ({
     meta: [
       {
@@ -94,16 +94,19 @@ export const Route = createRootRoute({
       },
     ],
   }),
+  shellComponent: RootComponent,
 })
 
-function RootComponent() {
+function RootComponent(props: { children: JSX.Element }) {
   return (
     <>
+      <HeadContent />
       <ColorModeScript />
       <ColorModeProvider>
-        <Outlet />
+        {props.children}
         <Toaster position="top-center" />
       </ColorModeProvider>
+      <Scripts />
     </>
   )
 }
