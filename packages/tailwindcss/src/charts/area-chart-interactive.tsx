@@ -1,4 +1,4 @@
-import { batch, createSignal } from "solid-js"
+import { createSignal } from "solid-js"
 import {
   VisArea,
   VisAxis,
@@ -170,7 +170,6 @@ const AreaChartInteractive = () => {
     }))
   }
 
-  const [duration, setDuration] = createSignal<number | undefined>(0)
   const [domain, setDomain] = createSignal<[number, number]>([
     data.findIndex((d) => d.date === "2024-04-01"),
     data.findIndex((d) => d.date === "2024-06-30"),
@@ -183,17 +182,14 @@ const AreaChartInteractive = () => {
     value: (typeof selectData)[number] | null,
   ) => {
     setSelectedDuration(value)
-    batch(() => {
-      setDuration(undefined)
-      setDomain([
-        selectedDuration()?.value === "30d"
-          ? data.findIndex((d) => d.date === "2024-06-01")
-          : selectedDuration()?.value === "7d"
-            ? data.findIndex((d) => d.date === "2024-06-24")
-            : data.findIndex((d) => d.date === "2024-04-01"),
-        data.length - 1,
-      ])
-    })
+    setDomain([
+      selectedDuration()?.value === "30d"
+        ? data.findIndex((d) => d.date === "2024-06-01")
+        : selectedDuration()?.value === "7d"
+          ? data.findIndex((d) => d.date === "2024-06-24")
+          : data.findIndex((d) => d.date === "2024-04-01"),
+      data.length - 1,
+    ])
   }
 
   const isMobile = useIsMobile()
@@ -241,15 +237,16 @@ const AreaChartInteractive = () => {
           </SelectPortal>
         </Select>
       </CardHeader>
-      <CardContent>
+      <CardContent class="px-2 pt-4 sm:px-6 sm:pt-6">
         <ChartContainer
           type="xy"
           config={chartConfig}
           data={data}
           yDomain={[0, 1600]}
           xDomain={domain()}
-          duration={duration()}
           class="aspect-auto"
+          height={250}
+          width={"100%"}
         >
           <svg height={0} width={0}>
             <defs>

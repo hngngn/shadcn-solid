@@ -1,5 +1,12 @@
 import type { ComponentProps } from "solid-js"
-import { Match, Show, Switch, createSignal, splitProps } from "solid-js"
+import {
+  Match,
+  Show,
+  Switch,
+  createEffect,
+  createSignal,
+  splitProps,
+} from "solid-js"
 import type { RegistryEntry } from "scripts/registry/schema"
 
 import type { ButtonProps } from "@repo/tailwindcss/ui/v4/button"
@@ -27,14 +34,16 @@ export const ChartToolbar = (
           item={props.item}
           class="[&_svg]-h-3 text-foreground hover:bg-muted dark:text-foreground h-6 w-6 rounded-[6px] bg-transparent shadow-none [&_svg]:w-3"
         />
-        {/* <Separator orientation="vertical" class="mx-0 hidden !h-4 md:flex" /> */}
-        {/* <ChartCodeViewer chart={chart}>{children}</ChartCodeViewer> */}
       </div>
     </div>
   )
 }
 
 const ChartTitle = (props: { item: RegistryEntry | undefined }) => {
+  createEffect(() => {
+    console.log(props.item)
+  })
+
   return (
     <Switch>
       <Match when={props.item?.name.startsWith("area")}>

@@ -8,7 +8,18 @@ const AreaChartInteractive = clientOnlyWrapper(
     lazy: true,
   },
 )
-
+const BarChartInteractive = clientOnlyWrapper(
+  () => import("@repo/tailwindcss/charts/bar-chart-interactive"),
+  {
+    lazy: true,
+  },
+)
+const LineChartInteractive = clientOnlyWrapper(
+  () => import("@repo/tailwindcss/charts/line-chart-interactive"),
+  {
+    lazy: true,
+  },
+)
 type ChartComponent = Accessor<JSX.Element>
 
 interface ChartItem {
@@ -35,8 +46,20 @@ export const charts: ChartGroups = {
       fullWidth: true,
     },
   ],
-  bar: [],
-  line: [],
+  bar: [
+    {
+      id: "bar-chart-interactive",
+      component: () => <BarChartInteractive />,
+      fullWidth: true,
+    },
+  ],
+  line: [
+    {
+      id: "line-chart-interactive",
+      component: () => <LineChartInteractive />,
+      fullWidth: true,
+    },
+  ],
   pie: [],
   radar: [],
   radial: [],

@@ -109,6 +109,14 @@
   --chart-3: var(--color-blue-600);
   --chart-4: var(--color-blue-700);
   --chart-5: var(--color-blue-800);
+  --vis-tooltip-padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 2.5);
+  --vis-tooltip-box-shadow: var(--shadow-xl);
+  --vis-tooltip-background-color: var(--color-background);
+  --vis-tooltip-border-color: var(--color-border);
+  --vis-tooltip-border-radius: var(--radius-lg);
+  --vis-tooltip-text-color: var(--color-foreground);
+  --vis-font-family: var(--font-sans);
+  --vis-legend-label-color: var(--vis-tooltip-text-color);
 }
 
 [data-kb-theme="dark"] {

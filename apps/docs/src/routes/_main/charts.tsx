@@ -1,4 +1,3 @@
-import { Suspense } from "solid-js"
 import type { LinkComponent } from "@tanstack/solid-router"
 import { Link, Outlet, createFileRoute, redirect } from "@tanstack/solid-router"
 
@@ -61,9 +60,7 @@ function RouteComponent() {
       <div class="container-wrapper section-soft flex-1">
         <div class="container pb-6">
           <section class="theme-container">
-            <Suspense>
-              <Outlet />
-            </Suspense>
+            <Outlet />
           </section>
         </div>
       </div>
