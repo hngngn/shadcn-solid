@@ -158,10 +158,16 @@ export const ChartCrosshair = <T,>(props: ChartCrosshairProps<T>) => {
   return <VisCrosshair template={template} {...rest} />
 }
 
+type InferLabelKey<T, C> = C extends ChartConfig
+  ? ChartConfig extends C
+    ? keyof T
+    : keyof C
+  : never
+
 const getConfigFromData = <T, C extends ChartConfig = ChartConfig>(
   data: T,
   config: ChartConfig,
-  labelKey?: C extends undefined ? keyof T : keyof C,
+  labelKey?: InferLabelKey<T, C>,
   nameKey?: C extends undefined ? never : keyof C,
 ) => {
   const valueKeys =
@@ -209,7 +215,7 @@ const getConfigFromData = <T, C extends ChartConfig = ChartConfig>(
 export type ChartTooltipContentProps<T, C extends ChartConfig = ChartConfig> = {
   data: T
   x: number | Date
-  labelKey: C extends undefined ? keyof T : keyof C
+  labelKey: InferLabelKey<T, C>
   class?: string
   hideLabel?: boolean
   hideIndicator?: boolean

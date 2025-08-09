@@ -12,6 +12,11 @@ import {
   PageHeaderHeading,
 } from "@/components/page-header"
 import PageNav from "@/components/page-nav"
+import SEO from "@/components/seo"
+
+const title = "Beautiful Charts & Graphs"
+const description =
+  "A collection of ready-to-use chart components built with Recharts. From basic charts to rich data displays, copy and paste into your apps."
 
 export const Route = createFileRoute("/_main/charts")({
   beforeLoad: ({ params }) => {
@@ -21,11 +26,12 @@ export const Route = createFileRoute("/_main/charts")({
     }
   },
   component: RouteComponent,
+  head: () =>
+    SEO({
+      title,
+      description,
+    }),
 })
-
-const title = "Beautiful Charts & Graphs"
-const description =
-  "A collection of ready-to-use chart components built with Recharts. From basic charts to rich data displays, copy and paste into your apps."
 
 function RouteComponent() {
   return (

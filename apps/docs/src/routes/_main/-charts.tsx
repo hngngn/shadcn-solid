@@ -32,9 +32,7 @@ interface ChartGroups {
   area: ChartItem[]
   bar: ChartItem[]
   line: ChartItem[]
-  pie: ChartItem[]
-  radar: ChartItem[]
-  radial: ChartItem[]
+  donut: ChartItem[]
   tooltip: ChartItem[]
 }
 
@@ -60,8 +58,6 @@ export const charts: ChartGroups = {
       fullWidth: true,
     },
   ],
-  pie: [],
-  radar: [],
-  radial: [],
+  donut: [],
   tooltip: [],
 }

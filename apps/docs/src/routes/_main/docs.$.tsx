@@ -11,6 +11,7 @@ import { Button } from "@repo/tailwindcss/ui/v4/button"
 
 import DocsLoading from "@/components/loading/docs"
 import DocNotFound from "@/components/not-found/doc"
+import SEO from "@/components/seo"
 import Toc from "@/components/toc"
 import type { TNavItem, TNavItemWithChildren } from "@/config/docs"
 import { docsConfig } from "@/config/docs"
@@ -26,6 +27,14 @@ export const Route = createFileRoute("/_main/docs/$")({
   component: RouteComponent,
   notFoundComponent: DocNotFound,
   pendingComponent: DocsLoading,
+  head: ({ params }) => {
+    const data = Contents[params._splat!].data
+
+    return SEO({
+      title: data.title,
+      description: data.description,
+    })
+  },
 })
 
 function RouteComponent() {

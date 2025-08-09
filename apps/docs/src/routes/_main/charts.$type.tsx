@@ -7,15 +7,7 @@ import ChartDisplay from "@/components/chart-display"
 
 import { charts } from "./-charts"
 
-const chartTypes = [
-  "area",
-  "bar",
-  "line",
-  "pie",
-  "radar",
-  "radial",
-  "tooltip",
-] as const
+const chartTypes = ["area", "bar", "line", "donut", "tooltip"] as const
 type ChartType = (typeof chartTypes)[number]
 
 export const Route = createFileRoute("/_main/charts/$type")({

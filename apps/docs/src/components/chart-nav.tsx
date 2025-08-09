@@ -17,16 +17,8 @@ const links = [
     href: "/charts/line",
   },
   {
-    name: "Pie Charts",
-    href: "/charts/pie",
-  },
-  {
-    name: "Radar Charts",
-    href: "/charts/radar",
-  },
-  {
-    name: "Radial Charts",
-    href: "/charts/radial",
+    name: "Donut Charts",
+    href: "/charts/donut",
   },
   {
     name: "Tooltips",
