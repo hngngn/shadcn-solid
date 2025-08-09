@@ -147,7 +147,6 @@ export const docsConfig: TDocsConfig = {
           href: "/docs/components/chart",
           items: [],
           indicator: "new",
-          disabled: true,
         },
         {
           title: "Checkbox",

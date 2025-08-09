@@ -57,7 +57,11 @@ const ComponentPreview = (props: Props) => {
       <Match when={local.type === "block"}>
         <div class="relative aspect-[4/2.5] w-full overflow-hidden rounded-md border md:-mx-1">
           <div class="bg-background absolute inset-0 hidden w-[1600px] md:block">
-            <iframe src={`/view/${local.name}`} class="size-full" />
+            <iframe
+              title="Block"
+              src={`/view/${local.name}`}
+              class="size-full"
+            />
           </div>
         </div>
       </Match>

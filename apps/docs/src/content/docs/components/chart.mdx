@@ -1,0 +1,334 @@
+---
+title: Chart
+description: Beautiful charts. Built using Unovis. Copy and paste into your apps.
+---
+
+<ComponentPreview
+  name="bar-chart-interactive"
+  class="[&_.preview]:block [&_.preview]:overflow-hidden [&_.preview]:border-t [&_.preview]:p-0 [&_.preview]:lg:min-h-[404px] [&_.preview>div]:rounded-none [&_.preview>div]:border-none [&_.preview>div]:shadow-none [&_.preview>div:not(:has(table))]:sm:max-w-full"
+  hideCode
+/>
+
+Introducing **Charts**. A collection of chart components that you can copy and paste into your apps.
+
+Charts are designed to look great out of the box. They work well with the other components and are fully customizable to fit your project.
+
+[Browse the Charts Library](/charts).
+
+## Component
+
+We use [Unovis](https://unovis.dev/) under the hood.
+
+We designed the chart component with composition in mind. **You build your charts using Unovis components and bring in custom components, such as `ChartTooltipContent`, when and where you need it.**
+
+```tsx /ChartContainer/ /ChartTooltipContent/ /ChartCrosshair/
+import { VisArea, VisTooltip } from "@unovis/solid"
+
+import {
+  ChartContainer,
+  ChartCrosshair,
+  ChartTooltipContent,
+} from "@/components/ui/charts"
+
+const MyChart = () => {
+  return (
+    <ChartContainer data={data} type="xy" config={chartConfig}>
+      <VisArea
+        ...
+      />
+      <ChartCrosshair
+       ...
+        template={(props) => (
+          <ChartTooltipContent labelKey="month" indicator="line" {...props} />
+        )}
+      />
+      <VisTooltip ... />
+    </ChartContainer>
+  )
+}
+export default MyChart
+```
+
+## Installation
+
+<ComponentInstallation>
+
+```bash
+npx shadcn-solid@latest add chart
+```
+
+<Step>
+  <StepItem>Install the following dependencies:</StepItem>
+
+```bash
+npm install @unovis/solid @unovis/ts
+```
+
+<StepItem>Copy and paste the following code into your project:</StepItem>
+
+  <ComponentSource>
+
+    ```tsx title="components/ui/chart" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/chart.tsx
+
+    ```
+
+  </ComponentSource>
+
+<StepItem>Add the following colors to your CSS file</StepItem>
+
+```css title="src/app.css"
+@theme inline {
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+}
+
+:root {
+  --chart-1: var(--color-blue-300);
+  --chart-2: var(--color-blue-500);
+  --chart-3: var(--color-blue-600);
+  --chart-4: var(--color-blue-700);
+  --chart-5: var(--color-blue-800);
+  --vis-tooltip-padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 2.5);
+  --vis-tooltip-box-shadow: var(--shadow-xl);
+  --vis-tooltip-background-color: var(--color-background);
+  --vis-tooltip-border-color: var(--color-border);
+  --vis-tooltip-border-radius: var(--radius-lg);
+  --vis-tooltip-text-color: var(--color-foreground);
+  --vis-font-family: var(--font-sans);
+  --vis-legend-label-color: var(--vis-tooltip-text-color);
+}
+
+[data-kb-theme="dark"] {
+  --chart-1: var(--color-blue-300);
+  --chart-2: var(--color-blue-500);
+  --chart-3: var(--color-blue-600);
+  --chart-4: var(--color-blue-700);
+  --chart-5: var(--color-blue-800);
+}
+```
+
+</Step>
+
+</ComponentInstallation>
+
+## Chart Config
+
+The chart config is where you define the labels, icons and colors for a chart.
+
+It is intentionally decoupled from chart data.
+
+This allows you to share config and color tokens between charts. It can also works independently for cases where your data or color tokens live remotely or in a different format.
+
+```tsx /ChartConfig/
+import { Monitor } from "your-icon-library"
+
+import { type ChartConfig } from "@/components/ui/chart"
+
+const chartConfig = {
+  desktop: {
+    label: "Desktop",
+    icon: Monitor,
+    // A color like 'hsl(220, 98%, 61%)' or 'var(--color-name)'
+    color: "#2563eb",
+    // OR a theme object with 'light' and 'dark' keys
+    theme: {
+      light: "#2563eb",
+      dark: "#dc2626",
+    },
+  },
+} satisfies ChartConfig
+```
+
+## Theming
+
+Charts has built-in support for theming. You can use css variables (recommended) or color values in any color format, such as hex, hsl or oklch.
+
+### CSS Variables
+
+<Step>
+
+<StepItem>Define your colors in your css file</StepItem>
+
+```css title="src/app.css"
+@theme inline {
+  ...
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+}
+
+:root {
+  ...
+  --chart-1: var(--color-blue-300);
+  --chart-2: var(--color-blue-500);
+  --chart-3: var(--color-blue-600);
+  --chart-4: var(--color-blue-700);
+  --chart-5: var(--color-blue-800);
+  --vis-tooltip-padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 2.5);
+  --vis-tooltip-box-shadow: var(--shadow-xl);
+  --vis-tooltip-background-color: var(--color-background);
+  --vis-tooltip-border-color: var(--color-border);
+  --vis-tooltip-border-radius: var(--radius-lg);
+  --vis-tooltip-text-color: var(--color-foreground);
+  --vis-font-family: var(--font-sans);
+  --vis-legend-label-color: var(--vis-tooltip-text-color);
+}
+
+[data-kb-theme="dark"] {
+  ...
+  --chart-1: var(--color-blue-300);
+  --chart-2: var(--color-blue-500);
+  --chart-3: var(--color-blue-600);
+  --chart-4: var(--color-blue-700);
+  --chart-5: var(--color-blue-800);
+}
+```
+
+<StepItem>Add the color to your `chartConfig`</StepItem>
+
+```tsx {4,8}
+const chartConfig = {
+  desktop: {
+    label: "Desktop",
+    color: "var(--chart-1)",
+  },
+  mobile: {
+    label: "Mobile",
+    color: "var(--chart-2)",
+  },
+} satisfies ChartConfig
+```
+
+</Step>
+
+### hex, hsl or oklch
+
+You can also define your colors directly in the chart config. Use the color format you prefer.
+
+```tsx
+const chartConfig = {
+  desktop: {
+    label: "Desktop",
+    color: "#2563eb",
+  },
+} satisfies ChartConfig
+```
+
+### Using Colors
+
+To use the theme colors in your chart, reference the colors using the format `var(--color-KEY)`.
+
+#### Components
+
+```tsx
+<VisArea ... color="var(--color-desktop)" />
+```
+
+#### Chart Data
+
+```tsx
+const data = [
+  { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
+  { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
+]
+```
+
+## Tooltip
+
+A chart tooltip contains a label, name, indicator and value. You can use a combination of these to customize your tooltip.
+
+<ComponentPreview name="chart-tooltip-demo" hideCode />
+
+You can turn on/off any of these using the `hideLabel`, `hideIndicator` props and customize the indicator style using the `indicator` prop.
+
+Use `labelKey` and `nameKey` to use a custom key for the tooltip label and name.
+
+Chart comes with the `<ChartCrosshair>` and `<ChartTooltipContent>` components. You can use these two components to add custom tooltips to your chart.
+
+```tsx /ChartTooltipContent/ /ChartCrosshair/
+import { ChartCrosshair, ChartTooltipContent } from "@/components/ui/chart"
+```
+
+```tsx /ChartTooltipContent/ /ChartCrosshair/
+<ChartCrosshair
+  template={(props) => (
+    <ChartTooltipContent labelKey="month" indicator="line" {...props} />
+  )}
+/>
+```
+
+Or
+
+```tsx /ChartTooltipContent/
+<VisTooltip
+  triggers={{
+    [StackedBar.selectors.bar]: (d: DataRecord, x) => {
+      const container = document.createElement("div")
+      const Component = () => (
+        <ChartTooltipContent
+          data={d}
+          x={x}
+          config={chartConfig}
+          labelKey="month"
+        />
+      )
+      render(() => <Component />, container)
+      return container.innerHTML
+    },
+  }}
+/>
+```
+
+### Props
+
+Use the following props to customize the tooltip.
+
+| Prop            | Type                     | Description                                  |
+| :-------------- | :----------------------- | :------------------------------------------- |
+| `labelKey`      | string                   | The config or data key to use for the label. |
+| `nameKey`       | string                   | The config or data key to use for the name.  |
+| `indicator`     | `dot` `line` or `dashed` | The indicator style for the tooltip.         |
+| `hideLabel`     | boolean                  | Whether to hide the label.                   |
+| `hideIndicator` | boolean                  | Whether to hide the indicator.               |
+
+### Colors
+
+Colors are automatically referenced from the chart config.
+
+### Custom
+
+To use a custom key for tooltip label and names, use the `labelKey` and `nameKey` props.
+
+```tsx /browser/
+const data = [
+  { browser: "chrome", visitors: 187, fill: "var(--color-chrome)" },
+  { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
+]
+
+const chartConfig = {
+  visitors: {
+    label: "Total Visitors",
+  },
+  chrome: {
+    label: "Chrome",
+    color: "hsl(var(--chart-1))",
+  },
+  safari: {
+    label: "Safari",
+    color: "hsl(var(--chart-2))",
+  },
+} satisfies ChartConfig
+```
+
+```tsx
+<ChartCrosshair
+  template={(props) => <ChartTooltipContent labelKey="visitors" {...props} />}
+/>
+```
+
+This will use `Total Visitors` for label and `Chrome` and `Safari` for the tooltip names.

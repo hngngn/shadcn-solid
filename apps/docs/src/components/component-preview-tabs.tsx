@@ -28,7 +28,7 @@ const ComponentPreviewTabs = (props: Props) => {
     } as Props,
     props,
   )
-  const [local, rest] = splitProps(merge, [
+  const [, rest] = splitProps(merge, [
     "class",
     "align",
     "hideCode",
@@ -38,12 +38,22 @@ const ComponentPreviewTabs = (props: Props) => {
 
   return (
     <div
-      class={cx("group relative my-4 flex flex-col gap-2", local.class)}
+      class={cx("group relative my-4 flex flex-col gap-2", props.class)}
       {...rest}
     >
-      <Tabs class="relative mr-auto w-full">
-        <div class="flex items-center justify-between">
-          <Show when={!local.hideCode}>
+      <Show
+        when={!props.hideCode}
+        fallback={
+          <div
+            data-align={props.align}
+            class="preview flex min-h-[450px] w-full justify-center rounded-lg border p-10 data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start"
+          >
+            {props.component()}
+          </div>
+        }
+      >
+        <Tabs class="relative mr-auto w-full">
+          <div class="flex items-center justify-between">
             <TabsList class="justify-start gap-4 rounded-none bg-transparent px-2 ring-0 md:px-0">
               <TabsTrigger
                 value="preview"
@@ -58,25 +68,25 @@ const ComponentPreviewTabs = (props: Props) => {
                 Code
               </TabsTrigger>
             </TabsList>
-          </Show>
-        </div>
-        <div class="relative md:-mx-4">
-          <TabsContent value="preview">
-            <div
-              data-align={local.align}
-              class="preview flex min-h-[450px] w-full justify-center rounded-lg border p-10 data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start"
+          </div>
+          <div class="relative md:-mx-4">
+            <TabsContent value="preview">
+              <div
+                data-align={props.align}
+                class="preview flex min-h-[450px] w-full justify-center rounded-lg border p-10 data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start"
+              >
+                {props.component()}
+              </div>
+            </TabsContent>
+            <TabsContent
+              value="code"
+              class="overflow-hidden **:[figure]:!m-0 **:[pre]:h-[450px]"
             >
-              {local.component()}
-            </div>
-          </TabsContent>
-          <TabsContent
-            value="code"
-            class="overflow-hidden **:[figure]:!m-0 **:[pre]:h-[450px]"
-          >
-            {local.children}
-          </TabsContent>
-        </div>
-      </Tabs>
+              {props.children}
+            </TabsContent>
+          </div>
+        </Tabs>
+      </Show>
     </div>
   )
 }

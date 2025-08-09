@@ -352,6 +352,80 @@ export const Contents : Record<string, Content> = {
   }
 ]
   },
+  "components/chart": {
+    component: lazy(() => import("@/content/docs/components/chart.mdx")),
+    data: {
+  "title": "Chart",
+  "description": "Beautiful charts. Built using Unovis. Copy and paste into your apps."
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Component",
+    "slug": "component"
+  },
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Chart Config",
+    "slug": "chart-config"
+  },
+  {
+    "depth": 2,
+    "text": "Theming",
+    "slug": "theming"
+  },
+  {
+    "depth": 3,
+    "text": "CSS Variables",
+    "slug": "css-variables"
+  },
+  {
+    "depth": 3,
+    "text": "hex, hsl or oklch",
+    "slug": "hex-hsl-or-oklch"
+  },
+  {
+    "depth": 3,
+    "text": "Using Colors",
+    "slug": "using-colors"
+  },
+  {
+    "depth": 4,
+    "text": "Components",
+    "slug": "components"
+  },
+  {
+    "depth": 4,
+    "text": "Chart Data",
+    "slug": "chart-data"
+  },
+  {
+    "depth": 2,
+    "text": "Tooltip",
+    "slug": "tooltip"
+  },
+  {
+    "depth": 3,
+    "text": "Props",
+    "slug": "props"
+  },
+  {
+    "depth": 3,
+    "text": "Colors",
+    "slug": "colors"
+  },
+  {
+    "depth": 3,
+    "text": "Custom",
+    "slug": "custom"
+  }
+]
+  },
   "components/checkbox": {
     component: lazy(() => import("@/content/docs/components/checkbox.mdx")),
     data: {

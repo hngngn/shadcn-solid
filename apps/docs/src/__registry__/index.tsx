@@ -28,6 +28,7 @@ const CarouselDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/
 const CarouselOrientationDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/carousel-orientation-demo"), { lazy: true })
 const CarouselPluginDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/carousel-plugin-demo"), { lazy: true })
 const CarouselSizeDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/carousel-size-demo"), { lazy: true })
+const ChartTooltipDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/chart-tooltip-demo"), { lazy: true })
 const CheckboxDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/checkbox-demo"), { lazy: true })
 const CheckboxDisabledDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/checkbox-disabled-demo"), { lazy: true })
 const CollapsibleDemo = clientOnlyWrapper(() => import("@repo/tailwindcss/examples/collapsible-demo"), { lazy: true })
@@ -490,6 +491,22 @@ export const Index: Record<string, any> = {
         content: ""
       }],
       component: () => <CarouselSizeDemo />,
+      source: "",
+      category: "",
+      subcategory: ""
+    },
+    "chart-tooltip-demo": {
+      name: "chart-tooltip-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [{
+        path: "../../packages/tailwindcss/src/examples/chart-tooltip-demo.tsx",
+        type: "registry:example",
+        target: "",
+        content: ""
+      }],
+      component: () => <ChartTooltipDemo />,
       source: "",
       category: "",
       subcategory: ""
