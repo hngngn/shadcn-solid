@@ -2,7 +2,6 @@ import { batch, createSignal } from "solid-js"
 import {
   VisArea,
   VisAxis,
-  VisBrush,
   VisBulletLegend,
   VisLine,
   VisTooltip,
@@ -28,6 +27,14 @@ import {
   ChartTooltipContent,
   type ChartConfig,
 } from "@repo/tailwindcss/ui/v4/chart"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectPortal,
+  SelectTrigger,
+  SelectValue,
+} from "@repo/tailwindcss/ui/v4/select"
 
 interface DataRecord {
   date: string
@@ -140,6 +147,21 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
+const selectData = [
+  {
+    label: "Last 3 months",
+    value: "90d",
+  },
+  {
+    label: "Last 30 days",
+    value: "30d",
+  },
+  {
+    label: "Last 7 days",
+    value: "7d",
+  },
+]
+
 const AreaChartInteractive = () => {
   const items = (): BulletLegendItemInterface[] => {
     return Object.entries(chartConfig).map(([_, config]) => ({
@@ -150,9 +172,29 @@ const AreaChartInteractive = () => {
 
   const [duration, setDuration] = createSignal<number | undefined>(0)
   const [domain, setDomain] = createSignal<[number, number]>([
-    data.findIndex((d) => d.date === "2024-04-30"),
-    data.findIndex((d) => d.date === "2024-06-01"),
+    data.findIndex((d) => d.date === "2024-04-01"),
+    data.findIndex((d) => d.date === "2024-06-30"),
   ])
+  const [selectedDuration, setSelectedDuration] = createSignal<
+    (typeof selectData)[number] | null
+  >(selectData[0])
+
+  const handleSelectedDuration = (
+    value: (typeof selectData)[number] | null,
+  ) => {
+    setSelectedDuration(value)
+    batch(() => {
+      setDuration(undefined)
+      setDomain([
+        selectedDuration()?.value === "30d"
+          ? data.findIndex((d) => d.date === "2024-06-01")
+          : selectedDuration()?.value === "7d"
+            ? data.findIndex((d) => d.date === "2024-06-24")
+            : data.findIndex((d) => d.date === "2024-04-01"),
+        data.length - 1,
+      ])
+    })
+  }
 
   const isMobile = useIsMobile()
 
@@ -172,6 +214,32 @@ const AreaChartInteractive = () => {
             Showing total visitors for the last 3 months
           </CardDescription>
         </div>
+        <Select
+          disallowEmptySelection
+          options={selectData}
+          optionValue="value"
+          optionTextValue="label"
+          value={selectedDuration()}
+          onChange={handleSelectedDuration}
+          placeholder="Last 3 months"
+          itemComponent={(props) => (
+            <SelectItem item={props.item}>
+              {props.item.rawValue.label}
+            </SelectItem>
+          )}
+        >
+          <SelectTrigger
+            class="hidden w-[160px] rounded-lg sm:ml-auto sm:flex"
+            aria-label="Select a value"
+          >
+            <SelectValue<(typeof selectData)[number]>>
+              {(state) => state.selectedOption().label}
+            </SelectValue>
+          </SelectTrigger>
+          <SelectPortal>
+            <SelectContent />
+          </SelectPortal>
+        </Select>
       </CardHeader>
       <CardContent>
         <ChartContainer
@@ -268,92 +336,6 @@ const AreaChartInteractive = () => {
         <div class="flex items-center justify-center gap-4 pt-3">
           <VisBulletLegend items={items()} />
         </div>
-        <ChartContainer
-          config={chartConfig}
-          type="xy"
-          data={data}
-          height={75}
-          padding={{
-            top: 12,
-          }}
-          class="aspect-auto"
-        >
-          <svg height={0} width={0}>
-            <defs>
-              <linearGradient id="fillDesktop" x1="0" y1="0" x2="0" y2="1">
-                <stop
-                  offset="5%"
-                  stop-color="var(--color-desktop)"
-                  stop-opacity={0.8}
-                />
-                <stop
-                  offset="95%"
-                  stop-color="var(--color-desktop)"
-                  stop-opacity={0.1}
-                />
-              </linearGradient>
-              <linearGradient id="fillMobile" x1="0" y1="0" x2="0" y2="1">
-                <stop
-                  offset="5%"
-                  stop-color="var(--color-mobile)"
-                  stop-opacity={0.8}
-                />
-                <stop
-                  offset="95%"
-                  stop-color="var(--color-mobile)"
-                  stop-opacity={0.1}
-                />
-              </linearGradient>
-            </defs>
-          </svg>
-          <VisArea<DataRecord>
-            x={(_, i) => i}
-            y={[(d) => d.mobile, (d) => d.desktop]}
-            color="auto"
-            opacity={0.4}
-            curveType={CurveType.Natural}
-            attributes={{
-              [`${Area.selectors.area}:nth-child(1)`]: {
-                fill: "url(#fillDesktop)",
-              },
-              [`${Area.selectors.area}:nth-child(2)`]: {
-                fill: "url(#fillMobile)",
-              },
-            }}
-          />
-          <VisLine<DataRecord>
-            x={(_, i) => i}
-            y={[(d) => d.mobile, (d) => d.mobile + d.desktop]}
-            color={["var(--color-mobile)", "var(--color-desktop)"]}
-            curveType={CurveType.Natural}
-            lineWidth={1}
-          />
-          <VisAxis<DataRecord>
-            type="x"
-            tickFormat={(d) => {
-              const date = new Date(data[d as number].date)
-              return date.toLocaleDateString("en-US", {
-                month: "short",
-                day: "numeric",
-              })
-            }}
-            gridLine={false}
-            tickLine={false}
-            domainLine={false}
-            numTicks={numTicks()}
-          />
-          <VisBrush
-            selection={domain()}
-            onBrush={(selection, _, userDriven) => {
-              if (userDriven)
-                batch(() => {
-                  setDuration(0)
-                  setDomain(selection!)
-                })
-            }}
-            draggable
-          />
-        </ChartContainer>
       </CardContent>
     </Card>
   )
