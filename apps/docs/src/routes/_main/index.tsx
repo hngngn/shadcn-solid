@@ -51,19 +51,19 @@ function RouteComponent() {
       </PageHeader>
       <div class="container-wrapper section-soft flex-1 pb-6">
         <div class="container overflow-hidden">
-          <section class="border-border/50 -mx-4 w-[160vw] overflow-hidden rounded-lg border md:hidden md:w-[150vw]">
+          <section class="-mx-4 w-[160vw] overflow-hidden rounded-lg md:hidden md:w-[150vw]">
             <img
-              src="/r/styles/new-york-v4/dashboard-01-light.png"
+              src="/examples/cards-light.png"
               width={1400}
               height={875}
-              alt="Dashboard"
+              alt="Cards"
               class="block dark:hidden"
             />
             <img
-              src="/r/styles/new-york-v4/dashboard-01-dark.png"
+              src="/examples/cards-dark.png"
               width={1400}
               height={875}
-              alt="Dashboard"
+              alt="Cards"
               class="hidden dark:block"
             />
           </section>

@@ -20,6 +20,7 @@
     "@solid-primitives/mutation-observer": "^1.2.2",
     "@tanstack/solid-router": "^1.130.12",
     "@tanstack/solid-start": "^1.130.16",
+    "@vercel/og": "^0.8.5",
     "nanostores": "^1.0.1",
     "valibot": "^1.1.0"
   },
