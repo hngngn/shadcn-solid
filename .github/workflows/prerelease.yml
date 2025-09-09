@@ -5,14 +5,13 @@ name: Release Beta
 on:
   pull_request:
     types: [labeled]
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   prerelease:
     if: |
       github.repository_owner == 'hngngn' &&
-      contains(github.event.pull_request.labels.*.name, '🚀 autorelease')
+      contains(github.event.pull_request.labels.*.name, 'beta')
     name: Build & Publish a beta release to NPM
     runs-on: ubuntu-latest
     environment: Preview
