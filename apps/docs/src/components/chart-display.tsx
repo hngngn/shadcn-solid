@@ -1,5 +1,4 @@
 import { createMemo, splitProps, type ComponentProps } from "solid-js"
-import type { RegistryEntry } from "scripts/registry/schema"
 
 import { cx } from "@repo/tailwindcss/utils/cva"
 
@@ -13,7 +12,7 @@ const ChartDisplay = (
   },
 ) => {
   const [, rest] = splitProps(props, ["class", "children"])
-  const item = createMemo<RegistryEntry>(() => Index.tailwindcss[props.name])
+  const item = createMemo(() => Index.tailwindcss[props.name])
 
   return (
     <div
