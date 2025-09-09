@@ -1,0 +1,12 @@
+{
+  "$schema": "https://shadcn-solid.com/schema/registry-item.json",
+  "name": "carousel-plugin-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "src/examples/carousel-plugin-demo.tsx",
+      "content": "import { Index, createMemo } from \"solid-js\"\nimport Autoplay from \"embla-carousel-autoplay\"\n\nimport { Card, CardContent } from \"@repo/tailwindcss/ui/v4/card\"\nimport {\n  Carousel,\n  CarouselContent,\n  CarouselItem,\n  CarouselNext,\n  CarouselPrevious,\n} from \"@repo/tailwindcss/ui/v4/carousel\"\n\nconst CarouselPluginDemo = () => {\n  const autoPlayPlugin = createMemo(() =>\n    Autoplay({ delay: 2000, stopOnInteraction: true }),\n  )\n\n  return (\n    <Carousel\n      plugins={() => [autoPlayPlugin()]}\n      class=\"w-full max-w-xs\"\n      onMouseEnter={autoPlayPlugin().stop}\n      onMouseLeave={() => {\n        autoPlayPlugin().play(false)\n      }}\n    >\n      <CarouselContent>\n        <Index each={Array.from({ length: 5 })}>\n          {(_, index) => (\n            <CarouselItem>\n              <div class=\"p-1\">\n                <Card>\n                  <CardContent class=\"flex aspect-square items-center justify-center p-6\">\n                    <span class=\"text-4xl font-semibold\">{index + 1}</span>\n                  </CardContent>\n                </Card>\n              </div>\n            </CarouselItem>\n          )}\n        </Index>\n      </CarouselContent>\n      <CarouselPrevious />\n      <CarouselNext />\n    </Carousel>\n  )\n}\n\nexport default CarouselPluginDemo\n",
+      "type": "registry:example"
+    }
+  ]
+}

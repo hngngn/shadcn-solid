@@ -1,0 +1,15 @@
+{
+  "$schema": "https://shadcn-solid.com/schema/registry-item.json",
+  "name": "collapsible",
+  "type": "registry:ui",
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "files": [
+    {
+      "path": "src/ui/v4/collapsible.tsx",
+      "content": "import type { ComponentProps, ValidComponent } from \"solid-js\"\nimport { splitProps } from \"solid-js\"\nimport { Collapsible as CollapsiblePrimitive } from \"@kobalte/core/collapsible\"\n\nimport { cx } from \"@repo/tailwindcss/utils/cva\"\n\nexport type CollapsibleProps<T extends ValidComponent = \"div\"> = ComponentProps<\n  typeof CollapsiblePrimitive<T>\n>\n\nexport const Collapsible = <T extends ValidComponent = \"div\">(\n  props: CollapsibleProps<T>,\n) => {\n  return <CollapsiblePrimitive data-slot=\"collapsible\" {...props} />\n}\n\nexport type CollapsibleTriggerProps<T extends ValidComponent = \"button\"> =\n  ComponentProps<typeof CollapsiblePrimitive.Trigger<T>>\n\nexport const CollapsibleTrigger = <T extends ValidComponent = \"button\">(\n  props: CollapsibleTriggerProps<T>,\n) => {\n  return (\n    <CollapsiblePrimitive.Trigger data-slot=\"collapsible-trigger\" {...props} />\n  )\n}\n\nexport type CollapsibleContentProps<T extends ValidComponent = \"button\"> =\n  ComponentProps<typeof CollapsiblePrimitive.Content<T>>\n\nexport const CollapsibleContent = <T extends ValidComponent = \"button\">(\n  props: CollapsibleContentProps<T>,\n) => {\n  const [, rest] = splitProps(props as CollapsibleContentProps, [\"class\"])\n\n  return (\n    <CollapsiblePrimitive.Content\n      data-slot=\"collapsible-content\"\n      class={cx(\n        \"data-[closed]:animate-collapsible-up data-[expanded]:animate-collapsible-down overflow-hidden\",\n        props.class,\n      )}\n      {...rest}\n    />\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

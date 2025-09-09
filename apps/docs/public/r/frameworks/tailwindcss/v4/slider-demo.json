@@ -1,0 +1,12 @@
+{
+  "$schema": "https://shadcn-solid.com/schema/registry-item.json",
+  "name": "slider-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "src/examples/slider-demo.tsx",
+      "content": "import {\n  Slider,\n  SliderFill,\n  SliderThumb,\n  SliderTrack,\n} from \"@repo/tailwindcss/ui/v4/slider\"\n\nconst SliderDemo = () => {\n  return (\n    <Slider defaultValue={[50]} step={1} maxValue={100} class=\"w-[60%]\">\n      <SliderTrack>\n        <SliderFill />\n        <SliderThumb />\n      </SliderTrack>\n    </Slider>\n  )\n}\n\nexport default SliderDemo\n",
+      "type": "registry:example"
+    }
+  ]
+}

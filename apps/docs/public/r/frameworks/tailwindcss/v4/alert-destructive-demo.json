@@ -1,0 +1,12 @@
+{
+  "$schema": "https://shadcn-solid.com/schema/registry-item.json",
+  "name": "alert-destructive-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "src/examples/alert-destructive-demo.tsx",
+      "content": "import {\n  Alert,\n  AlertDescription,\n  AlertTitle,\n} from \"@repo/tailwindcss/ui/v4/alert\"\n\nconst AlertDestructiveDemo = () => {\n  return (\n    <Alert variant=\"destructive\">\n      <svg\n        xmlns=\"http://www.w3.org/2000/svg\"\n        class=\"size-4\"\n        viewBox=\"0 0 24 24\"\n      >\n        <g\n          fill=\"none\"\n          stroke=\"currentColor\"\n          stroke-linecap=\"round\"\n          stroke-linejoin=\"round\"\n          stroke-width=\"2\"\n        >\n          <circle cx=\"12\" cy=\"12\" r=\"10\" />\n          <path d=\"m9 12l2 2l4-4\" />\n        </g>\n      </svg>\n      <AlertTitle>Something went wrong!</AlertTitle>\n      <AlertDescription>\n        Your session has expired. Please log in again.\n      </AlertDescription>\n    </Alert>\n  )\n}\n\nexport default AlertDestructiveDemo\n",
+      "type": "registry:example"
+    }
+  ]
+}

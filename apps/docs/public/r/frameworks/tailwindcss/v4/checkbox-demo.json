@@ -1,0 +1,12 @@
+{
+  "$schema": "https://shadcn-solid.com/schema/registry-item.json",
+  "name": "checkbox-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "src/examples/checkbox-demo.tsx",
+      "content": "import {\n  Checkbox,\n  CheckboxControl,\n  CheckboxDescription,\n  CheckboxLabel,\n} from \"@repo/tailwindcss/ui/v4/checkbox\"\n\nconst CheckboxDemo = () => {\n  return (\n    <Checkbox class=\"flex items-start gap-3\">\n      <CheckboxControl />\n      <div class=\"grid gap-2\">\n        <CheckboxLabel>Accept terms and conditions</CheckboxLabel>\n        <CheckboxDescription>\n          By clicking this checkbox, you agree to the terms and conditions.\n        </CheckboxDescription>\n      </div>\n    </Checkbox>\n  )\n}\n\nexport default CheckboxDemo\n",
+      "type": "registry:example"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://shadcn-solid.com/schema/registry-item.json",
+  "name": "slider-vertical-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "src/examples/slider-vertical-demo.tsx",
+      "content": "import {\n  Slider,\n  SliderFill,\n  SliderThumb,\n  SliderTrack,\n} from \"@repo/tailwindcss/ui/v4/slider\"\n\nconst SliderVerticalDemo = () => {\n  return (\n    <Slider orientation=\"vertical\">\n      <SliderTrack>\n        <SliderFill />\n        <SliderThumb />\n      </SliderTrack>\n    </Slider>\n  )\n}\n\nexport default SliderVerticalDemo\n",
+      "type": "registry:example"
+    }
+  ]
+}

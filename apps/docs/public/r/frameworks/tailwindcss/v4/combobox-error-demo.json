@@ -1,0 +1,12 @@
+{
+  "$schema": "https://shadcn-solid.com/schema/registry-item.json",
+  "name": "combobox-error-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "src/examples/combobox-error-demo.tsx",
+      "content": "import { createSignal } from \"solid-js\"\n\nimport {\n  Combobox,\n  ComboboxContent,\n  ComboboxControl,\n  ComboboxErrorMessage,\n  ComboboxInput,\n  ComboboxItem,\n  ComboboxItemLabel,\n  ComboboxLabel,\n  ComboboxPortal,\n  ComboboxTrigger,\n} from \"@repo/tailwindcss/ui/v4/combobox\"\n\nconst ALL_OPTIONS = [\"Apple\", \"Banana\", \"Blueberry\", \"Grapes\", \"Pineapple\"]\n\nconst ComboboxErrorDemo = () => {\n  const [value, setValue] = createSignal(\"Grapes\")\n  const onInputChange = (value: string) => {\n    if (value === \"\") {\n      setValue(\"\")\n    }\n  }\n\n  return (\n    <Combobox\n      options={ALL_OPTIONS}\n      value={value()}\n      onChange={setValue}\n      onInputChange={onInputChange}\n      validationState={value() !== \"Apple\" ? \"invalid\" : \"valid\"}\n      itemComponent={(props) => (\n        <ComboboxItem item={props.item}>\n          <ComboboxItemLabel>{props.item.rawValue}</ComboboxItemLabel>\n        </ComboboxItem>\n      )}\n    >\n      <ComboboxLabel>Fruit</ComboboxLabel>\n      <ComboboxControl>\n        <ComboboxInput />\n        <ComboboxTrigger />\n      </ComboboxControl>\n      <ComboboxErrorMessage>Hmm, I prefer apples.</ComboboxErrorMessage>\n      <ComboboxPortal>\n        <ComboboxContent />\n      </ComboboxPortal>\n    </Combobox>\n  )\n}\n\nexport default ComboboxErrorDemo\n",
+      "type": "registry:example"
+    }
+  ]
+}

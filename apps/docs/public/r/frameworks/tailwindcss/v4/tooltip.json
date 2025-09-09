@@ -1,0 +1,15 @@
+{
+  "$schema": "https://shadcn-solid.com/schema/registry-item.json",
+  "name": "tooltip",
+  "type": "registry:ui",
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "files": [
+    {
+      "path": "src/ui/v4/tooltip.tsx",
+      "content": "import type { ComponentProps, ValidComponent } from \"solid-js\"\nimport { mergeProps, splitProps } from \"solid-js\"\nimport { Tooltip as TooltipPrimitive } from \"@kobalte/core/tooltip\"\n\nimport { cx } from \"@repo/tailwindcss/utils/cva\"\n\nexport type TooltipProps = ComponentProps<typeof TooltipPrimitive>\n\nexport const TooltipPortal = TooltipPrimitive.Portal\n\nexport const Tooltip = (props: TooltipProps) => {\n  const merge = mergeProps<TooltipProps[]>(\n    {\n      closeDelay: 0,\n      openDelay: 0,\n      placement: \"top\",\n    },\n    props,\n  )\n\n  return <TooltipPrimitive data-slot=\"tooltip\" {...merge} />\n}\n\nexport type TooltipTriggerProps<T extends ValidComponent = \"button\"> =\n  ComponentProps<typeof TooltipPrimitive.Trigger<T>>\n\nexport const TooltipTrigger = <T extends ValidComponent = \"button\">(\n  props: TooltipTriggerProps<T>,\n) => {\n  return <TooltipPrimitive.Trigger data-slot=\"tooltip-trigger\" {...props} />\n}\n\nexport type TooltipContentProps<T extends ValidComponent = \"button\"> =\n  ComponentProps<typeof TooltipPrimitive.Content<T>>\n\nexport const TooltipContent = <T extends ValidComponent = \"button\">(\n  props: TooltipContentProps<T>,\n) => {\n  const [, rest] = splitProps(props as TooltipContentProps, [\n    \"class\",\n    \"children\",\n  ])\n\n  return (\n    <TooltipPrimitive.Content\n      data-slot=\"tooltip-content\"\n      class={cx(\n        \"bg-primary text-primary-foreground animate-in fade-in-0 zoom-in-95 data-[closed]:animate-out data-[closed]:fade-out-0 data-[closed]:zoom-out-95 origin-(--kb-tooltip-content-transform-origin) z-50 w-fit text-balance rounded-md px-3 py-1.5 text-xs\",\n        \"[[data-popper-positioner][style*='--kb-popper-content-transform-origin:_top']>[data-slot=tooltip-content]]:slide-in-from-top-2 [[data-popper-positioner][style*='--kb-popper-content-transform-origin:_bottom']>[data-slot=tooltip-content]]:slide-in-from-bottom-2 [[data-popper-positioner][style*='--kb-popper-content-transform-origin:_left']>[data-slot=tooltip-content]]:slide-in-from-left-2 [[data-popper-positioner][style*='--kb-popper-content-transform-origin:_right']>[data-slot=tooltip-content]]:slide-in-from-right-2\",\n        props.class,\n      )}\n      {...rest}\n    >\n      <TooltipPrimitive.Arrow\n        style={{\n          height: \"calc(var(--spacing) * 4)\",\n          width: \"calc(var(--spacing) * 4)\",\n        }}\n      />\n      {props.children}\n    </TooltipPrimitive.Content>\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

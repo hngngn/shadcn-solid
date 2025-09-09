@@ -1,0 +1,12 @@
+{
+  "$schema": "https://shadcn-solid.com/schema/registry-item.json",
+  "name": "hover-card-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "src/examples/hover-card-demo.tsx",
+      "content": "import { Button } from \"@repo/tailwindcss/ui/v4/button\"\nimport {\n  HoverCard,\n  HoverCardContent,\n  HoverCardPortal,\n  HoverCardTrigger,\n} from \"@repo/tailwindcss/ui/v4/hover-card\"\n\nconst HoverCardDemo = () => {\n  return (\n    <HoverCard>\n      <HoverCardTrigger<typeof Button>\n        as={(props) => (\n          <Button variant=\"link\" {...props}>\n            @solid_js\n          </Button>\n        )}\n      />\n      <HoverCardPortal>\n        <HoverCardContent class=\"w-80\">\n          <div class=\"flex justify-between gap-4\">\n            <div class=\"flex flex-col gap-1\">\n              <h4 class=\"text-sm font-semibold\">@solid_js</h4>\n              <p class=\"text-sm\">\n                Simple and performant reactivity for building user interfaces.\n              </p>\n              <div class=\"mt-1 flex items-center gap-2\">\n                <svg\n                  xmlns=\"http://www.w3.org/2000/svg\"\n                  class=\"h-4 w-4 opacity-70\"\n                  viewBox=\"0 0 24 24\"\n                >\n                  <path\n                    fill=\"none\"\n                    stroke=\"currentColor\"\n                    stroke-linecap=\"round\"\n                    stroke-linejoin=\"round\"\n                    stroke-width=\"2\"\n                    d=\"M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm12-4v4M8 3v4m-4 4h16m-9 4h1m0 0v3\"\n                  />\n                </svg>\n                <span class=\"text-muted-foreground text-xs\">\n                  Joined March 2021\n                </span>\n              </div>\n            </div>\n          </div>\n        </HoverCardContent>\n      </HoverCardPortal>\n    </HoverCard>\n  )\n}\n\nexport default HoverCardDemo\n",
+      "type": "registry:example"
+    }
+  ]
+}

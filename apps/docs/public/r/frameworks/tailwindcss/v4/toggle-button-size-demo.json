@@ -1,0 +1,12 @@
+{
+  "$schema": "https://shadcn-solid.com/schema/registry-item.json",
+  "name": "toggle-button-size-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "src/examples/toggle-button-size-demo.tsx",
+      "content": "import { ToggleButton } from \"@repo/tailwindcss/ui/v4/toggle-button\"\n\nconst ToggleButtonSizeDemo = () => {\n  return (\n    <div class=\"space-x-2\">\n      <ToggleButton aria-label=\"Toggle italic\" size=\"sm\">\n        <svg\n          xmlns=\"http://www.w3.org/2000/svg\"\n          class=\"size-4\"\n          viewBox=\"0 0 24 24\"\n        >\n          <path\n            fill=\"none\"\n            stroke=\"currentColor\"\n            stroke-linecap=\"round\"\n            stroke-linejoin=\"round\"\n            stroke-width=\"2\"\n            d=\"M19 4h-9m4 16H5M15 4L9 20\"\n          />\n        </svg>\n      </ToggleButton>\n      <ToggleButton aria-label=\"Toggle bold\" size=\"lg\">\n        <svg\n          xmlns=\"http://www.w3.org/2000/svg\"\n          class=\"size-4\"\n          viewBox=\"0 0 24 24\"\n        >\n          <path\n            fill=\"none\"\n            stroke=\"currentColor\"\n            stroke-linecap=\"round\"\n            stroke-linejoin=\"round\"\n            stroke-width=\"2\"\n            d=\"M6 12h9a4 4 0 0 1 0 8H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h7a4 4 0 0 1 0 8\"\n          />\n        </svg>\n      </ToggleButton>\n    </div>\n  )\n}\n\nexport default ToggleButtonSizeDemo\n",
+      "type": "registry:example"
+    }
+  ]
+}

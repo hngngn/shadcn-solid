@@ -1,0 +1,12 @@
+{
+  "$schema": "https://shadcn-solid.com/schema/registry-item.json",
+  "name": "combobox-disabled-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "src/examples/combobox-disabled-demo.tsx",
+      "content": "import {\n  Combobox,\n  ComboboxContent,\n  ComboboxControl,\n  ComboboxDescription,\n  ComboboxInput,\n  ComboboxItem,\n  ComboboxItemLabel,\n  ComboboxLabel,\n  ComboboxPortal,\n  ComboboxTrigger,\n} from \"@repo/tailwindcss/ui/v4/combobox\"\n\nconst ALL_OPTIONS = [\"Apple\", \"Banana\", \"Blueberry\", \"Grapes\", \"Pineapple\"]\n\nconst ComboboxDisabledDemo = () => {\n  return (\n    <Combobox\n      disabled\n      options={ALL_OPTIONS}\n      itemComponent={(props) => (\n        <ComboboxItem item={props.item}>\n          <ComboboxItemLabel>{props.item.rawValue}</ComboboxItemLabel>\n        </ComboboxItem>\n      )}\n    >\n      <ComboboxLabel>Fruit</ComboboxLabel>\n      <ComboboxControl>\n        <ComboboxInput />\n        <ComboboxTrigger />\n      </ComboboxControl>\n      <ComboboxDescription>\n        Choose the fruit you like the most.\n      </ComboboxDescription>\n      <ComboboxPortal>\n        <ComboboxContent />\n      </ComboboxPortal>\n    </Combobox>\n  )\n}\n\nexport default ComboboxDisabledDemo\n",
+      "type": "registry:example"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://shadcn-solid.com/schema/registry-item.json",
+  "name": "toggle-button",
+  "type": "registry:ui",
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "files": [
+    {
+      "path": "src/ui/v4/toggle-button.tsx",
+      "content": "import { splitProps, type ComponentProps, type ValidComponent } from \"solid-js\"\nimport { ToggleButton as ToggleButtonPrimitive } from \"@kobalte/core/toggle-button\"\nimport type { VariantProps } from \"cva\"\n\nimport { cva } from \"@repo/tailwindcss/utils/cva\"\n\nexport const toggleButtonVariants = cva({\n  base: \"inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium hover:bg-muted hover:text-muted-foreground disabled:pointer-events-none disabled:opacity-50 data-[pressed]:bg-accent data-[pressed]:text-accent-foreground [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0 focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] outline-none transition-[color,background-color,box-shadow] whitespace-nowrap\",\n  variants: {\n    variant: {\n      default: \"bg-transparent\",\n      outline:\n        \"border border-input bg-transparent shadow-xs hover:bg-accent hover:text-accent-foreground\",\n    },\n    size: {\n      default: \"h-9 px-2 min-w-9\",\n      sm: \"h-8 px-1.5 min-w-8\",\n      lg: \"h-10 px-2.5 min-w-10\",\n    },\n  },\n  defaultVariants: {\n    variant: \"default\",\n    size: \"default\",\n  },\n})\n\nexport type ToggleButtonProps<T extends ValidComponent = \"button\"> =\n  ComponentProps<typeof ToggleButtonPrimitive<T>> &\n    VariantProps<typeof toggleButtonVariants>\n\nexport const ToggleButton = <T extends ValidComponent = \"button\">(\n  props: ToggleButtonProps<T>,\n) => {\n  const [, rest] = splitProps(props as ToggleButtonProps, [\n    \"class\",\n    \"variant\",\n    \"size\",\n  ])\n\n  return (\n    <ToggleButtonPrimitive\n      data-slot=\"toggle\"\n      class={toggleButtonVariants({\n        variant: props.variant,\n        size: props.size,\n        class: props.class,\n      })}\n      {...rest}\n    />\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

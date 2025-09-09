@@ -1,0 +1,15 @@
+{
+  "$schema": "https://shadcn-solid.com/schema/registry-item.json",
+  "name": "progress",
+  "type": "registry:ui",
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "files": [
+    {
+      "path": "src/ui/v4/progress.tsx",
+      "content": "import { splitProps, type ComponentProps, type ValidComponent } from \"solid-js\"\nimport { Progress as ProgressPrimitive } from \"@kobalte/core/progress\"\n\nimport { cx } from \"@repo/tailwindcss/utils/cva\"\n\nexport type ProgressProps<T extends ValidComponent = \"div\"> = ComponentProps<\n  typeof ProgressPrimitive<T>\n>\n\nexport const Progress = <T extends ValidComponent = \"div\">(\n  props: ProgressProps<T>,\n) => {\n  const [, rest] = splitProps(props as ProgressProps, [\"class\", \"children\"])\n\n  return (\n    <ProgressPrimitive\n      data-slot=\"progress\"\n      class={cx(\"flex w-full flex-col gap-3\", props.class)}\n      {...rest}\n    >\n      {props.children}\n      <ProgressPrimitive.Track\n        data-slot=\"progress-track\"\n        class=\"bg-primary/20 relative h-2 w-full overflow-hidden rounded-full\"\n      >\n        <ProgressPrimitive.Fill\n          data-slot=\"progress-fill\"\n          class=\"bg-primary w-(--kb-progress-fill-width) h-full transition-all\"\n        />\n      </ProgressPrimitive.Track>\n    </ProgressPrimitive>\n  )\n}\n\nexport type ProgressGroupProps = ComponentProps<\"div\">\n\nexport const ProgressGroup = (props: ProgressGroupProps) => {\n  const [, rest] = splitProps(props, [\"class\"])\n\n  return (\n    <div\n      data-slot=\"progress-group\"\n      class={cx(\"flex justify-between\", props.class)}\n      {...rest}\n    />\n  )\n}\n\nexport type ProgressLabelProps<T extends ValidComponent = \"span\"> =\n  ComponentProps<typeof ProgressPrimitive.Label<T>>\n\nexport const ProgressLabel = <T extends ValidComponent = \"span\">(\n  props: ProgressLabelProps<T>,\n) => {\n  const [, rest] = splitProps(props as ProgressLabelProps, [\"class\"])\n\n  return (\n    <ProgressPrimitive.Label\n      data-slot=\"progress-label\"\n      class={cx(\"select-none text-sm font-medium\", props.class)}\n      {...rest}\n    />\n  )\n}\n\nexport type ProgressValueLabelProps<T extends ValidComponent = \"span\"> =\n  ComponentProps<typeof ProgressPrimitive.ValueLabel<T>>\n\nexport const ProgressValueLabel = <T extends ValidComponent = \"span\">(\n  props: ProgressValueLabelProps<T>,\n) => {\n  const [, rest] = splitProps(props as ProgressValueLabelProps, [\"class\"])\n\n  return (\n    <ProgressPrimitive.ValueLabel\n      data-slot=\"progress-value-label\"\n      class={cx(\"select-none text-sm font-medium\", props.class)}\n      {...rest}\n    />\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

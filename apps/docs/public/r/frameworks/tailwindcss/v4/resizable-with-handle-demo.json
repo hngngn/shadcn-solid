@@ -1,0 +1,12 @@
+{
+  "$schema": "https://shadcn-solid.com/schema/registry-item.json",
+  "name": "resizable-with-handle-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "src/examples/resizable-with-handle-demo.tsx",
+      "content": "import {\n  Resizable,\n  ResizableHandle,\n  ResizablePanel,\n} from \"@repo/tailwindcss/ui/v4/resizable\"\n\nconst ResizableWithHandleDemo = () => {\n  return (\n    <Resizable class=\"max-w-md rounded-lg border md:min-w-[450px]\">\n      <ResizablePanel initialSize={0.25} minSize={0.2}>\n        <div class=\"flex h-[200px] items-center justify-center p-6\">\n          <span class=\"font-semibold\">One</span>\n        </div>\n      </ResizablePanel>\n      <ResizableHandle withHandle />\n      <ResizablePanel initialSize={0.75} minSize={0.2}>\n        <div class=\"flex h-[200px] items-center justify-center p-6\">\n          <span class=\"font-semibold\">Two</span>\n        </div>\n      </ResizablePanel>\n    </Resizable>\n  )\n}\n\nexport default ResizableWithHandleDemo\n",
+      "type": "registry:example"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://shadcn-solid.com/schema/registry-item.json",
+  "name": "cva",
+  "type": "registry:utils",
+  "dependencies": [
+    "cva@beta",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "src/utils/cva.ts",
+      "content": "import { defineConfig } from \"cva\"\nimport { twMerge } from \"tailwind-merge\"\n\nexport const { cva, cx, compose } = defineConfig({\n  hooks: {\n    onComplete: (className) => twMerge(className),\n  },\n})\n",
+      "type": "registry:utils"
+    }
+  ]
+}

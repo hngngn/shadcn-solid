@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import type { ComponentProps } from "solid-js"
 import {
   Match,
@@ -7,7 +9,6 @@ import {
   createSignal,
   splitProps,
 } from "solid-js"
-import type { RegistryEntry } from "scripts/registry/schema"
 
 import type { ButtonProps } from "@repo/tailwindcss/ui/v4/button"
 import { Button } from "@repo/tailwindcss/ui/v4/button"
@@ -19,9 +20,7 @@ import {
 } from "@repo/tailwindcss/ui/v4/tooltip"
 import { cx } from "@repo/tailwindcss/utils/cva"
 
-export const ChartToolbar = (
-  props: ComponentProps<"div"> & { item: RegistryEntry | undefined },
-) => {
+export const ChartToolbar = (props: ComponentProps<"div"> & { item: any }) => {
   const [, rest] = splitProps(props, ["class", "item"])
 
   return (
@@ -39,7 +38,7 @@ export const ChartToolbar = (
   )
 }
 
-const ChartTitle = (props: { item: RegistryEntry | undefined }) => {
+const ChartTitle = (props: { item: any }) => {
   createEffect(() => {
     console.log(props.item)
   })
@@ -129,14 +128,11 @@ const ChartTitle = (props: { item: RegistryEntry | undefined }) => {
   )
 }
 
-const ChartCopyButton = (
-  props: ButtonProps & { item: RegistryEntry | undefined },
-) => {
+const ChartCopyButton = (props: ButtonProps & { item: any }) => {
   const [isCopied, setIsCopied] = createSignal(false)
 
   const copyToClipboard = async () => {
     setIsCopied(true)
-    // @ts-expect-error
     await navigator.clipboard.writeText(props.item?.files[0].content)
     setTimeout(() => setIsCopied(false), 2000)
   }

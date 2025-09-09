@@ -1,0 +1,15 @@
+{
+  "$schema": "https://shadcn-solid.com/schema/registry-item.json",
+  "name": "skeleton",
+  "type": "registry:ui",
+  "dependencies": [
+    "@kobalte/core"
+  ],
+  "files": [
+    {
+      "path": "src/ui/v4/skeleton.tsx",
+      "content": "import type { ComponentProps, ValidComponent } from \"solid-js\"\nimport { mergeProps, splitProps } from \"solid-js\"\nimport { Root as SkeletonPrimitive } from \"@kobalte/core/skeleton\"\n\nimport { cx } from \"@repo/tailwindcss/utils/cva\"\n\nexport type SkeletonProps<T extends ValidComponent = \"div\"> = ComponentProps<\n  typeof SkeletonPrimitive<T>\n>\n\nexport const Skeleton = <T extends ValidComponent = \"div\">(\n  props: SkeletonProps<T>,\n) => {\n  const merge = mergeProps(\n    {\n      radius: 8,\n    } as SkeletonProps,\n    props,\n  )\n  const [, rest] = splitProps(merge, [\"class\"])\n\n  return (\n    <SkeletonPrimitive\n      data-slot=\"skeleton\"\n      class={cx(\n        \"translate-z-0 relative h-auto w-full\",\n        \"data-[visible=true]:after:bg-accent data-[visible=true]:after:absolute data-[visible=true]:after:inset-0 data-[visible=true]:after:z-[11] data-[visible=true]:after:content-['']\",\n        \"data-[visible=true]:animate-pulse data-[visible=true]:overflow-hidden\",\n        props.class,\n      )}\n      {...rest}\n    />\n  )\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

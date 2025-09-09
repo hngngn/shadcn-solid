@@ -1,0 +1,12 @@
+{
+  "$schema": "https://shadcn-solid.com/schema/registry-item.json",
+  "name": "button-destructive-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "src/examples/button-destructive-demo.tsx",
+      "content": "import { Button } from \"@repo/tailwindcss/ui/v4/button\"\n\nconst ButtonDestructiveDemo = () => {\n  return <Button variant=\"destructive\">Destructive</Button>\n}\n\nexport default ButtonDestructiveDemo\n",
+      "type": "registry:example"
+    }
+  ]
+}

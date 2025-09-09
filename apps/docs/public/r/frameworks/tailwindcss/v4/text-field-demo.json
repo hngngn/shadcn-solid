@@ -1,0 +1,12 @@
+{
+  "$schema": "https://shadcn-solid.com/schema/registry-item.json",
+  "name": "text-field-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "src/examples/text-field-demo.tsx",
+      "content": "import { TextField, TextFieldInput } from \"@repo/tailwindcss/ui/v4/text-field\"\n\nconst TextFieldDemo = () => {\n  return (\n    <TextField class=\"max-w-xs\">\n      <TextFieldInput type=\"email\" placeholder=\"Email\" />\n    </TextField>\n  )\n}\n\nexport default TextFieldDemo\n",
+      "type": "registry:example"
+    }
+  ]
+}

@@ -1,21 +1,11 @@
-import * as v from "valibot"
-
-import { buildRegistry } from "./build-registry"
-import { registry } from "./registry"
-import { registrySchema } from "./registry/schema"
+import { buildRegistry, buildRegistryJSONFile } from "./build-registry"
 
 try {
-  console.log("💽 Building registry...")
-  const result = v.safeParse(registrySchema, registry)
+  console.log("💅 Building registry.json...")
+  await buildRegistryJSONFile()
 
-  if (!result.success) {
-    console.error(result.issues)
-    process.exit(1)
-  }
-
-  buildRegistry(result.output)
-
-  console.log("✅ Done!")
+  console.log("🏗️ Building registry...")
+  await buildRegistry()
 } catch (error) {
   console.error(error)
   process.exit(1)

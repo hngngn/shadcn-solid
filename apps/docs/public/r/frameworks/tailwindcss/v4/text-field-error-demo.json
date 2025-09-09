@@ -1,0 +1,12 @@
+{
+  "$schema": "https://shadcn-solid.com/schema/registry-item.json",
+  "name": "text-field-error-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "src/examples/text-field-error-demo.tsx",
+      "content": "import { createSignal } from \"solid-js\"\n\nimport {\n  TextField,\n  TextFieldErrorMessage,\n  TextFieldInput,\n  TextFieldLabel,\n} from \"@repo/tailwindcss/ui/v4/text-field\"\n\nconst TextFieldErrorDemo = () => {\n  const [value, setValue] = createSignal(\"Orange\")\n\n  return (\n    <TextField\n      class=\"max-w-xs\"\n      value={value()}\n      onChange={setValue}\n      validationState={value() !== \"Apple\" ? \"invalid\" : \"valid\"}\n    >\n      <TextFieldLabel>Favorite fruit</TextFieldLabel>\n      <TextFieldInput type=\"text\" />\n      <TextFieldErrorMessage>Hmm, I prefer apples.</TextFieldErrorMessage>\n    </TextField>\n  )\n}\n\nexport default TextFieldErrorDemo\n",
+      "type": "registry:example"
+    }
+  ]
+}

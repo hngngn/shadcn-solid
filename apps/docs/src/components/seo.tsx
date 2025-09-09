@@ -20,7 +20,7 @@ const SEO = (
 }> => {
   const metaTitle = `${title ?? "The Foundation for your Design System"} - ${siteConfig.title}`
   const metaDescription = description ?? siteConfig.description
-  const metaOG = `${import.meta.env.NEXT_PUBLIC_VERCEL_ENV === "production" ? siteConfig.url : `https://${import.meta.env.NEXT_PUBLIC_VERCEL_BRANCH_URL}`}/og?title=${encodeURIComponent(
+  const metaOG = `${siteConfig.url}/og?title=${encodeURIComponent(
     metaTitle,
   )}&description=${encodeURIComponent(metaDescription)}`
 

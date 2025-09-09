@@ -1,0 +1,12 @@
+{
+  "$schema": "https://shadcn-solid.com/schema/registry-item.json",
+  "name": "toggle-button-disabled-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "src/examples/toggle-button-disabled-demo.tsx",
+      "content": "import { ToggleButton } from \"@repo/tailwindcss/ui/v4/toggle-button\"\n\nconst ToggleButtonDisabledDemo = () => {\n  return (\n    <ToggleButton aria-label=\"Toggle bold\" disabled>\n      <svg\n        xmlns=\"http://www.w3.org/2000/svg\"\n        class=\"size-4\"\n        viewBox=\"0 0 24 24\"\n      >\n        <path\n          fill=\"none\"\n          stroke=\"currentColor\"\n          stroke-linecap=\"round\"\n          stroke-linejoin=\"round\"\n          stroke-width=\"2\"\n          d=\"M6 12h9a4 4 0 0 1 0 8H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h7a4 4 0 0 1 0 8\"\n        />\n      </svg>\n    </ToggleButton>\n  )\n}\n\nexport default ToggleButtonDisabledDemo\n",
+      "type": "registry:example"
+    }
+  ]
+}

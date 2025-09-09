@@ -1,0 +1,12 @@
+{
+  "$schema": "https://shadcn-solid.com/schema/registry-item.json",
+  "name": "carousel-orientation-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "src/examples/carousel-orientation-demo.tsx",
+      "content": "import { Index } from \"solid-js\"\n\nimport { Card, CardContent } from \"@repo/tailwindcss/ui/v4/card\"\nimport {\n  Carousel,\n  CarouselContent,\n  CarouselItem,\n  CarouselNext,\n  CarouselPrevious,\n} from \"@repo/tailwindcss/ui/v4/carousel\"\n\nconst CarouselOrientationDemo = () => {\n  return (\n    <Carousel\n      orientation=\"vertical\"\n      options={() => ({\n        align: \"start\",\n      })}\n      class=\"w-full max-w-xs\"\n    >\n      <CarouselContent class=\"-mt-1 h-[150px] md:h-[300px]\">\n        <Index each={Array.from({ length: 5 })}>\n          {(_, index) => (\n            <CarouselItem class=\"pt-1 md:basis-1/2\">\n              <div class=\"p-1\">\n                <Card>\n                  <CardContent class=\"flex items-center justify-center p-6\">\n                    <span class=\"text-3xl font-semibold\">{index + 1}</span>\n                  </CardContent>\n                </Card>\n              </div>\n            </CarouselItem>\n          )}\n        </Index>\n      </CarouselContent>\n      <CarouselPrevious />\n      <CarouselNext />\n    </Carousel>\n  )\n}\n\nexport default CarouselOrientationDemo\n",
+      "type": "registry:example"
+    }
+  ]
+}

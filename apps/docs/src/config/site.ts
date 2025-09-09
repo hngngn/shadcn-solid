@@ -4,7 +4,7 @@ export const siteConfig = {
   description:
     "Beautifully designed components built with your choice of UI and CSS frameworks.",
   links: {
-    facebook: "https://twitter.com/hnggngnn",
+    facebook: "https://www.facebook.com/huyhoang.hngngn",
     github: "https://github.com/hngngn/shadcn-solid",
     shadcn: {
       twitter: "https://twitter.com/shadcn",

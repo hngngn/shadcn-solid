@@ -1,0 +1,12 @@
+{
+  "$schema": "https://shadcn-solid.com/schema/registry-item.json",
+  "name": "tooltip-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "src/examples/tooltip-demo.tsx",
+      "content": "import { Button } from \"@repo/tailwindcss/ui/v4/button\"\nimport type { TooltipTriggerProps } from \"@repo/tailwindcss/ui/v4/tooltip\"\nimport {\n  Tooltip,\n  TooltipContent,\n  TooltipPortal,\n  TooltipTrigger,\n} from \"@repo/tailwindcss/ui/v4/tooltip\"\n\nconst TooltipDemo = () => {\n  return (\n    <Tooltip>\n      <TooltipTrigger\n        as={(props: TooltipTriggerProps) => (\n          <Button variant=\"outline\" {...props}>\n            Hover\n          </Button>\n        )}\n      />\n      <TooltipPortal>\n        <TooltipContent>\n          <p>Add to library</p>\n        </TooltipContent>\n      </TooltipPortal>\n    </Tooltip>\n  )\n}\n\nexport default TooltipDemo\n",
+      "type": "registry:example"
+    }
+  ]
+}

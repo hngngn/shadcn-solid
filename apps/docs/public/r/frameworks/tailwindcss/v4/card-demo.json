@@ -1,0 +1,12 @@
+{
+  "$schema": "https://shadcn-solid.com/schema/registry-item.json",
+  "name": "card-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "src/examples/card-demo.tsx",
+      "content": "import {\n  Card,\n  CardContent,\n  CardDescription,\n  CardHeader,\n  CardTitle,\n} from \"@repo/tailwindcss/ui/v4/card\"\n\nconst CardDemo = () => {\n  return (\n    <Card>\n      <CardHeader>\n        <CardTitle>Meeting Notes</CardTitle>\n        <CardDescription>\n          Transcript from the meeting with the client.\n        </CardDescription>\n      </CardHeader>\n      <CardContent class=\"text-sm\">\n        <p>\n          Client requested dashboard redesign with focus on mobile\n          responsiveness.\n        </p>\n        <ol class=\"mt-4 flex list-decimal flex-col gap-2 pl-6\">\n          <li>New analytics widgets for daily/weekly metrics</li>\n          <li>Simplified navigation menu</li>\n          <li>Dark mode support</li>\n          <li>Timeline: 6 weeks</li>\n          <li>Follow-up meeting scheduled for next Tuesday</li>\n        </ol>\n      </CardContent>\n    </Card>\n  )\n}\n\nexport default CardDemo\n",
+      "type": "registry:example"
+    }
+  ]
+}

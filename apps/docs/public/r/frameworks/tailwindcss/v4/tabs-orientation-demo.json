@@ -1,0 +1,12 @@
+{
+  "$schema": "https://shadcn-solid.com/schema/registry-item.json",
+  "name": "tabs-orientation-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "src/examples/tabs-orientation-demo.tsx",
+      "content": "import {\n  Card,\n  CardDescription,\n  CardHeader,\n  CardTitle,\n} from \"@repo/tailwindcss/ui/v4/card\"\nimport {\n  Tabs,\n  TabsContent,\n  TabsIndicator,\n  TabsList,\n  TabsTrigger,\n} from \"@repo/tailwindcss/ui/v4/tabs\"\n\nconst TabsOrientationDemo = () => {\n  return (\n    <div class=\"flex w-full max-w-sm flex-col gap-6\">\n      <Tabs defaultValue=\"account\" orientation=\"vertical\">\n        <TabsList>\n          <TabsTrigger value=\"account\">Account</TabsTrigger>\n          <TabsTrigger value=\"password\">Password</TabsTrigger>\n          <TabsIndicator />\n        </TabsList>\n        <TabsContent value=\"account\">\n          <Card class=\"w-[200px]\">\n            <CardHeader>\n              <CardTitle>Account</CardTitle>\n              <CardDescription>\n                Make changes to your account here. Click save when you&apos;re\n                done.\n              </CardDescription>\n            </CardHeader>\n          </Card>\n        </TabsContent>\n        <TabsContent value=\"password\">\n          <Card class=\"w-[200px]\">\n            <CardHeader>\n              <CardTitle>Password</CardTitle>\n              <CardDescription>\n                Change your password here. After saving, you&apos;ll be logged\n                out.\n              </CardDescription>\n            </CardHeader>\n          </Card>\n        </TabsContent>\n      </Tabs>\n    </div>\n  )\n}\n\nexport default TabsOrientationDemo\n",
+      "type": "registry:example"
+    }
+  ]
+}

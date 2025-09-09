@@ -1,0 +1,12 @@
+{
+  "$schema": "https://shadcn-solid.com/schema/registry-item.json",
+  "name": "otp-field-demo",
+  "type": "registry:example",
+  "files": [
+    {
+      "path": "src/examples/otp-field-demo.tsx",
+      "content": "import {\n  OTPField,\n  OTPFieldGroup,\n  OTPFieldInput,\n  OTPFieldSeparator,\n  OTPFieldSlot,\n} from \"@repo/tailwindcss/ui/v4/otp-field\"\n\nconst OTPFieldDemo = () => {\n  return (\n    <OTPField maxLength={6}>\n      <OTPFieldInput />\n      <OTPFieldGroup>\n        <OTPFieldSlot index={0} />\n        <OTPFieldSlot index={1} />\n        <OTPFieldSlot index={2} />\n      </OTPFieldGroup>\n      <OTPFieldSeparator />\n      <OTPFieldGroup>\n        <OTPFieldSlot index={3} />\n        <OTPFieldSlot index={4} />\n        <OTPFieldSlot index={5} />\n      </OTPFieldGroup>\n    </OTPField>\n  )\n}\n\nexport default OTPFieldDemo\n",
+      "type": "registry:example"
+    }
+  ]
+}
