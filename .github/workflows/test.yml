@@ -1,0 +1,15 @@
+name: Test
+
+on:
+  label: 
+    types: [edited]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get current PR label
+        id: get-label
+        run: |
+          echo "LABEL=$(gh api --jq '.labels.[].name' /repos/{owner}/{repo}/pulls/${{ github.event.number }})"

@@ -1,15 +1,15 @@
 # Adapted from create-t3-app.
 
-name: Preview Release
+name: PR
 
-on: pull_request
+on:
+  - pull_request
 
 jobs:
-  prerelease:
+  pr:
     if: github.repository_owner == 'hngngn'
     name: Build & Publish
     runs-on: ubuntu-latest
-    environment: Preview
 
     steps:
       - name: Check for CLI label
@@ -17,10 +17,10 @@ jobs:
         uses: actions/github-script@v8
         with:
           script: |
-            const { data: pr } = await github.rest.issues.get({
+            const { data: pr } = await github.rest.pulls.get({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: context.issue.number
+              pull_number: context.issue.number
             });
 
             const hasCliLabel = pr.labels.some(label => label.name === 'cli');
