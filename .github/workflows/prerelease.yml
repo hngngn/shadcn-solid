@@ -1,23 +1,37 @@
 # Adapted from create-t3-app.
 
-name: Release Beta
+name: Preview Release
 
-on:
-  pull_request:
-    types: [labeled]
-    branches:
-      - main
+on: pull_request
 
 jobs:
   prerelease:
-    if: |
-      github.repository_owner == 'hngngn' &&
-      contains(github.event.pull_request.labels.*.name, '🚀 autorelease')
-    name: Build & Publish a beta release to NPM
+    if: github.repository_owner == 'hngngn'
+    name: Build & Publish
     runs-on: ubuntu-latest
     environment: Preview
 
     steps:
+      - name: Check for CLI label
+        id: check-label
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const { data: pr } = await github.rest.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number
+            });
+
+            const hasCliLabel = pr.labels.some(label => label.name === 'cli');
+            core.setOutput('has_cli_label', hasCliLabel);
+
+      - name: Stop if no "cli" label
+        if: steps.check-label.outputs.has_cli_label != 'true'
+        run: |
+          echo "This PR does not have the 'cli' label. Skipping job."
+          exit 1
+
       - name: Checkout Repo
         uses: actions/checkout@v4
         with:
@@ -26,14 +40,13 @@ jobs:
       - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
-          version: 9.4.0
           run_install: false
 
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'pnpm'
+          node-version: 22
+          cache: "pnpm"
 
       - name: Get pnpm store directory
         shell: bash
@@ -51,25 +64,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Modify package.json version
-        run: node .github/version-script-beta.mjs
+      - name: Build CLI
+        run: pnpm -F shadcn-solid build
 
-      - name: Authenticate to NPM
-        run: echo "//registry.npmjs.org/:_authToken=$NPM_ACCESS_TOKEN" >> packages/cli/.npmrc
-        env:
-          NPM_ACCESS_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
-
-      - name: Publish Beta to NPM
-        run: pnpm -F shadcn-solid build && cd packages/cli && npm publish --tag beta
-
-      - name: get-npm-version
-        id: package-version
-        uses: martinbeentjes/npm-get-version-action@main
-        with:
-          path: packages/cli
-
-      - name: Upload packaged artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: npm-package-shadcn-solid@${{ steps.package-version.outputs.current-version }}-pr-${{ github.event.number }} # encode the PR number into the artifact name
-          path: packages/cli/dist/index.js
+      - name: Publish Previews
+        run: pnpx pkg-pr-new publish --pnpm './packages/cli' --bin
