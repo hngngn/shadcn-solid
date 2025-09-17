@@ -23,7 +23,7 @@ export const Skeleton = <T extends ValidComponent = "div">(
     <SkeletonPrimitive
       data-slot="skeleton"
       class={cx(
-        "translate-z-0 relative h-auto w-full",
+        "translate-z-0 relative",
         "data-[visible=true]:after:bg-accent data-[visible=true]:after:absolute data-[visible=true]:after:inset-0 data-[visible=true]:after:z-[11] data-[visible=true]:after:content-['']",
         "data-[visible=true]:animate-pulse data-[visible=true]:overflow-hidden",
         props.class,

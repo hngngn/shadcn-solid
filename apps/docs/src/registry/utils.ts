@@ -7,7 +7,7 @@ export const utils: Registry["items"] = [
     dependencies: ["cva@beta", "tailwind-merge"],
     files: [
       {
-        path: "src/utils/cva.ts",
+        path: "utils/cva.ts",
         type: "registry:utils",
       },
     ],
@@ -17,7 +17,7 @@ export const utils: Registry["items"] = [
     type: "registry:utils",
     files: [
       {
-        path: "src/utils/call-handler.ts",
+        path: "utils/call-handler.ts",
         type: "registry:utils",
       },
     ],

@@ -1,8 +1,5 @@
 import * as v from "valibot"
 
-// Note: if you edit the schema here, you must also edit the schema in the
-// apps/www/public/schema/registry-item.json file.
-
 export const registryItemTypeSchema = v.picklist([
   "registry:utils",
   "registry:block",

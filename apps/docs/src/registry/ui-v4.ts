@@ -7,7 +7,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/accordion.tsx",
+        path: "ui/v4/accordion.tsx",
         type: "registry:ui",
       },
     ],
@@ -18,7 +18,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/alert.tsx",
+        path: "ui/v4/alert.tsx",
         type: "registry:ui",
       },
     ],
@@ -30,7 +30,7 @@ export const uiV4: Registry["items"] = [
     registryDependencies: ["button"],
     files: [
       {
-        path: "src/ui/v4/alert-dialog.tsx",
+        path: "ui/v4/alert-dialog.tsx",
         type: "registry:ui",
       },
     ],
@@ -41,7 +41,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/badge.tsx",
+        path: "ui/v4/badge.tsx",
         type: "registry:ui",
       },
     ],
@@ -52,7 +52,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/breadcrumbs.tsx",
+        path: "ui/v4/breadcrumbs.tsx",
         type: "registry:ui",
       },
     ],
@@ -63,7 +63,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/button.tsx",
+        path: "ui/v4/button.tsx",
         type: "registry:ui",
       },
     ],
@@ -75,7 +75,7 @@ export const uiV4: Registry["items"] = [
     registryDependencies: ["button"],
     files: [
       {
-        path: "src/ui/v4/calendar.tsx",
+        path: "ui/v4/calendar.tsx",
         type: "registry:ui",
       },
     ],
@@ -85,7 +85,7 @@ export const uiV4: Registry["items"] = [
     type: "registry:ui",
     files: [
       {
-        path: "src/ui/v4/card.tsx",
+        path: "ui/v4/card.tsx",
         type: "registry:ui",
       },
     ],
@@ -97,7 +97,7 @@ export const uiV4: Registry["items"] = [
     registryDependencies: ["button"],
     files: [
       {
-        path: "src/ui/v4/carousel.tsx",
+        path: "ui/v4/carousel.tsx",
         type: "registry:ui",
       },
     ],
@@ -108,7 +108,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@unovis/solid"],
     files: [
       {
-        path: "src/ui/v4/chart.tsx",
+        path: "ui/v4/chart.tsx",
         type: "registry:ui",
       },
     ],
@@ -119,7 +119,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/checkbox.tsx",
+        path: "ui/v4/checkbox.tsx",
         type: "registry:ui",
       },
     ],
@@ -130,7 +130,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/collapsible.tsx",
+        path: "ui/v4/collapsible.tsx",
         type: "registry:ui",
       },
     ],
@@ -141,7 +141,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/combobox.tsx",
+        path: "ui/v4/combobox.tsx",
         type: "registry:ui",
       },
     ],
@@ -152,7 +152,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["cmdk-solid"],
     files: [
       {
-        path: "src/ui/v4/command.tsx",
+        path: "ui/v4/command.tsx",
         type: "registry:ui",
       },
     ],
@@ -163,7 +163,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/context-menu.tsx",
+        path: "ui/v4/context-menu.tsx",
         type: "registry:ui",
       },
     ],
@@ -174,7 +174,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/dialog.tsx",
+        path: "ui/v4/dialog.tsx",
         type: "registry:ui",
       },
     ],
@@ -185,7 +185,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@corvu/drawer"],
     files: [
       {
-        path: "src/ui/v4/drawer.tsx",
+        path: "ui/v4/drawer.tsx",
         type: "registry:ui",
       },
     ],
@@ -196,7 +196,18 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/dropdown-menu.tsx",
+        path: "ui/v4/dropdown-menu.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "file-field",
+    type: "registry:ui",
+    dependencies: ["@kobalte/core"],
+    files: [
+      {
+        path: "ui/v4/file-field.tsx",
         type: "registry:ui",
       },
     ],
@@ -207,7 +218,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/hover-card.tsx",
+        path: "ui/v4/hover-card.tsx",
         type: "registry:ui",
       },
     ],
@@ -218,7 +229,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/menubar.tsx",
+        path: "ui/v4/menubar.tsx",
         type: "registry:ui",
       },
     ],
@@ -229,7 +240,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/navigation-menu.tsx",
+        path: "ui/v4/navigation-menu.tsx",
         type: "registry:ui",
       },
     ],
@@ -240,7 +251,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/number-field.tsx",
+        path: "ui/v4/number-field.tsx",
         type: "registry:ui",
       },
     ],
@@ -251,7 +262,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@corvu/otp-field"],
     files: [
       {
-        path: "src/ui/v4/otp-field.tsx",
+        path: "ui/v4/otp-field.tsx",
         type: "registry:ui",
       },
     ],
@@ -263,7 +274,7 @@ export const uiV4: Registry["items"] = [
     registryDependencies: ["button"],
     files: [
       {
-        path: "src/ui/v4/pagination.tsx",
+        path: "ui/v4/pagination.tsx",
         type: "registry:ui",
       },
     ],
@@ -274,7 +285,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/popover.tsx",
+        path: "ui/v4/popover.tsx",
         type: "registry:ui",
       },
     ],
@@ -285,7 +296,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/progress.tsx",
+        path: "ui/v4/progress.tsx",
         type: "registry:ui",
       },
     ],
@@ -296,7 +307,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/radio-group.tsx",
+        path: "ui/v4/radio-group.tsx",
         type: "registry:ui",
       },
     ],
@@ -307,7 +318,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@corvu/resizable"],
     files: [
       {
-        path: "src/ui/v4/resizable.tsx",
+        path: "ui/v4/resizable.tsx",
         type: "registry:ui",
       },
     ],
@@ -318,7 +329,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/search.tsx",
+        path: "ui/v4/search.tsx",
         type: "registry:ui",
       },
     ],
@@ -329,7 +340,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/segmented-control.tsx",
+        path: "ui/v4/segmented-control.tsx",
         type: "registry:ui",
       },
     ],
@@ -340,7 +351,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/select.tsx",
+        path: "ui/v4/select.tsx",
         type: "registry:ui",
       },
     ],
@@ -351,7 +362,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/separator.tsx",
+        path: "ui/v4/separator.tsx",
         type: "registry:ui",
       },
     ],
@@ -371,7 +382,7 @@ export const uiV4: Registry["items"] = [
     ],
     files: [
       {
-        path: "src/ui/v4/sidebar.tsx",
+        path: "ui/v4/sidebar.tsx",
         type: "registry:ui",
       },
     ],
@@ -382,7 +393,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/skeleton.tsx",
+        path: "ui/v4/skeleton.tsx",
         type: "registry:ui",
       },
     ],
@@ -393,7 +404,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/slider.tsx",
+        path: "ui/v4/slider.tsx",
         type: "registry:ui",
       },
     ],
@@ -404,7 +415,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["somoto"],
     files: [
       {
-        path: "src/ui/v4/sonner.tsx",
+        path: "ui/v4/sonner.tsx",
         type: "registry:ui",
       },
     ],
@@ -415,7 +426,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/switch.tsx",
+        path: "ui/v4/switch.tsx",
         type: "registry:ui",
       },
     ],
@@ -425,7 +436,7 @@ export const uiV4: Registry["items"] = [
     type: "registry:ui",
     files: [
       {
-        path: "src/ui/v4/table.tsx",
+        path: "ui/v4/table.tsx",
         type: "registry:ui",
       },
     ],
@@ -436,7 +447,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/tabs.tsx",
+        path: "ui/v4/tabs.tsx",
         type: "registry:ui",
       },
     ],
@@ -447,7 +458,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/text-field.tsx",
+        path: "ui/v4/text-field.tsx",
         type: "registry:ui",
       },
     ],
@@ -458,7 +469,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/toggle-button.tsx",
+        path: "ui/v4/toggle-button.tsx",
         type: "registry:ui",
       },
     ],
@@ -470,7 +481,7 @@ export const uiV4: Registry["items"] = [
     registryDependencies: ["toggle-button"],
     files: [
       {
-        path: "src/ui/v4/toggle-group.tsx",
+        path: "ui/v4/toggle-group.tsx",
         type: "registry:ui",
       },
     ],
@@ -481,7 +492,7 @@ export const uiV4: Registry["items"] = [
     dependencies: ["@kobalte/core"],
     files: [
       {
-        path: "src/ui/v4/tooltip.tsx",
+        path: "ui/v4/tooltip.tsx",
         type: "registry:ui",
       },
     ],

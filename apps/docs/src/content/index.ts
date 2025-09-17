@@ -825,6 +825,29 @@ export const Contents : Record<string, Content> = {
   }
 ]
   },
+  "components/file-field": {
+    component: lazy(() => import("@/content/docs/components/file-field.mdx")),
+    data: {
+  "title": "File Field",
+  "description": "A file input to upload multiple files, with ability to drag and drop files.",
+  "link": {
+    "doc": "https://kobalte.dev/docs/core/components/file-field",
+    "api": "https://kobalte.dev/docs/core/components/file-field#api-reference"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  }
+]
+  },
   "components/hover-card": {
     component: lazy(() => import("@/content/docs/components/hover-card.mdx")),
     data: {
@@ -1458,7 +1481,7 @@ export const Contents : Record<string, Content> = {
   "components/text-field": {
     component: lazy(() => import("@/content/docs/components/text-field.mdx")),
     data: {
-  "title": "TextField",
+  "title": "Text Field",
   "description": "A text input that allow users to input custom text entries with a keyboard.",
   "link": {
     "doc": "https://kobalte.dev/docs/core/components/text-field",
@@ -1490,6 +1513,11 @@ export const Contents : Record<string, Content> = {
     "depth": 3,
     "text": "Error",
     "slug": "error"
+  },
+  {
+    "depth": 3,
+    "text": "File",
+    "slug": "file"
   },
   {
     "depth": 3,

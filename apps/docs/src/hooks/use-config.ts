@@ -10,7 +10,7 @@ export const $configAtom = persistentAtom<Config>(
   "config",
   {
     packageManager: "pnpm",
-    installationType: "cli",
+    installationType: "manual",
   },
   {
     encode: JSON.stringify,

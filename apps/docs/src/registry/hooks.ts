@@ -7,7 +7,7 @@ export const hooks: Registry["items"] = [
     dependencies: ["@solid-primitives/media"],
     files: [
       {
-        path: "src/hooks/use-mobile.ts",
+        path: "hooks/use-mobile.ts",
         type: "registry:hook",
       },
     ],

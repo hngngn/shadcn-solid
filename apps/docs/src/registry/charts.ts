@@ -8,7 +8,7 @@ export const charts: Registry["items"] = [
     registryDependencies: ["card", "chart"],
     files: [
       {
-        path: "src/charts/area-chart-interactive.tsx",
+        path: "charts/area-chart-interactive.tsx",
         type: "registry:block",
       },
     ],
@@ -20,7 +20,7 @@ export const charts: Registry["items"] = [
     registryDependencies: ["card", "chart"],
     files: [
       {
-        path: "src/charts/bar-chart-interactive.tsx",
+        path: "charts/bar-chart-interactive.tsx",
         type: "registry:block",
       },
     ],
@@ -32,7 +32,7 @@ export const charts: Registry["items"] = [
     registryDependencies: ["card", "chart"],
     files: [
       {
-        path: "src/charts/line-chart-interactive.tsx",
+        path: "charts/line-chart-interactive.tsx",
         type: "registry:block",
       },
     ],

@@ -28,7 +28,6 @@ const ComponentInstallation = (props: ComponentProps<typeof TabsContent>) => {
         <TabsTrigger
           value="cli"
           class="text-muted-foreground data-[selected]:text-foreground px-0 data-[selected]:shadow-none dark:data-[selected]:border-transparent dark:data-[selected]:bg-transparent"
-          // TODO: enable when release
           disabled
         >
           CLI

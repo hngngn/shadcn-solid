@@ -25,7 +25,6 @@
     "valibot": "^1.1.0"
   },
   "devDependencies": {
-    "@mdx-js/mdx": "^3.1.0",
     "@tailwindcss/vite": "^4.1.11",
     "@types/node": "^22.17.0",
     "@vinxi/plugin-mdx": "^3.7.2",

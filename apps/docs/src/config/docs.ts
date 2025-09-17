@@ -201,6 +201,12 @@ export const docsConfig: TDocsConfig = {
           items: [],
         },
         {
+          title: "File Field",
+          href: "/docs/components/file-field",
+          items: [],
+          indicator: "new",
+        },
+        {
           title: "Hover Card",
           href: "/docs/components/hover-card",
           items: [],
