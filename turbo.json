@@ -8,10 +8,12 @@
       "outputs": [".vinxi/**", ".output/**", ".vercel/**"]
     },
     "lint": {
-      "dependsOn": ["^lint"]
+      "dependsOn": ["^lint"],
+      "cache": false
     },
     "format": {
-      "dependsOn": ["^format"]
+      "dependsOn": ["^format"],
+      "cache": false
     },
     "ci:lint": {
       "dependsOn": ["^ci:lint"]
