@@ -7,6 +7,7 @@ import {
   DropdownMenuGroup,
   DropdownMenuGroupLabel,
   DropdownMenuItem,
+  DropdownMenuPortal,
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
@@ -70,47 +71,51 @@ const TeamSwitcher = (props: {
               </SidebarMenuButton>
             )}
           />
-          <DropdownMenuContent class="w-[--kb-popper-anchor-width] min-w-56 rounded-lg">
-            <DropdownMenuGroup>
-              <DropdownMenuGroupLabel class="text-muted-foreground text-xs">
-                Teams
-              </DropdownMenuGroupLabel>
-              <For each={props.teams}>
-                {(team, index) => (
-                  <DropdownMenuItem
-                    onClick={() => setActiveTeam(team)}
-                    class="gap-2 p-2"
+          <DropdownMenuPortal>
+            <DropdownMenuContent class="w-[--kb-popper-anchor-width] min-w-56 rounded-lg">
+              <DropdownMenuGroup>
+                <DropdownMenuGroupLabel class="text-muted-foreground text-xs">
+                  Teams
+                </DropdownMenuGroupLabel>
+                <For each={props.teams}>
+                  {(team, index) => (
+                    <DropdownMenuItem
+                      onClick={() => setActiveTeam(team)}
+                      class="gap-2 p-2"
+                    >
+                      <div class="flex size-6 items-center justify-center rounded-sm border">
+                        {team.logo()}
+                      </div>
+                      {team.name}
+                      <DropdownMenuShortcut>
+                        ⌘{index() + 1}
+                      </DropdownMenuShortcut>
+                    </DropdownMenuItem>
+                  )}
+                </For>
+              </DropdownMenuGroup>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem class="gap-2 p-2">
+                <div class="bg-background flex size-6 items-center justify-center rounded-md border">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="size-4"
+                    viewBox="0 0 24 24"
                   >
-                    <div class="flex size-6 items-center justify-center rounded-sm border">
-                      {team.logo()}
-                    </div>
-                    {team.name}
-                    <DropdownMenuShortcut>⌘{index() + 1}</DropdownMenuShortcut>
-                  </DropdownMenuItem>
-                )}
-              </For>
-            </DropdownMenuGroup>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem class="gap-2 p-2">
-              <div class="bg-background flex size-6 items-center justify-center rounded-md border">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="size-4"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M5 12h14m-7-7v14"
-                  />
-                </svg>
-              </div>
-              <div class="text-muted-foreground font-medium">Add team</div>
-            </DropdownMenuItem>
-          </DropdownMenuContent>
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 12h14m-7-7v14"
+                    />
+                  </svg>
+                </div>
+                <div class="text-muted-foreground font-medium">Add team</div>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenuPortal>
         </DropdownMenu>
       </SidebarMenuItem>
     </SidebarMenu>
