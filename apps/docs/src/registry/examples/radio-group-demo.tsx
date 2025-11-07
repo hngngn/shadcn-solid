@@ -2,14 +2,13 @@ import { For } from "solid-js"
 
 import {
   RadioGroup,
+  RadioGroupItem,
   RadioGroupItemControl,
   RadioGroupItemIndicator,
   RadioGroupItemLabel,
   RadioGroupItems,
   RadioGroupLabel,
 } from "@/registry/ui/radio-group"
-
-import { RadioGroupItem } from "../ui/v4/radio-group"
 
 const RadioGroupDemo = () => {
   return (
