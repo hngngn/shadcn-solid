@@ -1,5 +1,4 @@
 import { tanstackStart } from "@tanstack/solid-start/plugin/vite"
-import netlify from "@netlify/vite-plugin-tanstack-start"
 import tailwindcss from "@tailwindcss/vite"
 import { defineConfig } from "vite"
 import viteSolid from "vite-plugin-solid"
@@ -19,8 +18,10 @@ export default defineConfig({
     tailwindcss(),
     mdx(),
     content(),
-    tanstackStart(),
-    netlify(),
+    tanstackStart({
+      customViteSolidPlugin: true,
+      target: "netlify",
+    }),
     viteSolid({
       ssr: true,
       extensions: [".mdx"],

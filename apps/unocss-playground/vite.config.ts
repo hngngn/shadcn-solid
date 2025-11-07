@@ -12,17 +12,13 @@ export default defineConfig({
     tsConfigPaths({
       projects: ["./tsconfig.json"],
     }),
-    tanstackStart(),
     unoCSS(),
+    tanstackStart({
+      customViteSolidPlugin: true,
+    }),
     viteSolid({ ssr: true }),
   ],
   resolve: {
-    noExternal: [
-      "@kobalte/core",
-      "@unovis/solid",
-      "@unovis/ts",
-      "cmdk-solid",
-      "embla-carousel-solid",
-    ],
+    noExternal: ["@kobalte/core", "cmdk-solid"],
   },
 })

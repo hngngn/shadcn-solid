@@ -3,5 +3,7 @@ packages:
   - packages/*
 
 onlyBuiltDependencies:
+  - '@parcel/watcher'
   - esbuild
   - maplibre-gl
+  - sharp

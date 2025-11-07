@@ -1,15 +1,20 @@
-import { createRouter } from "@tanstack/solid-router"
+import "virtual:uno.css"
+
+import { createRouter as createTanStackRouter } from "@tanstack/solid-router"
 
 import { routeTree } from "./routeTree.gen"
 
-import "virtual:uno.css"
-
-export function getRouter() {
-  const router = createRouter({
+export function createRouter() {
+  return createTanStackRouter({
     routeTree,
     defaultPreload: "intent",
     scrollRestoration: true,
+    defaultViewTransition: true,
   })
+}
 
-  return router
+declare module "@tanstack/solid-router" {
+  interface Register {
+    router: ReturnType<typeof createRouter>
+  }
 }

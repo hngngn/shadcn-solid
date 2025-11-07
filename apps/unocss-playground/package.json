@@ -13,16 +13,16 @@
   },
   "devDependencies": {
     "@types/node": "^24.8.1",
-    "@unocss/preset-wind4": "^66.5.4",
-    "unocss": "^66.5.4",
-    "vite": "^7.1.10",
-    "vite-plugin-solid": "^2.11.9",
+    "@unocss/preset-wind4": "^66.5.5",
+    "unocss": "^66.5.5",
+    "vite": "^7.1.7",
+    "vite-plugin-solid": "^2.11.10",
     "vite-tsconfig-paths": "^5.1.4"
   },
   "dependencies": {
     "@solid-primitives/media": "^2.3.3",
-    "@tanstack/solid-router": "^1.133.13",
-    "@tanstack/solid-start": "^1.133.13",
-    "solid-js": "^1.9.9"
+    "@tanstack/solid-router": "^1.130.12",
+    "@tanstack/solid-start": "^1.130.16",
+    "solid-js": "^1.9.10"
   }
 }
