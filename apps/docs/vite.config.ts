@@ -1,6 +1,6 @@
 import { tanstackStart } from "@tanstack/solid-start/plugin/vite"
+import netlify from "@netlify/vite-plugin-tanstack-start"
 import tailwindcss from "@tailwindcss/vite"
-import { nitro } from "nitro/vite"
 import { defineConfig } from "vite"
 import viteSolid from "vite-plugin-solid"
 import tsConfigPaths from "vite-tsconfig-paths"
@@ -19,12 +19,8 @@ export default defineConfig({
     tailwindcss(),
     mdx(),
     content(),
-    tanstackStart({
-      prerender: {
-        crawlLinks: true,
-      },
-    }),
-    nitro(),
+    tanstackStart(),
+    netlify(),
     viteSolid({
       ssr: true,
       extensions: [".mdx"],
