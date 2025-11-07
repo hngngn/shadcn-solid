@@ -11,8 +11,6 @@ module.exports = {
     "^(@tanstack/(.*)$)|^(@tanstack$)",
     "<THIRD_PARTY_MODULES>",
     "",
-    "^@repo/(.*)$",
-    "",
     "^@/(.*)$",
     "",
     "^[./]",

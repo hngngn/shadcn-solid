@@ -2,10 +2,9 @@ import { Outlet, createFileRoute } from "@tanstack/solid-router"
 // @ts-expect-error
 import { MDXProvider } from "solid-mdx"
 
-import { SidebarProvider } from "@repo/tailwindcss/ui/v4/sidebar"
-
 import DocsSidebar from "@/components/docs-sidebar"
 import { mdxCustomComponents } from "@/components/mdx"
+import { SidebarProvider } from "@/registry/ui/sidebar"
 
 export const Route = createFileRoute("/_main/docs")({
   component: RouteComponent,

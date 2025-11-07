@@ -28,10 +28,6 @@ export const docsConfig: TDocsConfig = {
       title: "Components",
       href: "/docs/components/accordion",
     },
-    // {
-    //   title: "Blocks",
-    //   href: "/blocks",
-    // },
     {
       title: "Charts",
       href: "/charts/area",
@@ -47,51 +43,22 @@ export const docsConfig: TDocsConfig = {
           items: [],
         },
         {
-          title: "components.json",
-          href: "/docs/components-json",
+          title: "Installation",
+          href: "/docs/installation",
           items: [],
-          disabled: true,
         },
         {
           title: "Theming",
           href: "/docs/theming",
           items: [],
-          disabled: true,
         },
         {
-          title: "Dark mode",
+          title: "Dark Mode",
           href: "/docs/dark-mode",
           items: [],
-          disabled: true,
-        },
-        {
-          title: "CLI",
-          href: "/docs/cli",
-          items: [],
-          disabled: true,
         },
       ],
     },
-    // {
-    //   title: "Installation",
-    //   items: [
-    //     {
-    //       title: "Solid Start",
-    //       href: "/docs/installation/solid-start",
-    //       items: [],
-    //     },
-    //     {
-    //       title: "Astro",
-    //       href: "/docs/installation/astro",
-    //       items: [],
-    //     },
-    //     {
-    //       title: "Manual",
-    //       href: "/docs/installation/manual",
-    //       items: [],
-    //     },
-    //   ],
-    // },
     {
       title: "Components",
       items: [

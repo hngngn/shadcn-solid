@@ -1,6 +1,6 @@
 import { splitProps, type ComponentProps } from "solid-js"
 
-import { cx } from "@repo/tailwindcss/utils/cva"
+import { cx } from "@/registry/lib/cva"
 
 const PageNav = (props: ComponentProps<"div">) => {
   const [, rest] = splitProps(props, ["class", "children"])

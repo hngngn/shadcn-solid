@@ -1,9 +1,8 @@
 import { For, Show } from "solid-js"
 import { createFileRoute, redirect } from "@tanstack/solid-router"
 
-import { cx } from "@repo/tailwindcss/utils/cva"
-
 import ChartDisplay from "@/components/chart-display"
+import { cx } from "@/registry/lib/cva"
 
 import { charts } from "./-charts"
 

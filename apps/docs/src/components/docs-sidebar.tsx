@@ -2,6 +2,8 @@ import type { ComponentProps } from "solid-js"
 import { For, splitProps } from "solid-js"
 import { Link } from "@tanstack/solid-router"
 
+import { docsConfig } from "@/config/docs"
+import { cx } from "@/registry/lib/cva"
 import {
   Sidebar,
   SidebarContent,
@@ -11,10 +13,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@repo/tailwindcss/ui/v4/sidebar"
-import { cx } from "@repo/tailwindcss/utils/cva"
-
-import { docsConfig } from "@/config/docs"
+} from "@/registry/ui/sidebar"
 
 const DocsSidebar = (props: ComponentProps<typeof Sidebar>) => {
   return (
@@ -37,18 +36,18 @@ const DocsSidebar = (props: ComponentProps<typeof Sidebar>) => {
                     {(item) => (
                       <SidebarMenuItem
                         data-indicator={item.indicator}
-                        class="data-[indicator]:before:ring-background w-fit data-[indicator]:before:absolute data-[indicator]:before:top-0 data-[indicator]:before:-right-0.5 data-[indicator]:before:z-10 data-[indicator]:before:size-1.5 data-[indicator]:before:rounded-full data-[indicator]:before:ring-2 data-[indicator=new]:before:bg-green-500 data-[indicator=updated]:before:bg-blue-500"
+                        class="data-indicator:before:ring-background w-fit data-indicator:before:absolute data-indicator:before:top-0 data-indicator:before:-right-0.5 data-indicator:before:z-10 data-indicator:before:size-1.5 data-indicator:before:rounded-full data-indicator:before:ring-2 data-[indicator=new]:before:bg-green-500 data-[indicator=updated]:before:bg-blue-500"
                       >
                         <SidebarMenuButton<typeof SidebarMenuButton>
                           as={(props) => {
-                            const [local, rest] = splitProps(props, ["class"])
+                            const [, rest] = splitProps(props, ["class"])
 
                             return (
                               <Link
                                 disabled={item.disabled}
                                 to={item.href}
                                 class={cx(
-                                  local.class,
+                                  props.class,
                                   "relative h-[30px] overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md aria-disabled:pointer-events-none aria-disabled:opacity-40 aria-disabled:select-none",
                                 )}
                                 activeProps={{

@@ -8,7 +8,7 @@ import {
   type ComponentProps,
 } from "solid-js"
 
-import { Index } from "@/__registry__"
+import { Index } from "@/registry/__index__"
 
 import ComponentPreviewTabs from "./component-preview-tabs"
 
@@ -28,18 +28,18 @@ const ComponentPreview = (props: Props) => {
     } as Props,
     props,
   )
-  const [local, rest] = splitProps(merge, ["name", "type", "align", "hideCode"])
+  const [, rest] = splitProps(merge, ["name", "type", "align", "hideCode"])
 
   const component = createMemo(
-    () => Index.tailwindcss[local.name]?.component() as JSX.Element,
+    () => Index.tailwindcss[merge.name]?.component() as JSX.Element,
   )
 
   return (
     <Switch
       fallback={
         <ComponentPreviewTabs
-          align={local.align}
-          hideCode={local.hideCode}
+          align={merge.align}
+          hideCode={merge.hideCode}
           component={component}
           {...rest}
         />
@@ -49,17 +49,17 @@ const ComponentPreview = (props: Props) => {
         <p class="text-muted-foreground text-sm">
           Component{" "}
           <code class="bg-muted relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm">
-            {local.name}
+            {merge.name}
           </code>{" "}
           not found in registry.
         </p>
       </Match>
-      <Match when={local.type === "block"}>
+      <Match when={merge.type === "block"}>
         <div class="relative aspect-[4/2.5] w-full overflow-hidden rounded-md border md:-mx-1">
           <div class="bg-background absolute inset-0 hidden w-[1600px] md:block">
             <iframe
               title="Block"
-              src={`/view/${local.name}`}
+              src={`/view/${merge.name}`}
               class="size-full"
             />
           </div>

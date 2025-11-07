@@ -1,7 +1,7 @@
 import type { LinkProps } from "@tanstack/solid-router"
 import { Link } from "@tanstack/solid-router"
 
-import { Button } from "@repo/tailwindcss/ui/v4/button"
+import { Button } from "@/registry/ui/button"
 
 const DocNotFound = () => {
   return (

@@ -1,16 +1,16 @@
 import type { ComponentProps, JSX } from "solid-js"
 import { Match, Show, Switch, splitProps } from "solid-js"
 
-import * as accordion from "@repo/tailwindcss/ui/v4/accordion"
-import { cx } from "@repo/tailwindcss/utils/cva"
-
-import CodeBlockCommand from "@/components/code-block-command"
-import ComponentInstallation from "@/components/component-installation"
-import ComponentPreview from "@/components/component-preview"
-import ComponentSource from "@/components/component-source"
-import CopyButton from "@/components/copy-button"
+import { cx } from "@/registry/lib/cva"
+import * as accordion from "@/registry/ui/accordion"
 
 import Callout from "./callout"
+import CodeBlockCommand from "./code-block-command"
+import ComponentInstallation from "./component-installation"
+import ComponentPreview from "./component-preview"
+import ComponentSource from "./component-source"
+import ComponentSourceTabs from "./component-source-tabs"
+import CopyButton from "./copy-button"
 
 type MDXComponents = {
   [key in keyof JSX.IntrinsicElements]: (
@@ -30,7 +30,7 @@ export const mdxCustomComponents: MDXComponents | Record<string, unknown> = {
   ),
   h2: (props) => (
     <h2
-      class="font-heading mt-12 scroll-m-28 text-2xl font-medium tracking-tight first:mt-0 lg:mt-20 [&+p]:!mt-4 *:[code]:text-2xl"
+      class="font-heading mt-12 scroll-m-28 text-2xl font-medium tracking-tight first:mt-0 lg:mt-20 [&+p]:mt-4! *:[code]:text-2xl"
       {...props}
     />
   ),
@@ -60,9 +60,7 @@ export const mdxCustomComponents: MDXComponents | Record<string, unknown> = {
   ),
   li: (props) => <li class="mt-2" {...props} />,
   ol: (props) => <ol class="my-6 ml-6 list-decimal" {...props} />,
-  p: (props) => (
-    <p class="leading-relaxed [&:not(:first-child)]:mt-6" {...props} />
-  ),
+  p: (props) => <p class="leading-relaxed not-first:mt-6" {...props} />,
   ul: (props) => <ul class="my-6 ml-6 list-disc" {...props} />,
   strong: (props) => <strong class="font-medium" {...props} />,
   blockquote: (props) => (
@@ -80,19 +78,19 @@ export const mdxCustomComponents: MDXComponents | Record<string, unknown> = {
   tr: (props) => <tr class="last:border-b-none m-0 border-b" {...props} />,
   th: (props) => (
     <th
-      class="px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right"
+      class="px-4 py-2 text-left font-bold [[align=center]]:text-center [[align=right]]:text-right"
       {...props}
     />
   ),
   td: (props) => (
     <td
-      class="px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right"
+      class="px-4 py-2 text-left [[align=center]]:text-center [[align=right]]:text-right"
       {...props}
     />
   ),
   pre: (props) => (
     <pre
-      class="no-scrollbar min-w-0 overflow-x-auto px-4 py-3.5 outline-none has-[[data-highlighted-line]]:px-0 has-[[data-line-numbers]]:px-0 has-[[data-slot=tabs]]:p-0"
+      class="no-scrollbar min-w-0 overflow-x-auto px-4 py-3.5 outline-none has-data-highlighted-line:px-0 has-data-line-numbers:px-0 has-data-[slot=tabs]:p-0"
       {...props}
     />
   ),
@@ -154,7 +152,7 @@ export const mdxCustomComponents: MDXComponents | Record<string, unknown> = {
   Step: (props: ComponentProps<"div">) => {
     return (
       <div
-        class="[&>h3]:step steps mb-12 [counter-reset:step] *:[h3]:first:!mt-0"
+        class="[&>h3]:step steps mb-12 [counter-reset:step] *:[h3]:first:mt-0!"
         {...props}
       />
     )
@@ -170,6 +168,7 @@ export const mdxCustomComponents: MDXComponents | Record<string, unknown> = {
   ...accordion,
   ComponentPreview,
   ComponentInstallation,
+  ComponentSourceTabs,
   ComponentSource,
   Callout,
 }

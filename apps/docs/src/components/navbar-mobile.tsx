@@ -2,15 +2,10 @@ import type { ComponentProps } from "solid-js"
 import { For, createSignal, splitProps } from "solid-js"
 import { Link } from "@tanstack/solid-router"
 
-import { Button } from "@repo/tailwindcss/ui/v4/button"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@repo/tailwindcss/ui/v4/popover"
-import { cx } from "@repo/tailwindcss/utils/cva"
-
 import { docsConfig } from "@/config/docs"
+import { cx } from "@/registry/lib/cva"
+import { Button } from "@/registry/ui/button"
+import { Popover, PopoverContent, PopoverTrigger } from "@/registry/ui/popover"
 
 const MobileLink = (
   props: ComponentProps<typeof Link> & {
@@ -45,7 +40,7 @@ const NavbarMobile = () => {
         as={(props) => (
           <Button
             variant="ghost"
-            class="extend-touch-target flex h-8 touch-manipulation items-center justify-start gap-2.5 !p-0 hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 active:bg-transparent lg:hidden dark:hover:bg-transparent"
+            class="extend-touch-target flex h-8 touch-manipulation items-center justify-start gap-2.5 p-0! hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 active:bg-transparent lg:hidden dark:hover:bg-transparent"
             {...props}
           >
             <div class="relative flex h-8 w-4 items-center justify-center">

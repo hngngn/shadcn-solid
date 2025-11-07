@@ -1,14 +1,14 @@
 import { For } from "solid-js"
 import { Image } from "@kobalte/core/image"
 
-import { Button } from "@repo/tailwindcss/ui/v4/button"
+import { Button } from "@/registry/ui/button"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@repo/tailwindcss/ui/v4/card"
+} from "@/registry/ui/card"
 import {
   Select,
   SelectContent,
@@ -16,13 +16,13 @@ import {
   SelectPortal,
   SelectTrigger,
   SelectValue,
-} from "@repo/tailwindcss/ui/v4/select"
-import { Separator } from "@repo/tailwindcss/ui/v4/separator"
+} from "@/registry/ui/select"
+import { Separator } from "@/registry/ui/separator"
 import {
   TextField,
   TextFieldInput,
   TextFieldLabel,
-} from "@repo/tailwindcss/ui/v4/text-field"
+} from "@/registry/ui/text-field"
 
 const people = [
   {

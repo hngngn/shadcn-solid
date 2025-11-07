@@ -1,7 +1,7 @@
 import { VisArea, VisLine, VisScatter } from "@unovis/solid"
 import { CurveType } from "@unovis/ts"
 
-import { Button } from "@repo/tailwindcss/ui/v4/button"
+import { Button } from "@/registry/ui/button"
 import {
   Card,
   CardAction,
@@ -9,8 +9,8 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@repo/tailwindcss/ui/v4/card"
-import { ChartContainer, type ChartConfig } from "@repo/tailwindcss/ui/v4/chart"
+} from "@/registry/ui/card"
+import { ChartContainer, type ChartConfig } from "@/registry/ui/chart"
 
 const data = [
   {

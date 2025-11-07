@@ -1,7 +1,7 @@
 import { createSignal } from "solid-js"
 import { VisStackedBar } from "@unovis/solid"
 
-import { Button } from "@repo/tailwindcss/ui/v4/button"
+import { Button } from "@/registry/ui/button"
 import {
   Card,
   CardContent,
@@ -9,9 +9,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@repo/tailwindcss/ui/v4/card"
-import type { ChartConfig } from "@repo/tailwindcss/ui/v4/chart"
-import { ChartContainer } from "@repo/tailwindcss/ui/v4/chart"
+} from "@/registry/ui/card"
+import { ChartContainer, type ChartConfig } from "@/registry/ui/chart"
 
 const data = [
   {

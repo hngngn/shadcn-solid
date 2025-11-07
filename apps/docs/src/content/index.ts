@@ -1004,11 +1004,11 @@ export const Contents : Record<string, Content> = {
   "components/popover": {
     component: lazy(() => import("@/content/docs/components/popover.mdx")),
     data: {
-  "title": "Button",
-  "description": "Displays a button or a component that looks like a button.",
+  "title": "Popover",
+  "description": "Displays rich content in a portal, triggered by a button.",
   "link": {
-    "doc": "https://kobalte.dev/docs/core/components/button",
-    "api": "https://kobalte.dev/docs/core/components/button#api-reference"
+    "doc": "https://kobalte.dev/docs/core/components/popover",
+    "api": "https://kobalte.dev/docs/core/components/popover#api-reference"
   }
 },
     headings: [
@@ -1615,6 +1615,44 @@ export const Contents : Record<string, Content> = {
   }
 ]
   },
+  "dark-mode": {
+    component: lazy(() => import("@/content/docs/dark-mode.mdx")),
+    data: {
+  "title": "Dark Mode",
+  "description": "Adding dark mode to your site."
+},
+    headings: [
+  {
+    "depth": 3,
+    "text": "Wrap your root layout",
+    "slug": "wrap-your-root-layout"
+  },
+  {
+    "depth": 3,
+    "text": "Add a mode toggle",
+    "slug": "add-a-mode-toggle"
+  }
+]
+  },
+  "installation": {
+    component: lazy(() => import("@/content/docs/installation.mdx")),
+    data: {
+  "title": "Installation",
+  "description": "How to install dependencies and get required component for your app."
+},
+    headings: [
+  {
+    "depth": 3,
+    "text": "Install dependencies",
+    "slug": "install-dependencies"
+  },
+  {
+    "depth": 3,
+    "text": "Add component",
+    "slug": "add-component"
+  }
+]
+  },
   "introduction": {
     component: lazy(() => import("@/content/docs/introduction.mdx")),
     data: {
@@ -1641,6 +1679,45 @@ export const Contents : Record<string, Content> = {
     "depth": 2,
     "text": "Beautiful Defaults",
     "slug": "beautiful-defaults"
+  }
+]
+  },
+  "theming": {
+    component: lazy(() => import("@/content/docs/theming.mdx")),
+    data: {
+  "title": "Theming",
+  "description": "Using CSS Variables and color utilities for theming."
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "CSS Variables",
+    "slug": "css-variables"
+  },
+  {
+    "depth": 2,
+    "text": "Utility classes",
+    "slug": "utility-classes"
+  },
+  {
+    "depth": 2,
+    "text": "Convention",
+    "slug": "convention"
+  },
+  {
+    "depth": 2,
+    "text": "List of variables",
+    "slug": "list-of-variables"
+  },
+  {
+    "depth": 2,
+    "text": "Adding new colors",
+    "slug": "adding-new-colors"
+  },
+  {
+    "depth": 2,
+    "text": "Other color formats",
+    "slug": "other-color-formats"
   }
 ]
   },

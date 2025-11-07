@@ -1,8 +1,6 @@
 import type { LinkComponent } from "@tanstack/solid-router"
 import { Link, Outlet, createFileRoute, redirect } from "@tanstack/solid-router"
 
-import { Button } from "@repo/tailwindcss/ui/v4/button"
-
 import Announcement from "@/components/announcement"
 import ChartNav from "@/components/chart-nav"
 import {
@@ -13,6 +11,7 @@ import {
 } from "@/components/page-header"
 import PageNav from "@/components/page-nav"
 import SEO from "@/components/seo"
+import { Button } from "@/registry/ui/button"
 
 const title = "Beautiful Charts & Graphs"
 const description =

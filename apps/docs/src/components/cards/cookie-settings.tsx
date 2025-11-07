@@ -1,4 +1,4 @@
-import { Button } from "@repo/tailwindcss/ui/v4/button"
+import { Button } from "@/registry/ui/button"
 import {
   Card,
   CardContent,
@@ -6,7 +6,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@repo/tailwindcss/ui/v4/card"
+} from "@/registry/ui/card"
 import {
   Switch,
   SwitchControl,
@@ -14,7 +14,7 @@ import {
   SwitchInput,
   SwitchLabel,
   SwitchThumb,
-} from "@repo/tailwindcss/ui/v4/switch"
+} from "@/registry/ui/switch"
 
 const CardsCookieSettings = () => {
   return (

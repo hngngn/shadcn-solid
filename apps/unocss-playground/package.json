@@ -1,0 +1,28 @@
+{
+  "name": "unocss-playground",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build && tsc --noEmit",
+    "start": "vite start",
+    "format": "prettier --write ./src",
+    "lint": "eslint --fix ./src",
+    "ci:lint": "eslint --report-unused-disable-directives ./src",
+    "ci:format": "prettier --check ./src"
+  },
+  "devDependencies": {
+    "@types/node": "^24.8.1",
+    "@unocss/preset-wind4": "^66.5.4",
+    "unocss": "^66.5.4",
+    "vite": "^7.1.10",
+    "vite-plugin-solid": "^2.11.9",
+    "vite-tsconfig-paths": "^5.1.4"
+  },
+  "dependencies": {
+    "@solid-primitives/media": "^2.3.3",
+    "@tanstack/solid-router": "^1.133.13",
+    "@tanstack/solid-start": "^1.133.13",
+    "solid-js": "^1.9.9"
+  }
+}

@@ -1,8 +1,7 @@
-import { createMemo, splitProps, type ComponentProps } from "solid-js"
+import { splitProps, type ComponentProps } from "solid-js"
 
-import { cx } from "@repo/tailwindcss/utils/cva"
-
-import { Index } from "@/__registry__"
+import { Index } from "@/registry/__index__"
+import { cx } from "@/registry/lib/cva"
 
 import { ChartToolbar } from "./chart-toolbar"
 
@@ -12,7 +11,7 @@ const ChartDisplay = (
   },
 ) => {
   const [, rest] = splitProps(props, ["class", "children"])
-  const item = createMemo(() => Index.tailwindcss[props.name])
+  const item = () => Index.tailwindcss[props.name]
 
   return (
     <div

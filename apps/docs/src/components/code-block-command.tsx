@@ -1,15 +1,13 @@
-import { For, Show, createMemo } from "solid-js"
+import { For, Show, createSignal } from "solid-js"
 
+import CopyButton from "@/components/copy-button"
 import {
   Tabs,
   TabsContent,
   TabsIndicator,
   TabsList,
   TabsTrigger,
-} from "@repo/tailwindcss/ui/v4/tabs"
-
-import CopyButton from "@/components/copy-button"
-import { useConfig } from "@/hooks/use-config"
+} from "@/registry/ui/tabs"
 
 const CodeBlockCommand = (props: {
   __npm__?: string
@@ -17,23 +15,22 @@ const CodeBlockCommand = (props: {
   __pnpm__?: string
   __bun__?: string
 }) => {
-  const tabs = createMemo(() => ({
+  const tabs = () => ({
     pnpm: props.__pnpm__,
     npm: props.__npm__,
     yarn: props.__yarn__,
     bun: props.__bun__,
-  }))
+  })
 
-  const { config, setConfig } = useConfig()
+  const [selected, setSelected] = createSignal(tabs().pnpm)
 
   return (
     <div class="overflow-x-auto">
       <Tabs
         class="gap-0"
-        value={config().packageManager}
+        value={selected()}
         onChange={(value) => {
-          // @ts-expect-error
-          setConfig({ packageManager: value })
+          setSelected(value)
         }}
       >
         <div class="border-border/50 flex items-center gap-2 border-b px-3 py-1">
@@ -70,7 +67,7 @@ const CodeBlockCommand = (props: {
         <div class="no-scrollbar overflow-x-auto">
           <For each={Object.entries(tabs())}>
             {([key, value]) => (
-              <Show when={key === config().packageManager}>
+              <Show when={key === selected()}>
                 <TabsContent value={key} class="mt-0 px-4 py-3.5" forceMount>
                   <pre>
                     <code
@@ -88,7 +85,7 @@ const CodeBlockCommand = (props: {
       </Tabs>
       <CopyButton
         class="top-1.5"
-        value={tabs()[config().packageManager as keyof typeof tabs]}
+        value={tabs()[selected() as keyof typeof tabs]}
       />
     </div>
   )

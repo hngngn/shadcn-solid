@@ -1,3 +1,4 @@
+/* eslint-disable */
 // @ts-ignore
 // @refresh skip
 import type { Component, ComponentProps, JSX, Setter } from "solid-js"

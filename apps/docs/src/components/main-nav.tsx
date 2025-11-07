@@ -2,10 +2,9 @@ import type { ComponentProps } from "solid-js"
 import { For, splitProps } from "solid-js"
 import { Link, useLocation } from "@tanstack/solid-router"
 
-import { Button } from "@repo/tailwindcss/ui/v4/button"
-import { cx } from "@repo/tailwindcss/utils/cva"
-
 import type { TNavItem } from "@/config/docs"
+import { cx } from "@/registry/lib/cva"
+import { Button } from "@/registry/ui/button"
 
 const MainNav = (
   props: ComponentProps<"nav"> & {

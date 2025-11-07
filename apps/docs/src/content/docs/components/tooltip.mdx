@@ -8,7 +8,7 @@ link:
 
 <ComponentPreview name="tooltip-demo">
 
-```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/tooltip-demo.tsx
+```tsx file=<rootDir>/src/registry/examples/tooltip-demo.tsx
 
 ```
 
@@ -18,26 +18,21 @@ link:
 
 <ComponentInstallation>
 
-```bash
-npx shadcn-solid@latest add tooltip
-```
-
 <Step>
-  <StepItem>Install the following dependencies:</StepItem>
-
-```bash
-npm install @kobalte/core
-```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
 
-  <ComponentSource>
+  <ComponentSourceTabs>
 
-    ```tsx title="components/ui/tooltip" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/tooltip.tsx
+    ```tsx title="components/ui/tooltip" file=<rootDir>/src/registry/ui/tooltip.tsx
 
     ```
 
-  </ComponentSource>
+    ```tsx title="components/ui/tooltip" file=<rootDir>../../unocss-playground/src/registry/ui/tooltip.tsx
+
+    ```
+
+  </ComponentSourceTabs>
 
 </Step>
 
@@ -51,7 +46,7 @@ import {
   TooltipContent,
   TooltipPortal,
   TooltipTrigger,
-} from "@repo/tailwindcss/ui/v4/tooltip"
+} from "@/registry/ui/tooltip"
 ```
 
 ```tsx

@@ -2,8 +2,6 @@
 
 @import "tw-animate-css";
 
-@source "../../node_modules/@repo/tailwindcss";
-
 @font-face {
   font-family: "Geist Sans Variable";
   src: url("/fonts/Geist%5Bwght%5D.woff2") format("woff2");

@@ -1,24 +1,15 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import type { ComponentProps } from "solid-js"
-import {
-  Match,
-  Show,
-  Switch,
-  createEffect,
-  createSignal,
-  splitProps,
-} from "solid-js"
+import { Match, Show, Switch, createSignal, splitProps } from "solid-js"
 
-import type { ButtonProps } from "@repo/tailwindcss/ui/v4/button"
-import { Button } from "@repo/tailwindcss/ui/v4/button"
+import { cx } from "@/registry/lib/cva"
+import type { ButtonProps } from "@/registry/ui/button"
+import { Button } from "@/registry/ui/button"
 import {
   Tooltip,
   TooltipContent,
   TooltipPortal,
   TooltipTrigger,
-} from "@repo/tailwindcss/ui/v4/tooltip"
-import { cx } from "@repo/tailwindcss/utils/cva"
+} from "@/registry/ui/tooltip"
 
 export const ChartToolbar = (props: ComponentProps<"div"> & { item: any }) => {
   const [, rest] = splitProps(props, ["class", "item"])
@@ -39,10 +30,6 @@ export const ChartToolbar = (props: ComponentProps<"div"> & { item: any }) => {
 }
 
 const ChartTitle = (props: { item: any }) => {
-  createEffect(() => {
-    console.log(props.item)
-  })
-
   return (
     <Switch>
       <Match when={props.item?.name.startsWith("area")}>
@@ -106,7 +93,7 @@ const ChartTitle = (props: { item: any }) => {
         </svg>
         Chart
       </Match>
-      <Match when={props.item?.name.startsWith("tooltip")}>
+      <Match when={props.item?.name.includes("tooltip")}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

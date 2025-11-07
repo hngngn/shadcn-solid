@@ -1,6 +1,6 @@
 import { For } from "solid-js"
 
-import { Button } from "@repo/tailwindcss/ui/v4/button"
+import { Button } from "@/registry/ui/button"
 import {
   Card,
   CardContent,
@@ -8,12 +8,12 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@repo/tailwindcss/ui/v4/card"
+} from "@/registry/ui/card"
 import {
   Checkbox,
   CheckboxControl,
   CheckboxLabel,
-} from "@repo/tailwindcss/ui/v4/checkbox"
+} from "@/registry/ui/checkbox"
 import {
   RadioGroup,
   RadioGroupDescription,
@@ -23,13 +23,13 @@ import {
   RadioGroupItemLabel,
   RadioGroupItems,
   RadioGroupLabel,
-} from "@repo/tailwindcss/ui/v4/radio-group"
+} from "@/registry/ui/radio-group"
 import {
   TextField,
   TextFieldInput,
   TextFieldLabel,
   TextFieldTextArea,
-} from "@repo/tailwindcss/ui/v4/text-field"
+} from "@/registry/ui/text-field"
 
 const plans = [
   {

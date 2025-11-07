@@ -56,7 +56,7 @@ const generateContents = (folderPath: string) => {
           let baseSlug = slugger.slug(value)
 
           // Remove trailing -<number> if present
-          const match = baseSlug.match(/(.*)-(\d+)$/)
+          const match = /(.*)-(\d+)$/.exec(baseSlug)
           if (match) {
             baseSlug = match[1]
           }

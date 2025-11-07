@@ -7,13 +7,13 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@repo/tailwindcss/ui/v4/card"
+} from "@/registry/ui/card"
 import {
   ChartContainer,
   ChartCrosshair,
   ChartTooltipContent,
   type ChartConfig,
-} from "@repo/tailwindcss/ui/v4/chart"
+} from "@/registry/ui/chart"
 
 const data = [
   {

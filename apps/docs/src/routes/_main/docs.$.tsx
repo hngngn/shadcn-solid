@@ -1,32 +1,18 @@
 import { Show } from "solid-js"
-import {
-  Link,
-  createFileRoute,
-  notFound,
-  useLocation,
-} from "@tanstack/solid-router"
+import { Link, createFileRoute, useLocation } from "@tanstack/solid-router"
 
-import { Badge } from "@repo/tailwindcss/ui/v4/badge"
-import { Button } from "@repo/tailwindcss/ui/v4/button"
-
+import clientOnlyWrapper from "@/components/client-only-wrapper"
 import DocsLoading from "@/components/loading/docs"
-import DocNotFound from "@/components/not-found/doc"
 import SEO from "@/components/seo"
-import Toc from "@/components/toc"
 import type { TNavItem, TNavItemWithChildren } from "@/config/docs"
 import { docsConfig } from "@/config/docs"
 import { Contents } from "@/content"
+import { Badge } from "@/registry/ui/badge"
+import { Button } from "@/registry/ui/button"
+
+const Toc = clientOnlyWrapper(() => import("@/components/toc"))
 
 export const Route = createFileRoute("/_main/docs/$")({
-  beforeLoad: ({ params }) => {
-    if (params._splat === undefined) throw notFound()
-
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-    if (Contents[params._splat] === undefined) throw notFound()
-  },
-  component: RouteComponent,
-  notFoundComponent: DocNotFound,
-  pendingComponent: DocsLoading,
   head: ({ params }) => {
     const data = Contents[params._splat!].data
 
@@ -35,6 +21,8 @@ export const Route = createFileRoute("/_main/docs/$")({
       description: data.description,
     })
   },
+  component: RouteComponent,
+  pendingComponent: DocsLoading,
 })
 
 function RouteComponent() {

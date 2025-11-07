@@ -6,13 +6,7 @@ import {
   type JSX,
 } from "solid-js"
 
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@repo/tailwindcss/ui/v4/tabs"
-import { cx } from "@repo/tailwindcss/utils/cva"
+import { cx } from "@/registry/lib/cva"
 
 type Props = ComponentProps<"div"> & {
   align?: "center" | "start" | "end"
@@ -38,55 +32,30 @@ const ComponentPreviewTabs = (props: Props) => {
 
   return (
     <div
-      class={cx("group relative my-4 flex flex-col gap-2", props.class)}
+      class={cx(
+        "group relative mt-4 mb-12 flex flex-col gap-2 rounded-lg border",
+        merge.class,
+      )}
       {...rest}
     >
-      <Show
-        when={!props.hideCode}
-        fallback={
+      <div data-slot="preview">
+        <div
+          data-align={merge.align}
+          class={cx(
+            "preview has-data-[slot='data-table-demo']:px- flex h-[450px] w-full justify-center p-10 has-data-[slot='data-table-demo']:h-full data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start",
+          )}
+        >
+          {merge.component()}
+        </div>
+        <Show when={!merge.hideCode}>
           <div
-            data-align={props.align}
-            class="preview flex min-h-[450px] w-full justify-center rounded-lg border p-10 data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start"
+            data-slot="code"
+            class="overflow-hidden **:data-rehype-pretty-code-figure:m-0! **:data-rehype-pretty-code-figure:rounded-t-none **:data-rehype-pretty-code-figure:border-t [&_pre]:max-h-[400px]"
           >
-            {props.component()}
+            {merge.children}
           </div>
-        }
-      >
-        <Tabs class="relative mr-auto w-full">
-          <div class="flex items-center justify-between">
-            <TabsList class="justify-start gap-4 rounded-none bg-transparent px-2 ring-0 md:px-0">
-              <TabsTrigger
-                value="preview"
-                class="text-muted-foreground data-[selected]:text-foreground px-0 data-[selected]:shadow-none dark:data-[selected]:border-transparent dark:data-[selected]:bg-transparent"
-              >
-                Preview
-              </TabsTrigger>
-              <TabsTrigger
-                value="code"
-                class="text-muted-foreground data-[selected]:text-foreground px-0 data-[selected]:shadow-none dark:data-[selected]:border-transparent dark:data-[selected]:bg-transparent"
-              >
-                Code
-              </TabsTrigger>
-            </TabsList>
-          </div>
-          <div class="relative md:-mx-4">
-            <TabsContent value="preview">
-              <div
-                data-align={props.align}
-                class="preview flex min-h-[450px] w-full justify-center rounded-lg border p-10 data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start"
-              >
-                {props.component()}
-              </div>
-            </TabsContent>
-            <TabsContent
-              value="code"
-              class="overflow-hidden **:[figure]:!m-0 **:[pre]:h-[450px]"
-            >
-              {props.children}
-            </TabsContent>
-          </div>
-        </Tabs>
-      </Show>
+        </Show>
+      </div>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import { Button } from "@repo/tailwindcss/ui/v4/button"
+import { Button } from "@/registry/ui/button"
 import {
   Card,
   CardContent,
@@ -6,12 +6,12 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@repo/tailwindcss/ui/v4/card"
+} from "@/registry/ui/card"
 import {
   TextField,
   TextFieldInput,
   TextFieldLabel,
-} from "@repo/tailwindcss/ui/v4/text-field"
+} from "@/registry/ui/text-field"
 
 const CardsCreateAccount = () => {
   return (

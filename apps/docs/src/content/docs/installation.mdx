@@ -1,0 +1,56 @@
+---
+title: Installation
+description: How to install dependencies and get required component for your app.
+---
+
+<ComponentInstallation>
+
+<Step>
+
+### Install dependencies
+
+Run the following command to install required dependencies.
+
+```bash
+npm install cva@beta tailwind-merge
+```
+
+### Add component
+
+Copy and paste the following code into your project.
+
+<ComponentSource data-slot='installation'>
+
+```tsx title="src/lib/cva" file=<rootDir>/src/registry/lib/cva.ts
+
+```
+
+</ComponentSource>
+
+<ComponentSource data-slot='installation'>
+
+```tsx title="src/lib/call-handler" file=<rootDir>/src/registry/lib/call-handler.ts
+
+```
+
+</ComponentSource>
+
+<ComponentSource data-slot='installation'>
+
+```tsx title="src/lib/combine-style" file=<rootDir>/src/registry/lib/combine-style.ts
+
+```
+
+</ComponentSource>
+
+<ComponentSource data-slot='installation'>
+
+```tsx title="src/hooks/use-mobile" file=<rootDir>/src/registry/hooks/use-mobile.ts
+
+```
+
+</ComponentSource>
+
+</Step>
+
+</ComponentInstallation>

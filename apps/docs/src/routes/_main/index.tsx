@@ -1,8 +1,6 @@
 import type { LinkComponent } from "@tanstack/solid-router"
 import { Link, createFileRoute } from "@tanstack/solid-router"
 
-import { Button } from "@repo/tailwindcss/ui/v4/button"
-
 import Announcement from "@/components/announcement"
 import CardsDemo from "@/components/cards"
 import {
@@ -12,6 +10,7 @@ import {
   PageHeaderHeading,
 } from "@/components/page-header"
 import SEO from "@/components/seo"
+import { Button } from "@/registry/ui/button"
 
 const title = "The Foundation for your Design System"
 const description =

@@ -1,23 +1,23 @@
 import { splitProps } from "solid-js"
 import { Link } from "@tanstack/solid-router"
 
-import { Button } from "@repo/tailwindcss/ui/v4/button"
-import { Separator } from "@repo/tailwindcss/ui/v4/separator"
-import { cx } from "@repo/tailwindcss/utils/cva"
-
-import CommandMenu from "@/components/command-menu"
-import Logo from "@/components/logo"
-import MainNav from "@/components/main-nav"
-import ModeToggle from "@/components/mode-toggle"
-import NavbarMobile from "@/components/navbar-mobile"
 import { docsConfig } from "@/config/docs"
 import { siteConfig } from "@/config/site"
+import { cx } from "@/registry/lib/cva"
+import { Button } from "@/registry/ui/button"
+import { Separator } from "@/registry/ui/separator"
+
+import CommandMenu from "./command-menu"
+import Logo from "./logo"
+import MainNav from "./main-nav"
+import ModeToggle from "./mode-toggle"
+import NavbarMobile from "./navbar-mobile"
 
 const Header = () => {
   return (
     <header class="bg-background sticky top-0 z-50 w-full">
       <div class="container-wrapper px-6">
-        <div class="flex h-(--header-height) items-center gap-2 **:data-[slot=separator]:!h-4">
+        <div class="flex h-(--header-height) items-center gap-2 **:data-[slot=separator]:h-4!">
           <NavbarMobile />
           <Button<typeof Link>
             variant="ghost"
@@ -47,14 +47,14 @@ const Header = () => {
               size="sm"
               variant="ghost"
               as={(props) => {
-                const [local, rest] = splitProps(props, ["class"])
+                const [, rest] = splitProps(props, ["class"])
 
                 return (
                   <Link
                     to={siteConfig.links.github}
                     target="_blank"
                     rel="noreferrer"
-                    class={cx(local.class, "h-8 shadow-none")}
+                    class={cx(props.class, "h-8 shadow-none")}
                     {...rest}
                   >
                     <svg

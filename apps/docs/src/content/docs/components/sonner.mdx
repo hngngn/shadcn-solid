@@ -9,7 +9,7 @@ link:
 
 <ComponentPreview name="sonner-demo">
 
-```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/sonner-demo.tsx
+```tsx file=<rootDir>/src/registry/examples/sonner-demo.tsx
 
 ```
 
@@ -18,10 +18,6 @@ link:
 ## Installation
 
 <ComponentInstallation>
-
-```bash
-npx shadcn-solid@latest add sonner
-```
 
 <Step>
   <StepItem>Install the following dependencies:</StepItem>
@@ -32,13 +28,17 @@ npm install somoto @kobalte/core
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
 
-  <ComponentSource>
+  <ComponentSourceTabs>
 
-    ```tsx title="components/ui/sonner" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/sonner.tsx
+    ```tsx title="components/ui/sonner" file=<rootDir>/src/registry/ui/sonner.tsx
 
     ```
 
-  </ComponentSource>
+    ```tsx title="components/ui/sonner" file=<rootDir>../../unocss-playground/src/registry/ui/sonner.tsx
+
+    ```
+
+  </ComponentSourceTabs>
 
 <StepItem>Add the Toaster component</StepItem>
 

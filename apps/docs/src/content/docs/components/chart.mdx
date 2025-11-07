@@ -53,10 +53,6 @@ export default MyChart
 
 <ComponentInstallation>
 
-```bash
-npx shadcn-solid@latest add chart
-```
-
 <Step>
   <StepItem>Install the following dependencies:</StepItem>
 
@@ -68,7 +64,7 @@ npm install @unovis/solid @unovis/ts
 
   <ComponentSource>
 
-    ```tsx title="components/ui/chart" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/chart.tsx
+    ```tsx title="components/ui/chart" file=<rootDir>/src/registry/ui//chart.tsx
 
     ```
 
@@ -316,11 +312,11 @@ const chartConfig = {
   },
   chrome: {
     label: "Chrome",
-    color: "hsl(var(--chart-1))",
+    color: "var(--chart-1)",
   },
   safari: {
     label: "Safari",
-    color: "hsl(var(--chart-2))",
+    color: "var(--chart-2)",
   },
 } satisfies ChartConfig
 ```

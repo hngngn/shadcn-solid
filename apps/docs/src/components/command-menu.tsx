@@ -8,9 +8,11 @@ import {
   splitProps,
 } from "solid-js"
 import { useNavigate } from "@tanstack/solid-router"
-import { createMutationObserver } from "@solid-primitives/mutation-observer"
 
-import { Button } from "@repo/tailwindcss/ui/v4/button"
+import { docsConfig } from "@/config/docs"
+import { cx } from "@/registry/lib/cva"
+import { AlertDialogTrigger } from "@/registry/ui/alert-dialog"
+import { Button } from "@/registry/ui/button"
 import {
   Command,
   CommandEmpty,
@@ -18,7 +20,7 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@repo/tailwindcss/ui/v4/command"
+} from "@/registry/ui/command"
 import {
   Dialog,
   DialogContent,
@@ -26,13 +28,7 @@ import {
   DialogHeader,
   DialogPortal,
   DialogTitle,
-  DialogTrigger,
-} from "@repo/tailwindcss/ui/v4/dialog"
-import { Separator } from "@repo/tailwindcss/ui/v4/separator"
-import { cx } from "@repo/tailwindcss/utils/cva"
-
-import { docsConfig } from "@/config/docs"
-import { useConfig } from "@/hooks/use-config"
+} from "@/registry/ui/dialog"
 
 const CommandKbd = (props: ComponentProps<"kbd">) => {
   const [local, rest] = splitProps(props, ["class"])
@@ -55,28 +51,10 @@ const CommandMenuItem = (
 ) => {
   const [local, rest] = splitProps(props, ["class", "onHighlight"])
 
-  const [itemRef, setItemRef] = createSignal<HTMLDivElement>()
-  createMutationObserver(
-    () => itemRef()!,
-    { attributes: true },
-    (mutations) => {
-      mutations.forEach((mutation) => {
-        if (
-          mutation.type === "attributes" &&
-          mutation.attributeName === "aria-selected" &&
-          itemRef()?.getAttribute("aria-selected") === "true"
-        ) {
-          local.onHighlight?.()
-        }
-      })
-    },
-  )
-
   return (
     <CommandItem
-      ref={setItemRef}
       class={cx(
-        "data-[selected=true]:border-input data-[selected=true]:bg-input/50 h-9 rounded-md border border-transparent !px-3 font-medium",
+        "data-[selected=true]:border-input data-[selected=true]:bg-input/50 h-9 rounded-md border border-transparent px-3! font-medium",
         local.class,
       )}
       {...rest}
@@ -85,39 +63,13 @@ const CommandMenuItem = (
 }
 
 const CommandMenu = () => {
-  const { config } = useConfig()
-
   const navigate = useNavigate()
 
   const [open, setOpen] = createSignal(false)
-  const [selectedType, setSelectedType] = createSignal<
-    "color" | "page" | "component"
-  >()
-  const [copyPayload, setCopyPayload] = createSignal("")
 
   const runCommand = (command: () => unknown) => {
     setOpen(false)
     command()
-  }
-
-  const handlePageHighlight = (isComponent: boolean, name: string) => {
-    if (isComponent) {
-      setSelectedType("component")
-      setCopyPayload(
-        `${
-          config().packageManager === "npm"
-            ? "npx"
-            : config().packageManager === "pnpm"
-              ? "pnpx"
-              : config().packageManager === "yarn"
-                ? "yarn dlx"
-                : "bunx --bun"
-        } shadcn-solid@latest add ${name}`,
-      )
-    } else {
-      setSelectedType("page")
-      setCopyPayload("")
-    }
   }
 
   const handleKeyDown = (e: KeyboardEvent) => {
@@ -134,14 +86,6 @@ const CommandMenu = () => {
       e.preventDefault()
       setOpen((open) => !open)
     }
-
-    if (e.key === "c" && (e.metaKey || e.ctrlKey)) {
-      runCommand(async () => {
-        if (selectedType() === "page" || selectedType() === "component") {
-          await navigator.clipboard.writeText(copyPayload())
-        }
-      })
-    }
   }
 
   createEffect(() => {
@@ -154,7 +98,7 @@ const CommandMenu = () => {
 
   return (
     <Dialog open={open()} onOpenChange={setOpen}>
-      <DialogTrigger<typeof Button>
+      <AlertDialogTrigger<typeof Button>
         as={(props) => (
           <Button
             variant="secondary"
@@ -181,7 +125,7 @@ const CommandMenu = () => {
               Search for a command to run...
             </DialogDescription>
           </DialogHeader>
-          <Command class="**:data-[slot=command-input-wrapper]:bg-input/50 **:data-[slot=command-input-wrapper]:border-input rounded-none bg-transparent **:data-[slot=command-input]:!h-9 **:data-[slot=command-input]:py-0 **:data-[slot=command-input-wrapper]:mb-0 **:data-[slot=command-input-wrapper]:!h-9 **:data-[slot=command-input-wrapper]:rounded-md **:data-[slot=command-input-wrapper]:border">
+          <Command class="**:data-[slot=command-input-wrapper]:bg-input/50 **:data-[slot=command-input-wrapper]:border-input rounded-none bg-transparent **:data-[slot=command-input]:h-9! **:data-[slot=command-input]:py-0 **:data-[slot=command-input-wrapper]:mb-0 **:data-[slot=command-input-wrapper]:h-9! **:data-[slot=command-input-wrapper]:rounded-md **:data-[slot=command-input-wrapper]:border">
             <CommandInput placeholder="Search documentation..." />
             <CommandList class="no-scrollbar min-h-80 scroll-pt-2 scroll-pb-1.5">
               <CommandEmpty class="text-muted-foreground py-12 text-center text-sm">
@@ -191,7 +135,7 @@ const CommandMenu = () => {
                 {(item) => (
                   <CommandGroup
                     heading={item.title}
-                    class="!p-0 [&_[cmdk-group-heading]]:scroll-mt-16 [&_[cmdk-group-heading]]:!p-3 [&_[cmdk-group-heading]]:!pb-1"
+                    class="p-0! **:[[cmdk-group-heading]]:scroll-mt-16 **:[[cmdk-group-heading]]:p-3! **:[[cmdk-group-heading]]:pb-1!"
                   >
                     <For each={item.items}>
                       {(item) => {
@@ -204,15 +148,6 @@ const CommandMenu = () => {
                               runCommand(async () => {
                                 await navigate({ to: item.href! })
                               })
-                            }}
-                            onHighlight={() => {
-                              handlePageHighlight(
-                                isComponent(),
-                                item.title
-                                  .toLocaleLowerCase()
-                                  .split(" ")
-                                  .join("-"),
-                              )
                             }}
                           >
                             <Show
@@ -276,17 +211,6 @@ const CommandMenu = () => {
               </CommandKbd>{" "}
               Go to Page
             </div>
-            <Show when={copyPayload()}>
-              <Separator
-                orientation="vertical"
-                class="data-[orientation=vertical]:h-4"
-              />
-              <div class="flex items-center gap-1">
-                <CommandKbd>Ctrl</CommandKbd>
-                <CommandKbd>C</CommandKbd>
-                {copyPayload()}
-              </div>
-            </Show>
           </div>
         </DialogContent>
       </DialogPortal>

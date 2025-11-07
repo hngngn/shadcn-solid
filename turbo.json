@@ -15,20 +15,7 @@
       "dependsOn": ["^format"],
       "cache": false
     },
-    "ci:lint": {
-      "dependsOn": ["^ci:lint"]
-    },
-    "ci:format": {
-      "dependsOn": ["^ci:format"]
-    },
-    "check-types": {
-      "dependsOn": ["^check-types"]
-    },
     "dev": {
-      "cache": false,
-      "persistent": true
-    },
-    "registry": {
       "cache": false,
       "persistent": true
     }

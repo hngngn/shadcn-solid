@@ -1,7 +1,7 @@
 import { For, splitProps, type ComponentProps } from "solid-js"
 import { Link } from "@tanstack/solid-router"
 
-import { cx } from "@repo/tailwindcss/utils/cva"
+import { cx } from "@/registry/lib/cva"
 
 const links = [
   {

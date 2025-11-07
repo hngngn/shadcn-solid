@@ -1,0 +1,16 @@
+import {
+  Checkbox,
+  CheckboxControl,
+  CheckboxLabel,
+} from "@/registry/ui/checkbox"
+
+const CheckboxDisabledDemo = () => {
+  return (
+    <Checkbox class="flex items-center gap-3" disabled>
+      <CheckboxControl />
+      <CheckboxLabel>Enable notifications</CheckboxLabel>
+    </Checkbox>
+  )
+}
+
+export default CheckboxDisabledDemo

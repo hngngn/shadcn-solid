@@ -9,7 +9,7 @@ link:
 
 <ComponentPreview name="resizable-demo">
 
-```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/resizable-demo.tsx
+```tsx file=<rootDir>/src/registry/examples/resizable-demo.tsx
 
 ```
 
@@ -19,26 +19,21 @@ link:
 
 <ComponentInstallation>
 
-```bash
-npx shadcn-solid@latest add resizable
-```
-
 <Step>
-  <StepItem>Install the following dependencies:</StepItem>
-
-```bash
-npm install @corvu/resizable
-```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
 
-  <ComponentSource>
+  <ComponentSourceTabs>
 
-    ```tsx title="components/ui/resizable" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/resizable.tsx
+    ```tsx title="components/ui/resizable" file=<rootDir>/src/registry/ui/resizable.tsx
 
     ```
 
-  </ComponentSource>
+    ```tsx title="components/ui/resizable" file=<rootDir>../../unocss-playground/src/registry/ui/resizable.tsx
+
+    ```
+
+  </ComponentSourceTabs>
 
 </Step>
 
@@ -70,7 +65,7 @@ Use the `orientation` prop to set the direction of the resizable panels.
 
 <ComponentPreview name="resizable-orientation-demo">
 
-```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/resizable-orientation-demo.tsx
+```tsx file=<rootDir>/src/registry/examples/resizable-orientation-demo.tsx
 
 ```
 
@@ -100,7 +95,7 @@ You can set or hide the handle by using the `withHandle` prop on the ResizableHa
 
 <ComponentPreview name="resizable-with-handle-demo">
 
-```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/resizable-with-handle-demo.tsx
+```tsx file=<rootDir>/src/registry/examples/resizable-with-handle-demo.tsx
 
 ```
 

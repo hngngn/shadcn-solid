@@ -1,14 +1,14 @@
 import { Show, createSignal, mergeProps, splitProps } from "solid-js"
 
-import type { ButtonProps } from "@repo/tailwindcss/ui/v4/button"
-import { Button } from "@repo/tailwindcss/ui/v4/button"
+import { cx } from "@/registry/lib/cva"
+import type { ButtonProps } from "@/registry/ui/button"
+import { Button } from "@/registry/ui/button"
 import {
   Tooltip,
   TooltipContent,
   TooltipPortal,
   TooltipTrigger,
-} from "@repo/tailwindcss/ui/v4/tooltip"
-import { cx } from "@repo/tailwindcss/utils/cva"
+} from "@/registry/ui/tooltip"
 
 type Props = ButtonProps & { value: string }
 
@@ -25,7 +25,7 @@ const CopyButton = (props: Props) => {
 
   const copyToClipboard = () => {
     setHasCopied(true)
-    navigator.clipboard.writeText(local.value)
+    void navigator.clipboard.writeText(local.value)
     setTimeout(() => setHasCopied(false), 2000)
   }
 

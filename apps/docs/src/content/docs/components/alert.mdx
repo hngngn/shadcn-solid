@@ -9,7 +9,7 @@ link:
 
 <ComponentPreview name="alert-demo">
 
-```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/alert-demo.tsx
+```tsx file=<rootDir>/src/registry/examples/alert-demo.tsx
 
 ```
 
@@ -19,26 +19,21 @@ link:
 
 <ComponentInstallation>
 
-```bash
-npx shadcn-solid@latest add alert
-```
-
 <Step>
-  <StepItem>Install the following dependencies:</StepItem>
-
-```bash
-npm install @kobalte/core
-```
 
 <StepItem>Copy and paste the following code into your project:</StepItem>
 
-  <ComponentSource>
+  <ComponentSourceTabs>
 
-    ```tsx title="components/ui/alert" file=<rootDir>../../../packages/tailwindcss/src/ui/v4/alert.tsx
+    ```tsx title="components/ui/alert" file=<rootDir>/src/registry/ui/alert.tsx
 
     ```
 
-  </ComponentSource>
+    ```tsx title="components/ui/alert" file=<rootDir>../../unocss-playground/src/registry/ui/alert.tsx
+
+    ```
+
+  </ComponentSourceTabs>
 
 </Step>
 
@@ -63,7 +58,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 
 <ComponentPreview name="alert-destructive-demo">
 
-```tsx file=<rootDir>../../../packages/tailwindcss/src/examples/alert-destructive-demo.tsx
+```tsx file=<rootDir>/src/registry/examples/alert-destructive-demo.tsx
 
 ```
 

@@ -8,8 +8,8 @@ import {
   CalendarLabel,
   CalendarNav,
   CalendarTable,
-} from "@repo/tailwindcss/ui/v4/calendar"
-import { Card, CardContent } from "@repo/tailwindcss/ui/v4/card"
+} from "@/registry/ui/calendar"
+import { Card, CardContent } from "@/registry/ui/card"
 
 const { format: formatWeekdayLong } = new Intl.DateTimeFormat("en", {
   weekday: "long",

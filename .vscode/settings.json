@@ -4,11 +4,20 @@
       "mode": "auto"
     }
   ],
-  "eslint.useFlatConfig": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-     "source.removeUnusedImports": "explicit"
+  "files.watcherExclude": {
+    "**/routeTree.gen.ts": true
   },
-  "tailwindCSS.classFunctions": ["cva", "cx"]
+  "search.exclude": {
+    "**/routeTree.gen.ts": true
+  },
+  "files.readonlyInclude": {
+    "**/routeTree.gen.ts": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "tailwindCSS.classFunctions": ["cva", "cx"],
+  "tailwindCSS.files.exclude": ["**/apps/unocss-playground/**"],
+  "editor.codeActionsOnSave": {
+    "source.removeUnusedImports": "explicit",
+    "source.fixAll.eslint": "explicit"
+  }
 }

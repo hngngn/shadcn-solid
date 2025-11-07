@@ -1,10 +1,9 @@
 import type { LinkProps } from "@tanstack/solid-router"
 import { Link } from "@tanstack/solid-router"
 
-import { Button } from "@repo/tailwindcss/ui/v4/button"
-
 import Footer from "@/components/footer"
 import Header from "@/components/header"
+import { Button } from "@/registry/ui/button"
 
 const MainNotFound = () => {
   return (
