@@ -5,7 +5,7 @@
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": [".vinxi/**", ".output/**", ".vercel/**"]
+      "outputs": [".output/**", ".vercel/**"]
     },
     "lint": {
       "dependsOn": ["^lint"],
@@ -13,6 +13,14 @@
     },
     "format": {
       "dependsOn": ["^format"],
+      "cache": false
+    },
+    "ci:lint": {
+      "dependsOn": ["^ci:lint"],
+      "cache": false
+    },
+    "ci:format": {
+      "dependsOn": ["^ci:format"],
       "cache": false
     },
     "dev": {

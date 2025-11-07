@@ -1,5 +1,6 @@
 import { tanstackStart } from "@tanstack/solid-start/plugin/vite"
 import tailwindcss from "@tailwindcss/vite"
+import { nitro } from "nitro/vite"
 import { defineConfig } from "vite"
 import viteSolid from "vite-plugin-solid"
 import tsConfigPaths from "vite-tsconfig-paths"
@@ -19,6 +20,7 @@ export default defineConfig({
     mdx(),
     content(),
     tanstackStart(),
+    nitro(),
     viteSolid({
       ssr: true,
       extensions: [".mdx"],
