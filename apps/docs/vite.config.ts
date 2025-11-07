@@ -19,7 +19,11 @@ export default defineConfig({
     tailwindcss(),
     mdx(),
     content(),
-    tanstackStart(),
+    tanstackStart({
+      prerender: {
+        crawlLinks: true,
+      },
+    }),
     nitro(),
     viteSolid({
       ssr: true,
@@ -27,12 +31,6 @@ export default defineConfig({
     }),
   ],
   resolve: {
-    noExternal: [
-      "@kobalte/core",
-      "@unovis/solid",
-      "@unovis/ts",
-      "cmdk-solid",
-      "embla-carousel-solid",
-    ],
+    noExternal: ["@kobalte/core", "cmdk-solid"],
   },
 })

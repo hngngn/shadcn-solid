@@ -1,2 +1,3 @@
 src/routeTree.gen.ts
 src/registry/__index__.tsx
+src/content/index.ts

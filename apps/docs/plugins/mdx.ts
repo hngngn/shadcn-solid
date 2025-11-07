@@ -17,7 +17,6 @@ export default (): Plugin => {
         remarkGFM,
         remarkFrontmatter,
         [
-          // @ts-expect-error
           codeImport,
           {
             allowImportingFromOutside: true,
