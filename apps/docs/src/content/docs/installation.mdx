@@ -11,9 +11,258 @@ description: How to install dependencies and get required component for your app
 
 Run the following command to install required dependencies.
 
+<ComponentSourceTabs withComponent={false}>
+
+```bash
+npm install cva@beta tailwind-merge tw-animate-css
+```
+
 ```bash
 npm install cva@beta tailwind-merge
 ```
+
+</ComponentSourceTabs>
+
+### Add style
+
+Copy and paste the following code into your project.
+
+<ComponentSourceTabs withComponent={false}>
+
+    <ComponentSource data-slot='installation'>
+
+```css title="src/styles/app.css"
+@import "tailwindcss";
+
+@import "tw-animate-css";
+
+@custom-variant dark (&:is([data-kb-theme="dark"] *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
+  --color-code: var(--code);
+  --color-code-foreground: var(--code-foreground);
+  --color-code-highlight: var(--code-highlight);
+  --color-code-number: var(--code-number);
+  --color-selection: var(--selection);
+  --color-selection-foreground: var(--selection-foreground);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --vis-tooltip-padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 2.5);
+  --vis-tooltip-box-shadow: var(--shadow-xl);
+  --vis-tooltip-background-color: var(--color-background);
+  --vis-tooltip-border-color: var(--color-border);
+  --vis-tooltip-border-radius: var(--radius-lg);
+  --vis-tooltip-text-color: var(--color-foreground);
+  --vis-font-family: var(--font-sans);
+  --vis-legend-label-color: var(--vis-tooltip-text-color);
+}
+
+[data-kb-theme="dark"] {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+```
+
+    </ComponentSource>
+
+    <div class='space-y-2'>
+
+    <h3 class='mt-6'>Animate preset</h3>
+
+<ComponentSource data-slot='installation'>
+
+    ```tsx title="presets/animate/index.ts" file=<rootDir>../../unocss-playground/presets/animate/index.ts
+
+    ```
+
+    </ComponentSource>
+
+<ComponentSource data-slot='installation'>
+
+    ```tsx title="presets/animate/rules.ts" file=<rootDir>../../unocss-playground/presets/animate/rules.ts
+
+    ```
+
+    </ComponentSource>
+
+<ComponentSource data-slot='installation'>
+
+    ```tsx title="presets/animate/theme.ts" file=<rootDir>../../unocss-playground/presets/animate/theme.ts
+
+    ```
+
+    </ComponentSource>
+
+        <h3 class='mt-6'>Shadcn preset</h3>
+
+<ComponentSource data-slot='installation'>
+
+    ```tsx title="presets/shadcn/index.ts" file=<rootDir>../../unocss-playground/presets/shadcn/index.ts
+
+    ```
+
+    </ComponentSource>
+
+<ComponentSource data-slot='installation'>
+
+    ```tsx title="presets/shadcn/preflights.ts" file=<rootDir>../../unocss-playground/presets/shadcn/preflights.ts
+
+    ```
+
+    </ComponentSource>
+
+<ComponentSource data-slot='installation'>
+
+    ```tsx title="presets/shadcn/theme.ts" file=<rootDir>../../unocss-playground/presets/shadcn/theme.ts
+
+    ```
+
+    </ComponentSource>
+
+            <h3 class='mt-6'>Import presets to UnoCSS config</h3>
+
+<ComponentSource data-slot='installation'>
+
+```tsx title="uno.config.ts"
+import {
+  defineConfig,
+  presetWebFonts,
+  presetWind4,
+  transformerDirectives,
+  transformerVariantGroup,
+} from "unocss"
+
+import { presetAnimate } from "./presets/animate"
+import { presetShadcn } from "./presets/shadcn"
+
+export default defineConfig({
+  presets: [
+    presetWind4({
+      dark: {
+        dark: '[data-kb-theme="dark"]',
+        light: '[data-kb-theme="light"]',
+      },
+    }),
+    presetAnimate(),
+    presetShadcn(),
+  ],
+  transformers: [transformerVariantGroup(), transformerDirectives()],
+})
+```
+
+    </ComponentSource>
+    </div>
+
+  </ComponentSourceTabs>
 
 ### Add component
 

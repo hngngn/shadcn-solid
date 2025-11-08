@@ -1648,6 +1648,11 @@ export const Contents : Record<string, Content> = {
   },
   {
     "depth": 3,
+    "text": "Add style",
+    "slug": "add-style"
+  },
+  {
+    "depth": 3,
     "text": "Add component",
     "slug": "add-component"
   }

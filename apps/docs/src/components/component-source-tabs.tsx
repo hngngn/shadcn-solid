@@ -1,4 +1,5 @@
-import { children, type ParentComponent } from "solid-js"
+import type { ParentProps } from "solid-js"
+import { Show, children, mergeProps } from "solid-js"
 
 import {
   Tabs,
@@ -10,8 +11,13 @@ import {
 
 import ComponentSource from "./component-source"
 
-const ComponentSourceTabs: ParentComponent = (props) => {
-  const childrens = children(() => props.children).toArray()
+type Props = {
+  withComponent?: boolean
+} & ParentProps
+
+const ComponentSourceTabs = (props: Props) => {
+  const merge = mergeProps<Props[]>({ withComponent: true }, props)
+  const childrens = children(() => merge.children).toArray()
 
   return (
     <Tabs class="mt-6">
@@ -21,10 +27,14 @@ const ComponentSourceTabs: ParentComponent = (props) => {
         <TabsIndicator />
       </TabsList>
       <TabsContent value="tw">
-        <ComponentSource>{childrens[0]}</ComponentSource>
+        <Show when={merge.withComponent} fallback={childrens[0]}>
+          <ComponentSource>{childrens[0]}</ComponentSource>
+        </Show>
       </TabsContent>
       <TabsContent value="uno">
-        <ComponentSource>{childrens[1]}</ComponentSource>
+        <Show when={merge.withComponent} fallback={childrens[1]}>
+          <ComponentSource>{childrens[1]}</ComponentSource>
+        </Show>
       </TabsContent>
     </Tabs>
   )

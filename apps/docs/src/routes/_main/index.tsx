@@ -31,7 +31,7 @@ function RouteComponent() {
         <PageActions>
           <Button<LinkComponent<"a">>
             as={(props) => (
-              <Link to="/docs/introduction" {...props}>
+              <Link to="/docs/installation" {...props}>
                 Get Started
               </Link>
             )}

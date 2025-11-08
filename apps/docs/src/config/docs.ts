@@ -22,7 +22,7 @@ export const docsConfig: TDocsConfig = {
   mainNav: [
     {
       title: "Docs",
-      href: "/docs/introduction",
+      href: "/docs/installation",
     },
     {
       title: "Components",
