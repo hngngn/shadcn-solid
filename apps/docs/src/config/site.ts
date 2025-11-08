@@ -1,6 +1,8 @@
 export const siteConfig = {
   title: "shadcn-solid",
-  url: "https://shadcn-solid.com",
+  // TODO: revert when i've control of the domain
+  // url: "https://shadcn-solid.com",
+  url: "https://shadcn-solid.netlify.app",
   description:
     "Beautifully designed components built with your choice of UI and CSS frameworks.",
   links: {
