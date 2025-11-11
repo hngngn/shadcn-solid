@@ -14,6 +14,7 @@ import AppSidebar from "./-components/app-sidebar"
 import BadgeDemo from "./-components/badge-demo"
 import BreadcrumbsDemo from "./-components/breadcrumbs-demo"
 import ButtonDemo from "./-components/button-demo"
+import ButtonGroupDemo from "./-components/button-group-demo"
 import CalendarDemo from "./-components/calendar-demo"
 import CardDemo from "./-components/card-demo"
 import CarouselDemo from "./-components/carousel-demo"
@@ -30,6 +31,7 @@ import DrawerDemo from "./-components/drawer-demo"
 import DropdownMenuDemo from "./-components/dropdown-menu-demo"
 import FileFieldDemo from "./-components/file-field-demo"
 import HoverCardDemo from "./-components/hover-card-demo"
+import KbdDemo from "./-components/kbd-demo"
 import MenubarDemo from "./-components/menubar-demo"
 import ModeSwitcher from "./-components/mode-switcher"
 import NavigationMenuDemo from "./-components/navigation-menu-demo"
@@ -91,6 +93,9 @@ function RouteComponent() {
           <ComponentWrapper name="breadcrumbs">
             <BreadcrumbsDemo />
           </ComponentWrapper>
+          <ComponentWrapper name="button-group">
+            <ButtonGroupDemo />
+          </ComponentWrapper>
           <ComponentWrapper name="button">
             <ButtonDemo />
           </ComponentWrapper>
@@ -138,6 +143,9 @@ function RouteComponent() {
           </ComponentWrapper>
           <ComponentWrapper name="hover-card">
             <HoverCardDemo />
+          </ComponentWrapper>
+          <ComponentWrapper name="kbd">
+            <KbdDemo />
           </ComponentWrapper>
           <ComponentWrapper name="menubar">
             <MenubarDemo />

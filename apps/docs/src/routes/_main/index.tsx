@@ -26,7 +26,7 @@ function RouteComponent() {
     <>
       <PageHeader>
         <Announcement />
-        <PageHeaderHeading>{title}</PageHeaderHeading>
+        <PageHeaderHeading class="max-w-4xl">{title}</PageHeaderHeading>
         <PageHeaderDescription>{description}</PageHeaderDescription>
         <PageActions>
           <Button<LinkComponent<"a">>

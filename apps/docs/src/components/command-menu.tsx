@@ -29,6 +29,7 @@ import {
   DialogPortal,
   DialogTitle,
 } from "@/registry/ui/dialog"
+import { Kbd, KbdGroup } from "@/registry/ui/kbd"
 
 const CommandKbd = (props: ComponentProps<"kbd">) => {
   const [local, rest] = splitProps(props, ["class"])
@@ -102,14 +103,16 @@ const CommandMenu = () => {
         as={(props) => (
           <Button
             variant="secondary"
-            class="bg-surface text-surface-foreground/60 dark:bg-card relative h-8 w-full justify-start pl-2.5 font-normal shadow-none sm:pr-12 md:w-40 lg:w-56 xl:w-64"
+            class="bg-surface text-foreground dark:bg-card relative h-8 w-full justify-start pl-2.5 font-normal shadow-none sm:pr-12 md:w-40 lg:w-56 xl:w-64"
             {...props}
           >
             <span class="hidden lg:inline-flex">Search documentation...</span>
             <span class="inline-flex lg:hidden">Search...</span>
             <div class="absolute top-1.5 right-1.5 hidden gap-1 sm:flex">
-              <CommandKbd>Ctrl</CommandKbd>
-              <CommandKbd class="aspect-square">K</CommandKbd>
+              <KbdGroup>
+                <Kbd class="border">⌘</Kbd>
+                <Kbd class="border">K</Kbd>
+              </KbdGroup>
             </div>
           </Button>
         )}

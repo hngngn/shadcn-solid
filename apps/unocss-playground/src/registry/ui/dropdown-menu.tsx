@@ -86,7 +86,7 @@ export const DropdownMenuSubTrigger = <T extends ValidComponent = "div">(
       data-slot="dropdown-menu-sub-trigger"
       data-inset={props.inset}
       class={cx(
-        "outline-hidden flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm data-[inset]:pl-8 [&_svg:not([class*=size-])]:size-4",
+        "outline-hidden flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm data-[inset]:pl-8 [&_svg:not([class*=size-])]:size-4 gap-2",
         "data-[highlighted]:(bg-accent text-accent-foreground)",
         "data-[expanded]:(bg-accent text-accent-foreground)",
         "[&_svg]:(pointer-events-none shrink-0)",

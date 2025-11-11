@@ -69,6 +69,19 @@ export const Index: Record<string, any> = {
       }
 ]
     },
+    "button-group": {
+      name: "button-group",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: ["separator"],
+      files: [
+      {
+            "path": "ui/button-group.tsx",
+            "type": "registry:ui",
+            "target": ""
+      }
+]
+    },
     "button": {
       name: "button",
       description: "",
@@ -246,6 +259,19 @@ export const Index: Record<string, any> = {
       files: [
       {
             "path": "ui/hover-card.tsx",
+            "type": "registry:ui",
+            "target": ""
+      }
+]
+    },
+    "kbd": {
+      name: "kbd",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [
+      {
+            "path": "ui/kbd.tsx",
             "type": "registry:ui",
             "target": ""
       }

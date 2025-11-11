@@ -9,6 +9,7 @@ const BadgeDestructiveDemo = clientOnlyWrapper(() => import("@/registry/examples
 const BadgeOutlineDemo = clientOnlyWrapper(() => import("@/registry/examples/badge-outline-demo"), { lazy: true })
 const BadgeSecondaryDemo = clientOnlyWrapper(() => import("@/registry/examples/badge-secondary-demo"), { lazy: true })
 const BreadcrumbsDemo = clientOnlyWrapper(() => import("@/registry/examples/breadcrumbs-demo"), { lazy: true })
+const ButtonGroupDemo = clientOnlyWrapper(() => import("@/registry/examples/button-group-demo"), { lazy: true })
 const BreadcrumbsCustomSeparatorDemo = clientOnlyWrapper(() => import("@/registry/examples/breadcrumbs-custom-separator-demo"), { lazy: true })
 const ButtonDemo = clientOnlyWrapper(() => import("@/registry/examples/button-demo"), { lazy: true })
 const ButtonDestructiveDemo = clientOnlyWrapper(() => import("@/registry/examples/button-destructive-demo"), { lazy: true })
@@ -46,6 +47,9 @@ const DrawerSideDemo = clientOnlyWrapper(() => import("@/registry/examples/drawe
 const DropdownMenuDemo = clientOnlyWrapper(() => import("@/registry/examples/dropdown-menu-demo"), { lazy: true })
 const FileFieldDemo = clientOnlyWrapper(() => import("@/registry/examples/file-field-demo"), { lazy: true })
 const HoverCardDemo = clientOnlyWrapper(() => import("@/registry/examples/hover-card-demo"), { lazy: true })
+const KbdDemo = clientOnlyWrapper(() => import("@/registry/examples/kbd-demo"), { lazy: true })
+const KbdGroupDemo = clientOnlyWrapper(() => import("@/registry/examples/kbd-group-demo"), { lazy: true })
+const KbdButtonDemo = clientOnlyWrapper(() => import("@/registry/examples/kbd-button-demo"), { lazy: true })
 const MenubarDemo = clientOnlyWrapper(() => import("@/registry/examples/menubar-demo"), { lazy: true })
 const NavigationMenuDemo = clientOnlyWrapper(() => import("@/registry/examples/navigation-menu-demo"), { lazy: true })
 const NavigationMenuVerticalDemo = clientOnlyWrapper(() => import("@/registry/examples/navigation-menu-vertical-demo"), { lazy: true })
@@ -259,6 +263,21 @@ export const Index: Record<string, any> = {
 ],
       component: () => <BreadcrumbsDemo />,
       source: "@/registry/examples/breadcrumbs-demo.tsx"
+    },
+    "button-group-demo": {
+      name: "button-group-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [
+      {
+            "path": "examples/button-group-demo.tsx",
+            "type": "registry:example",
+            "target": ""
+      }
+],
+      component: () => <ButtonGroupDemo />,
+      source: "@/registry/examples/button-group-demo.tsx"
     },
     "breadcrumbs-custom-separator-demo": {
       name: "breadcrumbs-custom-separator-demo",
@@ -814,6 +833,51 @@ export const Index: Record<string, any> = {
 ],
       component: () => <HoverCardDemo />,
       source: "@/registry/examples/hover-card-demo.tsx"
+    },
+    "kbd-demo": {
+      name: "kbd-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [
+      {
+            "path": "examples/kbd-demo.tsx",
+            "type": "registry:example",
+            "target": ""
+      }
+],
+      component: () => <KbdDemo />,
+      source: "@/registry/examples/kbd-demo.tsx"
+    },
+    "kbd-group-demo": {
+      name: "kbd-group-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [
+      {
+            "path": "examples/kbd-group-demo.tsx",
+            "type": "registry:example",
+            "target": ""
+      }
+],
+      component: () => <KbdGroupDemo />,
+      source: "@/registry/examples/kbd-group-demo.tsx"
+    },
+    "kbd-button-demo": {
+      name: "kbd-button-demo",
+      description: "",
+      type: "registry:example",
+      registryDependencies: undefined,
+      files: [
+      {
+            "path": "examples/kbd-button-demo.tsx",
+            "type": "registry:example",
+            "target": ""
+      }
+],
+      component: () => <KbdButtonDemo />,
+      source: "@/registry/examples/kbd-button-demo.tsx"
     },
     "menubar-demo": {
       name: "menubar-demo",

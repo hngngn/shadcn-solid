@@ -9,12 +9,11 @@ const loadAssets = async (): Promise<
     { base64Font: mono },
     { base64Font: semibold },
   ] = await Promise.all([
-    import("./geist-regular-otf.json").then((mod) => mod.default ?? mod),
+    import("./geist-regular-otf.json").then((mod) => mod.default),
 
-    import("./geistmono-regular-otf.json").then((mod) => mod.default ?? mod),
+    import("./geistmono-regular-otf.json").then((mod) => mod.default),
 
-    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-    import("./geist-semibold-otf.json").then((mod) => mod.default ?? mod),
+    import("./geist-semibold-otf.json").then((mod) => mod.default),
   ])
 
   return [

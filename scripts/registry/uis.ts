@@ -58,6 +58,18 @@ export const uis: Registry["items"] = [
     ],
   },
   {
+    name: "button-group",
+    type: "registry:ui",
+    dependencies: ["@kobalte/core"],
+    registryDependencies: ["separator"],
+    files: [
+      {
+        path: "ui/button-group.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "button",
     type: "registry:ui",
     dependencies: ["@kobalte/core"],
@@ -208,6 +220,16 @@ export const uis: Registry["items"] = [
     files: [
       {
         path: "ui/hover-card.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
+    name: "kbd",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/kbd.tsx",
         type: "registry:ui",
       },
     ],

@@ -92,6 +92,16 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "button-group-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/button-group-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "breadcrumbs-custom-separator-demo",
     type: "registry:example",
     files: [
@@ -457,6 +467,36 @@ export const examples: Registry["items"] = [
     files: [
       {
         path: "examples/hover-card-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "kbd-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/kbd-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "kbd-group-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/kbd-group-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "kbd-button-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/kbd-button-demo.tsx",
         type: "registry:example",
       },
     ],

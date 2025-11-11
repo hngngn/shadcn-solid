@@ -189,6 +189,25 @@ export const Contents : Record<string, Content> = {
   }
 ]
   },
+  "components/button-group": {
+    component: lazy(() => import("@/content/docs/components/button-group.mdx")),
+    data: {
+  "title": "Button Group",
+  "description": "A container that groups related buttons together with consistent styling."
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  }
+]
+  },
   "components/button": {
     component: lazy(() => import("@/content/docs/components/button.mdx")),
     data: {
@@ -868,6 +887,40 @@ export const Contents : Record<string, Content> = {
     "depth": 2,
     "text": "Usage",
     "slug": "usage"
+  }
+]
+  },
+  "components/kbd": {
+    component: lazy(() => import("@/content/docs/components/kbd.mdx")),
+    data: {
+  "title": "Kbd",
+  "description": "Used to display textual user input from keyboard."
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  },
+  {
+    "depth": 2,
+    "text": "Examples",
+    "slug": "examples"
+  },
+  {
+    "depth": 3,
+    "text": "Group",
+    "slug": "group"
+  },
+  {
+    "depth": 3,
+    "text": "Button",
+    "slug": "button"
   }
 ]
   },

@@ -86,6 +86,11 @@ export const docsConfig: TDocsConfig = {
           title: "Breadcrumbs",
           href: "/docs/components/breadcrumbs",
           items: [],
+        },
+        {
+          title: "Button Group",
+          href: "/docs/components/button-group",
+          items: [],
           indicator: "new",
         },
         {
@@ -97,7 +102,6 @@ export const docsConfig: TDocsConfig = {
           title: "Calendar",
           href: "/docs/components/calendar",
           items: [],
-          indicator: "new",
         },
         {
           title: "Card",
@@ -113,7 +117,6 @@ export const docsConfig: TDocsConfig = {
           title: "Chart",
           href: "/docs/components/chart",
           items: [],
-          indicator: "new",
         },
         {
           title: "Checkbox",
@@ -149,7 +152,6 @@ export const docsConfig: TDocsConfig = {
           title: "Date Picker",
           href: "/docs/components/date-picker",
           items: [],
-          indicator: "updated",
         },
         {
           title: "Dialog",
@@ -160,7 +162,6 @@ export const docsConfig: TDocsConfig = {
           title: "Drawer",
           href: "/docs/components/drawer",
           items: [],
-          indicator: "updated",
         },
         {
           title: "Dropdown Menu",
@@ -171,12 +172,17 @@ export const docsConfig: TDocsConfig = {
           title: "File Field",
           href: "/docs/components/file-field",
           items: [],
-          indicator: "new",
         },
         {
           title: "Hover Card",
           href: "/docs/components/hover-card",
           items: [],
+        },
+        {
+          title: "Kbd",
+          href: "/docs/components/kbd",
+          items: [],
+          indicator: "new",
         },
         {
           title: "Menubar",
@@ -227,13 +233,11 @@ export const docsConfig: TDocsConfig = {
           title: "Search",
           href: "/docs/components/search",
           items: [],
-          indicator: "new",
         },
         {
           title: "Segmented Control",
           href: "/docs/components/segmented-control",
           items: [],
-          indicator: "new",
         },
         {
           title: "Select",
@@ -249,25 +253,21 @@ export const docsConfig: TDocsConfig = {
           title: "Sidebar",
           href: "/docs/components/sidebar",
           items: [],
-          indicator: "new",
         },
         {
           title: "Skeleton",
           href: "/docs/components/skeleton",
           items: [],
-          indicator: "new",
         },
         {
           title: "Slider",
           href: "/docs/components/slider",
           items: [],
-          indicator: "new",
         },
         {
           title: "Sonner",
           href: "/docs/components/sonner",
           items: [],
-          indicator: "updated",
         },
         {
           title: "Switch",
