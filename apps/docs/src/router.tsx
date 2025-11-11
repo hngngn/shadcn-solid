@@ -1,6 +1,8 @@
-import { createRouter as createTanStackRouter } from "@tanstack/solid-router"
+import {
+  Navigate,
+  createRouter as createTanStackRouter,
+} from "@tanstack/solid-router"
 
-import MainNotFound from "./components/not-found/main"
 import { routeTree } from "./routeTree.gen"
 
 export function createRouter() {
@@ -8,7 +10,7 @@ export function createRouter() {
     routeTree,
     defaultPreload: "intent",
     scrollRestoration: true,
-    defaultNotFoundComponent: MainNotFound,
+    defaultNotFoundComponent: () => <Navigate to="/" replace />,
     defaultViewTransition: true,
   })
 }

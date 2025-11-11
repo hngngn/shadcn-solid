@@ -13,7 +13,11 @@ import MainNav from "./main-nav"
 import ModeToggle from "./mode-toggle"
 import NavbarMobile from "./navbar-mobile"
 
-const Header = () => {
+interface Props {
+  starCount?: number
+}
+
+const Header = (props: Props) => {
   return (
     <header class="bg-background sticky top-0 z-50 w-full">
       <div class="container-wrapper px-6">
@@ -22,8 +26,8 @@ const Header = () => {
           <Button<typeof Link>
             variant="ghost"
             size="icon"
-            as={(props) => {
-              const [local, rest] = splitProps(props, ["class"])
+            as={(buttonProps) => {
+              const [local, rest] = splitProps(buttonProps, ["class"])
 
               return (
                 <Link
@@ -46,15 +50,15 @@ const Header = () => {
             <Button<typeof Link>
               size="sm"
               variant="ghost"
-              as={(props) => {
-                const [, rest] = splitProps(props, ["class"])
+              as={(buttonProps) => {
+                const [, rest] = splitProps(buttonProps, ["class"])
 
                 return (
                   <Link
                     to={siteConfig.links.github}
                     target="_blank"
                     rel="noreferrer"
-                    class={cx(props.class, "h-8 shadow-none")}
+                    class={cx(buttonProps.class, "h-8 shadow-none")}
                     {...rest}
                   >
                     <svg
@@ -69,6 +73,9 @@ const Header = () => {
                         clip-rule="evenodd"
                       />
                     </svg>
+                    <span class="text-muted-foreground w-fit text-xs tabular-nums">
+                      {props.starCount}
+                    </span>
                   </Link>
                 )
               }}
