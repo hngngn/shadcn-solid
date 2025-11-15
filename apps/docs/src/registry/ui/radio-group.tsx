@@ -37,6 +37,23 @@ export const RadioGroupItems = (props: RadioGroupItemsProps) => {
   )
 }
 
+export type RadioGroupItemInputProps<T extends ValidComponent = "input"> =
+  ComponentProps<typeof RadioGroupPrimitive.ItemInput<T>>
+
+export const RadioGroupItemInput = <T extends ValidComponent = "input">(
+  props: RadioGroupItemInputProps<T>,
+) => {
+  const [, rest] = splitProps(props as RadioGroupItemInputProps, ["class"])
+
+  return (
+    <RadioGroupPrimitive.ItemInput
+      data-slot="radio-group-item-input"
+      class={cx("peer/radio-group", props.class)}
+      {...rest}
+    />
+  )
+}
+
 export type RadioGroupItemProps<T extends ValidComponent = "div"> =
   ComponentProps<typeof RadioGroupPrimitive.Item<T>>
 
@@ -54,10 +71,6 @@ export const RadioGroupItem = <T extends ValidComponent = "div">(
       class={cx("flex items-center gap-3", props.class)}
       {...rest}
     >
-      <RadioGroupPrimitive.ItemInput
-        data-slot="radio-group-item-input"
-        class="peer/radio-group"
-      />
       {props.children}
     </RadioGroupPrimitive.Item>
   )
@@ -133,7 +146,10 @@ export const RadioGroupItemLabel = <T extends ValidComponent = "span">(
     <RadioGroupPrimitive.ItemLabel
       forceMount
       data-slot="radio-group-item-label"
-      class={cx("text-sm font-medium select-none", props.class)}
+      class={cx(
+        "data-invalid:text-destructive text-sm font-medium select-none",
+        props.class,
+      )}
       {...rest}
     />
   )

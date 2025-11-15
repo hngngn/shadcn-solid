@@ -27,7 +27,7 @@ function RootDocument(props: { children: JSX.Element }) {
       <ColorModeScript />
       <ColorModeProvider>
         {props.children}
-        <Toaster position="top-center" />
+        <Toaster />
       </ColorModeProvider>
       <Scripts />
     </>

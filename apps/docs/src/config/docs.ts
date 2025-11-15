@@ -60,6 +60,17 @@ export const docsConfig: TDocsConfig = {
       ],
     },
     {
+      title: "Form",
+      items: [
+        {
+          title: "Tanstack Form",
+          href: "/docs/forms/tanstack-form",
+          items: [],
+          indicator: "new",
+        },
+      ],
+    },
+    {
       title: "Components",
       items: [
         {
@@ -122,6 +133,7 @@ export const docsConfig: TDocsConfig = {
           title: "Checkbox",
           href: "/docs/components/checkbox",
           items: [],
+          indicator: "updated",
         },
         {
           title: "Collapsible",
@@ -243,6 +255,7 @@ export const docsConfig: TDocsConfig = {
           title: "Select",
           href: "/docs/components/select",
           items: [],
+          indicator: "updated",
         },
         {
           title: "Separator",
@@ -268,6 +281,7 @@ export const docsConfig: TDocsConfig = {
           title: "Sonner",
           href: "/docs/components/sonner",
           items: [],
+          indicator: "updated",
         },
         {
           title: "Switch",
@@ -288,6 +302,7 @@ export const docsConfig: TDocsConfig = {
           title: "Text Field",
           href: "/docs/components/text-field",
           items: [],
+          indicator: "updated",
         },
         {
           title: "Toggle Group",

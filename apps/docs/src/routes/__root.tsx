@@ -4,6 +4,7 @@ import { HeadContent, Scripts, createRootRoute } from "@tanstack/solid-router"
 import { ColorModeProvider, ColorModeScript } from "@kobalte/core"
 
 import SEO from "@/components/seo"
+import { Toaster } from "@/registry/ui/sonner"
 
 export const Route = createRootRoute({
   head: () => SEO(),
@@ -15,7 +16,10 @@ function RootDocument(props: { children: JSX.Element }) {
     <>
       <HeadContent />
       <ColorModeScript />
-      <ColorModeProvider>{props.children}</ColorModeProvider>
+      <ColorModeProvider>
+        {props.children}
+        <Toaster />
+      </ColorModeProvider>
       <Scripts />
     </>
   )

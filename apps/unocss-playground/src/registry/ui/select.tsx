@@ -6,6 +6,7 @@ import { Select as SelectPrimitive } from "@kobalte/core/select"
 import { cx } from "@/registry/lib/cva"
 
 export const SelectPortal = SelectPrimitive.Portal
+export const HiddenSelect = SelectPrimitive.HiddenSelect
 
 export type SelectProps<
   Option,

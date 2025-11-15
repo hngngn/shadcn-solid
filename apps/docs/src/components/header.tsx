@@ -13,11 +13,7 @@ import MainNav from "./main-nav"
 import ModeToggle from "./mode-toggle"
 import NavbarMobile from "./navbar-mobile"
 
-interface Props {
-  starCount?: number
-}
-
-const Header = (props: Props) => {
+const Header = () => {
   return (
     <header class="bg-background sticky top-0 z-50 w-full">
       <div class="container-wrapper px-6">
@@ -73,9 +69,6 @@ const Header = (props: Props) => {
                         clip-rule="evenodd"
                       />
                     </svg>
-                    <span class="text-muted-foreground w-fit text-xs tabular-nums">
-                      {props.starCount}
-                    </span>
                   </Link>
                 )
               }}

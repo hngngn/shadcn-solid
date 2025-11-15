@@ -46,6 +46,7 @@ import {
   RadioGroup,
   RadioGroupItemControl,
   RadioGroupItemIndicator,
+  RadioGroupItemInput,
   RadioGroupItemLabel,
   RadioGroupItems,
   RadioGroupLabel,
@@ -57,6 +58,7 @@ import {
   <RadioGroupLabel />
   <RadioGroupItems>
     <RadioGroupItem>
+      <RadioGroupItemInput />
       <RadioGroupItemControl>
         <RadioGroupItemIndicator />
       </RadioGroupItemControl>
@@ -65,3 +67,9 @@ import {
   </RadioGroupItems>
 </RadioGroup>
 ```
+
+## Changelog
+
+#### 2025-11-13 Separate `<RadioGroup.ItemInput />` from `<RadioGroup.Item />`
+
+The `<RadioGroup.ItemInput />` component has been separated from the `<RadioGroup.Item />` component for better flexibility and customization.

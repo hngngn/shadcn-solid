@@ -1,5 +1,5 @@
 import type { ComponentProps, ValidComponent } from "solid-js"
-import { splitProps } from "solid-js"
+import { For, Match, Switch, splitProps } from "solid-js"
 import { TextField as TextFieldPrimitive } from "@kobalte/core/text-field"
 
 import { cx } from "@/registry/lib/cva"
@@ -90,19 +90,45 @@ export const TextFieldLabel = <T extends ValidComponent = "label">(
 }
 
 export type TextFieldErrorMessageProps<T extends ValidComponent = "div"> =
-  ComponentProps<typeof TextFieldPrimitive.ErrorMessage<T>>
+  ComponentProps<typeof TextFieldPrimitive.ErrorMessage<T>> & {
+    errors?: ({ message?: string } | undefined)[]
+  }
 
 export const TextFieldErrorMessage = <T extends ValidComponent = "div">(
   props: TextFieldErrorMessageProps<T>,
 ) => {
-  const [, rest] = splitProps(props as TextFieldErrorMessageProps, ["class"])
+  const [, rest] = splitProps(props as TextFieldErrorMessageProps, [
+    "class",
+    "errors",
+    "children",
+  ])
+
+  const uniqueErrors = () => [
+    ...new Map(props.errors?.map((error) => [error?.message, error])).values(),
+  ]
 
   return (
     <TextFieldPrimitive.ErrorMessage
       data-slot="text-field-error-message"
       class={cx("text-destructive text-sm", props.class)}
       {...rest}
-    />
+    >
+      <Switch
+        fallback={
+          <ul class="ml-4 flex list-disc flex-col gap-1">
+            <For each={uniqueErrors()}>
+              {(error) => <li>{error?.message}</li>}
+            </For>
+          </ul>
+        }
+      >
+        <Match when={props.children}>{props.children}</Match>
+        <Match when={!props.errors?.length}>{null}</Match>
+        <Match when={uniqueErrors().length == 1}>
+          {uniqueErrors()[0]?.message}
+        </Match>
+      </Switch>
+    </TextFieldPrimitive.ErrorMessage>
   )
 }
 

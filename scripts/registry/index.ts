@@ -6,6 +6,7 @@ import { examples } from "./examples";
 import { hooks } from "./hooks";
 import { libs } from "./libs";
 import { charts } from "./charts";
+import { blocks } from "./blocks";
 
 export const registry: Registry = {
   name: "shadcn-solid",
@@ -16,5 +17,6 @@ export const registry: Registry = {
     ...hooks,
     ...libs,
     ...charts,
+    ...blocks,
   ]),
 };

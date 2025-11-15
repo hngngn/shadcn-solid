@@ -20,9 +20,15 @@ importers:
       '@corvu/resizable':
         specifier: ^0.2.5
         version: 0.2.5(solid-js@1.9.10)
+      '@formisch/solid':
+        specifier: ^0.6.1
+        version: 0.6.1(solid-js@1.9.10)(typescript@5.9.2)(valibot@1.1.0(typescript@5.9.2))
       '@kobalte/core':
         specifier: ^0.13.11
         version: 0.13.11(solid-js@1.9.10)
+      '@tanstack/solid-form':
+        specifier: ^1.25.0
+        version: 1.25.0(solid-js@1.9.10)
       '@tanstack/solid-table':
         specifier: ^8.21.3
         version: 8.21.3(solid-js@1.9.10)
@@ -782,6 +788,16 @@ packages:
   '@floating-ui/utils@0.2.10':
     resolution: {integrity: sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ==}
 
+  '@formisch/solid@0.6.1':
+    resolution: {integrity: sha512-ToC8XDJaWqW+0nCK5hhNRzPJCClFVexbkGH6sLEvzcVEsTZD4uYtF9Qul7tEOjnAMXfB9GMmiMshnWyuytxi3w==}
+    peerDependencies:
+      solid-js: ^1.6.0
+      typescript: '>=5'
+      valibot: ^1.0.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
     engines: {node: '>=18.18.0'}
@@ -1493,15 +1509,26 @@ packages:
     peerDependencies:
       vite: ^5.2.0 || ^6 || ^7
 
+  '@tanstack/devtools-event-client@0.3.5':
+    resolution: {integrity: sha512-RL1f5ZlfZMpghrCIdzl6mLOFLTuhqmPNblZgBaeKfdtk5rfbjykurv+VfYydOFXj0vxVIoA2d/zT7xfD7Ph8fw==}
+    engines: {node: '>=18'}
+
   '@tanstack/directive-functions-plugin@1.130.12':
     resolution: {integrity: sha512-Q5O6D0iPFZGfpj7WYoiXoYRnpfePO61SveAJQL3EWMATGGBueD90JkbCDRXP+Ib4fcWjlmj10tXRUXDMeEapxA==}
     engines: {node: '>=12'}
     peerDependencies:
       vite: '>=6.0.0'
 
+  '@tanstack/form-core@1.25.0':
+    resolution: {integrity: sha512-OEWW2uTOFMyRmHrVEiPOn+J27ekQ/vXwRAJt9kD8U8vCt8CmpClj989OOGGSBSVJtDNxGUcWyKF8gYznnqIyaw==}
+
   '@tanstack/history@1.130.12':
     resolution: {integrity: sha512-2VO1nNFDWojgZ7Uqv/OJfH6LphZQ1kE6l8sI3YBgSPtj3qN6I/rsoTHW9rGjwiDO8sQoDRXod2hpH6HMs5NDsw==}
     engines: {node: '>=12'}
+
+  '@tanstack/pacer@0.15.4':
+    resolution: {integrity: sha512-vGY+CWsFZeac3dELgB6UZ4c7OacwsLb8hvL2gLS6hTgy8Fl0Bm/aLokHaeDIP+q9F9HUZTnp360z9uv78eg8pg==}
+    engines: {node: '>=18'}
 
   '@tanstack/router-core@1.130.12':
     resolution: {integrity: sha512-emq3cRU9Na1hnIToojzkfJcOZm/MG2bv9M+Kr/elUxEf83enGEwQXC1EKezTuwNgeJrOv8vPJdEhWM7IQodnHQ==}
@@ -1540,6 +1567,11 @@ packages:
     resolution: {integrity: sha512-aiYxrC6A8jPojAhHfH10YiwfI626yTBlyzIvdPzVvv3DWkRA7yShSOc6FDuwX+oSPmScJSIX/OAHTzJnStY5GA==}
     engines: {node: '>=12'}
 
+  '@tanstack/solid-form@1.25.0':
+    resolution: {integrity: sha512-NT64/YvEzYsEltMd+UDBPHNoy+OfTOY/RVgEivVnWmct9/KkhZ2HOzwiR+0eGDpj8yUHRTdTqQhTV5Emx7Cpfg==}
+    peerDependencies:
+      solid-js: '>=1.9.9'
+
   '@tanstack/solid-router@1.130.12':
     resolution: {integrity: sha512-nStiHuHefYSZo674MflowaBPSMCDzdZ6xyBwRESk0KMMMvI66Kgd/6rRH4MGqHgN4AFe4LyCL6C2sDJgYK6C+g==}
     engines: {node: '>=12'}
@@ -1575,6 +1607,11 @@ packages:
 
   '@tanstack/solid-store@0.7.0':
     resolution: {integrity: sha512-uDQYkUuH3MppitiduZLTEcItkTr8vEJ33jzp2rH2VvlNRMGbuU54GQcqf3dLIlTbZ1/Z2TtIBtBjjl+N/OhwRg==}
+    peerDependencies:
+      solid-js: ^1.6.0
+
+  '@tanstack/solid-store@0.7.7':
+    resolution: {integrity: sha512-DnEZbqQ+pg68BguHz17VFukfp+6JaTk8nE2MhdVliU8bhsOFlTMsmVHp/4gMoQ1AkmAOMFiBsSliROCaaeJzvg==}
     peerDependencies:
       solid-js: ^1.6.0
 
@@ -5558,6 +5595,13 @@ snapshots:
 
   '@floating-ui/utils@0.2.10': {}
 
+  '@formisch/solid@0.6.1(solid-js@1.9.10)(typescript@5.9.2)(valibot@1.1.0(typescript@5.9.2))':
+    dependencies:
+      solid-js: 1.9.10
+      valibot: 1.1.0(typescript@5.9.2)
+    optionalDependencies:
+      typescript: 5.9.2
+
   '@humanfs/core@0.19.1': {}
 
   '@humanfs/node@0.16.7':
@@ -6263,6 +6307,8 @@ snapshots:
       tailwindcss: 4.1.17
       vite: 7.2.2(@types/node@24.10.0)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.1)(tsx@4.20.6)
 
+  '@tanstack/devtools-event-client@0.3.5': {}
+
   '@tanstack/directive-functions-plugin@1.130.12(vite@7.2.2(@types/node@24.10.0)(jiti@2.6.1)(lightningcss@1.30.2)(terser@5.44.1)(tsx@4.20.6))':
     dependencies:
       '@babel/code-frame': 7.27.1
@@ -6276,7 +6322,18 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@tanstack/form-core@1.25.0':
+    dependencies:
+      '@tanstack/devtools-event-client': 0.3.5
+      '@tanstack/pacer': 0.15.4
+      '@tanstack/store': 0.7.7
+
   '@tanstack/history@1.130.12': {}
+
+  '@tanstack/pacer@0.15.4':
+    dependencies:
+      '@tanstack/devtools-event-client': 0.3.5
+      '@tanstack/store': 0.7.7
 
   '@tanstack/router-core@1.130.12':
     dependencies:
@@ -6349,6 +6406,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
       - vite
+
+  '@tanstack/solid-form@1.25.0(solid-js@1.9.10)':
+    dependencies:
+      '@tanstack/form-core': 1.25.0
+      '@tanstack/solid-store': 0.7.7(solid-js@1.9.10)
+      solid-js: 1.9.10
 
   '@tanstack/solid-router@1.130.12(solid-js@1.9.10)':
     dependencies:
@@ -6471,6 +6534,11 @@ snapshots:
   '@tanstack/solid-store@0.7.0(solid-js@1.9.10)':
     dependencies:
       '@tanstack/store': 0.7.0
+      solid-js: 1.9.10
+
+  '@tanstack/solid-store@0.7.7(solid-js@1.9.10)':
+    dependencies:
+      '@tanstack/store': 0.7.7
       solid-js: 1.9.10
 
   '@tanstack/solid-table@8.21.3(solid-js@1.9.10)':

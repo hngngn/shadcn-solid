@@ -5,6 +5,7 @@ import {
   RadioGroupItem,
   RadioGroupItemControl,
   RadioGroupItemIndicator,
+  RadioGroupItemInput,
   RadioGroupItemLabel,
   RadioGroupItems,
   RadioGroupLabel,
@@ -18,6 +19,7 @@ const RadioGroupDemo = () => {
         <For each={["Apple", "Orange", "Watermelon"]}>
           {(fruit) => (
             <RadioGroupItem value={fruit}>
+              <RadioGroupItemInput />
               <RadioGroupItemControl>
                 <RadioGroupItemIndicator />
               </RadioGroupItemControl>

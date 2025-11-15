@@ -462,6 +462,76 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "tanstack-form-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/tanstack-form-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "tanstack-form-input-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/tanstack-form-input-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "tanstack-form-textarea-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/tanstack-form-textarea-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "tanstack-form-select-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/tanstack-form-select-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "tanstack-form-checkbox-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/tanstack-form-checkbox-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "tanstack-form-radio-group-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/tanstack-form-radio-group-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "tanstack-form-switch-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/tanstack-form-switch-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "hover-card-demo",
     type: "registry:example",
     files: [

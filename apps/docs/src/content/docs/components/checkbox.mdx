@@ -46,12 +46,14 @@ import {
   Checkbox,
   CheckboxControl,
   CheckboxDescription,
+  CheckboxInput,
   CheckboxLabel,
 } from "@/components/ui/checkbox"
 ```
 
 ```tsx
 <Checkbox>
+  <CheckboxInput />
   <CheckboxControl>
     <CheckboxLabel />
     <CheckboxDescription />
@@ -70,3 +72,9 @@ import {
 ```
 
 </ComponentPreview>
+
+## Changelog
+
+#### 2025-11-13 Form libraries integration
+
+Separate `<Checkbox.Input />` from `<CheckboxControl />` for better flexibility and customization.

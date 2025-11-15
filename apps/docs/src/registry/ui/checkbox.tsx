@@ -27,6 +27,7 @@ export const CheckboxLabel = <T extends ValidComponent = "label">(
       data-slot="checkbox-label"
       class={cx(
         "flex items-center gap-2 text-sm leading-none font-medium select-none data-[disabled]:pointer-events-none data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50",
+        "data-[invalid]:text-destructive",
         props.class,
       )}
       {...rest}
@@ -83,36 +84,33 @@ export const CheckboxControl = <T extends ValidComponent = "div">(
   const [, rest] = splitProps(props as CheckboxControlProps, ["class"])
 
   return (
-    <>
-      <CheckboxInput />
-      <CheckboxPrimitive.Control
-        data-slot="checkbox-control"
-        class={cx(
-          "peer-focus-visible:border-ring border-input dark:bg-input/30 data-[checked]:bg-primary data-[checked]:text-primary-foreground dark:data-[checked]:bg-primary data-[checked]:border-primary aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive size-4 shrink-0 rounded-[4px] border shadow-xs transition-shadow outline-none disabled:cursor-not-allowed disabled:opacity-50",
-          props.class,
-        )}
-        {...rest}
+    <CheckboxPrimitive.Control
+      data-slot="checkbox-control"
+      class={cx(
+        "peer-focus-visible:border-ring border-input dark:bg-input/30 data-[checked]:bg-primary data-[checked]:text-primary-foreground dark:data-[checked]:bg-primary data-[checked]:border-primary data-invalid:ring-destructive/20 dark:data-invalid:ring-destructive/40 data-invalid:border-destructive size-4 shrink-0 rounded-[4px] border shadow-xs transition-shadow outline-none data-disabled:cursor-not-allowed data-disabled:opacity-50",
+        props.class,
+      )}
+      {...rest}
+    >
+      <CheckboxPrimitive.Indicator
+        data-slot="checkbox-indicator"
+        class="flex items-center justify-center text-current transition-none"
       >
-        <CheckboxPrimitive.Indicator
-          data-slot="checkbox-indicator"
-          class="flex items-center justify-center text-current transition-none"
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="size-3.5"
+          viewBox="0 0 24 24"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="size-3.5"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M20 6L9 17l-5-5"
-            />
-          </svg>
-        </CheckboxPrimitive.Indicator>
-      </CheckboxPrimitive.Control>
-    </>
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M20 6L9 17l-5-5"
+          />
+        </svg>
+      </CheckboxPrimitive.Indicator>
+    </CheckboxPrimitive.Control>
   )
 }

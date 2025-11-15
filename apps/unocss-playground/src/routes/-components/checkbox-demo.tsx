@@ -2,6 +2,7 @@ import {
   Checkbox,
   CheckboxControl,
   CheckboxDescription,
+  CheckboxInput,
   CheckboxLabel,
 } from "@/registry/ui/checkbox"
 
@@ -9,12 +10,14 @@ const CheckboxDemo = () => {
   return (
     <div class="flex flex-col gap-6">
       <Checkbox class="flex items-start gap-3">
+        <CheckboxInput />
         <CheckboxControl />
         <div class="grid gap-2">
           <CheckboxLabel>Accept terms and conditions</CheckboxLabel>
         </div>
       </Checkbox>
       <Checkbox class="flex items-start gap-3" defaultChecked>
+        <CheckboxInput />
         <CheckboxControl />
         <div class="grid gap-2">
           <CheckboxLabel>Accept terms and conditions</CheckboxLabel>
@@ -24,6 +27,7 @@ const CheckboxDemo = () => {
         </div>
       </Checkbox>
       <Checkbox class="flex items-start gap-3" disabled>
+        <CheckboxInput />
         <CheckboxControl />
         <div class="grid gap-2">
           <CheckboxLabel>Enable notifications</CheckboxLabel>

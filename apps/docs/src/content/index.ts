@@ -475,6 +475,16 @@ export const Contents : Record<string, Content> = {
     "depth": 3,
     "text": "Disabled",
     "slug": "disabled"
+  },
+  {
+    "depth": 2,
+    "text": "Changelog",
+    "slug": "changelog"
+  },
+  {
+    "depth": 4,
+    "text": "2025-11-13 Form libraries integration",
+    "slug": "2025-11-13-form-libraries-integration"
   }
 ]
   },
@@ -1120,6 +1130,16 @@ export const Contents : Record<string, Content> = {
     "depth": 2,
     "text": "Usage",
     "slug": "usage"
+  },
+  {
+    "depth": 2,
+    "text": "Changelog",
+    "slug": "changelog"
+  },
+  {
+    "depth": 4,
+    "text": "2025-11-13 Separate <RadioGroup.ItemInput /> from <RadioGroup.Item />",
+    "slug": "2025-11-13-separate-radiogroupiteminput--from-radiogroupitem-"
   }
 ]
   },
@@ -1257,6 +1277,16 @@ export const Contents : Record<string, Content> = {
     "depth": 3,
     "text": "Error",
     "slug": "error"
+  },
+  {
+    "depth": 2,
+    "text": "Changelog",
+    "slug": "changelog"
+  },
+  {
+    "depth": 4,
+    "text": "2025-11-13 Add HiddenSelect component",
+    "slug": "2025-11-13-add-hiddenselect-component"
   }
 ]
   },
@@ -1458,6 +1488,16 @@ export const Contents : Record<string, Content> = {
     "depth": 2,
     "text": "Usage",
     "slug": "usage"
+  },
+  {
+    "depth": 2,
+    "text": "Changelog",
+    "slug": "changelog"
+  },
+  {
+    "depth": 4,
+    "text": "2025-11-13 Icons",
+    "slug": "2025-11-13-icons"
   }
 ]
   },
@@ -1576,6 +1616,16 @@ export const Contents : Record<string, Content> = {
     "depth": 3,
     "text": "Text Area",
     "slug": "text-area"
+  },
+  {
+    "depth": 2,
+    "text": "Changelog",
+    "slug": "changelog"
+  },
+  {
+    "depth": 4,
+    "text": "2025-11-13 Update <TextFieldErrorMessage />",
+    "slug": "2025-11-13-update-textfielderrormessage-"
   }
 ]
   },
@@ -1684,6 +1734,98 @@ export const Contents : Record<string, Content> = {
     "depth": 3,
     "text": "Add a mode toggle",
     "slug": "add-a-mode-toggle"
+  }
+]
+  },
+  "forms/tanstack-form": {
+    component: lazy(() => import("@/content/docs/forms/tanstack-form.mdx")),
+    data: {
+  "title": "TanStack Form",
+  "description": "Build forms in Solid using TanStack Form and Valibot.",
+  "link": {
+    "doc": "https://tanstack.com/form/latest"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Demo",
+    "slug": "demo"
+  },
+  {
+    "depth": 2,
+    "text": "Approach",
+    "slug": "approach"
+  },
+  {
+    "depth": 2,
+    "text": "Anatomy",
+    "slug": "anatomy"
+  },
+  {
+    "depth": 2,
+    "text": "Form",
+    "slug": "form"
+  },
+  {
+    "depth": 3,
+    "text": "Create a schema",
+    "slug": "create-a-schema"
+  },
+  {
+    "depth": 3,
+    "text": "Setup the form",
+    "slug": "setup-the-form"
+  },
+  {
+    "depth": 3,
+    "text": "Build the form",
+    "slug": "build-the-form"
+  },
+  {
+    "depth": 3,
+    "text": "Done",
+    "slug": "done"
+  },
+  {
+    "depth": 2,
+    "text": "Working with Different Field Types",
+    "slug": "working-with-different-field-types"
+  },
+  {
+    "depth": 3,
+    "text": "Input",
+    "slug": "input"
+  },
+  {
+    "depth": 3,
+    "text": "Text Area",
+    "slug": "text-area"
+  },
+  {
+    "depth": 3,
+    "text": "Select",
+    "slug": "select"
+  },
+  {
+    "depth": 3,
+    "text": "Checkbox",
+    "slug": "checkbox"
+  },
+  {
+    "depth": 3,
+    "text": "Radio Group",
+    "slug": "radio-group"
+  },
+  {
+    "depth": 3,
+    "text": "Switch",
+    "slug": "switch"
+  },
+  {
+    "depth": 2,
+    "text": "Resetting the Form",
+    "slug": "resetting-the-form"
   }
 ]
   },

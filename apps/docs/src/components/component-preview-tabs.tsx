@@ -42,7 +42,7 @@ const ComponentPreviewTabs = (props: Props) => {
         <div
           data-align={merge.align}
           class={cx(
-            "preview has-data-[slot='data-table-demo']:px- flex h-[450px] w-full justify-center p-10 has-data-[slot='data-table-demo']:h-full data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start",
+            "preview flex h-[450px] w-full justify-center p-10 has-data-[slot='card']:h-fit has-data-[slot='data-table-demo']:h-full data-[align=center]:items-center data-[align=end]:items-end data-[align=start]:items-start",
           )}
         >
           {merge.component()}

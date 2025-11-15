@@ -1,0 +1,251 @@
+---
+title: TanStack Form
+description: Build forms in Solid using TanStack Form and Valibot.
+
+link:
+  doc: https://tanstack.com/form/latest
+---
+
+This guide explores how to build forms using TanStack Form. You'll learn to create forms with the `<TextField />` component, implement schema validation with Valibot, handle errors, and ensure accessibility.
+
+## Demo
+
+We'll start by building the following form. It has a simple text input and a textarea. On submit, we'll validate the form data and display any errors.
+
+<Callout>
+  **Note:** For the purpose of this demo, we have intentionally disabled browser
+  validation to show how schema validation and form errors work in TanStack
+  Form. It is recommended to add basic browser validation in your production
+  code.
+</Callout>
+
+<ComponentPreview name="tanstack-form-demo" class='sm:[&_.preview]:h-[700px] sm:[&_pre]:h-[700px]!'>
+
+```tsx file=<rootDir>/src/registry/examples/tanstack-form-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Approach
+
+This form leverages TanStack Form for powerful, headless form handling. We'll build our form using the `<TextField />` component, which gives you **complete flexibility over the markup and styling**.
+
+- Uses TanStack Form's `createForm` hook for form state management.
+- `form.Field` component with render prop pattern for controlled inputs.
+- `<Field />` components for building accessible forms.
+- Client-side validation using Valibot.
+- Real-time validation feedback.
+
+## Anatomy
+
+Here's a basic example of a form using TanStack Form with the `<TextField />` component.
+
+```tsx {9-29}
+<form
+  onSubmit={(e) => {
+    e.preventDefault()
+    form.handleSubmit()
+  }}
+>
+  <form.Field name="title">
+    {(field) => (
+      <TextField
+        validationState={
+          field().state.meta.isTouched && !field().state.meta.isValid
+            ? "invalid"
+            : "valid"
+        }
+        name={field().name}
+        value={field().state.value}
+        onBlur={field().handleBlur}
+        onChange={field().handleChange}
+      >
+        <TextFieldLabel>Bug Title</TextFieldLabel>
+        <TextFieldInput
+          placeholder="Login button not working on mobile"
+          autocomplete="off"
+        />
+        <TextFieldDescription>
+          Provide a concise title for your bug report.
+        </TextFieldDescription>
+        <TextFieldErrorMessage errors={field().state.meta.errors} />
+      </TextField>
+    )}
+  </form.Field>
+  <button type="submit">Login</button>
+</form>
+```
+
+## Form
+
+### Create a schema
+
+We'll start by defining the shape of our form using a Valibot schema.
+
+```tsx title="form.tsx"
+import * as v from "valibot"
+
+const formSchema = v.object({
+  title: v.pipe(
+    v.string(),
+    v.minLength(5, "Bug title must be at least 5 characters."),
+    v.maxLength(32, "Bug title must be at most 32 characters."),
+  ),
+  description: v.pipe(
+    v.string(),
+    v.minLength(20, "Description must be at least 20 characters."),
+    v.maxLength(100, "Description must be at most 100 characters."),
+  ),
+})
+```
+
+### Setup the form
+
+Use the `createForm` hook from TanStack Form to create your form instance with Valibot validation.
+
+```tsx title="form.tsx" {10-16}
+import { createForm } from "@tanstack/solid-form"
+import { toast } from "somoto"
+import * as v from "valibot"
+
+const formSchema = z.object({
+  // ...
+})
+
+export function BugReportForm() {
+  const form = useForm({
+    defaultValues: {
+      title: "",
+      description: "",
+    },
+    validators: {
+      onSubmit: formSchema,
+    },
+    onSubmit: async ({ value }) => {
+      toast.success("Form submitted successfully")
+    },
+  })
+
+  return (
+    <form
+      onSubmit={(e) => {
+        e.preventDefault()
+        form.handleSubmit()
+      }}
+    >
+      {/* ... */}
+    </form>
+  )
+}
+```
+
+We are using `onSubmit` to validate the form data here. TanStack Form supports other validation modes, which you can read about in the [documentation](https://tanstack.com/form/latest/docs/framework/solid/guides/dynamic-validation).
+
+### Build the form
+
+We can now build the form using the `form.Field` component from TanStack Form and the `<TextField />` component.
+
+<ComponentSource data-slot='installation'>
+
+```tsx title="form" file=<rootDir>/src/registry/examples/tanstack-form-demo.tsx
+
+```
+
+</ComponentSource>
+
+### Done
+
+That's it. You now have a fully accessible form with client-side validation.
+
+When you submit the form, the `onSubmit` function will be called with the validated form data. If the form data is invalid, TanStack Form will display the errors next to each field.
+
+## Working with Different Field Types
+
+### Input
+
+- For input fields, use `field().state.value` and `field().handleChange` on the `<TextField />` component.
+- To show errors, pass `field().state.meta.errors` to the `validationState` prop of the `<FieldField />` component.
+
+<ComponentPreview name="tanstack-form-input-demo" class='sm:[&_.preview]:h-[700px] sm:[&_pre]:h-[700px]!'>
+
+```tsx file=<rootDir>/src/registry/examples/tanstack-form-input-demo.tsx
+
+```
+
+</ComponentPreview>
+
+### Text Area
+
+- For text area fields, use `field().state.value` and `field().handleChange` on the `<TextField />` component.
+- To show errors, pass `field().state.meta.errors` to the `validationState` prop of the `<FieldField />` component.
+
+<ComponentPreview name="tanstack-form-textarea-demo" class='sm:[&_.preview]:h-[700px] sm:[&_pre]:h-[700px]!'>
+
+```tsx file=<rootDir>/src/registry/examples/tanstack-form-textarea-demo.tsx
+
+```
+
+</ComponentPreview>
+
+### Select
+
+- For select component, use `field().state.value` and `field().handleChange` on the `<Select />` component.
+- To show errors, pass `field().state.meta.errors` to the `validationState` prop of the `<Select />` component.
+
+<ComponentPreview name="tanstack-form-select-demo" class='sm:[&_.preview]:h-[700px] sm:[&_pre]:h-[700px]!'>
+
+```tsx file=<rootDir>/src/registry/examples/tanstack-form-select-demo.tsx
+
+```
+
+</ComponentPreview>
+
+### Checkbox
+
+- For checkbox component, use `field().state.value` and `field().handleChange` on the `<Checkbox />` component.
+- To show errors, pass `field().state.meta.errors` to the `validationState` prop of the `<Checkbox />` component.
+
+<ComponentPreview name="tanstack-form-checkbox-demo" class='sm:[&_.preview]:h-[700px] sm:[&_pre]:h-[700px]!'>
+
+```tsx file=<rootDir>/src/registry/examples/tanstack-form-checkbox-demo.tsx
+
+```
+
+</ComponentPreview>
+
+### Radio Group
+
+- For radio group component, use `field().state.value` and `field().handleChange` on the `<RadioGroup />` component.
+- To show errors, pass `field().state.meta.errors` to the `validationState` prop of the `<RadioGroup />` component.
+
+<ComponentPreview name="tanstack-form-radio-group-demo" class='sm:[&_.preview]:h-[700px] sm:[&_pre]:h-[700px]!'>
+
+```tsx file=<rootDir>/src/registry/examples/tanstack-form-radio-group-demo.tsx
+
+```
+
+</ComponentPreview>
+
+### Switch
+
+- For switch component, use `field().state.value` and `field().handleChange` on the `<Switch />` component.
+- To show errors, pass `field().state.meta.errors` to the `validationState` prop of the `<Switch />` component.
+
+<ComponentPreview name="tanstack-form-switch-demo" class='sm:[&_.preview]:h-[700px] sm:[&_pre]:h-[700px]!'>
+
+```tsx file=<rootDir>/src/registry/examples/tanstack-form-switch-demo.tsx
+
+```
+
+</ComponentPreview>
+
+## Resetting the Form
+
+Use `form.reset()` to reset the form to its default values.
+
+```tsx
+<Button type="button" variant="outline" onClick={() => form.reset()}>
+  Reset
+</Button>
+```
