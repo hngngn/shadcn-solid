@@ -1,3 +1,5 @@
+import { dirname, resolve } from "node:path"
+import { fileURLToPath } from "node:url"
 import mdx from "@mdx-js/rollup"
 import { rehypePrettyCode, type Options } from "rehype-pretty-code"
 import rehypeSlug from "rehype-slug"
@@ -5,6 +7,9 @@ import codeImport from "remark-code-import"
 import remarkFrontmatter from "remark-frontmatter"
 import remarkGFM from "remark-gfm"
 import type { Plugin } from "vite"
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 export default (): Plugin => {
   return {
@@ -19,7 +24,7 @@ export default (): Plugin => {
         [
           codeImport,
           {
-            allowImportingFromOutside: true,
+            rootDir: resolve(__dirname, "../../.."),
           } satisfies Parameters<typeof codeImport>[0],
         ],
       ],

@@ -21,7 +21,7 @@ We'll start by building the following form. It has a simple text input and a tex
 
 <ComponentPreview name="tanstack-form-demo" class='sm:[&_.preview]:h-[700px] sm:[&_pre]:h-[700px]!'>
 
-```tsx file=<rootDir>/src/registry/examples/tanstack-form-demo.tsx
+```tsx file=<rootDir>/apps/docs/src/registry/examples/tanstack-form-demo.tsx
 
 ```
 
@@ -44,8 +44,8 @@ Here's a basic example of a form using TanStack Form with the `<TextField />` co
 ```tsx {9-29}
 <form
   onSubmit={(e) => {
-    e.preventDefault()
-    form.handleSubmit()
+    e.preventDefault();
+    form.handleSubmit();
   }}
 >
   <form.Field name="title">
@@ -84,20 +84,20 @@ Here's a basic example of a form using TanStack Form with the `<TextField />` co
 We'll start by defining the shape of our form using a Valibot schema.
 
 ```tsx title="form.tsx"
-import * as v from "valibot"
+import * as v from "valibot";
 
 const formSchema = v.object({
   title: v.pipe(
     v.string(),
     v.minLength(5, "Bug title must be at least 5 characters."),
-    v.maxLength(32, "Bug title must be at most 32 characters."),
+    v.maxLength(32, "Bug title must be at most 32 characters.")
   ),
   description: v.pipe(
     v.string(),
     v.minLength(20, "Description must be at least 20 characters."),
-    v.maxLength(100, "Description must be at most 100 characters."),
+    v.maxLength(100, "Description must be at most 100 characters.")
   ),
-})
+});
 ```
 
 ### Setup the form
@@ -105,13 +105,13 @@ const formSchema = v.object({
 Use the `createForm` hook from TanStack Form to create your form instance with Valibot validation.
 
 ```tsx title="form.tsx" {10-16}
-import { createForm } from "@tanstack/solid-form"
-import { toast } from "somoto"
-import * as v from "valibot"
+import { createForm } from "@tanstack/solid-form";
+import { toast } from "somoto";
+import * as v from "valibot";
 
-const formSchema = z.object({
+const formSchema = v.object({
   // ...
-})
+});
 
 export function BugReportForm() {
   const form = useForm({
@@ -123,20 +123,20 @@ export function BugReportForm() {
       onSubmit: formSchema,
     },
     onSubmit: async ({ value }) => {
-      toast.success("Form submitted successfully")
+      toast.success("Form submitted successfully");
     },
-  })
+  });
 
   return (
     <form
       onSubmit={(e) => {
-        e.preventDefault()
-        form.handleSubmit()
+        e.preventDefault();
+        form.handleSubmit();
       }}
     >
       {/* ... */}
     </form>
-  )
+  );
 }
 ```
 
@@ -148,7 +148,7 @@ We can now build the form using the `form.Field` component from TanStack Form an
 
 <ComponentSource data-slot='installation'>
 
-```tsx title="form" file=<rootDir>/src/registry/examples/tanstack-form-demo.tsx
+```tsx title="form" file=<rootDir>/apps/docs/src/registry/examples/tanstack-form-demo.tsx
 
 ```
 
@@ -169,7 +169,7 @@ When you submit the form, the `onSubmit` function will be called with the valida
 
 <ComponentPreview name="tanstack-form-input-demo" class='sm:[&_.preview]:h-[700px] sm:[&_pre]:h-[700px]!'>
 
-```tsx file=<rootDir>/src/registry/examples/tanstack-form-input-demo.tsx
+```tsx file=<rootDir>/apps/docs/src/registry/examples/tanstack-form-input-demo.tsx
 
 ```
 
@@ -182,7 +182,7 @@ When you submit the form, the `onSubmit` function will be called with the valida
 
 <ComponentPreview name="tanstack-form-textarea-demo" class='sm:[&_.preview]:h-[700px] sm:[&_pre]:h-[700px]!'>
 
-```tsx file=<rootDir>/src/registry/examples/tanstack-form-textarea-demo.tsx
+```tsx file=<rootDir>/apps/docs/src/registry/examples/tanstack-form-textarea-demo.tsx
 
 ```
 
@@ -195,7 +195,7 @@ When you submit the form, the `onSubmit` function will be called with the valida
 
 <ComponentPreview name="tanstack-form-select-demo" class='sm:[&_.preview]:h-[700px] sm:[&_pre]:h-[700px]!'>
 
-```tsx file=<rootDir>/src/registry/examples/tanstack-form-select-demo.tsx
+```tsx file=<rootDir>/apps/docs/src/registry/examples/tanstack-form-select-demo.tsx
 
 ```
 
@@ -208,7 +208,7 @@ When you submit the form, the `onSubmit` function will be called with the valida
 
 <ComponentPreview name="tanstack-form-checkbox-demo" class='sm:[&_.preview]:h-[700px] sm:[&_pre]:h-[700px]!'>
 
-```tsx file=<rootDir>/src/registry/examples/tanstack-form-checkbox-demo.tsx
+```tsx file=<rootDir>/apps/docs/src/registry/examples/tanstack-form-checkbox-demo.tsx
 
 ```
 
@@ -221,7 +221,7 @@ When you submit the form, the `onSubmit` function will be called with the valida
 
 <ComponentPreview name="tanstack-form-radio-group-demo" class='sm:[&_.preview]:h-[700px] sm:[&_pre]:h-[700px]!'>
 
-```tsx file=<rootDir>/src/registry/examples/tanstack-form-radio-group-demo.tsx
+```tsx file=<rootDir>/apps/docs/src/registry/examples/tanstack-form-radio-group-demo.tsx
 
 ```
 
@@ -234,7 +234,7 @@ When you submit the form, the `onSubmit` function will be called with the valida
 
 <ComponentPreview name="tanstack-form-switch-demo" class='sm:[&_.preview]:h-[700px] sm:[&_pre]:h-[700px]!'>
 
-```tsx file=<rootDir>/src/registry/examples/tanstack-form-switch-demo.tsx
+```tsx file=<rootDir>/apps/docs/src/registry/examples/tanstack-form-switch-demo.tsx
 
 ```
 

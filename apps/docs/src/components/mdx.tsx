@@ -1,16 +1,17 @@
 import type { ComponentProps, JSX } from "solid-js"
-import { Match, Show, Switch, splitProps } from "solid-js"
+import { Match, Show, Switch, lazy, splitProps } from "solid-js"
 
 import { cx } from "@/registry/lib/cva"
 import * as accordion from "@/registry/ui/accordion"
 
 import Callout from "./callout"
 import CodeBlockCommand from "./code-block-command"
-import ComponentInstallation from "./component-installation"
-import ComponentPreview from "./component-preview"
-import ComponentSource from "./component-source"
-import ComponentSourceTabs from "./component-source-tabs"
 import CopyButton from "./copy-button"
+
+const ComponentInstallation = lazy(() => import("./component-installation"))
+const ComponentSource = lazy(() => import("./component-source"))
+const ComponentSourceTabs = lazy(() => import("./component-source-tabs"))
+const ComponentPreview = lazy(() => import("./component-preview"))
 
 type MDXComponents = {
   [key in keyof JSX.IntrinsicElements]: (

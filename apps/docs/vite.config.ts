@@ -21,6 +21,9 @@ export default defineConfig({
     tanstackStart({
       customViteSolidPlugin: true,
       target: "netlify",
+      sitemap: {
+        enabled: true,
+      },
       prerender: {
         crawlLinks: true,
       },

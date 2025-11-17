@@ -20,9 +20,6 @@ importers:
       '@corvu/resizable':
         specifier: ^0.2.5
         version: 0.2.5(solid-js@1.9.10)
-      '@formisch/solid':
-        specifier: ^0.6.1
-        version: 0.6.1(solid-js@1.9.10)(typescript@5.9.2)(valibot@1.1.0(typescript@5.9.2))
       '@kobalte/core':
         specifier: ^0.13.11
         version: 0.13.11(solid-js@1.9.10)
@@ -787,16 +784,6 @@ packages:
 
   '@floating-ui/utils@0.2.10':
     resolution: {integrity: sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ==}
-
-  '@formisch/solid@0.6.1':
-    resolution: {integrity: sha512-ToC8XDJaWqW+0nCK5hhNRzPJCClFVexbkGH6sLEvzcVEsTZD4uYtF9Qul7tEOjnAMXfB9GMmiMshnWyuytxi3w==}
-    peerDependencies:
-      solid-js: ^1.6.0
-      typescript: '>=5'
-      valibot: ^1.0.0
-    peerDependenciesMeta:
-      typescript:
-        optional: true
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -5594,13 +5581,6 @@ snapshots:
       '@floating-ui/utils': 0.2.10
 
   '@floating-ui/utils@0.2.10': {}
-
-  '@formisch/solid@0.6.1(solid-js@1.9.10)(typescript@5.9.2)(valibot@1.1.0(typescript@5.9.2))':
-    dependencies:
-      solid-js: 1.9.10
-      valibot: 1.1.0(typescript@5.9.2)
-    optionalDependencies:
-      typescript: 5.9.2
 
   '@humanfs/core@0.19.1': {}
 

@@ -1,4 +1,4 @@
-import { Show } from "solid-js"
+import { Show, createMemo } from "solid-js"
 import { Link, createFileRoute, useLocation } from "@tanstack/solid-router"
 
 import clientOnlyWrapper from "@/components/client-only-wrapper"
@@ -29,9 +29,9 @@ function RouteComponent() {
   const params = Route.useParams()
   const location = useLocation()
 
-  const data = () => Contents[params()._splat!].data
-  const headings = () => Contents[params()._splat!].headings
-  const component = () => Contents[params()._splat!].component
+  const data = createMemo(() => Contents[params()._splat!].data)
+  const headings = createMemo(() => Contents[params()._splat!].headings)
+  const component = createMemo(() => Contents[params()._splat!].component)
 
   const getPagerForDoc = (slug: string) => {
     const flattenedLinks = [null, ...flatten(docsConfig.sidebarNav), null]
@@ -61,7 +61,7 @@ function RouteComponent() {
       .filter((link) => !link.disabled)
   }
 
-  const pager = () => getPagerForDoc(location().pathname)
+  const pager = createMemo(() => getPagerForDoc(location().pathname))
 
   return (
     <div
