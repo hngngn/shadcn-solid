@@ -68,8 +68,8 @@ const CodeBlockCommand = (props: {
           <For each={Object.entries(tabs())}>
             {([key, value]) => (
               <Show when={key === selected()}>
-                <TabsContent value={key} class="mt-0 px-4 py-3.5" forceMount>
-                  <pre>
+                <TabsContent value={key} class="mt-0 px-4 py-3.5">
+                  <pre class="no-scrollbar flex truncate overflow-auto">
                     <code
                       class="relative font-mono text-sm leading-none"
                       data-language="bash"
