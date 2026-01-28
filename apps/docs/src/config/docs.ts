@@ -66,7 +66,6 @@ export const docsConfig: TDocsConfig = {
           title: "Tanstack Form",
           href: "/docs/forms/tanstack-form",
           items: [],
-          indicator: "new",
         },
       ],
     },
@@ -102,7 +101,6 @@ export const docsConfig: TDocsConfig = {
           title: "Button Group",
           href: "/docs/components/button-group",
           items: [],
-          indicator: "new",
         },
         {
           title: "Button",
@@ -133,7 +131,6 @@ export const docsConfig: TDocsConfig = {
           title: "Checkbox",
           href: "/docs/components/checkbox",
           items: [],
-          indicator: "updated",
         },
         {
           title: "Collapsible",
@@ -194,7 +191,6 @@ export const docsConfig: TDocsConfig = {
           title: "Kbd",
           href: "/docs/components/kbd",
           items: [],
-          indicator: "new",
         },
         {
           title: "Menubar",
@@ -210,6 +206,12 @@ export const docsConfig: TDocsConfig = {
           title: "Number Field",
           href: "/docs/components/number-field",
           items: [],
+        },
+        {
+          title: "Number Flow",
+          href: "/docs/components/number-flow",
+          items: [],
+          indicator: "new",
         },
         {
           title: "OTP Field",
@@ -255,7 +257,6 @@ export const docsConfig: TDocsConfig = {
           title: "Select",
           href: "/docs/components/select",
           items: [],
-          indicator: "updated",
         },
         {
           title: "Separator",
@@ -281,7 +282,6 @@ export const docsConfig: TDocsConfig = {
           title: "Sonner",
           href: "/docs/components/sonner",
           items: [],
-          indicator: "updated",
         },
         {
           title: "Switch",
@@ -302,7 +302,6 @@ export const docsConfig: TDocsConfig = {
           title: "Text Field",
           href: "/docs/components/text-field",
           items: [],
-          indicator: "updated",
         },
         {
           title: "Toggle Group",

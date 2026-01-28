@@ -182,10 +182,6 @@
   @apply border-border/50 dark:border-border;
 }
 
-@utility section-soft {
-  @apply from-background to-surface/40 dark:bg-background bg-gradient-to-b;
-}
-
 @utility theme-container {
   @apply font-sans;
 }

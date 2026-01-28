@@ -1,5 +1,10 @@
 import type { VoidProps } from "solid-js"
-import { splitProps, type ComponentProps, type ValidComponent } from "solid-js"
+import {
+  Show,
+  splitProps,
+  type ComponentProps,
+  type ValidComponent,
+} from "solid-js"
 import { Slider as SliderPrimitive } from "@kobalte/core/slider"
 
 import { cx } from "@/registry/lib/cva"
@@ -70,14 +75,13 @@ export const SliderFill = <T extends ValidComponent = "div">(
   )
 }
 
-export type SliderThumbProps<T extends ValidComponent = "span"> = VoidProps<
+export type SliderThumbProps<T extends ValidComponent = "span"> =
   ComponentProps<typeof SliderPrimitive.Thumb<T>>
->
 
 export const SliderThumb = <T extends ValidComponent = "span">(
   props: SliderThumbProps<T>,
 ) => {
-  const [, rest] = splitProps(props as SliderThumbProps, ["class"])
+  const [, rest] = splitProps(props as SliderThumbProps, ["class", "children"])
 
   return (
     <SliderPrimitive.Thumb
@@ -91,6 +95,7 @@ export const SliderThumb = <T extends ValidComponent = "span">(
       {...rest}
     >
       <SliderPrimitive.Input />
+      <Show when={props.children}>{props.children}</Show>
     </SliderPrimitive.Thumb>
   )
 }

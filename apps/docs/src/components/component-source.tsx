@@ -37,7 +37,7 @@ const ComponentSource = (props: ComponentProps<typeof CollapsibleContent>) => {
         )}
       />
       <CollapsibleContent
-        class="data-closed:animate-out data-expanded:animate-in relative mt-6 overflow-hidden data-closed:max-h-64 data-[slot='installation']:data-closed:animate-none data-[slot='installation']:data-expanded:animate-none [&>figure]:mt-0 [&>figure]:md:mx-0!"
+        class="relative mt-6 overflow-hidden data-closed:max-h-64 data-closed:animate-none! data-expanded:animate-none! [&>figure]:mt-0 [&>figure]:md:mx-0!"
         {...props}
       />
       <CollapsibleTrigger class="from-code/70 to-code text-muted-foreground absolute inset-x-0 -bottom-2 flex h-20 items-center justify-center rounded-b-lg bg-linear-to-b text-sm data-expanded:hidden">

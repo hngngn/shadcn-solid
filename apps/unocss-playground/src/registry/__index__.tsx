@@ -316,6 +316,19 @@ export const Index: Record<string, any> = {
       }
 ]
     },
+    "number-flow": {
+      name: "number-flow",
+      description: "",
+      type: "registry:ui",
+      registryDependencies: undefined,
+      files: [
+      {
+            "path": "ui/number-flow.tsx",
+            "type": "registry:ui",
+            "target": ""
+      }
+]
+    },
     "otp-field": {
       name: "otp-field",
       description: "",

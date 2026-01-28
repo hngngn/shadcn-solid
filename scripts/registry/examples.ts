@@ -622,6 +622,46 @@ export const examples: Registry["items"] = [
     ],
   },
   {
+    name: "number-flow-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/number-flow-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "number-flow-input-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/number-flow-input-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "number-flow-slider-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/number-flow-slider-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
+    name: "number-flow-group-demo",
+    type: "registry:example",
+    files: [
+      {
+        path: "examples/number-flow-group-demo.tsx",
+        type: "registry:example",
+      },
+    ],
+  },
+  {
     name: "otp-field-demo",
     type: "registry:example",
     files: [

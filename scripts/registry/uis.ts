@@ -268,6 +268,17 @@ export const uis: Registry["items"] = [
     ],
   },
   {
+    name: "number-flow",
+    type: "registry:ui",
+    dependencies: ["number-flow"],
+    files: [
+      {
+        path: "ui/number-flow.tsx",
+        type: "registry:ui",
+      },
+    ],
+  },
+  {
     name: "otp-field",
     type: "registry:ui",
     dependencies: ["@corvu/otp-field"],

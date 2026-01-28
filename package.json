@@ -43,6 +43,7 @@
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-solid": "^8.6.0",
     "minisearch": "^7.2.0",
+    "number-flow": "^0.5.9",
     "somoto": "^0.0.2",
     "tailwind-merge": "^3.3.1"
   }

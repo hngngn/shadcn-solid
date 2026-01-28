@@ -1023,6 +1023,48 @@ export const Contents : Record<string, Content> = {
   }
 ]
   },
+  "components/number-flow": {
+    component: lazy(() => import("@/content/docs/components/number-flow.mdx")),
+    data: {
+  "title": "Number Flow",
+  "description": "An animated number component.",
+  "link": {
+    "api": "https://number-flow.barvian.me/#props"
+  }
+},
+    headings: [
+  {
+    "depth": 2,
+    "text": "Installation",
+    "slug": "installation"
+  },
+  {
+    "depth": 2,
+    "text": "Usage",
+    "slug": "usage"
+  },
+  {
+    "depth": 2,
+    "text": "Examples",
+    "slug": "examples"
+  },
+  {
+    "depth": 3,
+    "text": "Grouping",
+    "slug": "grouping"
+  },
+  {
+    "depth": 3,
+    "text": "With Number Field",
+    "slug": "with-number-field"
+  },
+  {
+    "depth": 3,
+    "text": "With Slider",
+    "slug": "with-slider"
+  }
+]
+  },
   "components/otp-field": {
     component: lazy(() => import("@/content/docs/components/otp-field.mdx")),
     data: {
