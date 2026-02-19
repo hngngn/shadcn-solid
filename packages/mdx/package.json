@@ -1,0 +1,15 @@
+{
+  "name": "@repo/mdx",
+  "type": "module",
+  "types": "index.ts",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "scripts": {},
+  "devDependencies": {
+    "solid-js": "^1.9.10"
+  },
+  "peerDependencies": {
+    "solid-js": "^1.9.10"
+  }
+}

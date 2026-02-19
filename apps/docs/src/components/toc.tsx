@@ -2,12 +2,12 @@ import { For, createEffect, createSignal } from "solid-js"
 import { createIntersectionObserver } from "@solid-primitives/intersection-observer"
 
 const Toc = (props: {
-  data: { depth: number; slug: string; text: string }[]
+  data: { depth: number; slug: string; text: string }[] | undefined
 }) => {
   const [targets, setTargets] = createSignal<Element[]>([])
 
   createEffect(() => {
-    for (const item of props.data) {
+    for (const item of props.data!) {
       setTargets((p) => [...p, document.getElementById(item.slug) as Element])
     }
   })

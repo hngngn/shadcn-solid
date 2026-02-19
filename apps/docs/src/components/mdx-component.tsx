@@ -1,5 +1,6 @@
-import type { ComponentProps, JSX } from "solid-js"
+import type { ComponentProps } from "solid-js"
 import { Match, Show, Switch, lazy, splitProps } from "solid-js"
+import type { MDXProps } from "@repo/mdx"
 
 import { cx } from "@/registry/lib/cva"
 import * as accordion from "@/registry/ui/accordion"
@@ -13,13 +14,7 @@ const ComponentSource = lazy(() => import("./component-source"))
 const ComponentSourceTabs = lazy(() => import("./component-source-tabs"))
 const ComponentPreview = lazy(() => import("./component-preview"))
 
-type MDXComponents = {
-  [key in keyof JSX.IntrinsicElements]: (
-    props: JSX.IntrinsicElements[key],
-  ) => JSX.Element
-}
-
-export const mdxCustomComponents: MDXComponents | Record<string, unknown> = {
+export const mdxCustomComponents: MDXProps["components"] = {
   a: (props) => (
     <a class="font-medium underline underline-offset-4" {...props} />
   ),

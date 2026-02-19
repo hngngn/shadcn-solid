@@ -1,6 +1,6 @@
 import { dirname, resolve } from "node:path"
 import { fileURLToPath } from "node:url"
-import mdx from "@mdx-js/rollup"
+import { mdx } from "@cyco130/vite-plugin-mdx"
 import { rehypePrettyCode, type Options } from "rehype-pretty-code"
 import rehypeSlug from "rehype-slug"
 import codeImport from "remark-code-import"
@@ -11,107 +11,103 @@ import type { Plugin } from "vite"
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
-export default (): Plugin => {
-  return {
-    enforce: "pre",
-    ...mdx({
-      jsx: true,
-      jsxImportSource: "solid-js",
-      providerImportSource: "solid-mdx",
-      remarkPlugins: [
-        remarkGFM,
-        remarkFrontmatter,
-        [
-          codeImport,
-          {
-            rootDir: resolve(__dirname, "../../.."),
-          } satisfies Parameters<typeof codeImport>[0],
-        ],
+export default (): Plugin =>
+  mdx({
+    jsx: true,
+    jsxImportSource: "solid-js",
+    providerImportSource: "@repo/mdx",
+    remarkPlugins: [
+      remarkGFM,
+      remarkFrontmatter,
+      [
+        codeImport,
+        {
+          rootDir: resolve(__dirname, "../../.."),
+        } satisfies Parameters<typeof codeImport>[0],
       ],
-      rehypePlugins: [
-        rehypeSlug,
-        [
-          rehypePrettyCode,
-          {
-            theme: {
-              dark: "github-dark",
-              light: "github-light-default",
-            },
-            transformers: [
-              {
-                code(node) {
-                  if (node.tagName === "code") {
-                    const raw = this.source
-                    node.properties.__raw__ = raw
+    ],
+    rehypePlugins: [
+      rehypeSlug,
+      [
+        rehypePrettyCode,
+        {
+          theme: {
+            dark: "github-dark",
+            light: "github-light-default",
+          },
+          transformers: [
+            {
+              code(node) {
+                if (node.tagName === "code") {
+                  const raw = this.source
+                  node.properties.__raw__ = raw
 
-                    if (raw.startsWith("npm install")) {
-                      node.properties.__npm__ = raw
-                      node.properties.__yarn__ = raw.replace(
-                        "npm install",
-                        "yarn add",
-                      )
-                      node.properties.__pnpm__ = raw.replace(
-                        "npm install",
-                        "pnpm add",
-                      )
-                      node.properties.__bun__ = raw.replace(
-                        "npm install",
-                        "bun add",
-                      )
-                    }
-
-                    if (raw.startsWith("npx create-")) {
-                      node.properties.__npm__ = raw
-                      node.properties.__yarn__ = raw.replace(
-                        "npx create-",
-                        "yarn create ",
-                      )
-                      node.properties.__pnpm__ = raw.replace(
-                        "npx create-",
-                        "pnpm create ",
-                      )
-                      node.properties.__bun__ = raw.replace("npx", "bunx --bun")
-                    }
-
-                    // npm create.
-                    if (raw.startsWith("npm create")) {
-                      node.properties.__npm__ = raw
-                      node.properties.__yarn__ = raw.replace(
-                        "npm create",
-                        "yarn create",
-                      )
-                      node.properties.__pnpm__ = raw.replace(
-                        "npm create",
-                        "pnpm create",
-                      )
-                      node.properties.__bun__ = raw.replace(
-                        "npm create",
-                        "bun create",
-                      )
-                    }
-
-                    // npx.
-                    if (raw.startsWith("npx")) {
-                      node.properties.__npm__ = raw
-                      node.properties.__yarn__ = raw.replace("npx", "yarn")
-                      node.properties.__pnpm__ = raw.replace("npx", "pnpx")
-                      node.properties.__bun__ = raw.replace("npx", "bunx --bun")
-                    }
-
-                    // npm run.
-                    if (raw.startsWith("npm run")) {
-                      node.properties.__npm__ = raw
-                      node.properties.__yarn__ = raw.replace("npm run", "yarn")
-                      node.properties.__pnpm__ = raw.replace("npm run", "pnpm")
-                      node.properties.__bun__ = raw.replace("npm run", "bun")
-                    }
+                  if (raw.startsWith("npm install")) {
+                    node.properties.__npm__ = raw
+                    node.properties.__yarn__ = raw.replace(
+                      "npm install",
+                      "yarn add",
+                    )
+                    node.properties.__pnpm__ = raw.replace(
+                      "npm install",
+                      "pnpm add",
+                    )
+                    node.properties.__bun__ = raw.replace(
+                      "npm install",
+                      "bun add",
+                    )
                   }
-                },
+
+                  if (raw.startsWith("npx create-")) {
+                    node.properties.__npm__ = raw
+                    node.properties.__yarn__ = raw.replace(
+                      "npx create-",
+                      "yarn create ",
+                    )
+                    node.properties.__pnpm__ = raw.replace(
+                      "npx create-",
+                      "pnpm create ",
+                    )
+                    node.properties.__bun__ = raw.replace("npx", "bunx --bun")
+                  }
+
+                  // npm create.
+                  if (raw.startsWith("npm create")) {
+                    node.properties.__npm__ = raw
+                    node.properties.__yarn__ = raw.replace(
+                      "npm create",
+                      "yarn create",
+                    )
+                    node.properties.__pnpm__ = raw.replace(
+                      "npm create",
+                      "pnpm create",
+                    )
+                    node.properties.__bun__ = raw.replace(
+                      "npm create",
+                      "bun create",
+                    )
+                  }
+
+                  // npx.
+                  if (raw.startsWith("npx")) {
+                    node.properties.__npm__ = raw
+                    node.properties.__yarn__ = raw.replace("npx", "yarn")
+                    node.properties.__pnpm__ = raw.replace("npx", "pnpx")
+                    node.properties.__bun__ = raw.replace("npx", "bunx --bun")
+                  }
+
+                  // npm run.
+                  if (raw.startsWith("npm run")) {
+                    node.properties.__npm__ = raw
+                    node.properties.__yarn__ = raw.replace("npm run", "yarn")
+                    node.properties.__pnpm__ = raw.replace("npm run", "pnpm")
+                    node.properties.__bun__ = raw.replace("npm run", "bun")
+                  }
+                }
               },
-            ],
-          } satisfies Options,
-        ],
+            },
+          ],
+        } satisfies Options,
       ],
-    }),
-  }
-}
+    ],
+  })

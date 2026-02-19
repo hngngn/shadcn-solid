@@ -1,12 +1,14 @@
+import type { ValidComponent } from "solid-js"
 import { Show, createMemo } from "solid-js"
+import { Dynamic } from "solid-js/web"
 import { Link, createFileRoute, useLocation } from "@tanstack/solid-router"
+import { allDocs } from "content-collections"
 
 import clientOnlyWrapper from "@/components/client-only-wrapper"
 import DocsLoading from "@/components/loading/docs"
 import SEO from "@/components/seo"
 import type { TNavItem, TNavItemWithChildren } from "@/config/docs"
 import { docsConfig } from "@/config/docs"
-import { Contents } from "@/content"
 import { Badge } from "@/registry/ui/badge"
 import { Button } from "@/registry/ui/button"
 
@@ -14,7 +16,9 @@ const Toc = clientOnlyWrapper(() => import("@/components/toc"))
 
 export const Route = createFileRoute("/_main/docs/$")({
   head: ({ params }) => {
-    const data = Contents[params._splat!].data
+    const data = allDocs.find(
+      (i) => i._meta.path.replace("\\", "/") === params._splat,
+    )!
 
     return SEO({
       title: data.title,
@@ -23,15 +27,20 @@ export const Route = createFileRoute("/_main/docs/$")({
   },
   component: RouteComponent,
   pendingComponent: DocsLoading,
+  ssr: false,
+  preload: false,
 })
 
 function RouteComponent() {
   const params = Route.useParams()
   const location = useLocation()
 
-  const data = createMemo(() => Contents[params()._splat!].data)
-  const headings = createMemo(() => Contents[params()._splat!].headings)
-  const component = createMemo(() => Contents[params()._splat!].component)
+  const docsData = createMemo(
+    () =>
+      allDocs.find(
+        (i) => i._meta.path.replace("\\", "/") === params()._splat!,
+      )!,
+  )
 
   const getPagerForDoc = (slug: string) => {
     const flattenedLinks = [null, ...flatten(docsConfig.sidebarNav), null]
@@ -75,7 +84,7 @@ function RouteComponent() {
             <div class="flex flex-col gap-2">
               <div class="flex items-start justify-between">
                 <h1 class="scroll-m-20 text-4xl font-semibold tracking-tight sm:text-3xl xl:text-4xl">
-                  {data().title}
+                  {docsData().title}
                 </h1>
                 <div class="flex items-center gap-2 pt-1.5">
                   <Show when={pager().prev?.href}>
@@ -130,19 +139,19 @@ function RouteComponent() {
                   </Show>
                 </div>
               </div>
-              <Show when={data().description}>
+              <Show when={docsData().description}>
                 <p class="text-muted-foreground text-[1.05rem] text-balance sm:text-base">
-                  {data().description}
+                  {docsData().description}
                 </p>
               </Show>
             </div>
-            <Show when={data().link}>
+            <Show when={docsData().link}>
               <div class="flex items-center space-x-2 pt-4">
-                <Show when={data().link?.doc}>
+                <Show when={docsData().link?.doc}>
                   <Badge<typeof Badge>
                     as={(props) => (
                       <Link
-                        to={data().link?.doc}
+                        to={docsData().link?.doc}
                         target="_blank"
                         rel="noreferrer"
                         {...props}
@@ -167,11 +176,11 @@ function RouteComponent() {
                     variant="secondary"
                   />
                 </Show>
-                <Show when={data().link?.api}>
+                <Show when={docsData().link?.api}>
                   <Badge<typeof Badge>
                     as={(props) => (
                       <Link
-                        to={data().link?.api}
+                        to={docsData().link?.api}
                         target="_blank"
                         rel="noreferrer"
                         {...props}
@@ -200,7 +209,7 @@ function RouteComponent() {
             </Show>
           </div>
           <div class="w-full flex-1 *:data-[slot=alert]:first:mt-0">
-            {component()}
+            <Dynamic component={docsData().component as ValidComponent} />
           </div>
         </div>
         <div class="mx-auto flex h-16 w-full max-w-2xl items-center gap-2 px-4 md:px-0">
@@ -260,7 +269,7 @@ function RouteComponent() {
       <div class="sticky top-[calc(var(--header-height)+1px)] z-30 ml-auto hidden h-[calc(100svh-var(--header-height)-var(--footer-height))] w-72 flex-col gap-4 overflow-hidden overscroll-none pb-8 xl:flex">
         <div class="h-(--top-spacing) shrink-0" />
         <div class="no-scrollbar overflow-y-auto px-8">
-          <Toc data={headings()} />
+          <Toc data={docsData().headings} />
           <div class="h-12" />
         </div>
       </div>
