@@ -1,5 +1,6 @@
 import { For } from "solid-js"
 import { Image } from "@kobalte/core/image"
+import { toast } from "somoto"
 
 import { Button } from "@/registry/ui/button"
 import {
@@ -23,7 +24,6 @@ import {
   TextFieldInput,
   TextFieldLabel,
 } from "@/registry/ui/text-field"
-import { toast } from "somoto"
 
 const people = [
   {
