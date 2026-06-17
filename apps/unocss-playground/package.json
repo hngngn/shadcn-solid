@@ -15,7 +15,7 @@
     "@types/node": "^24.8.1",
     "@unocss/preset-wind4": "^66.5.5",
     "unocss": "^66.5.5",
-    "vite": "^7.1.7",
+    "vite": "^7.3.5",
     "vite-plugin-solid": "^2.11.10",
     "vite-tsconfig-paths": "^5.1.4"
   },

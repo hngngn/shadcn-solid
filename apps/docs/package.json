@@ -16,7 +16,7 @@
     "@types/node": "^24.8.1",
     "prettier-plugin-tailwindcss": "^0.7.1",
     "tailwindcss": "^4.1.17",
-    "vite": "^7.1.7",
+    "vite": "^7.3.5",
     "vite-plugin-solid": "^2.11.10",
     "vite-tsconfig-paths": "^5.1.4"
   },
