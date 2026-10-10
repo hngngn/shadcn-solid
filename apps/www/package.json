@@ -1,0 +1,22 @@
+{
+  "name": "www",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "start": "node .output/server/index.mjs",
+    "preview": "vite preview",
+    "check": "rs check --fix src"
+  },
+  "dependencies": {
+    "@solidjs/meta": "^0.29.4",
+    "@solidjs/router": "^1.0.0",
+    "@solidjs/start": "^2.0.0",
+    "nitro": "^3.0.260610-beta",
+    "solid-js": "^1.9.14",
+    "vite": "^8.0.0"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

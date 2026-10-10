@@ -20,11 +20,11 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
           cache: "pnpm"
 
       - name: Install dependencies
         run: pnpm install
 
       - name: Check
-        run: pnpm "/^ci:.*/"
+        run: pnpm check

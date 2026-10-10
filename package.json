@@ -1,49 +1,22 @@
 {
+  "name": "shadcn-solid",
   "private": true,
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "turbo run format",
-    "registry": "tsx scripts/index.ts",
-    "ci:format": "turbo run ci:format",
-    "ci:lint": "turbo run ci:lint"
+    "check": "turbo run check",
+    "www": "pnpm --filter=www"
   },
   "devDependencies": {
-    "@eslint/js": "^9.38.0",
-    "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
-    "@typescript-eslint/parser": "^8.46.1",
-    "eslint": "^9.38.0",
-    "eslint-plugin-solid": "^0.14.5",
-    "prettier": "^3.6.2",
-    "rimraf": "^6.0.1",
-    "ts-morph": "^27.0.2",
-    "tsx": "^4.20.6",
-    "turbo": "^2.6.1",
-    "typescript": "5.9.2",
-    "typescript-eslint": "^8.46.1",
-    "valibot": "^1.1.0"
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
+    "eslint-plugin-solid": "^0.18.1",
+    "prettier": "3.9.6",
+    "rstack": "^0.8.2",
+    "turbo": "^2.11.7",
+    "typescript": "7.0.2"
   },
-  "packageManager": "pnpm@10.18.3+sha512.bbd16e6d7286fd7e01f6b3c0b3c932cda2965c06a908328f74663f10a9aea51f1129eea615134bf992831b009eabe167ecb7008b597f40ff9bc75946aadfb08d",
+  "packageManager": "pnpm@11.25.0",
   "engines": {
-    "node": ">=22"
-  },
-  "dependencies": {
-    "@corvu/calendar": "^0.1.2",
-    "@corvu/drawer": "^0.2.4",
-    "@corvu/otp-field": "^0.1.4",
-    "@corvu/resizable": "^0.2.5",
-    "@kobalte/core": "^0.13.11",
-    "@tanstack/solid-form": "^1.25.0",
-    "@tanstack/solid-table": "^8.21.3",
-    "@unovis/solid": "^1.6.1",
-    "@unovis/ts": "^1.6.1",
-    "cmdk-solid": "^1.1.2",
-    "cva": "1.0.0-beta.4",
-    "embla-carousel-autoplay": "^8.6.0",
-    "embla-carousel-solid": "^8.6.0",
-    "minisearch": "^7.2.0",
-    "somoto": "^0.0.2",
-    "tailwind-merge": "^3.3.1"
+    "node": ">=24"
   }
 }
