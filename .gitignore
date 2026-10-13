@@ -36,10 +36,3 @@ yarn-error.log*
 # Misc
 .DS_Store
 *.pem
-
-# Tanstack
-.tanstack
-.nitro
-routeTree.gen.ts
-# Local Netlify folder
-.netlify
