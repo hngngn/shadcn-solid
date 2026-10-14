@@ -13,11 +13,14 @@
     "@solidjs/meta": "^0.29.4",
     "@solidjs/router": "^1.0.0",
     "@solidjs/start": "^2.0.0",
+    "cn": "^0.4.0",
+    "cva": "1.0.0-beta.12",
     "embla-carousel": "^8.6.0",
     "embla-carousel-solid": "^8.6.0",
     "nitro": "^3.0.260610-beta",
     "solid-js": "^1.9.14",
-    "vite": "^8.0.0"
+    "vite": "^8.0.0",
+    "zod": "^4.6.7"
   },
   "engines": {
     "node": ">=24"
