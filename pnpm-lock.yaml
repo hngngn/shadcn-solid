@@ -184,6 +184,21 @@ importers:
 
   apps/www:
     dependencies:
+      '@corvu/calendar':
+        specifier: ^0.1.2
+        version: 0.1.2(solid-js@1.9.17)
+      '@corvu/drawer':
+        specifier: ^0.2.4
+        version: 0.2.4(solid-js@1.9.17)
+      '@corvu/otp-field':
+        specifier: ^0.1.4
+        version: 0.1.4(solid-js@1.9.17)
+      '@corvu/resizable':
+        specifier: ^0.2.5
+        version: 0.2.5(solid-js@1.9.17)
+      '@kobalte/core':
+        specifier: ^0.13.14
+        version: 0.13.14(solid-js@1.9.17)
       '@solidjs/meta':
         specifier: ^0.29.4
         version: 0.29.4(solid-js@1.9.17)
@@ -193,6 +208,9 @@ importers:
       '@solidjs/start':
         specifier: ^2.0.0
         version: 2.0.6(@solidjs/router@1.0.0(solid-js@1.9.17))(crossws@0.4.15(srvx@0.11.22))(vite@8.3.4(@types/node@26.6.5)(jiti@2.7.0))
+      cmdk-solid:
+        specifier: ^1.2.0
+        version: 1.2.0(@kobalte/core@0.13.14(solid-js@1.9.17))(solid-js@1.9.17)
       cn:
         specifier: ^0.4.0
         version: 0.4.0
@@ -211,6 +229,12 @@ importers:
       solid-js:
         specifier: ^1.9.14
         version: 1.9.17
+      solid-recharts:
+        specifier: ^1.0.1
+        version: 1.0.1(solid-js@1.9.17)
+      solid-sonner:
+        specifier: ^0.3.2
+        version: 0.3.2(solid-js@1.9.17)
       vite:
         specifier: ^8.0.0
         version: 8.3.4(@types/node@26.6.5)(jiti@2.7.0)
@@ -218,33 +242,9 @@ importers:
         specifier: ^4.6.7
         version: 4.6.7
     devDependencies:
-      '@corvu/calendar':
-        specifier: ^0.1.2
-        version: 0.1.2(solid-js@1.9.17)
-      '@corvu/drawer':
-        specifier: ^0.2.4
-        version: 0.2.4(solid-js@1.9.17)
-      '@corvu/otp-field':
-        specifier: ^0.1.4
-        version: 0.1.4(solid-js@1.9.17)
-      '@corvu/resizable':
-        specifier: ^0.2.5
-        version: 0.2.5(solid-js@1.9.17)
-      '@kobalte/core':
-        specifier: ^0.13.14
-        version: 0.13.14(solid-js@1.9.17)
       '@tailwindcss/vite':
         specifier: ^4.3.3
         version: 4.3.3(vite@8.3.4(@types/node@26.6.5)(jiti@2.7.0))
-      cmdk-solid:
-        specifier: ^1.2.0
-        version: 1.2.0(@kobalte/core@0.13.14(solid-js@1.9.17))(solid-js@1.9.17)
-      solid-recharts:
-        specifier: ^1.0.1
-        version: 1.0.1(solid-js@1.9.17)
-      solid-sonner:
-        specifier: ^0.3.2
-        version: 0.3.2(solid-js@1.9.17)
       tailwindcss:
         specifier: ^4.3.3
         version: 4.3.3

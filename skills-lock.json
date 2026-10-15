@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "solidjs": {
+      "source": "../my-skill",
+      "sourceType": "local",
+      "computedHash": "694d9a2446708d912bc82b412f9ab518c4a3fa7707cee8511408727f4a8e39cb"
+    }
+  }
+}
