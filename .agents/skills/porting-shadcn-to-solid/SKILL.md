@@ -1,11 +1,11 @@
 ---
 name: porting-shadcn-to-solid
-description: "Comprehensive step-by-step guide for porting official shadcn/ui (React) components to shadcn-solid (SolidJS) with 1:1 feature, styling, accessibility, and slot parity using Kobalte, Corvu, solid-recharts, and cva@beta with the cn package."
+description: "Comprehensive step-by-step guide for porting official shadcn/ui (React) components to shadcn-solid (SolidJS) with 1:1 feature, styling, accessibility, and slot parity using Kobalte, Corvu, solid-recharts, @kobalte/core/color-mode, and cva@beta with the cn package."
 ---
 
 # Porting shadcn/ui (React) to shadcn-solid (SolidJS)
 
-This skill provides an authoritative, battle-tested standard operating procedure for porting components from the official `shadcn/ui` (React/Radix) ecosystem to `shadcn-solid` (SolidJS, Kobalte, Corvu, `solid-recharts`).
+This skill provides an authoritative, battle-tested standard operating procedure for porting components from the official `shadcn/ui` (React/Radix) ecosystem to `shadcn-solid` (SolidJS, Kobalte, Corvu, `solid-recharts`, `@kobalte/core/color-mode`).
 
 ---
 
@@ -19,6 +19,7 @@ When translating React component code to SolidJS, internalize these non-negotiab
 | **Props Handling** | Destructuring in arguments `({ className, variant, ...props })` is standard | **NEVER destructure props directly**. Props are dynamic reactive getter proxies; destructuring destroys reactivity. Use `splitProps` and `mergeProps`. |
 | **Class Merging** | Migrated from `clsx` + `tailwind-merge` to `cn` package | Unified class merging and collision resolution via `cn` package |
 | **Variant Management** | Uses `class-variance-authority` | Uses `cva@beta` integrated with `cn` via `defineConfig({ cx: merge })` |
+| **Dark Mode / Themes** | `next-themes` (`ThemeProvider`, `useTheme`) | `@kobalte/core/color-mode` (`ColorModeProvider`, `ColorModeScript`, `useColorMode()`) |
 | **Charts** | Uses `recharts` | Uses `solid-recharts` (`^1.0.1`) (fine-grained SolidJS SVG charts) |
 | **Architecture Reference** | Radix UI registry (`bases/radix`) is canonical | Strictly mirrors Radix UI structure 1:1 using Kobalte/Corvu |
 | **Polymorphism** | `asChild` prop with Radix Slot primitive | Native Solid polymorphic `as` prop parameterized by `ValidComponent` |
@@ -99,23 +100,120 @@ export const buttonVariants = cva({
 
 ---
 
-## 3. Strict 1:1 Structural & Naming Parity
+## 3. Dark Mode / Color Mode Architecture (`@kobalte/core/color-mode` & Tailwind CSS v4)
+
+`shadcn/ui` (React) relies on `next-themes` (`ThemeProvider`, `useTheme`) or custom inline scripts for theme management. In `shadcn-solid`, we replace `next-themes` completely with `@kobalte/core/color-mode`.
+
+### 3.1 Root Application Setup (`src/app.tsx`)
+Wrap the SolidStart `<Router>` root with `<ColorModeScript />` (for SSR hydration and FOUC prevention) and `<ColorModeProvider>`:
+
+```tsx
+// apps/www/src/app.tsx
+import { Suspense } from "solid-js"
+import { MetaProvider } from "@solidjs/meta"
+import { Router } from "@solidjs/router"
+import { FileRoutes } from "@solidjs/start/router"
+import { ColorModeProvider, ColorModeScript } from "@kobalte/core/color-mode"
+
+import "./globals.css"
+
+export default function App() {
+  return (
+    <Router
+      root={(props) => (
+        <>
+          <ColorModeScript />
+          <ColorModeProvider>
+            <MetaProvider>
+              <Suspense>{props.children}</Suspense>
+            </MetaProvider>
+          </ColorModeProvider>
+        </>
+      )}
+    >
+      <FileRoutes />
+    </Router>
+  )
+}
+```
+
+### 3.2 FOUC Prevention Mechanics
+- `<ColorModeScript />` injects an inline script that executes synchronously before document rendering.
+- It inspects storage (`localStorage` by default under the key `kb-color-mode`, or cookies if configured) or the user's `prefers-color-scheme`.
+- It immediately assigns `document.documentElement.dataset.kbTheme = "dark" | "light"` and sets `style.colorScheme`, eliminating any Flash of Unstyled Content (FOUC).
+
+### 3.3 Hook Migration (`useTheme` $\rightarrow$ `useColorMode`)
+Replace all `next-themes` imports with `@kobalte/core/color-mode`:
+
+```tsx
+// ❌ React (next-themes)
+import { useTheme } from "next-themes"
+
+export function ThemeToggle() {
+  const { theme, setTheme } = useTheme()
+  return <button onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>Toggle</button>
+}
+
+// ✅ SolidJS (@kobalte/core/color-mode)
+import { useColorMode } from "@kobalte/core/color-mode"
+
+export function ThemeToggle() {
+  const { colorMode, setColorMode, toggleColorMode } = useColorMode()
+  // colorMode() is a reactive Accessor returning "light" | "dark"
+  // setColorMode("light" | "dark" | "system")
+  // toggleColorMode() switches between light and dark
+  return <button onClick={toggleColorMode}>Toggle</button>
+}
+```
+
+### 3.4 Tailwind CSS v4 Theme Configuration (`src/globals.css`)
+Because `@kobalte/core/color-mode` writes to `document.documentElement.dataset.kbTheme`, configure Tailwind CSS v4 using `@custom-variant`:
+
+```css
+/* apps/www/src/globals.css */
+@import "tailwindcss";
+
+/* Define dark variant targeting Kobalte's data attribute */
+@custom-variant dark (&:is([data-kb-theme="dark"] *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  /* ... */
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  /* Light theme variables */
+}
+
+[data-kb-theme="dark"] {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  /* Dark theme variables */
+}
+```
+
+---
+
+## 4. Strict 1:1 Structural & Naming Parity
 
 The paramount objective of `shadcn-solid` is to mirror `shadcn/ui` 1:1—file structure, component names, and exports must remain identical unless framework constraints make it impossible.
 
-### 3.1 Strict Mirroring Rules
+### 4.1 Strict Mirroring Rules
 1. **1:1 File Names:** Port `dialog.tsx` to `dialog.tsx`, `use-mobile.ts` to `use-mobile.ts`, etc. Do not rename files.
 2. **1:1 Directory Hierarchy:** Maintain subfolders like `ui/`, `hooks/`, `lib/`, `blocks/`, `examples/` identically. Do not restructure folders.
 3. **1:1 Module Exports:** Named exports must match 1:1. Never collapse, combine, or rename exports. Export named components (`export const DialogHeader = ...`); never switch to a default export that collapses subcomponents.
 4. **1:1 Internal Code Organization:** Preserve the order of variant definitions (`buttonVariants`), component declarations, and final exports.
 
-### 3.2 Framework Exceptions (Next.js App Router $\rightarrow$ SolidStart Router)
+### 4.2 Framework Exceptions (Next.js App Router $\rightarrow$ SolidStart Router)
 Deviations are *only* permitted for framework application structure (routing). SolidStart is Vite-based and places source code in `src/`.
 
 **Routing Conventions Mapping Table:**
 | Target Category | `shadcn/ui` Source Path (Next.js-style) | `shadcn-solid` Target Path (SolidStart `src/`) | Notes |
 | :--- | :--- | :--- | :--- |
-| **Root Layout** | `app/layout.tsx` | `apps/www/src/app.tsx` | Root component with `<Router>`, context providers. |
+| **Root Layout** | `app/layout.tsx` | `apps/www/src/app.tsx` | Root component with `<Router>`, `<ColorModeScript>`, `<ColorModeProvider>`. |
 | **Wildcard Fallback** | `app/not-found.tsx` | `apps/www/src/routes/[...404].tsx` | Wildcard route handler. |
 | **Page Component** | `app/<path>/page.tsx` | `apps/www/src/routes/<path>/index.tsx` | Next.js Page -> SolidStart Index. |
 | **Dynamic Item Page**| `app/<path>/[id]/page.tsx` | `apps/www/src/routes/<path>/[id].tsx` | Next.js `[id]/page.tsx` -> SolidStart `[id].tsx`. |
@@ -124,7 +222,7 @@ Deviations are *only* permitted for framework application structure (routing). S
 | **MDX Content** | `content/docs/` (MDX files) | `apps/www/src/content/docs/` | Content collections (MDX) are preserved and rendered via route handlers. |
 | **API Endpoint** | `app/api/<path>/route.ts` | `apps/www/src/routes/api/<path>.ts` | API routes map to files exporting standard request handlers. |
 
-### 3.3 Target Path & Structure Mapping (Deterministic Destination Lookup)
+### 4.3 Target Path & Structure Mapping (Deterministic Destination Lookup)
 Verify the final destination for every ported file using this table before implementation:
 
 | Category | shadcn/ui Source Path (`/home/hngngn/my-space/ui`) | shadcn-solid Target Path (`apps/www/src/`) | Decision Rule |
@@ -141,11 +239,11 @@ Verify the final destination for every ported file using this table before imple
 
 ---
 
-## 4. Primitive Architecture Evaluation: `radix-ui` vs `base-ui`
+## 5. Primitive Architecture Evaluation: `radix-ui` vs `base-ui`
 
 The official `shadcn/ui` codebase maintains multiple component base registries (notably Radix UI at `apps/v4/registry/bases/radix/` and Base UI at `apps/v4/registry/bases/base/`).
 
-### 4.1 Architectural Comparison
+### 5.1 Architectural Comparison
 
 | Dimension | `radix-ui` | `base-ui` | Alignment with `kobalte` & `corvu` |
 | :--- | :--- | :--- | :--- |
@@ -154,7 +252,7 @@ The official `shadcn/ui` codebase maintains multiple component base registries (
 | **State Styling Attributes** | `data-[state=open]`<br/>`data-[state=closed]`<br/>`data-[state=checked]`<br/>`data-[state=active]` | `data-open`, `data-closed`, `data-checked`, `data-popup-open`, `data-starting-style` | **Radix maps 1:1:** Radix uses state enum pairs that map predictably into Kobalte's boolean state flags (`data-[expanded]`, `data-[closed]`, `data-[checked]`, `data-[selected]`). Base UI mixes differing boolean names and CSS transition state hooks. |
 | **Controlled / Uncontrolled State & Events** | `value` / `defaultValue` / `onValueChange`<br/>`open` / `defaultOpen` / `onOpenChange` | `value` / `defaultValue` / `onValueChange`<br/>`open` / `defaultOpen` / `onOpenChange((open, event) => ...)` | **Radix is identical:** Kobalte and Corvu implement the exact Radix prop contract and event signatures. |
 
-### 4.2 Canonical Selection & Decision Rule
+### 5.2 Canonical Selection & Decision Rule
 > **Decision:** **Radix UI (`apps/v4/registry/bases/radix/` or standard `shadcn/ui`) is selected as the primary, canonical reference for porting to `kobalte` and `corvu`.**
 
 **Guideline for the Agent:**
@@ -164,11 +262,11 @@ The official `shadcn/ui` codebase maintains multiple component base registries (
 
 ---
 
-## 5. Source Analysis & Structure Reading
+## 6. Source Analysis & Structure Reading
 
 Before writing any SolidJS code, inspect the React source component:
 
-### Step 5.1: Locate and Read the Target Source
+### Step 6.1: Locate and Read the Target Source
 Query the indexed external `shadcn/ui` repo via `codegraph_explore`:
 ```ts
 // Call codegraph_explore with the external repo project path
@@ -179,11 +277,12 @@ codegraph_explore({
 ```
 Alternatively, read the React component file directly from `/home/hngngn/my-space/ui/apps/v4/registry/bases/radix/ui/<component>.tsx`.
 
-### Step 5.2: Dissect the Anatomy
+### Step 6.2: Dissect the Anatomy
 Deconstruct the React file into:
 1. **Primitives & Dependencies:**
    - Radix primitives imported (e.g., `@radix-ui/react-dialog`, `@radix-ui/react-accordion`)
    - Specialized libraries (e.g., `vaul` -> `@corvu/drawer`, `react-day-picker` -> `@corvu/calendar`, `input-otp` -> `@corvu/otp-field`, `cmdk` -> `cmdk-solid`, `recharts` -> `solid-recharts`)
+   - Theme management: Replace any `next-themes` with `@kobalte/core/color-mode`.
    - Utility packages: Note any `class-variance-authority` or `cn` usage and prepare to map to our `cva@beta` + `cn` utility.
 2. **Subcomponents Exported:**
    - Identify every exported piece (e.g., `Dialog`, `DialogTrigger`, `DialogContent`, `DialogHeader`, `DialogFooter`, `DialogTitle`, `DialogDescription`, `DialogClose`).
@@ -197,7 +296,7 @@ Deconstruct the React file into:
 
 ---
 
-## 6. Comprehensive Headless Primitive Mapping Matrix
+## 7. Comprehensive Headless Primitive Mapping Matrix
 
 Map Radix UI and React ecosystem primitives to Kobalte and Corvu equivalents:
 
@@ -235,15 +334,16 @@ Map Radix UI and React ecosystem primitives to Kobalte and Corvu equivalents:
 | `embla-carousel-react` | `embla-carousel-solid` | Reactive options and plugins via `createEmblaCarousel` |
 | `sonner` | `solid-sonner` | Toast notification manager (`Toaster`, `toast`) |
 | `recharts` | `solid-recharts` | SVG charts (`ResponsiveContainer`, `Tooltip`, `Legend`, `AreaChart`, `BarChart`, etc.) |
+| `next-themes` | `@kobalte/core/color-mode` | `<ColorModeProvider>`, `<ColorModeScript>`, `useColorMode()` |
 | `sidebar.tsx` | Composite | Composite architecture combining `use-mobile` hook, `@kobalte/core/tooltip`, `@kobalte/core/dialog` (mobile sheet), `button`, and reactive context |
 
 ---
 
-## 7. Chart Library Mapping (`recharts` $\rightarrow$ `solid-recharts`)
+## 8. Chart Library Mapping (`recharts` $\rightarrow$ `solid-recharts`)
 
 `shadcn/ui` implements charting via `recharts`. In `shadcn-solid`, we map this 1:1 to `solid-recharts` (`^1.0.1`), preserving all SVG theming, CSS variables, and layout structures.
 
-### 7.1 Component & Primitive Equivalents
+### 8.1 Component & Primitive Equivalents
 | React `recharts` | SolidJS `solid-recharts` | Notes |
 | :--- | :--- | :--- |
 | `ResponsiveContainer` | `ResponsiveContainer` | Wraps charts; handles dynamic width/height |
@@ -252,7 +352,7 @@ Map Radix UI and React ecosystem primitives to Kobalte and Corvu equivalents:
 | Chart Primitives (`AreaChart`, `BarChart`, `LineChart`, `PieChart`, etc.) | Identical names in `solid-recharts` | Direct 1:1 drop-in replacement |
 | Axes & Grids (`CartesianGrid`, `XAxis`, `YAxis`, `PolarGrid`, etc.) | Identical names in `solid-recharts` | Direct 1:1 drop-in replacement |
 
-### 7.2 Key Porting Patterns for Charts
+### 8.2 Key Porting Patterns for Charts
 1. **Dynamic CSS Variables via `ChartStyle`:**
    - In `ChartStyle`, compute CSS variable rules (`--color-<key>: <val>`) from `props.config`.
    - Render a `<style>` element targeting `[data-chart="${chartId}"]`.
@@ -268,9 +368,9 @@ Map Radix UI and React ecosystem primitives to Kobalte and Corvu equivalents:
 
 ---
 
-## 8. API, Ref, & State Translation Guide
+## 9. API, Ref, & State Translation Guide
 
-### 8.1 React State & Hooks to SolidJS Equivalents
+### 9.1 React State & Hooks to SolidJS Equivalents
 
 #### `useState` -> `createSignal`
 ```tsx
@@ -347,14 +447,14 @@ import { createUniqueId } from "solid-js"
 const id = createUniqueId()
 ```
 
-### 8.2 Events & Input Handlers
+### 9.2 Events & Input Handlers
 - **Case Sensitivity:** Solid uses camelCase (`onClick`, `onKeyDown`, `onPointerDown`).
 - **Input Events:**
   - In React, `onChange` triggers on every character keystroke.
   - In standard DOM / SolidJS, `onInput` fires on every keystroke, while `onChange` fires only when the field is committed (e.g. on blur or Enter).
   - When porting form controls / text fields, replace React `onChange` with `onInput` or Kobalte's `onChange`.
 
-### 8.3 Context & Providers
+### 9.3 Context & Providers
 ```tsx
 // React
 const SidebarContext = createContext<{ state: string } | null>(null)
@@ -389,7 +489,7 @@ export const useSidebar = () => {
 
 ---
 
-## 9. Porting Checklist & Best Practices
+## 10. Porting Checklist & Best Practices
 
 ### Rule 1: Never Destructure Props Directly
 Destructuring drops the Proxy tracking wrapper. Always separate classes, variants, and custom props using `splitProps`.
@@ -489,7 +589,7 @@ Official `shadcn/ui` components tag every DOM node with `data-slot="<name>"` (e.
 
 ---
 
-## 10. Step-by-Step Porting Workflow
+## 11. Step-by-Step Porting Workflow
 
 ```
 [1. Source Discovery] ──> [2. Dissect Anatomy] ──> [3. Type Contract]
@@ -499,11 +599,11 @@ Official `shadcn/ui` components tag every DOM node with `data-slot="<name>"` (e.
 ```
 
 ### Step 1: Discover Source Component
-1. Locate the component in the official repository under the mandatory **Radix** registry (`apps/v4/registry/bases/radix/ui/<component>.tsx`) or query via `codegraph_explore` using the full path. Reference the Path & Structure Mapping Table in Section 3 to establish a deterministic target destination.
+1. Locate the component in the official repository under the mandatory **Radix** registry (`apps/v4/registry/bases/radix/ui/<component>.tsx`) or query via `codegraph_explore` using the full path. Reference the Path & Structure Mapping Table in Section 4 to establish a deterministic target destination.
 
 ### Step 2: Dissect Anatomy
 1. Note the Radix primitive used.
-2. Check the matrix in Section 6 to select the corresponding Kobalte (`@kobalte/core/*`), Corvu (`@corvu/*`), or `solid-recharts` primitive.
+2. Check the matrix in Section 7 to select the corresponding Kobalte (`@kobalte/core/*`), Corvu (`@corvu/*`), or `solid-recharts` primitive.
 3. List all subcomponents (e.g. `Root`, `Trigger`, `Content`, `Overlay`). Preserve internal component structure 1:1.
 4. Extract variants from `class-variance-authority` and convert them into `cva@beta` format.
 
@@ -528,7 +628,7 @@ Official `shadcn/ui` components tag every DOM node with `data-slot="<name>"` (e.
    ```
 
 ### Step 5: Adapt Tailwind & Data Attributes
-1. Replace state enums 1:1 using the table in Section 9 :: Rule 4.
+1. Replace state enums 1:1 using the table in Section 10 :: Rule 4.
 2. Replace Radix transform origin variables with `--kb-*-transform-origin`.
 3. Ensure animation durations, keyframes, and transitions match the source.
 
@@ -550,7 +650,7 @@ git status
 
 ---
 
-## 11. Production Code Templates
+## 12. Production Code Templates
 
 ### Template A: Pure Styling Component (`Card`)
 ```tsx
@@ -837,4 +937,40 @@ ${colorConfig
 
 export const ChartTooltip = RechartsPrimitive.Tooltip
 export const ChartLegend = RechartsPrimitive.Legend
+```
+
+### Template F: Standard Mode Toggle Component (`ModeToggle`)
+```tsx
+import { useColorMode } from "@kobalte/core/color-mode"
+import { Button } from "@/registry/ui/button"
+
+export const ModeToggle = () => {
+  const { toggleColorMode } = useColorMode()
+
+  return (
+    <Button onClick={toggleColorMode} size="icon" variant="ghost">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="hidden size-4 [html[data-kb-theme=dark]_&]:block"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="currentColor"
+          d="M17.891 12a5.94 5.94 0 0 1-3.68 5.499a5.97 5.97 0 0 1-6.496-1.295A5.948 5.948 0 0 1 11.943 6.05a5.96 5.96 0 0 1 4.21 1.743A5.94 5.94 0 0 1 17.89 12M3.203 13.048H2.05A1.05 1.05 0 0 1 1 12a1.047 1.047 0 0 1 1.05-1.048h1.153A1.05 1.05 0 0 1 4.253 12a1.047 1.047 0 0 1-1.05 1.048m18.747 0h-1.143A1.05 1.05 0 0 1 19.758 12a1.047 1.047 0 0 1 1.05-1.048h1.143A1.05 1.05 0 0 1 23 12a1.047 1.047 0 0 1-1.05 1.048m-9.965-8.8a1.05 1.05 0 0 1-1.05-1.048V2.048A1.047 1.047 0 0 1 11.986 1a1.05 1.05 0 0 1 1.049 1.048V3.2a1.047 1.047 0 0 1-1.05 1.048m0 18.752a1.05 1.05 0 0 1-1.05-1.047V20.8a1.047 1.047 0 0 1 1.05-1.048a1.05 1.05 0 0 1 1.049 1.048v1.152A1.047 1.047 0 0 1 11.984 23M5.753 6.825a1.05 1.05 0 0 1-.745-.314l-.819-.807a1.051 1.051 0 0 1 .745-1.796c.28 0 .548.111.745.308l.819.817a1.047 1.047 0 0 1 0 1.478a1.05 1.05 0 0 1-.745.314m13.271 13.221a1.05 1.05 0 0 1-.735-.304l-.818-.817a1.047 1.047 0 0 1 1.14-1.739q.196.096.34.262l.818.817a1.047 1.047 0 0 1 0 1.477a1.05 1.05 0 0 1-.745.304m-.808-13.221a1.05 1.05 0 0 1-1.034-1.254c.04-.204.142-.391.29-.538l.818-.817a1.05 1.05 0 0 1 1.48 1.488l-.82.807a1.05 1.05 0 0 1-.734.314M4.934 20.046a1.05 1.05 0 0 1-.745-.304a1.046 1.046 0 0 1 0-1.477l.819-.817a1.05 1.05 0 0 1 1.49 0a1.047 1.047 0 0 1 0 1.477l-.819.817a1.05 1.05 0 0 1-.745.304"
+        />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="hidden size-4 [html[data-kb-theme=light]_&]:block"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="currentColor"
+          d="M21.88 15.147a10.23 10.23 0 0 1-7.027 7.027A10.5 10.5 0 0 1 12 22.5A10.5 10.5 0 0 1 1.5 12c0-.986.138-1.956.408-2.88a10.23 10.23 0 0 1 7.027-7.027A10.46 10.46 0 0 1 12 1.5a10.5 10.5 0 0 1 9.88 13.647"
+        />
+      </svg>
+      <span class="sr-only">Toggle theme</span>
+    </Button>
+  )
+}
 ```
