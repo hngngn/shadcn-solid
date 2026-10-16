@@ -89,10 +89,6 @@ export function verifyIndex(index: number, length: number) {
   }
 }
 
-// ts-morph's insertIntoCommaSeparatedNodes, which inserts text at index in
-// currentNodes: the list's items, and in an object literal, the comment nodes
-// between them. The text is separated from its neighbors by commas, and by a
-// line break and the list's indentation or by a space.
 export function insertIntoCommaSeparatedNodes(
   code: string,
   list: CommaSeparatedList,
@@ -144,9 +140,6 @@ export function insertIntoCommaSeparatedNodes(
     appendSeparator()
   }
 
-  // The new text starts with a comma after the previous item, which takes
-  // the place of the item's own comma, and keeps the comments that trail the
-  // item and that comma.
   function prependCommaAndSeparator() {
     if (!previousNonCommentNode) {
       prependSeparator()
@@ -174,9 +167,6 @@ export function insertIntoCommaSeparatedNodes(
     newText = prefix + newText
   }
 
-  // The text from the previous item through the comment nodes after it, which
-  // the insertion replaces. It starts at the item's end, so when the item has
-  // a comma, the comma is copied too and the list gets two in a row.
   function getCommentNodeTexts(item: ListChild, lastComment: ListChild) {
     const end = getTrailingCommentsEnd(code, lastComment.end) ?? lastComment.end
     return code.slice(item.end, end)
@@ -232,9 +222,6 @@ export function insertIntoCommaSeparatedNodes(
   )
 }
 
-// ts-morph's removeCommaSeparatedChild: removes the child with its comma, or
-// with the comma before it when it is the last child, and the spaces and
-// line breaks around it.
 export function removeCommaSeparatedChild(
   code: string,
   list: CommaSeparatedList,
@@ -281,13 +268,8 @@ export function removeCommaSeparatedChild(
   return applyManipulation(code, [{ start, end, text: "" }], options)
 }
 
-// An array element, a hole, or an object member.
 type Member = t.Node | null
 
-// ts-morph's node handler for a removal, which rejects the edit unless it
-// took out the member at index and left the others as they were. Removing a
-// member can take a hole next to it with it, or pull the rest of its line
-// onto a line comment before it.
 export function verifyRemoval(
   members: Member[],
   index: number,
@@ -303,8 +285,6 @@ export function verifyRemoval(
   }
 }
 
-// The kind of each member as TypeScript tells them apart: a shorthand
-// property is not a property assignment, and a hole is a member too.
 function getMemberKinds(members: Member[]) {
   return members.map((member) =>
     member === null
@@ -322,8 +302,6 @@ function isRemovable(char: string, spaces: boolean, newLines: boolean) {
   )
 }
 
-// ts-morph's Node#getNonWhitespaceStart() for a list child, whose parent is
-// the node with the brackets.
 function getChildNonWhitespaceStart(
   code: string,
   list: CommaSeparatedList,
@@ -340,7 +318,6 @@ function getChildNonWhitespaceStart(
   )
 }
 
-// ts-morph's Node#isFirstNodeOnLine().
 function isFirstNodeOnLine(
   code: string,
   list: CommaSeparatedList,
@@ -363,14 +340,10 @@ function getTrailingComments(code: string, pos: number) {
   return code.slice(pos, getTrailingCommentsEnd(code, pos) ?? pos)
 }
 
-// ts-morph's StringUtils.startsWithNewLine.
 function startsWithNewLine(text: string) {
   return text.startsWith("\n") || text.startsWith("\r\n")
 }
 
-// ts-morph's appendCommaToText: a comma right after the last token of text,
-// so in front of the whitespace and comments that end it, unless that token
-// is a comma.
 export function appendCommaToText(text: string) {
   const end = getLastTokenEnd(text)
   if (end === 0 || text[end - 1] === ",") {
@@ -380,9 +353,6 @@ export function appendCommaToText(text: string) {
   return text.slice(0, end) + "," + text.slice(end)
 }
 
-// Where the last token of text ends, as ts-morph finds it with TypeScript's
-// scanner, which it does not ask to rescan anything: a string ends at a line
-// break, and a template literal's ${} holds tokens of its own. 0 when text
 function getLastTokenEnd(text: string) {
   const openBraces: number[] = []
   let lastTokenEnd = 0

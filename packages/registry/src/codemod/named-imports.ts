@@ -53,7 +53,6 @@ export function addNamedImport(
 
   const namedImportsText = `{ ${name} }`
 
-  // `import {} from "module"` or `import a, {} from "module"`.
   const openBrace = findOpenBrace(code, declaration)
   if (openBrace !== undefined) {
     return applyManipulation(code, [
@@ -78,7 +77,6 @@ export function addNamedImport(
     ])
   }
 
-  // `import "module"` has no import clause.
   const importKeywordEnd = declaration.start! + "import".length
   return applyManipulation(code, [
     {
@@ -89,8 +87,6 @@ export function addNamedImport(
   ])
 }
 
-// ts-morph's ImportSpecifier#remove() for the named import at index, one of
-// several: it goes with its comma, as in any comma-separated list.
 export function removeNamedImport(
   code: string,
   declaration: t.ImportDeclaration,
@@ -116,7 +112,6 @@ function getNamedImports(declaration: t.ImportDeclaration) {
   )
 }
 
-// The declaration's NamedImports, the list in braces after `import`.
 function getNamedImportsList(
   code: string,
   declaration: t.ImportDeclaration,
@@ -136,7 +131,6 @@ function getNamedImportsList(
   }
 }
 
-// The `{` of the declaration's named imports.
 function findOpenBrace(code: string, declaration: t.ImportDeclaration) {
   let pos = declaration.start! + "import".length
   const sourceStart = declaration.source.start!

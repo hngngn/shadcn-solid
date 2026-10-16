@@ -60,7 +60,6 @@ export class StringLiterals {
     switch (literal.type) {
       case "StringLiteral":
         return literal.value
-      // Babel keeps a directive as written.
       case "DirectiveLiteral":
         return readLiteral(getText(this.code, literal))
       case "TemplateLiteral":
@@ -68,12 +67,10 @@ export class StringLiterals {
     }
   }
 
-  // ts-morph's setLiteralValue(value): see getSetLiteralValueEdit.
   setValue(literal: Literal, value: string) {
     this.edits.set(literal, getSetLiteralValueEdit(this.code, literal, value))
   }
 
-  // The edits that set the values, to apply with others.
   getEdits() {
     return Array.from(this.edits.values())
   }
@@ -83,9 +80,6 @@ export class StringLiterals {
   }
 }
 
-// The edit of ts-morph's setLiteralValue(value), which replaces the text
-// between the quotes. A string keeps its quotes, and escapes them and line
-// breaks in value, but not backslashes. A template takes value as written.
 export function getSetLiteralValueEdit(
   code: string,
   literal: Literal,
@@ -102,7 +96,6 @@ export function getSetLiteralValueEdit(
   }
 }
 
-// ts-morph's StringUtils.escapeForWithinString.
 function escapeForWithinString(value: string, quote: string) {
   return value
     .split(quote)
@@ -118,10 +111,6 @@ function isWithin(node: t.Node, container: t.Node) {
   )
 }
 
-// What TypeScript reads from a string or template literal, given as source.
-// TypeScript's scanner never throws. Babel recovers from an invalid escape,
-// but not from a string whose last backslash escapes its closing quote, which
-// setValue() writes for a value that ends in one; its text stands in.
 function readLiteral(source: string) {
   try {
     const literal = parseExpression(source, { errorRecovery: true }) as
@@ -134,9 +123,6 @@ function readLiteral(source: string) {
   }
 }
 
-// A template's value. Babel has no cooked value for a template with an
-// invalid escape, which TypeScript keeps as written, so the whole raw text
-// stands in, other escapes and all.
 function getCookedValue(literal: t.TemplateLiteral) {
   const { cooked, raw } = literal.quasis[0].value
   return cooked ?? raw

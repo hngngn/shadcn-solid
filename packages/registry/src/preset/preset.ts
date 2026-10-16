@@ -69,9 +69,6 @@ export const PRESET_THEMES = [
 
 export const PRESET_CHART_COLORS = PRESET_THEMES
 
-// Before v2, base-color themes had colored chart palettes
-// borrowed from these colored themes. Used by consumers to
-// restore the original chart colors when decoding v1 presets.
 export const V1_CHART_COLOR_MAP: Record<string, string> = {
   neutral: "blue",
   stone: "lime",
@@ -136,7 +133,6 @@ export const PRESET_MENU_COLORS = [
   "inverted-translucent",
 ] as const
 
-// V1 fields (version "a"): 40 bits. No chartColor.
 const PRESET_FIELDS_V1 = [
   { key: "menuColor", values: PRESET_MENU_COLORS, bits: 3 },
   { key: "menuAccent", values: PRESET_MENU_ACCENTS, bits: 3 },
@@ -148,7 +144,6 @@ const PRESET_FIELDS_V1 = [
   { key: "style", values: PRESET_STYLES, bits: 6 },
 ] as const
 
-// V2 fields (version "b"): 51 bits. Adds chartColor and fontHeading.
 const PRESET_FIELDS_V2 = [
   ...PRESET_FIELDS_V1,
   { key: "chartColor", values: PRESET_CHART_COLORS, bits: 6 },
@@ -174,7 +169,6 @@ export const DEFAULT_PRESET_CONFIG: PresetConfig = Object.fromEntries(
 
 const BASE62 = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
-// Version prefixes — "a" = v1 (no chartColor), "b" = v2 (with chartColor).
 const CURRENT_VERSION = "b"
 const VALID_VERSIONS = ["a", "b"] as const
 
@@ -199,11 +193,9 @@ export function fromBase62(str: string) {
   return result
 }
 
-// Always produces v2 ("b") codes.
 export function encodePreset(config: Partial<PresetConfig>) {
   const merged = { ...DEFAULT_PRESET_CONFIG, ...config }
 
-  // Uses multiplication instead of bitwise ops (JS bitwise truncates to 32 bits).
   let bits = 0
   let offset = 0
   for (const field of PRESET_FIELDS_V2) {
@@ -217,8 +209,6 @@ export function encodePreset(config: Partial<PresetConfig>) {
   return CURRENT_VERSION + toBase62(bits)
 }
 
-// "a"-prefixed codes use v1 fields (no chartColor).
-// "b"-prefixed codes use v2 fields (with chartColor).
 export function decodePreset(code: string): PresetConfig | null {
   if (!code || code.length < 2) {
     return null
@@ -250,7 +240,6 @@ export function decodePreset(code: string): PresetConfig | null {
   return result as PresetConfig
 }
 
-// Check if a string looks like a preset code (version char + base62).
 export function isPresetCode(value: string) {
   if (!value || value.length < 2 || value.length > 10) {
     return false

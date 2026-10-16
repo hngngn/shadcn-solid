@@ -77,7 +77,6 @@ export const transformRenderSourceFile: SourceFileTransformer = async ({
       ? `{<${tagName} ${attributes}>${childrenText}</${tagName}>}`
       : `{<${tagName}>${childrenText}</${tagName}>}`
 
-    // Get the parent tag name and other attributes.
     const parentTagName = openingElement.getTagNameNode().getText()
     const otherAttrs = openingElement
       .getAttributes()
@@ -94,7 +93,6 @@ export const transformRenderSourceFile: SourceFileTransformer = async ({
       .map((attr) => attr.getText())
       .join(" ")
 
-    // Build new element text as self-closing since children are now in render.
     const newAttrs = otherAttrs
       ? `${otherAttrs} render=${newRenderValue}`
       : `render=${newRenderValue}`
@@ -108,7 +106,6 @@ export const transformRenderSourceFile: SourceFileTransformer = async ({
     })
   }
 
-  // Apply transformations in reverse order to preserve positions.
   for (const info of transformations.reverse()) {
     const fullText = sourceFile.getFullText()
     const newFullText =
@@ -121,5 +118,4 @@ export const transformRenderSourceFile: SourceFileTransformer = async ({
   return sourceFile
 }
 
-// The same transformer, for the registry's transform().
 export const transformRender = toTextTransformer(transformRenderSourceFile)

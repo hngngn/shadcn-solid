@@ -185,9 +185,6 @@ export function addImportDeclaration(
   ])
 }
 
-// The edit with which ts-morph's SourceFile#addImportDeclaration() writes the
-// text of an import declaration: after the last import, or after the leading
-// block comments when there are no imports.
 export function getImportDeclarationInsertion(code: string, text: string) {
   const statements = getStatementsWithComments(code, parseModule(code).program)
 

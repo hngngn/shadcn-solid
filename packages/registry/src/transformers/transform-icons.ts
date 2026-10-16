@@ -196,9 +196,6 @@ function transformPlaceholder(
   }
 }
 
-// The opening element of the self-closing element that text is, and
-// getJsxAttributes(): its attributes, isOwn, and those of the elements in
-// their values.
 function parseElement(text: string) {
   const file = parseTransformInput(text)!
   const statement = file.program.body[0] as t.ExpressionStatement
@@ -213,12 +210,10 @@ function parseElement(text: string) {
   }
 }
 
-// ts-morph's JsxSelfClosingElement.
 function isSelfClosingElement(node: t.Node): node is t.JSXElement {
   return node.type === "JSXElement" && node.openingElement.selfClosing
 }
 
-// Whether the element is a child of a JSX element or fragment.
 function isJsxChild(file: t.File, element: t.JSXElement) {
   let isChild = false
   t.traverseFast(file, (node) => {
@@ -230,8 +225,6 @@ function isJsxChild(file: t.File, element: t.JSXElement) {
   return isChild
 }
 
-// The edits, each made on the code the one before leaves, that remove the
-// IconPlaceholder import, then add the library's imports of the icons.
 function transformImports(
   code: string,
   transformedIcons: string[],
@@ -243,8 +236,6 @@ function transformImports(
     return edits
   }
 
-  // Each edit ends before the next declaration, which it moves by the length
-  // it adds.
   let offset = 0
   for (const declaration of getImportDeclarations(file)) {
     if (getText(code, declaration.source).includes("icon-placeholder")) {
@@ -262,10 +253,6 @@ function transformImports(
     return edits
   }
 
-  // ts-morph removes the semicolon from the added imports when the first
-  // import has none, which is never an added one. When an icon name from an
-  // expression breaks an import, the declaration TypeScript parses ends at
-  // the name, so its semicolon stays.
   const firstImport = getImportDeclarations(parseTransformInput(code)!)[0]
   const useSemicolon = !firstImport || getText(code, firstImport).endsWith(";")
 
@@ -287,7 +274,6 @@ function transformImports(
       text = text.replace(";", "")
     }
 
-    // ts-morph writes the declaration without checking that it parses.
     const edit = getImportDeclarationInsertion(code, text)
     edits.push(edit)
     code = applyEdits(code, [edit])
@@ -300,7 +286,6 @@ function applyEditsInTurn(code: string, edits: TextEdit[]) {
   return edits.reduce((text, edit) => applyEdits(text, [edit]), code)
 }
 
-// ts-morph's SourceFile#getImportDeclarations().
 function getImportDeclarations(file: t.File) {
   return file.program.body.filter(
     (statement): statement is t.ImportDeclaration =>
@@ -308,8 +293,6 @@ function getImportDeclarations(file: t.File) {
   )
 }
 
-// The import declaration at start loses its IconPlaceholder import, and goes
-// when no named import is left.
 function removeIconPlaceholderImport(code: string, start: number) {
   const statements = getStatementsWithComments(
     code,

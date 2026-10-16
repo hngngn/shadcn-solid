@@ -112,8 +112,6 @@ function processStringLiterals(
   }
 }
 
-// ts-morph edits the file as it goes: the attributes left empty go after the
-// className edits, and the cva() and mergeProps() calls are read after that.
 export const transformFont: Transformer = async (
   code,
   { config, supportedFontMarkers },
@@ -162,7 +160,6 @@ export const transformFont: Transformer = async (
   )
 }
 
-// The cva() and mergeProps() calls of transformFont.
 function transformFontCalls(code: string, supportedMarkers: Set<string>) {
   const file = parseTransformInput(code)
   if (!file) {

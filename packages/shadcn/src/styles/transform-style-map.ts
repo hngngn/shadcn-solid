@@ -501,13 +501,11 @@ function applyToMergePropsCalls(
       return
     }
 
-    // Look for object literals in mergeProps arguments
     for (const arg of node.getArguments()) {
       if (!Node.isObjectLiteralExpression(arg)) {
         continue
       }
 
-      // Find className property in the object literal
       const classNameProp = arg
         .getProperties()
         .find(
@@ -526,7 +524,6 @@ function applyToMergePropsCalls(
         continue
       }
 
-      // Handle cn() calls in className
       if (
         Node.isCallExpression(classNameInitializer) &&
         isCnCall(classNameInitializer)
@@ -558,7 +555,6 @@ function applyStyleToCnCall(
     return
   }
 
-  // Skip allowlisted classes — they are handled at CLI install time.
   const classesToInline = unmatchedClasses.filter(
     (cnClass) => !ALLOWLIST.has(cnClass),
   )
@@ -610,7 +606,6 @@ function applyClassesToCnCall(cnCall: CallExpression, tailwindClasses: string) {
     const updated = removeCnClasses(mergeClasses(tailwindClasses, existing))
     firstArg.setLiteralValue(updated)
 
-    // Clean up cn-* classes from remaining arguments
     for (let i = 1; i < cnCall.getArguments().length; i++) {
       const arg = cnCall.getArguments()[i]
       if (isStringLiteralLike(arg)) {
@@ -626,7 +621,6 @@ function applyClassesToCnCall(cnCall: CallExpression, tailwindClasses: string) {
     return
   }
 
-  // If first arg is not a string literal, prepend tailwind classes
   const argumentTexts = cnCall
     .getArguments()
     .map((argument) => {
