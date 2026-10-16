@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "Schemas, presets, icons and transformers for shadcn-solid registry items.",
   "type": "module",
-  "sideEffects": false,
+  "sideEffects": [
+    "./dist/tailwind.css"
+  ],
   "files": [
     "dist"
   ],
@@ -20,6 +22,7 @@
       "types": "./dist/schema/index.d.ts",
       "default": "./dist/schema/index.js"
     },
+    "./tailwind.css": "./dist/tailwind.css",
     "./utils": {
       "types": "./dist/utils/index.d.ts",
       "default": "./dist/utils/index.js"

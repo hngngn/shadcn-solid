@@ -11,6 +11,7 @@ define.lib({
   },
   output: {
     cleanDistPath: true,
+    copy: [{ from: "./src/tailwind.css", to: "./tailwind.css" }],
     distPath: {
       root: "./dist",
     },
