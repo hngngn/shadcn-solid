@@ -37,16 +37,10 @@ import { type Transformer } from "./index.js"
 export const transformIcons: Transformer = (code, { config }) => {
   const iconLibrary = config.iconLibrary
 
-  // Fail silently if the icon library is not supported.
-  // This is for legacy icon libraries.
   if (!iconLibrary || !(iconLibrary in iconLibraries)) {
     return code
   }
 
-  // ts-morph also transforms the JSX blocks of a file that is not code, such
-  // as an MDX file. The edits are found in the code as parsed, and made on
-  // the input, which has the same text around them. A file without a
-  // placeholder or its import is left as it is either way.
   const parsed = parseTransformInput(code)
   const input = parsed
     ? { code, file: parsed }
@@ -85,10 +79,6 @@ export const transformIcons: Transformer = (code, { config }) => {
       transformedIcons.push(icon)
     }
 
-    // An icon name from an expression, as in lucide={icon.lucide}, makes a
-    // tag such as <{icon.lucide} />. TypeScript still parses that as an
-    // element among JSX children, where ts-morph's edit goes through, and as
-    // something else anywhere else, where ts-morph rejects it.
     if (isTagName && icon.startsWith("{") && !isJsxChild(file, element)) {
       throw new SyntaxErrorInsertedError()
     }
@@ -96,11 +86,6 @@ export const transformIcons: Transformer = (code, { config }) => {
     jsxEdits.push({ start: element.start!, end: element.end!, text })
   }
 
-  // ts-morph edits the elements, then the import declarations, which the
-  // element edits leave as they are. So both are made on the input, since
-  // Babel cannot parse the code after an element edit with an icon name from
-  // an expression. When a placeholder is among the import declarations, they
-  // are edited after it, as ts-morph does.
   const importEdit = getTextEdit(
     code,
     applyEditsInTurn(
@@ -123,10 +108,6 @@ export const transformIcons: Transformer = (code, { config }) => {
   )
 }
 
-// The placeholder's new text with the library's icon, or undefined when the
-// placeholder has no icon for the library. isTagName tells whether the icon
-// is the element's tag name. The props are removed from the element's own
-// text, since their removal stays inside it.
 function transformPlaceholder(
   code: string,
   placeholder: t.JSXElement,
@@ -134,9 +115,6 @@ function transformPlaceholder(
   libraryConfig: IconLibrary,
 ) {
   let text = getText(code, placeholder)
-  // ts-morph's replaceWithText() on the whole element. It forgets the nodes
-  // in the element, and throws when its loop reaches a self-closing element
-  // among them.
   const replaceElement = (newText: string) => {
     if (getDescendants(placeholder, isSelfClosingElement).length > 0) {
       throw new ForgottenNodeError()
@@ -160,9 +138,6 @@ function transformPlaceholder(
     return undefined
   }
 
-  // Remove the library-specific prop, then all other library-specific props
-  // (lucide, tabler, hugeicons, etc.), one after the other, as ts-morph's
-  // JsxAttribute#remove() does.
   text = removeJsxAttributes(text, [targetIndex])
   text = removeJsxAttributes(
     text,

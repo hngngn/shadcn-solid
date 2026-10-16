@@ -15,7 +15,6 @@ import { TransformerStyle } from "./transform.js"
  * These are typically used as CSS selectors or for other purposes
  * that require the class name to remain in the code.
  */
-// TODO: all cn-* classes to be allowedlisted.
 const ALLOWLIST = new Set([
   "cn-menu-target",
   "cn-menu-translucent",
@@ -82,19 +81,16 @@ function applyStyleToCvaString(
     return
   }
 
-  // Process all cn-* classes, not just the first one
   const unmatchedClasses = cnClasses.filter(
     (cnClass) => !matchedClasses.has(cnClass),
   )
 
   if (unmatchedClasses.length === 0) {
-    // All classes already matched, just clean up non-allowlisted ones
     const updated = removeCnClasses(stringValue)
     stringNode.setLiteralValue(updated)
     return
   }
 
-  // Skip allowlisted classes — they are handled at CLI install time.
   const classesToInline = unmatchedClasses.filter(
     (cnClass) => !ALLOWLIST.has(cnClass),
   )
@@ -109,7 +105,6 @@ function applyStyleToCvaString(
     stringNode.setLiteralValue(updated)
     unmatchedClasses.forEach((cnClass) => matchedClasses.add(cnClass))
   } else {
-    // No styles to apply, but still need to clean up non-allowlisted classes.
     const updated = removeCnClasses(stringValue)
     stringNode.setLiteralValue(updated)
   }
@@ -228,12 +223,10 @@ function applyToClassNameAttributes(
     )
 
     if (unmatchedClasses.length === 0) {
-      // Even if all classes are already matched, we still need to clean them up
       cleanCnClassesFromAttribute(initializer)
       return
     }
 
-    // Skip allowlisted classes — they are handled at CLI install time.
     const classesToInline = unmatchedClasses.filter(
       (cnClass) => !ALLOWLIST.has(cnClass),
     )
@@ -347,7 +340,6 @@ function extractCnClasses(str: string) {
 function removeCnClasses(str: string) {
   return str
     .replace(/\bcn-[\w-]+\b/g, (match) => {
-      // Preserve allowlisted classes
       if (ALLOWLIST.has(match)) {
         return match
       }

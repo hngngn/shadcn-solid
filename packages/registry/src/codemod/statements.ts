@@ -13,13 +13,8 @@ import {
   isNewLineAtPos,
 } from "./trivia.js"
 
-// A top-level statement as ts-morph lists them in getStatementsWithComments:
-// the program's statements and directives, and comment statements, which are
-// comments on their own lines between them. A statement's pos is the previous
-// node's end, as in TypeScript, and a comment statement's is its start.
 export type Statement = NodeOrComment<t.Statement | t.Directive>
 
-// ts-morph's StatementedNode#getStatementsWithComments() on a source file.
 export function getStatementsWithComments(
   code: string,
   program: t.Program,
@@ -38,7 +33,6 @@ export function getStatementsWithComments(
   )
 }
 
-// ts-morph's Node#getNonWhitespaceStart() for a top-level statement.
 function getStatementNonWhitespaceStart(
   code: string,
   statements: Statement[],
@@ -47,7 +41,6 @@ function getStatementNonWhitespaceStart(
   const statement = statements[index]
   const previous = statements[index - 1]
 
-  // A comment statement's leading trivia is only whitespace.
   if (!statement.node) {
     return statement.start
   }
@@ -59,10 +52,6 @@ function getStatementNonWhitespaceStart(
   )
 }
 
-// ts-morph's insertion of a statement into a source file at index
-// (insertIntoBracesOrSourceFile with _standardWrite). A blank line separates
-// it from neighbors of another kind. Returns the new code and where the
-// inserted statement ends in it.
 export function insertStatement(
   code: string,
   statements: Statement[],
@@ -80,7 +69,6 @@ export function insertStatement(
   return { code: applyManipulation(code, [edit]), end }
 }
 
-// insertStatement's edit, and where the inserted statement ends after it.
 function getStatementInsertion(
   code: string,
   statements: Statement[],
@@ -120,11 +108,6 @@ function getStatementInsertion(
   return { edit, end: statementEnd }
 }
 
-// ts-morph's Statement#remove() for a statement of the source file
-// (removeStatementedNodeChild): from the end of the statement or comment
-// before it, through its trailing comments and the blank lines after it. The
-// statements around it are then separated by a blank line if either has a
-// body, and by a line break otherwise.
 export function removeStatement(
   code: string,
   statements: Statement[],
@@ -134,9 +117,6 @@ export function removeStatement(
   const previous = statements[index - 1]
   const next = statements[index + 1]
 
-  // RemoveChildrenWithFormattingTextManipulator's getRemovalPos and
-  // getRemovalEnd. A statement without a previous one starts at the source
-  // file's pos, 0.
   let start: number
   if (previous) {
     const previousTriviaEnd = getTrailingTriviaEnd(code, previous.end)
@@ -173,8 +153,6 @@ export function removeStatement(
   return applyManipulation(code, [{ start, end, text: spacing }])
 }
 
-// ts-morph's hasBody() for a statement: a function or module declaration with
-// a body, a class, an interface or an enum.
 function hasBody({ node }: Statement) {
   const declaration =
     node?.type === "ExportNamedDeclaration" ||
@@ -194,8 +172,6 @@ function hasBody({ node }: Statement) {
   }
 }
 
-// ts-morph's SourceFile#addImportDeclaration({ moduleSpecifier, namedImports:
-// [name] }).
 export function addImportDeclaration(
   code: string,
   moduleSpecifier: string,

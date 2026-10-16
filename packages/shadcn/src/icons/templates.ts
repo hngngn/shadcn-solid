@@ -1,9 +1,3 @@
-// Helpers for parsing icon library `import` and `usage` templates, e.g.
-//   import: "import { HugeiconsIcon } from '@hugeicons/react'\nimport { ICON } from '@hugeicons/core-free-icons';"
-//   usage:  "<HugeiconsIcon icon={ICON} strokeWidth={2} />"
-// ICON is the placeholder substituted with actual icon names.
-
-// Anchored and free of overlapping quantifiers to avoid backtracking blowups.
 const IMPORT_REGEX = /^import\s+{([^}]+)}\s+from\s+['"]([^'"]+)['"]/
 
 export interface ParsedImport {
@@ -12,12 +6,8 @@ export interface ParsedImport {
 }
 
 export interface ParsedUsage {
-  // The JSX tag icons render as. "ICON" means the icon itself is the tag
-  // (e.g. lucide); anything else is a wrapper component (e.g. HugeiconsIcon).
   componentName: string
-  // Attribute carrying the icon when componentName is a wrapper (e.g. "icon").
   iconAttribute?: string
-  // Remaining default attributes from the template, e.g. { strokeWidth: "{2}" }.
   attributes: Record<string, string>
 }
 
@@ -40,16 +30,12 @@ export function parseImportTemplate(template: string): ParsedImport[] {
   return imports
 }
 
-// The module specifier icons (ICON) are imported from.
 export function getIconModuleSpecifier(template: string) {
   return parseImportTemplate(template).find((parsed) =>
     parsed.namedImports.includes("ICON"),
   )?.moduleSpecifier
 }
 
-// The usage template is parsed with a hand-rolled scanner instead of
-// regexes: these helpers are part of the public API, so parsing must stay
-// linear on arbitrary input (no backtracking).
 export function parseUsageTemplate(usage: string): ParsedUsage {
   const start = usage.indexOf("<")
   const end = usage.indexOf("/>", start)
@@ -84,8 +70,6 @@ export function parseUsageTemplate(usage: string): ParsedUsage {
 
 const NAME_CHAR = /[\w-]/
 
-// Tokenizes `name={value}` / `name="value"` / `name='value'` pairs in a
-// single linear pass.
 function parseAttributeTokens(raw: string): Array<[string, string]> {
   const tokens: Array<[string, string]> = []
   let index = 0

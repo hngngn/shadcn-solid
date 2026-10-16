@@ -4,11 +4,9 @@ import CodeBlockWriter from "code-block-writer"
 import { getChildNodes, parseModule, type ParseOptions } from "./parse.js"
 import { isLineBreak, isWhiteSpaceSingleLine } from "./trivia.js"
 
-// ts-morph indents with four spaces, and TypeScript counts a tab as four.
 const INDENT_SIZE = 4
 const TAB_SIZE = 4
 
-// The parents nodeWillIndentChild indents any child of.
 const ALWAYS_INDENTING_PARENTS = new Set([
   "ExpressionStatement",
   "ClassDeclaration",
@@ -56,7 +54,6 @@ const ALWAYS_INDENTING_PARENTS = new Set([
   "CaseBlock",
 ])
 
-// TypeScript's isDeclaration.
 const DECLARATION_KINDS = new Set([
   "ArrowFunction",
   "BindingElement",
@@ -90,7 +87,6 @@ const DECLARATION_KINDS = new Set([
   "VariableDeclaration",
 ])
 
-// TypeScript's isStatementButNotDeclaration.
 const STATEMENT_KINDS = new Set([
   "BreakStatement",
   "ContinueStatement",
@@ -112,7 +108,6 @@ const STATEMENT_KINDS = new Set([
   "WithStatement",
 ])
 
-// The nodes getListByRange looks for a list in.
 const LIST_CONTAINER_KINDS = new Set([
   "ObjectLiteralExpression",
   "ArrayLiteralExpression",
@@ -136,8 +131,6 @@ const CONTROL_FLOW_ENDING_KINDS = new Set([
   "BreakStatement",
 ])
 
-// A node of the TypeScript syntax tree, rebuilt from Babel's AST with what
-// the smart indenter reads. kind is a TypeScript SyntaxKind name.
 interface SyntaxNode {
   kind: string
   start: number
@@ -145,13 +138,10 @@ interface SyntaxNode {
   parent?: SyntaxNode
   children: SyntaxNode[]
   lists: NodeList[]
-  // Set on a CallExpression.
   callee?: SyntaxNode
   arguments?: SyntaxNode[]
 }
 
-// A TypeScript NodeArray, such as a call's arguments. getVisualListRange
-// places it between its delimiters.
 interface NodeList {
   pos: number
   visibleStart: number
@@ -165,7 +155,6 @@ interface Token {
   end: number
 }
 
-// Comments are tokens too, with a string type.
 interface BabelToken {
   type: string | { label: string }
   start: number
@@ -179,14 +168,10 @@ interface LineAndCharacter {
 
 interface Source {
   code: string
-  // Without comments and whitespace-only JSX text.
   tokens: Token[]
   lineStarts: number[]
 }
 
-// ts-morph's Node#replaceWithText(text) writes text through a code-block-writer
-// with the node's indentation queued, so the lines after the first are
-// indented to the node at position.
 export function getReplacementText(
   code: string,
   position: number,
@@ -204,8 +189,6 @@ export function getReplacementText(
   return writer.toString()
 }
 
-// ts-morph's Node#getIndentationLevel() for the node starting at position: its
-// indentation in levels of four spaces, which can be a fraction.
 export function getIndentationLevel(
   code: string,
   position: number,
@@ -214,10 +197,6 @@ export function getIndentationLevel(
   return getIndentationAtPosition(code, position, options) / INDENT_SIZE
 }
 
-// ts-morph's Node#getIndentationText(offset) for the node starting at
-// position, and with an offset of 1, getChildIndentationText(). Repeating the
-// four spaces drops the fraction of a level that getIndentationLevel can
-// return, and code-block-writer indents by.
 export function getIndentationText(
   code: string,
   position: number,
@@ -229,13 +208,6 @@ export function getIndentationText(
     .repeat(getIndentationLevel(code, position, options) + offset)
 }
 
-// TypeScript's SmartIndenter.getIndentation, which ts-morph calls through the
-// language service's getIndentationAtPosition. Ported for the start of a JSX
-// attribute or its initializer, and of an object or array literal, the
-// positions the editors indent at: the comment and literal special cases and
-// the one for a function in a list are left out, and getSmartIndent never
-// assumes a new line before a closing brace. Babel's tokens have none for a
-// skipped comma (see parseModule), which none of these positions follows.
 function getIndentationAtPosition(
   code: string,
   position: number,
@@ -255,8 +227,6 @@ function getIndentationAtPosition(
 
   const root = buildSyntaxTree(source, file.program)
 
-  // TypeScript's getIndentation uses getBlockIndent for an object literal's
-  // `{`: the first non-whitespace column of its line.
   if (findNodeAt(root, position, "ObjectLiteralExpression")) {
     return getLineIndentation(source, getLineAndCharacter(source, position))
   }
@@ -364,7 +334,6 @@ function getIndentationForNodeWorker(
       return indentation + indentationDelta
     }
 
-    // getActualIndentationForNode.
     if (
       (DECLARATION_KINDS.has(current.kind) ||
         STATEMENT_KINDS.has(current.kind)) &&
@@ -415,7 +384,6 @@ function getIndentationForListItemBeforeComma(
   return deriveIndentationFromList(source, list.items, itemsBeforeComma - 1)
 }
 
-// getActualIndentationForListItem.
 function getIndentationForListItem(
   source: Source,
   node: SyntaxNode,
@@ -443,8 +411,6 @@ function getIndentationForListItem(
   )
 }
 
-// deriveActualIndentationFromList: the indentation of the first item on the
-// item's line, when an earlier item ends on another line.
 function deriveIndentationFromList(
   source: Source,
   items: SyntaxNode[],
@@ -465,7 +431,6 @@ function getListStartIndentation(source: Source, list: NodeList) {
   return getLineIndentation(source, getLineAndCharacter(source, list.pos))
 }
 
-// findColumnForFirstNonWhitespaceCharacterInLine.
 function getLineIndentation(
   source: Source,
   { line, character }: LineAndCharacter,
@@ -478,7 +443,6 @@ function getLineIndentation(
     if (!isWhiteSpaceSingleLine(char)) {
       break
     }
-    // TypeScript's own formula for a tab.
     column += char === "\t" ? TAB_SIZE + (column % TAB_SIZE) : 1
   }
 
@@ -503,7 +467,6 @@ function isInList(list: NodeList, node: SyntaxNode) {
   return list.visibleStart <= node.start && node.end <= list.visibleEnd
 }
 
-// A case clause is never complete, since more statements can follow.
 function positionBelongsToNode(node: SyntaxNode, position: number) {
   return (
     position < node.end ||
@@ -512,8 +475,6 @@ function positionBelongsToNode(node: SyntaxNode, position: number) {
   )
 }
 
-// shouldIndentChildNode for the next child, which is the only kind of child
-// getSmartIndent asks about.
 function shouldIndentChildNode(
   source: Source,
   parent: SyntaxNode,
@@ -625,7 +586,6 @@ function getTokens(code: string, file: t.File) {
   return tokens
 }
 
-// The index of the last token that ends at or before position.
 function findPrecedingTokenIndex(source: Source, position: number) {
   let index = -1
   for (let i = 0; i < source.tokens.length; i++) {
@@ -647,7 +607,6 @@ function findToken(source: Source, from: number, label: string) {
   )
 }
 
-// The node of kind that starts at position, if there is one.
 function findNodeAt(root: SyntaxNode, position: number, kind: string) {
   let node: SyntaxNode | undefined = root
   while (node) {
@@ -662,8 +621,6 @@ function findNodeAt(root: SyntaxNode, position: number, kind: string) {
   return undefined
 }
 
-// The node findPrecedingToken returns for a token: the leaf node that is the
-// token, or a token node under the deepest node that contains it.
 function getTokenNode(root: SyntaxNode, token: Token): SyntaxNode {
   let node = root
   while (true) {
@@ -693,7 +650,6 @@ function getTokenNode(root: SyntaxNode, token: Token): SyntaxNode {
   }
 }
 
-// TypeScript's computeLineStarts.
 function getLineStarts(code: string) {
   const lineStarts = [0]
   for (let pos = 0; pos < code.length; pos++) {
@@ -780,7 +736,6 @@ function addList(
 ) {
   const itemsStart = items.length > 0 ? items[0].start : parent.start
   const itemsEnd = items.length > 0 ? items[items.length - 1].end : parent.start
-  // Without both delimiters, the list spans its items.
   const hasDelimiters = open !== undefined && close !== undefined
 
   parent.lists.push({
@@ -791,7 +746,6 @@ function addList(
   })
 }
 
-// A node of kind with the TypeScript nodes for all of node's children.
 function convertWithChildren(
   source: Source,
   node: t.Node,
@@ -803,9 +757,6 @@ function convertWithChildren(
   return converted
 }
 
-// Babel and TypeScript trees differ in shape, so each Babel node becomes the
-// TypeScript node the indenter expects. start overrides node.start for a
-// declaration whose `export` keyword TypeScript treats as a modifier.
 function convertNode(
   source: Source,
   node: t.Node,
@@ -954,7 +905,6 @@ function convertNode(
     case "DoWhileStatement":
       return convertWithChildren(source, node, "DoStatement", start)
     default:
-      // Babel's name is TypeScript's for most statements and expressions.
       return convertWithChildren(source, node, node.type, start)
   }
 }
@@ -965,7 +915,6 @@ function convertExportDefault(
   start: number,
 ) {
   const { declaration } = node
-  // Babel's types leave out the interface its TypeScript plugin parses here.
   if (
     declaration.type === "FunctionDeclaration" ||
     declaration.type === "ClassDeclaration" ||
@@ -1096,7 +1045,6 @@ function convertCall(
   addChildren(source, call, [typeArguments])
   call.arguments = addChildren(source, call, node.arguments)
 
-  // A call ends with the closing parenthesis.
   const openParen = findToken(
     source,
     typeArguments ? typeArguments.end! : node.callee.end!,
@@ -1137,8 +1085,6 @@ function convertBindingPattern(
     elements.push(bindingElement)
   }
 
-  // With a type annotation, the pattern ends after it, not at its closing
-  // brace or bracket.
   const close = node.typeAnnotation
     ? findLastClosingBracket(source, node.typeAnnotation.start!)
     : node.end! - 1
@@ -1148,7 +1094,6 @@ function convertBindingPattern(
   return pattern
 }
 
-// The name and initializer of a binding element.
 function getBindingElementChildren(element: t.Node) {
   let parts: t.Node[] = [element]
   if (element.type === "ObjectProperty") {
@@ -1229,8 +1174,6 @@ function addJsxTagChildren(
   }
 }
 
-// TypeScript has no node for whitespace-only JSX text, and JSX text starts
-// after its leading whitespace.
 function convertJsxText(source: Source, node: t.JSXText, start: number) {
   if (/^\s*$/.test(node.value)) {
     return null

@@ -4,24 +4,13 @@ import { parseExpression } from "@babel/parser"
 import { applyEdits, type TextEdit } from "./edits.js"
 import { getDescendants, getText } from "./parse.js"
 
-// The nodes TypeScript parses as a StringLiteral: Babel's string literals and
-// directives.
 type StringLiteral = t.StringLiteral | t.DirectiveLiteral
 
-// A TypeScript StringLiteral or NoSubstitutionTemplateLiteral, which is a
-// template literal without substitutions.
 export type Literal = StringLiteral | t.TemplateLiteral
 
-// The literals of a file as ts-morph's nodes have them. getDescendantsOfKind()
-// lists them in source order, getLiteralValue() reads TypeScript's text of
-// them, and setLiteralValue() edits the file there and then, so a literal
-// visited again reads its new value. TypeScript's JSDoc type expressions have
-// string literals too, which are left out.
 export class StringLiterals {
   private readonly strings: StringLiteral[]
   private readonly templates: t.TemplateLiteral[]
-  // TypeScript keeps a JSX attribute string as written, where Babel decodes
-  // its HTML entities.
   private readonly jsxAttributeValues: Set<Literal>
   private readonly edits = new Map<Literal, TextEdit>()
 
@@ -46,22 +35,18 @@ export class StringLiterals {
     )
   }
 
-  // ts-morph's getDescendantsOfKind(SyntaxKind.StringLiteral) on the file, or
-  // on container.
   getStringLiterals(container?: t.Node) {
     return container
       ? this.strings.filter((literal) => isWithin(literal, container))
       : this.strings
   }
 
-  // ts-morph's getDescendantsOfKind(SyntaxKind.NoSubstitutionTemplateLiteral).
   getTemplateLiterals(container?: t.Node) {
     return container
       ? this.templates.filter((literal) => isWithin(literal, container))
       : this.templates
   }
 
-  // ts-morph's getLiteralValue(), the text TypeScript reads from the literal.
   getValue(literal: Literal) {
     const edit = this.edits.get(literal)
     if (this.jsxAttributeValues.has(literal)) {

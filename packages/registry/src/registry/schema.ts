@@ -1,14 +1,9 @@
 import { z } from "zod"
 
-// Note: if you edit the schema here, you must also edit the schema in the
-// apps/v4/public/schema/registry-item.json file.
-
 export const registryConfigItemSchema = z.union([
-  // Simple string format: "https://example.com/{name}.json"
   z.string().refine((s) => s.includes("{name}"), {
     message: "Registry URL must include {name} placeholder",
   }),
-  // Advanced object format with auth options
   z.object({
     url: z.string().refine((s) => s.includes("{name}"), {
       message: "Registry URL must include {name} placeholder",
@@ -24,7 +19,6 @@ export const registryConfigSchema = z.record(
   }),
   registryConfigItemSchema,
   {
-    // Zod 4 reports key failures as "Invalid key in record".
     error: (issue) =>
       issue.code === "invalid_key" ? issue.issues?.[0]?.message : undefined,
   },
@@ -80,8 +74,6 @@ export const configSchema = rawConfigSchema.extend({
 
 export type Config = z.infer<typeof configSchema>
 
-// Zod 4 applies defaults inside optional fields. A base config only carries
-// the fields it overrides, so it drops the defaults.
 export const registryBaseConfigSchema = rawConfigSchema
   .extend({
     rsc: z.coerce.boolean(),
@@ -93,8 +85,6 @@ export const registryBaseConfigSchema = rawConfigSchema
   })
   .partial()
 
-// TODO: type the key.
-// Okay for now since I don't want a breaking change.
 export const workspaceConfigSchema = z.record(z.string(), configSchema)
 
 export const registryItemTypeSchema = z.enum([
@@ -111,13 +101,11 @@ export const registryItemTypeSchema = z.enum([
   "registry:base",
   "registry:font",
 
-  // Internal use only.
   "registry:example",
   "registry:internal",
 ])
 
 export const registryItemFileSchema = z.discriminatedUnion("type", [
-  // Target is required for registry:file and registry:page
   z.object({
     path: z.string(),
     content: z.string().optional(),
@@ -150,7 +138,6 @@ export const registryItemCssVarsSchema = z.object({
   dark: z.record(z.string(), z.string()).optional(),
 })
 
-// Recursive type for CSS properties that supports empty objects at any level.
 const cssValueSchema: z.ZodType<any> = z.lazy(() =>
   z.union([
     z.string(),
@@ -194,7 +181,6 @@ export const registryItemCommonSchema = z.object({
   categories: z.array(z.string()).optional(),
 })
 
-// registry:base has a config field, registry:font has a font field.
 export const registryItemSchema = z.discriminatedUnion("type", [
   registryItemCommonSchema.extend({
     type: z.literal("registry:base"),
@@ -215,9 +201,6 @@ export type RegistryBaseItem = Extract<RegistryItem, { type: "registry:base" }>
 
 export type RegistryFontItem = Extract<RegistryItem, { type: "registry:font" }>
 
-// Pagination metadata returned by registries that implement dynamic search.
-// Its presence on a catalog response signals that the items are already
-// filtered and paginated server-side.
 export const registryPaginationSchema = z.object({
   total: z.number(),
   offset: z.number(),
@@ -254,7 +237,6 @@ export const registrySchema = registryChunkSchema.pipe(
     name: z.string(),
     homepage: z.string(),
     include: z.array(z.string()).optional(),
-    // Items are already parsed by registryChunkSchema.
     items: z.array(z.custom<RegistryItem>()),
     pagination: registryPaginationSchema.optional(),
   }),
@@ -326,19 +308,14 @@ export const searchResultErrorSchema = z.object({
 export const searchResultsSchema = z.object({
   pagination: registryPaginationSchema,
   items: z.array(searchResultItemSchema),
-  // Registries that failed to load during the search. Only present when a
-  // search tolerates per-registry failures (see searchRegistries'
-  // continueOnError) and at least one registry was skipped.
   errors: z.array(searchResultErrorSchema).optional(),
 })
 
-// Legacy schema for getRegistriesIndex() backward compatibility.
 export const registriesIndexSchema = z.record(
   z.string().regex(/^@[a-zA-Z0-9][a-zA-Z0-9-_]*$/),
   z.string(),
 )
 
-// New schema for getRegistries().
 export const registriesSchema = z.array(
   z.object({
     name: z.string(),

@@ -8,21 +8,16 @@ interface TransformInfo {
   newText: string
 }
 
-// shadcn/utils exports this one as transformRender.
 export const transformRenderSourceFile: SourceFileTransformer = async ({
   sourceFile,
   config,
 }) => {
-  // Only run for base- styles.
   if (!config.style?.startsWith("base-")) {
     return sourceFile
   }
 
-  // Collect all transformations first, then apply them in reverse order.
-  // This prevents issues with invalidated nodes when modifying the tree.
   const transformations: TransformInfo[] = []
 
-  // Find all JSX elements with render attribute.
   const jsxElements = sourceFile.getDescendantsOfKind(SyntaxKind.JsxElement)
 
   for (const jsxElement of jsxElements) {
@@ -33,19 +28,16 @@ export const transformRenderSourceFile: SourceFileTransformer = async ({
       continue
     }
 
-    // Get the children of the parent element.
     const children = jsxElement.getJsxChildren()
     const childrenText = children
       .map((c) => c.getText())
       .join("")
       .trim()
 
-    // If there are no children, nothing to transform.
     if (!childrenText) {
       continue
     }
 
-    // Get the render attribute value.
     if (renderAttr.getKind() !== SyntaxKind.JsxAttribute) {
       continue
     }
@@ -57,7 +49,6 @@ export const transformRenderSourceFile: SourceFileTransformer = async ({
       continue
     }
 
-    // The render value should be a JSX expression like {<Button />}.
     if (initializer.getKind() !== SyntaxKind.JsxExpression) {
       continue
     }
@@ -69,9 +60,7 @@ export const transformRenderSourceFile: SourceFileTransformer = async ({
       continue
     }
 
-    // Check if the expression is a self-closing JSX element.
     if (expression.getKind() !== SyntaxKind.JsxSelfClosingElement) {
-      // If it's already a full JSX element with children, skip it.
       continue
     }
 
@@ -84,7 +73,6 @@ export const transformRenderSourceFile: SourceFileTransformer = async ({
       .map((attr) => attr.getText())
       .join(" ")
 
-    // Build new render prop value with children moved inside.
     const newRenderValue = attributes
       ? `{<${tagName} ${attributes}>${childrenText}</${tagName}>}`
       : `{<${tagName}>${childrenText}</${tagName}>}`

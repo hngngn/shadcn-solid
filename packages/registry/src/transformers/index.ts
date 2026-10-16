@@ -1,6 +1,3 @@
-// The types the registry's transformers share. Upstream this module also
-// re-exported every transformer and ran them in order, but only the types are
-// used here, so the rest of that barrel is not ported.
 import { z } from "zod"
 
 import { registryBaseColorSchema, type Config } from "../registry/schema.js"

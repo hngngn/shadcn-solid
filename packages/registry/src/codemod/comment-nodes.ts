@@ -2,23 +2,15 @@ import { type types as t } from "@babel/core"
 
 import { getLineEnd, getLineStart, isWhitespace } from "./trivia.js"
 
-// A child of a source file or object literal as ts-morph lists them: a node,
-// or a comment node, which is a comment on its own lines between the nodes.
-// ts-morph counts comment nodes when it inserts by index.
 export interface NodeOrComment<T> {
-  // Where the leading trivia starts: TypeScript's pos. A comment node's pos is
-  // where the comment starts, as in ts-morph.
   pos: number
   start: number
   end: number
-  // Undefined for a comment node.
   node?: T
 }
 
 type CommentKind = "line" | "block" | "jsdoc"
 
-// ts-morph's CommentNodeParser: the nodes of a container whose body starts at
-// bodyPos, with the comment nodes before, between and after them.
 export function getNodesWithComments<T extends t.Node>(
   code: string,
   bodyPos: number,
@@ -39,9 +31,6 @@ export function getNodesWithComments<T extends t.Node>(
   return children
 }
 
-// getCommentNodes: the comments after fullStart that are on their own lines,
-// before the next node. A JSDoc comment before a node belongs to it, so it
-// stops there unless no node follows.
 function getCommentNodes<T>(
   code: string,
   fullStart: number,
@@ -50,8 +39,6 @@ function getCommentNodes<T>(
   let pos = fullStart
   const comments: NodeOrComment<T>[] = []
 
-  // Skips what is left of the line pos is on: the trailing comments of what
-  // precedes it.
   function skipTrailingLine() {
     if (pos === 0) {
       return
@@ -97,7 +84,6 @@ function getCommentNodes<T>(
     }
   }
 
-  // A comment on the same line as the next node is not a node of its own.
   const maxEnd =
     pos === code.length || code[pos] === "}" ? pos : getLineStart(code, pos)
 
@@ -122,7 +108,6 @@ function skipComment(code: string, pos: number, kind: CommentKind) {
     return getLineEnd(code, pos + 2)
   }
 
-  // Like ts-morph, look for the end after "/**", so "/**/" does not end there.
   const close = code.indexOf("*/", pos + (kind === "jsdoc" ? 3 : 2))
   return close === -1 ? code.length : close + 2
 }

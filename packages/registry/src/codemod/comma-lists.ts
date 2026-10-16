@@ -12,37 +12,21 @@ import {
   skipTrivia,
 } from "./trivia.js"
 
-// A child of the SyntaxList TypeScript keeps a comma-separated list in: an
-// item, a comma, or in an object literal, one of ts-morph's comment nodes.
 export interface ListChild {
   kind: "item" | "comma" | "comment"
-  // Where the leading trivia starts: TypeScript's pos.
   pos: number
-  // getStart().
   start: number
-  // getStart(true), which includes the JSDoc comment of an item.
   startWithJsDoc: number
   end: number
 }
 
-// A comma-separated list in brackets or braces, such as an array literal's
-// elements.
 export interface CommaSeparatedList {
-  // Where the node with the brackets starts, which is what new lines in the
-  // list are indented to.
   nodeStart: number
-  // After the opening bracket, where the SyntaxList starts.
   pos: number
-  // The closing bracket.
   closeStart: number
   children: ListChild[]
 }
 
-// The SyntaxList children of a list in brackets: the items and the commas
-// after them, and in an object literal, the skipped commas (see parseModule),
-// which TypeScript keeps in the list too. A null item is a hole, TypeScript's
-// OmittedExpression. getStartWithJsDoc gives an item's getStart(true) from
-// its pos.
 export function getListChildren(
   code: string,
   pos: number,
@@ -52,11 +36,8 @@ export function getListChildren(
     item.start!,
 ) {
   const children: ListChild[] = []
-  // Where the last child ends, and the next one's trivia starts.
   let end = pos
 
-  // Adds the commas from end on. In an array literal, a hole goes between two
-  // commas, so only one comes before it.
   function addCommas(beforeHole: boolean) {
     let start = skipTrivia(code, end)
     while (code[start] === "," && start < closeStart) {
@@ -75,12 +56,10 @@ export function getListChildren(
     }
   }
 
-  // A list that starts with a hole has its first comma after the hole.
   if (items[0] !== null) {
     addCommas(false)
   }
   items.forEach((item, index) => {
-    // A hole is empty, and starts where its trivia does.
     const child: ListChild = item
       ? {
           kind: "item",
@@ -102,8 +81,6 @@ export function isItem(child: ListChild) {
   return child.kind === "item"
 }
 
-// ts-morph's verifyAndGetIndex for the indexes the editors pass, which are
-// never negative: an insertion at an index past the length nodes throws.
 export function verifyIndex(index: number, length: number) {
   if (index > length) {
     throw new Error(
@@ -406,9 +383,7 @@ export function appendCommaToText(text: string) {
 // Where the last token of text ends, as ts-morph finds it with TypeScript's
 // scanner, which it does not ask to rescan anything: a string ends at a line
 // break, and a template literal's ${} holds tokens of its own. 0 when text
-// has no tokens.
 function getLastTokenEnd(text: string) {
-  // The braces opened in each template literal expression being scanned.
   const openBraces: number[] = []
   let lastTokenEnd = 0
 
@@ -444,7 +419,6 @@ function getLastTokenEnd(text: string) {
   return lastTokenEnd
 }
 
-// Past the string literal at pos, or to the line break it is unterminated at.
 function skipString(text: string, pos: number) {
   const quote = text[pos]
   pos++
@@ -452,15 +426,12 @@ function skipString(text: string, pos: number) {
     if (isLineBreak(text[pos])) {
       return pos
     }
-    // An escaped line break continues the string, \r\n included.
     pos += text[pos] !== "\\" ? 1 : text.startsWith("\r\n", pos + 1) ? 3 : 2
   }
 
   return Math.min(pos + 1, text.length)
 }
 
-// Past a template literal's text from pos: to its closing backtick, or into
-// the ${} expression that follows, which opens a level in openBraces.
 function skipTemplate(text: string, pos: number, openBraces: number[]) {
   while (pos < text.length) {
     if (text[pos] === "`") {

@@ -11,9 +11,6 @@ import { applyManipulation } from "./edits.js"
 import { getText } from "./parse.js"
 import { skipTrivia } from "./trivia.js"
 
-// The ImportSpecifier#getName() of each of ts-morph's
-// ImportDeclaration#getNamedImports(): the imported name, which is the text
-// of an identifier, escapes and all.
 export function getNamedImportNames(
   code: string,
   declaration: t.ImportDeclaration,
@@ -25,7 +22,6 @@ export function getNamedImportNames(
   )
 }
 
-// ts-morph's ImportDeclaration#addNamedImport(name).
 export function addNamedImport(
   code: string,
   declaration: t.ImportDeclaration,
@@ -33,7 +29,6 @@ export function addNamedImport(
 ) {
   const namedImports = getNamedImports(declaration)
   if (namedImports.length > 0) {
-    // `{ a, b }` becomes `{ a, b, name }`.
     const list = getNamedImportsList(code, declaration, namedImports)
     return insertIntoCommaSeparatedNodes(
       code,

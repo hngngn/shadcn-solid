@@ -1,15 +1,3 @@
-// Preset encoding/decoding utilities.
-// Bit-packs design system params into a single integer,
-// then encodes as base62 with a version prefix character.
-// Browser-safe: no Node.js dependencies.
-//
-// Rules for backward compat:
-//   1. Never reorder existing value arrays — only append.
-//   2. New fields must have their default at index 0.
-//   3. Only append new fields to the end of PRESET_FIELDS.
-//   4. Stay under 53 bits total (JS safe integer limit).
-
-// Value arrays — order matters for backward compat. Never reorder, only append.
 export const PRESET_BASES = ["radix", "base", "aria"] as const
 
 export type PresetBase = (typeof PRESET_BASES)[number]

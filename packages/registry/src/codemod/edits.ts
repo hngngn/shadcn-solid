@@ -6,18 +6,13 @@ import {
   type ParseOptions,
 } from "./parse.js"
 
-// Replaces code[start, end) with text. Positions are in the original code.
 export interface TextEdit {
   start: number
   end: number
   text: string
 }
 
-// ts-morph's text manipulations, without its syntax check. The edits must not
-// overlap.
 export function applyEdits(code: string, edits: TextEdit[]) {
-  // From the end, so earlier positions stay valid. At the same start, the
-  // longer edit goes first, so an insertion lands before a removal there.
   const editsFromEnd = [...edits].sort(
     (a, b) => b.start - a.start || b.end - a.end,
   )
@@ -30,8 +25,6 @@ export function applyEdits(code: string, edits: TextEdit[]) {
   return result
 }
 
-// The edit that turns code into edited: the text between what they start and
-// end with, so that edits elsewhere in code can be applied with it.
 export function getTextEdit(code: string, edited: string): TextEdit {
   const length = Math.min(code.length, edited.length)
   let start = 0
@@ -53,15 +46,12 @@ export function getTextEdit(code: string, edited: string): TextEdit {
   }
 }
 
-// ts-morph's error for an edit it rejects, with its message.
 export class SyntaxErrorInsertedError extends Error {
   constructor() {
     super("Manipulation error: A syntax error was inserted.")
   }
 }
 
-// ts-morph's error for a node it forgot, which an edit does to the nodes it
-// replaces.
 export class ForgottenNodeError extends Error {
   constructor() {
     super(
@@ -70,15 +60,8 @@ export class ForgottenNodeError extends Error {
   }
 }
 
-// Why an editor left a file as it was: Babel could not parse it, or an edit
-// would have added a syntax error.
 export type SkipReason = "unparsable" | "syntax-error-inserted"
 
-// ts-morph's doManipulation, which throws when the edited text no longer
-// parses into the tree it expects. A new syntax error stands in for that,
-// except a skipped comma (see parseModule): TypeScript's tree has no node for
-// one, so an edit can write it, as ts-morph's did. ts-morph also threw when
-// its own update of its tree failed, which is not reproduced.
 export function applyManipulation(
   code: string,
   edits: TextEdit[],
@@ -96,8 +79,6 @@ export function applyManipulation(
   return result
 }
 
-// ts-morph's Node#replaceWithText(text), for a node TypeScript attaches no
-// JSDoc comment to.
 export function replaceWithText(
   code: string,
   node: t.Node,
