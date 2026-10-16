@@ -18,9 +18,10 @@
     }
   },
   "scripts": {
-    "build": "tsc",
-    "check": "rs check",
-    "check-types": "tsc --noEmit"
+    "build": "rs lib build",
+    "dev": "rs lib --watch",
+    "check": "rs check --fix",
+    "check-types": "rs check --type-check"
   },
   "dependencies": {
     "@babel/core": "^7.28.0",

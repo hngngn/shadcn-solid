@@ -1,19 +1,32 @@
 import { define } from "rstack"
 
+// The upstream package builds with tsup, where every module under `src` is an
+// entry so that `@shadcn-solid/registry/internal/*` can reach any of them, and
+// each entry gets its own declaration file. Rslib's bundleless mode does the
+// same directly: it compiles each file on its own and keeps the directory
+// structure, so `dist/index.js` still means `src/index.ts` — without the shared
+// chunks tsup emitted (and had to assert Node could still read).
+define.lib({
+  bundle: false,
+  dts: true,
+  format: "esm",
+  source: {
+    entry: {
+      index: ["./src/**/*.ts"],
+    },
+  },
+  output: {
+    cleanDistPath: true,
+    distPath: {
+      root: "./dist",
+    },
+    target: "node",
+  },
+})
+
 define.fmt({
   endOfLine: "lf",
   semi: false,
-  plugins: ["@ianvs/prettier-plugin-sort-imports"],
-  importOrder: [
-    "^(solid-js/(.*)$)|^(solid-js$)",
-    "^(@solidjs/(.*)$)|^(@solidjs$)",
-    "<THIRD_PARTY_MODULES>",
-    "",
-    "^@/(.*)$",
-    "",
-    "^[./]",
-  ],
-  importOrderCaseSensitive: true,
 })
 
 define.lint(({ ts }) => [
@@ -21,22 +34,6 @@ define.lint(({ ts }) => [
   ts.configs.strictTypeChecked,
   ts.configs.stylisticTypeChecked,
   {
-    // This package is ported from the shadcn `ui` repository, where these
-    // files are formatted but never linted, so they are written to a looser
-    // typing style than type-aware linting allows: non-null assertions on
-    // babel node positions, `any` where the babel AST is untyped, defensive
-    // conditions, and `type` aliases where an interface would do. They are
-    // kept as close to upstream as possible — so the codemod output stays
-    // identical and a future re-sync stays a copy — and that means relaxing
-    // those rules here rather than rewriting the code.
-    //
-    // Two of them are relaxed for a stronger reason: their autofixes are not
-    // safe on this code. `prefer-regexp-exec` turns `String#match` into
-    // `RegExp#exec`, which returns only the first match when the expression is
-    // global, and the `consistent-type-definitions` fix turns `PresetConfig`
-    // into an interface that `Object.fromEntries` no longer casts to, which
-    // does not compile. The package's `check` script accordingly runs
-    // `rs check` without `--fix`, so nothing rewrites the port in place.
     rules: {
       "@typescript-eslint/array-type": "off",
       "@typescript-eslint/consistent-type-definitions": "off",
