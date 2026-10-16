@@ -1,0 +1,36 @@
+{
+  "name": "@shadcn-solid/registry",
+  "version": "0.1.0",
+  "description": "Registry schemas, presets, icons and codemod transformers for shadcn-solid.",
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./schema": {
+      "types": "./dist/schema/index.d.ts",
+      "default": "./dist/schema/index.js"
+    },
+    "./internal/*": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "check": "rs check",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/parser": "^7.28.0",
+    "cn": "^0.2.4",
+    "code-block-writer": "^13.0.3",
+    "zod": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/babel__core": "^7.20.5",
+    "@types/node": "^20.11.27"
+  }
+}

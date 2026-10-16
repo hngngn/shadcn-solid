@@ -5,6 +5,12 @@ node_modules
 .pnp
 .pnp.js
 
+# pnpm store, state and runtime dir (kept inside the workspace: the default
+# locations under $HOME and $XDG_RUNTIME_DIR are not writable here)
+.pnpm-store
+.pnpm-state
+.xdg-runtime
+
 # Local env files
 .env
 .env.local

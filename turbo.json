@@ -22,7 +22,8 @@
     },
     "check-types": {
       "dependsOn": [
-        "^check-types"
+        "^check-types",
+        "^build"
       ]
     },
     "dev": {
