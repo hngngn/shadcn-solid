@@ -1,11 +1,5 @@
 import { define } from "rstack"
 
-// The upstream package builds with tsup, where every module under `src` is an
-// entry so that `@shadcn-solid/registry/internal/*` can reach any of them, and
-// each entry gets its own declaration file. Rslib's bundleless mode does the
-// same directly: it compiles each file on its own and keeps the directory
-// structure, so `dist/index.js` still means `src/index.ts` — without the shared
-// chunks tsup emitted (and had to assert Node could still read).
 define.lib({
   bundle: false,
   dts: true,
@@ -29,7 +23,18 @@ define.fmt({
   semi: false,
 })
 
+/**
+ * Rules this package leaves off. Its sources are ported from the shadcn `ui`
+ * repository, which formats them but does not lint them, so they are written to
+ * a looser typing style than `strictTypeChecked` allows. Some of the fixes are
+ * also unsafe on this code: `prefer-regexp-exec` turns `String#match` into
+ * `RegExp#exec`, which returns only the first match when the expression is
+ * global, and `consistent-type-definitions` turns `PresetConfig` into an
+ * interface that `Object.fromEntries` no longer casts to, which does not
+ * compile. Keeping these off is what lets the port stay a copy.
+ */
 define.lint(({ ts }) => [
+  { ignores: ["dist/**"] },
   ts.configs.recommended,
   ts.configs.strictTypeChecked,
   ts.configs.stylisticTypeChecked,

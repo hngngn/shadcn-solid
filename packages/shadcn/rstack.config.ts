@@ -1,9 +1,5 @@
 import { define } from "rstack"
 
-// The upstream package builds with tsup, listing each public entry point
-// separately. The four subpaths `package.json` exports are what consumers
-// import, and bundleless output puts each of them at the same path its source
-// has, so the export map keeps working unchanged.
 define.lib({
   bundle: false,
   dts: true,
@@ -27,7 +23,15 @@ define.fmt({
   semi: false,
 })
 
+/**
+ * Rules this package leaves off. Its sources are ported from the shadcn `ui`
+ * repository, which formats them but does not lint them, so they are written to
+ * a looser typing style than `strictTypeChecked` allows, and
+ * `no-unnecessary-type-assertion` drops a `keyof` assertion the preset code
+ * needs. Keeping these off is what lets the port stay a copy.
+ */
 define.lint(({ ts }) => [
+  { ignores: ["dist/**"] },
   ts.configs.recommended,
   ts.configs.strictTypeChecked,
   ts.configs.stylisticTypeChecked,

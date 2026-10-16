@@ -1,6 +1,10 @@
 import solid from "eslint-plugin-solid/configs/typescript"
 import { define } from "rstack"
 
+/**
+ * Formats the repository. `packages/**` is left to each package's own
+ * configuration, which is what `rs` loads when it runs there.
+ */
 define.fmt({
   endOfLine: "lf",
   semi: false,
@@ -15,18 +19,17 @@ define.fmt({
     "^[./]",
   ],
   importOrderCaseSensitive: true,
-  // `packages/` is formatted by the configuration of each package, which is
-  // what `rs` loads when it runs there.
   ignorePatterns: ["packages/**"],
 })
 
+/**
+ * Lints the repository, apart from `packages/**`: those packages are ported
+ * from the shadcn `ui` repository and own their configuration, which relaxes
+ * the rules their looser typing style needs. Ignoring them here is what keeps a
+ * `--fix` run from the repository root from rewriting the port in place. Their
+ * own `check` scripts still check them, and `turbo run check` runs those.
+ */
 define.lint(({ ts }) => [
-  // The packages under `packages/` are ported from the shadcn `ui` repository
-  // and own their lint configuration, which relaxes the rules their looser
-  // typing style needs (see `packages/registry/rstack.config.ts`). This
-  // configuration does not reach into them, so a `--fix` run from the
-  // repository root cannot rewrite the port in place. Their own `check`
-  // scripts still check them, and `turbo run check` runs those.
   { ignores: ["packages/**"] },
   ts.configs.recommended,
   ts.configs.strictTypeChecked,
